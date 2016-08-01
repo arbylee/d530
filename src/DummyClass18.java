@@ -290,21 +290,22 @@ final class DummyClass18 {
               GameBuffer.printMessage(var24, 14, GroundItemNode.EMPTY_STRING, -1);
             }
           }
-        }
-        var24 =
-          var70.substring(var70.indexOf(AbstractAudioOutputStream.aClass94_1970), 0, 0);
-        var4 = var24.toBase37();
-        var31 = false;
+        } else {
+          var24 = var70.substring(var70.indexOf(AbstractAudioOutputStream.aClass94_1970), 0, 0);
+          var4 = var24.toBase37();
+          var31 = false;
 
-        for (var30 = 0; ~var30 > ~AnimationSomething.anInt3591; ++var30) {
-          if (~MonoChromaticImageCache.aLongArray1574[var30] == ~var4) {
-            var31 = true;
-            break;
+          for (var30 = 0; ~var30 > ~AnimationSomething.anInt3591; ++var30) {
+            if (~MonoChromaticImageCache.aLongArray1574[var30] == ~var4) {
+              var31 = true;
+              break;
+            }
           }
-        }
 
-        if (!var31 && ~GameWorld.anInt2622 == -1) {
-          GameBuffer.printMessage(var24, 4, SomethingMidiFile.aClass94_2285, var0 + 82);
+
+          if (!var31 && ~GameWorld.anInt2622 == -1) {
+            GameBuffer.printMessage(var24, 4, SomethingMidiFile.aClass94_2285, var0 + 82);
+          }
         }
 
         GameString.packetId = -1;
