@@ -1,9 +1,9 @@
 final class TextureSampler11 extends AbstractTextureSampler {
 
+  private static GameString aClass94_3247 = SpawnedGameObject.createString("flash1:");
   static int anInt3244 = 0;
   static int anInt3248;
   static GameString aClass94_3251 = SpawnedGameObject.createString("M-Bmoire attribu-Be");
-  private static GameString aClass94_3247 = SpawnedGameObject.createString("flash1:");
   static GameString aClass94_3249 = aClass94_3247;
   static GameString aClass94_3246 = aClass94_3247;
   private int anInt3245 = 4096;
@@ -12,19 +12,6 @@ final class TextureSampler11 extends AbstractTextureSampler {
 
   public TextureSampler11() {
     super(1, false);
-  }
-
-  public static void method266(int var0) {
-    try {
-      aClass94_3249 = null;
-      aClass94_3247 = null;
-      if (var0 == -1443422260) {
-        aClass94_3246 = null;
-        aClass94_3251 = null;
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "mg.U(" + var0 + ')');
-    }
   }
 
   final void parseConfig(int var1, Buffer var2, boolean var3) {
@@ -86,6 +73,19 @@ final class TextureSampler11 extends AbstractTextureSampler {
       return var3;
     } catch (RuntimeException var15) {
       throw AbstractGameWorld.cascadeException(var15, "mg.T(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public static void method266(int var0) {
+    try {
+      aClass94_3249 = null;
+      aClass94_3247 = null;
+      if (var0 == -1443422260) {
+        aClass94_3246 = null;
+        aClass94_3251 = null;
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "mg.U(" + var0 + ')');
     }
   }
 

@@ -126,10 +126,6 @@ final class SkyboxMaterialShader implements MaterialShader {
 
   }
 
-  public final int method24() {
-    return 4;
-  }
-
   public final void enable() {
     GL var1 = GlRenderer.gl;
     GlRenderer.method1847(1);
@@ -149,6 +145,10 @@ final class SkyboxMaterialShader implements MaterialShader {
       var2.glActiveTexture('\u84c0');
     }
 
+  }
+
+  public final int method24() {
+    return 4;
   }
 
   private final void initializeTextures() {

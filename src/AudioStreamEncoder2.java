@@ -22,6 +22,47 @@ final class AudioStreamEncoder2 extends AudioStreamEncoder {
     this.aClass61_3485.method1216(64, var1);
   }
 
+  private final void method458() {
+    if (this.anInt3487 > 0) {
+      for (DummyClass57 var1 = (DummyClass57) this.aClass61_3486.getFirst();
+           var1 != null; var1 = (DummyClass57) this.aClass61_3486.getNext()) {
+        var1.anInt2247 -= this.anInt3487;
+      }
+
+      this.anInt3488 -= this.anInt3487;
+      this.anInt3487 = 0;
+    }
+
+  }
+
+  private final void method459(int var1) {
+    for (AudioStreamEncoder var2 = (AudioStreamEncoder) this.aClass61_3485.getFirst();
+         var2 != null; var2 = (AudioStreamEncoder) this.aClass61_3485.getNext()) {
+      var2.method415(var1);
+    }
+
+  }
+
+  private final void method460(int[] var1, int var2, int var3) {
+    for (AudioStreamEncoder var4 = (AudioStreamEncoder) this.aClass61_3485.getFirst();
+         var4 != null; var4 = (AudioStreamEncoder) this.aClass61_3485.getNext()) {
+      var4.method410(var1, var2, var3);
+    }
+
+  }
+
+  final synchronized void method461(AudioStreamEncoder var1) {
+    var1.unlinkNode();
+  }
+
+  final int method409() {
+    return 0;
+  }
+
+  final AudioStreamEncoder method411() {
+    return (AudioStreamEncoder) this.aClass61_3485.getFirst();
+  }
+
   final synchronized void method413(int[] samples, int off, int len) {
     do {
       if (this.anInt3488 < 0) {
@@ -56,45 +97,8 @@ final class AudioStreamEncoder2 extends AudioStreamEncoder {
 
   }
 
-  private final void method458() {
-    if (this.anInt3487 > 0) {
-      for (DummyClass57 var1 = (DummyClass57) this.aClass61_3486.getFirst();
-           var1 != null; var1 = (DummyClass57) this.aClass61_3486.getNext()) {
-        var1.anInt2247 -= this.anInt3487;
-      }
-
-      this.anInt3488 -= this.anInt3487;
-      this.anInt3487 = 0;
-    }
-
-  }
-
-  final AudioStreamEncoder method411() {
-    return (AudioStreamEncoder) this.aClass61_3485.getFirst();
-  }
-
-  private final void method459(int var1) {
-    for (AudioStreamEncoder var2 = (AudioStreamEncoder) this.aClass61_3485.getFirst();
-         var2 != null; var2 = (AudioStreamEncoder) this.aClass61_3485.getNext()) {
-      var2.method415(var1);
-    }
-
-  }
-
-  private final void method460(int[] var1, int var2, int var3) {
-    for (AudioStreamEncoder var4 = (AudioStreamEncoder) this.aClass61_3485.getFirst();
-         var4 != null; var4 = (AudioStreamEncoder) this.aClass61_3485.getNext()) {
-      var4.method410(var1, var2, var3);
-    }
-
-  }
-
-  final synchronized void method461(AudioStreamEncoder var1) {
-    var1.unlinkNode();
-  }
-
-  final int method409() {
-    return 0;
+  final AudioStreamEncoder method414() {
+    return (AudioStreamEncoder) this.aClass61_3485.getNext();
   }
 
   final synchronized void method415(int var1) {
@@ -128,10 +132,6 @@ final class AudioStreamEncoder2 extends AudioStreamEncoder {
       }
     } while (var1 != 0);
 
-  }
-
-  final AudioStreamEncoder method414() {
-    return (AudioStreamEncoder) this.aClass61_3485.getNext();
   }
 
   private final void method462(Node var1, DummyClass57 var2) {

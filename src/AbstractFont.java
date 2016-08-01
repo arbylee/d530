@@ -79,100 +79,6 @@ abstract class AbstractFont extends SubNode {
     this.parseConfig(var1);
   }
 
-  static final GameString otherFormat(GameString var0) {
-    int var1 = var0.getLength();
-    int var2 = 0;
-
-    int var4;
-    for (int var3 = 0; var3 < var1; ++var3) {
-      var4 = var0.charAt(var3);
-      if (var4 == 60 || var4 == 62) {
-        var2 += 3;
-      }
-    }
-
-    GameString var6 = Cache.createString(var1 + var2);
-
-    for (var4 = 0; var4 < var1; ++var4) {
-      int var5 = var0.charAt(var4);
-      if (var5 == 60) {
-        var6.append(LT);
-      } else if (var5 == 62) {
-        var6.append(GT);
-      } else {
-        var6.method1572(var5, (byte) 115);
-      }
-    }
-
-    return var6;
-  }
-
-  public static void method689() {
-    aClass94_3712 = null;
-    aClass94_3711 = null;
-    aClass94_3732 = null;
-    aClass94_3714 = null;
-    aClass94_3729 = null;
-    aClass94_3718 = null;
-    aClass94_3741 = null;
-    aClass94_3743 = null;
-    aClass94_3739 = null;
-    aClass94_3737 = null;
-    LT = null;
-    GT = null;
-    aClass94_3725 = null;
-    aClass94_3720 = null;
-    aClass94_3715 = null;
-    aClass94_3731 = null;
-    aClass94_3716 = null;
-    aClass94_3728 = null;
-    aClass94_3735 = null;
-    aClass94_3713 = null;
-    aClass94_3738 = null;
-    aClass94_3724 = null;
-    aClass94_3717 = null;
-    aClass94_3744 = null;
-    aClass94_3742 = null;
-    aClass94_3745 = null;
-    aClass94Array3753 = null;
-  }
-
-  private static final int method694(byte[][] var0, byte[][] var1, int[] var2, int[] var3,
-                                     int[] var4, int var5, int var6) {
-    int var7 = var2[var5];
-    int var8 = var7 + var4[var5];
-    int var9 = var2[var6];
-    int var10 = var9 + var4[var6];
-    int var11 = var7;
-    if (var9 > var7) {
-      var11 = var9;
-    }
-
-    int var12 = var8;
-    if (var10 < var8) {
-      var12 = var10;
-    }
-
-    int var13 = var3[var5];
-    if (var3[var6] < var13) {
-      var13 = var3[var6];
-    }
-
-    byte[] var14 = var1[var5];
-    byte[] var15 = var0[var6];
-    int var16 = var11 - var7;
-    int var17 = var11 - var9;
-
-    for (int var18 = var11; var18 < var12; ++var18) {
-      int var19 = var14[var16++] + var15[var17++];
-      if (var19 < var13) {
-        var13 = var19;
-      }
-    }
-
-    return -var13;
-  }
-
   final int draw(GameString var1, int var2, int var3, int var4, int var5, int var6, int var7,
                  int var8, int var9, int var10) {
     return this.method693(var1, var2, var3, var4, var5, var6, var7, 256, var8, var9, var10);
@@ -249,18 +155,16 @@ abstract class AbstractFont extends SubNode {
                   var3 + this.anIntArray3730[var8] + 1, var14, var10, anInt3754, true);
               }
 
-              this
-                .method678(var8, var2 + this.anIntArray3719[var8], var3 + this.anIntArray3730[var8],
-                  var14, var10, anInt3755, false);
+              this.method678(var8, var2 + this.anIntArray3719[var8],
+                var3 + this.anIntArray3730[var8], var14, var10, anInt3755, false);
             } else {
               if (anInt3754 != -1) {
                 this.method679(var8, var2 + this.anIntArray3719[var8] + 1,
                   var3 + this.anIntArray3730[var8] + 1, var14, var10, anInt3754, anInt3750, true);
               }
 
-              this
-                .method679(var8, var2 + this.anIntArray3719[var8], var3 + this.anIntArray3730[var8],
-                  var14, var10, anInt3755, anInt3750, false);
+              this.method679(var8, var2 + this.anIntArray3719[var8],
+                var3 + this.anIntArray3730[var8], var14, var10, anInt3755, anInt3750, false);
             }
           } else if (anInt3756 > 0) {
             anInt3748 += anInt3756;
@@ -271,11 +175,11 @@ abstract class AbstractFont extends SubNode {
           int var11 = this.anIntArray3736[var8];
           if (anInt3746 != -1) {
             if (GlRenderer.useOpenGlRenderer) {
-              GlUtils
-                .drawHorizontalLine(var2, var3 + (int) ((double) this.anInt3727 * 0.7D), var11, anInt3746);
+              GlUtils.drawHorizontalLine(var2, var3 + (int) ((double) this.anInt3727 * 0.7D), var11,
+                anInt3746);
             } else {
-              DummyClass47
-                .method1317(var2, var3 + (int) ((double) this.anInt3727 * 0.7D), var11, anInt3746);
+              DummyClass47.method1317(var2, var3 + (int) ((double) this.anInt3727 * 0.7D), var11,
+                anInt3746);
             }
           }
 
@@ -1046,11 +950,11 @@ abstract class AbstractFont extends SubNode {
           int var16 = this.anIntArray3736[var11];
           if (anInt3746 != -1) {
             if (GlRenderer.useOpenGlRenderer) {
-              GlUtils
-                .drawHorizontalLine(var2, var3 + (int) ((double) this.anInt3727 * 0.7D), var16, anInt3746);
+              GlUtils.drawHorizontalLine(var2, var3 + (int) ((double) this.anInt3727 * 0.7D), var16,
+                anInt3746);
             } else {
-              DummyClass47
-                .method1317(var2, var3 + (int) ((double) this.anInt3727 * 0.7D), var16, anInt3746);
+              DummyClass47.method1317(var2, var3 + (int) ((double) this.anInt3727 * 0.7D), var16,
+                anInt3746);
             }
           }
 
@@ -1068,6 +972,100 @@ abstract class AbstractFont extends SubNode {
       }
     }
 
+  }
+
+  static final GameString otherFormat(GameString var0) {
+    int var1 = var0.getLength();
+    int var2 = 0;
+
+    int var4;
+    for (int var3 = 0; var3 < var1; ++var3) {
+      var4 = var0.charAt(var3);
+      if (var4 == 60 || var4 == 62) {
+        var2 += 3;
+      }
+    }
+
+    GameString var6 = Cache.createString(var1 + var2);
+
+    for (var4 = 0; var4 < var1; ++var4) {
+      int var5 = var0.charAt(var4);
+      if (var5 == 60) {
+        var6.append(LT);
+      } else if (var5 == 62) {
+        var6.append(GT);
+      } else {
+        var6.method1572(var5, (byte) 115);
+      }
+    }
+
+    return var6;
+  }
+
+  public static void method689() {
+    aClass94_3712 = null;
+    aClass94_3711 = null;
+    aClass94_3732 = null;
+    aClass94_3714 = null;
+    aClass94_3729 = null;
+    aClass94_3718 = null;
+    aClass94_3741 = null;
+    aClass94_3743 = null;
+    aClass94_3739 = null;
+    aClass94_3737 = null;
+    LT = null;
+    GT = null;
+    aClass94_3725 = null;
+    aClass94_3720 = null;
+    aClass94_3715 = null;
+    aClass94_3731 = null;
+    aClass94_3716 = null;
+    aClass94_3728 = null;
+    aClass94_3735 = null;
+    aClass94_3713 = null;
+    aClass94_3738 = null;
+    aClass94_3724 = null;
+    aClass94_3717 = null;
+    aClass94_3744 = null;
+    aClass94_3742 = null;
+    aClass94_3745 = null;
+    aClass94Array3753 = null;
+  }
+
+  private static final int method694(byte[][] var0, byte[][] var1, int[] var2, int[] var3,
+                                     int[] var4, int var5, int var6) {
+    int var7 = var2[var5];
+    int var8 = var7 + var4[var5];
+    int var9 = var2[var6];
+    int var10 = var9 + var4[var6];
+    int var11 = var7;
+    if (var9 > var7) {
+      var11 = var9;
+    }
+
+    int var12 = var8;
+    if (var10 < var8) {
+      var12 = var10;
+    }
+
+    int var13 = var3[var5];
+    if (var3[var6] < var13) {
+      var13 = var3[var6];
+    }
+
+    byte[] var14 = var1[var5];
+    byte[] var15 = var0[var6];
+    int var16 = var11 - var7;
+    int var17 = var11 - var9;
+
+    for (int var18 = var11; var18 < var12; ++var18) {
+      int var19 = var14[var16++] + var15[var17++];
+      if (var19 < var13) {
+        var13 = var19;
+      }
+    }
+
+    return -var13;
   }
 
 }

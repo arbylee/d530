@@ -2,14 +2,14 @@ import java.util.Random;
 
 final class TextureSampler28 extends AbstractTextureSampler {
 
+  private static GameString aClass94_3306 =
+    SpawnedGameObject.createString(" is already on your ignore list)3");
   static GameString aClass94_3302 = SpawnedGameObject.createString("Connexion perdue)3");
   static FileUnpacker fileUnpacker10;
   static int loginState = 0;
   static GameString aClass94_3307 = SpawnedGameObject.createString("<col=00ff80>");
   static int anInt3313 = 500;
   static int anInt3315;
-  private static GameString aClass94_3306 =
-    SpawnedGameObject.createString(" is already on your ignore list)3");
   static GameString aClass94_3311 = aClass94_3306;
   private int anInt3299 = 1024;
   private int anInt3300 = 1024;
@@ -25,52 +25,6 @@ final class TextureSampler28 extends AbstractTextureSampler {
 
   public TextureSampler28() {
     super(0, true);
-  }
-
-  public static void method290(int var0) {
-    try {
-      aClass94_3307 = null;
-      aClass94_3302 = null;
-      if (var0 == -9) {
-        fileUnpacker10 = null;
-        aClass94_3306 = null;
-        aClass94_3311 = null;
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "ol.F(" + var0 + ')');
-    }
-  }
-
-  static final boolean method292(int var0, int var1, int var2, int var3, SceneNode var4, int var5,
-                                 long var6, int var8, int var9, int var10, int var11) {
-    return var4 == null ?
-      true :
-      DummyClass42
-        .addNodeToSceneGraph(var0, var8, var9, var10 - var8 + 1, var11 - var9 + 1, var1, var2, var3,
-          var4, var5, true, var6);
-  }
-
-  static final int method293(int var0, int var1, boolean var2, int var3) {
-    try {
-      var1 &= 3;
-      return var2 ?
-        120 :
-        (0 == var1 ? var3 : (1 != var1 ? (-3 != ~var1 ? var0 : -var3 + 1023) : -var0 + 1023));
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ol.E(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final void method158(int var1) {
-    try {
-      if (var1 != 16251) {
-        this.parseConfig(-7, null, true);
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "ol.P(" + var1 + ')');
-    }
   }
 
   final int[] method154(int var1, byte var2) {
@@ -254,6 +208,61 @@ final class TextureSampler28 extends AbstractTextureSampler {
     }
   }
 
+  final void parseConfig(int var1, Buffer var2, boolean var3) {
+    try {
+      if (!var3) {
+        this.anInt3301 = 4;
+      }
+
+      if (~var1 != -1) {
+        if (var1 == 1) {
+          this.anInt3300 = var2.readUnsignedShort();
+        } else if (2 != var1) {
+          if (var1 != 3) {
+            if (-5 == ~var1) {
+              this.anInt3301 = var2.readUnsignedShort();
+            } else if (var1 != 5) {
+              if (-7 != ~var1) {
+                if (-8 != ~var1) {
+                  if (~var1 == -9) {
+                    this.anInt3316 = var2.readUnsignedShort();
+                  }
+                } else {
+                  this.anInt3299 = var2.readUnsignedShort();
+                }
+              } else {
+                this.anInt3309 = var2.readUnsignedByte();
+              }
+            } else {
+              this.anInt3303 = var2.readUnsignedShort();
+            }
+          } else {
+            this.anInt3310 = var2.readUnsignedShort();
+          }
+        } else {
+          this.anInt3308 = var2.readUnsignedShort();
+        }
+      } else {
+        this.anInt3312 = var2.readUnsignedByte();
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "ol.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
+  final void method158(int var1) {
+    try {
+      if (var1 != 16251) {
+        this.parseConfig(-7, null, true);
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "ol.P(" + var1 + ')');
+    }
+  }
+
   private final void method291(int var1, Random var2, int var3, int var4, byte var5, int var6,
                                int[][] var7) {
     try {
@@ -300,9 +309,8 @@ final class TextureSampler28 extends AbstractTextureSampler {
                 for (var20 = 0; ~var13 < ~var20; ++var20) {
                   var21 = var20 * var8 / var13;
                   var18[ClientScript.bitAnd(RenderAnimation.anInt396, var20 + var3)] =
-                    var18[ClientScript
-                      .bitAnd(-1 + var4 + var3 + -var20, RenderAnimation.anInt396)] =
-                      var21 * var19 >> 12;
+                    var18[ClientScript.bitAnd(-1 + var4 + var3 + -var20,
+                      RenderAnimation.anInt396)] = var21 * var19 >> 12;
                 }
               }
 
@@ -318,9 +326,8 @@ final class TextureSampler28 extends AbstractTextureSampler {
               if (~var19 <= ~var14) {
                 for (var20 = 0; var13 > var20; ++var20) {
                   var18[ClientScript.bitAnd(RenderAnimation.anInt396, var3 + var20)] =
-                    var18[ClientScript
-                      .bitAnd(-1 + -var20 + var3 - -var4, RenderAnimation.anInt396)] =
-                      var8 * var20 / var13;
+                    var18[ClientScript.bitAnd(-1 + -var20 + var3 - -var4,
+                      RenderAnimation.anInt396)] = var8 * var20 / var13;
                 }
 
                 if (~(var15 - -var16) < ~SomethingLight0.anInt1559) {
@@ -337,17 +344,15 @@ final class TextureSampler28 extends AbstractTextureSampler {
                   for (var21 = 0; var13 > var21; ++var21) {
                     var22 = var8 * var21 / var13;
                     var18[ClientScript.bitAnd(RenderAnimation.anInt396, var3 - -var21)] =
-                      var18[ClientScript
-                        .bitAnd(RenderAnimation.anInt396, -1 + var3 - (-var4 + var21))] =
-                        var22 * var20 >> 12;
+                      var18[ClientScript.bitAnd(RenderAnimation.anInt396,
+                        -1 + var3 - (-var4 + var21))] = var22 * var20 >> 12;
                   }
                 } else {
                   for (var21 = 0; ~var13 < ~var21; ++var21) {
                     var22 = var21 * var8 / var13;
                     var18[ClientScript.bitAnd(var3 - -var21, RenderAnimation.anInt396)] =
-                      var18[ClientScript
-                        .bitAnd(-1 + -var21 + var4 + var3, RenderAnimation.anInt396)] =
-                        ~var20 >= ~var22 ? var20 : var22;
+                      var18[ClientScript.bitAnd(-1 + -var21 + var4 + var3,
+                        RenderAnimation.anInt396)] = ~var20 >= ~var22 ? var20 : var22;
                   }
                 }
 
@@ -383,47 +388,37 @@ final class TextureSampler28 extends AbstractTextureSampler {
     }
   }
 
-  final void parseConfig(int var1, Buffer var2, boolean var3) {
+  public static void method290(int var0) {
     try {
-      if (!var3) {
-        this.anInt3301 = 4;
+      aClass94_3307 = null;
+      aClass94_3302 = null;
+      if (var0 == -9) {
+        fileUnpacker10 = null;
+        aClass94_3306 = null;
+        aClass94_3311 = null;
       }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "ol.F(" + var0 + ')');
+    }
+  }
 
-      if (~var1 != -1) {
-        if (var1 == 1) {
-          this.anInt3300 = var2.readUnsignedShort();
-        } else if (2 != var1) {
-          if (var1 != 3) {
-            if (-5 == ~var1) {
-              this.anInt3301 = var2.readUnsignedShort();
-            } else if (var1 != 5) {
-              if (-7 != ~var1) {
-                if (-8 != ~var1) {
-                  if (~var1 == -9) {
-                    this.anInt3316 = var2.readUnsignedShort();
-                  }
-                } else {
-                  this.anInt3299 = var2.readUnsignedShort();
-                }
-              } else {
-                this.anInt3309 = var2.readUnsignedByte();
-              }
-            } else {
-              this.anInt3303 = var2.readUnsignedShort();
-            }
-          } else {
-            this.anInt3310 = var2.readUnsignedShort();
-          }
-        } else {
-          this.anInt3308 = var2.readUnsignedShort();
-        }
-      } else {
-        this.anInt3312 = var2.readUnsignedByte();
-      }
+  static final boolean method292(int var0, int var1, int var2, int var3, SceneNode var4, int var5,
+                                 long var6, int var8, int var9, int var10, int var11) {
+    return var4 == null ?
+      true :
+      DummyClass42.addNodeToSceneGraph(var0, var8, var9, var10 - var8 + 1, var11 - var9 + 1, var1,
+        var2, var3, var4, var5, true, var6);
+  }
 
+  static final int method293(int var0, int var1, boolean var2, int var3) {
+    try {
+      var1 &= 3;
+      return var2 ?
+        120 :
+        (0 == var1 ? var3 : (1 != var1 ? (-3 != ~var1 ? var0 : -var3 + 1023) : -var0 + 1023));
     } catch (RuntimeException var5) {
       throw AbstractGameWorld.cascadeException(var5,
-        "ol.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+        "ol.E(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 

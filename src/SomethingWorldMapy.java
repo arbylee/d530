@@ -40,6 +40,66 @@ final class SomethingWorldMapy extends SubNode {
     }
   }
 
+  final boolean method537(int var1, byte var2, int var3) {
+    try {
+      if (~this.anInt3555 >= ~var3 && var3 <= this.anInt3559 && var1 >= this.anInt3562
+        && var1 <= this.anInt3549) {
+        for (SomethingWorldMappy var4 = (SomethingWorldMappy) this.aClass61_3560.getFirst();
+             var4 != null; var4 = (SomethingWorldMappy) this.aClass61_3560.getNext()) {
+          if (var4.method393((byte) -45, var1, var3)) {
+            return true;
+          }
+        }
+
+        if (var2 != 97) {
+          method544(-51, 82);
+        }
+
+        return false;
+      } else {
+        return false;
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "bn.B(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final void method538(byte var1) {
+    try {
+      this.anInt3562 = 12800;
+      this.anInt3559 = 0;
+      if (var1 != 103) {
+        aClass11_3551 = null;
+      }
+
+      this.anInt3549 = 0;
+      this.anInt3555 = 12800;
+
+      for (SomethingWorldMappy var2 = (SomethingWorldMappy) this.aClass61_3560.getFirst();
+           null != var2; var2 = (SomethingWorldMappy) this.aClass61_3560.getNext()) {
+        if (~var2.anInt2494 > ~this.anInt3562) {
+          this.anInt3562 = var2.anInt2494;
+        }
+
+        if (~var2.anInt2492 > ~this.anInt3555) {
+          this.anInt3555 = var2.anInt2492;
+        }
+
+        if (var2.anInt2495 > this.anInt3559) {
+          this.anInt3559 = var2.anInt2495;
+        }
+
+        if (this.anInt3549 < var2.anInt2497) {
+          this.anInt3549 = var2.anInt2497;
+        }
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "bn.F(" + var1 + ')');
+    }
+  }
+
   static final void method539(int var0, int var1) {
     try {
       if (var0 != 0) {
@@ -66,8 +126,8 @@ final class SomethingWorldMapy extends SubNode {
         return var3;
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "bn.P(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "bn.P(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -145,8 +205,8 @@ final class SomethingWorldMapy extends SubNode {
         return var4 / 8 + var3 / 16 - -(var5 / 4);
       }
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "bn.A(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "bn.A(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -155,66 +215,6 @@ final class SomethingWorldMapy extends SubNode {
       return var0 != -49 ? true : -49 >= ~var1 && 57 >= var1;
     } catch (RuntimeException var3) {
       throw AbstractGameWorld.cascadeException(var3, "bn.E(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  final boolean method537(int var1, byte var2, int var3) {
-    try {
-      if (~this.anInt3555 >= ~var3 && var3 <= this.anInt3559 && var1 >= this.anInt3562
-        && var1 <= this.anInt3549) {
-        for (SomethingWorldMappy var4 = (SomethingWorldMappy) this.aClass61_3560.getFirst();
-             var4 != null; var4 = (SomethingWorldMappy) this.aClass61_3560.getNext()) {
-          if (var4.method393((byte) -45, var1, var3)) {
-            return true;
-          }
-        }
-
-        if (var2 != 97) {
-          method544(-51, 82);
-        }
-
-        return false;
-      } else {
-        return false;
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "bn.B(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final void method538(byte var1) {
-    try {
-      this.anInt3562 = 12800;
-      this.anInt3559 = 0;
-      if (var1 != 103) {
-        aClass11_3551 = null;
-      }
-
-      this.anInt3549 = 0;
-      this.anInt3555 = 12800;
-
-      for (SomethingWorldMappy var2 = (SomethingWorldMappy) this.aClass61_3560.getFirst();
-           null != var2; var2 = (SomethingWorldMappy) this.aClass61_3560.getNext()) {
-        if (~var2.anInt2494 > ~this.anInt3562) {
-          this.anInt3562 = var2.anInt2494;
-        }
-
-        if (~var2.anInt2492 > ~this.anInt3555) {
-          this.anInt3555 = var2.anInt2492;
-        }
-
-        if (var2.anInt2495 > this.anInt3559) {
-          this.anInt3559 = var2.anInt2495;
-        }
-
-        if (this.anInt3549 < var2.anInt2497) {
-          this.anInt3549 = var2.anInt2497;
-        }
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "bn.F(" + var1 + ')');
     }
   }
 

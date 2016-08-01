@@ -2,26 +2,52 @@ import java.awt.Frame;
 
 final class FileCacheRequest extends AbstractFileRequest {
 
+  private static GameString aClass94_4055 = SpawnedGameObject.createString(" has logged in)3");
   static int anInt4054;
   static GameString aClass94_4057 = SpawnedGameObject.createString("Mem:");
   static SceneSomething[] aClass25Array4060;
   static int anInt4062 = 0;
   static boolean aBoolean4063 = false;
-  private static GameString aClass94_4055 = SpawnedGameObject.createString(" has logged in)3");
   static GameString aClass94_4058 = aClass94_4055;
   FileCache aClass41_4056;
   byte[] aByteArray4059;
   int anInt4061;
+
+  final int method586(boolean var1) {
+    try {
+      if (var1) {
+        this.aClass41_4056 = null;
+      }
+
+      return this.aBoolean3632 ? 0 : 100;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "c.A(" + var1 + ')');
+    }
+  }
+
+  final byte[] method587(boolean var1) {
+    try {
+      if (var1) {
+        aBoolean4063 = true;
+      }
+
+      if (!this.aBoolean3632) {
+        return this.aByteArray4059;
+      } else {
+        throw new RuntimeException();
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "c.E(" + var1 + ')');
+    }
+  }
 
   static final boolean hasKeyInput() {
     try {
       Keyboard var1 = TextureSampler33.keyboard;
       synchronized (var1) {
         if (~DummyClass21.anInt1762 != ~Parameter.anInt3620) {
-          Parameter.anInt3624 =
-            AbstractFrameRegulator.keyQueue[Parameter.anInt3620];
-          TextureSampler7.anInt3342 =
-            AbstractAudioOutputStream.otherKeyQueue[Parameter.anInt3620];
+          Parameter.anInt3624 = AbstractFrameRegulator.keyQueue[Parameter.anInt3620];
+          TextureSampler7.anInt3342 = AbstractAudioOutputStream.otherKeyQueue[Parameter.anInt3620];
           Parameter.anInt3620 = 1 + Parameter.anInt3620 & 127;
           return true;
         } else {
@@ -95,34 +121,6 @@ final class FileCacheRequest extends AbstractFileRequest {
       }
     } catch (RuntimeException var3) {
       throw AbstractGameWorld.cascadeException(var3, "c.O(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  final byte[] method587(boolean var1) {
-    try {
-      if (var1) {
-        aBoolean4063 = true;
-      }
-
-      if (!this.aBoolean3632) {
-        return this.aByteArray4059;
-      } else {
-        throw new RuntimeException();
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "c.E(" + var1 + ')');
-    }
-  }
-
-  final int method586(boolean var1) {
-    try {
-      if (var1) {
-        this.aClass41_4056 = null;
-      }
-
-      return this.aBoolean3632 ? 0 : 100;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "c.A(" + var1 + ')');
     }
   }
 

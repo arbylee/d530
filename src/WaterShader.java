@@ -53,19 +53,11 @@ final class WaterShader implements MaterialShader {
     }
   }
 
-  public static void method1748() {
-    aFloatArray2185 = null;
-  }
-
   public final void disable() {
     if (this.anInt2186 >= 0) {
       GL var1 = GlRenderer.gl;
       var1.glCallList(this.anInt2186 + 1);
     }
-  }
-
-  public final int method24() {
-    return 0;
   }
 
   public final void enable() {
@@ -108,6 +100,40 @@ final class WaterShader implements MaterialShader {
     }
   }
 
+  public final void set(int var1) {
+    if (this.anInt2186 >= 0) {
+      GL var2 = GlRenderer.gl;
+      var2.glActiveTexture('\u84c1');
+      if ((var1 & 128) == 0) {
+        var2.glEnable(SomethingGl.aBoolean1227 ? '\u806f' : 3553);
+      } else {
+        var2.glDisable(SomethingGl.aBoolean1227 ? '\u806f' : 3553);
+      }
+
+      var2.glActiveTexture('\u84c0');
+      if ((var1 & 64) == 0) {
+        var2.glGetFloatv(2899, aFloatArray2185, 0);
+        var2.glProgramLocalParameter4fvARB('\u8620', 66, aFloatArray2185, 0);
+      } else {
+        var2.glProgramLocalParameter4fARB('\u8620', 66, 1.0F, 1.0F, 1.0F, 1.0F);
+      }
+
+      int var3 = var1 & 3;
+      if (var3 == 2) {
+        var2.glProgramLocalParameter4fARB('\u8620', 64, 0.05F, 1.0F, 1.0F, 1.0F);
+      } else if (var3 == 3) {
+        var2.glProgramLocalParameter4fARB('\u8620', 64, 0.1F, 1.0F, 1.0F, 1.0F);
+      } else {
+        var2.glProgramLocalParameter4fARB('\u8620', 64, 0.025F, 1.0F, 1.0F, 1.0F);
+      }
+
+    }
+  }
+
+  public final int method24() {
+    return 0;
+  }
+
   private final void method1749() {
     GL var1 = GlRenderer.gl;
     this.anInt2186 = var1.glGenLists(2);
@@ -147,8 +173,7 @@ final class WaterShader implements MaterialShader {
       var1.glBindProgramARB('\u8620', this.anInt2184);
       var1.glProgramStringARB('\u8620', '\u8875',
         ("!!ARBvp1.0\nATTRIB  iPos         = vertex.position;\n"
-          + "ATTRIB  iColour      = vertex.color;\n"
-          + "OUTPUT  oPos         = result.position;\n"
+          + "ATTRIB  iColour      = vertex.color;\n" + "OUTPUT  oPos         = result.position;\n"
           + "OUTPUT  oColour      = result.color;\n"
           + "OUTPUT  oTexCoord0   = result.texcoord[0];\n"
           + "OUTPUT  oTexCoord1   = result.texcoord[1];\n"
@@ -168,27 +193,16 @@ final class WaterShader implements MaterialShader {
           + "DP4   worldPos.z, ivMatrix[2], viewPos;\n"
           + "DP4   worldPos.w, ivMatrix[3], viewPos;\n"
           + "ADD   noise.x, worldPos.x, worldPos.z;SUB   noise.y, worldPos.z, worldPos.x;MUL   noise, noise, 0.0001220703125;\n"
-          + "FRC   noise, noise;\n"
-          + "MUL   noise, noise, 64;\n"
-          + "ARL   noiseAddr.x, noise.x;\n"
-          + "MOV   noise.x, fNoise[noiseAddr.x].x;\n"
-          + "ARL   noiseAddr.x, noise.y;\n"
-          + "MOV   noise.y, fNoise[noiseAddr.x].y;\n"
-          + "MUL   noise, noise, turbulence.x;\n"
-          + "MAD   oTexCoord0, worldPos.xzww, 0.0078125, noise;\n"
-          + "MOV   oTexCoord0.w, 1;\n"
+          + "FRC   noise, noise;\n" + "MUL   noise, noise, 64;\n" + "ARL   noiseAddr.x, noise.x;\n"
+          + "MOV   noise.x, fNoise[noiseAddr.x].x;\n" + "ARL   noiseAddr.x, noise.y;\n"
+          + "MOV   noise.y, fNoise[noiseAddr.x].y;\n" + "MUL   noise, noise, turbulence.x;\n"
+          + "MAD   oTexCoord0, worldPos.xzww, 0.0078125, noise;\n" + "MOV   oTexCoord0.w, 1;\n"
           + "MUL   oTexCoord1.xy, worldPos.xzww, 0.0009765625;\n"
-          + "MOV   oTexCoord1.zw, time.xxxw;\n"
-          + "DP4   clipPos.x, pMatrix[0], viewPos;\n"
-          + "DP4   clipPos.y, pMatrix[1], viewPos;\n"
-          + "DP4   clipPos.z, pMatrix[2], viewPos;\n"
+          + "MOV   oTexCoord1.zw, time.xxxw;\n" + "DP4   clipPos.x, pMatrix[0], viewPos;\n"
+          + "DP4   clipPos.y, pMatrix[1], viewPos;\n" + "DP4   clipPos.z, pMatrix[2], viewPos;\n"
           + "DP4   clipPos.w, pMatrix[3], viewPos;\n"
-          + "MUL   oColour.xyz, iColour, lightAmbient;\n"
-          + "MOV   oColour.w, 1;\n"
-          + "MOV   oFogCoord.x, clipPos.z;\n"
-          + "MOV   oPos, clipPos; \n"
-          + "END")
-          .length(),
+          + "MUL   oColour.xyz, iColour, lightAmbient;\n" + "MOV   oColour.w, 1;\n"
+          + "MOV   oFogCoord.x, clipPos.z;\n" + "MOV   oPos, clipPos; \n" + "END").length(),
         "!!ARBvp1.0\nATTRIB  iPos         = vertex.position;\nATTRIB  iColour      = vertex.color;\nOUTPUT  oPos         = result.position;\nOUTPUT  oColour      = result.color;\nOUTPUT  oTexCoord0   = result.texcoord[0];\nOUTPUT  oTexCoord1   = result.texcoord[1];\nOUTPUT  oFogCoord    = result.fogcoord;\nPARAM   time         = program.local[65];\nPARAM   turbulence   = program.local[64];\nPARAM   lightAmbient = program.local[66]; \nPARAM   pMatrix[4]   = { state.matrix.projection };\nPARAM   mvMatrix[4]  = { state.matrix.modelview };\nPARAM   ivMatrix[4]  = { state.matrix.texture[1] };\nPARAM   fNoise[64]   = { program.local[0..63] };\nTEMP    noise, clipPos, viewPos, worldPos;\nADDRESS noiseAddr;\nDP4   viewPos.x, mvMatrix[0], iPos;\nDP4   viewPos.y, mvMatrix[1], iPos;\nDP4   viewPos.z, mvMatrix[2], iPos;\nDP4   viewPos.w, mvMatrix[3], iPos;\nDP4   worldPos.x, ivMatrix[0], viewPos;\nDP4   worldPos.y, ivMatrix[1], viewPos;\nDP4   worldPos.z, ivMatrix[2], viewPos;\nDP4   worldPos.w, ivMatrix[3], viewPos;\nADD   noise.x, worldPos.x, worldPos.z;SUB   noise.y, worldPos.z, worldPos.x;MUL   noise, noise, 0.0001220703125;\nFRC   noise, noise;\nMUL   noise, noise, 64;\nARL   noiseAddr.x, noise.x;\nMOV   noise.x, fNoise[noiseAddr.x].x;\nARL   noiseAddr.x, noise.y;\nMOV   noise.y, fNoise[noiseAddr.x].y;\nMUL   noise, noise, turbulence.x;\nMAD   oTexCoord0, worldPos.xzww, 0.0078125, noise;\nMOV   oTexCoord0.w, 1;\nMUL   oTexCoord1.xy, worldPos.xzww, 0.0009765625;\nMOV   oTexCoord1.zw, time.xxxw;\nDP4   clipPos.x, pMatrix[0], viewPos;\nDP4   clipPos.y, pMatrix[1], viewPos;\nDP4   clipPos.z, pMatrix[2], viewPos;\nDP4   clipPos.w, pMatrix[3], viewPos;\nMUL   oColour.xyz, iColour, lightAmbient;\nMOV   oColour.w, 1;\nMOV   oFogCoord.x, clipPos.z;\nMOV   oPos, clipPos; \nEND");
       var1.glGetIntegerv('\u864b', var2, 0);
       if (var2[0] != -1) {
@@ -198,34 +212,8 @@ final class WaterShader implements MaterialShader {
 
   }
 
-  public final void set(int var1) {
-    if (this.anInt2186 >= 0) {
-      GL var2 = GlRenderer.gl;
-      var2.glActiveTexture('\u84c1');
-      if ((var1 & 128) == 0) {
-        var2.glEnable(SomethingGl.aBoolean1227 ? '\u806f' : 3553);
-      } else {
-        var2.glDisable(SomethingGl.aBoolean1227 ? '\u806f' : 3553);
-      }
-
-      var2.glActiveTexture('\u84c0');
-      if ((var1 & 64) == 0) {
-        var2.glGetFloatv(2899, aFloatArray2185, 0);
-        var2.glProgramLocalParameter4fvARB('\u8620', 66, aFloatArray2185, 0);
-      } else {
-        var2.glProgramLocalParameter4fARB('\u8620', 66, 1.0F, 1.0F, 1.0F, 1.0F);
-      }
-
-      int var3 = var1 & 3;
-      if (var3 == 2) {
-        var2.glProgramLocalParameter4fARB('\u8620', 64, 0.05F, 1.0F, 1.0F, 1.0F);
-      } else if (var3 == 3) {
-        var2.glProgramLocalParameter4fARB('\u8620', 64, 0.1F, 1.0F, 1.0F, 1.0F);
-      } else {
-        var2.glProgramLocalParameter4fARB('\u8620', 64, 0.025F, 1.0F, 1.0F, 1.0F);
-      }
-
-    }
+  public static void method1748() {
+    aFloatArray2185 = null;
   }
 
 }

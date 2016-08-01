@@ -70,8 +70,8 @@ final class ClientScriptCall extends Node {
         if (var1 < 126) {
           return null;
         } else {
-          byte[] var3 = DummyClass55.aClass153_1420
-            .getBytes(GroundItem.method2032(var0, 5439488), Something3dRoot.method2234(var0, -127));
+          byte[] var3 = DummyClass55.aClass153_1420.getBytes(GroundItem.method2032(var0, 5439488),
+            Something3dRoot.method2234(var0, -127));
           var2 = new BitVariable();
           if (var3 != null) {
             var2.method1387(new Buffer(var3), -111);
@@ -97,8 +97,8 @@ final class ClientScriptCall extends Node {
       if (100 <= AbstractFileRequest.anInt3631) {
         NPC.anInt3995 = 64 + ComponentCanvas.anInt30 * 128;
         DummyClass49.anInt1111 = 64 + AbstractMouseWheel.anInt1904 * 128;
-        EnumStringFetcher.anInt2162 = BufferData
-          .method1736(GameWorldSomething.currentPlane, var0 + -1023, NPC.anInt3995,
+        EnumStringFetcher.anInt2162 =
+          BufferData.method1736(GameWorldSomething.currentPlane, var0 + -1023, NPC.anInt3995,
             DummyClass49.anInt1111) + -TextureSampler25.anInt3414;
       } else {
         if (NPC.anInt3995 < var1) {

@@ -1,15 +1,24 @@
 final class GameWorld extends AbstractGameWorld {
 
+  private static GameString aClass94_2619 = SpawnedGameObject.createString("Loaded update list");
   static int anInt2622 = 0;
   static boolean aBoolean2623 = true;
   static int deltaTime = 20;
   static AbstractAudioOutputStream audioOutputStream0;
   static GameString aClass94_2628 = SpawnedGameObject.createString("Stufe: ");
-  private static GameString aClass94_2619 = SpawnedGameObject.createString("Loaded update list");
   static GameString aClass94_2624 = aClass94_2619;
   GameString aClass94_2620;
   int anInt2621;
   GameString aClass94_2625;
+
+  final GameWorldSomething method1078(int var1) {
+    try {
+      int var2 = -35 / ((var1 - 0) / 56);
+      return DummyClass25.aClass26Array1627[this.anInt721];
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "ba.B(" + var1 + ')');
+    }
+  }
 
   static final void method1076(int var0) {
     try {
@@ -40,8 +49,7 @@ final class GameWorld extends AbstractGameWorld {
       if (0 > var0) {
         return 0;
       } else {
-        Inventory var2 =
-          (Inventory) SceneGraphTile.aClass130_2220.get((long) var0);
+        Inventory var2 = (Inventory) SceneGraphTile.aClass130_2220.get((long) var0);
         if (var2 == null) {
           return BufferObject.method2069(var0, -126).size;
         } else if (var1 > -56) {
@@ -61,15 +69,6 @@ final class GameWorld extends AbstractGameWorld {
       }
     } catch (RuntimeException var5) {
       throw AbstractGameWorld.cascadeException(var5, "ba.D(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  final GameWorldSomething method1078(int var1) {
-    try {
-      int var2 = -35 / ((var1 - 0) / 56);
-      return DummyClass25.aClass26Array1627[this.anInt721];
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "ba.B(" + var1 + ')');
     }
   }
 

@@ -14,11 +14,87 @@ final class Cache {
   Cache(int size) {
     try {
       int tableSize = 1;
-      for (this.capacity = size; tableSize + tableSize < size; tableSize += tableSize) {}
+      for (this.capacity = size; tableSize + tableSize < size; tableSize += tableSize) {
+      }
       this.size = size;
       this.table = new HashTable(tableSize);
     } catch (RuntimeException var3) {
       throw AbstractGameWorld.cascadeException(var3, "gn.<init>(" + size + ')');
+    }
+  }
+
+  final SubNode get(long var1, int var3) {
+    try {
+      if (var3 != 1400) {
+        this.capacity = -79;
+      }
+
+      SubNode var4 = (SubNode) this.table.get(var1);
+      if (null != var4) {
+        this.queue.addLast(var4);
+      }
+
+      return var4;
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5, "gn.N(" + var1 + ',' + var3 + ')');
+    }
+  }
+
+  final Node method1094(int var1) {
+    try {
+      return var1 != 0 ? null : this.table.getFirst(38);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "gn.A(" + var1 + ')');
+    }
+  }
+
+  final void put(long var2, SubNode var1) {
+    try {
+      if (-1 == ~this.capacity) {
+        SubNode var5 = this.queue.poll();
+        var5.unlinkNode();
+        var5.unlinkSubNode();
+        if (this.aClass3_Sub28_744 == var5) {
+          var5 = this.queue.poll();
+          var5.unlinkNode();
+          var5.unlinkSubNode();
+        }
+      } else {
+        --this.capacity;
+      }
+
+      this.table.put(var2, var1);
+      this.queue.addLast(var1);
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "gn.L(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+    }
+  }
+
+  final Node method1099(int var1) {
+    try {
+      if (var1 != -1) {
+        aClass93_743 = null;
+      }
+
+      return this.table.getNext(-119);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "gn.F(" + var1 + ')');
+    }
+  }
+
+  final void method1101(int var1) {
+    try {
+      this.queue.clear();
+      this.table.clear(-112);
+      this.aClass3_Sub28_744 = new SubNode();
+      if (var1 != 2) {
+        this.get(-36L, 52);
+      }
+
+      this.capacity = this.size;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "gn.E(" + var1 + ')');
     }
   }
 
@@ -166,8 +242,8 @@ final class Cache {
     }
   }
 
-  static final void method1095(int x, int var1, int var2, Widget[] var3, int width, int var5,
-                               int y, int height, byte var8, int var9) {
+  static final void method1095(int x, int var1, int var2, Widget[] var3, int width, int var5, int y,
+                               int height, byte var8, int var9) {
     try {
       if (GlRenderer.useOpenGlRenderer) {
         GlUtils.clip(x, y, width, height);
@@ -184,7 +260,8 @@ final class Cache {
           if (0 != ~var9) {
             var12 = var9;
           } else {
-            AbstractAudioOutputStream.quadx0[SomethingWorldMapy.widgetQuads] = var2 + var11.anInt306;
+            AbstractAudioOutputStream.quadx0[SomethingWorldMapy.widgetQuads] =
+              var2 + var11.anInt306;
             Player.quady0[SomethingWorldMapy.widgetQuads] = var11.anInt210 - -var1;
             GlTexture2d.quadx1[SomethingWorldMapy.widgetQuads] = var11.anInt168;
             Mobile.quady1[SomethingWorldMapy.widgetQuads] = var11.anInt193;
@@ -336,12 +413,13 @@ final class Cache {
                   var28 = TextureCache.localPlayer.anInt2819 + var26 >> 7;
                   var29 = -var47 + TextureCache.localPlayer.anInt2829 >> 7;
                   if (SceneNode.aBoolean1837 && 0 != (Something3dRoot.anInt2051 & 64)) {
-                    Widget var53 = AbstractDirectColorSprite
-                      .method638((byte) -19, ScriptState.anInt872, Widget.anInt278);
+                    Widget var53 =
+                      AbstractDirectColorSprite.method638((byte) -19, ScriptState.anInt872,
+                        Widget.anInt278);
                     if (null != var53) {
                       ScriptState.method1177(BufferObject.anInt1887, 1L, (byte) -49,
-                        WorldMapLabel.aClass94_1724, var28, (short) 11,
-                        Parameter.aClass94_3621, var29);
+                        WorldMapLabel.aClass94_1724, var28, (short) 11, Parameter.aClass94_3621,
+                        var29);
                     } else {
                       SceneSomething.method958((byte) -91);
                     }
@@ -353,9 +431,8 @@ final class Cache {
                       (short) 36, GlTexture2d.aClass94_3762, var29);
                   }
 
-                  ScriptState
-                    .method1177(-1, 1L, (byte) -125, GroundItemNode.EMPTY_STRING, var28, (short) 60,
-                      TextureSampler32.walkTooltip, var29);
+                  ScriptState.method1177(-1, 1L, (byte) -125, GroundItemNode.EMPTY_STRING, var28,
+                    (short) 60, TextureSampler32.walkTooltip, var29);
                   continue;
                 }
 
@@ -456,12 +533,13 @@ final class Cache {
                   var29 = 10000 * var26 / var25;
                   var28 = var47 * 100 / var25;
                   GameString var55 = RenderAnimation.concat(new GameString[] {
-                    DummyClass29.aClass94_436, SomethingOtherWorldMap.method407(0, true, 2, (long) var29, 2),
+                    DummyClass29.aClass94_436,
+                    SomethingOtherWorldMap.method407(0, true, 2, (long) var29, 2),
                     SomethingWorldMappy.aClass94_2498, SomethingScene.toString(var28),
                     SomethingQuickChatK.aClass94_148
                   });
-                  AbstractTextureSampler.aClass3_Sub28_Sub17_2379
-                    .method688(var55, var20, var21, var24, -1);
+                  AbstractTextureSampler.aClass3_Sub28_Sub17_2379.method688(var55, var20, var21,
+                    var24, -1);
                   var21 += 12;
                   GroundItemNode.aBooleanArray3674[var12] = true;
                   DummyClass9.aBooleanArray4008[var12] = true;
@@ -518,8 +596,8 @@ final class Cache {
                     var11.aClass11Array262, var18, var11.anInt279, var17, var19, (byte) 52, var12);
                 }
 
-                SomethingPacket151 var36 = (SomethingPacket151) TextureSampler23.aClass130_3208
-                  .get((long) var11.anInt279);
+                SomethingPacket151 var36 =
+                  (SomethingPacket151) TextureSampler23.aClass130_3208.get((long) var11.anInt279);
                 if (var36 != null) {
                   if (var36.anInt2603 == 0 && !DummyClass36.aBoolean2615
                     && NpcConfiguration.anInt1297 >= var16 && ~var17 >= ~DummyClass36.anInt2612
@@ -532,9 +610,8 @@ final class Cache {
                     DummyClass8.aClass94Array4016[0] = GroundItemNode.EMPTY_STRING;
                   }
 
-                  TextureSampler12
-                    .method171(-101, var36.anInt2602, var16, var18, var13, var12, var19, var17,
-                      var14);
+                  TextureSampler12.method171(-101, var36.anInt2602, var16, var18, var13, var12,
+                    var19, var17, var14);
                 }
 
                 if (GlRenderer.useOpenGlRenderer) {
@@ -548,9 +625,8 @@ final class Cache {
               if (HashTable.aBooleanArray1712[var12] || ~ClientScript.rectangleDebugType < -2) {
                 if (-1 == ~var11.anInt187 && !var11.aBoolean233
                   && var11.anInt252 > var11.anInt193) {
-                  TextureSampler24
-                    .method224((byte) 120, var11.anInt208, var11.anInt252, var11.anInt168 + var13,
-                      var14, var11.anInt193);
+                  TextureSampler24.method224((byte) 120, var11.anInt208, var11.anInt252,
+                    var11.anInt168 + var13, var14, var11.anInt193);
                 }
 
                 if (var11.anInt187 != 1) {
@@ -589,13 +665,13 @@ final class Cache {
                             AbstractDirectColorSprite var54;
                             if (-2 == ~Something3d.anInt3012 && DummyClass31.anInt1473 == var20
                               && ~var11.anInt279 == ~GlTexture2d.anInt3764) {
-                              var54 = MonoChromaticImageCache
-                                .method1707(2, var47, var11.aBoolean227, var11.anIntArray317[var20],
-                                  0, 65536);
+                              var54 =
+                                MonoChromaticImageCache.method1707(2, var47, var11.aBoolean227,
+                                  var11.anIntArray317[var20], 0, 65536);
                             } else {
-                              var54 = MonoChromaticImageCache
-                                .method1707(1, var47, var11.aBoolean227, var11.anIntArray317[var20],
-                                  3153952, 65536);
+                              var54 =
+                                MonoChromaticImageCache.method1707(1, var47, var11.aBoolean227,
+                                  var11.anIntArray317[var20], 3153952, 65536);
                             }
 
                             if (DummyClass40.aBoolean837) {
@@ -695,9 +771,8 @@ final class Cache {
                     if (-1 != ~var15) {
                       if (var11.aBoolean226) {
                         if (!GlRenderer.useOpenGlRenderer) {
-                          DummyClass47
-                            .method1312(var13, var14, var11.anInt168, var11.anInt193, var20,
-                              256 + -(255 & var15));
+                          DummyClass47.method1312(var13, var14, var11.anInt168, var11.anInt193,
+                            var20, 256 + -(255 & var15));
                         } else {
                           GlUtils.fillQuad(var13, var14, var11.anInt168, var11.anInt193, var20,
                             256 - (var15 & 255));
@@ -713,8 +788,8 @@ final class Cache {
                       if (GlRenderer.useOpenGlRenderer) {
                         GlUtils.fillQuad(var13, var14, var11.anInt168, var11.anInt193, var20);
                       } else {
-                        DummyClass47
-                          .method1323(var13, var14, var11.anInt168, var11.anInt193, var20);
+                        DummyClass47.method1323(var13, var14, var11.anInt168, var11.anInt193,
+                          var20);
                       }
                     } else if (!GlRenderer.useOpenGlRenderer) {
                       DummyClass47.method1311(var13, var14, var11.anInt168, var11.anInt193, var20);
@@ -809,16 +884,16 @@ final class Cache {
                             }
                           } else {
                             AnimationSequence var48 = GameClient.method45(var21, (byte) -20);
-                            var38 = var11
-                              .method865(var11.anInt260, var48, var11.anInt283, 127, var11.anInt267,
-                                var41, TextureCache.localPlayer.appearance);
+                            var38 = var11.method865(var11.anInt260, var48, var11.anInt283, 127,
+                              var11.anInt267, var41, TextureCache.localPlayer.appearance);
                             if (null == var38 && GameStub.aBoolean6) {
                               DummyClass29.method909(3, var11);
                             }
                           }
                         } else if (-1 == var11.anInt201) {
-                          var38 = DummyClass49.aClass52_1112
-                            .method1165(null, -1, null, null, 0, -1, 100, 0, true, -1, -1);
+                          var38 =
+                            DummyClass49.aClass52_1112.method1165(null, -1, null, null, 0, -1, 100,
+                              0, true, -1, -1);
                         } else {
                           var24 = 2047 & var11.anInt201;
                           if (~var24 == ~WidgetAccess.localPlayerId) {
@@ -830,9 +905,9 @@ final class Cache {
                             var21 == -1 ? null : GameClient.method45(var21, (byte) -20);
                           if (null != var49 && ~((int) var49.name.toBase37() << -1033903957) == ~(
                             -2048 & var11.anInt201)) {
-                            var38 = var49.appearance
-                              .method1165(null, -1, null, var56, 0, -1, -126, 0, true,
-                                var11.anInt283, 0);
+                            var38 =
+                              var49.appearance.method1165(null, -1, null, var56, 0, -1, -126, 0,
+                                true, var11.anInt283, 0);
                           }
                         }
 
@@ -855,8 +930,8 @@ final class Cache {
                             var11.anInt193 / 2 + var14 + (var25 * var11.anInt230 >> -1056321176);
                           if (GlRenderer.useOpenGlRenderer) {
                             if (var11.aBoolean181) {
-                              GlRenderer
-                                .ortho(var26, var47, var11.anInt164, var11.aShort293, var24, var25);
+                              GlRenderer.ortho(var26, var47, var11.anInt164, var11.aShort293, var24,
+                                var25);
                             } else {
                               GlRenderer.method1821(var26, var47, var24, var25);
                               GlRenderer.method1825((float) var11.aShort169,
@@ -904,10 +979,10 @@ final class Cache {
                               var38.draw(0, var11.rotationY, 0, var11.rotationX0, 0, var28, var29,
                                 -1L);
                             } else if (var11.aBoolean181) {
-                              ((SoftwareModel) var38)
-                                .method1946(0, var11.rotationY, var11.rotationZ, var11.rotationX0,
-                                  var11.anInt258, var11.anInt264 + var23 + var28,
-                                  var29 + var11.anInt264, var11.anInt164);
+                              ((SoftwareModel) var38).method1946(0, var11.rotationY,
+                                var11.rotationZ, var11.rotationX0, var11.anInt258,
+                                var11.anInt264 + var23 + var28, var29 + var11.anInt264,
+                                var11.anInt164);
                             } else {
                               var38.draw(0, var11.rotationY, var11.rotationZ, var11.rotationX0,
                                 var11.anInt258, var11.anInt264 + (var28 - -var23),
@@ -932,8 +1007,8 @@ final class Cache {
                           for (var22 = 0; ~var11.anInt244 < ~var22; ++var22) {
                             for (var23 = 0; var23 < var11.anInt177; ++var23) {
                               if (0 < var11.anIntArray254[var21]) {
-                                var42 = DummyClass35
-                                  .getItemConfig(var11.anIntArray254[var21] + -1, (byte) 104);
+                                var42 = DummyClass35.getItemConfig(var11.anIntArray254[var21] + -1,
+                                  (byte) 104);
                                 GameString var40;
                                 if (1 != var42.anInt764 && 1 == var11.anIntArray317[var21]) {
                                   var40 = RenderAnimation.concat(new GameString[] {
@@ -1070,8 +1145,7 @@ final class Cache {
                     } else {
                       AbstractDirectColorSprite var37;
                       if (!var11.aBoolean233) {
-                        var37 =
-                          var11.method866((byte) -113, InventoryConfig.method609(var11, 69));
+                        var37 = var11.method866((byte) -113, InventoryConfig.method609(var11, 69));
                         if (null != var37) {
                           var37.method643(var13, var14);
                         } else if (GameStub.aBoolean6) {
@@ -1079,9 +1153,8 @@ final class Cache {
                         }
                       } else {
                         if (var11.anInt192 != -1) {
-                          var37 = MonoChromaticImageCache
-                            .method1707(var11.anInt288, var11.anInt192, var11.aBoolean227,
-                              var11.anInt271, var11.anInt287, 65536);
+                          var37 = MonoChromaticImageCache.method1707(var11.anInt288, var11.anInt192,
+                            var11.aBoolean227, var11.anInt271, var11.anInt287, 65536);
                         } else {
                           var37 = var11.method866((byte) -113, false);
                         }
@@ -1128,9 +1201,8 @@ final class Cache {
                                   if (~var15 == -1) {
                                     var27.method649(var13, var28 * var22 + var14, var23, 1);
                                   } else {
-                                    var27
-                                      .method646(var13, var14 + var28 * var22, 256 + -(var15 & 255),
-                                        var23, 1);
+                                    var27.method646(var13, var14 + var28 * var22,
+                                      256 + -(var15 & 255), var23, 1);
                                   }
                                 }
                               } else if (!var46) {
@@ -1140,17 +1212,16 @@ final class Cache {
                                       var37.method637(var28 * var21 + var13, var22 * var29 + var14,
                                         -(255 & var15) + 256);
                                     } else {
-                                      var37
-                                        .method643(var13 - -(var21 * var28), var22 * var29 + var14);
+                                      var37.method643(var13 - -(var21 * var28),
+                                        var22 * var29 + var14);
                                     }
                                   }
                                 }
                               } else {
                                 for (var28 = 0; ~var23 < ~var28; ++var28) {
                                   if (~var15 != -1) {
-                                    var27
-                                      .method646(var21 * var28 + var13, var14, -(var15 & 255) + 256,
-                                        1, var24);
+                                    var27.method646(var21 * var28 + var13, var14,
+                                      -(var15 & 255) + 256, 1, var24);
                                   } else {
                                     var27.method649(var21 * var28 + var13, var14, 1, var24);
                                   }
@@ -1235,8 +1306,8 @@ final class Cache {
 
       int var1 = TextureSampler20.anInt3155 >> -971224825;
       int var2 = FileTable.anInt942 >> -694284537;
-      int var3 = BufferData
-        .method1736(GameWorldSomething.currentPlane, 1, TextureSampler20.anInt3155,
+      int var3 =
+        BufferData.method1736(GameWorldSomething.currentPlane, 1, TextureSampler20.anInt3155,
           FileTable.anInt942);
       int var4 = 0;
       int var5;
@@ -1297,83 +1368,8 @@ final class Cache {
         return lightness + ('\uff80' & hsl);
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "gn.C(" + lightness + ',' + var1 + ',' + hsl + ')');
-    }
-  }
-
-  final SubNode get(long var1, int var3) {
-    try {
-      if (var3 != 1400) {
-        this.capacity = -79;
-      }
-
-      SubNode var4 = (SubNode) this.table.get(var1);
-      if (null != var4) {
-        this.queue.addLast(var4);
-      }
-
-      return var4;
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5, "gn.N(" + var1 + ',' + var3 + ')');
-    }
-  }
-
-  final Node method1094(int var1) {
-    try {
-      return var1 != 0 ? null : this.table.getFirst(38);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "gn.A(" + var1 + ')');
-    }
-  }
-
-  final void put(long var2, SubNode var1) {
-    try {
-      if (-1 == ~this.capacity) {
-        SubNode var5 = this.queue.poll();
-        var5.unlinkNode();
-        var5.unlinkSubNode();
-        if (this.aClass3_Sub28_744 == var5) {
-          var5 = this.queue.poll();
-          var5.unlinkNode();
-          var5.unlinkSubNode();
-        }
-      } else {
-        --this.capacity;
-      }
-
-      this.table.put(var2, var1);
-      this.queue.addLast(var1);
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "gn.L(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
-    }
-  }
-
-  final Node method1099(int var1) {
-    try {
-      if (var1 != -1) {
-        aClass93_743 = null;
-      }
-
-      return this.table.getNext(-119);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "gn.F(" + var1 + ')');
-    }
-  }
-
-  final void method1101(int var1) {
-    try {
-      this.queue.clear();
-      this.table.clear(-112);
-      this.aClass3_Sub28_744 = new SubNode();
-      if (var1 != 2) {
-        this.get(-36L, 52);
-      }
-
-      this.capacity = this.size;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "gn.E(" + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "gn.C(" + lightness + ',' + var1 + ',' + hsl + ')');
     }
   }
 

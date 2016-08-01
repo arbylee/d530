@@ -46,8 +46,8 @@ final class DummyClass51 {
         float var11 = ((float) var10 - var9) / 64.0F;
 
         for (int var12 = 0; -65 < ~var12; ++var12) {
-          PlayerAppearance.anIntArray861[var12 + 64 * var2] = TextureSampler3
-            .method308((int) var9, TextureSampler3.method308((int) var6 << 8, (int) var3 << 16));
+          PlayerAppearance.anIntArray861[var12 + 64 * var2] = TextureSampler3.method308((int) var9,
+            TextureSampler3.method308((int) var6 << 8, (int) var3 << 16));
           var6 += var8;
           var9 += var11;
           var3 += var5;
@@ -67,8 +67,8 @@ final class DummyClass51 {
       TriChromaticImageCache.aClass3_Sub28_Sub16_Sub2_1381 =
         new SoftwareDirectColorSprite(128, 254);
     } catch (RuntimeException var13) {
-      throw AbstractGameWorld
-        .cascadeException(var13, "lf.E(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var13,
+        "lf.E(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -89,8 +89,8 @@ final class DummyClass51 {
         GlUtils.drawQuad(1 + var1, var2 + 18, var3 + -2, -19 + var4, 0);
       }
 
-      FloorOverlay.aClass3_Sub28_Sub17_2096
-        .method681(SomethingTexture4.aClass94_2667, var1 - -3, var2 + 14, var5, -1);
+      FloorOverlay.aClass3_Sub28_Sub17_2096.method681(SomethingTexture4.aClass94_2667, var1 - -3,
+        var2 + 14, var5, -1);
       int var7 = HashTable.anInt1709;
       int var6 = SomethingTilek.anInt1676;
       if (var0 >= -113) {
@@ -104,13 +104,12 @@ final class DummyClass51 {
           var10 = 16776960;
         }
 
-        FloorOverlay.aClass3_Sub28_Sub17_2096
-          .method681(Buffer.method802(var8, true), var1 - -3, var9, var10, 0);
+        FloorOverlay.aClass3_Sub28_Sub17_2096.method681(Buffer.method802(var8, true), var1 - -3,
+          var9, var10, 0);
       }
 
-      LinearHashTable
-        .method1282(AbstractIndexedColorSprite.anInt1462, (byte) 107, TextureSampler29.anInt3395,
-          SomethingQuickChat2.anInt3537, SomethingWorldMapy.anInt3552);
+      LinearHashTable.method1282(AbstractIndexedColorSprite.anInt1462, (byte) 107,
+        TextureSampler29.anInt3395, SomethingQuickChat2.anInt3537, SomethingWorldMapy.anInt3552);
     } catch (RuntimeException var11) {
       throw AbstractGameWorld.cascadeException(var11, "lf.A(" + var0 + ')');
     }

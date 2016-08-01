@@ -15,8 +15,8 @@ final class DummyClass59 {
     try {
       return var2 != 0 ? -127 : (~var3 < ~var1 ? var3 : (var1 > var0 ? var0 : var1));
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "gd.C(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "gd.C(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -112,8 +112,8 @@ final class DummyClass59 {
 
         if (-1 != DummyClass55.landscapeFileIds[var2]
           && null == AudioSomethingSomething.landscapesData[var2]) {
-          AudioSomethingSomething.landscapesData[var2] = TextureSampler26.maps
-            .unpack(DummyClass55.landscapeFileIds[var2],
+          AudioSomethingSomething.landscapesData[var2] =
+            TextureSampler26.maps.unpack(DummyClass55.landscapeFileIds[var2],
               AreaSoundEffect.landscapeEncryptionKeys[var2], 37, 0);
           if (null == AudioSomethingSomething.landscapesData[var2]) {
             var1 = false;
@@ -146,8 +146,8 @@ final class DummyClass59 {
         if (null != TextureSampler5.anIntArray3290
           && null == TextureSampler35.aByteArrayArray3335[var2]
           && TextureSampler5.anIntArray3290[var2] != -1) {
-          TextureSampler35.aByteArrayArray3335[var2] = TextureSampler26.maps
-            .unpack(TextureSampler5.anIntArray3290[var2],
+          TextureSampler35.aByteArrayArray3335[var2] =
+            TextureSampler26.maps.unpack(TextureSampler5.anIntArray3290[var2],
               AreaSoundEffect.landscapeEncryptionKeys[var2], 92, 0);
           if (TextureSampler35.aByteArrayArray3335[var2] == null) {
             ++TextureSampler5.anInt3293;
@@ -157,12 +157,12 @@ final class DummyClass59 {
       }
 
       if (TextureSampler22.aClass131_3421 == null) {
-        if (null != TextureSampler37.aClass3_Sub28_Sub3_3264 && SomethingPacket116.worldMapData
-          .method2135(RenderAnimation.concat(new GameString[] {
-            TextureSampler37.aClass3_Sub28_Sub3_3264.aClass94_3561, Player.LABELS
-          }), -104)) {
-          if (!SomethingPacket116.worldMapData
-            .method2127((byte) -83, RenderAnimation.concat(new GameString[] {
+        if (null != TextureSampler37.aClass3_Sub28_Sub3_3264
+          && SomethingPacket116.worldMapData.method2135(RenderAnimation.concat(new GameString[] {
+          TextureSampler37.aClass3_Sub28_Sub3_3264.aClass94_3561, Player.LABELS
+        }), -104)) {
+          if (!SomethingPacket116.worldMapData.method2127((byte) -83,
+            RenderAnimation.concat(new GameString[] {
               TextureSampler37.aClass3_Sub28_Sub3_3264.aClass94_3561, Player.LABELS
             }))) {
             var1 = false;
@@ -244,8 +244,8 @@ final class DummyClass59 {
           }
 
           // 28x28
-          SpawnedGameObject
-            .initializeScene(4, 104, 104, GlRenderer.useOpenGlRenderer ? 28 : 25, var11);
+          SpawnedGameObject.initializeScene(4, 104, 104, GlRenderer.useOpenGlRenderer ? 28 : 25,
+            var11);
 
           for (var12 = 0; 4 > var12; ++var12) {
             BlockConfig.collisionMaps[var12].method1496(0);
@@ -359,8 +359,8 @@ final class DummyClass59 {
           if (GlRenderer.useOpenGlRenderer) {
             for (var4 = 0; var4 < 13; ++var4) {
               for (var5 = 0; ~var5 > -14; ++var5) {
-                DummyClass16.blockShadows[var4][var5]
-                  .update(AbstractGameWorld.heightMap[0], var4 * 8, var5 * 8);
+                DummyClass16.blockShadows[var4][var5].update(AbstractGameWorld.heightMap[0],
+                  var4 * 8, var5 * 8);
               }
             }
           }

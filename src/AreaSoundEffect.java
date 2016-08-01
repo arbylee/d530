@@ -30,122 +30,6 @@ final class AreaSoundEffect extends Node {
   int anInt2332;
   int[] anIntArray2333;
 
-  static final AnimationSomething method133(int var0, int var1) {
-    try {
-      if (var1 != 0) {
-        method135(-59, 112, 16, -6, 77, -69);
-      }
-
-      AnimationSomething var2 = (AnimationSomething) DummyClass13.aClass93_2016.get((long) var0);
-      if (var2 == null) {
-        var2 = Cache
-          .method1089(WorldMapLabel.animationBases, false, EnumStringFetcher.animationFrames,
-            (byte) 118, var0);
-        if (null != var2) {
-          DummyClass13.aClass93_2016.get((byte) -75, var2, (long) var0);
-        }
-
-        return var2;
-      } else {
-        return var2;
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "fl.B(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  static final void method135(int var0, int var1, int var2, int var3, int var4, int var5) {
-    try {
-      TextureSampler18
-        .method282(DummyClass35.anIntArrayArray663[var0], var1 - var2, -76, var2 + var1, var5);
-      int var6 = 0;
-      int var8 = var2 * var2;
-      int var9 = var4 * var4;
-      int var7 = var4;
-      int var10 = var9 << 1;
-      int var11 = var8 << 1;
-      int var12 = var4 << 1;
-      int var13 = var10 + (1 + -var12) * var8;
-      int var14 = var9 - var11 * (var12 - 1);
-      int var15 = var8 << 2;
-      if (var3 > -110) {
-        method137(-83, (byte) -91);
-      }
-
-      int var16 = var9 << 2;
-      int var17 = var10 * (3 + (var6 << 1));
-      int var18 = var11 * ((var4 << 1) + -3);
-      int var19 = (1 + var6) * var16;
-      int var20 = var15 * (var4 - 1);
-
-      while (var7 > 0) {
-        --var7;
-        int var22 = var7 + var0;
-        int var21 = var0 - var7;
-        if (var13 < 0) {
-          while (-1 < ~var13) {
-            ++var6;
-            var13 += var17;
-            var14 += var19;
-            var19 += var16;
-            var17 += var16;
-          }
-        }
-
-        if (~var14 > -1) {
-          var13 += var17;
-          var17 += var16;
-          var14 += var19;
-          ++var6;
-          var19 += var16;
-        }
-
-        int var23 = var6 + var1;
-        var14 += -var18;
-        var18 -= var15;
-        var13 += -var20;
-        int var24 = var1 + -var6;
-        var20 -= var15;
-        TextureSampler18
-          .method282(DummyClass35.anIntArrayArray663[var21], var24, -110, var23, var5);
-        TextureSampler18.method282(DummyClass35.anIntArrayArray663[var22], var24, 112, var23, var5);
-      }
-
-    } catch (RuntimeException var25) {
-      throw AbstractGameWorld.cascadeException(var25,
-        "fl.C(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ')');
-    }
-  }
-
-  public static void method136(int var0) {
-    try {
-      aClass94_2323 = null;
-      aClass94_2335 = null;
-      if (var0 != -3) {
-        anInt2317 = 98;
-      }
-
-      aClass94_2331 = null;
-      socketRequest = null;
-      landscapeEncryptionKeys = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "fl.D(" + var0 + ')');
-    }
-  }
-
-  static final void method137(int var0, byte var1) {
-    try {
-      if (var1 >= -111) {
-        aClass94_2335 = null;
-      }
-
-      ProceduralTexture.aClass93_1146.method1522(-127, var0);
-      DummyClass13.aClass93_2016.method1522(-126, var0);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "fl.E(" + var0 + ',' + var1 + ')');
-    }
-  }
-
   final void method134(int var1) {
     try {
       int var2 = this.anInt2332;
@@ -195,6 +79,122 @@ final class AreaSoundEffect extends Node {
       }
     } catch (RuntimeException var5) {
       throw AbstractGameWorld.cascadeException(var5, "fl.A(" + var1 + ')');
+    }
+  }
+
+  static final AnimationSomething method133(int var0, int var1) {
+    try {
+      if (var1 != 0) {
+        method135(-59, 112, 16, -6, 77, -69);
+      }
+
+      AnimationSomething var2 = (AnimationSomething) DummyClass13.aClass93_2016.get((long) var0);
+      if (var2 == null) {
+        var2 =
+          Cache.method1089(WorldMapLabel.animationBases, false, EnumStringFetcher.animationFrames,
+            (byte) 118, var0);
+        if (null != var2) {
+          DummyClass13.aClass93_2016.get((byte) -75, var2, (long) var0);
+        }
+
+        return var2;
+      } else {
+        return var2;
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "fl.B(" + var0 + ',' + var1 + ')');
+    }
+  }
+
+  static final void method135(int var0, int var1, int var2, int var3, int var4, int var5) {
+    try {
+      TextureSampler18.method282(DummyClass35.anIntArrayArray663[var0], var1 - var2, -76,
+        var2 + var1, var5);
+      int var6 = 0;
+      int var8 = var2 * var2;
+      int var9 = var4 * var4;
+      int var7 = var4;
+      int var10 = var9 << 1;
+      int var11 = var8 << 1;
+      int var12 = var4 << 1;
+      int var13 = var10 + (1 + -var12) * var8;
+      int var14 = var9 - var11 * (var12 - 1);
+      int var15 = var8 << 2;
+      if (var3 > -110) {
+        method137(-83, (byte) -91);
+      }
+
+      int var16 = var9 << 2;
+      int var17 = var10 * (3 + (var6 << 1));
+      int var18 = var11 * ((var4 << 1) + -3);
+      int var19 = (1 + var6) * var16;
+      int var20 = var15 * (var4 - 1);
+
+      while (var7 > 0) {
+        --var7;
+        int var22 = var7 + var0;
+        int var21 = var0 - var7;
+        if (var13 < 0) {
+          while (-1 < ~var13) {
+            ++var6;
+            var13 += var17;
+            var14 += var19;
+            var19 += var16;
+            var17 += var16;
+          }
+        }
+
+        if (~var14 > -1) {
+          var13 += var17;
+          var17 += var16;
+          var14 += var19;
+          ++var6;
+          var19 += var16;
+        }
+
+        int var23 = var6 + var1;
+        var14 += -var18;
+        var18 -= var15;
+        var13 += -var20;
+        int var24 = var1 + -var6;
+        var20 -= var15;
+        TextureSampler18.method282(DummyClass35.anIntArrayArray663[var21], var24, -110, var23,
+          var5);
+        TextureSampler18.method282(DummyClass35.anIntArrayArray663[var22], var24, 112, var23, var5);
+      }
+
+    } catch (RuntimeException var25) {
+      throw AbstractGameWorld.cascadeException(var25,
+        "fl.C(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ')');
+    }
+  }
+
+  public static void method136(int var0) {
+    try {
+      aClass94_2323 = null;
+      aClass94_2335 = null;
+      if (var0 != -3) {
+        anInt2317 = 98;
+      }
+
+      aClass94_2331 = null;
+      socketRequest = null;
+      landscapeEncryptionKeys = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "fl.D(" + var0 + ')');
+    }
+  }
+
+  static final void method137(int var0, byte var1) {
+    try {
+      if (var1 >= -111) {
+        aClass94_2335 = null;
+      }
+
+      ProceduralTexture.aClass93_1146.method1522(-127, var0);
+      DummyClass13.aClass93_2016.method1522(-126, var0);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "fl.E(" + var0 + ',' + var1 + ')');
     }
   }
 

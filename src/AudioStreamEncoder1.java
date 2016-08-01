@@ -41,6 +41,768 @@ final class AudioStreamEncoder1 extends AudioStreamEncoder {
     this.method449();
   }
 
+  private final boolean method416() {
+    int var1 = this.anInt3471;
+    int var2;
+    int var3;
+    if (var1 == Integer.MIN_VALUE) {
+      var3 = 0;
+      var2 = 0;
+      var1 = 0;
+    } else {
+      var2 = method452(var1, this.anInt3478);
+      var3 = method454(var1, this.anInt3478);
+    }
+
+    if (this.anInt3476 == var1 && this.anInt3484 == var2 && this.anInt3481 == var3) {
+      if (this.anInt3471 == Integer.MIN_VALUE) {
+        this.anInt3471 = 0;
+        this.anInt3476 = this.anInt3484 = this.anInt3481 = 0;
+        this.unlinkNode();
+        return true;
+      } else {
+        this.method449();
+        return false;
+      }
+    } else {
+      if (this.anInt3476 < var1) {
+        this.anInt3472 = 1;
+        this.anInt3480 = var1 - this.anInt3476;
+      } else if (this.anInt3476 > var1) {
+        this.anInt3472 = -1;
+        this.anInt3480 = this.anInt3476 - var1;
+      } else {
+        this.anInt3472 = 0;
+      }
+
+      if (this.anInt3484 < var2) {
+        this.anInt3475 = 1;
+        if (this.anInt3480 == 0 || this.anInt3480 > var2 - this.anInt3484) {
+          this.anInt3480 = var2 - this.anInt3484;
+        }
+      } else if (this.anInt3484 > var2) {
+        this.anInt3475 = -1;
+        if (this.anInt3480 == 0 || this.anInt3480 > this.anInt3484 - var2) {
+          this.anInt3480 = this.anInt3484 - var2;
+        }
+      } else {
+        this.anInt3475 = 0;
+      }
+
+      if (this.anInt3481 < var3) {
+        this.anInt3483 = 1;
+        if (this.anInt3480 == 0 || this.anInt3480 > var3 - this.anInt3481) {
+          this.anInt3480 = var3 - this.anInt3481;
+        }
+      } else if (this.anInt3481 > var3) {
+        this.anInt3483 = -1;
+        if (this.anInt3480 == 0 || this.anInt3480 > this.anInt3481 - var3) {
+          this.anInt3480 = this.anInt3481 - var3;
+        }
+      } else {
+        this.anInt3483 = 0;
+      }
+
+      return false;
+    }
+  }
+
+  final synchronized void method417(int var1) {
+    if (var1 == 0) {
+      this.method430(0);
+      this.unlinkNode();
+    } else if (this.anInt3484 == 0 && this.anInt3481 == 0) {
+      this.anInt3480 = 0;
+      this.anInt3471 = 0;
+      this.anInt3476 = 0;
+      this.unlinkNode();
+    } else {
+      int var2 = -this.anInt3476;
+      if (this.anInt3476 > var2) {
+        var2 = this.anInt3476;
+      }
+
+      if (-this.anInt3484 > var2) {
+        var2 = -this.anInt3484;
+      }
+
+      if (this.anInt3484 > var2) {
+        var2 = this.anInt3484;
+      }
+
+      if (-this.anInt3481 > var2) {
+        var2 = -this.anInt3481;
+      }
+
+      if (this.anInt3481 > var2) {
+        var2 = this.anInt3481;
+      }
+
+      if (var1 > var2) {
+        var1 = var2;
+      }
+
+      this.anInt3480 = var1;
+      this.anInt3471 = Integer.MIN_VALUE;
+      this.anInt3472 = -this.anInt3476 / var1;
+      this.anInt3475 = -this.anInt3484 / var1;
+      this.anInt3483 = -this.anInt3481 / var1;
+    }
+  }
+
+  private final int method418(int[] var1, int var2, int var3, int var4, int var5) {
+    while (true) {
+      if (this.anInt3480 > 0) {
+        int var6 = var2 + this.anInt3480;
+        if (var6 > var4) {
+          var6 = var4;
+        }
+
+        this.anInt3480 += var2;
+        if (this.anInt3470 == 256 && (this.anInt3474 & 255) == 0) {
+          if (GameString.stereo) {
+            var2 = method426(0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
+              this.anInt3474, var2, this.anInt3484, this.anInt3481, this.anInt3475, this.anInt3483,
+              0, var6, var3, this);
+          } else {
+            var2 = method428(((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
+              this.anInt3474, var2, this.anInt3476, this.anInt3472, 0, var6, var3, this);
+          }
+        } else if (GameString.stereo) {
+          var2 = method421(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
+            this.anInt3474, var2, this.anInt3484, this.anInt3481, this.anInt3475, this.anInt3483, 0,
+            var6, var3, this, this.anInt3470, var5);
+        } else {
+          var2 = method422(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
+            this.anInt3474, var2, this.anInt3476, this.anInt3472, 0, var6, var3, this,
+            this.anInt3470, var5);
+        }
+
+        this.anInt3480 -= var2;
+        if (this.anInt3480 != 0) {
+          return var2;
+        }
+
+        if (!this.method416()) {
+          continue;
+        }
+
+        return var4;
+      }
+
+      if (this.anInt3470 == 256 && (this.anInt3474 & 255) == 0) {
+        if (GameString.stereo) {
+          return method420(0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
+            this.anInt3474, var2, this.anInt3484, this.anInt3481, 0, var4, var3, this);
+        }
+
+        return method424(((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
+          this.anInt3474, var2, this.anInt3476, 0, var4, var3, this);
+      }
+
+      if (GameString.stereo) {
+        return method433(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
+          this.anInt3474, var2, this.anInt3484, this.anInt3481, 0, var4, var3, this, this.anInt3470,
+          var5);
+      }
+
+      return method455(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
+        this.anInt3474, var2, this.anInt3476, 0, var4, var3, this, this.anInt3470, var5);
+    }
+  }
+
+  final synchronized void method419(int var1) {
+    this.method441(var1 << 6, this.method451());
+  }
+
+  final int method409() {
+    return this.anInt3471 == 0 && this.anInt3480 == 0 ? 0 : 1;
+  }
+
+  final AudioStreamEncoder method411() {
+    return null;
+  }
+
+  final int method412() {
+    int var1 = this.anInt3476 * 3 >> 6;
+    var1 = (var1 ^ var1 >> 31) + (var1 >>> 31);
+    if (this.anInt3479 == 0) {
+      var1 -=
+        var1 * this.anInt3474 / (((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030.length
+          << 8);
+    } else if (this.anInt3479 >= 0) {
+      var1 -=
+        var1 * this.anInt3473 / ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030.length;
+    }
+
+    return var1 > 255 ? 255 : var1;
+  }
+
+  final synchronized void method413(int[] samples, int var2, int var3) {
+    if (this.anInt3471 == 0 && this.anInt3480 == 0) {
+      this.method415(var3);
+    } else {
+      SomethingMusic0 var4 = (SomethingMusic0) this.aClass3_Sub12_2544;
+      int var5 = this.anInt3473 << 8;
+      int var6 = this.anInt3482 << 8;
+      int var7 = var4.aByteArray3030.length << 8;
+      int var8 = var6 - var5;
+      if (var8 <= 0) {
+        this.anInt3479 = 0;
+      }
+
+      int var9 = var2;
+      var3 += var2;
+      if (this.anInt3474 < 0) {
+        if (this.anInt3470 <= 0) {
+          this.method439();
+          this.unlinkNode();
+          return;
+        }
+
+        this.anInt3474 = 0;
+      }
+
+      if (this.anInt3474 >= var7) {
+        if (this.anInt3470 >= 0) {
+          this.method439();
+          this.unlinkNode();
+          return;
+        }
+
+        this.anInt3474 = var7 - 1;
+      }
+
+      if (this.anInt3479 < 0) {
+        if (this.aBoolean3477) {
+          if (this.anInt3470 < 0) {
+            var9 = this.method436(samples, var2, var5, var3, var4.aByteArray3030[this.anInt3473]);
+            if (this.anInt3474 >= var5) {
+              return;
+            }
+
+            this.anInt3474 = var5 + var5 - 1 - this.anInt3474;
+            this.anInt3470 = -this.anInt3470;
+          }
+
+          while (true) {
+            var9 =
+              this.method418(samples, var9, var6, var3, var4.aByteArray3030[this.anInt3482 - 1]);
+            if (this.anInt3474 < var6) {
+              return;
+            }
+
+            this.anInt3474 = var6 + var6 - 1 - this.anInt3474;
+            this.anInt3470 = -this.anInt3470;
+            var9 = this.method436(samples, var9, var5, var3, var4.aByteArray3030[this.anInt3473]);
+            if (this.anInt3474 >= var5) {
+              return;
+            }
+
+            this.anInt3474 = var5 + var5 - 1 - this.anInt3474;
+            this.anInt3470 = -this.anInt3470;
+          }
+        } else if (this.anInt3470 < 0) {
+          while (true) {
+            var9 =
+              this.method436(samples, var9, var5, var3, var4.aByteArray3030[this.anInt3482 - 1]);
+            if (this.anInt3474 >= var5) {
+              return;
+            }
+
+            this.anInt3474 = var6 - 1 - (var6 - 1 - this.anInt3474) % var8;
+          }
+        } else {
+          while (true) {
+            var9 = this.method418(samples, var9, var6, var3, var4.aByteArray3030[this.anInt3473]);
+            if (this.anInt3474 < var6) {
+              return;
+            }
+
+            this.anInt3474 = var5 + (this.anInt3474 - var5) % var8;
+          }
+        }
+      } else {
+        if (this.anInt3479 > 0) {
+          if (this.aBoolean3477) {
+            label134:
+            {
+              if (this.anInt3470 < 0) {
+                var9 =
+                  this.method436(samples, var2, var5, var3, var4.aByteArray3030[this.anInt3473]);
+                if (this.anInt3474 >= var5) {
+                  return;
+                }
+
+                this.anInt3474 = var5 + var5 - 1 - this.anInt3474;
+                this.anInt3470 = -this.anInt3470;
+                if (--this.anInt3479 == 0) {
+                  break label134;
+                }
+              }
+
+              do {
+                var9 = this.method418(samples, var9, var6, var3,
+                  var4.aByteArray3030[this.anInt3482 - 1]);
+                if (this.anInt3474 < var6) {
+                  return;
+                }
+
+                this.anInt3474 = var6 + var6 - 1 - this.anInt3474;
+                this.anInt3470 = -this.anInt3470;
+                if (--this.anInt3479 == 0) {
+                  break;
+                }
+
+                var9 =
+                  this.method436(samples, var9, var5, var3, var4.aByteArray3030[this.anInt3473]);
+                if (this.anInt3474 >= var5) {
+                  return;
+                }
+
+                this.anInt3474 = var5 + var5 - 1 - this.anInt3474;
+                this.anInt3470 = -this.anInt3470;
+              } while (--this.anInt3479 != 0);
+            }
+          } else {
+            int var10;
+            if (this.anInt3470 < 0) {
+              while (true) {
+                var9 = this.method436(samples, var9, var5, var3,
+                  var4.aByteArray3030[this.anInt3482 - 1]);
+                if (this.anInt3474 >= var5) {
+                  return;
+                }
+
+                var10 = (var6 - 1 - this.anInt3474) / var8;
+                if (var10 >= this.anInt3479) {
+                  this.anInt3474 += var8 * this.anInt3479;
+                  this.anInt3479 = 0;
+                  break;
+                }
+
+                this.anInt3474 += var8 * var10;
+                this.anInt3479 -= var10;
+              }
+            } else {
+              while (true) {
+                var9 =
+                  this.method418(samples, var9, var6, var3, var4.aByteArray3030[this.anInt3473]);
+                if (this.anInt3474 < var6) {
+                  return;
+                }
+
+                var10 = (this.anInt3474 - var5) / var8;
+                if (var10 >= this.anInt3479) {
+                  this.anInt3474 -= var8 * this.anInt3479;
+                  this.anInt3479 = 0;
+                  break;
+                }
+
+                this.anInt3474 -= var8 * var10;
+                this.anInt3479 -= var10;
+              }
+            }
+          }
+        }
+
+        if (this.anInt3470 < 0) {
+          this.method436(samples, var9, 0, var3, 0);
+          if (this.anInt3474 < 0) {
+            this.anInt3474 = -1;
+            this.method439();
+            this.unlinkNode();
+          }
+        } else {
+          this.method418(samples, var9, var7, var3, 0);
+          if (this.anInt3474 >= var7) {
+            this.anInt3474 = var7;
+            this.method439();
+            this.unlinkNode();
+          }
+        }
+
+      }
+    }
+  }
+
+  final AudioStreamEncoder method414() {
+    return null;
+  }
+
+  final synchronized void method415(int var1) {
+    if (this.anInt3480 > 0) {
+      if (var1 >= this.anInt3480) {
+        if (this.anInt3471 == Integer.MIN_VALUE) {
+          this.anInt3471 = 0;
+          this.anInt3476 = this.anInt3484 = this.anInt3481 = 0;
+          this.unlinkNode();
+          var1 = this.anInt3480;
+        }
+
+        this.anInt3480 = 0;
+        this.method449();
+      } else {
+        this.anInt3476 += this.anInt3472 * var1;
+        this.anInt3484 += this.anInt3475 * var1;
+        this.anInt3481 += this.anInt3483 * var1;
+        this.anInt3480 -= var1;
+      }
+    }
+
+    SomethingMusic0 var2 = (SomethingMusic0) this.aClass3_Sub12_2544;
+    int var3 = this.anInt3473 << 8;
+    int var4 = this.anInt3482 << 8;
+    int var5 = var2.aByteArray3030.length << 8;
+    int var6 = var4 - var3;
+    if (var6 <= 0) {
+      this.anInt3479 = 0;
+    }
+
+    if (this.anInt3474 < 0) {
+      if (this.anInt3470 <= 0) {
+        this.method439();
+        this.unlinkNode();
+        return;
+      }
+
+      this.anInt3474 = 0;
+    }
+
+    if (this.anInt3474 >= var5) {
+      if (this.anInt3470 >= 0) {
+        this.method439();
+        this.unlinkNode();
+        return;
+      }
+
+      this.anInt3474 = var5 - 1;
+    }
+
+    this.anInt3474 += this.anInt3470 * var1;
+    if (this.anInt3479 < 0) {
+      if (!this.aBoolean3477) {
+        if (this.anInt3470 < 0) {
+          if (this.anInt3474 >= var3) {
+            return;
+          }
+
+          this.anInt3474 = var4 - 1 - (var4 - 1 - this.anInt3474) % var6;
+        } else {
+          if (this.anInt3474 < var4) {
+            return;
+          }
+
+          this.anInt3474 = var3 + (this.anInt3474 - var3) % var6;
+        }
+
+      } else {
+        if (this.anInt3470 < 0) {
+          if (this.anInt3474 >= var3) {
+            return;
+          }
+
+          this.anInt3474 = var3 + var3 - 1 - this.anInt3474;
+          this.anInt3470 = -this.anInt3470;
+        }
+
+        while (this.anInt3474 >= var4) {
+          this.anInt3474 = var4 + var4 - 1 - this.anInt3474;
+          this.anInt3470 = -this.anInt3470;
+          if (this.anInt3474 >= var3) {
+            return;
+          }
+
+          this.anInt3474 = var3 + var3 - 1 - this.anInt3474;
+          this.anInt3470 = -this.anInt3470;
+        }
+
+      }
+    } else {
+      if (this.anInt3479 > 0) {
+        if (this.aBoolean3477) {
+          label122:
+          {
+            if (this.anInt3470 < 0) {
+              if (this.anInt3474 >= var3) {
+                return;
+              }
+
+              this.anInt3474 = var3 + var3 - 1 - this.anInt3474;
+              this.anInt3470 = -this.anInt3470;
+              if (--this.anInt3479 == 0) {
+                break label122;
+              }
+            }
+
+            do {
+              if (this.anInt3474 < var4) {
+                return;
+              }
+
+              this.anInt3474 = var4 + var4 - 1 - this.anInt3474;
+              this.anInt3470 = -this.anInt3470;
+              if (--this.anInt3479 == 0) {
+                break;
+              }
+
+              if (this.anInt3474 >= var3) {
+                return;
+              }
+
+              this.anInt3474 = var3 + var3 - 1 - this.anInt3474;
+              this.anInt3470 = -this.anInt3470;
+            } while (--this.anInt3479 != 0);
+          }
+        } else {
+          label132:
+          {
+            int var7;
+            if (this.anInt3470 < 0) {
+              if (this.anInt3474 >= var3) {
+                return;
+              }
+
+              var7 = (var4 - 1 - this.anInt3474) / var6;
+              if (var7 >= this.anInt3479) {
+                this.anInt3474 += var6 * this.anInt3479;
+                this.anInt3479 = 0;
+                break label132;
+              }
+
+              this.anInt3474 += var6 * var7;
+              this.anInt3479 -= var7;
+            } else {
+              if (this.anInt3474 < var4) {
+                return;
+              }
+
+              var7 = (this.anInt3474 - var3) / var6;
+              if (var7 >= this.anInt3479) {
+                this.anInt3474 -= var6 * this.anInt3479;
+                this.anInt3479 = 0;
+                break label132;
+              }
+
+              this.anInt3474 -= var6 * var7;
+              this.anInt3479 -= var7;
+            }
+
+            return;
+          }
+        }
+      }
+
+      if (this.anInt3470 < 0) {
+        if (this.anInt3474 < 0) {
+          this.anInt3474 = -1;
+          this.method439();
+          this.unlinkNode();
+        }
+      } else if (this.anInt3474 >= var5) {
+        this.anInt3474 = var5;
+        this.method439();
+        this.unlinkNode();
+      }
+
+    }
+  }
+
+  final synchronized int method425() {
+    return this.anInt3471 == Integer.MIN_VALUE ? 0 : this.anInt3471;
+  }
+
+  final synchronized void method429(int var1) {
+    this.anInt3479 = var1;
+  }
+
+  private final synchronized void method430(int var1) {
+    this.method441(var1, this.method451());
+  }
+
+  final synchronized void method431(int var1, int var2) {
+    this.method450(var1, var2, this.method451());
+  }
+
+  final synchronized void method434(int var1) {
+    int var2 = ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030.length << 8;
+    if (var1 < -1) {
+      var1 = -1;
+    }
+
+    if (var1 > var2) {
+      var1 = var2;
+    }
+
+    this.anInt3474 = var1;
+  }
+
+  private final int method436(int[] samples, int var2, int var3, int var4, int var5) {
+    while (true) {
+      if (this.anInt3480 > 0) {
+        int var6 = var2 + this.anInt3480;
+        if (var6 > var4) {
+          var6 = var4;
+        }
+
+        this.anInt3480 += var2;
+        if (this.anInt3470 == -256 && (this.anInt3474 & 255) == 0) {
+          if (GameString.stereo) {
+            var2 = method435(0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
+              this.anInt3474, var2, this.anInt3484, this.anInt3481, this.anInt3475, this.anInt3483,
+              0, var6, var3, this);
+          } else {
+            var2 = method427(((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
+              this.anInt3474, var2, this.anInt3476, this.anInt3472, 0, var6, var3, this);
+          }
+        } else if (GameString.stereo) {
+          var2 =
+            method440(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
+              this.anInt3474, var2, this.anInt3484, this.anInt3481, this.anInt3475, this.anInt3483,
+              0, var6, var3, this, this.anInt3470, var5);
+        } else {
+          var2 =
+            method448(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
+              this.anInt3474, var2, this.anInt3476, this.anInt3472, 0, var6, var3, this,
+              this.anInt3470, var5);
+        }
+
+        this.anInt3480 -= var2;
+        if (this.anInt3480 != 0) {
+          return var2;
+        }
+
+        if (!this.method416()) {
+          continue;
+        }
+
+        return var4;
+      }
+
+      if (this.anInt3470 == -256 && (this.anInt3474 & 255) == 0) {
+        if (GameString.stereo) {
+          return method447(0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
+            this.anInt3474, var2, this.anInt3484, this.anInt3481, 0, var4, var3, this);
+        }
+
+        return method446(((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
+          this.anInt3474, var2, this.anInt3476, 0, var4, var3, this);
+      }
+
+      if (GameString.stereo) {
+        return method453(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
+          this.anInt3474, var2, this.anInt3484, this.anInt3481, 0, var4, var3, this, this.anInt3470,
+          var5);
+      }
+
+      return method423(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
+        this.anInt3474, var2, this.anInt3476, 0, var4, var3, this, this.anInt3470, var5);
+    }
+  }
+
+  final synchronized int method438() {
+    return this.anInt3470 < 0 ? -this.anInt3470 : this.anInt3470;
+  }
+
+  private final void method439() {
+    if (this.anInt3480 != 0) {
+      if (this.anInt3471 == Integer.MIN_VALUE) {
+        this.anInt3471 = 0;
+      }
+
+      this.anInt3480 = 0;
+      this.method449();
+    }
+
+  }
+
+  private final synchronized void method441(int var1, int var2) {
+    this.anInt3471 = var1;
+    this.anInt3478 = var2;
+    this.anInt3480 = 0;
+    this.method449();
+  }
+
+  final synchronized void method442(boolean var1) {
+    this.anInt3470 = (this.anInt3470 ^ this.anInt3470 >> 31) + (this.anInt3470 >>> 31);
+    if (var1) {
+      this.anInt3470 = -this.anInt3470;
+    }
+
+  }
+
+  final synchronized void method443(int var1) {
+    if (this.anInt3470 < 0) {
+      this.anInt3470 = -var1;
+    } else {
+      this.anInt3470 = var1;
+    }
+
+  }
+
+  final boolean method444() {
+    return this.anInt3474 < 0
+      || this.anInt3474 >= ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030.length << 8;
+  }
+
+  final boolean method445() {
+    return this.anInt3480 != 0;
+  }
+
+  private final void method449() {
+    this.anInt3476 = this.anInt3471;
+    this.anInt3484 = method452(this.anInt3471, this.anInt3478);
+    this.anInt3481 = method454(this.anInt3471, this.anInt3478);
+  }
+
+  final synchronized void method450(int var1, int var2, int var3) {
+    if (var1 == 0) {
+      this.method441(var2, var3);
+    } else {
+      int var4 = method452(var2, var3);
+      int var5 = method454(var2, var3);
+      if (this.anInt3484 == var4 && this.anInt3481 == var5) {
+        this.anInt3480 = 0;
+      } else {
+        int var6 = var2 - this.anInt3476;
+        if (this.anInt3476 - var2 > var6) {
+          var6 = this.anInt3476 - var2;
+        }
+
+        if (var4 - this.anInt3484 > var6) {
+          var6 = var4 - this.anInt3484;
+        }
+
+        if (this.anInt3484 - var4 > var6) {
+          var6 = this.anInt3484 - var4;
+        }
+
+        if (var5 - this.anInt3481 > var6) {
+          var6 = var5 - this.anInt3481;
+        }
+
+        if (this.anInt3481 - var5 > var6) {
+          var6 = this.anInt3481 - var5;
+        }
+
+        if (var1 > var6) {
+          var1 = var6;
+        }
+
+        this.anInt3480 = var1;
+        this.anInt3471 = var2;
+        this.anInt3478 = var3;
+        this.anInt3472 = (var2 - this.anInt3476) / var1;
+        this.anInt3475 = (var4 - this.anInt3484) / var1;
+        this.anInt3483 = (var5 - this.anInt3481) / var1;
+      }
+    }
+  }
+
+  final synchronized int method451() {
+    return this.anInt3478 < 0 ? -1 : this.anInt3478;
+  }
+
   private static final int method420(int var0, byte[] var1, int[] var2, int var3, int var4,
                                      int var5, int var6, int var7, int var8, int var9,
                                      AudioStreamEncoder1 var10) {
@@ -388,7 +1150,8 @@ final class AudioStreamEncoder1 extends AudioStreamEncoder {
   private static final int method433(int encoded, int srcOff, byte[] src, int[] dest, int sourceOff,
                                      int destOff, int mul0, int mul1, int len, int var9, int var10,
                                      AudioStreamEncoder1 var11, int offsetStep, int var13) {
-    if (offsetStep == 0 || (len = destOff + (var10 - sourceOff + offsetStep - 257) / offsetStep) > var9) {
+    if (offsetStep == 0
+      || (len = destOff + (var10 - sourceOff + offsetStep - 257) / offsetStep) > var9) {
       len = var9;
     }
 
@@ -406,7 +1169,8 @@ final class AudioStreamEncoder1 extends AudioStreamEncoder {
       dest[off] += encoded * mul1 >> 6;
     }
 
-    if (offsetStep == 0 || (len = (destOff >> 1) + (var10 - sourceOff + offsetStep - 1) / offsetStep) > var9) {
+    if (offsetStep == 0
+      || (len = (destOff >> 1) + (var10 - sourceOff + offsetStep - 1) / offsetStep) > var9) {
       len = var9;
     }
 
@@ -426,8 +1190,8 @@ final class AudioStreamEncoder1 extends AudioStreamEncoder {
   }
 
   private static final int method435(int var0, byte[] src, int[] samples, int srcOff, int destOff,
-                                     int mul0, int mul1, int mulStep, int mul1Step, int destLen, int maximumLen,
-                                     int var11, AudioStreamEncoder1 var12) {
+                                     int mul0, int mul1, int mulStep, int mul1Step, int destLen,
+                                     int maximumLen, int var11, AudioStreamEncoder1 var12) {
     srcOff >>= 8;
     var11 >>= 8;
     mul0 <<= 2;
@@ -739,760 +1503,5 @@ final class AudioStreamEncoder1 extends AudioStreamEncoder {
 
     var10.anInt3474 = var4;
     return var5;
-  }
-
-  final synchronized void method413(int[] samples, int var2, int var3) {
-    if (this.anInt3471 == 0 && this.anInt3480 == 0) {
-      this.method415(var3);
-    } else {
-      SomethingMusic0 var4 = (SomethingMusic0) this.aClass3_Sub12_2544;
-      int var5 = this.anInt3473 << 8;
-      int var6 = this.anInt3482 << 8;
-      int var7 = var4.aByteArray3030.length << 8;
-      int var8 = var6 - var5;
-      if (var8 <= 0) {
-        this.anInt3479 = 0;
-      }
-
-      int var9 = var2;
-      var3 += var2;
-      if (this.anInt3474 < 0) {
-        if (this.anInt3470 <= 0) {
-          this.method439();
-          this.unlinkNode();
-          return;
-        }
-
-        this.anInt3474 = 0;
-      }
-
-      if (this.anInt3474 >= var7) {
-        if (this.anInt3470 >= 0) {
-          this.method439();
-          this.unlinkNode();
-          return;
-        }
-
-        this.anInt3474 = var7 - 1;
-      }
-
-      if (this.anInt3479 < 0) {
-        if (this.aBoolean3477) {
-          if (this.anInt3470 < 0) {
-            var9 = this.method436(samples, var2, var5, var3, var4.aByteArray3030[this.anInt3473]);
-            if (this.anInt3474 >= var5) {
-              return;
-            }
-
-            this.anInt3474 = var5 + var5 - 1 - this.anInt3474;
-            this.anInt3470 = -this.anInt3470;
-          }
-
-          while (true) {
-            var9 = this.method418(samples, var9, var6, var3, var4.aByteArray3030[this.anInt3482 - 1]);
-            if (this.anInt3474 < var6) {
-              return;
-            }
-
-            this.anInt3474 = var6 + var6 - 1 - this.anInt3474;
-            this.anInt3470 = -this.anInt3470;
-            var9 = this.method436(samples, var9, var5, var3, var4.aByteArray3030[this.anInt3473]);
-            if (this.anInt3474 >= var5) {
-              return;
-            }
-
-            this.anInt3474 = var5 + var5 - 1 - this.anInt3474;
-            this.anInt3470 = -this.anInt3470;
-          }
-        } else if (this.anInt3470 < 0) {
-          while (true) {
-            var9 = this.method436(samples, var9, var5, var3, var4.aByteArray3030[this.anInt3482 - 1]);
-            if (this.anInt3474 >= var5) {
-              return;
-            }
-
-            this.anInt3474 = var6 - 1 - (var6 - 1 - this.anInt3474) % var8;
-          }
-        } else {
-          while (true) {
-            var9 = this.method418(samples, var9, var6, var3, var4.aByteArray3030[this.anInt3473]);
-            if (this.anInt3474 < var6) {
-              return;
-            }
-
-            this.anInt3474 = var5 + (this.anInt3474 - var5) % var8;
-          }
-        }
-      } else {
-        if (this.anInt3479 > 0) {
-          if (this.aBoolean3477) {
-            label134:
-            {
-              if (this.anInt3470 < 0) {
-                var9 = this.method436(samples, var2, var5, var3, var4.aByteArray3030[this.anInt3473]);
-                if (this.anInt3474 >= var5) {
-                  return;
-                }
-
-                this.anInt3474 = var5 + var5 - 1 - this.anInt3474;
-                this.anInt3470 = -this.anInt3470;
-                if (--this.anInt3479 == 0) {
-                  break label134;
-                }
-              }
-
-              do {
-                var9 =
-                  this.method418(samples, var9, var6, var3, var4.aByteArray3030[this.anInt3482 - 1]);
-                if (this.anInt3474 < var6) {
-                  return;
-                }
-
-                this.anInt3474 = var6 + var6 - 1 - this.anInt3474;
-                this.anInt3470 = -this.anInt3470;
-                if (--this.anInt3479 == 0) {
-                  break;
-                }
-
-                var9 = this.method436(samples, var9, var5, var3, var4.aByteArray3030[this.anInt3473]);
-                if (this.anInt3474 >= var5) {
-                  return;
-                }
-
-                this.anInt3474 = var5 + var5 - 1 - this.anInt3474;
-                this.anInt3470 = -this.anInt3470;
-              } while (--this.anInt3479 != 0);
-            }
-          } else {
-            int var10;
-            if (this.anInt3470 < 0) {
-              while (true) {
-                var9 =
-                  this.method436(samples, var9, var5, var3, var4.aByteArray3030[this.anInt3482 - 1]);
-                if (this.anInt3474 >= var5) {
-                  return;
-                }
-
-                var10 = (var6 - 1 - this.anInt3474) / var8;
-                if (var10 >= this.anInt3479) {
-                  this.anInt3474 += var8 * this.anInt3479;
-                  this.anInt3479 = 0;
-                  break;
-                }
-
-                this.anInt3474 += var8 * var10;
-                this.anInt3479 -= var10;
-              }
-            } else {
-              while (true) {
-                var9 = this.method418(samples, var9, var6, var3, var4.aByteArray3030[this.anInt3473]);
-                if (this.anInt3474 < var6) {
-                  return;
-                }
-
-                var10 = (this.anInt3474 - var5) / var8;
-                if (var10 >= this.anInt3479) {
-                  this.anInt3474 -= var8 * this.anInt3479;
-                  this.anInt3479 = 0;
-                  break;
-                }
-
-                this.anInt3474 -= var8 * var10;
-                this.anInt3479 -= var10;
-              }
-            }
-          }
-        }
-
-        if (this.anInt3470 < 0) {
-          this.method436(samples, var9, 0, var3, 0);
-          if (this.anInt3474 < 0) {
-            this.anInt3474 = -1;
-            this.method439();
-            this.unlinkNode();
-          }
-        } else {
-          this.method418(samples, var9, var7, var3, 0);
-          if (this.anInt3474 >= var7) {
-            this.anInt3474 = var7;
-            this.method439();
-            this.unlinkNode();
-          }
-        }
-
-      }
-    }
-  }
-
-  private final boolean method416() {
-    int var1 = this.anInt3471;
-    int var2;
-    int var3;
-    if (var1 == Integer.MIN_VALUE) {
-      var3 = 0;
-      var2 = 0;
-      var1 = 0;
-    } else {
-      var2 = method452(var1, this.anInt3478);
-      var3 = method454(var1, this.anInt3478);
-    }
-
-    if (this.anInt3476 == var1 && this.anInt3484 == var2 && this.anInt3481 == var3) {
-      if (this.anInt3471 == Integer.MIN_VALUE) {
-        this.anInt3471 = 0;
-        this.anInt3476 = this.anInt3484 = this.anInt3481 = 0;
-        this.unlinkNode();
-        return true;
-      } else {
-        this.method449();
-        return false;
-      }
-    } else {
-      if (this.anInt3476 < var1) {
-        this.anInt3472 = 1;
-        this.anInt3480 = var1 - this.anInt3476;
-      } else if (this.anInt3476 > var1) {
-        this.anInt3472 = -1;
-        this.anInt3480 = this.anInt3476 - var1;
-      } else {
-        this.anInt3472 = 0;
-      }
-
-      if (this.anInt3484 < var2) {
-        this.anInt3475 = 1;
-        if (this.anInt3480 == 0 || this.anInt3480 > var2 - this.anInt3484) {
-          this.anInt3480 = var2 - this.anInt3484;
-        }
-      } else if (this.anInt3484 > var2) {
-        this.anInt3475 = -1;
-        if (this.anInt3480 == 0 || this.anInt3480 > this.anInt3484 - var2) {
-          this.anInt3480 = this.anInt3484 - var2;
-        }
-      } else {
-        this.anInt3475 = 0;
-      }
-
-      if (this.anInt3481 < var3) {
-        this.anInt3483 = 1;
-        if (this.anInt3480 == 0 || this.anInt3480 > var3 - this.anInt3481) {
-          this.anInt3480 = var3 - this.anInt3481;
-        }
-      } else if (this.anInt3481 > var3) {
-        this.anInt3483 = -1;
-        if (this.anInt3480 == 0 || this.anInt3480 > this.anInt3481 - var3) {
-          this.anInt3480 = this.anInt3481 - var3;
-        }
-      } else {
-        this.anInt3483 = 0;
-      }
-
-      return false;
-    }
-  }
-
-  final synchronized void method417(int var1) {
-    if (var1 == 0) {
-      this.method430(0);
-      this.unlinkNode();
-    } else if (this.anInt3484 == 0 && this.anInt3481 == 0) {
-      this.anInt3480 = 0;
-      this.anInt3471 = 0;
-      this.anInt3476 = 0;
-      this.unlinkNode();
-    } else {
-      int var2 = -this.anInt3476;
-      if (this.anInt3476 > var2) {
-        var2 = this.anInt3476;
-      }
-
-      if (-this.anInt3484 > var2) {
-        var2 = -this.anInt3484;
-      }
-
-      if (this.anInt3484 > var2) {
-        var2 = this.anInt3484;
-      }
-
-      if (-this.anInt3481 > var2) {
-        var2 = -this.anInt3481;
-      }
-
-      if (this.anInt3481 > var2) {
-        var2 = this.anInt3481;
-      }
-
-      if (var1 > var2) {
-        var1 = var2;
-      }
-
-      this.anInt3480 = var1;
-      this.anInt3471 = Integer.MIN_VALUE;
-      this.anInt3472 = -this.anInt3476 / var1;
-      this.anInt3475 = -this.anInt3484 / var1;
-      this.anInt3483 = -this.anInt3481 / var1;
-    }
-  }
-
-  private final int method418(int[] var1, int var2, int var3, int var4, int var5) {
-    while (true) {
-      if (this.anInt3480 > 0) {
-        int var6 = var2 + this.anInt3480;
-        if (var6 > var4) {
-          var6 = var4;
-        }
-
-        this.anInt3480 += var2;
-        if (this.anInt3470 == 256 && (this.anInt3474 & 255) == 0) {
-          if (GameString.stereo) {
-            var2 = method426(0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
-              this.anInt3474, var2, this.anInt3484, this.anInt3481, this.anInt3475, this.anInt3483,
-              0, var6, var3, this);
-          } else {
-            var2 = method428(((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
-              this.anInt3474, var2, this.anInt3476, this.anInt3472, 0, var6, var3, this);
-          }
-        } else if (GameString.stereo) {
-          var2 = method421(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
-            this.anInt3474, var2, this.anInt3484, this.anInt3481, this.anInt3475, this.anInt3483, 0,
-            var6, var3, this, this.anInt3470, var5);
-        } else {
-          var2 = method422(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
-            this.anInt3474, var2, this.anInt3476, this.anInt3472, 0, var6, var3, this,
-            this.anInt3470, var5);
-        }
-
-        this.anInt3480 -= var2;
-        if (this.anInt3480 != 0) {
-          return var2;
-        }
-
-        if (!this.method416()) {
-          continue;
-        }
-
-        return var4;
-      }
-
-      if (this.anInt3470 == 256 && (this.anInt3474 & 255) == 0) {
-        if (GameString.stereo) {
-          return method420(0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
-            this.anInt3474, var2, this.anInt3484, this.anInt3481, 0, var4, var3, this);
-        }
-
-        return method424(((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
-          this.anInt3474, var2, this.anInt3476, 0, var4, var3, this);
-      }
-
-      if (GameString.stereo) {
-        return method433(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
-          this.anInt3474, var2, this.anInt3484, this.anInt3481, 0, var4, var3, this, this.anInt3470,
-          var5);
-      }
-
-      return method455(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, var1,
-        this.anInt3474, var2, this.anInt3476, 0, var4, var3, this, this.anInt3470, var5);
-    }
-  }
-
-  final synchronized void method419(int var1) {
-    this.method441(var1 << 6, this.method451());
-  }
-
-  final int method412() {
-    int var1 = this.anInt3476 * 3 >> 6;
-    var1 = (var1 ^ var1 >> 31) + (var1 >>> 31);
-    if (this.anInt3479 == 0) {
-      var1 -=
-        var1 * this.anInt3474 / (((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030.length
-          << 8);
-    } else if (this.anInt3479 >= 0) {
-      var1 -=
-        var1 * this.anInt3473 / ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030.length;
-    }
-
-    return var1 > 255 ? 255 : var1;
-  }
-
-  final int method409() {
-    return this.anInt3471 == 0 && this.anInt3480 == 0 ? 0 : 1;
-  }
-
-  final synchronized int method425() {
-    return this.anInt3471 == Integer.MIN_VALUE ? 0 : this.anInt3471;
-  }
-
-  final synchronized void method415(int var1) {
-    if (this.anInt3480 > 0) {
-      if (var1 >= this.anInt3480) {
-        if (this.anInt3471 == Integer.MIN_VALUE) {
-          this.anInt3471 = 0;
-          this.anInt3476 = this.anInt3484 = this.anInt3481 = 0;
-          this.unlinkNode();
-          var1 = this.anInt3480;
-        }
-
-        this.anInt3480 = 0;
-        this.method449();
-      } else {
-        this.anInt3476 += this.anInt3472 * var1;
-        this.anInt3484 += this.anInt3475 * var1;
-        this.anInt3481 += this.anInt3483 * var1;
-        this.anInt3480 -= var1;
-      }
-    }
-
-    SomethingMusic0 var2 = (SomethingMusic0) this.aClass3_Sub12_2544;
-    int var3 = this.anInt3473 << 8;
-    int var4 = this.anInt3482 << 8;
-    int var5 = var2.aByteArray3030.length << 8;
-    int var6 = var4 - var3;
-    if (var6 <= 0) {
-      this.anInt3479 = 0;
-    }
-
-    if (this.anInt3474 < 0) {
-      if (this.anInt3470 <= 0) {
-        this.method439();
-        this.unlinkNode();
-        return;
-      }
-
-      this.anInt3474 = 0;
-    }
-
-    if (this.anInt3474 >= var5) {
-      if (this.anInt3470 >= 0) {
-        this.method439();
-        this.unlinkNode();
-        return;
-      }
-
-      this.anInt3474 = var5 - 1;
-    }
-
-    this.anInt3474 += this.anInt3470 * var1;
-    if (this.anInt3479 < 0) {
-      if (!this.aBoolean3477) {
-        if (this.anInt3470 < 0) {
-          if (this.anInt3474 >= var3) {
-            return;
-          }
-
-          this.anInt3474 = var4 - 1 - (var4 - 1 - this.anInt3474) % var6;
-        } else {
-          if (this.anInt3474 < var4) {
-            return;
-          }
-
-          this.anInt3474 = var3 + (this.anInt3474 - var3) % var6;
-        }
-
-      } else {
-        if (this.anInt3470 < 0) {
-          if (this.anInt3474 >= var3) {
-            return;
-          }
-
-          this.anInt3474 = var3 + var3 - 1 - this.anInt3474;
-          this.anInt3470 = -this.anInt3470;
-        }
-
-        while (this.anInt3474 >= var4) {
-          this.anInt3474 = var4 + var4 - 1 - this.anInt3474;
-          this.anInt3470 = -this.anInt3470;
-          if (this.anInt3474 >= var3) {
-            return;
-          }
-
-          this.anInt3474 = var3 + var3 - 1 - this.anInt3474;
-          this.anInt3470 = -this.anInt3470;
-        }
-
-      }
-    } else {
-      if (this.anInt3479 > 0) {
-        if (this.aBoolean3477) {
-          label122:
-          {
-            if (this.anInt3470 < 0) {
-              if (this.anInt3474 >= var3) {
-                return;
-              }
-
-              this.anInt3474 = var3 + var3 - 1 - this.anInt3474;
-              this.anInt3470 = -this.anInt3470;
-              if (--this.anInt3479 == 0) {
-                break label122;
-              }
-            }
-
-            do {
-              if (this.anInt3474 < var4) {
-                return;
-              }
-
-              this.anInt3474 = var4 + var4 - 1 - this.anInt3474;
-              this.anInt3470 = -this.anInt3470;
-              if (--this.anInt3479 == 0) {
-                break;
-              }
-
-              if (this.anInt3474 >= var3) {
-                return;
-              }
-
-              this.anInt3474 = var3 + var3 - 1 - this.anInt3474;
-              this.anInt3470 = -this.anInt3470;
-            } while (--this.anInt3479 != 0);
-          }
-        } else {
-          label132:
-          {
-            int var7;
-            if (this.anInt3470 < 0) {
-              if (this.anInt3474 >= var3) {
-                return;
-              }
-
-              var7 = (var4 - 1 - this.anInt3474) / var6;
-              if (var7 >= this.anInt3479) {
-                this.anInt3474 += var6 * this.anInt3479;
-                this.anInt3479 = 0;
-                break label132;
-              }
-
-              this.anInt3474 += var6 * var7;
-              this.anInt3479 -= var7;
-            } else {
-              if (this.anInt3474 < var4) {
-                return;
-              }
-
-              var7 = (this.anInt3474 - var3) / var6;
-              if (var7 >= this.anInt3479) {
-                this.anInt3474 -= var6 * this.anInt3479;
-                this.anInt3479 = 0;
-                break label132;
-              }
-
-              this.anInt3474 -= var6 * var7;
-              this.anInt3479 -= var7;
-            }
-
-            return;
-          }
-        }
-      }
-
-      if (this.anInt3470 < 0) {
-        if (this.anInt3474 < 0) {
-          this.anInt3474 = -1;
-          this.method439();
-          this.unlinkNode();
-        }
-      } else if (this.anInt3474 >= var5) {
-        this.anInt3474 = var5;
-        this.method439();
-        this.unlinkNode();
-      }
-
-    }
-  }
-
-  final synchronized void method429(int var1) {
-    this.anInt3479 = var1;
-  }
-
-  private final synchronized void method430(int var1) {
-    this.method441(var1, this.method451());
-  }
-
-  final synchronized void method431(int var1, int var2) {
-    this.method450(var1, var2, this.method451());
-  }
-
-  final AudioStreamEncoder method411() {
-    return null;
-  }
-
-  final synchronized void method434(int var1) {
-    int var2 = ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030.length << 8;
-    if (var1 < -1) {
-      var1 = -1;
-    }
-
-    if (var1 > var2) {
-      var1 = var2;
-    }
-
-    this.anInt3474 = var1;
-  }
-
-  private final int method436(int[] samples, int var2, int var3, int var4, int var5) {
-    while (true) {
-      if (this.anInt3480 > 0) {
-        int var6 = var2 + this.anInt3480;
-        if (var6 > var4) {
-          var6 = var4;
-        }
-
-        this.anInt3480 += var2;
-        if (this.anInt3470 == -256 && (this.anInt3474 & 255) == 0) {
-          if (GameString.stereo) {
-            var2 = method435(0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
-              this.anInt3474, var2, this.anInt3484, this.anInt3481, this.anInt3475, this.anInt3483,
-              0, var6, var3, this);
-          } else {
-            var2 = method427(((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
-              this.anInt3474, var2, this.anInt3476, this.anInt3472, 0, var6, var3, this);
-          }
-        } else if (GameString.stereo) {
-          var2 = method440(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
-            this.anInt3474, var2, this.anInt3484, this.anInt3481, this.anInt3475, this.anInt3483, 0,
-            var6, var3, this, this.anInt3470, var5);
-        } else {
-          var2 = method448(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
-            this.anInt3474, var2, this.anInt3476, this.anInt3472, 0, var6, var3, this,
-            this.anInt3470, var5);
-        }
-
-        this.anInt3480 -= var2;
-        if (this.anInt3480 != 0) {
-          return var2;
-        }
-
-        if (!this.method416()) {
-          continue;
-        }
-
-        return var4;
-      }
-
-      if (this.anInt3470 == -256 && (this.anInt3474 & 255) == 0) {
-        if (GameString.stereo) {
-          return method447(0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
-            this.anInt3474, var2, this.anInt3484, this.anInt3481, 0, var4, var3, this);
-        }
-
-        return method446(((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
-          this.anInt3474, var2, this.anInt3476, 0, var4, var3, this);
-      }
-
-      if (GameString.stereo) {
-        return method453(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
-          this.anInt3474, var2, this.anInt3484, this.anInt3481, 0, var4, var3, this, this.anInt3470,
-          var5);
-      }
-
-      return method423(0, 0, ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030, samples,
-        this.anInt3474, var2, this.anInt3476, 0, var4, var3, this, this.anInt3470, var5);
-    }
-  }
-
-  final synchronized int method438() {
-    return this.anInt3470 < 0 ? -this.anInt3470 : this.anInt3470;
-  }
-
-  private final void method439() {
-    if (this.anInt3480 != 0) {
-      if (this.anInt3471 == Integer.MIN_VALUE) {
-        this.anInt3471 = 0;
-      }
-
-      this.anInt3480 = 0;
-      this.method449();
-    }
-
-  }
-
-  private final synchronized void method441(int var1, int var2) {
-    this.anInt3471 = var1;
-    this.anInt3478 = var2;
-    this.anInt3480 = 0;
-    this.method449();
-  }
-
-  final synchronized void method442(boolean var1) {
-    this.anInt3470 = (this.anInt3470 ^ this.anInt3470 >> 31) + (this.anInt3470 >>> 31);
-    if (var1) {
-      this.anInt3470 = -this.anInt3470;
-    }
-
-  }
-
-  final synchronized void method443(int var1) {
-    if (this.anInt3470 < 0) {
-      this.anInt3470 = -var1;
-    } else {
-      this.anInt3470 = var1;
-    }
-
-  }
-
-  final boolean method444() {
-    return this.anInt3474 < 0
-      || this.anInt3474 >= ((SomethingMusic0) this.aClass3_Sub12_2544).aByteArray3030.length << 8;
-  }
-
-  final boolean method445() {
-    return this.anInt3480 != 0;
-  }
-
-  private final void method449() {
-    this.anInt3476 = this.anInt3471;
-    this.anInt3484 = method452(this.anInt3471, this.anInt3478);
-    this.anInt3481 = method454(this.anInt3471, this.anInt3478);
-  }
-
-  final synchronized void method450(int var1, int var2, int var3) {
-    if (var1 == 0) {
-      this.method441(var2, var3);
-    } else {
-      int var4 = method452(var2, var3);
-      int var5 = method454(var2, var3);
-      if (this.anInt3484 == var4 && this.anInt3481 == var5) {
-        this.anInt3480 = 0;
-      } else {
-        int var6 = var2 - this.anInt3476;
-        if (this.anInt3476 - var2 > var6) {
-          var6 = this.anInt3476 - var2;
-        }
-
-        if (var4 - this.anInt3484 > var6) {
-          var6 = var4 - this.anInt3484;
-        }
-
-        if (this.anInt3484 - var4 > var6) {
-          var6 = this.anInt3484 - var4;
-        }
-
-        if (var5 - this.anInt3481 > var6) {
-          var6 = var5 - this.anInt3481;
-        }
-
-        if (this.anInt3481 - var5 > var6) {
-          var6 = this.anInt3481 - var5;
-        }
-
-        if (var1 > var6) {
-          var1 = var6;
-        }
-
-        this.anInt3480 = var1;
-        this.anInt3471 = var2;
-        this.anInt3478 = var3;
-        this.anInt3472 = (var2 - this.anInt3476) / var1;
-        this.anInt3475 = (var4 - this.anInt3484) / var1;
-        this.anInt3483 = (var5 - this.anInt3481) / var1;
-      }
-    }
-  }
-
-  final synchronized int method451() {
-    return this.anInt3478 < 0 ? -1 : this.anInt3478;
-  }
-
-  final AudioStreamEncoder method414() {
-    return null;
   }
 }

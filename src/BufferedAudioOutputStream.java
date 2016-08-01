@@ -16,32 +16,28 @@ final class BufferedAudioOutputStream extends AbstractAudioOutputStream {
   private AudioFormat audioFormat;
   private byte[] buffer;
 
-  final void close() {
-    if (null != this.sourceDataLine) {
-      this.sourceDataLine.close();
-      this.sourceDataLine = null;
+  final void write() {
+    try {
+      Synthesizer synthesizer = MidiSystem.getSynthesizer();
+      synthesizer.getLatency();
+    } catch (MidiUnavailableException e) {
+      e.printStackTrace();
     }
-  }
-
-  final void bind(Component var1) {
-    Info[] var2 = AudioSystem.getMixerInfo();
-    if (null != var2) {
-      Info[] var3 = var2;
-
-      for (int var4 = 0; ~var4 > ~var3.length; ++var4) {
-        Info var5 = var3[var4];
-        if (null != var5) {
-          String var6 = var5.getName();
-          if (null != var6 && var6.toLowerCase().indexOf("soundmax") >= 0) {
-            this.soundMax = true;
-          }
-        }
+    int sampleLen = 256;
+    if (GameString.stereo) {
+      sampleLen <<= 1;
+    }
+    for (int i = 0; i < sampleLen; ++i) {
+      int sample = this.samples[i];
+      if ((sample + 0x800000 & 0xff000000) != 0) {
+        sample = 0x7fffff ^ sample >> 31;
       }
+
+      buffer[i * 2] = (byte) (sample >> 8);
+      buffer[i * 2 + 1] = (byte) (sample >> 16);
     }
 
-    this.audioFormat =
-      new AudioFormat((float) DummyClass60.sampleRate, 16, !GameString.stereo ? 1 : 2, true, false);
-    this.buffer = new byte[256 << (GameString.stereo ? 2 : 1)];
+    sourceDataLine.write(buffer, 0, sampleLen << 1);
   }
 
   final void setBufferSize(int bufferSize) throws LineUnavailableException {
@@ -82,27 +78,31 @@ final class BufferedAudioOutputStream extends AbstractAudioOutputStream {
     return bufferSize - (sourceDataLine.available() >> (!GameString.stereo ? 1 : 2));
   }
 
-  final void write() {
-    try {
-      Synthesizer synthesizer = MidiSystem.getSynthesizer();
-      synthesizer.getLatency();
-    } catch (MidiUnavailableException e) {
-      e.printStackTrace();
+  final void close() {
+    if (null != this.sourceDataLine) {
+      this.sourceDataLine.close();
+      this.sourceDataLine = null;
     }
-    int sampleLen = 256;
-    if (GameString.stereo) {
-      sampleLen <<= 1;
-    }
-    for (int i = 0; i < sampleLen; ++i) {
-      int sample = this.samples[i];
-      if ((sample + 0x800000 & 0xff000000) != 0) {
-        sample = 0x7fffff ^ sample >> 31;
+  }
+
+  final void bind(Component var1) {
+    Info[] var2 = AudioSystem.getMixerInfo();
+    if (null != var2) {
+      Info[] var3 = var2;
+
+      for (int var4 = 0; ~var4 > ~var3.length; ++var4) {
+        Info var5 = var3[var4];
+        if (null != var5) {
+          String var6 = var5.getName();
+          if (null != var6 && var6.toLowerCase().indexOf("soundmax") >= 0) {
+            this.soundMax = true;
+          }
+        }
       }
-
-      buffer[i * 2]     = (byte) (sample >> 8);
-      buffer[i * 2 + 1] = (byte) (sample >> 16);
     }
 
-    sourceDataLine.write(buffer, 0, sampleLen << 1);
+    this.audioFormat =
+      new AudioFormat((float) DummyClass60.sampleRate, 16, !GameString.stereo ? 1 : 2, true, false);
+    this.buffer = new byte[256 << (GameString.stereo ? 2 : 1)];
   }
 }

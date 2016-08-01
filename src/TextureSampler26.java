@@ -18,6 +18,45 @@ final class TextureSampler26 extends AbstractTextureSampler {
     super(1, true);
   }
 
+  final int[] method154(int var1, byte var2) {
+    try {
+      int var3 = 69 / ((var2 - 30) / 36);
+      int[] var4 = this.monoChromaticImageCache.method1709(-16409, var1);
+      if (this.monoChromaticImageCache.aBoolean1580) {
+        int[] var5 = this.method152(0, var1, 32755);
+
+        for (int var6 = 0; var6 < SomethingLight0.anInt1559; ++var6) {
+          int var7 = var5[var6];
+          var4[var6] = ~this.anInt3073 >= ~var7 && ~var7 >= ~this.anInt3074 ? 4096 : 0;
+        }
+      }
+
+      return var4;
+    } catch (RuntimeException var8) {
+      throw AbstractGameWorld.cascadeException(var8, "ca.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void parseConfig(int var1, Buffer var2, boolean var3) {
+    try {
+      if (!var3) {
+        method196(true);
+      }
+
+      if (~var1 != -1) {
+        if (1 == var1) {
+          this.anInt3074 = var2.readUnsignedShort();
+        }
+      } else {
+        this.anInt3073 = var2.readUnsignedShort();
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "ca.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
   static final void method195(int var0) {
     try {
       int var1 = (NPC.anInt3995 >> 10) - -(WorldMapLabel.anInt1716 >> 3);
@@ -172,47 +211,8 @@ final class TextureSampler26 extends AbstractTextureSampler {
       }
 
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ca.C(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final int[] method154(int var1, byte var2) {
-    try {
-      int var3 = 69 / ((var2 - 30) / 36);
-      int[] var4 = this.monoChromaticImageCache.method1709(-16409, var1);
-      if (this.monoChromaticImageCache.aBoolean1580) {
-        int[] var5 = this.method152(0, var1, 32755);
-
-        for (int var6 = 0; var6 < SomethingLight0.anInt1559; ++var6) {
-          int var7 = var5[var6];
-          var4[var6] = ~this.anInt3073 >= ~var7 && ~var7 >= ~this.anInt3074 ? 4096 : 0;
-        }
-      }
-
-      return var4;
-    } catch (RuntimeException var8) {
-      throw AbstractGameWorld.cascadeException(var8, "ca.D(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final void parseConfig(int var1, Buffer var2, boolean var3) {
-    try {
-      if (!var3) {
-        method196(true);
-      }
-
-      if (~var1 != -1) {
-        if (1 == var1) {
-          this.anInt3074 = var2.readUnsignedShort();
-        }
-      } else {
-        this.anInt3073 = var2.readUnsignedShort();
-      }
-
-    } catch (RuntimeException var5) {
       throw AbstractGameWorld.cascadeException(var5,
-        "ca.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+        "ca.C(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 

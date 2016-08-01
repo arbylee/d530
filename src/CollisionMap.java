@@ -28,86 +28,6 @@ final class CollisionMap {
     }
   }
 
-  public static void method1491(byte var0) {
-    try {
-      if (var0 > -123) {
-        method1491((byte) -27);
-      }
-
-      aShortArray1311 = null;
-      playerOptions = null;
-      aClass94_1301 = null;
-      aClass33_1305 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "mj.R(" + var0 + ')');
-    }
-  }
-
-  static final void method1493(int var0, int var1, Widget var2, int var3, byte var4) {
-    try {
-      if (var4 == 59) {
-        if (GlRenderer.useOpenGlRenderer) {
-          GlUtils.clip(var0, var1, var2.anInt168 + var0, var2.anInt193 + var1);
-        }
-
-        if (-4 >= ~DummyClass12.minimapMode) {
-          if (!GlRenderer.useOpenGlRenderer) {
-            DummyClass47.method1332(var0, var1, 0, var2.anIntArray207, var2.anIntArray291);
-          } else {
-            AbstractDirectColorSprite var5 = var2.method866((byte) -113, false);
-            if (null != var5) {
-              var5.method643(var0, var1);
-            }
-          }
-        } else if (GlRenderer.useOpenGlRenderer) {
-          ((GlDirectColorSprite) LightIntensity.aClass3_Sub28_Sub16_895)
-            .draw(var0, var1, var2.anInt168, var2.anInt193,
-              LightIntensity.aClass3_Sub28_Sub16_895.anInt3707 / 2,
-              LightIntensity.aClass3_Sub28_Sub16_895.anInt3696 / 2, SpotAnimationConfig.anInt531,
-              256, (GlDirectColorSprite) var2.method866((byte) -113, false));
-        } else {
-          ((SoftwareDirectColorSprite) LightIntensity.aClass3_Sub28_Sub16_895)
-            .method667(var0, var1, var2.anInt168, var2.anInt193,
-              LightIntensity.aClass3_Sub28_Sub16_895.anInt3707 / 2,
-              LightIntensity.aClass3_Sub28_Sub16_895.anInt3696 / 2, SpotAnimationConfig.anInt531,
-              256, var2.anIntArray207, var2.anIntArray291);
-        }
-
-        DummyClass9.aBooleanArray4008[var3] = true;
-      }
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "mj.K(" + var0 + ',' + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ','
-          + var4 + ')');
-    }
-  }
-
-  static final boolean isOnScreen(int x, int var1, int var2, int z, int far) {
-    int xx = z * TextureSampler25.yawSine + x * TextureSampler20.yawCosine >> 16;
-    int var6 = z * TextureSampler20.yawCosine - x * TextureSampler25.yawSine >> 16;
-    int zz = var1 * DummyClass44.pitchSine + var6 * LinearHashTable.pitchCosine >> 16;
-    int yy = var1 * LinearHashTable.pitchCosine - var6 * DummyClass44.pitchSine >> 16;
-    if (zz < 1) {
-      zz = 1;
-    }
-
-    int screenX = (xx << 9) / zz;
-    int screenY = (yy << 9) / zz;
-    int zz0 = var2 * DummyClass44.pitchSine + var6 * LinearHashTable.pitchCosine >> 16;
-    int yy0 = var2 * LinearHashTable.pitchCosine - var6 * DummyClass44.pitchSine >> 16;
-    if (zz0 < 1) {
-      zz0 = 1;
-    }
-
-    int screenX0 = (xx << 9) / zz0;
-    int screenY0 = (yy0 << 9) / zz0;
-    return !(zz < 50 && zz0 < 50) && (!(zz > far && zz0 > far) && (
-      !(screenX < DummyClass17.screenLowerX && screenX0 < DummyClass17.screenLowerX) && (
-        !(screenX > Unsure.screenUpperX && screenX0 > Unsure.screenUpperX) && (
-          !(screenY < DummyClass3.screenUpperY && screenY0 < DummyClass3.screenUpperY) && (
-            screenY <= BlockConfig.screenLowerY || screenY0 <= BlockConfig.screenLowerY)))));
-  }
-
   final void method1485(int var1, boolean var2, int var3, int var4, int var5, int var6) {
     try {
       var6 -= this.anInt1309;
@@ -834,8 +754,8 @@ final class CollisionMap {
       this.anIntArrayArray1304[var3][var4] =
         TextureSampler3.method308(this.anIntArrayArray1304[var3][var4], var1);
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "mj.J(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "mj.J(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
     }
   }
 
@@ -1140,8 +1060,8 @@ final class CollisionMap {
           TextureSampler3.method308(this.anIntArrayArray1304[var3][var1], 2097152);
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "mj.E(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "mj.E(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -1197,8 +1117,8 @@ final class CollisionMap {
       }
 
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "mj.I(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "mj.I(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -1330,8 +1250,8 @@ final class CollisionMap {
           ClientScript.bitAnd(this.anIntArrayArray1304[var3][var2], ~var4);
       }
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "mj.H(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "mj.H(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
     }
   }
 
@@ -1381,9 +1301,87 @@ final class CollisionMap {
           TextureSampler3.method308(this.anIntArrayArray1304[var1][var2], 262144);
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "mj.C(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "mj.C(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
+  }
+
+  public static void method1491(byte var0) {
+    try {
+      if (var0 > -123) {
+        method1491((byte) -27);
+      }
+
+      aShortArray1311 = null;
+      playerOptions = null;
+      aClass94_1301 = null;
+      aClass33_1305 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "mj.R(" + var0 + ')');
+    }
+  }
+
+  static final void method1493(int var0, int var1, Widget var2, int var3, byte var4) {
+    try {
+      if (var4 == 59) {
+        if (GlRenderer.useOpenGlRenderer) {
+          GlUtils.clip(var0, var1, var2.anInt168 + var0, var2.anInt193 + var1);
+        }
+
+        if (-4 >= ~DummyClass12.minimapMode) {
+          if (!GlRenderer.useOpenGlRenderer) {
+            DummyClass47.method1332(var0, var1, 0, var2.anIntArray207, var2.anIntArray291);
+          } else {
+            AbstractDirectColorSprite var5 = var2.method866((byte) -113, false);
+            if (null != var5) {
+              var5.method643(var0, var1);
+            }
+          }
+        } else if (GlRenderer.useOpenGlRenderer) {
+          ((GlDirectColorSprite) LightIntensity.aClass3_Sub28_Sub16_895).draw(var0, var1,
+            var2.anInt168, var2.anInt193, LightIntensity.aClass3_Sub28_Sub16_895.anInt3707 / 2,
+            LightIntensity.aClass3_Sub28_Sub16_895.anInt3696 / 2, SpotAnimationConfig.anInt531, 256,
+            (GlDirectColorSprite) var2.method866((byte) -113, false));
+        } else {
+          ((SoftwareDirectColorSprite) LightIntensity.aClass3_Sub28_Sub16_895).method667(var0, var1,
+            var2.anInt168, var2.anInt193, LightIntensity.aClass3_Sub28_Sub16_895.anInt3707 / 2,
+            LightIntensity.aClass3_Sub28_Sub16_895.anInt3696 / 2, SpotAnimationConfig.anInt531, 256,
+            var2.anIntArray207, var2.anIntArray291);
+        }
+
+        DummyClass9.aBooleanArray4008[var3] = true;
+      }
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "mj.K(" + var0 + ',' + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ','
+          + var4 + ')');
+    }
+  }
+
+  static final boolean isOnScreen(int x, int var1, int var2, int z, int far) {
+    int xx = z * TextureSampler25.yawSine + x * TextureSampler20.yawCosine >> 16;
+    int var6 = z * TextureSampler20.yawCosine - x * TextureSampler25.yawSine >> 16;
+    int zz = var1 * DummyClass44.pitchSine + var6 * LinearHashTable.pitchCosine >> 16;
+    int yy = var1 * LinearHashTable.pitchCosine - var6 * DummyClass44.pitchSine >> 16;
+    if (zz < 1) {
+      zz = 1;
+    }
+
+    int screenX = (xx << 9) / zz;
+    int screenY = (yy << 9) / zz;
+    int zz0 = var2 * DummyClass44.pitchSine + var6 * LinearHashTable.pitchCosine >> 16;
+    int yy0 = var2 * LinearHashTable.pitchCosine - var6 * DummyClass44.pitchSine >> 16;
+    if (zz0 < 1) {
+      zz0 = 1;
+    }
+
+    int screenX0 = (xx << 9) / zz0;
+    int screenY0 = (yy0 << 9) / zz0;
+    return !(zz < 50 && zz0 < 50) && (!(zz > far && zz0 > far) && (
+      !(screenX < DummyClass17.screenLowerX && screenX0 < DummyClass17.screenLowerX) && (
+        !(screenX > Unsure.screenUpperX && screenX0 > Unsure.screenUpperX) && (
+          !(screenY < DummyClass3.screenUpperY && screenY0 < DummyClass3.screenUpperY) && (
+            screenY <= BlockConfig.screenLowerY || screenY0 <= BlockConfig.screenLowerY)))));
   }
 
 }

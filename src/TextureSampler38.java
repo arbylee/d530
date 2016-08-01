@@ -2,13 +2,13 @@ import java.util.Random;
 
 final class TextureSampler38 extends AbstractTextureSampler {
 
+  private static GameString aClass94_3449 = SpawnedGameObject.createString("Loading sprites )2 ");
   static int[] anIntArray3446;
   static long[] entityKeys = new long[1000];
   static GameString aClass94_3452 = SpawnedGameObject.createString("mapflag");
   static short[] aShortArray3453 = new short[256];
   static short[] aShortArray3455;
   static int[] anIntArray3456 = new int[4096];
-  private static GameString aClass94_3449 = SpawnedGameObject.createString("Loading sprites )2 ");
   static GameString aClass94_3445 = aClass94_3449;
   private int anInt3444 = 0;
   private int anInt3447 = 2000;
@@ -18,59 +18,6 @@ final class TextureSampler38 extends AbstractTextureSampler {
 
   public TextureSampler38() {
     super(0, true);
-  }
-
-  public static void method351(int var0) {
-    try {
-      aShortArray3455 = null;
-      aClass94_3449 = null;
-      anIntArray3446 = null;
-      if (var0 == -1) {
-        aClass94_3445 = null;
-        aShortArray3453 = null;
-        entityKeys = null;
-        anIntArray3456 = null;
-        aClass94_3452 = null;
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "vc.B(" + var0 + ')');
-    }
-  }
-
-  final void method158(int var1) {
-    try {
-      FileSystem.method844((byte) -9);
-      if (var1 != 16251) {
-        this.anInt3454 = 107;
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "vc.P(" + var1 + ')');
-    }
-  }
-
-  final void parseConfig(int var1, Buffer var2, boolean var3) {
-    try {
-      if (-1 == ~var1) {
-        this.anInt3454 = var2.readUnsignedByte();
-      } else if (~var1 == -2) {
-        this.anInt3447 = var2.readUnsignedShort();
-      } else if (~var1 != -3) {
-        if (3 == var1) {
-          this.anInt3444 = var2.readUnsignedShort();
-        } else if (var1 == 4) {
-          this.anInt3450 = var2.readUnsignedShort();
-        }
-      } else {
-        this.anInt3451 = var2.readUnsignedByte();
-      }
-
-      if (var3) {
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "vc.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
-    }
   }
 
   final int[] method154(int var1, byte var2) {
@@ -158,6 +105,59 @@ final class TextureSampler38 extends AbstractTextureSampler {
       return var3;
     } catch (RuntimeException var28) {
       throw AbstractGameWorld.cascadeException(var28, "vc.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void parseConfig(int var1, Buffer var2, boolean var3) {
+    try {
+      if (-1 == ~var1) {
+        this.anInt3454 = var2.readUnsignedByte();
+      } else if (~var1 == -2) {
+        this.anInt3447 = var2.readUnsignedShort();
+      } else if (~var1 != -3) {
+        if (3 == var1) {
+          this.anInt3444 = var2.readUnsignedShort();
+        } else if (var1 == 4) {
+          this.anInt3450 = var2.readUnsignedShort();
+        }
+      } else {
+        this.anInt3451 = var2.readUnsignedByte();
+      }
+
+      if (var3) {
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "vc.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
+  final void method158(int var1) {
+    try {
+      FileSystem.method844((byte) -9);
+      if (var1 != 16251) {
+        this.anInt3454 = 107;
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "vc.P(" + var1 + ')');
+    }
+  }
+
+  public static void method351(int var0) {
+    try {
+      aShortArray3455 = null;
+      aClass94_3449 = null;
+      anIntArray3446 = null;
+      if (var0 == -1) {
+        aClass94_3445 = null;
+        aShortArray3453 = null;
+        entityKeys = null;
+        anIntArray3456 = null;
+        aClass94_3452 = null;
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "vc.B(" + var0 + ')');
     }
   }
 

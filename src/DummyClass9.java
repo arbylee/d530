@@ -42,13 +42,12 @@ final class DummyClass9 extends DummyClass5 {
       }
 
       if (!NPC.method1986(90) && ~GameObject.plane != ~GameWorldSomething.currentPlane) {
-        FileCacheRequester
-          .rebuildScene(GameWorldSomething.currentPlane, VariableUpdate.anInt2294,
-            AbstractObjectNode.anInt3606, TextureCache.localPlayer.waypointsY[0], false,
-            TextureCache.localPlayer.waypointsX[0], true);
+        FileCacheRequester.rebuildScene(GameWorldSomething.currentPlane, VariableUpdate.anInt2294,
+          AbstractObjectNode.anInt3606, TextureCache.localPlayer.waypointsY[0], false,
+          TextureCache.localPlayer.waypointsX[0], true);
       } else {
-        if (~GameWorldSomething.currentPlane != ~DummyClass43.anInt909 && ClanChatUser
-          .method385(var0 + 0, GameWorldSomething.currentPlane)) {
+        if (~GameWorldSomething.currentPlane != ~DummyClass43.anInt909 && ClanChatUser.method385(
+          var0 + 0, GameWorldSomething.currentPlane)) {
           DummyClass43.anInt909 = GameWorldSomething.currentPlane;
           Buffer.method792(var0 + 9179409);
         }
@@ -67,8 +66,8 @@ final class DummyClass9 extends DummyClass5 {
         AbstractTextureSampler.anInt2384 = -1;
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "ch.G(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "ch.G(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -103,8 +102,9 @@ final class DummyClass9 extends DummyClass5 {
           }
 
           if (~TextureSampler2.anInt3375 == -2) {
-            AreaSoundEffect.socketRequest = DummyClass35.signLink
-              .method1441((byte) 8, GameException.serverHost, DummyClass24.anInt1658);
+            AreaSoundEffect.socketRequest =
+              DummyClass35.signLink.method1441((byte) 8, GameException.serverHost,
+                DummyClass24.anInt1658);
             TextureSampler2.anInt3375 = 2;
           }
 

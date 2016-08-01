@@ -1,11 +1,12 @@
 final class DummyClass44 {
 
+  private static GameString aClass94_931 = SpawnedGameObject.createString("Continue");
   static int anInt930;
   static int anInt932;
-  static GameString aClass94_933 = SpawnedGameObject.createString("Ladevorgang )2 bitte warten Sie)3");
+  static GameString aClass94_933 =
+    SpawnedGameObject.createString("Ladevorgang )2 bitte warten Sie)3");
   static int anInt934;
   static int pitchSine;
-  private static GameString aClass94_931 = SpawnedGameObject.createString("Continue");
   static GameString aClass94_935 = aClass94_931;
 
   public static void method1206(byte var0) {

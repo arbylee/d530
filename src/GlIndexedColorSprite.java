@@ -75,6 +75,18 @@ final class GlIndexedColorSprite extends AbstractIndexedColorSprite {
     var4.glLoadIdentity();
   }
 
+  final void draw(int x, int y) {
+    GlRenderer.method1822();
+    x += this.offsetX;
+    y += this.offsetY;
+    GL var3 = GlRenderer.gl;
+    GlRenderer.bindTexture(this.textureId);
+    this.initializeParameters(1);
+    var3.glTranslatef((float) x, (float) (GlRenderer.viewHeight - y), 0.0F);
+    var3.glCallList(this.listId);
+    var3.glLoadIdentity();
+  }
+
   private final void initializeParameters(int var1) {
     if (this.anInt2677 != var1) {
       this.anInt2677 = var1;
@@ -88,18 +100,6 @@ final class GlIndexedColorSprite extends AbstractIndexedColorSprite {
       }
 
     }
-  }
-
-  final void draw(int x, int y) {
-    GlRenderer.method1822();
-    x += this.offsetX;
-    y += this.offsetY;
-    GL var3 = GlRenderer.gl;
-    GlRenderer.bindTexture(this.textureId);
-    this.initializeParameters(1);
-    var3.glTranslatef((float) x, (float) (GlRenderer.viewHeight - y), 0.0F);
-    var3.glCallList(this.listId);
-    var3.glLoadIdentity();
   }
 
   protected final void finalize() throws Throwable {

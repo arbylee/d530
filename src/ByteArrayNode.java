@@ -11,8 +11,8 @@ final class ByteArrayNode extends SubNode {
     try {
       this.aByteArray3612 = var1;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "hc.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "hc.<init>(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -125,7 +125,8 @@ final class ByteArrayNode extends SubNode {
              var2 != null; var2 = (AreaSoundEffect) SocketStream.aClass61_1242.getNext()) {
           if (var0 == var2.aClass140_Sub4_Sub2_2324) {
             if (var2.aClass3_Sub24_Sub1_2312 != null) {
-              MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(var2.aClass3_Sub24_Sub1_2312);
+              MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(
+                var2.aClass3_Sub24_Sub1_2312);
               var2.aClass3_Sub24_Sub1_2312 = null;
             }
 
@@ -136,8 +137,8 @@ final class ByteArrayNode extends SubNode {
 
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "hc.D(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "hc.D(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -149,8 +150,8 @@ final class ByteArrayNode extends SubNode {
 
       SomethingOtherWorldMap.aClass153_2536 = var0;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "hc.C(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "hc.C(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -161,8 +162,8 @@ final class ByteArrayNode extends SubNode {
           return -117;
         } else {
           for (int var2 = 0; var2 < DummyClass25.aClass131_1624.anInt1720; ++var2) {
-            if (DummyClass25.aClass131_1624.aClass94Array1721[var2]
-              .method1560(TextureSampler15.aClass94_3192, !var1, OndemandFileRequest.aClass94_4066)
+            if (DummyClass25.aClass131_1624.aClass94Array1721[var2].method1560(
+              TextureSampler15.aClass94_3192, !var1, OndemandFileRequest.aClass94_4066)
               .method1528((byte) -42, var0)) {
               return var2;
             }
@@ -174,8 +175,8 @@ final class ByteArrayNode extends SubNode {
         return -1;
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "hc.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "hc.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 

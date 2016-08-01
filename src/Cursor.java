@@ -6,6 +6,69 @@ final class Cursor {
   int anInt881;
   private int anInt883;
 
+  final SoftwareDirectColorSprite method1179(byte var1) {
+    try {
+      SoftwareDirectColorSprite var2 =
+        (SoftwareDirectColorSprite) DummyClass5.aClass93_2984.get((long) this.anInt883);
+      if (null != var2) {
+        return var2;
+      } else if (var1 != 95) {
+        return null;
+      } else {
+        var2 = AbstractObjectNode.method562(AnimationSequence.aClass153_1852, 0, this.anInt883,
+          (byte) 39);
+        if (var2 != null) {
+          DummyClass5.aClass93_2984.get((byte) -87, var2, (long) this.anInt883);
+        }
+
+        return var2;
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "ia.F(" + var1 + ')');
+    }
+  }
+
+  final void method1182(Buffer var1, int var2, byte var3) {
+    try {
+      if (var3 < 75) {
+        this.method1182(null, -111, (byte) 47);
+      }
+
+      while (true) {
+        int var4 = var1.readUnsignedByte();
+        if (-1 == ~var4) {
+          return;
+        }
+
+        this.method1183(-18426, var2, var4, var1);
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "ia.G(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  private final void method1183(int var1, int var2, int var3, Buffer var4) {
+    try {
+      if (var1 != -18426) {
+        this.anInt881 = -82;
+      }
+
+      if (-2 != ~var3) {
+        if (2 == var3) {
+          this.anInt881 = var4.readUnsignedByte();
+          this.anInt879 = var4.readUnsignedByte();
+        }
+      } else {
+        this.anInt883 = var4.readUnsignedShort();
+      }
+
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "ia.D(" + var1 + ',' + var2 + ',' + var3 + ',' + (var4 != null ? "{...}" : "null") + ')');
+    }
+  }
+
   static final void method1180(byte var0, Mobile var1) {
     try {
       RenderAnimation var2 = var1.getRenderAnimationId(false);
@@ -233,8 +296,8 @@ final class Cursor {
       }
 
     } catch (RuntimeException var17) {
-      throw AbstractGameWorld
-        .cascadeException(var17, "ia.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var17,
+        "ia.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -306,69 +369,6 @@ final class Cursor {
       return 2;
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "ia.B(" + var0 + ')');
-    }
-  }
-
-  final SoftwareDirectColorSprite method1179(byte var1) {
-    try {
-      SoftwareDirectColorSprite var2 =
-        (SoftwareDirectColorSprite) DummyClass5.aClass93_2984.get((long) this.anInt883);
-      if (null != var2) {
-        return var2;
-      } else if (var1 != 95) {
-        return null;
-      } else {
-        var2 = AbstractObjectNode
-          .method562(AnimationSequence.aClass153_1852, 0, this.anInt883, (byte) 39);
-        if (var2 != null) {
-          DummyClass5.aClass93_2984.get((byte) -87, var2, (long) this.anInt883);
-        }
-
-        return var2;
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "ia.F(" + var1 + ')');
-    }
-  }
-
-  final void method1182(Buffer var1, int var2, byte var3) {
-    try {
-      if (var3 < 75) {
-        this.method1182(null, -111, (byte) 47);
-      }
-
-      while (true) {
-        int var4 = var1.readUnsignedByte();
-        if (-1 == ~var4) {
-          return;
-        }
-
-        this.method1183(-18426, var2, var4, var1);
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "ia.G(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  private final void method1183(int var1, int var2, int var3, Buffer var4) {
-    try {
-      if (var1 != -18426) {
-        this.anInt881 = -82;
-      }
-
-      if (-2 != ~var3) {
-        if (2 == var3) {
-          this.anInt881 = var4.readUnsignedByte();
-          this.anInt879 = var4.readUnsignedByte();
-        }
-      } else {
-        this.anInt883 = var4.readUnsignedShort();
-      }
-
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "ia.D(" + var1 + ',' + var2 + ',' + var3 + ',' + (var4 != null ? "{...}" : "null") + ')');
     }
   }
 

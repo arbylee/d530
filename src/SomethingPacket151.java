@@ -51,8 +51,8 @@ final class SomethingPacket151 extends Node {
 
       return var2;
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "wk.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "wk.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

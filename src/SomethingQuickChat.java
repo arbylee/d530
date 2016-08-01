@@ -1,5 +1,6 @@
 final class SomethingQuickChat extends SubNode {
 
+  private static GameString aClass94_3578 = SpawnedGameObject.createString("Loaded title screen");
   static int[] anIntArray3565 = new int[32];
   static int anInt3569;
   static ObjectCache aClass93_3572 = new ObjectCache(64);
@@ -8,72 +9,12 @@ final class SomethingQuickChat extends SubNode {
   static GameString aClass94_3576 = SpawnedGameObject.createString("name_icons");
   static GameString aClass94_3577 = SpawnedGameObject.createString(": ");
   static MidiSomething aClass83_3579;
-  private static GameString aClass94_3578 = SpawnedGameObject.createString("Loaded title screen");
   static GameString aClass94_3575 = aClass94_3578;
   int[] anIntArray3567;
   boolean aBoolean3568 = true;
   private int[] anIntArray3566;
   private int[][] anIntArrayArray3570;
   private GameString[] strings;
-
-  public static void method547(int var0) {
-    try {
-      if (var0 != -2951) {
-        aClass94_3576 = null;
-      }
-
-      aClass94_3578 = null;
-      aClass93_3572 = null;
-      aClass94_3575 = null;
-      TITLE_BACKGROUND = null;
-      aClass94_3577 = null;
-      aClass94_3576 = null;
-      aClass94_3573 = null;
-      aClass83_3579 = null;
-      anIntArray3565 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "cb.F(" + var0 + ')');
-    }
-  }
-
-  static final void method551(int var0, int var1, int var2) {
-    try {
-      if (var0 == 0) {
-        if (4 == var2 && !DummyHashTable.aBoolean1685) {
-          var2 = 2;
-          var1 = 2;
-        }
-
-        if (~DummyClass30.anInt453 == ~var2) {
-          if (0 != var2 && var1 != TextureSampler37.anInt3263) {
-            MapScene.anInterface5Array70[var2].set(var1);
-            TextureSampler37.anInt3263 = var1;
-          }
-        } else {
-          if (TextureSampler23.aBoolean3207) {
-            return;
-          }
-
-          if (~DummyClass30.anInt453 != -1) {
-            MapScene.anInterface5Array70[DummyClass30.anInt453].disable();
-          }
-
-          if (-1 != ~var2) {
-            MaterialShader var3 = MapScene.anInterface5Array70[var2];
-            var3.enable();
-            var3.set(var1);
-          }
-
-          DummyClass30.anInt453 = var2;
-          TextureSampler37.anInt3263 = var1;
-        }
-
-      }
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "cb.A(" + var0 + ',' + var1 + ',' + var2 + ')');
-    }
-  }
 
   final void method545(Buffer var1, int[] var2, boolean var3) {
     try {
@@ -110,8 +51,8 @@ final class SomethingQuickChat extends SubNode {
         this.method553(var1, var3, -14637);
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "cb.D(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "cb.D(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
     }
   }
 
@@ -146,8 +87,8 @@ final class SomethingQuickChat extends SubNode {
           -1) :
         -1;
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "cb.P(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "cb.P(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -257,8 +198,8 @@ final class SomethingQuickChat extends SubNode {
       if (this.anIntArray3566 != null) {
         for (int var4 = 0; var4 < this.anIntArray3566.length; ++var4) {
           string.append(this.strings[var4]);
-          string.append(GZipDecompressor.method1124(this.anIntArrayArray3570[var4], var2
-            .readVariableLengthValue(WidgetAccess.anIntArray2209[this.anIntArray3566[var4]],
+          string.append(GZipDecompressor.method1124(this.anIntArrayArray3570[var4],
+            var2.readVariableLengthValue(WidgetAccess.anIntArray2209[this.anIntArray3566[var4]],
               var1 + -28021), this.anIntArray3566[var4], false));
         }
       }
@@ -266,8 +207,67 @@ final class SomethingQuickChat extends SubNode {
       string.append(this.strings[-1 + this.strings.length]);
       return string.pack();
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "cb.B(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "cb.B(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public static void method547(int var0) {
+    try {
+      if (var0 != -2951) {
+        aClass94_3576 = null;
+      }
+
+      aClass94_3578 = null;
+      aClass93_3572 = null;
+      aClass94_3575 = null;
+      TITLE_BACKGROUND = null;
+      aClass94_3577 = null;
+      aClass94_3576 = null;
+      aClass94_3573 = null;
+      aClass83_3579 = null;
+      anIntArray3565 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "cb.F(" + var0 + ')');
+    }
+  }
+
+  static final void method551(int var0, int var1, int var2) {
+    try {
+      if (var0 == 0) {
+        if (4 == var2 && !DummyHashTable.aBoolean1685) {
+          var2 = 2;
+          var1 = 2;
+        }
+
+        if (~DummyClass30.anInt453 == ~var2) {
+          if (0 != var2 && var1 != TextureSampler37.anInt3263) {
+            MapScene.anInterface5Array70[var2].set(var1);
+            TextureSampler37.anInt3263 = var1;
+          }
+        } else {
+          if (TextureSampler23.aBoolean3207) {
+            return;
+          }
+
+          if (~DummyClass30.anInt453 != -1) {
+            MapScene.anInterface5Array70[DummyClass30.anInt453].disable();
+          }
+
+          if (-1 != ~var2) {
+            MaterialShader var3 = MapScene.anInterface5Array70[var2];
+            var3.enable();
+            var3.set(var1);
+          }
+
+          DummyClass30.anInt453 = var2;
+          TextureSampler37.anInt3263 = var1;
+        }
+
+      }
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "cb.A(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 

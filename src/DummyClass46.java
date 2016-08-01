@@ -2,8 +2,6 @@ import javax.media.opengl.GL;
 
 final class DummyClass46 {
 
-  static Light[] lights;
-  static int anInt1032 = 0;
   private static float[] aFloatArray1022 = new float[] {0.0F, 0.0F, 0.0F, 1.0F};
   private static int[] anIntArray1023;
   private static int anInt1024;
@@ -18,7 +16,8 @@ final class DummyClass46 {
   private static int anInt1034;
   private static int sceneHeight;
   private static int sceneWidth;
-
+  static Light[] lights;
+  static int anInt1032 = 0;
 
   static final void method1263(int var0, int var1, int var2, int var3, int var4, int var5,
                                int var6) {

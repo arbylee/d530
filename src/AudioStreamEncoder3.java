@@ -13,8 +13,211 @@ final class AudioStreamEncoder3 extends AudioStreamEncoder {
     try {
       this.aClass3_Sub24_Sub4_3493 = var1;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "te.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "te.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  private final void method464(AudioSomethingSomething var1, int var2, int var3) {
+    try {
+      if (-1 != ~(this.aClass3_Sub24_Sub4_3493.anIntArray3518[var1.anInt2514] & 4)
+        && -1 < ~var1.anInt2506) {
+        int var4 =
+          this.aClass3_Sub24_Sub4_3493.anIntArray3509[var1.anInt2514] / DummyClass60.sampleRate;
+        int var5 = (var4 + 1048575 + -var1.anInt2516) / var4;
+        var1.anInt2516 = 1048575 & var4 * var3 + var1.anInt2516;
+        if (~var3 <= ~var5) {
+          if (0 != this.aClass3_Sub24_Sub4_3493.anIntArray3519[var1.anInt2514]) {
+            var1.aClass3_Sub24_Sub1_2507 =
+              AudioStreamEncoder1.method432(var1.aClass3_Sub12_Sub1_2509,
+                var1.aClass3_Sub24_Sub1_2507.method438(), 0,
+                var1.aClass3_Sub24_Sub1_2507.method451());
+            this.aClass3_Sub24_Sub4_3493.method501(var1,
+              var1.aClass3_Sub15_2527.aShortArray2434[var1.anInt2520] < 0, (byte) -101);
+          } else {
+            var1.aClass3_Sub24_Sub1_2507 =
+              AudioStreamEncoder1.method432(var1.aClass3_Sub12_Sub1_2509,
+                var1.aClass3_Sub24_Sub1_2507.method438(), var1.aClass3_Sub24_Sub1_2507.method425(),
+                var1.aClass3_Sub24_Sub1_2507.method451());
+          }
+
+          if (~var1.aClass3_Sub15_2527.aShortArray2434[var1.anInt2520] > -1) {
+            var1.aClass3_Sub24_Sub1_2507.method429(-1);
+          }
+
+          var3 = var1.anInt2516 / var4;
+        }
+      }
+
+      var1.aClass3_Sub24_Sub1_2507.method415(var3);
+      if (var2 != 7) {
+        this.aClass3_Sub24_Sub2_3495 = null;
+      }
+
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "te.P(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final int method409() {
+    try {
+      return 0;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "te.D()");
+    }
+  }
+
+  final AudioStreamEncoder method411() {
+    try {
+      AudioSomethingSomething var1 = (AudioSomethingSomething) this.aClass61_3489.getFirst();
+      return null != var1 ?
+        (null != var1.aClass3_Sub24_Sub1_2507 ? var1.aClass3_Sub24_Sub1_2507 : this.method414()) :
+        null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "te.Q()");
+    }
+  }
+
+  final void method413(int[] var1, int var2, int var3) {
+    try {
+      this.aClass3_Sub24_Sub2_3495.method413(var1, var2, var3);
+
+      for (AudioSomethingSomething var6 = (AudioSomethingSomething) this.aClass61_3489.getFirst();
+           var6 != null; var6 = (AudioSomethingSomething) this.aClass61_3489.getNext()) {
+        if (!this.aClass3_Sub24_Sub4_3493.method504(var6, 126)) {
+          int var5 = var3;
+          int var4 = var2;
+
+          while (true) {
+            if (var5 > var6.anInt2512) {
+              this.method469(var1, var6, var4, var6.anInt2512, var5 + var4, (byte) 4);
+              var5 -= var6.anInt2512;
+              var4 += var6.anInt2512;
+              if (!this.aClass3_Sub24_Sub4_3493.method492(var5, var4, var6, (byte) 14, var1)) {
+                continue;
+              }
+              break;
+            }
+
+            this.method469(var1, var6, var4, var5, var4 + var5, (byte) 4);
+            var6.anInt2512 -= var5;
+            break;
+          }
+        }
+      }
+
+    } catch (RuntimeException var7) {
+      throw AbstractGameWorld.cascadeException(var7,
+        "te.E(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final AudioStreamEncoder method414() {
+    try {
+      AudioSomethingSomething var1;
+      do {
+        var1 = (AudioSomethingSomething) this.aClass61_3489.getNext();
+        if (null == var1) {
+          return null;
+        }
+      } while (var1.aClass3_Sub24_Sub1_2507 == null);
+
+      return var1.aClass3_Sub24_Sub1_2507;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "te.B()");
+    }
+  }
+
+  final void method415(int var1) {
+    try {
+      this.aClass3_Sub24_Sub2_3495.method415(var1);
+
+      for (AudioSomethingSomething var3 = (AudioSomethingSomething) this.aClass61_3489.getFirst();
+           var3 != null; var3 = (AudioSomethingSomething) this.aClass61_3489.getNext()) {
+        if (!this.aClass3_Sub24_Sub4_3493.method504(var3, 121)) {
+          int var2 = var1;
+
+          while (true) {
+            if (var2 > var3.anInt2512) {
+              this.method464(var3, 7, var3.anInt2512);
+              var2 -= var3.anInt2512;
+              if (!this.aClass3_Sub24_Sub4_3493.method492(var2, 0, var3, (byte) 14, null)) {
+                continue;
+              }
+              break;
+            }
+
+            this.method464(var3, 7, var2);
+            var3.anInt2512 -= var2;
+            break;
+          }
+        }
+      }
+
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "te.R(" + var1 + ')');
+    }
+  }
+
+  private final void method469(int[] var1, AudioSomethingSomething var2, int var3, int var4,
+                               int var5, byte var6) {
+    try {
+      if ((4 & this.aClass3_Sub24_Sub4_3493.anIntArray3518[var2.anInt2514]) != 0
+        && -1 < ~var2.anInt2506) {
+        int var7 =
+          this.aClass3_Sub24_Sub4_3493.anIntArray3509[var2.anInt2514] / DummyClass60.sampleRate;
+
+        while (true) {
+          int var8 = (-var2.anInt2516 + 1048575 + var7) / var7;
+          if (var4 < var8) {
+            var2.anInt2516 += var4 * var7;
+            break;
+          }
+
+          var4 -= var8;
+          var2.aClass3_Sub24_Sub1_2507.method413(var1, var3, var8);
+          int var9 = DummyClass60.sampleRate / 100;
+          AudioStreamEncoder1 var11 = var2.aClass3_Sub24_Sub1_2507;
+          int var10 = 262144 / var7;
+          if (var10 < var9) {
+            var9 = var10;
+          }
+
+          var2.anInt2516 += var7 * var8 + -1048576;
+          if (-1 != ~this.aClass3_Sub24_Sub4_3493.anIntArray3519[var2.anInt2514]) {
+            var2.aClass3_Sub24_Sub1_2507 =
+              AudioStreamEncoder1.method432(var2.aClass3_Sub12_Sub1_2509, var11.method438(), 0,
+                var11.method451());
+            this.aClass3_Sub24_Sub4_3493.method501(var2,
+              var2.aClass3_Sub15_2527.aShortArray2434[var2.anInt2520] < 0, (byte) -88);
+            var2.aClass3_Sub24_Sub1_2507.method431(var9, var11.method425());
+          } else {
+            var2.aClass3_Sub24_Sub1_2507 =
+              AudioStreamEncoder1.method432(var2.aClass3_Sub12_Sub1_2509, var11.method438(),
+                var11.method425(), var11.method451());
+          }
+
+          if (var2.aClass3_Sub15_2527.aShortArray2434[var2.anInt2520] < 0) {
+            var2.aClass3_Sub24_Sub1_2507.method429(-1);
+          }
+
+          var3 += var8;
+          var11.method417(var9);
+          var11.method413(var1, var3, var5 + -var3);
+          if (var11.method445()) {
+            this.aClass3_Sub24_Sub2_3495.method457(var11);
+          }
+        }
+      }
+
+      if (var6 == 4) {
+        var2.aClass3_Sub24_Sub1_2507.method413(var1, var3, var4);
+      }
+    } catch (RuntimeException var12) {
+      throw AbstractGameWorld.cascadeException(var12,
+        "te.S(" + (var1 != null ? "{...}" : "null") + ',' + (var2 != null ? "{...}" : "null") + ','
+          + var3 + ',' + var4 + ',' + var5 + ',' + var6 + ')');
     }
   }
 
@@ -55,8 +258,8 @@ final class AudioStreamEncoder3 extends AudioStreamEncoder {
 
       return var3;
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "te.F(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "te.F(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -74,8 +277,8 @@ final class AudioStreamEncoder3 extends AudioStreamEncoder {
         return false;
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "te.A(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "te.A(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -91,208 +294,6 @@ final class AudioStreamEncoder3 extends AudioStreamEncoder {
       MapScene.anInterface5Array70[var0] = new BumpShader();
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "te.T(" + var0 + ')');
-    }
-  }
-
-  final AudioStreamEncoder method414() {
-    try {
-      AudioSomethingSomething var1;
-      do {
-        var1 = (AudioSomethingSomething) this.aClass61_3489.getNext();
-        if (null == var1) {
-          return null;
-        }
-      } while (var1.aClass3_Sub24_Sub1_2507 == null);
-
-      return var1.aClass3_Sub24_Sub1_2507;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "te.B()");
-    }
-  }
-
-  final AudioStreamEncoder method411() {
-    try {
-      AudioSomethingSomething var1 = (AudioSomethingSomething) this.aClass61_3489.getFirst();
-      return null != var1 ?
-        (null != var1.aClass3_Sub24_Sub1_2507 ? var1.aClass3_Sub24_Sub1_2507 : this.method414()) :
-        null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "te.Q()");
-    }
-  }
-
-  private final void method464(AudioSomethingSomething var1, int var2, int var3) {
-    try {
-      if (-1 != ~(this.aClass3_Sub24_Sub4_3493.anIntArray3518[var1.anInt2514] & 4)
-        && -1 < ~var1.anInt2506) {
-        int var4 =
-          this.aClass3_Sub24_Sub4_3493.anIntArray3509[var1.anInt2514] / DummyClass60.sampleRate;
-        int var5 = (var4 + 1048575 + -var1.anInt2516) / var4;
-        var1.anInt2516 = 1048575 & var4 * var3 + var1.anInt2516;
-        if (~var3 <= ~var5) {
-          if (0 != this.aClass3_Sub24_Sub4_3493.anIntArray3519[var1.anInt2514]) {
-            var1.aClass3_Sub24_Sub1_2507 = AudioStreamEncoder1
-              .method432(var1.aClass3_Sub12_Sub1_2509, var1.aClass3_Sub24_Sub1_2507.method438(), 0,
-                var1.aClass3_Sub24_Sub1_2507.method451());
-            this.aClass3_Sub24_Sub4_3493
-              .method501(var1, var1.aClass3_Sub15_2527.aShortArray2434[var1.anInt2520] < 0,
-                (byte) -101);
-          } else {
-            var1.aClass3_Sub24_Sub1_2507 = AudioStreamEncoder1
-              .method432(var1.aClass3_Sub12_Sub1_2509, var1.aClass3_Sub24_Sub1_2507.method438(),
-                var1.aClass3_Sub24_Sub1_2507.method425(), var1.aClass3_Sub24_Sub1_2507.method451());
-          }
-
-          if (~var1.aClass3_Sub15_2527.aShortArray2434[var1.anInt2520] > -1) {
-            var1.aClass3_Sub24_Sub1_2507.method429(-1);
-          }
-
-          var3 = var1.anInt2516 / var4;
-        }
-      }
-
-      var1.aClass3_Sub24_Sub1_2507.method415(var3);
-      if (var2 != 7) {
-        this.aClass3_Sub24_Sub2_3495 = null;
-      }
-
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "te.P(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final int method409() {
-    try {
-      return 0;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "te.D()");
-    }
-  }
-
-  final void method415(int var1) {
-    try {
-      this.aClass3_Sub24_Sub2_3495.method415(var1);
-
-      for (AudioSomethingSomething var3 = (AudioSomethingSomething) this.aClass61_3489.getFirst();
-           var3 != null; var3 = (AudioSomethingSomething) this.aClass61_3489.getNext()) {
-        if (!this.aClass3_Sub24_Sub4_3493.method504(var3, 121)) {
-          int var2 = var1;
-
-          while (true) {
-            if (var2 > var3.anInt2512) {
-              this.method464(var3, 7, var3.anInt2512);
-              var2 -= var3.anInt2512;
-              if (!this.aClass3_Sub24_Sub4_3493.method492(var2, 0, var3, (byte) 14, null)) {
-                continue;
-              }
-              break;
-            }
-
-            this.method464(var3, 7, var2);
-            var3.anInt2512 -= var2;
-            break;
-          }
-        }
-      }
-
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "te.R(" + var1 + ')');
-    }
-  }
-
-  final void method413(int[] var1, int var2, int var3) {
-    try {
-      this.aClass3_Sub24_Sub2_3495.method413(var1, var2, var3);
-
-      for (AudioSomethingSomething var6 = (AudioSomethingSomething) this.aClass61_3489.getFirst();
-           var6 != null; var6 = (AudioSomethingSomething) this.aClass61_3489.getNext()) {
-        if (!this.aClass3_Sub24_Sub4_3493.method504(var6, 126)) {
-          int var5 = var3;
-          int var4 = var2;
-
-          while (true) {
-            if (var5 > var6.anInt2512) {
-              this.method469(var1, var6, var4, var6.anInt2512, var5 + var4, (byte) 4);
-              var5 -= var6.anInt2512;
-              var4 += var6.anInt2512;
-              if (!this.aClass3_Sub24_Sub4_3493.method492(var5, var4, var6, (byte) 14, var1)) {
-                continue;
-              }
-              break;
-            }
-
-            this.method469(var1, var6, var4, var5, var4 + var5, (byte) 4);
-            var6.anInt2512 -= var5;
-            break;
-          }
-        }
-      }
-
-    } catch (RuntimeException var7) {
-      throw AbstractGameWorld.cascadeException(var7,
-        "te.E(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  private final void method469(int[] var1, AudioSomethingSomething var2, int var3, int var4,
-                               int var5, byte var6) {
-    try {
-      if ((4 & this.aClass3_Sub24_Sub4_3493.anIntArray3518[var2.anInt2514]) != 0
-        && -1 < ~var2.anInt2506) {
-        int var7 =
-          this.aClass3_Sub24_Sub4_3493.anIntArray3509[var2.anInt2514] / DummyClass60.sampleRate;
-
-        while (true) {
-          int var8 = (-var2.anInt2516 + 1048575 + var7) / var7;
-          if (var4 < var8) {
-            var2.anInt2516 += var4 * var7;
-            break;
-          }
-
-          var4 -= var8;
-          var2.aClass3_Sub24_Sub1_2507.method413(var1, var3, var8);
-          int var9 = DummyClass60.sampleRate / 100;
-          AudioStreamEncoder1 var11 = var2.aClass3_Sub24_Sub1_2507;
-          int var10 = 262144 / var7;
-          if (var10 < var9) {
-            var9 = var10;
-          }
-
-          var2.anInt2516 += var7 * var8 + -1048576;
-          if (-1 != ~this.aClass3_Sub24_Sub4_3493.anIntArray3519[var2.anInt2514]) {
-            var2.aClass3_Sub24_Sub1_2507 = AudioStreamEncoder1
-              .method432(var2.aClass3_Sub12_Sub1_2509, var11.method438(), 0, var11.method451());
-            this.aClass3_Sub24_Sub4_3493
-              .method501(var2, var2.aClass3_Sub15_2527.aShortArray2434[var2.anInt2520] < 0,
-                (byte) -88);
-            var2.aClass3_Sub24_Sub1_2507.method431(var9, var11.method425());
-          } else {
-            var2.aClass3_Sub24_Sub1_2507 = AudioStreamEncoder1
-              .method432(var2.aClass3_Sub12_Sub1_2509, var11.method438(), var11.method425(),
-                var11.method451());
-          }
-
-          if (var2.aClass3_Sub15_2527.aShortArray2434[var2.anInt2520] < 0) {
-            var2.aClass3_Sub24_Sub1_2507.method429(-1);
-          }
-
-          var3 += var8;
-          var11.method417(var9);
-          var11.method413(var1, var3, var5 + -var3);
-          if (var11.method445()) {
-            this.aClass3_Sub24_Sub2_3495.method457(var11);
-          }
-        }
-      }
-
-      if (var6 == 4) {
-        var2.aClass3_Sub24_Sub1_2507.method413(var1, var3, var4);
-      }
-    } catch (RuntimeException var12) {
-      throw AbstractGameWorld.cascadeException(var12,
-        "te.S(" + (var1 != null ? "{...}" : "null") + ',' + (var2 != null ? "{...}" : "null") + ','
-          + var3 + ',' + var4 + ',' + var5 + ',' + var6 + ')');
     }
   }
 

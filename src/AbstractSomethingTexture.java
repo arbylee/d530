@@ -18,10 +18,16 @@ abstract class AbstractSomethingTexture {
       this.anInt1106 = var3;
       this.anInt1101 = var1;
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "kf.<init>(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "kf.<init>(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
+
+  abstract void method1335(int var1, int var2, int var3);
+
+  abstract void method1337(int var1, boolean var2, int var3);
+
+  abstract void method1341(int var1, int var2, int var3);
 
   public static void method1334(byte var0) {
     try {
@@ -77,8 +83,8 @@ abstract class AbstractSomethingTexture {
 
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "kf.G(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "kf.G(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -101,11 +107,5 @@ abstract class AbstractSomethingTexture {
         "kf.I(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
     }
   }
-
-  abstract void method1335(int var1, int var2, int var3);
-
-  abstract void method1337(int var1, boolean var2, int var3);
-
-  abstract void method1341(int var1, int var2, int var3);
 
 }

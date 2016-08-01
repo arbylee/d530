@@ -98,8 +98,8 @@ class DummyClass7 extends DummyClass6 {
       }
 
     } catch (RuntimeException var15) {
-      throw AbstractGameWorld
-        .cascadeException(var15, "dk.C(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var15,
+        "dk.C(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 

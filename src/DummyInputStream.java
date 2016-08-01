@@ -2,14 +2,23 @@ import java.io.InputStream;
 
 final class DummyInputStream extends InputStream {
 
+  private static GameString aClass94_44 = SpawnedGameObject.createString(" ");
   static GameString aClass94_37 = SpawnedGameObject.createString("0(U");
   static GameString aClass94_38 = SpawnedGameObject.createString("tbrefresh");
   static int[] anIntArray39;
   static int anInt40 = 0;
   static SocketStream updateSocket;
   static int anInt42 = 0;
-  private static GameString aClass94_44 = SpawnedGameObject.createString(" ");
   static GameString aClass94_43 = aClass94_44;
+
+  public final int read() {
+    try {
+      TextureSampler25.sleep(30000L);
+      return -1;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "qk.read()");
+    }
+  }
 
   public static void method61(int var0) {
     try {
@@ -70,8 +79,8 @@ final class DummyInputStream extends InputStream {
       var3.method158(16251);
       return var3;
     } catch (RuntimeException var7) {
-      throw AbstractGameWorld
-        .cascadeException(var7, "qk.B(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var7,
+        "qk.B(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -84,15 +93,6 @@ final class DummyInputStream extends InputStream {
       return var1 >>> 8;
     } catch (RuntimeException var3) {
       throw AbstractGameWorld.cascadeException(var3, "qk.D(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  public final int read() {
-    try {
-      TextureSampler25.sleep(30000L);
-      return -1;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "qk.read()");
     }
   }
 

@@ -16,8 +16,8 @@ final class ProjectileNode extends SubNode {
     try {
       this.projectile = var1;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "ud.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "ud.<init>(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -30,8 +30,8 @@ final class ProjectileNode extends SubNode {
         return false;
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "ud.B(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "ud.B(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

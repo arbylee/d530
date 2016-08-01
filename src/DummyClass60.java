@@ -2,7 +2,8 @@ final class DummyClass60 {
 
   static boolean aBoolean440 = false;
   static int[] anIntArray441 = new int[2048];
-  static GameString aClass94_442 = SpawnedGameObject.createString("Number of player models in cache:");
+  static GameString aClass94_442 =
+    SpawnedGameObject.createString("Number of player models in cache:");
   static int sampleRate;
   static GameString aClass94_444 = SpawnedGameObject.createString("<img=1>");
 
@@ -112,13 +113,13 @@ final class DummyClass60 {
 
       if (1 == TextureSampler25.amountContextActions) {
         DummyClass36.aBoolean2615 = false;
-        AbstractSomethingTexture
-          .method1340(AbstractIndexedColorSprite.anInt1462, SomethingWorldMapy.anInt3552, (byte) -40,
-            TextureSampler29.anInt3395, SomethingQuickChat2.anInt3537);
+        AbstractSomethingTexture.method1340(AbstractIndexedColorSprite.anInt1462,
+          SomethingWorldMapy.anInt3552, (byte) -40, TextureSampler29.anInt3395,
+          SomethingQuickChat2.anInt3537);
       } else {
-        AbstractSomethingTexture
-          .method1340(AbstractIndexedColorSprite.anInt1462, SomethingWorldMapy.anInt3552, (byte) -40,
-            TextureSampler29.anInt3395, SomethingQuickChat2.anInt3537);
+        AbstractSomethingTexture.method1340(AbstractIndexedColorSprite.anInt1462,
+          SomethingWorldMapy.anInt3552, (byte) -40, TextureSampler29.anInt3395,
+          SomethingQuickChat2.anInt3537);
         var7 = FloorOverlay.aClass3_Sub28_Sub17_2096.method682(SomethingTexture4.aClass94_2667);
 
         for (int var8 = 0; TextureSampler25.amountContextActions > var8; ++var8) {
@@ -144,8 +145,8 @@ final class DummyClass60 {
 
       return var4;
     } catch (RuntimeException var10) {
-      throw AbstractGameWorld
-        .cascadeException(var10, "dh.D(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var10,
+        "dh.D(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -157,8 +158,8 @@ final class DummyClass60 {
           DummyClass25.aClass131_1624.aShortArray1718[var2]);
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "dh.A(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "dh.A(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 

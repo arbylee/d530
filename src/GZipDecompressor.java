@@ -22,6 +22,37 @@ final class GZipDecompressor {
   private GZipDecompressor(int var1, int var2, int var3) {
   }
 
+  final void decompress(byte[] var1, Buffer var2, boolean var3) {
+    try {
+      if (var3) {
+        anInt815 = -81;
+      }
+
+      if (31 == var2.bytes[var2.position] && var2.bytes[var2.position + 1] == -117) {
+        if (this.anInflater813 == null) {
+          this.anInflater813 = new Inflater(true);
+        }
+
+        try {
+          this.anInflater813.setInput(var2.bytes, var2.position + 10,
+            -8 - (10 + var2.position) + var2.bytes.length);
+          this.anInflater813.inflate(var1);
+        } catch (Exception var5) {
+          this.anInflater813.reset();
+          throw new RuntimeException("Invalid GZIP compressed data!");
+        }
+
+        this.anInflater813.reset();
+      } else {
+        throw new RuntimeException("Invalid GZIP header!");
+      }
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "ha.D(" + (var1 != null ? "{...}" : "null") + ',' + (var2 != null ? "{...}" : "null") + ','
+          + var3 + ')');
+    }
+  }
+
   static final void method1121(boolean var0, byte var1) {
     try {
       byte var2;
@@ -51,9 +82,9 @@ final class GZipDecompressor {
 
                 for (int var14 = 0; ~AudioStreamEncoder3.regionHashes.length < ~var14; ++var14) {
                   if (~AudioStreamEncoder3.regionHashes[var14] == ~var13 && null != var3[var14]) {
-                    ComponentCanvas
-                      .method60(var10, 8 * var5, var4, BlockConfig.collisionMaps, var6 * 8,
-                        (byte) -100, var3[var14], var9, (var12 & 7) * 8, 8 * (var11 & 7), var0);
+                    ComponentCanvas.method60(var10, 8 * var5, var4, BlockConfig.collisionMaps,
+                      var6 * 8, (byte) -100, var3[var14], var9, (var12 & 7) * 8, 8 * (var11 & 7),
+                      var0);
                     var7 = true;
                     break;
                   }
@@ -90,8 +121,8 @@ final class GZipDecompressor {
 
       return var2;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "ha.J(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "ha.J(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -271,9 +302,8 @@ final class GZipDecompressor {
             IdentityKit.method950(null, -86, SubNode.anInt2567, DummyClass41.anInt865);
           }
         } else {
-          IdentityKit
-            .method950(AbstractDirectColorSprite.aClass11_3708, -120, GameException.anInt2115,
-              TextureSampler18.anInt4041);
+          IdentityKit.method950(AbstractDirectColorSprite.aClass11_3708, -120,
+            GameException.anInt2115, TextureSampler18.anInt4041);
         }
 
         var1 = DummyClass36.aBoolean2615 ? -1 : TextureSampler22.method335(var0 + 16859);
@@ -295,9 +325,9 @@ final class GZipDecompressor {
             if (!HashTable.aBooleanArray1712[var2]) {
               if (DummyClass9.aBooleanArray4008[var2]) {
                 if (!GlRenderer.useOpenGlRenderer) {
-                  DummyClass47
-                    .method1312(AbstractAudioOutputStream.quadx0[var2], Player.quady0[var2],
-                      GlTexture2d.quadx1[var2], Mobile.quady1[var2], 0xff0000, 0x80);
+                  DummyClass47.method1312(AbstractAudioOutputStream.quadx0[var2],
+                    Player.quady0[var2], GlTexture2d.quadx1[var2], Mobile.quady1[var2], 0xff0000,
+                    0x80);
                 } else {
                   GlUtils.fillQuad(AbstractAudioOutputStream.quadx0[var2], Player.quady0[var2],
                     GlTexture2d.quadx1[var2], Mobile.quady1[var2], 0xff0000, 0x80);
@@ -328,10 +358,10 @@ final class GZipDecompressor {
       int var6 = var2;
       int var7 = -var2;
       int var8 = -1;
-      int var9 = DummyClass59
-        .method1040(GlTexture2d.anInt3765, var2 + var4, (byte) 0, DummyClass55.anInt1425);
-      int var10 = DummyClass59
-        .method1040(GlTexture2d.anInt3765, var4 - var2, (byte) 0, DummyClass55.anInt1425);
+      int var9 = DummyClass59.method1040(GlTexture2d.anInt3765, var2 + var4, (byte) 0,
+        DummyClass55.anInt1425);
+      int var10 = DummyClass59.method1040(GlTexture2d.anInt3765, var4 - var2, (byte) 0,
+        DummyClass55.anInt1425);
       TextureSampler18.method282(DummyClass35.anIntArrayArray663[var1], var10, -98, var9, var0);
 
       while (~var5 > ~var6) {
@@ -347,18 +377,18 @@ final class GZipDecompressor {
           var7 -= var6 << 1;
           var12 = var1 + var6;
           if (var12 >= DummyClass13.anInt2020 && var11 <= LightIntensity.anInt902) {
-            var13 = DummyClass59
-              .method1040(GlTexture2d.anInt3765, var4 - -var5, (byte) 0, DummyClass55.anInt1425);
-            var14 = DummyClass59
-              .method1040(GlTexture2d.anInt3765, -var5 + var4, (byte) 0, DummyClass55.anInt1425);
+            var13 = DummyClass59.method1040(GlTexture2d.anInt3765, var4 - -var5, (byte) 0,
+              DummyClass55.anInt1425);
+            var14 = DummyClass59.method1040(GlTexture2d.anInt3765, -var5 + var4, (byte) 0,
+              DummyClass55.anInt1425);
             if (LightIntensity.anInt902 >= var12) {
-              TextureSampler18
-                .method282(DummyClass35.anIntArrayArray663[var12], var14, var3 ^ 111, var13, var0);
+              TextureSampler18.method282(DummyClass35.anIntArrayArray663[var12], var14, var3 ^ 111,
+                var13, var0);
             }
 
             if (DummyClass13.anInt2020 <= var11) {
-              TextureSampler18
-                .method282(DummyClass35.anIntArrayArray663[var11], var14, -84, var13, var0);
+              TextureSampler18.method282(DummyClass35.anIntArrayArray663[var11], var14, -84, var13,
+                var0);
             }
           }
         }
@@ -367,18 +397,18 @@ final class GZipDecompressor {
         var11 = -var5 + var1;
         var12 = var5 + var1;
         if (var12 >= DummyClass13.anInt2020 && ~LightIntensity.anInt902 <= ~var11) {
-          var13 = DummyClass59
-            .method1040(GlTexture2d.anInt3765, var4 - -var6, (byte) 0, DummyClass55.anInt1425);
-          var14 = DummyClass59
-            .method1040(GlTexture2d.anInt3765, -var6 + var4, (byte) 0, DummyClass55.anInt1425);
+          var13 = DummyClass59.method1040(GlTexture2d.anInt3765, var4 - -var6, (byte) 0,
+            DummyClass55.anInt1425);
+          var14 = DummyClass59.method1040(GlTexture2d.anInt3765, -var6 + var4, (byte) 0,
+            DummyClass55.anInt1425);
           if (var12 <= LightIntensity.anInt902) {
-            TextureSampler18
-              .method282(DummyClass35.anIntArrayArray663[var12], var14, 90, var13, var0);
+            TextureSampler18.method282(DummyClass35.anIntArrayArray663[var12], var14, 90, var13,
+              var0);
           }
 
           if (var11 >= DummyClass13.anInt2020) {
-            TextureSampler18
-              .method282(DummyClass35.anIntArrayArray663[var11], var14, -103, var13, var0);
+            TextureSampler18.method282(DummyClass35.anIntArrayArray663[var11], var14, -103, var13,
+              var0);
           }
         }
       }
@@ -400,37 +430,6 @@ final class GZipDecompressor {
       tileOnScreen = null;
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "ha.F(" + var0 + ')');
-    }
-  }
-
-  final void decompress(byte[] var1, Buffer var2, boolean var3) {
-    try {
-      if (var3) {
-        anInt815 = -81;
-      }
-
-      if (31 == var2.bytes[var2.position] && var2.bytes[var2.position + 1] == -117) {
-        if (this.anInflater813 == null) {
-          this.anInflater813 = new Inflater(true);
-        }
-
-        try {
-          this.anInflater813.setInput(var2.bytes, var2.position + 10,
-            -8 - (10 + var2.position) + var2.bytes.length);
-          this.anInflater813.inflate(var1);
-        } catch (Exception var5) {
-          this.anInflater813.reset();
-          throw new RuntimeException("Invalid GZIP compressed data!");
-        }
-
-        this.anInflater813.reset();
-      } else {
-        throw new RuntimeException("Invalid GZIP header!");
-      }
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "ha.D(" + (var1 != null ? "{...}" : "null") + ',' + (var2 != null ? "{...}" : "null") + ','
-          + var3 + ')');
     }
   }
 

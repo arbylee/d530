@@ -1,16 +1,20 @@
 abstract class AbstractFileRequest extends SubNode {
 
+  private static GameString aClass94_3626 = SpawnedGameObject.createString("Created gameworld");
   static int brightnessSetting = 3;
   static int anInt3627;
   static int anInt3630;
   static int anInt3631;
   static GameString aClass94_3633 = SpawnedGameObject.createString("Textures charg-Bes");
   static GameString aClass94_3634 = SpawnedGameObject.createString("Liste des serveurs charg-Be");
-  private static GameString aClass94_3626 = SpawnedGameObject.createString("Created gameworld");
   static GameString aClass94_3629 = aClass94_3626;
   boolean aBoolean3628;
   volatile boolean aBoolean3632 = true;
   boolean aBoolean3635;
+
+  abstract int method586(boolean var1);
+
+  abstract byte[] method587(boolean var1);
 
   public static void method588(byte var0) {
     try {
@@ -50,13 +54,9 @@ abstract class AbstractFileRequest extends SubNode {
       GameObjectConfig var4 = DummyClass11.method2207(4, var1);
       return var4.method1684(115, var2);
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "il.D(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "il.D(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
-
-  abstract int method586(boolean var1);
-
-  abstract byte[] method587(boolean var1);
 
 }

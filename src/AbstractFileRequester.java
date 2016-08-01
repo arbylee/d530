@@ -6,6 +6,13 @@ abstract class AbstractFileRequester {
   static GameString COMMAND_DROP_CLIENT = SpawnedGameObject.createString("::clientdrop");
   static FileSystem fileSystem;
 
+  abstract FileTable method2094(int var1);
+
+  abstract void method2095(int var1, int var2);
+
+  abstract int method2097(int var1, int var2);
+
+  abstract byte[] method2098(int var1, int var2);
 
   public static void method2093(int var0) {
     try {
@@ -64,13 +71,5 @@ abstract class AbstractFileRequester {
           + var4 + ',' + var5 + ',' + var6 + ')');
     }
   }
-
-  abstract FileTable method2094(int var1);
-
-  abstract void method2095(int var1, int var2);
-
-  abstract int method2097(int var1, int var2);
-
-  abstract byte[] method2098(int var1, int var2);
 
 }

@@ -51,8 +51,299 @@ final class Texture extends SubNode {
 
       this.anInt3788 = (var3 & 240) >> 4;
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "uh.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "uh.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  final int[] method718(ITextureCache var1, int var2, float var3, FileUnpacker var4, boolean var5) {
+    try {
+      if (var2 != 0) {
+        return null;
+      } else {
+        if (null == this.anIntArray3793 || this.aFloat3782 != var3) {
+          if (!this.proceduralTexture.method1408(true, var1, var4)) {
+            return null;
+          }
+
+          int var6 = !var5 ? 128 : 64;
+          this.anIntArray3793 =
+            this.proceduralTexture.method1404(var6, this.aBoolean3800, var6, (double) var3,
+              var2 ^ 327680, var4, var1, true);
+          this.aFloat3782 = var3;
+          if (this.aBoolean3789) {
+            int[] var7 = new int[var6];
+            int[] var10 = new int[var6 * var6];
+            int[] var8 = new int[var6];
+            int[] var9 = new int[var6];
+            int var15 = var6;
+            int var14;
+            int var13 = var14 = var6 * 1;
+            int var19 = var6 * var6;
+            int var18 = -1 + var6;
+            int var17 = var6 - 1;
+
+            int var11;
+            int var20;
+            for (var20 = 2; var20 >= 0; --var20) {
+              for (var11 = var17; var11 >= 0; --var11) {
+                --var14;
+                int var12 = this.anIntArray3793[var14];
+                var7[var11] += ClientScript.bitAnd(var12, 16726965) >> 16;
+                var8[var11] += ClientScript.bitAnd('\uff72', var12) >> 8;
+                var9[var11] += ClientScript.bitAnd(var12, 255);
+              }
+
+              if (var14 == 0) {
+                var14 = var19;
+              }
+            }
+
+            int var25 = var19;
+
+            for (int var31 = var18; ~var31 <= -1; --var31) {
+              int var30 = 0;
+              int var29 = 0;
+              int var28 = 0;
+              int var26 = 1;
+              int var27 = 1;
+
+              for (var11 = 2; ~var11 <= -1; --var11) {
+                --var27;
+                var30 += var8[var27];
+                var29 += var9[var27];
+                var28 += var7[var27];
+                if (var27 == 0) {
+                  var27 = var15;
+                }
+              }
+
+              for (var11 = var17; -1 >= ~var11; --var11) {
+                --var26;
+                int var21 = var30 / 9;
+                int var22 = var29 / 9;
+                --var27;
+                var20 = var28 / 9;
+                --var25;
+                var10[var25] = TextureSampler3.method308(var22,
+                  TextureSampler3.method308(var20 << 16, var21 << 8));
+                var28 += var7[var27] + -var7[var26];
+                var29 += var9[var27] - var9[var26];
+                var30 += -var8[var26] + var8[var27];
+                if (-1 == ~var26) {
+                  var26 = var15;
+                }
+
+                if (~var27 == -1) {
+                  var27 = var15;
+                }
+              }
+
+              for (var11 = var17; ~var11 <= -1; --var11) {
+                --var13;
+                int var23 = this.anIntArray3793[var13];
+                --var14;
+                int var24 = this.anIntArray3793[var14];
+                var7[var11] +=
+                  (ClientScript.bitAnd(var24, 16729186) >> 16) + -ClientScript.bitAnd(var23 >> 16,
+                    255);
+                var8[var11] +=
+                  (ClientScript.bitAnd('\uff8b', var24) >> 8) + -ClientScript.bitAnd(255,
+                    var23 >> 8);
+                var9[var11] += -ClientScript.bitAnd(var23, 255) + ClientScript.bitAnd(255, var24);
+              }
+
+              if (0 == var13) {
+                var13 = var19;
+              }
+
+              if (0 == var14) {
+                var14 = var19;
+              }
+            }
+
+            this.anIntArray3793 = var10;
+          }
+        }
+
+        return this.anIntArray3793;
+      }
+    } catch (RuntimeException var32) {
+      throw AbstractGameWorld.cascadeException(var32,
+        "uh.D(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ',' + (
+          var4 != null ? "{...}" : "null") + ',' + var5 + ')');
+    }
+  }
+
+  final boolean method719(FileUnpacker var1, ITextureCache var2, int var3, boolean var4) {
+    try {
+      if (var3 != 579100487) {
+        return false;
+      } else if (this.proceduralTexture.method1408(true, var2, var1)) {
+        GL var5 = GlRenderer.gl;
+        int var6 = !var4 ? 128 : 64;
+        int flags = DummyClass32.method961(1536);
+        if (~(1 & flags) == -1) {
+          if (0 != ~this.anInt3795) {
+            GlRenderer.bindTexture(this.anInt3795);
+          } else {
+            int[] var8 = new int[1];
+            var5.glGenTextures(1, var8, 0);
+            this.anInt3791 = DummyClass33.anInt582;
+            this.anInt3795 = var8[0];
+            GlRenderer.bindTexture(this.anInt3795);
+            ByteBuffer var9 = ByteBuffer.wrap(
+              this.proceduralTexture.method1407(var6, var6, this.aBoolean3800, var2, 0.7D, 8839,
+                var1));
+            if (2 != this.anInt3788) {
+              if (~this.anInt3788 != -2) {
+                var5.glTexImage2D(3553, 0, 6408, var6, var6, 0, 6408, 5121, var9);
+                var5.glTexParameteri(3553, 10241, 9729);
+                var5.glTexParameteri(3553, 10240, 9729);
+                DummyClass33.textureMemory += var9.limit() - this.anInt3796;
+                this.anInt3796 = var9.limit();
+              } else {
+                int var10 = 0;
+
+                while (true) {
+                  var5.glTexImage2D(3553, var10++, 6408, var6, var6, 0, 6408, 5121, var9);
+                  var6 >>= 1;
+                  if (0 == var6) {
+                    var5.glTexParameteri(3553, 10241, 9987);
+                    var5.glTexParameteri(3553, 10240, 9729);
+                    DummyClass33.textureMemory += var9.limit() * 4 / 3 - this.anInt3796;
+                    this.anInt3796 = 4 * var9.limit() / 3;
+                    break;
+                  }
+
+                  var9 = ByteBuffer.wrap(
+                    this.proceduralTexture.method1407(var6, var6, this.aBoolean3800, var2, 0.7D,
+                      8839, var1));
+                }
+              }
+            } else {
+              GLU var14 = new GLU();
+              var14.gluBuild2DMipmaps(3553, 6408, var6, var6, 6408, 5121, var9);
+              var5.glTexParameteri(3553, 10241, 9987);
+              var5.glTexParameteri(3553, 10240, 9729);
+              DummyClass33.textureMemory += 4 * var9.limit() / 3 - this.anInt3796;
+              this.anInt3796 = var9.limit() * 4 / 3;
+            }
+
+            var5.glTexParameteri(3553, 10242, !this.aBoolean3787 ? '\u812f' : 10497);
+            var5.glTexParameteri(3553, 10243, this.aBoolean3781 ? 10497 : '\u812f');
+          }
+        }
+
+        if (~(2 & flags) == -1) {
+          GlRenderer.method1856(this.textureEnvironmentOpcode);
+        }
+
+        if ((4 & flags) == 0) {
+          GlRenderer.method1847(0);
+        }
+
+        if ((flags & 8) == 0) {
+          if (-1 == ~this.anInt3799 && 0 == this.anInt3783) {
+            GlRenderer.loadIdentityTextureMatrix();
+          } else {
+            float var12 = (float) (this.anInt3799 * GlRenderer.anInt1791) / (float) var6;
+            float var13 = (float) (this.anInt3783 * GlRenderer.anInt1791) / (float) var6;
+            GlRenderer.translateTexture(var13, var12, 0.0F);
+          }
+        }
+
+        return true;
+      } else {
+        return false;
+      }
+    } catch (RuntimeException var11) {
+      throw AbstractGameWorld.cascadeException(var11,
+        "uh.F(" + (var1 != null ? "{...}" : "null") + ',' + (var2 != null ? "{...}" : "null") + ','
+          + var3 + ',' + var4 + ')');
+    }
+  }
+
+  final int[] method720(boolean var1, boolean var2, ITextureCache var3, FileUnpacker var4) {
+    try {
+
+      if (!this.proceduralTexture.method1408(true, var3, var4)) {
+        return null;
+      } else {
+        int size = !var2 ? 128 : 64;
+        return this.proceduralTexture.method1404(size, this.aBoolean3800, size, 1.0D, 327680, var4,
+          var3, false);
+      }
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "uh.O(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ',' + (
+          var4 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  final boolean method722(int var1, ITextureCache var2, FileUnpacker var3) {
+    try {
+      return var1 != -5 ? true : this.proceduralTexture.method1408(true, var2, var3);
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "uh.P(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + (var3 != null ?
+          "{...}" :
+          "null") + ')');
+    }
+  }
+
+  final void update(int var1, byte var2) {
+    try {
+      if (var2 != -120) {
+        method721(-42);
+      }
+
+      if (this.anIntArray3793 != null) {
+        if (0 != this.anInt3799 || ~this.anInt3783 != -1) {
+          if (null == SomethingOtherWorldMap.anIntArray2533
+            || ~SomethingOtherWorldMap.anIntArray2533.length > ~this.anIntArray3793.length) {
+            SomethingOtherWorldMap.anIntArray2533 = new int[this.anIntArray3793.length];
+          }
+
+          int var5 = var1 * this.anInt3783;
+          int var3 = ~this.anIntArray3793.length == -4097 ? 64 : 128;
+          int var4 = this.anIntArray3793.length;
+          int var6 = var3 + -1;
+          int var7 = this.anInt3799 * var1 * var3;
+          int var8 = -1 + var4;
+
+          for (int var9 = 0; var4 > var9; var9 += var3) {
+            int var10 = var7 + var9 & var8;
+
+            for (int var11 = 0; var3 > var11; ++var11) {
+              int var13 = (var6 & var11 - -var5) + var10;
+              int var12 = var11 + var9;
+              SomethingOtherWorldMap.anIntArray2533[var12] = this.anIntArray3793[var13];
+            }
+          }
+
+          int[] var15 = this.anIntArray3793;
+          this.anIntArray3793 = SomethingOtherWorldMap.anIntArray2533;
+          SomethingOtherWorldMap.anIntArray2533 = var15;
+        }
+
+      }
+    } catch (RuntimeException var14) {
+      throw AbstractGameWorld.cascadeException(var14, "uh.E(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  protected final void finalize() throws Throwable {
+    try {
+      if (this.anInt3795 != -1) {
+        DummyClass33.method985(this.anInt3795, this.anInt3796, this.anInt3791);
+        this.anInt3796 = 0;
+        this.anInt3795 = -1;
+      }
+
+      super.finalize();
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "uh.finalize()");
     }
   }
 
@@ -152,9 +443,8 @@ final class Texture extends SubNode {
 
                   if (~(BZipDecompressorState.tileFlags[GameWorldSomething.currentPlane][var4][var5]
                     & 4) != -1) {
-                    GroundItem
-                      .method2031((byte) -29, false, var4, var5, SomethingTexture1.sceneGraphTiles,
-                        1);
+                    GroundItem.method2031((byte) -29, false, var4, var5,
+                      SomethingTexture1.sceneGraphTiles, 1);
                     break;
                   }
 
@@ -192,9 +482,8 @@ final class Texture extends SubNode {
                   if (~(4
                     & BZipDecompressorState.tileFlags[GameWorldSomething.currentPlane][var4][var5])
                     != -1) {
-                    GroundItem
-                      .method2031((byte) -13, false, var4, var5, SomethingTexture1.sceneGraphTiles,
-                        1);
+                    GroundItem.method2031((byte) -13, false, var4, var5,
+                      SomethingTexture1.sceneGraphTiles, 1);
                     break;
                   }
 
@@ -224,9 +513,8 @@ final class Texture extends SubNode {
             if (800 > var4 + -EnumStringFetcher.anInt2162 &&
               (4 & BZipDecompressorState.tileFlags[GameWorldSomething.currentPlane][NPC.anInt3995
                 >> 7][DummyClass49.anInt1111 >> 7]) != 0) {
-              GroundItem
-                .method2031((byte) -107, false, NPC.anInt3995 >> 7, DummyClass49.anInt1111 >> 7,
-                  SomethingTexture1.sceneGraphTiles, 1);
+              GroundItem.method2031((byte) -107, false, NPC.anInt3995 >> 7,
+                DummyClass49.anInt1111 >> 7, SomethingTexture1.sceneGraphTiles, 1);
             }
           }
 
@@ -234,293 +522,6 @@ final class Texture extends SubNode {
       }
     } catch (RuntimeException var12) {
       throw AbstractGameWorld.cascadeException(var12, "uh.A(" + var0 + ')');
-    }
-  }
-
-  final int[] method718(ITextureCache var1, int var2, float var3, FileUnpacker var4, boolean var5) {
-    try {
-      if (var2 != 0) {
-        return null;
-      } else {
-        if (null == this.anIntArray3793 || this.aFloat3782 != var3) {
-          if (!this.proceduralTexture.method1408(true, var1, var4)) {
-            return null;
-          }
-
-          int var6 = !var5 ? 128 : 64;
-          this.anIntArray3793 = this.proceduralTexture
-            .method1404(var6, this.aBoolean3800, var6, (double) var3, var2 ^ 327680, var4, var1,
-              true);
-          this.aFloat3782 = var3;
-          if (this.aBoolean3789) {
-            int[] var7 = new int[var6];
-            int[] var10 = new int[var6 * var6];
-            int[] var8 = new int[var6];
-            int[] var9 = new int[var6];
-            int var15 = var6;
-            int var14;
-            int var13 = var14 = var6 * 1;
-            int var19 = var6 * var6;
-            int var18 = -1 + var6;
-            int var17 = var6 - 1;
-
-            int var11;
-            int var20;
-            for (var20 = 2; var20 >= 0; --var20) {
-              for (var11 = var17; var11 >= 0; --var11) {
-                --var14;
-                int var12 = this.anIntArray3793[var14];
-                var7[var11] += ClientScript.bitAnd(var12, 16726965) >> 16;
-                var8[var11] += ClientScript.bitAnd('\uff72', var12) >> 8;
-                var9[var11] += ClientScript.bitAnd(var12, 255);
-              }
-
-              if (var14 == 0) {
-                var14 = var19;
-              }
-            }
-
-            int var25 = var19;
-
-            for (int var31 = var18; ~var31 <= -1; --var31) {
-              int var30 = 0;
-              int var29 = 0;
-              int var28 = 0;
-              int var26 = 1;
-              int var27 = 1;
-
-              for (var11 = 2; ~var11 <= -1; --var11) {
-                --var27;
-                var30 += var8[var27];
-                var29 += var9[var27];
-                var28 += var7[var27];
-                if (var27 == 0) {
-                  var27 = var15;
-                }
-              }
-
-              for (var11 = var17; -1 >= ~var11; --var11) {
-                --var26;
-                int var21 = var30 / 9;
-                int var22 = var29 / 9;
-                --var27;
-                var20 = var28 / 9;
-                --var25;
-                var10[var25] = TextureSampler3
-                  .method308(var22, TextureSampler3.method308(var20 << 16, var21 << 8));
-                var28 += var7[var27] + -var7[var26];
-                var29 += var9[var27] - var9[var26];
-                var30 += -var8[var26] + var8[var27];
-                if (-1 == ~var26) {
-                  var26 = var15;
-                }
-
-                if (~var27 == -1) {
-                  var27 = var15;
-                }
-              }
-
-              for (var11 = var17; ~var11 <= -1; --var11) {
-                --var13;
-                int var23 = this.anIntArray3793[var13];
-                --var14;
-                int var24 = this.anIntArray3793[var14];
-                var7[var11] += (ClientScript.bitAnd(var24, 16729186) >> 16) + -ClientScript
-                  .bitAnd(var23 >> 16, 255);
-                var8[var11] += (ClientScript.bitAnd('\uff8b', var24) >> 8) + -ClientScript
-                  .bitAnd(255, var23 >> 8);
-                var9[var11] += -ClientScript.bitAnd(var23, 255) + ClientScript.bitAnd(255, var24);
-              }
-
-              if (0 == var13) {
-                var13 = var19;
-              }
-
-              if (0 == var14) {
-                var14 = var19;
-              }
-            }
-
-            this.anIntArray3793 = var10;
-          }
-        }
-
-        return this.anIntArray3793;
-      }
-    } catch (RuntimeException var32) {
-      throw AbstractGameWorld.cascadeException(var32,
-        "uh.D(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ',' + (
-          var4 != null ? "{...}" : "null") + ',' + var5 + ')');
-    }
-  }
-
-  final boolean method719(FileUnpacker var1, ITextureCache var2, int var3, boolean var4) {
-    try {
-      if (var3 != 579100487) {
-        return false;
-      } else if (this.proceduralTexture.method1408(true, var2, var1)) {
-        GL var5 = GlRenderer.gl;
-        int var6 = !var4 ? 128 : 64;
-        int flags = DummyClass32.method961(1536);
-        if (~(1 & flags) == -1) {
-          if (0 != ~this.anInt3795) {
-            GlRenderer.bindTexture(this.anInt3795);
-          } else {
-            int[] var8 = new int[1];
-            var5.glGenTextures(1, var8, 0);
-            this.anInt3791 = DummyClass33.anInt582;
-            this.anInt3795 = var8[0];
-            GlRenderer.bindTexture(this.anInt3795);
-            ByteBuffer var9 = ByteBuffer.wrap(this.proceduralTexture
-              .method1407(var6, var6, this.aBoolean3800, var2, 0.7D, 8839, var1));
-            if (2 != this.anInt3788) {
-              if (~this.anInt3788 != -2) {
-                var5.glTexImage2D(3553, 0, 6408, var6, var6, 0, 6408, 5121, var9);
-                var5.glTexParameteri(3553, 10241, 9729);
-                var5.glTexParameteri(3553, 10240, 9729);
-                DummyClass33.textureMemory += var9.limit() - this.anInt3796;
-                this.anInt3796 = var9.limit();
-              } else {
-                int var10 = 0;
-
-                while (true) {
-                  var5.glTexImage2D(3553, var10++, 6408, var6, var6, 0, 6408, 5121, var9);
-                  var6 >>= 1;
-                  if (0 == var6) {
-                    var5.glTexParameteri(3553, 10241, 9987);
-                    var5.glTexParameteri(3553, 10240, 9729);
-                    DummyClass33.textureMemory += var9.limit() * 4 / 3 - this.anInt3796;
-                    this.anInt3796 = 4 * var9.limit() / 3;
-                    break;
-                  }
-
-                  var9 = ByteBuffer.wrap(this.proceduralTexture
-                    .method1407(var6, var6, this.aBoolean3800, var2, 0.7D, 8839, var1));
-                }
-              }
-            } else {
-              GLU var14 = new GLU();
-              var14.gluBuild2DMipmaps(3553, 6408, var6, var6, 6408, 5121, var9);
-              var5.glTexParameteri(3553, 10241, 9987);
-              var5.glTexParameteri(3553, 10240, 9729);
-              DummyClass33.textureMemory += 4 * var9.limit() / 3 - this.anInt3796;
-              this.anInt3796 = var9.limit() * 4 / 3;
-            }
-
-            var5.glTexParameteri(3553, 10242, !this.aBoolean3787 ? '\u812f' : 10497);
-            var5.glTexParameteri(3553, 10243, this.aBoolean3781 ? 10497 : '\u812f');
-          }
-        }
-
-        if (~(2 & flags) == -1) {
-          GlRenderer.method1856(this.textureEnvironmentOpcode);
-        }
-
-        if ((4 & flags) == 0) {
-          GlRenderer.method1847(0);
-        }
-
-        if ((flags & 8) == 0) {
-          if (-1 == ~this.anInt3799 && 0 == this.anInt3783) {
-            GlRenderer.loadIdentityTextureMatrix();
-          } else {
-            float var12 = (float) (this.anInt3799 * GlRenderer.anInt1791) / (float) var6;
-            float var13 = (float) (this.anInt3783 * GlRenderer.anInt1791) / (float) var6;
-            GlRenderer.translateTexture(var13, var12, 0.0F);
-          }
-        }
-
-        return true;
-      } else {
-        return false;
-      }
-    } catch (RuntimeException var11) {
-      throw AbstractGameWorld.cascadeException(var11,
-        "uh.F(" + (var1 != null ? "{...}" : "null") + ',' + (var2 != null ? "{...}" : "null") + ','
-          + var3 + ',' + var4 + ')');
-    }
-  }
-
-  final int[] method720(boolean var1, boolean var2, ITextureCache var3, FileUnpacker var4) {
-    try {
-
-      if (!this.proceduralTexture.method1408(true, var3, var4)) {
-        return null;
-      } else {
-        int size = !var2 ? 128 : 64;
-        return this.proceduralTexture
-          .method1404(size, this.aBoolean3800, size, 1.0D, 327680, var4, var3, false);
-      }
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "uh.O(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ',' + (
-          var4 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  final boolean method722(int var1, ITextureCache var2, FileUnpacker var3) {
-    try {
-      return var1 != -5 ? true : this.proceduralTexture.method1408(true, var2, var3);
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "uh.P(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + (var3 != null ?
-          "{...}" :
-          "null") + ')');
-    }
-  }
-
-  final void update(int var1, byte var2) {
-    try {
-      if (var2 != -120) {
-        method721(-42);
-      }
-
-      if (this.anIntArray3793 != null) {
-        if (0 != this.anInt3799 || ~this.anInt3783 != -1) {
-          if (null == SomethingOtherWorldMap.anIntArray2533
-            || ~SomethingOtherWorldMap.anIntArray2533.length > ~this.anIntArray3793.length) {
-            SomethingOtherWorldMap.anIntArray2533 = new int[this.anIntArray3793.length];
-          }
-
-          int var5 = var1 * this.anInt3783;
-          int var3 = ~this.anIntArray3793.length == -4097 ? 64 : 128;
-          int var4 = this.anIntArray3793.length;
-          int var6 = var3 + -1;
-          int var7 = this.anInt3799 * var1 * var3;
-          int var8 = -1 + var4;
-
-          for (int var9 = 0; var4 > var9; var9 += var3) {
-            int var10 = var7 + var9 & var8;
-
-            for (int var11 = 0; var3 > var11; ++var11) {
-              int var13 = (var6 & var11 - -var5) + var10;
-              int var12 = var11 + var9;
-              SomethingOtherWorldMap.anIntArray2533[var12] = this.anIntArray3793[var13];
-            }
-          }
-
-          int[] var15 = this.anIntArray3793;
-          this.anIntArray3793 = SomethingOtherWorldMap.anIntArray2533;
-          SomethingOtherWorldMap.anIntArray2533 = var15;
-        }
-
-      }
-    } catch (RuntimeException var14) {
-      throw AbstractGameWorld.cascadeException(var14, "uh.E(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  protected final void finalize() throws Throwable {
-    try {
-      if (this.anInt3795 != -1) {
-        DummyClass33.method985(this.anInt3795, this.anInt3796, this.anInt3791);
-        this.anInt3796 = 0;
-        this.anInt3795 = -1;
-      }
-
-      super.finalize();
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "uh.finalize()");
     }
   }
 

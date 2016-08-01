@@ -30,6 +30,56 @@ class Something3d extends Something3dRoot {
     }
   }
 
+  void method2242(int var1, byte var2) {
+    try {
+      this.aByteArray3015[this.anInt3016++] = (byte) (127 + (ClientScript.bitAnd(var2, 255) >> 1));
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "vd.B(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void method2231(byte var1) {
+    try {
+      this.anInt3010 = Math.abs(this.anInt3010);
+      if (var1 != -92) {
+        this.method2231((byte) -112);
+      }
+
+      if (this.anInt3010 >= 4096) {
+        this.anInt3010 = 4095;
+      }
+
+      this.method2242(this.anInt3016++, (byte) (this.anInt3010 >> 4));
+      this.anInt3010 = 0;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "vd.A(" + var1 + ')');
+    }
+  }
+
+  final void method2233(int var1) {
+    try {
+      if (var1 == -949697716) {
+        this.anInt3016 = 0;
+        this.anInt3010 = 0;
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "vd.C(" + var1 + ')');
+    }
+  }
+
+  final void method2237(int var1, int var2, int var3) {
+    try {
+      this.anInt3010 += var1 * this.anIntArray3014[var2] >> 12;
+      if (var3 != -20975) {
+        method2239(-22, -68, -14, 89);
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "vd.H(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
   static final void method2238(int var0, int var1, int var2, int var3, byte var4, int var5) {
     try {
       AbstractSomethingTexture.anInt1105 = var2;
@@ -249,7 +299,8 @@ class Something3d extends Something3dRoot {
           var3 = (AreaSoundEffect) SocketStream.aClass61_1242.getFirst();
           null != var3; var3 = (AreaSoundEffect) SocketStream.aClass61_1242.getNext()) {
           if (null != var3.aClass3_Sub24_Sub1_2312) {
-            MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(var3.aClass3_Sub24_Sub1_2312);
+            MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(
+              var3.aClass3_Sub24_Sub1_2312);
             var3.aClass3_Sub24_Sub1_2312 = null;
           }
 
@@ -260,7 +311,8 @@ class Something3d extends Something3dRoot {
           var3 = (AreaSoundEffect) ObjectNode.aClass130_4046.getFirst(68);
           null != var3; var3 = (AreaSoundEffect) ObjectNode.aClass130_4046.getNext(-66)) {
           if (null != var3.aClass3_Sub24_Sub1_2312) {
-            MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(var3.aClass3_Sub24_Sub1_2312);
+            MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(
+              var3.aClass3_Sub24_Sub1_2312);
             var3.aClass3_Sub24_Sub1_2312 = null;
           }
 
@@ -270,56 +322,6 @@ class Something3d extends Something3dRoot {
 
     } catch (RuntimeException var4) {
       throw AbstractGameWorld.cascadeException(var4, "vd.G(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  final void method2237(int var1, int var2, int var3) {
-    try {
-      this.anInt3010 += var1 * this.anIntArray3014[var2] >> 12;
-      if (var3 != -20975) {
-        method2239(-22, -68, -14, 89);
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "vd.H(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final void method2233(int var1) {
-    try {
-      if (var1 == -949697716) {
-        this.anInt3016 = 0;
-        this.anInt3010 = 0;
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "vd.C(" + var1 + ')');
-    }
-  }
-
-  void method2242(int var1, byte var2) {
-    try {
-      this.aByteArray3015[this.anInt3016++] = (byte) (127 + (ClientScript.bitAnd(var2, 255) >> 1));
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "vd.B(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final void method2231(byte var1) {
-    try {
-      this.anInt3010 = Math.abs(this.anInt3010);
-      if (var1 != -92) {
-        this.method2231((byte) -112);
-      }
-
-      if (this.anInt3010 >= 4096) {
-        this.anInt3010 = 4095;
-      }
-
-      this.method2242(this.anInt3016++, (byte) (this.anInt3010 >> 4));
-      this.anInt3010 = 0;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "vd.A(" + var1 + ')');
     }
   }
 

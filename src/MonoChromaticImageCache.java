@@ -22,8 +22,89 @@ final class MonoChromaticImageCache {
       this.anInt1579 = var1;
       this.anIntArrayArray1573 = new int[this.anInt1579][var3];
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "pf.<init>(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "pf.<init>(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final void method1706(int var1) {
+    try {
+      for (int var2 = 0; var2 < this.anInt1579; ++var2) {
+        this.anIntArrayArray1573[var2] = null;
+      }
+
+      if (var1 != 1127165736) {
+        method1711(118, 75);
+      }
+
+      this.anIntArrayArray1573 = null;
+      this.aClass3_Sub26Array1571 = null;
+      this.aClass61_1577.clear(-85);
+      this.aClass61_1577 = null;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "pf.A(" + var1 + ')');
+    }
+  }
+
+  final int[] method1709(int var1, int var2) {
+    try {
+      if (var1 != -16409) {
+        this.aBoolean1580 = false;
+      }
+
+      if (~this.anInt1568 != ~this.anInt1579) {
+        if (this.anInt1579 != 1) {
+          MonoChromaticImageBuffer var3 = this.aClass3_Sub26Array1571[var2];
+          if (null != var3) {
+            this.aBoolean1580 = false;
+          } else {
+            this.aBoolean1580 = true;
+            if (this.anInt1570 < this.anInt1579) {
+              var3 = new MonoChromaticImageBuffer(var2, this.anInt1570);
+              ++this.anInt1570;
+            } else {
+              MonoChromaticImageBuffer var4 =
+                (MonoChromaticImageBuffer) this.aClass61_1577.method1212(2);
+              var3 = new MonoChromaticImageBuffer(var2, var4.anInt2555);
+              this.aClass3_Sub26Array1571[var4.anInt2553] = null;
+              var4.unlinkNode();
+            }
+
+            this.aClass3_Sub26Array1571[var2] = var3;
+          }
+
+          this.aClass61_1577.method1216(64, var3);
+          return this.anIntArrayArray1573[var3.anInt2555];
+        } else {
+          this.aBoolean1580 = this.anInt1576 != var2;
+          this.anInt1576 = var2;
+          return this.anIntArrayArray1573[0];
+        }
+      } else {
+        this.aBoolean1580 = this.aClass3_Sub26Array1571[var2] == null;
+        this.aClass3_Sub26Array1571[var2] = DummyClass42.aClass3_Sub26_884;
+        return this.anIntArrayArray1573[var2];
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5, "pf.C(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final int[][] method1710(byte var1) {
+    try {
+      if (var1 <= 67) {
+        return null;
+      } else if (this.anInt1579 != this.anInt1568) {
+        throw new RuntimeException("Can only retrieve a full image cache");
+      } else {
+        for (int var2 = 0; this.anInt1579 > var2; ++var2) {
+          this.aClass3_Sub26Array1571[var2] = DummyClass42.aClass3_Sub26_884;
+        }
+
+        return this.anIntArrayArray1573;
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "pf.H(" + var1 + ')');
     }
   }
 
@@ -100,8 +181,8 @@ final class MonoChromaticImageCache {
         var3.anInt3598 = var0;
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "pf.E(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "pf.E(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -116,86 +197,6 @@ final class MonoChromaticImageCache {
 
     } catch (RuntimeException var3) {
       throw AbstractGameWorld.cascadeException(var3, "pf.D(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  final void method1706(int var1) {
-    try {
-      for (int var2 = 0; var2 < this.anInt1579; ++var2) {
-        this.anIntArrayArray1573[var2] = null;
-      }
-
-      if (var1 != 1127165736) {
-        method1711(118, 75);
-      }
-
-      this.anIntArrayArray1573 = null;
-      this.aClass3_Sub26Array1571 = null;
-      this.aClass61_1577.clear(-85);
-      this.aClass61_1577 = null;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "pf.A(" + var1 + ')');
-    }
-  }
-
-  final int[] method1709(int var1, int var2) {
-    try {
-      if (var1 != -16409) {
-        this.aBoolean1580 = false;
-      }
-
-      if (~this.anInt1568 != ~this.anInt1579) {
-        if (this.anInt1579 != 1) {
-          MonoChromaticImageBuffer var3 = this.aClass3_Sub26Array1571[var2];
-          if (null != var3) {
-            this.aBoolean1580 = false;
-          } else {
-            this.aBoolean1580 = true;
-            if (this.anInt1570 < this.anInt1579) {
-              var3 = new MonoChromaticImageBuffer(var2, this.anInt1570);
-              ++this.anInt1570;
-            } else {
-              MonoChromaticImageBuffer var4 = (MonoChromaticImageBuffer) this.aClass61_1577.method1212(2);
-              var3 = new MonoChromaticImageBuffer(var2, var4.anInt2555);
-              this.aClass3_Sub26Array1571[var4.anInt2553] = null;
-              var4.unlinkNode();
-            }
-
-            this.aClass3_Sub26Array1571[var2] = var3;
-          }
-
-          this.aClass61_1577.method1216(64, var3);
-          return this.anIntArrayArray1573[var3.anInt2555];
-        } else {
-          this.aBoolean1580 = this.anInt1576 != var2;
-          this.anInt1576 = var2;
-          return this.anIntArrayArray1573[0];
-        }
-      } else {
-        this.aBoolean1580 = this.aClass3_Sub26Array1571[var2] == null;
-        this.aClass3_Sub26Array1571[var2] = DummyClass42.aClass3_Sub26_884;
-        return this.anIntArrayArray1573[var2];
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5, "pf.C(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final int[][] method1710(byte var1) {
-    try {
-      if (var1 <= 67) {
-        return null;
-      } else if (this.anInt1579 != this.anInt1568) {
-        throw new RuntimeException("Can only retrieve a full image cache");
-      } else {
-        for (int var2 = 0; this.anInt1579 > var2; ++var2) {
-          this.aClass3_Sub26Array1571[var2] = DummyClass42.aClass3_Sub26_884;
-        }
-
-        return this.anIntArrayArray1573;
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "pf.H(" + var1 + ')');
     }
   }
 

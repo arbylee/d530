@@ -92,8 +92,8 @@ final class MonoChromaticImageBuffer extends Node {
 
       return ~var0 == -1 ? var1 : (1 == var0 ? var3 : (2 != var0 ? -var3 + 1023 : 1023 + -var1));
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "qi.C(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "qi.C(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 

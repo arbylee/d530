@@ -17,8 +17,7 @@ final class SomethingScene {
 
   static final Structure method1292(byte var0, int var1) {
     try {
-      Structure var2 =
-        (Structure) TextureSampler25.aClass47_3407.get((long) var1, 1400);
+      Structure var2 = (Structure) TextureSampler25.aClass47_3407.get((long) var1, 1400);
       if (var2 != null) {
         return var2;
       } else {
@@ -246,8 +245,8 @@ final class SomethingScene {
           DummyClass4.aClass94_3006) :
         TextureSampler5.aClass94_3298;
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "jj.E(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "jj.E(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 

@@ -1,12 +1,13 @@
 final class Light {
 
+  private static GameString aClass94_695 = SpawnedGameObject.createString("Unable to find ");
   static int anInt692 = 0;
   static GameString aClass94_699 = SpawnedGameObject.createString("clignotant3:");
   static GameString aClass94_700 = SpawnedGameObject.createString("blaugr-Un:");
-  static GameString aClass94_701 = SpawnedGameObject.createString("Chargement de la liste des serveurs");
+  static GameString aClass94_701 =
+    SpawnedGameObject.createString("Chargement de la liste des serveurs");
   static int anInt715;
   static int anInt716 = 0;
-  private static GameString aClass94_695 = SpawnedGameObject.createString("Unable to find ");
   static GameString aClass94_691 = aClass94_695;
   boolean aBoolean690;
   boolean aBoolean696 = false;
@@ -72,79 +73,8 @@ final class Light {
       }
 
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "gi.<init>(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  static final void method1058(int var0, int var1, int var2, int var3, byte var4) {
-    try {
-      int var5 = 25 % ((25 - var4) / 52);
-      if (~(var1 + -var0) <= ~DummyClass55.anInt1425 && GlTexture2d.anInt3765 >= var0 + var1
-        && var3 + -var0 >= DummyClass13.anInt2020 && LightIntensity.anInt902 >= var0 + var3) {
-        IdentityKit.method949(var1, (byte) 118, var0, var2, var3);
-      } else {
-        GZipDecompressor.method1129(var2, var3, var0, 0, var1);
-      }
-
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "gi.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
-    }
-  }
-
-  public static void method1059(byte var0) {
-    try {
-      aClass94_695 = null;
-      aClass94_701 = null;
-      aClass94_699 = null;
-      aClass94_691 = null;
-      if (var0 == -2) {
-        aClass94_700 = null;
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "gi.E(" + var0 + ')');
-    }
-  }
-
-  static final AbstractDirectColorSprite method1062(int var0) {
-    try {
-      byte[] var2 = DummyClass5.aByteArrayArray2987[0];
-      int var1 = GroundItem.anIntArray2931[0] * TextureSampler26.anIntArray3076[0];
-      int[] var3 = new int[var1];
-      if (var0 < 70) {
-        method1062(67);
-      }
-
-      for (int var4 = 0; ~var1 < ~var4; ++var4) {
-        var3[var4] = TextureSampler38.anIntArray3446[ClientScript.bitAnd(var2[var4], 255)];
-      }
-
-      Object var6;
-      if (!GlRenderer.useOpenGlRenderer) {
-        var6 = new SoftwareDirectColorSprite(SomethingVolume15.anInt2426, SomethingPacket116.anInt1748,
-          Something3dRoot.anIntArray2048[0], Buffer.anIntArray2591[0], GroundItem.anIntArray2931[0],
-          TextureSampler26.anIntArray3076[0], var3);
-      } else {
-        var6 = new GlDirectColorSprite(SomethingVolume15.anInt2426, SomethingPacket116.anInt1748,
-          Something3dRoot.anIntArray2048[0], Buffer.anIntArray2591[0], GroundItem.anIntArray2931[0],
-          TextureSampler26.anIntArray3076[0], var3);
-      }
-
-      DummyClass37.method1035((byte) 111);
-      return (AbstractDirectColorSprite) var6;
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5, "gi.D(" + var0 + ')');
-    }
-  }
-
-  static final void executeScript(ClientScriptCall var1) {
-    try {
-
-      ItemConfig.callScript((byte) -93, 200000, var1);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "gi.H(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "gi.<init>(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -208,8 +138,8 @@ final class Light {
       this.colors[2] = var8 * (float) ClientScript.bitAnd(255, this.color);
       this.colors[1] = (float) (ClientScript.bitAnd(this.color, '\uffe7') >> 8) * var8;
     } catch (RuntimeException var7) {
-      throw AbstractGameWorld
-        .cascadeException(var7, "gi.A(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var7,
+        "gi.A(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -316,6 +246,78 @@ final class Light {
 
     } catch (RuntimeException var3) {
       throw AbstractGameWorld.cascadeException(var3, "gi.G(" + var1 + ')');
+    }
+  }
+
+  static final void method1058(int var0, int var1, int var2, int var3, byte var4) {
+    try {
+      int var5 = 25 % ((25 - var4) / 52);
+      if (~(var1 + -var0) <= ~DummyClass55.anInt1425 && GlTexture2d.anInt3765 >= var0 + var1
+        && var3 + -var0 >= DummyClass13.anInt2020 && LightIntensity.anInt902 >= var0 + var3) {
+        IdentityKit.method949(var1, (byte) 118, var0, var2, var3);
+      } else {
+        GZipDecompressor.method1129(var2, var3, var0, 0, var1);
+      }
+
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "gi.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
+    }
+  }
+
+  public static void method1059(byte var0) {
+    try {
+      aClass94_695 = null;
+      aClass94_701 = null;
+      aClass94_699 = null;
+      aClass94_691 = null;
+      if (var0 == -2) {
+        aClass94_700 = null;
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "gi.E(" + var0 + ')');
+    }
+  }
+
+  static final AbstractDirectColorSprite method1062(int var0) {
+    try {
+      byte[] var2 = DummyClass5.aByteArrayArray2987[0];
+      int var1 = GroundItem.anIntArray2931[0] * TextureSampler26.anIntArray3076[0];
+      int[] var3 = new int[var1];
+      if (var0 < 70) {
+        method1062(67);
+      }
+
+      for (int var4 = 0; ~var1 < ~var4; ++var4) {
+        var3[var4] = TextureSampler38.anIntArray3446[ClientScript.bitAnd(var2[var4], 255)];
+      }
+
+      Object var6;
+      if (!GlRenderer.useOpenGlRenderer) {
+        var6 =
+          new SoftwareDirectColorSprite(SomethingVolume15.anInt2426, SomethingPacket116.anInt1748,
+            Something3dRoot.anIntArray2048[0], Buffer.anIntArray2591[0],
+            GroundItem.anIntArray2931[0], TextureSampler26.anIntArray3076[0], var3);
+      } else {
+        var6 = new GlDirectColorSprite(SomethingVolume15.anInt2426, SomethingPacket116.anInt1748,
+          Something3dRoot.anIntArray2048[0], Buffer.anIntArray2591[0], GroundItem.anIntArray2931[0],
+          TextureSampler26.anIntArray3076[0], var3);
+      }
+
+      DummyClass37.method1035((byte) 111);
+      return (AbstractDirectColorSprite) var6;
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5, "gi.D(" + var0 + ')');
+    }
+  }
+
+  static final void executeScript(ClientScriptCall var1) {
+    try {
+
+      ItemConfig.callScript((byte) -93, 200000, var1);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "gi.H(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

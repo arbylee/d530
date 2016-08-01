@@ -23,8 +23,8 @@ final class StringNode extends Node {
     try {
       this.aClass94_2586 = var1;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "sj.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "sj.<init>(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -106,8 +106,8 @@ final class StringNode extends Node {
         return (var1 & '\uff80') - -var2;
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "sj.E(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "sj.E(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -133,8 +133,8 @@ final class StringNode extends Node {
       TextureSampler20.aClass153_3154 = var0;
       DummyClass53.anInt1344 = TextureSampler20.aClass153_3154.getAmountChildren(16, (byte) 71);
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "sj.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "sj.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -163,8 +163,8 @@ final class StringNode extends Node {
 
       return var3;
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "sj.D(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "sj.D(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -233,8 +233,8 @@ final class StringNode extends Node {
 
       }
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "sj.F(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "sj.F(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

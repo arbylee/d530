@@ -1,11 +1,12 @@
 final class SomethingMidiFile extends Node {
 
 
+  private static GameString aClass94_2286 =
+    SpawnedGameObject.createString("wishes to trade with you)3");
   static byte[][] byteArrayPool;
   static int[] BIT_MASKS = new int[32];
   static int anInt2290;
   static int anInt2291;
-  private static GameString aClass94_2286 = SpawnedGameObject.createString("wishes to trade with you)3");
   static GameString aClass94_2285 = aClass94_2286;
 
   static {
@@ -25,8 +26,8 @@ final class SomethingMidiFile extends Node {
     try {
       this.aByteArray2289 = var1;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "ea.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "ea.<init>(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -55,8 +56,8 @@ final class SomethingMidiFile extends Node {
         return null;
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "ea.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "ea.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 }

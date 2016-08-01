@@ -1,5 +1,6 @@
 final class DummyClass42 {
 
+  private static GameString aClass94_894 = SpawnedGameObject.createString("Walk here");
   static MonoChromaticImageBuffer aClass3_Sub26_884 = new MonoChromaticImageBuffer(0, 0);
   static Cache aClass47_885 = new Cache(128);
   static Widget aClass11_886 = null;
@@ -7,10 +8,8 @@ final class DummyClass42 {
   static GameString aClass94_888 = SpawnedGameObject.createString("<col=ffff00>");
   static int anInt889;
   static DisplayMode[] aClass106Array890;
-
   static GameString aClass94_892 = SpawnedGameObject.createString(" )2> <col=ffffff>");
   static int anInt893 = 0;
-  private static GameString aClass94_894 = SpawnedGameObject.createString("Walk here");
   static GameString DEFAULT_WALK_TOOLTIP = aClass94_894;
 
   static final int method1186(int var0, int var1) {

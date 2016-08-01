@@ -12,6 +12,96 @@ final class SoftwareFont extends AbstractFont {
     this.aByteArrayArray4082 = var6;
   }
 
+  final void method678(int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
+    int var8 = var2 + var3 * DummyClass47.anInt1092;
+    int var9 = DummyClass47.anInt1092 - var4;
+    int var10 = 0;
+    int var11 = 0;
+    int var12;
+    if (var3 < DummyClass47.anInt1095) {
+      var12 = DummyClass47.anInt1095 - var3;
+      var5 -= var12;
+      var3 = DummyClass47.anInt1095;
+      var11 += var12 * var4;
+      var8 += var12 * DummyClass47.anInt1092;
+    }
+
+    if (var3 + var5 > DummyClass47.anInt1099) {
+      var5 -= var3 + var5 - DummyClass47.anInt1099;
+    }
+
+    if (var2 < DummyClass47.anInt1093) {
+      var12 = DummyClass47.anInt1093 - var2;
+      var4 -= var12;
+      var2 = DummyClass47.anInt1093;
+      var11 += var12;
+      var8 += var12;
+      var10 += var12;
+      var9 += var12;
+    }
+
+    if (var2 + var4 > DummyClass47.anInt1096) {
+      var12 = var2 + var4 - DummyClass47.anInt1096;
+      var4 -= var12;
+      var10 += var12;
+      var9 += var12;
+    }
+
+    if (var4 > 0 && var5 > 0) {
+      if (DummyClass47.anIntArray1097 != null) {
+        method705(DummyClass47.anIntArray1100, this.aByteArrayArray4082[var1], var2, var3, var4,
+          var5, var6, var11, var8, var9, var10, DummyClass47.anIntArray1097,
+          DummyClass47.anIntArray1098);
+      } else {
+        method704(DummyClass47.anIntArray1100, this.aByteArrayArray4082[var1], var6, var11, var8,
+          var4, var5, var9, var10);
+      }
+
+    }
+  }
+
+  final void method679(int var1, int var2, int var3, int var4, int var5, int var6, int var7,
+                       boolean var8) {
+    int var9 = var2 + var3 * DummyClass47.anInt1092;
+    int var10 = DummyClass47.anInt1092 - var4;
+    int var11 = 0;
+    int var12 = 0;
+    int var13;
+    if (var3 < DummyClass47.anInt1095) {
+      var13 = DummyClass47.anInt1095 - var3;
+      var5 -= var13;
+      var3 = DummyClass47.anInt1095;
+      var12 += var13 * var4;
+      var9 += var13 * DummyClass47.anInt1092;
+    }
+
+    if (var3 + var5 > DummyClass47.anInt1099) {
+      var5 -= var3 + var5 - DummyClass47.anInt1099;
+    }
+
+    if (var2 < DummyClass47.anInt1093) {
+      var13 = DummyClass47.anInt1093 - var2;
+      var4 -= var13;
+      var2 = DummyClass47.anInt1093;
+      var12 += var13;
+      var9 += var13;
+      var11 += var13;
+      var10 += var13;
+    }
+
+    if (var2 + var4 > DummyClass47.anInt1096) {
+      var13 = var2 + var4 - DummyClass47.anInt1096;
+      var4 -= var13;
+      var11 += var13;
+      var10 += var13;
+    }
+
+    if (var4 > 0 && var5 > 0) {
+      method706(DummyClass47.anIntArray1100, this.aByteArrayArray4082[var1], var6, var12, var9,
+        var4, var5, var10, var11, var7);
+    }
+  }
+
   private static final void method704(int[] var0, byte[] var1, int var2, int var3, int var4,
                                       int var5, int var6, int var7, int var8) {
     int var9 = -(var5 >> 2);
@@ -134,95 +224,5 @@ final class SoftwareFont extends AbstractFont {
       var3 += var8;
     }
 
-  }
-
-  final void method679(int var1, int var2, int var3, int var4, int var5, int var6, int var7,
-                       boolean var8) {
-    int var9 = var2 + var3 * DummyClass47.anInt1092;
-    int var10 = DummyClass47.anInt1092 - var4;
-    int var11 = 0;
-    int var12 = 0;
-    int var13;
-    if (var3 < DummyClass47.anInt1095) {
-      var13 = DummyClass47.anInt1095 - var3;
-      var5 -= var13;
-      var3 = DummyClass47.anInt1095;
-      var12 += var13 * var4;
-      var9 += var13 * DummyClass47.anInt1092;
-    }
-
-    if (var3 + var5 > DummyClass47.anInt1099) {
-      var5 -= var3 + var5 - DummyClass47.anInt1099;
-    }
-
-    if (var2 < DummyClass47.anInt1093) {
-      var13 = DummyClass47.anInt1093 - var2;
-      var4 -= var13;
-      var2 = DummyClass47.anInt1093;
-      var12 += var13;
-      var9 += var13;
-      var11 += var13;
-      var10 += var13;
-    }
-
-    if (var2 + var4 > DummyClass47.anInt1096) {
-      var13 = var2 + var4 - DummyClass47.anInt1096;
-      var4 -= var13;
-      var11 += var13;
-      var10 += var13;
-    }
-
-    if (var4 > 0 && var5 > 0) {
-      method706(DummyClass47.anIntArray1100, this.aByteArrayArray4082[var1], var6, var12, var9,
-        var4, var5, var10, var11, var7);
-    }
-  }
-
-  final void method678(int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
-    int var8 = var2 + var3 * DummyClass47.anInt1092;
-    int var9 = DummyClass47.anInt1092 - var4;
-    int var10 = 0;
-    int var11 = 0;
-    int var12;
-    if (var3 < DummyClass47.anInt1095) {
-      var12 = DummyClass47.anInt1095 - var3;
-      var5 -= var12;
-      var3 = DummyClass47.anInt1095;
-      var11 += var12 * var4;
-      var8 += var12 * DummyClass47.anInt1092;
-    }
-
-    if (var3 + var5 > DummyClass47.anInt1099) {
-      var5 -= var3 + var5 - DummyClass47.anInt1099;
-    }
-
-    if (var2 < DummyClass47.anInt1093) {
-      var12 = DummyClass47.anInt1093 - var2;
-      var4 -= var12;
-      var2 = DummyClass47.anInt1093;
-      var11 += var12;
-      var8 += var12;
-      var10 += var12;
-      var9 += var12;
-    }
-
-    if (var2 + var4 > DummyClass47.anInt1096) {
-      var12 = var2 + var4 - DummyClass47.anInt1096;
-      var4 -= var12;
-      var10 += var12;
-      var9 += var12;
-    }
-
-    if (var4 > 0 && var5 > 0) {
-      if (DummyClass47.anIntArray1097 != null) {
-        method705(DummyClass47.anIntArray1100, this.aByteArrayArray4082[var1], var2, var3, var4,
-          var5, var6, var11, var8, var9, var10, DummyClass47.anIntArray1097,
-          DummyClass47.anIntArray1098);
-      } else {
-        method704(DummyClass47.anIntArray1100, this.aByteArrayArray4082[var1], var6, var11, var8,
-          var4, var5, var9, var10);
-      }
-
-    }
   }
 }

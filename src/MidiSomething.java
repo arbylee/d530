@@ -20,6 +20,119 @@ final class MidiSomething {
     }
   }
 
+  private final SomethingMusic0 method1412(int[] var1, int var2, int var3, int var4) {
+    try {
+      if (var2 != 31947) {
+        return null;
+      } else {
+        int var5 = var4 ^ (var3 >>> 12 | var3 << 4 & '\ufff3');
+        var5 |= var3 << 16;
+        long var6 = (long) var5;
+        SomethingMusic0 var8 = (SomethingMusic0) this.aClass130_1159.get(var6);
+        if (var8 != null) {
+          return var8;
+        } else if (null != var1 && ~var1[0] >= -1) {
+          return null;
+        } else {
+          SoundEffect var9 = SoundEffect.method1811(this.soundEffects, var3, var4);
+          if (null != var9) {
+            var8 = var9.method1812();
+            this.aClass130_1159.put(var6, var8);
+            if (var1 != null) {
+              var1[0] -= var8.aByteArray3030.length;
+            }
+
+            return var8;
+          } else {
+            return null;
+          }
+        }
+      }
+    } catch (RuntimeException var10) {
+      throw AbstractGameWorld.cascadeException(var10,
+        "le.B(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ',' + var4 + ')');
+    }
+  }
+
+  final SomethingMusic0 method1413(int var1, int var2, int[] var3) {
+    try {
+      if (1 != this.soundEffects.method2121(0)) {
+        if (-2 == ~this.soundEffects.getAmountChildren(var1, (byte) 83)) {
+          return this.method1412(var3, 31947, var1, 0);
+        } else {
+          if (var2 < 0) {
+            this.aClass130_1159 = null;
+          }
+
+          throw new RuntimeException();
+        }
+      } else {
+        return this.method1412(var3, 31947, 0, var1);
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "le.A(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  private final SomethingMusic0 method1415(int var1, int[] var2, int var3, byte var4) {
+    try {
+      int var5 = var3 ^ (var1 >>> 12 | '\ufff3' & var1 << 4);
+      var5 |= var1 << 16;
+      long var6 = (long) var5 ^ 4294967296L;
+      SomethingMusic0 var8 = (SomethingMusic0) this.aClass130_1159.get(var6);
+      if (null != var8) {
+        return var8;
+      } else if (var2 != null && var2[0] <= 0) {
+        return null;
+      } else {
+        MidiInstrument var9 = (MidiInstrument) this.aClass130_1155.get(var6);
+        if (null == var9) {
+          var9 = MidiInstrument.method363(this.midiInstruments, var1, var3);
+          if (null == var9) {
+            return null;
+          }
+
+          this.aClass130_1155.put(var6, var9);
+        }
+
+        var8 = var9.method359(var2);
+        if (null == var8) {
+          return null;
+        } else {
+          var9.unlinkNode();
+          this.aClass130_1159.put(var6, var8);
+          if (var4 != 11) {
+            this.method1413(64, -18, null);
+          }
+
+          return var8;
+        }
+      }
+    } catch (RuntimeException var10) {
+      // var10.printStackTrace();
+      throw AbstractGameWorld.cascadeException(var10,
+        "le.F(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ',' + var4 + ')');
+    }
+  }
+
+  final SomethingMusic0 method1416(int var1, int var2, int[] var3) {
+    try {
+      if (var1 != 10089) {
+        return null;
+      } else if (-2 == ~this.midiInstruments.method2121(0)) {
+        return this.method1415(0, var3, var2, (byte) 11);
+      } else if (-2 != ~this.midiInstruments.getAmountChildren(var2, (byte) 99)) {
+        throw new RuntimeException();
+      } else {
+        return this.method1415(var2, var3, 0, (byte) 11);
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "le.G(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
+    }
+  }
+
   static final void method1410(int var0, int var1, int var2, int var3, int var4, int var5, int var6,
                                int var7, int var8, int var9, int var10) {
     try {
@@ -127,9 +240,8 @@ final class MidiSomething {
                     var35 = var42[var28] != null ? var42[var28][var31] : 0;
                     var36 = var35 & 252;
                     if (-1 != ~var36 && ~var16 < -2 && var27 > 1) {
-                      FloorOverlay
-                        .method2272(DummyClass47.anIntArray1100, var33, var14, var35 & 3, var32,
-                          var36 >> 2, var27, var16, var25, true, (byte) 21);
+                      FloorOverlay.method2272(DummyClass47.anIntArray1100, var33, var14, var35 & 3,
+                        var32, var36 >> 2, var27, var16, var25, true, (byte) 21);
                     } else {
                       DummyClass47.method1323(var14, var25, var16, var27, var33);
                     }
@@ -197,13 +309,13 @@ final class MidiSomething {
                                   int var39;
                                   if (25 == var49) {
                                     for (var39 = 0; ~var39 > ~var27; ++var39) {
-                                      DummyClass47
-                                        .method1317(var39 + var14, -var39 + var37, 1, var38);
+                                      DummyClass47.method1317(var39 + var14, -var39 + var37, 1,
+                                        var38);
                                     }
                                   } else if (26 == var49) {
                                     for (var39 = 0; var39 < var27; ++var39) {
-                                      DummyClass47
-                                        .method1317(var39 + var14, var25 + var39, 1, var38);
+                                      DummyClass47.method1317(var39 + var14, var25 + var39, 1,
+                                        var38);
                                     }
                                   }
                                 }
@@ -354,119 +466,6 @@ final class MidiSomething {
       aClass3_Sub27_1154 = null;
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "le.E(" + var0 + ')');
-    }
-  }
-
-  private final SomethingMusic0 method1412(int[] var1, int var2, int var3, int var4) {
-    try {
-      if (var2 != 31947) {
-        return null;
-      } else {
-        int var5 = var4 ^ (var3 >>> 12 | var3 << 4 & '\ufff3');
-        var5 |= var3 << 16;
-        long var6 = (long) var5;
-        SomethingMusic0 var8 = (SomethingMusic0) this.aClass130_1159.get(var6);
-        if (var8 != null) {
-          return var8;
-        } else if (null != var1 && ~var1[0] >= -1) {
-          return null;
-        } else {
-          SoundEffect var9 = SoundEffect.method1811(this.soundEffects, var3, var4);
-          if (null != var9) {
-            var8 = var9.method1812();
-            this.aClass130_1159.put(var6, var8);
-            if (var1 != null) {
-              var1[0] -= var8.aByteArray3030.length;
-            }
-
-            return var8;
-          } else {
-            return null;
-          }
-        }
-      }
-    } catch (RuntimeException var10) {
-      throw AbstractGameWorld.cascadeException(var10,
-        "le.B(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ',' + var4 + ')');
-    }
-  }
-
-  final SomethingMusic0 method1413(int var1, int var2, int[] var3) {
-    try {
-      if (1 != this.soundEffects.method2121(0)) {
-        if (-2 == ~this.soundEffects.getAmountChildren(var1, (byte) 83)) {
-          return this.method1412(var3, 31947, var1, 0);
-        } else {
-          if (var2 < 0) {
-            this.aClass130_1159 = null;
-          }
-
-          throw new RuntimeException();
-        }
-      } else {
-        return this.method1412(var3, 31947, 0, var1);
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "le.A(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  private final SomethingMusic0 method1415(int var1, int[] var2, int var3, byte var4) {
-    try {
-      int var5 = var3 ^ (var1 >>> 12 | '\ufff3' & var1 << 4);
-      var5 |= var1 << 16;
-      long var6 = (long) var5 ^ 4294967296L;
-      SomethingMusic0 var8 = (SomethingMusic0) this.aClass130_1159.get(var6);
-      if (null != var8) {
-        return var8;
-      } else if (var2 != null && var2[0] <= 0) {
-        return null;
-      } else {
-        MidiInstrument var9 = (MidiInstrument) this.aClass130_1155.get(var6);
-        if (null == var9) {
-          var9 = MidiInstrument.method363(this.midiInstruments, var1, var3);
-          if (null == var9) {
-            return null;
-          }
-
-          this.aClass130_1155.put(var6, var9);
-        }
-
-        var8 = var9.method359(var2);
-        if (null == var8) {
-          return null;
-        } else {
-          var9.unlinkNode();
-          this.aClass130_1159.put(var6, var8);
-          if (var4 != 11) {
-            this.method1413(64, -18, null);
-          }
-
-          return var8;
-        }
-      }
-    } catch (RuntimeException var10) {
-      // var10.printStackTrace();
-      throw AbstractGameWorld.cascadeException(var10,
-        "le.F(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ',' + var4 + ')');
-    }
-  }
-
-  final SomethingMusic0 method1416(int var1, int var2, int[] var3) {
-    try {
-      if (var1 != 10089) {
-        return null;
-      } else if (-2 == ~this.midiInstruments.method2121(0)) {
-        return this.method1415(0, var3, var2, (byte) 11);
-      } else if (-2 != ~this.midiInstruments.getAmountChildren(var2, (byte) 99)) {
-        throw new RuntimeException();
-      } else {
-        return this.method1415(var2, var3, 0, (byte) 11);
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "le.G(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
     }
   }
 

@@ -2,17 +2,16 @@ import javax.media.opengl.GL;
 
 final class DummyClass33 {
 
-  static int textureMemory = 0;
-  static int anInt582 = 0;
-  static int texture2dMemory = 0;
-  static int anInt585 = 0;
   private static Deque aClass61_581 = new Deque();
   private static long aLong583 = 0L;
   private static Deque aClass61_586 = new Deque();
   private static Deque aClass61_587 = new Deque();
   private static Deque aClass61_588 = new Deque();
   private static int[] anIntArray589 = new int[1000];
-
+  static int textureMemory = 0;
+  static int anInt582 = 0;
+  static int texture2dMemory = 0;
+  static int anInt585 = 0;
 
   static final synchronized void method985(int var0, int var1, int var2) {
     if (var2 == anInt582) {

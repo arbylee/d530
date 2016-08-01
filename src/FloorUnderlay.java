@@ -2,12 +2,12 @@ import java.util.Random;
 
 final class FloorUnderlay {
 
+  private static GameString aClass94_1415 = SpawnedGameObject.createString("Loaded input handler");
   static int anInt1405;
   static int anInt1407;
   static FileUnpacker fileUnpacker19;
   static SceneShadowMap aClass136_1413 = new SceneShadowMap();
   static int anInt1416;
-  private static GameString aClass94_1415 = SpawnedGameObject.createString("Loaded input handler");
   static GameString aClass94_1409 = aClass94_1415;
   int anInt1406;
   int anInt1408;
@@ -17,76 +17,6 @@ final class FloorUnderlay {
   int anInt1417;
   int anInt1418;
   private int anInt1404 = 0;
-
-  static final int method1602(int var0, GameString var1) {
-    try {
-      if (DummyClass25.aClass131_1624 != null && ~var1.getLength() != -1) {
-        for (int var2 = var0; ~DummyClass25.aClass131_1624.anInt1720 < ~var2; ++var2) {
-          if (DummyClass25.aClass131_1624.aClass94Array1721[var2]
-            .method1560(TextureSampler15.aClass94_3192, true, OndemandFileRequest.aClass94_4066)
-            .method1562((byte) -32, var1)) {
-            return var2;
-          }
-        }
-
-        return -1;
-      } else {
-        return -1;
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "ni.G(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  static final int method1603(byte var0, int var1, Random var2) {
-    try {
-      if (~var1 >= -1) {
-        throw new IllegalArgumentException();
-      } else if (Projectile.isPo2((byte) -115, var1)) {
-        return (int) (((long) var2.nextInt() & 4294967295L) * (long) var1 >> 32);
-      } else {
-        int var3 = -((int) (4294967296L % (long) var1)) + Integer.MIN_VALUE;
-
-        int var4;
-        do {
-          var4 = var2.nextInt();
-        } while (var3 <= var4);
-
-        int var5 = -101 % ((var0 - -52) / 33);
-        return TextureSampler27.method201(var4, var1, -58);
-      }
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "ni.C(" + var0 + ',' + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  static final void method1605(int var0, GameString var1, int var2) {
-    try {
-      ++SomethingSceneI.anInt421;
-      TextureSampler12.secureBuffer.writePacket(188);
-      TextureSampler12.secureBuffer.method790(var2, var0 + -13326);
-      if (var0 == 255) {
-        TextureSampler12.secureBuffer.writeLong(var1.toBase37());
-      }
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4,
-        "ni.B(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
-    }
-  }
-
-  public static void method1606(byte var0) {
-    try {
-      aClass94_1415 = null;
-      aClass94_1409 = null;
-      int var1 = 86 % ((49 - var0) / 48);
-      fileUnpacker19 = null;
-      aClass136_1413 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "ni.A(" + var0 + ')');
-    }
-  }
 
   private final void setHSL(int var1, byte var2) {
     try {
@@ -211,6 +141,76 @@ final class FloorUnderlay {
     } catch (RuntimeException var6) {
       throw AbstractGameWorld.cascadeException(var6,
         "ni.E(" + var2 + ',' + (var3 != null ? "{...}" : "null") + ',' + var4 + ')');
+    }
+  }
+
+  static final int method1602(int var0, GameString var1) {
+    try {
+      if (DummyClass25.aClass131_1624 != null && ~var1.getLength() != -1) {
+        for (int var2 = var0; ~DummyClass25.aClass131_1624.anInt1720 < ~var2; ++var2) {
+          if (DummyClass25.aClass131_1624.aClass94Array1721[var2].method1560(
+            TextureSampler15.aClass94_3192, true, OndemandFileRequest.aClass94_4066)
+            .method1562((byte) -32, var1)) {
+            return var2;
+          }
+        }
+
+        return -1;
+      } else {
+        return -1;
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "ni.G(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  static final int method1603(byte var0, int var1, Random var2) {
+    try {
+      if (~var1 >= -1) {
+        throw new IllegalArgumentException();
+      } else if (Projectile.isPo2((byte) -115, var1)) {
+        return (int) (((long) var2.nextInt() & 4294967295L) * (long) var1 >> 32);
+      } else {
+        int var3 = -((int) (4294967296L % (long) var1)) + Integer.MIN_VALUE;
+
+        int var4;
+        do {
+          var4 = var2.nextInt();
+        } while (var3 <= var4);
+
+        int var5 = -101 % ((var0 - -52) / 33);
+        return TextureSampler27.method201(var4, var1, -58);
+      }
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "ni.C(" + var0 + ',' + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  static final void method1605(int var0, GameString var1, int var2) {
+    try {
+      ++SomethingSceneI.anInt421;
+      TextureSampler12.secureBuffer.writePacket(188);
+      TextureSampler12.secureBuffer.method790(var2, var0 + -13326);
+      if (var0 == 255) {
+        TextureSampler12.secureBuffer.writeLong(var1.toBase37());
+      }
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "ni.B(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+    }
+  }
+
+  public static void method1606(byte var0) {
+    try {
+      aClass94_1415 = null;
+      aClass94_1409 = null;
+      int var1 = 86 % ((49 - var0) / 48);
+      fileUnpacker19 = null;
+      aClass136_1413 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "ni.A(" + var0 + ')');
     }
   }
 

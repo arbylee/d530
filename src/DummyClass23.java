@@ -62,8 +62,8 @@ final class DummyClass23 {
       var2.method538((byte) 103);
       return var2;
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "rb.D(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "rb.D(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 

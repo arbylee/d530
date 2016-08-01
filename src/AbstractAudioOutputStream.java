@@ -5,7 +5,8 @@ class AbstractAudioOutputStream {
   static int[] quadx0 = new int[100];
   static GameString aClass94_1970 = SpawnedGameObject.createString(":");
   static int anInt1971;
-  static GameString aClass94_1974 = SpawnedGameObject.createString("Verbindung mit Update)2Server)3)3)3");
+  static GameString aClass94_1974 =
+    SpawnedGameObject.createString("Verbindung mit Update)2Server)3)3)3");
   static int[] anIntArray1976 = new int[] {1, 0, 0, 0, 1, 0, 2, 1, 1, 1, 0, 2, 0, 0, 1, 0};
   static int anInt1977 = 0;
   static int[] otherKeyQueue = new int[128];
@@ -25,74 +26,6 @@ class AbstractAudioOutputStream {
   private int overflow;
   private int anInt1987 = 0;
   private int anInt1988 = 0;
-
-  static final SomethingQuickChatK method2156(int var0, Buffer var1) {
-    try {
-      SomethingQuickChatK var2 = new SomethingQuickChatK();
-      var2.anInt149 = var1.readUnsignedShort();
-      if (var0 != 1024) {
-        method2162(null, 34, 103, -93);
-      }
-
-      var2.aClass3_Sub28_Sub4_151 = StringNode.method733(12345678, var2.anInt149);
-      return var2;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "vh.M(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  static final void method2162(SceneNode var0, int var1, int var2, int var3) {
-    SceneGraphTile var4;
-    if (var2 < SocketStream.sceneWidth) {
-      var4 = SomethingTexture1.sceneGraphTiles[var1][var2 + 1][var3];
-      if (var4 != null && var4.aClass12_2230 != null && var4.aClass12_2230.aClass140_320
-        .method1865()) {
-        var0.method1866(var4.aClass12_2230.aClass140_320, 128, 0, 0, true);
-      }
-    }
-
-    if (var3 < SocketStream.sceneWidth) {
-      var4 = SomethingTexture1.sceneGraphTiles[var1][var2][var3 + 1];
-      if (var4 != null && var4.aClass12_2230 != null && var4.aClass12_2230.aClass140_320
-        .method1865()) {
-        var0.method1866(var4.aClass12_2230.aClass140_320, 0, 0, 128, true);
-      }
-    }
-
-    if (var2 < SocketStream.sceneWidth && var3 < TextureSampler17.sceneHeight) {
-      var4 = SomethingTexture1.sceneGraphTiles[var1][var2 + 1][var3 + 1];
-      if (var4 != null && var4.aClass12_2230 != null && var4.aClass12_2230.aClass140_320
-        .method1865()) {
-        var0.method1866(var4.aClass12_2230.aClass140_320, 128, 0, 128, true);
-      }
-    }
-
-    if (var2 < SocketStream.sceneWidth && var3 > 0) {
-      var4 = SomethingTexture1.sceneGraphTiles[var1][var2 + 1][var3 - 1];
-      if (var4 != null && var4.aClass12_2230 != null && var4.aClass12_2230.aClass140_320
-        .method1865()) {
-        var0.method1866(var4.aClass12_2230.aClass140_320, 128, 0, -128, true);
-      }
-    }
-
-  }
-
-  public static void method2165(int var0) {
-    try {
-      aClass94_1970 = null;
-      aClass94_1974 = null;
-      anIntArray1976 = null;
-      if (var0 != 0) {
-        method2165(-20);
-      }
-
-      quadx0 = null;
-      otherKeyQueue = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "vh.G(" + var0 + ')');
-    }
-  }
 
   void write() throws Exception {
   }
@@ -309,8 +242,8 @@ class AbstractAudioOutputStream {
       int var3 = -128 / ((var1 - -58) / 54);
       this.aClass3_Sub24_1973 = var2;
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "vh.I(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "vh.I(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -429,6 +362,74 @@ class AbstractAudioOutputStream {
   }
 
   void bind(Component var1) throws Exception {
+  }
+
+  static final SomethingQuickChatK method2156(int var0, Buffer var1) {
+    try {
+      SomethingQuickChatK var2 = new SomethingQuickChatK();
+      var2.anInt149 = var1.readUnsignedShort();
+      if (var0 != 1024) {
+        method2162(null, 34, 103, -93);
+      }
+
+      var2.aClass3_Sub28_Sub4_151 = StringNode.method733(12345678, var2.anInt149);
+      return var2;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "vh.M(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  static final void method2162(SceneNode var0, int var1, int var2, int var3) {
+    SceneGraphTile var4;
+    if (var2 < SocketStream.sceneWidth) {
+      var4 = SomethingTexture1.sceneGraphTiles[var1][var2 + 1][var3];
+      if (var4 != null && var4.aClass12_2230 != null
+        && var4.aClass12_2230.aClass140_320.method1865()) {
+        var0.method1866(var4.aClass12_2230.aClass140_320, 128, 0, 0, true);
+      }
+    }
+
+    if (var3 < SocketStream.sceneWidth) {
+      var4 = SomethingTexture1.sceneGraphTiles[var1][var2][var3 + 1];
+      if (var4 != null && var4.aClass12_2230 != null
+        && var4.aClass12_2230.aClass140_320.method1865()) {
+        var0.method1866(var4.aClass12_2230.aClass140_320, 0, 0, 128, true);
+      }
+    }
+
+    if (var2 < SocketStream.sceneWidth && var3 < TextureSampler17.sceneHeight) {
+      var4 = SomethingTexture1.sceneGraphTiles[var1][var2 + 1][var3 + 1];
+      if (var4 != null && var4.aClass12_2230 != null
+        && var4.aClass12_2230.aClass140_320.method1865()) {
+        var0.method1866(var4.aClass12_2230.aClass140_320, 128, 0, 128, true);
+      }
+    }
+
+    if (var2 < SocketStream.sceneWidth && var3 > 0) {
+      var4 = SomethingTexture1.sceneGraphTiles[var1][var2 + 1][var3 - 1];
+      if (var4 != null && var4.aClass12_2230 != null
+        && var4.aClass12_2230.aClass140_320.method1865()) {
+        var0.method1866(var4.aClass12_2230.aClass140_320, 128, 0, -128, true);
+      }
+    }
+
+  }
+
+  public static void method2165(int var0) {
+    try {
+      aClass94_1970 = null;
+      aClass94_1974 = null;
+      anIntArray1976 = null;
+      if (var0 != 0) {
+        method2165(-20);
+      }
+
+      quadx0 = null;
+      otherKeyQueue = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "vh.G(" + var0 + ')');
+    }
   }
 
 }

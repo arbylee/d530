@@ -3,11 +3,11 @@ import java.nio.IntBuffer;
 
 final class GlUtils {
 
+  private static int anInt450 = 0;
   static GlDirectColorSprite aClass3_Sub28_Sub16_Sub1_447 = null;
   static int anInt448 = 0;
   static int anInt449 = 0;
   static int anInt451 = 0;
-  private static int anInt450 = 0;
 
   static final void method921() {
     aClass3_Sub28_Sub16_Sub1_447 = null;

@@ -1,13 +1,12 @@
 final class TriChromaticImageBuffer extends Node {
 
+  private static GameString aClass94_2486 = SpawnedGameObject.createString("red:");
   static int[] anIntArray2480 = new int[25];
-
   static GameString aClass94_2482 = SpawnedGameObject.createString(":clan:");
   static int anInt2484 = 0;
   static int languageId = 0;
   static int anInt2487;
   static int anInt2488 = 0;
-  private static GameString aClass94_2486 = SpawnedGameObject.createString("red:");
   static GameString aClass94_2490 = aClass94_2486;
   static GameString aClass94_2481 = aClass94_2486;
   int anInt2483;
@@ -99,9 +98,9 @@ final class TriChromaticImageBuffer extends Node {
       if (var0 && AbstractFileRequest.anInt3631 >= 100) {
         NPC.anInt3995 = 128 * ComponentCanvas.anInt30 + 64;
         DummyClass49.anInt1111 = 128 * AbstractMouseWheel.anInt1904 + 64;
-        EnumStringFetcher.anInt2162 = BufferData
-          .method1736(GameWorldSomething.currentPlane, 1, NPC.anInt3995, DummyClass49.anInt1111)
-          + -TextureSampler25.anInt3414;
+        EnumStringFetcher.anInt2162 =
+          BufferData.method1736(GameWorldSomething.currentPlane, 1, NPC.anInt3995,
+            DummyClass49.anInt1111) + -TextureSampler25.anInt3414;
       }
 
       int var7 = 76 % ((-79 - var4) / 35);

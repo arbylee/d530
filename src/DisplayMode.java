@@ -1,5 +1,7 @@
 final class DisplayMode {
 
+  private static GameString aClass94_1440 =
+    SpawnedGameObject.createString("Connected to update server");
   static int anInt1439;
   static boolean useBumpMaps = true;
   static int viewY = 0;
@@ -7,7 +9,6 @@ final class DisplayMode {
   static short aShort1444 = 256;
   static int loopCycle = 0;
   static boolean aBoolean1451 = false;
-  private static GameString aClass94_1440 = SpawnedGameObject.createString("Connected to update server");
   static GameString CONNECTED_TO_UPDATE_SERVER = aClass94_1440;
   int anInt1447;
   int anInt1448;
@@ -38,8 +39,8 @@ final class DisplayMode {
         }
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "od.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "od.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -49,14 +50,12 @@ final class DisplayMode {
         method1644((byte) 95);
       }
 
-      Inventory var4 =
-        (Inventory) SceneGraphTile.aClass130_2220.get((long) var2);
+      Inventory var4 = (Inventory) SceneGraphTile.aClass130_2220.get((long) var2);
       if (null != var4) {
         int var5 = 0;
 
         for (int var6 = 0; ~var4.ids.length < ~var6; ++var6) {
-          if (var4.ids[var6] >= 0
-            && TextureSampler39.anInt3287 > var4.ids[var6]) {
+          if (var4.ids[var6] >= 0 && TextureSampler39.anInt3287 > var4.ids[var6]) {
             ItemConfig var7 = DummyClass35.getItemConfig(var4.ids[var6], (byte) 79);
             if (null != var7.aClass130_798) {
               IntegerNode var8 = (IntegerNode) var7.aClass130_798.get((long) var3);
@@ -76,8 +75,8 @@ final class DisplayMode {
         return 0;
       }
     } catch (RuntimeException var9) {
-      throw AbstractGameWorld
-        .cascadeException(var9, "od.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var9,
+        "od.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 

@@ -10,8 +10,8 @@ final class DummyClass34 {
     try {
       return GroundItem.decompressString(var0, 32767);
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "fc.C(" + (var0 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "fc.C(" + (var0 != null ? "{...}" : "null") + ')');
     }
   }
 

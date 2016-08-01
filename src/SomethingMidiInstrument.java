@@ -21,8 +21,8 @@ final class SomethingMidiInstrument {
       var2 = 0;
 
       for (var3 = MidiInstrument.method368(5) + 1; var2 < this.anInt1065; ++var3) {
-        int var4 = MidiInstrument.method368(
-          MonoChromaticImageBuffer.method513(this.anInt1065 - var2, 4));
+        int var4 =
+          MidiInstrument.method368(MonoChromaticImageBuffer.method513(this.anInt1065 - var2, 4));
 
         for (var5 = 0; var5 < var4; ++var5) {
           this.anIntArray1061[var2++] = var3;
@@ -99,16 +99,6 @@ final class SomethingMidiInstrument {
       }
     }
 
-  }
-
-  private static final int method1291(int var0, int var1) {
-    int var2;
-    for (
-      var2 = (int) Math.pow((double) var0, 1.0D / (double) var1) + 1;
-      Projectile.method2028(var1, var2, -122) > var0; --var2) {
-    }
-
-    return var2;
   }
 
   final float[] method1288() {
@@ -217,5 +207,15 @@ final class SomethingMidiInstrument {
     }
 
     return ~this.anIntArray1066[var1];
+  }
+
+  private static final int method1291(int var0, int var1) {
+    int var2;
+    for (
+      var2 = (int) Math.pow((double) var0, 1.0D / (double) var1) + 1;
+      Projectile.method2028(var1, var2, -122) > var0; --var2) {
+    }
+
+    return var2;
   }
 }

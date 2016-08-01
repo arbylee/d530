@@ -1,5 +1,7 @@
 final class DummyClass53 {
 
+  private static GameString aClass94_1334 =
+    SpawnedGameObject.createString("You can(Wt add yourself to your own ignore list)3");
   static GameString UM_PREFIX = SpawnedGameObject.createString("um");
   static int anInt1336 = 0;
   static GameString aClass94_1337 = SpawnedGameObject.createString("::breakcon");
@@ -10,8 +12,6 @@ final class DummyClass53 {
   static GameString aClass94_1342 = SpawnedGameObject.createString("details");
   static int anInt1343;
   static int anInt1344;
-  private static GameString aClass94_1334 =
-    SpawnedGameObject.createString("You can(Wt add yourself to your own ignore list)3");
   static GameString aClass94_1335 = aClass94_1334;
 
   public static void method1582(int var0) {

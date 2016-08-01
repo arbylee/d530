@@ -18,6 +18,114 @@ final class TextureSampler32 extends AbstractTextureSampler {
     super(1, true);
   }
 
+  final int[] method154(int var1, byte var2) {
+    try {
+      int var3 = -79 % ((var2 - 30) / 36);
+      int[] var4 = this.monoChromaticImageCache.method1709(-16409, var1);
+      if (this.monoChromaticImageCache.aBoolean1580) {
+        int var8 = DummyClass53.anInt1343 * this.anInt3350 >> 12;
+        int[] var9 = this.method152(0, TriChromaticImageBuffer.anInt2487 & var1 + -1, 32755);
+        int[] var10 = this.method152(0, var1, 32755);
+        int[] var11 = this.method152(0, 1 + var1 & TriChromaticImageBuffer.anInt2487, 32755);
+
+        for (int var12 = 0; SomethingLight0.anInt1559 > var12; ++var12) {
+          int var14 = (var10[RenderAnimation.anInt396 & -1 + var12] - var10[1 + var12
+            & RenderAnimation.anInt396]) * var8 >> 12;
+          int var13 = var8 * (-var9[var12] + var11[var12]) >> 12;
+          int var15 = var14 >> 4;
+          if (0 > var15) {
+            var15 = -var15;
+          }
+
+          if (var15 > 255) {
+            var15 = 255;
+          }
+
+          int var16 = var13 >> 4;
+          if (-1 < ~var16) {
+            var16 = -var16;
+          }
+
+          if (255 < var16) {
+            var16 = 255;
+          }
+
+          int var17 =
+            TriChromaticImageCache.aByteArray1364[(var16 * (var16 - -1) >> 1) + var15] & 255;
+          int var6 = var13 * var17 >> 8;
+          int var5 = var17 * var14 >> 8;
+          var6 = var6 * this.anIntArray3348[1] >> 12;
+          var5 = this.anIntArray3348[0] * var5 >> 12;
+          int var7 = 4096 * var17 >> 8;
+          var7 = var7 * this.anIntArray3348[2] >> 12;
+          var4[var12] = var7 + var6 + var5;
+        }
+      }
+
+      return var4;
+    } catch (RuntimeException var18) {
+      throw AbstractGameWorld.cascadeException(var18, "pk.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void parseConfig(int var1, Buffer var2, boolean var3) {
+    try {
+      if (0 == var1) {
+        this.anInt3350 = var2.readUnsignedShort();
+      } else if (1 != var1) {
+        if (~var1 == -3) {
+          this.anInt3354 = var2.readUnsignedShort();
+        }
+      } else {
+        this.anInt3347 = var2.readUnsignedShort();
+      }
+
+      if (!var3) {
+        updateProjectiles();
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "pk.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
+  final void method158(int var1) {
+    try {
+      if (var1 == 16251) {
+        this.method303((byte) 59);
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "pk.P(" + var1 + ')');
+    }
+  }
+
+  private final void method303(byte var1) {
+    try {
+      double var2 = Math.cos((double) ((float) this.anInt3354 / 4096.0F));
+      this.anIntArray3348[0] =
+        (int) (4096.0D * var2 * Math.sin((double) ((float) this.anInt3347 / 4096.0F)));
+      if (var1 >= 46) {
+        this.anIntArray3348[1] =
+          (int) (Math.cos((double) ((float) this.anInt3347 / 4096.0F)) * var2 * 4096.0D);
+        this.anIntArray3348[2] =
+          (int) (4096.0D * Math.sin((double) ((float) this.anInt3354 / 4096.0F)));
+        int var6 = this.anIntArray3348[2] * this.anIntArray3348[2] >> 12;
+        int var5 = this.anIntArray3348[1] * this.anIntArray3348[1] >> 12;
+        int var4 = this.anIntArray3348[0] * this.anIntArray3348[0] >> 12;
+        int var7 = (int) (4096.0D * Math.sqrt((double) (var4 - (-var5 - var6) >> 12)));
+        if (~var7 != -1) {
+          this.anIntArray3348[2] = (this.anIntArray3348[2] << 12) / var7;
+          this.anIntArray3348[0] = (this.anIntArray3348[0] << 12) / var7;
+          this.anIntArray3348[1] = (this.anIntArray3348[1] << 12) / var7;
+        }
+
+      }
+    } catch (RuntimeException var8) {
+      throw AbstractGameWorld.cascadeException(var8, "pk.B(" + var1 + ')');
+    }
+  }
+
   public static void method300(int var0) {
     try {
       walkTooltip = null;
@@ -81,10 +189,9 @@ final class TextureSampler32 extends AbstractTextureSampler {
             }
 
             projectile.update(DisplayMode.loopCycle);
-            DummyClass29
-              .addNodeToSceneGraph(GameWorldSomething.currentPlane, (int) projectile.aDouble2920,
-                (int) projectile.aDouble2900, (int) projectile.aDouble2914, 60, projectile,
-                projectile.anInt2924, -1L, false);
+            DummyClass29.addNodeToSceneGraph(GameWorldSomething.currentPlane,
+              (int) projectile.aDouble2920, (int) projectile.aDouble2900,
+              (int) projectile.aDouble2914, 60, projectile, projectile.anInt2924, -1L, false);
           }
         } else {
           node.unlinkNode();
@@ -93,114 +200,6 @@ final class TextureSampler32 extends AbstractTextureSampler {
 
     } catch (RuntimeException var5) {
       throw AbstractGameWorld.cascadeException(var5, "pk.C()");
-    }
-  }
-
-  final void parseConfig(int var1, Buffer var2, boolean var3) {
-    try {
-      if (0 == var1) {
-        this.anInt3350 = var2.readUnsignedShort();
-      } else if (1 != var1) {
-        if (~var1 == -3) {
-          this.anInt3354 = var2.readUnsignedShort();
-        }
-      } else {
-        this.anInt3347 = var2.readUnsignedShort();
-      }
-
-      if (!var3) {
-        updateProjectiles();
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "pk.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
-    }
-  }
-
-  final void method158(int var1) {
-    try {
-      if (var1 == 16251) {
-        this.method303((byte) 59);
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "pk.P(" + var1 + ')');
-    }
-  }
-
-  final int[] method154(int var1, byte var2) {
-    try {
-      int var3 = -79 % ((var2 - 30) / 36);
-      int[] var4 = this.monoChromaticImageCache.method1709(-16409, var1);
-      if (this.monoChromaticImageCache.aBoolean1580) {
-        int var8 = DummyClass53.anInt1343 * this.anInt3350 >> 12;
-        int[] var9 = this.method152(0, TriChromaticImageBuffer.anInt2487 & var1 + -1, 32755);
-        int[] var10 = this.method152(0, var1, 32755);
-        int[] var11 = this.method152(0, 1 + var1 & TriChromaticImageBuffer.anInt2487, 32755);
-
-        for (int var12 = 0; SomethingLight0.anInt1559 > var12; ++var12) {
-          int var14 = (var10[RenderAnimation.anInt396 & -1 + var12] - var10[1 + var12
-            & RenderAnimation.anInt396]) * var8 >> 12;
-          int var13 = var8 * (-var9[var12] + var11[var12]) >> 12;
-          int var15 = var14 >> 4;
-          if (0 > var15) {
-            var15 = -var15;
-          }
-
-          if (var15 > 255) {
-            var15 = 255;
-          }
-
-          int var16 = var13 >> 4;
-          if (-1 < ~var16) {
-            var16 = -var16;
-          }
-
-          if (255 < var16) {
-            var16 = 255;
-          }
-
-          int var17 =
-            TriChromaticImageCache.aByteArray1364[(var16 * (var16 - -1) >> 1) + var15] & 255;
-          int var6 = var13 * var17 >> 8;
-          int var5 = var17 * var14 >> 8;
-          var6 = var6 * this.anIntArray3348[1] >> 12;
-          var5 = this.anIntArray3348[0] * var5 >> 12;
-          int var7 = 4096 * var17 >> 8;
-          var7 = var7 * this.anIntArray3348[2] >> 12;
-          var4[var12] = var7 + var6 + var5;
-        }
-      }
-
-      return var4;
-    } catch (RuntimeException var18) {
-      throw AbstractGameWorld.cascadeException(var18, "pk.D(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  private final void method303(byte var1) {
-    try {
-      double var2 = Math.cos((double) ((float) this.anInt3354 / 4096.0F));
-      this.anIntArray3348[0] =
-        (int) (4096.0D * var2 * Math.sin((double) ((float) this.anInt3347 / 4096.0F)));
-      if (var1 >= 46) {
-        this.anIntArray3348[1] =
-          (int) (Math.cos((double) ((float) this.anInt3347 / 4096.0F)) * var2 * 4096.0D);
-        this.anIntArray3348[2] =
-          (int) (4096.0D * Math.sin((double) ((float) this.anInt3354 / 4096.0F)));
-        int var6 = this.anIntArray3348[2] * this.anIntArray3348[2] >> 12;
-        int var5 = this.anIntArray3348[1] * this.anIntArray3348[1] >> 12;
-        int var4 = this.anIntArray3348[0] * this.anIntArray3348[0] >> 12;
-        int var7 = (int) (4096.0D * Math.sqrt((double) (var4 - (-var5 - var6) >> 12)));
-        if (~var7 != -1) {
-          this.anIntArray3348[2] = (this.anIntArray3348[2] << 12) / var7;
-          this.anIntArray3348[0] = (this.anIntArray3348[0] << 12) / var7;
-          this.anIntArray3348[1] = (this.anIntArray3348[1] << 12) / var7;
-        }
-
-      }
-    } catch (RuntimeException var8) {
-      throw AbstractGameWorld.cascadeException(var8, "pk.B(" + var1 + ')');
     }
   }
 

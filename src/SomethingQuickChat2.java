@@ -15,144 +15,6 @@ final class SomethingQuickChat2 extends SubNode {
   GameString aClass94_3538;
   int[] anIntArray3540;
 
-  public static void method528(int var0) {
-    try {
-      aClass3_Sub20_3532 = null;
-      if (var0 != -1667) {
-        anInt3539 = 101;
-      }
-
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "bc.B(" + var0 + ')');
-    }
-  }
-
-  static final GameString method531(byte var0) {
-    try {
-      GameString var1;
-      if (-2 == ~Something3d.anInt3012 && -3 < ~TextureSampler25.amountContextActions) {
-        var1 = RenderAnimation.concat(new GameString[] {
-          TextureSampler14.aClass94_3388, DummyInputStream.aClass94_43,
-          RenderAnimation.aClass94_378, WorldMapLabel.aClass94_1724
-        });
-      } else if (SceneNode.aBoolean1837 && 2 > TextureSampler25.amountContextActions) {
-        var1 = RenderAnimation.concat(new GameString[] {
-          Parameter.aClass94_3621, DummyInputStream.aClass94_43, DummyClass59.aClass94_676,
-          WorldMapLabel.aClass94_1724
-        });
-      } else if (DummyClass55.aBoolean1419 && GameObjectConfig.aBooleanArray1490[81]
-        && TextureSampler25.amountContextActions > 2) {
-        var1 = Buffer.method802(TextureSampler25.amountContextActions + -2, true);
-      } else {
-        var1 = Buffer.method802(TextureSampler25.amountContextActions - 1, true);
-      }
-
-      if (TextureSampler25.amountContextActions > 2) {
-        var1 = RenderAnimation.concat(new GameString[] {
-          var1, DummyClass3.aClass94_58,
-          SomethingScene.toString(TextureSampler25.amountContextActions - 2),
-          TextureSampler36.aClass94_3426
-        });
-      }
-
-      int var2 = -97 % ((var0 - 55) / 32);
-      return var1;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "bc.F(" + var0 + ')');
-    }
-  }
-
-  static final void method532(int var0, int var1) {
-    try {
-      if (var1 == -28236) {
-        Inventory var2 =
-          (Inventory) SceneGraphTile.aClass130_2220.get((long) var0);
-        if (null != var2) {
-          var2.unlinkNode();
-        }
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "bc.A(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  static final void drawLoadingBar(Color var0, boolean var1, boolean var2, GameString var3,
-                                   int var4) {
-    try {
-      try {
-        Graphics var5 = InventoryConfig.canvas.getGraphics();
-        if (TextureSampler14.aFont3384 == null) {
-          TextureSampler14.aFont3384 = new Font("Helvetica", 1, 13);
-          DummyClass17.aFontMetrics1822 =
-            InventoryConfig.canvas.getFontMetrics(TextureSampler14.aFont3384);
-        }
-
-        if (var2) {
-          var5.setColor(Color.black);
-          var5.fillRect(0, 0, DummyClass30.viewWidth, GroundItem.viewHeight);
-        }
-
-        if (null == var0) {
-          var0 = new Color(140, 17, 17);
-        }
-
-        if (var1) {
-          return;
-        }
-
-        try {
-          if (null == MilliFrameRegulator.anImage2695) {
-            MilliFrameRegulator.anImage2695 = InventoryConfig.canvas.createImage(304, 34);
-          }
-
-          Graphics var6 = MilliFrameRegulator.anImage2695.getGraphics();
-          var6.setColor(var0);
-          var6.drawRect(0, 0, 303, 33);
-          var6.fillRect(2, 2, var4 * 3, 30);
-          var6.setColor(Color.black);
-          var6.drawRect(1, 1, 301, 31);
-          var6.fillRect(3 * var4 + 2, 2, -(3 * var4) + 300, 30);
-          var6.setFont(TextureSampler14.aFont3384);
-          var6.setColor(Color.white);
-          var3.method1532(22, (-var3.method1575(-21018, DummyClass17.aFontMetrics1822) + 304) / 2,
-            var6, (byte) -90);
-          var5.drawImage(MilliFrameRegulator.anImage2695, DummyClass30.viewWidth / 2 - 152,
-            -18 + GroundItem.viewHeight / 2, null);
-        } catch (Exception var9) {
-          int var7 = -152 + DummyClass30.viewWidth / 2;
-          int var8 = -18 + GroundItem.viewHeight / 2;
-          var5.setColor(var0);
-          var5.drawRect(var7, var8, 303, 33);
-          var5.fillRect(var7 + 2, 2 + var8, 3 * var4, 30);
-          var5.setColor(Color.black);
-          var5.drawRect(1 + var7, var8 - -1, 301, 31);
-          var5.fillRect(3 * var4 + (var7 - -2), 2 + var8, 300 - var4 * 3, 30);
-          var5.setFont(TextureSampler14.aFont3384);
-          var5.setColor(Color.white);
-          var3.method1532(22 + var8,
-            var7 + (-var3.method1575(-21018, DummyClass17.aFontMetrics1822) + 304) / 2, var5,
-            (byte) -125);
-        }
-
-        if (DummyClass10.aClass94_2083 != null) {
-          var5.setFont(TextureSampler14.aFont3384);
-          var5.setColor(Color.white);
-          DummyClass10.aClass94_2083.method1532(GroundItem.viewHeight / 2 - 26,
-            DummyClass30.viewWidth / 2
-              - DummyClass10.aClass94_2083.method1575(-21018, DummyClass17.aFontMetrics1822) / 2,
-            var5, (byte) -116);
-        }
-      } catch (Exception var10) {
-        InventoryConfig.canvas.repaint();
-      }
-
-    } catch (RuntimeException var11) {
-      throw AbstractGameWorld.cascadeException(var11,
-        "bc.C(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ',' + var2 + ',' + (
-          var3 != null ? "{...}" : "null") + ',' + var4 + ')');
-    }
-  }
-
   final void method525(int var1) {
     try {
       int var2;
@@ -269,8 +131,145 @@ final class SomethingQuickChat2 extends SubNode {
         this.method527(var1, 0, var3);
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "bc.D(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "bc.D(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+    }
+  }
+
+  public static void method528(int var0) {
+    try {
+      aClass3_Sub20_3532 = null;
+      if (var0 != -1667) {
+        anInt3539 = 101;
+      }
+
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "bc.B(" + var0 + ')');
+    }
+  }
+
+  static final GameString method531(byte var0) {
+    try {
+      GameString var1;
+      if (-2 == ~Something3d.anInt3012 && -3 < ~TextureSampler25.amountContextActions) {
+        var1 = RenderAnimation.concat(new GameString[] {
+          TextureSampler14.aClass94_3388, DummyInputStream.aClass94_43,
+          RenderAnimation.aClass94_378, WorldMapLabel.aClass94_1724
+        });
+      } else if (SceneNode.aBoolean1837 && 2 > TextureSampler25.amountContextActions) {
+        var1 = RenderAnimation.concat(new GameString[] {
+          Parameter.aClass94_3621, DummyInputStream.aClass94_43, DummyClass59.aClass94_676,
+          WorldMapLabel.aClass94_1724
+        });
+      } else if (DummyClass55.aBoolean1419 && GameObjectConfig.aBooleanArray1490[81]
+        && TextureSampler25.amountContextActions > 2) {
+        var1 = Buffer.method802(TextureSampler25.amountContextActions + -2, true);
+      } else {
+        var1 = Buffer.method802(TextureSampler25.amountContextActions - 1, true);
+      }
+
+      if (TextureSampler25.amountContextActions > 2) {
+        var1 = RenderAnimation.concat(new GameString[] {
+          var1, DummyClass3.aClass94_58,
+          SomethingScene.toString(TextureSampler25.amountContextActions - 2),
+          TextureSampler36.aClass94_3426
+        });
+      }
+
+      int var2 = -97 % ((var0 - 55) / 32);
+      return var1;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "bc.F(" + var0 + ')');
+    }
+  }
+
+  static final void method532(int var0, int var1) {
+    try {
+      if (var1 == -28236) {
+        Inventory var2 = (Inventory) SceneGraphTile.aClass130_2220.get((long) var0);
+        if (null != var2) {
+          var2.unlinkNode();
+        }
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "bc.A(" + var0 + ',' + var1 + ')');
+    }
+  }
+
+  static final void drawLoadingBar(Color var0, boolean var1, boolean var2, GameString var3,
+                                   int var4) {
+    try {
+      try {
+        Graphics var5 = InventoryConfig.canvas.getGraphics();
+        if (TextureSampler14.aFont3384 == null) {
+          TextureSampler14.aFont3384 = new Font("Helvetica", 1, 13);
+          DummyClass17.aFontMetrics1822 =
+            InventoryConfig.canvas.getFontMetrics(TextureSampler14.aFont3384);
+        }
+
+        if (var2) {
+          var5.setColor(Color.black);
+          var5.fillRect(0, 0, DummyClass30.viewWidth, GroundItem.viewHeight);
+        }
+
+        if (null == var0) {
+          var0 = new Color(140, 17, 17);
+        }
+
+        if (var1) {
+          return;
+        }
+
+        try {
+          if (null == MilliFrameRegulator.anImage2695) {
+            MilliFrameRegulator.anImage2695 = InventoryConfig.canvas.createImage(304, 34);
+          }
+
+          Graphics var6 = MilliFrameRegulator.anImage2695.getGraphics();
+          var6.setColor(var0);
+          var6.drawRect(0, 0, 303, 33);
+          var6.fillRect(2, 2, var4 * 3, 30);
+          var6.setColor(Color.black);
+          var6.drawRect(1, 1, 301, 31);
+          var6.fillRect(3 * var4 + 2, 2, -(3 * var4) + 300, 30);
+          var6.setFont(TextureSampler14.aFont3384);
+          var6.setColor(Color.white);
+          var3.method1532(22, (-var3.method1575(-21018, DummyClass17.aFontMetrics1822) + 304) / 2,
+            var6, (byte) -90);
+          var5.drawImage(MilliFrameRegulator.anImage2695, DummyClass30.viewWidth / 2 - 152,
+            -18 + GroundItem.viewHeight / 2, null);
+        } catch (Exception var9) {
+          int var7 = -152 + DummyClass30.viewWidth / 2;
+          int var8 = -18 + GroundItem.viewHeight / 2;
+          var5.setColor(var0);
+          var5.drawRect(var7, var8, 303, 33);
+          var5.fillRect(var7 + 2, 2 + var8, 3 * var4, 30);
+          var5.setColor(Color.black);
+          var5.drawRect(1 + var7, var8 - -1, 301, 31);
+          var5.fillRect(3 * var4 + (var7 - -2), 2 + var8, 300 - var4 * 3, 30);
+          var5.setFont(TextureSampler14.aFont3384);
+          var5.setColor(Color.white);
+          var3.method1532(22 + var8,
+            var7 + (-var3.method1575(-21018, DummyClass17.aFontMetrics1822) + 304) / 2, var5,
+            (byte) -125);
+        }
+
+        if (DummyClass10.aClass94_2083 != null) {
+          var5.setFont(TextureSampler14.aFont3384);
+          var5.setColor(Color.white);
+          DummyClass10.aClass94_2083.method1532(GroundItem.viewHeight / 2 - 26,
+            DummyClass30.viewWidth / 2
+              - DummyClass10.aClass94_2083.method1575(-21018, DummyClass17.aFontMetrics1822) / 2,
+            var5, (byte) -116);
+        }
+      } catch (Exception var10) {
+        InventoryConfig.canvas.repaint();
+      }
+
+    } catch (RuntimeException var11) {
+      throw AbstractGameWorld.cascadeException(var11,
+        "bc.C(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ',' + var2 + ',' + (
+          var3 != null ? "{...}" : "null") + ',' + var4 + ')');
     }
   }
 

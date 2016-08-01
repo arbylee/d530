@@ -1,21 +1,9 @@
 final class RenderAnimation {
 
-  static GameString aClass94_355 = SpawnedGameObject.createString("Lade Konfiguration )2 ");
-  static int[] anIntArray356 = new int[] {1, 0, -1, 0};
-  static volatile int anInt362 = 0;
-  static int anInt377 = 0;
-  static GameString aClass94_378 = null;
-  static int headIconsPrayerFileId;
-  static byte[][][] aByteArrayArrayArray383;
-  static int anInt384 = 0;
-  static int anInt396;
-  static boolean interfaceCounterUpdated = false;
   private static GameString aClass94_354 = SpawnedGameObject.createString("Discard");
-  static GameString aClass94_361 = aClass94_354;
   private static GameString aClass94_363 = SpawnedGameObject.createString("Aug");
   private static GameString aClass94_365 = SpawnedGameObject.createString("May");
   private static GameString aClass94_366 = SpawnedGameObject.createString("Loaded world list data");
-  static GameString aClass94_374 = aClass94_366;
   private static GameString aClass94_376 = SpawnedGameObject.createString("Jul");
   private static GameString aClass94_385 = SpawnedGameObject.createString("Jun");
   private static GameString aClass94_388 = SpawnedGameObject.createString("Dec");
@@ -26,6 +14,18 @@ final class RenderAnimation {
   private static GameString aClass94_401 = SpawnedGameObject.createString("Apr");
   private static GameString aClass94_404 = SpawnedGameObject.createString("Mar");
   private static GameString aClass94_405 = SpawnedGameObject.createString("Feb");
+  static GameString aClass94_355 = SpawnedGameObject.createString("Lade Konfiguration )2 ");
+  static int[] anIntArray356 = new int[] {1, 0, -1, 0};
+  static volatile int anInt362 = 0;
+  static int anInt377 = 0;
+  static GameString aClass94_378 = null;
+  static int headIconsPrayerFileId;
+  static byte[][][] aByteArrayArrayArray383;
+  static int anInt384 = 0;
+  static int anInt396;
+  static boolean interfaceCounterUpdated = false;
+  static GameString aClass94_361 = aClass94_354;
+  static GameString aClass94_374 = aClass94_366;
   static GameString[] aClass94Array358 = new GameString[] {
     aClass94_392, aClass94_405, aClass94_404, aClass94_401, aClass94_365, aClass94_385,
     aClass94_376, aClass94_363, aClass94_394, aClass94_391, aClass94_397, aClass94_388
@@ -57,6 +57,153 @@ final class RenderAnimation {
   int anInt403 = 0;
   int anInt406 = -1;
   int anInt407 = -1;
+
+  final void method899(int var1) {
+    try {
+      if (var1 <= 68) {
+        method900(null, -23);
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "ck.B(" + var1 + ')');
+    }
+  }
+
+  final void method901(int var1, Buffer var2) {
+    try {
+      if (var1 != -1) {
+        method900(null, -18);
+      }
+
+      while (true) {
+        int var3 = var2.readUnsignedByte();
+        if (-1 == ~var3) {
+          return;
+        }
+
+        this.method902(var3, (byte) -106, var2);
+      }
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "ck.H(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  private final void method902(int var1, byte var2, Buffer var3) {
+    try {
+      if (var1 == 1) {
+        this.anInt368 = var3.readUnsignedShort();
+        this.anInt382 = var3.readUnsignedShort();
+        if (-65536 == ~this.anInt382) {
+          this.anInt382 = -1;
+        }
+
+        if ('\uffff' == this.anInt368) {
+          this.anInt368 = -1;
+        }
+      } else if (-3 == ~var1) {
+        this.anInt398 = var3.readUnsignedShort();
+      } else if (-4 != ~var1) {
+        if (4 == var1) {
+          this.anInt406 = var3.readUnsignedShort();
+        } else if (var1 != 5) {
+          if (6 != var1) {
+            if (7 == var1) {
+              this.anInt386 = var3.readUnsignedShort();
+            } else if (var1 != 8) {
+              if (-10 != ~var1) {
+                if (var1 == 26) {
+                  this.anInt395 = (short) (4 * var3.readUnsignedByte());
+                  this.anInt381 = (short) (4 * var3.readUnsignedByte());
+                } else if (-28 != ~var1) {
+                  if (-30 != ~var1) {
+                    if (var1 != 30) {
+                      if (~var1 == -32) {
+                        this.anInt387 = var3.readUnsignedByte();
+                      } else if (32 != var1) {
+                        if (33 == var1) {
+                          this.anInt400 = var3.method787((byte) 41);
+                        } else if (34 == var1) {
+                          this.anInt403 = var3.readUnsignedByte();
+                        } else if (var1 != 35) {
+                          if (var1 != 36) {
+                            if (-38 != ~var1) {
+                              if (var1 == 38) {
+                                this.anInt367 = var3.readUnsignedShort();
+                              } else if (39 == var1) {
+                                this.anInt407 = var3.readUnsignedShort();
+                              } else if (var1 == 40) {
+                                this.anInt389 = var3.readUnsignedShort();
+                              } else if (41 == var1) {
+                                this.anInt390 = var3.readUnsignedShort();
+                              } else if (var1 == 42) {
+                                this.anInt364 = var3.readUnsignedShort();
+                              } else if (-44 != ~var1) {
+                                if (~var1 != -45) {
+                                  if (~var1 == -46) {
+                                    var3.readUnsignedShort();
+                                  }
+                                } else {
+                                  var3.readUnsignedShort();
+                                }
+                              } else {
+                                var3.readUnsignedShort();
+                              }
+                            } else {
+                              this.anInt360 = var3.readUnsignedByte();
+                            }
+                          } else {
+                            this.anInt371 = var3.method787((byte) 122);
+                          }
+                        } else {
+                          this.anInt399 = var3.readUnsignedShort();
+                        }
+                      } else {
+                        this.anInt370 = var3.readUnsignedShort();
+                      }
+                    } else {
+                      this.anInt357 = var3.readUnsignedShort();
+                    }
+                  } else {
+                    this.anInt369 = var3.readUnsignedByte();
+                  }
+                } else {
+                  if (this.anIntArrayArray359 == null) {
+                    this.anIntArrayArray359 = new int[12][];
+                  }
+
+                  int var4 = var3.readUnsignedByte();
+                  this.anIntArrayArray359[var4] = new int[6];
+
+                  for (int var5 = 0; var5 < 6; ++var5) {
+                    this.anIntArrayArray359[var4][var5] = var3.method787((byte) 85);
+                  }
+                }
+              } else {
+                this.anInt375 = var3.readUnsignedShort();
+              }
+            } else {
+              this.anInt373 = var3.readUnsignedShort();
+            }
+          } else {
+            this.anInt393 = var3.readUnsignedShort();
+          }
+        } else {
+          this.anInt379 = var3.readUnsignedShort();
+        }
+      } else {
+        this.anInt372 = var3.readUnsignedShort();
+      }
+
+      if (var2 != -106) {
+        this.method901(96, null);
+      }
+
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "ck.E(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
+    }
+  }
 
   public static void method896(boolean var0) {
     try {
@@ -118,8 +265,8 @@ final class RenderAnimation {
       if (var2 != null) {
         return var2;
       } else {
-        byte[] var3 = TextureSampler19.spotAnimations
-          .getBytes(DummyInputStream.method64(true, var1),
+        byte[] var3 =
+          TextureSampler19.spotAnimations.getBytes(DummyInputStream.method64(true, var1),
             AbstractSomethingTexture.method1338(var1, var0 ^ 7));
         var2 = new SpotAnimationConfig();
         var2.anInt539 = var1;
@@ -321,8 +468,8 @@ final class RenderAnimation {
 
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ck.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "ck.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -335,155 +482,8 @@ final class RenderAnimation {
         throw new IllegalArgumentException();
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "ck.G(" + (var0 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  final void method899(int var1) {
-    try {
-      if (var1 <= 68) {
-        method900(null, -23);
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "ck.B(" + var1 + ')');
-    }
-  }
-
-  final void method901(int var1, Buffer var2) {
-    try {
-      if (var1 != -1) {
-        method900(null, -18);
-      }
-
-      while (true) {
-        int var3 = var2.readUnsignedByte();
-        if (-1 == ~var3) {
-          return;
-        }
-
-        this.method902(var3, (byte) -106, var2);
-      }
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "ck.H(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  private final void method902(int var1, byte var2, Buffer var3) {
-    try {
-      if (var1 == 1) {
-        this.anInt368 = var3.readUnsignedShort();
-        this.anInt382 = var3.readUnsignedShort();
-        if (-65536 == ~this.anInt382) {
-          this.anInt382 = -1;
-        }
-
-        if ('\uffff' == this.anInt368) {
-          this.anInt368 = -1;
-        }
-      } else if (-3 == ~var1) {
-        this.anInt398 = var3.readUnsignedShort();
-      } else if (-4 != ~var1) {
-        if (4 == var1) {
-          this.anInt406 = var3.readUnsignedShort();
-        } else if (var1 != 5) {
-          if (6 != var1) {
-            if (7 == var1) {
-              this.anInt386 = var3.readUnsignedShort();
-            } else if (var1 != 8) {
-              if (-10 != ~var1) {
-                if (var1 == 26) {
-                  this.anInt395 = (short) (4 * var3.readUnsignedByte());
-                  this.anInt381 = (short) (4 * var3.readUnsignedByte());
-                } else if (-28 != ~var1) {
-                  if (-30 != ~var1) {
-                    if (var1 != 30) {
-                      if (~var1 == -32) {
-                        this.anInt387 = var3.readUnsignedByte();
-                      } else if (32 != var1) {
-                        if (33 == var1) {
-                          this.anInt400 = var3.method787((byte) 41);
-                        } else if (34 == var1) {
-                          this.anInt403 = var3.readUnsignedByte();
-                        } else if (var1 != 35) {
-                          if (var1 != 36) {
-                            if (-38 != ~var1) {
-                              if (var1 == 38) {
-                                this.anInt367 = var3.readUnsignedShort();
-                              } else if (39 == var1) {
-                                this.anInt407 = var3.readUnsignedShort();
-                              } else if (var1 == 40) {
-                                this.anInt389 = var3.readUnsignedShort();
-                              } else if (41 == var1) {
-                                this.anInt390 = var3.readUnsignedShort();
-                              } else if (var1 == 42) {
-                                this.anInt364 = var3.readUnsignedShort();
-                              } else if (-44 != ~var1) {
-                                if (~var1 != -45) {
-                                  if (~var1 == -46) {
-                                    var3.readUnsignedShort();
-                                  }
-                                } else {
-                                  var3.readUnsignedShort();
-                                }
-                              } else {
-                                var3.readUnsignedShort();
-                              }
-                            } else {
-                              this.anInt360 = var3.readUnsignedByte();
-                            }
-                          } else {
-                            this.anInt371 = var3.method787((byte) 122);
-                          }
-                        } else {
-                          this.anInt399 = var3.readUnsignedShort();
-                        }
-                      } else {
-                        this.anInt370 = var3.readUnsignedShort();
-                      }
-                    } else {
-                      this.anInt357 = var3.readUnsignedShort();
-                    }
-                  } else {
-                    this.anInt369 = var3.readUnsignedByte();
-                  }
-                } else {
-                  if (this.anIntArrayArray359 == null) {
-                    this.anIntArrayArray359 = new int[12][];
-                  }
-
-                  int var4 = var3.readUnsignedByte();
-                  this.anIntArrayArray359[var4] = new int[6];
-
-                  for (int var5 = 0; var5 < 6; ++var5) {
-                    this.anIntArrayArray359[var4][var5] = var3.method787((byte) 85);
-                  }
-                }
-              } else {
-                this.anInt375 = var3.readUnsignedShort();
-              }
-            } else {
-              this.anInt373 = var3.readUnsignedShort();
-            }
-          } else {
-            this.anInt393 = var3.readUnsignedShort();
-          }
-        } else {
-          this.anInt379 = var3.readUnsignedShort();
-        }
-      } else {
-        this.anInt372 = var3.readUnsignedShort();
-      }
-
-      if (var2 != -106) {
-        this.method901(96, null);
-      }
-
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "ck.E(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "ck.G(" + (var0 != null ? "{...}" : "null") + ')');
     }
   }
 

@@ -4,6 +4,7 @@ import java.nio.ByteBuffer;
 
 final class GlTexture2d extends SubNode {
 
+  private static GameString aClass94_3761 = SpawnedGameObject.createString("Face here");
   static int anInt3757;
   static GameString aClass94_3758 =
     SpawnedGameObject.createString("Veuillez patienter )2 tentative de r-Btablissement)3");
@@ -13,7 +14,6 @@ final class GlTexture2d extends SubNode {
   static int anInt3766 = 0;
   static int[] quadx1 = new int[100];
   static boolean aBoolean3769 = false;
-  private static GameString aClass94_3761 = SpawnedGameObject.createString("Face here");
   static GameString aClass94_3762 = aClass94_3761;
   private int anInt3759 = -1;
   private int anInt3760;
@@ -39,6 +39,44 @@ final class GlTexture2d extends SubNode {
       this.anInt3767 = var6.limit();
     } catch (RuntimeException var7) {
       throw AbstractGameWorld.cascadeException(var7, "sd.<init>(" + color + ')');
+    }
+  }
+
+  protected final void finalize() throws Throwable {
+    try {
+      if (this.anInt3759 != -1) {
+        DummyClass33.method985(this.anInt3759, this.anInt3767, this.anInt3760);
+        this.anInt3759 = -1;
+        this.anInt3767 = 0;
+      }
+
+      super.finalize();
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "sd.finalize()");
+    }
+  }
+
+  final void initialize(byte var1) {
+    try {
+      int var2 = DummyClass32.method961(var1 + 1530);
+      if (-1 == ~(1 & var2)) {
+        GlRenderer.bindTexture(this.anInt3759);
+      }
+
+      if (0 == (var2 & 2)) {
+        GlRenderer.method1856(0);
+      }
+
+      if (~(var2 & 4) == -1) {
+        GlRenderer.method1847(0);
+      }
+
+      if (var1 != 6) {
+        aClass94_3763 = null;
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "sd.E(" + var1 + ')');
     }
   }
 
@@ -111,44 +149,6 @@ final class GlTexture2d extends SubNode {
 
     } catch (RuntimeException var6) {
       throw AbstractGameWorld.cascadeException(var6, "sd.A(" + var0 + ')');
-    }
-  }
-
-  protected final void finalize() throws Throwable {
-    try {
-      if (this.anInt3759 != -1) {
-        DummyClass33.method985(this.anInt3759, this.anInt3767, this.anInt3760);
-        this.anInt3759 = -1;
-        this.anInt3767 = 0;
-      }
-
-      super.finalize();
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "sd.finalize()");
-    }
-  }
-
-  final void initialize(byte var1) {
-    try {
-      int var2 = DummyClass32.method961(var1 + 1530);
-      if (-1 == ~(1 & var2)) {
-        GlRenderer.bindTexture(this.anInt3759);
-      }
-
-      if (0 == (var2 & 2)) {
-        GlRenderer.method1856(0);
-      }
-
-      if (~(var2 & 4) == -1) {
-        GlRenderer.method1847(0);
-      }
-
-      if (var1 != 6) {
-        aClass94_3763 = null;
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "sd.E(" + var1 + ')');
     }
   }
 

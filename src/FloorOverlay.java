@@ -18,11 +18,92 @@ final class FloorOverlay {
   boolean aBoolean2102 = true;
   int anInt2103 = 0;
 
+  final void method2274(int var1, Buffer var2, int var3) {
+    try {
+      while (true) {
+        int var4 = var2.readUnsignedByte();
+        if (var4 == 0) {
+          if (var1 != 24559) {
+            method2276(-85);
+          }
+
+          return;
+        }
+
+        this.method2279(0, var4, var2, var3);
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "wl.H(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
+  private final void method2279(int var1, int var2, Buffer var3, int var4) {
+    try {
+      if (var1 == 0) {
+        if (-2 != ~var2) {
+          if (var2 != 2) {
+            if (3 != var2) {
+              if (5 != var2) {
+                if (-8 != ~var2) {
+                  if (~var2 != -9) {
+                    if (-10 != ~var2) {
+                      if (-11 != ~var2) {
+                        if (var2 != 11) {
+                          if (12 != var2) {
+                            if (13 != var2) {
+                              if (~var2 == -15) {
+                                this.anInt2101 = var3.readUnsignedByte();
+                              }
+                            } else {
+                              this.anInt2094 = var3.readUnsignedMedium((byte) 110);
+                            }
+                          } else {
+                            this.aBoolean2092 = true;
+                          }
+                        } else {
+                          this.anInt2100 = var3.readUnsignedByte();
+                        }
+                      } else {
+                        this.aBoolean2093 = false;
+                      }
+                    } else {
+                      this.anInt2090 = var3.readUnsignedShort();
+                    }
+                  } else {
+                    TextureSampler26.anInt3081 = var4;
+                  }
+                } else {
+                  this.anInt2098 = Widget.method869(116, var3.readUnsignedMedium((byte) 82));
+                }
+              } else {
+                this.aBoolean2102 = false;
+              }
+            } else {
+              this.anInt2095 = var3.readUnsignedShort();
+              if (this.anInt2095 == '\uffff') {
+                this.anInt2095 = -1;
+              }
+            }
+          } else {
+            this.anInt2095 = var3.readUnsignedByte();
+          }
+        } else {
+          this.anInt2103 = Widget.method869(116, var3.readUnsignedMedium((byte) 83));
+        }
+
+      }
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "wl.E(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ',' + var4 + ')');
+    }
+  }
+
   static final void method2270(Mobile var0, byte var1) {
     try {
       if (AbstractGameWorld.updateCycle == var0.anInt2790 || ~var0.animationId == 0
-        || var0.anInt2828 != 0 || ~(1 + var0.anInt2760) < ~GameClient
-        .method45(var0.animationId, (byte) -20).anIntArray1869[var0.anInt2832]) {
+        || var0.anInt2828 != 0 || ~(1 + var0.anInt2760) < ~GameClient.method45(var0.animationId,
+        (byte) -20).anIntArray1869[var0.anInt2832]) {
         int var2 = var0.anInt2790 + -var0.anInt2800;
         int var3 = AbstractGameWorld.updateCycle + -var0.anInt2800;
         int var4 = var0.anInt2784 * 128 + 64 * var0.getSize();
@@ -54,8 +135,8 @@ final class FloorOverlay {
         var0.rotationY = var0.anInt2806;
       }
     } catch (RuntimeException var8) {
-      throw AbstractGameWorld
-        .cascadeException(var8, "wl.K(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var8,
+        "wl.K(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -70,8 +151,8 @@ final class FloorOverlay {
       var4.anInt3597 = var3;
       var4.anInt3598 = var0;
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "wl.F(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "wl.F(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -741,8 +822,8 @@ final class FloorOverlay {
         return EnumStringFetcher.getWidget((byte) 118, var0.anInt190);
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "wl.J(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "wl.J(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -771,14 +852,14 @@ final class FloorOverlay {
       int var18;
       if (var2 >= DummyClass13.anInt2020 && LightIntensity.anInt902 >= var2) {
         int[] var15 = DummyClass35.anIntArrayArray663[var2];
-        var16 = DummyClass59
-          .method1040(GlTexture2d.anInt3765, -var3 + var6, (byte) 0, DummyClass55.anInt1425);
-        var17 = DummyClass59
-          .method1040(GlTexture2d.anInt3765, var3 + var6, (byte) 0, DummyClass55.anInt1425);
-        var18 = DummyClass59
-          .method1040(GlTexture2d.anInt3765, var6 + -var8, (byte) 0, DummyClass55.anInt1425);
-        var19 = DummyClass59
-          .method1040(GlTexture2d.anInt3765, var6 - -var8, (byte) 0, DummyClass55.anInt1425);
+        var16 = DummyClass59.method1040(GlTexture2d.anInt3765, -var3 + var6, (byte) 0,
+          DummyClass55.anInt1425);
+        var17 = DummyClass59.method1040(GlTexture2d.anInt3765, var3 + var6, (byte) 0,
+          DummyClass55.anInt1425);
+        var18 = DummyClass59.method1040(GlTexture2d.anInt3765, var6 + -var8, (byte) 0,
+          DummyClass55.anInt1425);
+        var19 = DummyClass59.method1040(GlTexture2d.anInt3765, var6 - -var8, (byte) 0,
+          DummyClass55.anInt1425);
         TextureSampler18.method282(var15, var16, 102, var18, var4);
         TextureSampler18.method282(var15, var18, -44, var19, var0);
         TextureSampler18.method282(var15, var19, -61, var17, var4);
@@ -809,29 +890,29 @@ final class FloorOverlay {
           var16 = var2 + var9;
           if (~DummyClass13.anInt2020 >= ~var16 && ~LightIntensity.anInt902 <= ~var24) {
             if (~var9 <= ~var8) {
-              var17 = DummyClass59
-                .method1040(GlTexture2d.anInt3765, var7 + var6, (byte) 0, DummyClass55.anInt1425);
-              var18 = DummyClass59
-                .method1040(GlTexture2d.anInt3765, -var7 + var6, (byte) 0, DummyClass55.anInt1425);
+              var17 = DummyClass59.method1040(GlTexture2d.anInt3765, var7 + var6, (byte) 0,
+                DummyClass55.anInt1425);
+              var18 = DummyClass59.method1040(GlTexture2d.anInt3765, -var7 + var6, (byte) 0,
+                DummyClass55.anInt1425);
               if (~LightIntensity.anInt902 <= ~var16) {
-                TextureSampler18
-                  .method282(DummyClass35.anIntArrayArray663[var16], var18, -53, var17, var4);
+                TextureSampler18.method282(DummyClass35.anIntArrayArray663[var16], var18, -53,
+                  var17, var4);
               }
 
               if (var24 >= DummyClass13.anInt2020) {
-                TextureSampler18
-                  .method282(DummyClass35.anIntArrayArray663[var24], var18, 96, var17, var4);
+                TextureSampler18.method282(DummyClass35.anIntArrayArray663[var24], var18, 96, var17,
+                  var4);
               }
             } else {
               var17 = SceneNode.anIntArray1838[var9];
-              var18 = DummyClass59
-                .method1040(GlTexture2d.anInt3765, var7 + var6, (byte) 0, DummyClass55.anInt1425);
-              var19 = DummyClass59
-                .method1040(GlTexture2d.anInt3765, -var7 + var6, (byte) 0, DummyClass55.anInt1425);
-              var20 = DummyClass59
-                .method1040(GlTexture2d.anInt3765, var6 - -var17, (byte) 0, DummyClass55.anInt1425);
-              var21 = DummyClass59
-                .method1040(GlTexture2d.anInt3765, -var17 + var6, (byte) 0, DummyClass55.anInt1425);
+              var18 = DummyClass59.method1040(GlTexture2d.anInt3765, var7 + var6, (byte) 0,
+                DummyClass55.anInt1425);
+              var19 = DummyClass59.method1040(GlTexture2d.anInt3765, -var7 + var6, (byte) 0,
+                DummyClass55.anInt1425);
+              var20 = DummyClass59.method1040(GlTexture2d.anInt3765, var6 - -var17, (byte) 0,
+                DummyClass55.anInt1425);
+              var21 = DummyClass59.method1040(GlTexture2d.anInt3765, -var17 + var6, (byte) 0,
+                DummyClass55.anInt1425);
               if (LightIntensity.anInt902 >= var16) {
                 var22 = DummyClass35.anIntArrayArray663[var16];
                 TextureSampler18.method282(var22, var19, 116, var21, var4);
@@ -855,16 +936,16 @@ final class FloorOverlay {
           var17 = var6 + var9;
           var18 = var6 + -var9;
           if (var17 >= DummyClass55.anInt1425 && ~GlTexture2d.anInt3765 <= ~var18) {
-            var17 = DummyClass59
-              .method1040(GlTexture2d.anInt3765, var17, (byte) 0, DummyClass55.anInt1425);
-            var18 = DummyClass59
-              .method1040(GlTexture2d.anInt3765, var18, (byte) 0, DummyClass55.anInt1425);
+            var17 = DummyClass59.method1040(GlTexture2d.anInt3765, var17, (byte) 0,
+              DummyClass55.anInt1425);
+            var18 = DummyClass59.method1040(GlTexture2d.anInt3765, var18, (byte) 0,
+              DummyClass55.anInt1425);
             if (var7 < var8) {
               var19 = var11 >= var7 ? var11 : SceneNode.anIntArray1838[var7];
-              var20 = DummyClass59
-                .method1040(GlTexture2d.anInt3765, var19 + var6, (byte) 0, DummyClass55.anInt1425);
-              var21 = DummyClass59
-                .method1040(GlTexture2d.anInt3765, var6 - var19, (byte) 0, DummyClass55.anInt1425);
+              var20 = DummyClass59.method1040(GlTexture2d.anInt3765, var19 + var6, (byte) 0,
+                DummyClass55.anInt1425);
+              var21 = DummyClass59.method1040(GlTexture2d.anInt3765, var6 - var19, (byte) 0,
+                DummyClass55.anInt1425);
               if (LightIntensity.anInt902 >= var16) {
                 var22 = DummyClass35.anIntArrayArray663[var16];
                 TextureSampler18.method282(var22, var18, 126, var21, var4);
@@ -880,13 +961,13 @@ final class FloorOverlay {
               }
             } else {
               if (~LightIntensity.anInt902 <= ~var16) {
-                TextureSampler18
-                  .method282(DummyClass35.anIntArrayArray663[var16], var18, 94, var17, var4);
+                TextureSampler18.method282(DummyClass35.anIntArrayArray663[var16], var18, 94, var17,
+                  var4);
               }
 
               if (var24 >= DummyClass13.anInt2020) {
-                TextureSampler18
-                  .method282(DummyClass35.anIntArrayArray663[var24], var18, 126, var17, var4);
+                TextureSampler18.method282(DummyClass35.anIntArrayArray663[var24], var18, 126,
+                  var17, var4);
               }
             }
           }
@@ -915,8 +996,7 @@ final class FloorOverlay {
 
   static final void method2277(int var0, int var1, int var2, int var3, byte var4) {
     try {
-      Inventory var5 =
-        (Inventory) SceneGraphTile.aClass130_2220.get((long) var3);
+      Inventory var5 = (Inventory) SceneGraphTile.aClass130_2220.get((long) var3);
       if (var5 == null) {
         var5 = new Inventory();
         SceneGraphTile.aClass130_2220.put((long) var3, var5);
@@ -1007,87 +1087,6 @@ final class FloorOverlay {
       var2.createIndexedColorSprite(true);
     } catch (RuntimeException var3) {
       throw AbstractGameWorld.cascadeException(var3, "wl.B(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  final void method2274(int var1, Buffer var2, int var3) {
-    try {
-      while (true) {
-        int var4 = var2.readUnsignedByte();
-        if (var4 == 0) {
-          if (var1 != 24559) {
-            method2276(-85);
-          }
-
-          return;
-        }
-
-        this.method2279(0, var4, var2, var3);
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "wl.H(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
-    }
-  }
-
-  private final void method2279(int var1, int var2, Buffer var3, int var4) {
-    try {
-      if (var1 == 0) {
-        if (-2 != ~var2) {
-          if (var2 != 2) {
-            if (3 != var2) {
-              if (5 != var2) {
-                if (-8 != ~var2) {
-                  if (~var2 != -9) {
-                    if (-10 != ~var2) {
-                      if (-11 != ~var2) {
-                        if (var2 != 11) {
-                          if (12 != var2) {
-                            if (13 != var2) {
-                              if (~var2 == -15) {
-                                this.anInt2101 = var3.readUnsignedByte();
-                              }
-                            } else {
-                              this.anInt2094 = var3.readUnsignedMedium((byte) 110);
-                            }
-                          } else {
-                            this.aBoolean2092 = true;
-                          }
-                        } else {
-                          this.anInt2100 = var3.readUnsignedByte();
-                        }
-                      } else {
-                        this.aBoolean2093 = false;
-                      }
-                    } else {
-                      this.anInt2090 = var3.readUnsignedShort();
-                    }
-                  } else {
-                    TextureSampler26.anInt3081 = var4;
-                  }
-                } else {
-                  this.anInt2098 = Widget.method869(116, var3.readUnsignedMedium((byte) 82));
-                }
-              } else {
-                this.aBoolean2102 = false;
-              }
-            } else {
-              this.anInt2095 = var3.readUnsignedShort();
-              if (this.anInt2095 == '\uffff') {
-                this.anInt2095 = -1;
-              }
-            }
-          } else {
-            this.anInt2095 = var3.readUnsignedByte();
-          }
-        } else {
-          this.anInt2103 = Widget.method869(116, var3.readUnsignedMedium((byte) 83));
-        }
-
-      }
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "wl.E(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ',' + var4 + ')');
     }
   }
 

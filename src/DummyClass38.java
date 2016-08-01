@@ -41,8 +41,8 @@ final class DummyClass38 {
 
           if (!var11 && 0 == GameWorld.anInt2622) {
             DummyClass12.aClass3_Sub30_2030.position = 0;
-            SpotAnimationConfig.gameBuffer
-              .method774(2, var6, DummyClass12.aClass3_Sub30_2030.bytes, 0);
+            SpotAnimationConfig.gameBuffer.method774(2, var6, DummyClass12.aClass3_Sub30_2030.bytes,
+              0);
             DummyClass12.aClass3_Sub30_2030.position = 0;
             int var13 = -1;
             GameString var25;
@@ -51,8 +51,8 @@ final class DummyClass38 {
                 AbstractAudioOutputStream.method2156(1024, DummyClass12.aClass3_Sub30_2030);
               var4 &= 32767;
               var13 = var14.anInt149;
-              var25 = var14.aClass3_Sub28_Sub4_151
-                .method555(var2 + 28100, DummyClass12.aClass3_Sub30_2030);
+              var25 = var14.aClass3_Sub28_Sub4_151.method555(var2 + 28100,
+                DummyClass12.aClass3_Sub30_2030);
             } else {
               var25 = AbstractFont.otherFormat(
                 DummyClass34.decompressString(DummyClass12.aClass3_Sub30_2030).format(78));
@@ -64,17 +64,17 @@ final class DummyClass38 {
             var3.anInt2837 = var4 >> 8;
             if (-3 != ~var5) {
               if (~var5 != -2) {
-                InventoryConfig
-                  .method611(var13, var8 ? 17 : 2, var25, null, (byte) 50, var3.getFullName());
+                InventoryConfig.method611(var13, var8 ? 17 : 2, var25, null, (byte) 50,
+                  var3.getFullName());
               } else {
                 InventoryConfig.method611(var13, var8 ? 17 : 1, var25, null, (byte) 50,
-                  RenderAnimation
-                    .concat(new GameString[] {DummyClass34.aClass94_592, var3.getFullName()}));
+                  RenderAnimation.concat(
+                    new GameString[] {DummyClass34.aClass94_592, var3.getFullName()}));
               }
             } else {
               InventoryConfig.method611(var13, !var8 ? 1 : 17, var25, null, (byte) 50,
-                RenderAnimation
-                  .concat(new GameString[] {DummyClass60.aClass94_444, var3.getFullName()}));
+                RenderAnimation.concat(
+                  new GameString[] {DummyClass60.aClass94_444, var3.getFullName()}));
             }
           }
         }
@@ -178,10 +178,10 @@ final class DummyClass38 {
 
         var5 = SpotAnimationConfig.gameBuffer.readInt((byte) -73);
         boolean var21 = true;
-        if (~var4 != 0 && 0 != ~var3.anInt2842 && GameClient
-          .method45(RenderAnimation.method898((byte) 42, var4).anInt542, (byte) -20).anInt1857
-          < GameClient.method45(RenderAnimation.method898((byte) 42, var3.anInt2842).anInt542,
-          (byte) -20).anInt1857) {
+        if (~var4 != 0 && 0 != ~var3.anInt2842 &&
+          GameClient.method45(RenderAnimation.method898((byte) 42, var4).anInt542,
+            (byte) -20).anInt1857 < GameClient.method45(
+            RenderAnimation.method898((byte) 42, var3.anInt2842).anInt542, (byte) -20).anInt1857) {
           var21 = false;
         }
 
@@ -331,8 +331,8 @@ final class DummyClass38 {
       }
 
     } catch (RuntimeException var15) {
-      throw AbstractGameWorld
-        .cascadeException(var15, "gk.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var15,
+        "gk.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 

@@ -128,46 +128,6 @@ final class SomethingMidiI {
     }
   }
 
-  private static final int method1201(int[] var0, int var1) {
-    int var2 = var0[var1];
-    int var3 = -1;
-    int var4 = Integer.MIN_VALUE;
-
-    for (int var5 = 0; var5 < var1; ++var5) {
-      int var6 = var0[var5];
-      if (var6 < var2 && var6 > var4) {
-        var3 = var5;
-        var4 = var6;
-      }
-    }
-
-    return var3;
-  }
-
-  private static final int method1203(int[] var0, int var1) {
-    int var2 = var0[var1];
-    int var3 = -1;
-    int var4 = Integer.MAX_VALUE;
-
-    for (int var5 = 0; var5 < var1; ++var5) {
-      int var6 = var0[var5];
-      if (var6 > var2 && var6 < var4) {
-        var3 = var5;
-        var4 = var6;
-      }
-    }
-
-    return var3;
-  }
-
-  public static void method1204() {
-    anIntArray928 = null;
-    aFloatArray929 = null;
-    anIntArray925 = null;
-    anIntArray927 = null;
-    aBooleanArray919 = null;
-  }
-
   private final void method1198(int var1, int var2, int var3, int var4, float[] var5, int var6) {
     int var7 = var4 - var2;
     int var8 = var3 - var1;
@@ -329,6 +289,46 @@ final class SomethingMidiI {
 
       return true;
     }
+  }
+
+  private static final int method1201(int[] var0, int var1) {
+    int var2 = var0[var1];
+    int var3 = -1;
+    int var4 = Integer.MIN_VALUE;
+
+    for (int var5 = 0; var5 < var1; ++var5) {
+      int var6 = var0[var5];
+      if (var6 < var2 && var6 > var4) {
+        var3 = var5;
+        var4 = var6;
+      }
+    }
+
+    return var3;
+  }
+
+  private static final int method1203(int[] var0, int var1) {
+    int var2 = var0[var1];
+    int var3 = -1;
+    int var4 = Integer.MAX_VALUE;
+
+    for (int var5 = 0; var5 < var1; ++var5) {
+      int var6 = var0[var5];
+      if (var6 > var2 && var6 < var4) {
+        var3 = var5;
+        var4 = var6;
+      }
+    }
+
+    return var3;
+  }
+
+  public static void method1204() {
+    anIntArray928 = null;
+    aFloatArray929 = null;
+    anIntArray925 = null;
+    anIntArray927 = null;
+    aBooleanArray919 = null;
   }
 
 }

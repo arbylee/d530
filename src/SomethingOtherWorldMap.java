@@ -39,8 +39,8 @@ final class SomethingOtherWorldMap extends Node {
         var3 = GroundItem.viewHeight;
         int var4 = var3 * 956 / 503;
         DummyClass59.titlebackground.draw((DummyClass30.viewWidth + -var4) / 2, 0, var4, var3);
-        AnimationSequence.logoSprite
-          .draw(-(AnimationSequence.logoSprite.width / 2) + DummyClass30.viewWidth / 2, 18);
+        AnimationSequence.logoSprite.draw(
+          -(AnimationSequence.logoSprite.width / 2) + DummyClass30.viewWidth / 2, 18);
       }
 
       var2.draw(SceneSomething.aClass94_485, DummyClass30.viewWidth / 2,
@@ -49,30 +49,26 @@ final class SomethingOtherWorldMap extends Node {
       if (GlRenderer.useOpenGlRenderer) {
         GlUtils.drawQuad(DummyClass30.viewWidth / 2 - 152, var3, 304, 34, 9179409);
         GlUtils.drawQuad(-151 + DummyClass30.viewWidth / 2, var3 - -1, 302, 32, 0);
-        GlUtils
-          .fillQuad(DummyClass30.viewWidth / 2 - 150, var3 + 2, ClientScript.loadingPercent * 3, 30,
-            9179409);
+        GlUtils.fillQuad(DummyClass30.viewWidth / 2 - 150, var3 + 2,
+          ClientScript.loadingPercent * 3, 30, 9179409);
         GlUtils.fillQuad(DummyClass30.viewWidth / 2 + -150 - -(3 * ClientScript.loadingPercent),
           2 + var3, 300 + -(3 * ClientScript.loadingPercent), 30, 0);
       } else {
         DummyClass47.method1311(DummyClass30.viewWidth / 2 + -152, var3, 304, 34, 9179409);
         DummyClass47.method1311(-151 + DummyClass30.viewWidth / 2, var3 + 1, 302, 32, 0);
-        DummyClass47
-          .method1323(DummyClass30.viewWidth / 2 + -150, var3 + 2, ClientScript.loadingPercent * 3,
-            30, 9179409);
-        DummyClass47
-          .method1323(3 * ClientScript.loadingPercent + -150 + DummyClass30.viewWidth / 2, 2 + var3,
-            -(3 * ClientScript.loadingPercent) + 300, 30, 0);
+        DummyClass47.method1323(DummyClass30.viewWidth / 2 + -150, var3 + 2,
+          ClientScript.loadingPercent * 3, 30, 9179409);
+        DummyClass47.method1323(3 * ClientScript.loadingPercent + -150 + DummyClass30.viewWidth / 2,
+          2 + var3, -(3 * ClientScript.loadingPercent) + 300, 30, 0);
       }
 
-      var2
-        .draw(AnimationFrame.loadingText, DummyClass30.viewWidth / 2, 4 + GroundItem.viewHeight / 2,
-          16777215, -1);
+      var2.draw(AnimationFrame.loadingText, DummyClass30.viewWidth / 2,
+        4 + GroundItem.viewHeight / 2, 16777215, -1);
 
 
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "oj.D(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "oj.D(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -134,8 +130,8 @@ final class SomethingOtherWorldMap extends Node {
           var10.append(var7);
         }
 
-        return RenderAnimation
-          .concat(new GameString[] {var6, var9.method1544(true), var10.method1544(true)});
+        return RenderAnimation.concat(
+          new GameString[] {var6, var9.method1544(true), var10.method1544(true)});
       }
     } catch (RuntimeException var13) {
       throw AbstractGameWorld.cascadeException(var13,

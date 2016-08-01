@@ -1,7 +1,7 @@
 final class DummyClass27 {
 
-  static BlockConfig[][] blockConfigs = new BlockConfig[13][13];
   private static GameString aClass94_1582 = SpawnedGameObject.createString("Ok");
+  static BlockConfig[][] blockConfigs = new BlockConfig[13][13];
   static GameString aClass94_1583 = aClass94_1582;
 
 
@@ -71,15 +71,17 @@ final class DummyClass27 {
           SceneNode var12 = null;
           int var13 = AbstractSomethingTexture.OBJECT_TYPES[var1.anInt2278];
           if (-1 == ~var13) {
-            SceneSomething2 var14 = DummyClass14
-              .method2147(GameWorldSomething.currentPlane, var1.anInt2271, var1.anInt2282);
+            SceneSomething2 var14 =
+              DummyClass14.method2147(GameWorldSomething.currentPlane, var1.anInt2271,
+                var1.anInt2282);
             if (var14 != null) {
               var12 = var14.sceneNode0;
             }
           } else if (~var13 != -2) {
             if (2 == var13) {
-              SceneSomething var23 = AbstractSomethingTexture
-                .method1336(GameWorldSomething.currentPlane, var1.anInt2271, var1.anInt2282);
+              SceneSomething var23 =
+                AbstractSomethingTexture.method1336(GameWorldSomething.currentPlane, var1.anInt2271,
+                  var1.anInt2282);
               if (null != var23) {
                 var12 = var23.sceneNode;
               }
@@ -91,8 +93,9 @@ final class DummyClass27 {
               }
             }
           } else {
-            SomethingSceneI var21 = AbstractGameWorld
-              .method1068(GameWorldSomething.currentPlane, var1.anInt2271, var1.anInt2282);
+            SomethingSceneI var21 =
+              AbstractGameWorld.method1068(GameWorldSomething.currentPlane, var1.anInt2271,
+                var1.anInt2282);
             if (null != var21) {
               var12 = var21.aClass140_429;
             }

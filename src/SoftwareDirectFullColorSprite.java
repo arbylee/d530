@@ -5,211 +5,6 @@ final class SoftwareDirectFullColorSprite extends SoftwareDirectColorSprite {
     super(var1, var2, var3, var4, var5, var6, var7);
   }
 
-  private static final void method671(int[] var0, int[] var1, int var2, int var3, int var4,
-                                      int var5, int var6, int var7, int var8, int var9, int var10,
-                                      int var11, int var12) {
-    int var13 = var3;
-
-    for (int var14 = -var8; var14 < 0; ++var14) {
-      int var15 = (var4 >> 16) * var11;
-
-      for (int var16 = -var7; var16 < 0; ++var16) {
-        int var17 = var1[(var3 >> 16) + var15];
-        int var18 = var0[var5];
-        int var19 = (var17 >>> 24) * var12 >> 8;
-        int var20 = 256 - var19;
-        var0[var5++] = ((var17 & 16711935) * var19 + (var18 & 16711935) * var20 & -16711936) + (
-          (var17 & '\uff00') * var19 + (var18 & '\uff00') * var20 & 16711680) >>> 8;
-        var3 += var9;
-      }
-
-      var4 += var10;
-      var3 = var13;
-      var5 += var6;
-    }
-
-  }
-
-  private static final void method672(int[] var0, int[] var1, int var2, int var3, int var4,
-                                      int var5, int var6, int var7, int var8) {
-    int var9 = -var5;
-
-    for (int var10 = -var6; var10 < 0; ++var10) {
-      for (int var11 = var9; var11 < 0; ++var11) {
-        var2 = var1[var3--];
-        int var12 = var2 >>> 24;
-        if (var12 != 0) {
-          int var13 = 256 - var12;
-          int var14 = var0[var4];
-          var0[var4++] = ((var2 & 16711935) * var12 + (var14 & 16711935) * var13 & -16711936) + (
-            (var2 & '\uff00') * var12 + (var14 & '\uff00') * var13 & 16711680) >>> 8;
-        } else {
-          ++var4;
-        }
-      }
-
-      var4 += var7;
-      var3 += var8;
-    }
-
-  }
-
-  private static final void method673(int[] var0, int[] var1, int var2, int var3, int var4,
-                                      int var5, int var6, int var7, int var8) {
-    int var9 = -var5;
-
-    for (int var10 = -var6; var10 < 0; ++var10) {
-      for (int var11 = var9; var11 < 0; ++var11) {
-        var2 = var1[var3++];
-        int var12 = var2 >>> 24;
-        if (var12 != 0) {
-          int var13 = 256 - var12;
-          int var14 = var0[var4];
-          var0[var4++] = ((var2 & 16711935) * var12 + (var14 & 16711935) * var13 & -16711936) + (
-            (var2 & '\uff00') * var12 + (var14 & '\uff00') * var13 & 16711680) >>> 8;
-        } else {
-          ++var4;
-        }
-      }
-
-      var4 += var7;
-      var3 += var8;
-    }
-
-  }
-
-  private static final void method674(int[] var0, int[] var1, int var2, int var3, int var4,
-                                      int var5, int var6, int var7, int var8, int var9) {
-    for (int var10 = -var6; var10 < 0; ++var10) {
-      for (int var11 = -var5; var11 < 0; ++var11) {
-        int var12 = (var1[var3] >>> 24) * var9 >> 8;
-        int var13 = 256 - var12;
-        int var14 = var1[var3++];
-        int var15 = var0[var4];
-        var0[var4++] = ((var14 & 16711935) * var12 + (var15 & 16711935) * var13 & -16711936) + (
-          (var14 & '\uff00') * var12 + (var15 & '\uff00') * var13 & 16711680) >>> 8;
-      }
-
-      var4 += var7;
-      var3 += var8;
-    }
-
-  }
-
-  private static final void method675(int[] var0, int[] var1, int var2, int var3, int var4,
-                                      int var5, int var6, int var7, int var8, int var9, int var10,
-                                      int var11) {
-    int var12 = var3;
-
-    for (int var13 = -var8; var13 < 0; ++var13) {
-      int var14 = (var4 >> 16) * var11;
-
-      for (int var15 = -var7; var15 < 0; ++var15) {
-        var2 = var1[(var3 >> 16) + var14];
-        int var16 = var2 >>> 24;
-        if (var16 != 0) {
-          int var17 = 256 - var16;
-          int var18 = var0[var5];
-          var0[var5++] = ((var2 & 16711935) * var16 + (var18 & 16711935) * var17 & -16711936) + (
-            (var2 & '\uff00') * var16 + (var18 & '\uff00') * var17 & 16711680) >>> 8;
-        } else {
-          ++var5;
-        }
-
-        var3 += var9;
-      }
-
-      var4 += var10;
-      var3 = var12;
-      var5 += var6;
-    }
-
-  }
-
-  final void method660(int var1, int var2, int var3, int var4, int var5, int var6, double var7,
-                       int var9) {
-    try {
-      int var10 = -var3 / 2;
-      int var11 = -var4 / 2;
-      int var12 = (int) (Math.sin(var7) * 65536.0D);
-      int var13 = (int) (Math.cos(var7) * 65536.0D);
-      var12 = var12 * var9 >> 8;
-      var13 = var13 * var9 >> 8;
-      int var14 = (var5 << 16) + var11 * var12 + var10 * var13;
-      int var15 = (var6 << 16) + (var11 * var13 - var10 * var12);
-      int var16 = var1 + var2 * DummyClass47.anInt1092;
-
-      for (var2 = 0; var2 < var4; ++var2) {
-        int var17 = var16;
-        int var18 = var14;
-        int var19 = var15;
-
-        for (var1 = -var3; var1 < 0; ++var1) {
-          int var20 = this.pixels[(var18 >> 16) + (var19 >> 16) * this.anInt3707];
-          int var21 = DummyClass47.anIntArray1100[var17];
-          int var22 = var20 >>> 24;
-          int var23 = 256 - var22;
-          DummyClass47.anIntArray1100[var17++] =
-            ((var20 & 16711935) * var22 + (var21 & 16711935) * var23 & -16711936) + (
-              (var20 & '\uff00') * var22 + (var21 & '\uff00') * var23 & 16711680) >>> 8;
-          var18 += var13;
-          var19 -= var12;
-        }
-
-        var14 += var12;
-        var15 += var13;
-        var16 += DummyClass47.anInt1092;
-      }
-    } catch (Exception var24) {
-    }
-
-  }
-
-  final void method643(int var1, int var2) {
-    var1 += this.anInt3701;
-    var2 += this.anInt3698;
-    int var3 = var1 + var2 * DummyClass47.anInt1092;
-    int var4 = 0;
-    int var5 = this.anInt3696;
-    int var6 = this.anInt3707;
-    int var7 = DummyClass47.anInt1092 - var6;
-    int var8 = 0;
-    int var9;
-    if (var2 < DummyClass47.anInt1095) {
-      var9 = DummyClass47.anInt1095 - var2;
-      var5 -= var9;
-      var2 = DummyClass47.anInt1095;
-      var4 += var9 * var6;
-      var3 += var9 * DummyClass47.anInt1092;
-    }
-
-    if (var2 + var5 > DummyClass47.anInt1099) {
-      var5 -= var2 + var5 - DummyClass47.anInt1099;
-    }
-
-    if (var1 < DummyClass47.anInt1093) {
-      var9 = DummyClass47.anInt1093 - var1;
-      var6 -= var9;
-      var1 = DummyClass47.anInt1093;
-      var4 += var9;
-      var3 += var9;
-      var8 += var9;
-      var7 += var9;
-    }
-
-    if (var1 + var6 > DummyClass47.anInt1096) {
-      var9 = var1 + var6 - DummyClass47.anInt1096;
-      var6 -= var9;
-      var8 += var9;
-      var7 += var9;
-    }
-
-    if (var6 > 0 && var5 > 0) {
-      method673(DummyClass47.anIntArray1100, this.pixels, 0, var4, var3, var6, var5, var7,
-        var8);
-    }
-  }
-
   final void method635(int var1, int var2) {
     var1 += this.anInt3701;
     var2 += this.anInt3698;
@@ -250,8 +45,7 @@ final class SoftwareDirectFullColorSprite extends SoftwareDirectColorSprite {
     }
 
     if (var6 > 0 && var5 > 0) {
-      method673(DummyClass47.anIntArray1100, this.pixels, 0, var4, var3, var6, var5, var7,
-        var8);
+      method673(DummyClass47.anIntArray1100, this.pixels, 0, var4, var3, var6, var5, var7, var8);
     }
   }
 
@@ -729,6 +523,306 @@ final class SoftwareDirectFullColorSprite extends SoftwareDirectColorSprite {
     }
   }
 
+  final void method637(int var1, int var2, int var3) {
+    var1 += this.anInt3701;
+    var2 += this.anInt3698;
+    int var4 = var1 + var2 * DummyClass47.anInt1092;
+    int var5 = 0;
+    int var6 = this.anInt3696;
+    int var7 = this.anInt3707;
+    int var8 = DummyClass47.anInt1092 - var7;
+    int var9 = 0;
+    int var10;
+    if (var2 < DummyClass47.anInt1095) {
+      var10 = DummyClass47.anInt1095 - var2;
+      var6 -= var10;
+      var2 = DummyClass47.anInt1095;
+      var5 += var10 * var7;
+      var4 += var10 * DummyClass47.anInt1092;
+    }
+
+    if (var2 + var6 > DummyClass47.anInt1099) {
+      var6 -= var2 + var6 - DummyClass47.anInt1099;
+    }
+
+    if (var1 < DummyClass47.anInt1093) {
+      var10 = DummyClass47.anInt1093 - var1;
+      var7 -= var10;
+      var1 = DummyClass47.anInt1093;
+      var5 += var10;
+      var4 += var10;
+      var9 += var10;
+      var8 += var10;
+    }
+
+    if (var1 + var7 > DummyClass47.anInt1096) {
+      var10 = var1 + var7 - DummyClass47.anInt1096;
+      var7 -= var10;
+      var9 += var10;
+      var8 += var10;
+    }
+
+    if (var7 > 0 && var6 > 0) {
+      method674(DummyClass47.anIntArray1100, this.pixels, 0, var5, var4, var7, var6, var8, var9,
+        var3);
+    }
+  }
+
+  final void draw(int var1, int var2, int var3, int var4) {
+    if (var3 > 0 && var4 > 0) {
+      int var5 = this.anInt3707;
+      int var6 = this.anInt3696;
+      int var7 = 0;
+      int var8 = 0;
+      int var9 = this.anInt3697;
+      int var10 = this.anInt3706;
+      int var11 = (var9 << 16) / var3;
+      int var12 = (var10 << 16) / var4;
+      int var13;
+      if (this.anInt3701 > 0) {
+        var13 = ((this.anInt3701 << 16) + var11 - 1) / var11;
+        var1 += var13;
+        var7 += var13 * var11 - (this.anInt3701 << 16);
+      }
+
+      if (this.anInt3698 > 0) {
+        var13 = ((this.anInt3698 << 16) + var12 - 1) / var12;
+        var2 += var13;
+        var8 += var13 * var12 - (this.anInt3698 << 16);
+      }
+
+      if (var5 < var9) {
+        var3 = ((var5 << 16) - var7 + var11 - 1) / var11;
+      }
+
+      if (var6 < var10) {
+        var4 = ((var6 << 16) - var8 + var12 - 1) / var12;
+      }
+
+      var13 = var1 + var2 * DummyClass47.anInt1092;
+      int var14 = DummyClass47.anInt1092 - var3;
+      if (var2 + var4 > DummyClass47.anInt1099) {
+        var4 -= var2 + var4 - DummyClass47.anInt1099;
+      }
+
+      int var15;
+      if (var2 < DummyClass47.anInt1095) {
+        var15 = DummyClass47.anInt1095 - var2;
+        var4 -= var15;
+        var13 += var15 * DummyClass47.anInt1092;
+        var8 += var12 * var15;
+      }
+
+      if (var1 + var3 > DummyClass47.anInt1096) {
+        var15 = var1 + var3 - DummyClass47.anInt1096;
+        var3 -= var15;
+        var14 += var15;
+      }
+
+      if (var1 < DummyClass47.anInt1093) {
+        var15 = DummyClass47.anInt1093 - var1;
+        var3 -= var15;
+        var13 += var15;
+        var7 += var11 * var15;
+        var14 += var15;
+      }
+
+      method675(DummyClass47.anIntArray1100, this.pixels, 0, var7, var8, var13, var14, var3, var4,
+        var11, var12, var5);
+    }
+  }
+
+  final void method641(int var1, int var2) {
+    var1 += this.anInt3697 - this.anInt3707 - this.anInt3701;
+    var2 += this.anInt3698;
+    int var3 = var1 + var2 * DummyClass47.anInt1092;
+    int var4 = this.anInt3707 - 1;
+    int var5 = this.anInt3696;
+    int var6 = this.anInt3707;
+    int var7 = DummyClass47.anInt1092 - var6;
+    int var8 = var6 + var6;
+    int var9;
+    if (var2 < DummyClass47.anInt1095) {
+      var9 = DummyClass47.anInt1095 - var2;
+      var5 -= var9;
+      var2 = DummyClass47.anInt1095;
+      var4 += var9 * var6;
+      var3 += var9 * DummyClass47.anInt1092;
+    }
+
+    if (var2 + var5 > DummyClass47.anInt1099) {
+      var5 -= var2 + var5 - DummyClass47.anInt1099;
+    }
+
+    if (var1 < DummyClass47.anInt1093) {
+      var9 = DummyClass47.anInt1093 - var1;
+      var6 -= var9;
+      var1 = DummyClass47.anInt1093;
+      var4 -= var9;
+      var3 += var9;
+      var8 -= var9;
+      var7 += var9;
+    }
+
+    if (var1 + var6 > DummyClass47.anInt1096) {
+      var9 = var1 + var6 - DummyClass47.anInt1096;
+      var6 -= var9;
+      var8 -= var9;
+      var7 += var9;
+    }
+
+    if (var6 > 0 && var5 > 0) {
+      method672(DummyClass47.anIntArray1100, this.pixels, 0, var4, var3, var6, var5, var7, var8);
+    }
+  }
+
+  final void method642(int var1, int var2, int var3, int var4, int var5) {
+    if (var3 > 0 && var4 > 0) {
+      int var6 = this.anInt3707;
+      int var7 = this.anInt3696;
+      int var8 = 0;
+      int var9 = 0;
+      int var10 = this.anInt3697;
+      int var11 = this.anInt3706;
+      int var12 = (var10 << 16) / var3;
+      int var13 = (var11 << 16) / var4;
+      int var14;
+      if (this.anInt3701 > 0) {
+        var14 = ((this.anInt3701 << 16) + var12 - 1) / var12;
+        var1 += var14;
+        var8 += var14 * var12 - (this.anInt3701 << 16);
+      }
+
+      if (this.anInt3698 > 0) {
+        var14 = ((this.anInt3698 << 16) + var13 - 1) / var13;
+        var2 += var14;
+        var9 += var14 * var13 - (this.anInt3698 << 16);
+      }
+
+      if (var6 < var10) {
+        var3 = ((var6 << 16) - var8 + var12 - 1) / var12;
+      }
+
+      if (var7 < var11) {
+        var4 = ((var7 << 16) - var9 + var13 - 1) / var13;
+      }
+
+      var14 = var1 + var2 * DummyClass47.anInt1092;
+      int var15 = DummyClass47.anInt1092 - var3;
+      if (var2 + var4 > DummyClass47.anInt1099) {
+        var4 -= var2 + var4 - DummyClass47.anInt1099;
+      }
+
+      int var16;
+      if (var2 < DummyClass47.anInt1095) {
+        var16 = DummyClass47.anInt1095 - var2;
+        var4 -= var16;
+        var14 += var16 * DummyClass47.anInt1092;
+        var9 += var13 * var16;
+      }
+
+      if (var1 + var3 > DummyClass47.anInt1096) {
+        var16 = var1 + var3 - DummyClass47.anInt1096;
+        var3 -= var16;
+        var15 += var16;
+      }
+
+      if (var1 < DummyClass47.anInt1093) {
+        var16 = DummyClass47.anInt1093 - var1;
+        var3 -= var16;
+        var14 += var16;
+        var8 += var12 * var16;
+        var15 += var16;
+      }
+
+      method671(DummyClass47.anIntArray1100, this.pixels, 0, var8, var9, var14, var15, var3, var4,
+        var12, var13, var6, var5);
+    }
+  }
+
+  final void method643(int var1, int var2) {
+    var1 += this.anInt3701;
+    var2 += this.anInt3698;
+    int var3 = var1 + var2 * DummyClass47.anInt1092;
+    int var4 = 0;
+    int var5 = this.anInt3696;
+    int var6 = this.anInt3707;
+    int var7 = DummyClass47.anInt1092 - var6;
+    int var8 = 0;
+    int var9;
+    if (var2 < DummyClass47.anInt1095) {
+      var9 = DummyClass47.anInt1095 - var2;
+      var5 -= var9;
+      var2 = DummyClass47.anInt1095;
+      var4 += var9 * var6;
+      var3 += var9 * DummyClass47.anInt1092;
+    }
+
+    if (var2 + var5 > DummyClass47.anInt1099) {
+      var5 -= var2 + var5 - DummyClass47.anInt1099;
+    }
+
+    if (var1 < DummyClass47.anInt1093) {
+      var9 = DummyClass47.anInt1093 - var1;
+      var6 -= var9;
+      var1 = DummyClass47.anInt1093;
+      var4 += var9;
+      var3 += var9;
+      var8 += var9;
+      var7 += var9;
+    }
+
+    if (var1 + var6 > DummyClass47.anInt1096) {
+      var9 = var1 + var6 - DummyClass47.anInt1096;
+      var6 -= var9;
+      var8 += var9;
+      var7 += var9;
+    }
+
+    if (var6 > 0 && var5 > 0) {
+      method673(DummyClass47.anIntArray1100, this.pixels, 0, var4, var3, var6, var5, var7, var8);
+    }
+  }
+
+  final void method660(int var1, int var2, int var3, int var4, int var5, int var6, double var7,
+                       int var9) {
+    try {
+      int var10 = -var3 / 2;
+      int var11 = -var4 / 2;
+      int var12 = (int) (Math.sin(var7) * 65536.0D);
+      int var13 = (int) (Math.cos(var7) * 65536.0D);
+      var12 = var12 * var9 >> 8;
+      var13 = var13 * var9 >> 8;
+      int var14 = (var5 << 16) + var11 * var12 + var10 * var13;
+      int var15 = (var6 << 16) + (var11 * var13 - var10 * var12);
+      int var16 = var1 + var2 * DummyClass47.anInt1092;
+
+      for (var2 = 0; var2 < var4; ++var2) {
+        int var17 = var16;
+        int var18 = var14;
+        int var19 = var15;
+
+        for (var1 = -var3; var1 < 0; ++var1) {
+          int var20 = this.pixels[(var18 >> 16) + (var19 >> 16) * this.anInt3707];
+          int var21 = DummyClass47.anIntArray1100[var17];
+          int var22 = var20 >>> 24;
+          int var23 = 256 - var22;
+          DummyClass47.anIntArray1100[var17++] =
+            ((var20 & 16711935) * var22 + (var21 & 16711935) * var23 & -16711936) + (
+              (var20 & '\uff00') * var22 + (var21 & '\uff00') * var23 & 16711680) >>> 8;
+          var18 += var13;
+          var19 -= var12;
+        }
+
+        var14 += var12;
+        var15 += var13;
+        var16 += DummyClass47.anInt1092;
+      }
+    } catch (Exception var24) {
+    }
+
+  }
+
   final void method664(int var1, int var2, int var3, int var4, int var5, int var6, int var7,
                        int var8, int[] var9, int[] var10) {
     try {
@@ -809,221 +903,124 @@ final class SoftwareDirectFullColorSprite extends SoftwareDirectColorSprite {
 
   }
 
-  final void method642(int var1, int var2, int var3, int var4, int var5) {
-    if (var3 > 0 && var4 > 0) {
-      int var6 = this.anInt3707;
-      int var7 = this.anInt3696;
-      int var8 = 0;
-      int var9 = 0;
-      int var10 = this.anInt3697;
-      int var11 = this.anInt3706;
-      int var12 = (var10 << 16) / var3;
-      int var13 = (var11 << 16) / var4;
-      int var14;
-      if (this.anInt3701 > 0) {
-        var14 = ((this.anInt3701 << 16) + var12 - 1) / var12;
-        var1 += var14;
-        var8 += var14 * var12 - (this.anInt3701 << 16);
+  private static final void method671(int[] var0, int[] var1, int var2, int var3, int var4,
+                                      int var5, int var6, int var7, int var8, int var9, int var10,
+                                      int var11, int var12) {
+    int var13 = var3;
+
+    for (int var14 = -var8; var14 < 0; ++var14) {
+      int var15 = (var4 >> 16) * var11;
+
+      for (int var16 = -var7; var16 < 0; ++var16) {
+        int var17 = var1[(var3 >> 16) + var15];
+        int var18 = var0[var5];
+        int var19 = (var17 >>> 24) * var12 >> 8;
+        int var20 = 256 - var19;
+        var0[var5++] = ((var17 & 16711935) * var19 + (var18 & 16711935) * var20 & -16711936) + (
+          (var17 & '\uff00') * var19 + (var18 & '\uff00') * var20 & 16711680) >>> 8;
+        var3 += var9;
       }
 
-      if (this.anInt3698 > 0) {
-        var14 = ((this.anInt3698 << 16) + var13 - 1) / var13;
-        var2 += var14;
-        var9 += var14 * var13 - (this.anInt3698 << 16);
-      }
-
-      if (var6 < var10) {
-        var3 = ((var6 << 16) - var8 + var12 - 1) / var12;
-      }
-
-      if (var7 < var11) {
-        var4 = ((var7 << 16) - var9 + var13 - 1) / var13;
-      }
-
-      var14 = var1 + var2 * DummyClass47.anInt1092;
-      int var15 = DummyClass47.anInt1092 - var3;
-      if (var2 + var4 > DummyClass47.anInt1099) {
-        var4 -= var2 + var4 - DummyClass47.anInt1099;
-      }
-
-      int var16;
-      if (var2 < DummyClass47.anInt1095) {
-        var16 = DummyClass47.anInt1095 - var2;
-        var4 -= var16;
-        var14 += var16 * DummyClass47.anInt1092;
-        var9 += var13 * var16;
-      }
-
-      if (var1 + var3 > DummyClass47.anInt1096) {
-        var16 = var1 + var3 - DummyClass47.anInt1096;
-        var3 -= var16;
-        var15 += var16;
-      }
-
-      if (var1 < DummyClass47.anInt1093) {
-        var16 = DummyClass47.anInt1093 - var1;
-        var3 -= var16;
-        var14 += var16;
-        var8 += var12 * var16;
-        var15 += var16;
-      }
-
-      method671(DummyClass47.anIntArray1100, this.pixels, 0, var8, var9, var14, var15, var3,
-        var4, var12, var13, var6, var5);
-    }
-  }
-
-  final void draw(int var1, int var2, int var3, int var4) {
-    if (var3 > 0 && var4 > 0) {
-      int var5 = this.anInt3707;
-      int var6 = this.anInt3696;
-      int var7 = 0;
-      int var8 = 0;
-      int var9 = this.anInt3697;
-      int var10 = this.anInt3706;
-      int var11 = (var9 << 16) / var3;
-      int var12 = (var10 << 16) / var4;
-      int var13;
-      if (this.anInt3701 > 0) {
-        var13 = ((this.anInt3701 << 16) + var11 - 1) / var11;
-        var1 += var13;
-        var7 += var13 * var11 - (this.anInt3701 << 16);
-      }
-
-      if (this.anInt3698 > 0) {
-        var13 = ((this.anInt3698 << 16) + var12 - 1) / var12;
-        var2 += var13;
-        var8 += var13 * var12 - (this.anInt3698 << 16);
-      }
-
-      if (var5 < var9) {
-        var3 = ((var5 << 16) - var7 + var11 - 1) / var11;
-      }
-
-      if (var6 < var10) {
-        var4 = ((var6 << 16) - var8 + var12 - 1) / var12;
-      }
-
-      var13 = var1 + var2 * DummyClass47.anInt1092;
-      int var14 = DummyClass47.anInt1092 - var3;
-      if (var2 + var4 > DummyClass47.anInt1099) {
-        var4 -= var2 + var4 - DummyClass47.anInt1099;
-      }
-
-      int var15;
-      if (var2 < DummyClass47.anInt1095) {
-        var15 = DummyClass47.anInt1095 - var2;
-        var4 -= var15;
-        var13 += var15 * DummyClass47.anInt1092;
-        var8 += var12 * var15;
-      }
-
-      if (var1 + var3 > DummyClass47.anInt1096) {
-        var15 = var1 + var3 - DummyClass47.anInt1096;
-        var3 -= var15;
-        var14 += var15;
-      }
-
-      if (var1 < DummyClass47.anInt1093) {
-        var15 = DummyClass47.anInt1093 - var1;
-        var3 -= var15;
-        var13 += var15;
-        var7 += var11 * var15;
-        var14 += var15;
-      }
-
-      method675(DummyClass47.anIntArray1100, this.pixels, 0, var7, var8, var13, var14, var3,
-        var4, var11, var12, var5);
-    }
-  }
-
-  final void method641(int var1, int var2) {
-    var1 += this.anInt3697 - this.anInt3707 - this.anInt3701;
-    var2 += this.anInt3698;
-    int var3 = var1 + var2 * DummyClass47.anInt1092;
-    int var4 = this.anInt3707 - 1;
-    int var5 = this.anInt3696;
-    int var6 = this.anInt3707;
-    int var7 = DummyClass47.anInt1092 - var6;
-    int var8 = var6 + var6;
-    int var9;
-    if (var2 < DummyClass47.anInt1095) {
-      var9 = DummyClass47.anInt1095 - var2;
-      var5 -= var9;
-      var2 = DummyClass47.anInt1095;
-      var4 += var9 * var6;
-      var3 += var9 * DummyClass47.anInt1092;
-    }
-
-    if (var2 + var5 > DummyClass47.anInt1099) {
-      var5 -= var2 + var5 - DummyClass47.anInt1099;
-    }
-
-    if (var1 < DummyClass47.anInt1093) {
-      var9 = DummyClass47.anInt1093 - var1;
-      var6 -= var9;
-      var1 = DummyClass47.anInt1093;
-      var4 -= var9;
-      var3 += var9;
-      var8 -= var9;
-      var7 += var9;
-    }
-
-    if (var1 + var6 > DummyClass47.anInt1096) {
-      var9 = var1 + var6 - DummyClass47.anInt1096;
-      var6 -= var9;
-      var8 -= var9;
-      var7 += var9;
-    }
-
-    if (var6 > 0 && var5 > 0) {
-      method672(DummyClass47.anIntArray1100, this.pixels, 0, var4, var3, var6, var5, var7,
-        var8);
-    }
-  }
-
-  final void method637(int var1, int var2, int var3) {
-    var1 += this.anInt3701;
-    var2 += this.anInt3698;
-    int var4 = var1 + var2 * DummyClass47.anInt1092;
-    int var5 = 0;
-    int var6 = this.anInt3696;
-    int var7 = this.anInt3707;
-    int var8 = DummyClass47.anInt1092 - var7;
-    int var9 = 0;
-    int var10;
-    if (var2 < DummyClass47.anInt1095) {
-      var10 = DummyClass47.anInt1095 - var2;
-      var6 -= var10;
-      var2 = DummyClass47.anInt1095;
-      var5 += var10 * var7;
-      var4 += var10 * DummyClass47.anInt1092;
-    }
-
-    if (var2 + var6 > DummyClass47.anInt1099) {
-      var6 -= var2 + var6 - DummyClass47.anInt1099;
-    }
-
-    if (var1 < DummyClass47.anInt1093) {
-      var10 = DummyClass47.anInt1093 - var1;
-      var7 -= var10;
-      var1 = DummyClass47.anInt1093;
-      var5 += var10;
       var4 += var10;
-      var9 += var10;
-      var8 += var10;
+      var3 = var13;
+      var5 += var6;
     }
 
-    if (var1 + var7 > DummyClass47.anInt1096) {
-      var10 = var1 + var7 - DummyClass47.anInt1096;
-      var7 -= var10;
-      var9 += var10;
-      var8 += var10;
+  }
+
+  private static final void method672(int[] var0, int[] var1, int var2, int var3, int var4,
+                                      int var5, int var6, int var7, int var8) {
+    int var9 = -var5;
+
+    for (int var10 = -var6; var10 < 0; ++var10) {
+      for (int var11 = var9; var11 < 0; ++var11) {
+        var2 = var1[var3--];
+        int var12 = var2 >>> 24;
+        if (var12 != 0) {
+          int var13 = 256 - var12;
+          int var14 = var0[var4];
+          var0[var4++] = ((var2 & 16711935) * var12 + (var14 & 16711935) * var13 & -16711936) + (
+            (var2 & '\uff00') * var12 + (var14 & '\uff00') * var13 & 16711680) >>> 8;
+        } else {
+          ++var4;
+        }
+      }
+
+      var4 += var7;
+      var3 += var8;
     }
 
-    if (var7 > 0 && var6 > 0) {
-      method674(DummyClass47.anIntArray1100, this.pixels, 0, var5, var4, var7, var6, var8,
-        var9, var3);
+  }
+
+  private static final void method673(int[] var0, int[] var1, int var2, int var3, int var4,
+                                      int var5, int var6, int var7, int var8) {
+    int var9 = -var5;
+
+    for (int var10 = -var6; var10 < 0; ++var10) {
+      for (int var11 = var9; var11 < 0; ++var11) {
+        var2 = var1[var3++];
+        int var12 = var2 >>> 24;
+        if (var12 != 0) {
+          int var13 = 256 - var12;
+          int var14 = var0[var4];
+          var0[var4++] = ((var2 & 16711935) * var12 + (var14 & 16711935) * var13 & -16711936) + (
+            (var2 & '\uff00') * var12 + (var14 & '\uff00') * var13 & 16711680) >>> 8;
+        } else {
+          ++var4;
+        }
+      }
+
+      var4 += var7;
+      var3 += var8;
     }
+
+  }
+
+  private static final void method674(int[] var0, int[] var1, int var2, int var3, int var4,
+                                      int var5, int var6, int var7, int var8, int var9) {
+    for (int var10 = -var6; var10 < 0; ++var10) {
+      for (int var11 = -var5; var11 < 0; ++var11) {
+        int var12 = (var1[var3] >>> 24) * var9 >> 8;
+        int var13 = 256 - var12;
+        int var14 = var1[var3++];
+        int var15 = var0[var4];
+        var0[var4++] = ((var14 & 16711935) * var12 + (var15 & 16711935) * var13 & -16711936) + (
+          (var14 & '\uff00') * var12 + (var15 & '\uff00') * var13 & 16711680) >>> 8;
+      }
+
+      var4 += var7;
+      var3 += var8;
+    }
+
+  }
+
+  private static final void method675(int[] var0, int[] var1, int var2, int var3, int var4,
+                                      int var5, int var6, int var7, int var8, int var9, int var10,
+                                      int var11) {
+    int var12 = var3;
+
+    for (int var13 = -var8; var13 < 0; ++var13) {
+      int var14 = (var4 >> 16) * var11;
+
+      for (int var15 = -var7; var15 < 0; ++var15) {
+        var2 = var1[(var3 >> 16) + var14];
+        int var16 = var2 >>> 24;
+        if (var16 != 0) {
+          int var17 = 256 - var16;
+          int var18 = var0[var5];
+          var0[var5++] = ((var2 & 16711935) * var16 + (var18 & 16711935) * var17 & -16711936) + (
+            (var2 & '\uff00') * var16 + (var18 & '\uff00') * var17 & 16711680) >>> 8;
+        } else {
+          ++var5;
+        }
+
+        var3 += var9;
+      }
+
+      var4 += var10;
+      var3 = var12;
+      var5 += var6;
+    }
+
   }
 }

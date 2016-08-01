@@ -45,15 +45,14 @@ final class SomethingIndex150 {
     } else {
       int var4 = var1 << 7;
       int var5 = var2 << 7;
-      return TextureSampler10
-        .method349(var4 + 1, AbstractGameWorld.heightMap[var0][var1][var2] + var3, var5 + 1)
-        && TextureSampler10
-        .method349(var4 + 128 - 1, AbstractGameWorld.heightMap[var0][var1 + 1][var2] + var3,
-          var5 + 1) && TextureSampler10
-        .method349(var4 + 128 - 1, AbstractGameWorld.heightMap[var0][var1 + 1][var2 + 1] + var3,
-          var5 + 128 - 1) && TextureSampler10
-        .method349(var4 + 1, AbstractGameWorld.heightMap[var0][var1][var2 + 1] + var3,
-          var5 + 128 - 1);
+      return
+        TextureSampler10.method349(var4 + 1, AbstractGameWorld.heightMap[var0][var1][var2] + var3,
+          var5 + 1) && TextureSampler10.method349(var4 + 128 - 1,
+          AbstractGameWorld.heightMap[var0][var1 + 1][var2] + var3, var5 + 1)
+          && TextureSampler10.method349(var4 + 128 - 1,
+          AbstractGameWorld.heightMap[var0][var1 + 1][var2 + 1] + var3, var5 + 128 - 1)
+          && TextureSampler10.method349(var4 + 1,
+          AbstractGameWorld.heightMap[var0][var1][var2 + 1] + var3, var5 + 128 - 1);
     }
   }
 
@@ -91,8 +90,8 @@ final class SomethingIndex150 {
                 if (~var0 == -8) {
                   ++DummyClass29.anInt437;
                   TextureSampler12.secureBuffer.writePacket(114);
-                  TextureSampler12.secureBuffer
-                    .method765(DummyClass42.anIntArray887[var5], (byte) 3);
+                  TextureSampler12.secureBuffer.method765(DummyClass42.anIntArray887[var5],
+                    (byte) 3);
                 }
               } else {
                 TextureSampler12.secureBuffer.writePacket(133);
@@ -101,8 +100,8 @@ final class SomethingIndex150 {
               }
             } else {
               TextureSampler12.secureBuffer.writePacket(4);
-              TextureSampler12.secureBuffer
-                .writeShortLE(var1 + -1, DummyClass42.anIntArray887[var5]);
+              TextureSampler12.secureBuffer.writeShortLE(var1 + -1,
+                DummyClass42.anIntArray887[var5]);
               ++SocketStream.anInt1240;
             }
           } else {
@@ -134,10 +133,11 @@ final class SomethingIndex150 {
           TextureSampler26.anIntArray3076[0], DummyClass5.aByteArrayArray2987[0],
           TextureSampler38.anIntArray3446);
       } else {
-        var1 = new SoftwareIndexedColorSprite(SomethingVolume15.anInt2426, SomethingPacket116.anInt1748,
-          Something3dRoot.anIntArray2048[0], Buffer.anIntArray2591[0], GroundItem.anIntArray2931[0],
-          TextureSampler26.anIntArray3076[0], DummyClass5.aByteArrayArray2987[0],
-          TextureSampler38.anIntArray3446);
+        var1 =
+          new SoftwareIndexedColorSprite(SomethingVolume15.anInt2426, SomethingPacket116.anInt1748,
+            Something3dRoot.anIntArray2048[0], Buffer.anIntArray2591[0],
+            GroundItem.anIntArray2931[0], TextureSampler26.anIntArray3076[0],
+            DummyClass5.aByteArrayArray2987[0], TextureSampler38.anIntArray3446);
       }
       DummyClass37.method1035((byte) 116);
       return (AbstractIndexedColorSprite) var1;

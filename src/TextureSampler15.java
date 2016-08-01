@@ -25,60 +25,6 @@ final class TextureSampler15 extends AbstractTextureSampler {
     super(0, true);
   }
 
-  static final int getLanguageForTag(GameString var0) {
-    try {
-      for (int i = 0; ~i > ~TextureSampler4.LANGUAGES.length; ++i) {
-        if (TextureSampler4.LANGUAGES[i].method1531(var0)) {
-          return i;
-        }
-      }
-
-      return -1;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "hm.F(" + (var0 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  static final void method244(int var0, int var1, int var2, int var3, int var4) {
-    try {
-      int var5;
-      if (~var1 >= ~var3) {
-        for (var5 = var1; var5 < var3; ++var5) {
-          DummyClass35.anIntArrayArray663[var5][var2] = var4;
-        }
-      } else {
-        for (var5 = var3; ~var5 > ~var1; ++var5) {
-          DummyClass35.anIntArrayArray663[var5][var2] = var4;
-        }
-      }
-
-      if (var0 != 2) {
-        anInt3198 = -110;
-      }
-
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "hm.E(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
-    }
-  }
-
-  public static void method245(int var0) {
-    try {
-      aClass44_Sub1Array3201 = null;
-      aClass94_3192 = null;
-      aClass94_3206 = null;
-      if (var0 != 0) {
-        method245(111);
-      }
-
-      aClass94_3190 = null;
-      aClass94_3196 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "hm.B(" + var0 + ')');
-    }
-  }
-
   private final void method242(byte var1) {
     try {
       Random var2 = new Random((long) this.anInt3197);
@@ -94,19 +40,6 @@ final class TextureSampler15 extends AbstractTextureSampler {
       }
     } catch (RuntimeException var4) {
       throw AbstractGameWorld.cascadeException(var4, "hm.C(" + var1 + ')');
-    }
-  }
-
-  final void method158(int var1) {
-    try {
-      if (var1 != 16251) {
-        aClass44_Sub1Array3201 = null;
-      }
-
-      this.aByteArray3195 = GZipDecompressor.method1123(var1 ^ 16727940, this.anInt3197);
-      this.method242((byte) 37);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "hm.P(" + var1 + ')');
     }
   }
 
@@ -162,8 +95,8 @@ final class TextureSampler15 extends AbstractTextureSampler {
                     (int) (Math.sqrt(Math.sqrt((double) ((float) (var11 + var10) / 1.6777216E7F)))
                       * 4096.0D);
                 } else if (2 != var19) {
-                  var12 = (int) (4096.0D * Math
-                    .sqrt((double) ((float) (var11 * var11 + var10 * var10) / 1.6777216E7F)));
+                  var12 = (int) (4096.0D * Math.sqrt(
+                    (double) ((float) (var11 * var11 + var10 * var10) / 1.6777216E7F)));
                 } else {
                   var12 = (~var10 <= -1 ? var10 : -var10) - -(-1 < ~var11 ? -var11 : var11);
                 }
@@ -243,6 +176,73 @@ final class TextureSampler15 extends AbstractTextureSampler {
     } catch (RuntimeException var5) {
       throw AbstractGameWorld.cascadeException(var5,
         "hm.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
+  final void method158(int var1) {
+    try {
+      if (var1 != 16251) {
+        aClass44_Sub1Array3201 = null;
+      }
+
+      this.aByteArray3195 = GZipDecompressor.method1123(var1 ^ 16727940, this.anInt3197);
+      this.method242((byte) 37);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "hm.P(" + var1 + ')');
+    }
+  }
+
+  static final int getLanguageForTag(GameString var0) {
+    try {
+      for (int i = 0; ~i > ~TextureSampler4.LANGUAGES.length; ++i) {
+        if (TextureSampler4.LANGUAGES[i].method1531(var0)) {
+          return i;
+        }
+      }
+
+      return -1;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "hm.F(" + (var0 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  static final void method244(int var0, int var1, int var2, int var3, int var4) {
+    try {
+      int var5;
+      if (~var1 >= ~var3) {
+        for (var5 = var1; var5 < var3; ++var5) {
+          DummyClass35.anIntArrayArray663[var5][var2] = var4;
+        }
+      } else {
+        for (var5 = var3; ~var5 > ~var1; ++var5) {
+          DummyClass35.anIntArrayArray663[var5][var2] = var4;
+        }
+      }
+
+      if (var0 != 2) {
+        anInt3198 = -110;
+      }
+
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "hm.E(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
+    }
+  }
+
+  public static void method245(int var0) {
+    try {
+      aClass44_Sub1Array3201 = null;
+      aClass94_3192 = null;
+      aClass94_3206 = null;
+      if (var0 != 0) {
+        method245(111);
+      }
+
+      aClass94_3190 = null;
+      aClass94_3196 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "hm.B(" + var0 + ')');
     }
   }
 

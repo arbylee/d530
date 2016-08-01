@@ -51,17 +51,6 @@ final class SomethingSoundEffect {
   private Something2SounfEffect aClass34_1607;
   private Something2SounfEffect aClass34_1608;
 
-  public static void method1715() {
-    anIntArray1598 = null;
-    anIntArray1594 = null;
-    anIntArray1591 = null;
-    anIntArray1601 = null;
-    anIntArray1602 = null;
-    anIntArray1603 = null;
-    anIntArray1599 = null;
-    anIntArray1600 = null;
-  }
-
   private final int method1716(int var1, int var2, int var3) {
     return var3 == 1 ?
       ((var1 & 32767) < 16384 ? var2 : -var2) :
@@ -109,8 +98,8 @@ final class SomethingSoundEffect {
           anIntArray1602[var11] = (int) ((double) this.anIntArray1597[var11] * var3);
           anIntArray1603[var11] = (this.anIntArray1596[var11] << 14) / 100;
           anIntArray1599[var11] = (int) (
-            (double) (this.aClass34_1589.anInt605 - this.aClass34_1589.anInt603) * 32.768D * Math
-              .pow(1.0057929410678534D, (double) this.anIntArray1605[var11]) / var3);
+            (double) (this.aClass34_1589.anInt605 - this.aClass34_1589.anInt603) * 32.768D
+              * Math.pow(1.0057929410678534D, (double) this.anIntArray1605[var11]) / var3);
           anIntArray1600[var11] = (int) ((double) this.aClass34_1589.anInt603 * 32.768D / var3);
         }
       }
@@ -142,8 +131,8 @@ final class SomethingSoundEffect {
           if (this.anIntArray1596[var14] != 0) {
             var15 = var11 + anIntArray1602[var14];
             if (var15 < var1) {
-              anIntArray1598[var15] += this
-                .method1716(anIntArray1601[var14], var13 * anIntArray1603[var14] >> 15,
+              anIntArray1598[var15] +=
+                this.method1716(anIntArray1601[var14], var13 * anIntArray1603[var14] >> 15,
                   this.aClass34_1589.anInt601);
               anIntArray1601[var14] +=
                 (var12 * anIntArray1599[var14] >> 16) + anIntArray1600[var14];
@@ -341,5 +330,16 @@ final class SomethingSoundEffect {
     this.aClass103_1606 = new FilterPossibly();
     this.aClass34_1592 = new Something2SounfEffect();
     this.aClass103_1606.method1620(var1, this.aClass34_1592);
+  }
+
+  public static void method1715() {
+    anIntArray1598 = null;
+    anIntArray1594 = null;
+    anIntArray1591 = null;
+    anIntArray1601 = null;
+    anIntArray1602 = null;
+    anIntArray1603 = null;
+    anIntArray1599 = null;
+    anIntArray1600 = null;
   }
 }

@@ -5,12 +5,12 @@ final class BlockConfig {
   static int sunPositionZ;
   static AudioStreamEncoder4 aClass3_Sub24_Sub4_1193;
   static HashTable aClass130_1194;
+  private static GameString aClass94_1176 = SpawnedGameObject.createString("Loading wordpack )2 ");
+  private static GameString aClass94_1192 = SpawnedGameObject.createString("Examine");
   static GameString aClass94_1179 = SpawnedGameObject.createString("Veuillez patienter)3)3)3");
   static GameString COMMAND_REBUILD = SpawnedGameObject.createString("::rebuild");
   static int screenLowerY;
-  private static GameString aClass94_1176 = SpawnedGameObject.createString("Loading wordpack )2 ");
   static GameString aClass94_1183 = aClass94_1176;
-  private static GameString aClass94_1192 = SpawnedGameObject.createString("Examine");
   static GameString aClass94_1180 = aClass94_1192;
   int anInt1175;
   int anInt1177;
@@ -88,8 +88,8 @@ final class BlockConfig {
       }
 
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "li.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "li.<init>(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -97,8 +97,8 @@ final class BlockConfig {
     try {
       if (-1 == var1 && !MidiSomething.aBoolean1158) {
         SceneNode.method1870(false);
-      } else if (var1 != -1 && (AbstractFrameRegulator.anInt1691 != var1 || !BitVariable
-        .method1391(-1)) && BZipDecompressorState.anInt120 != 0 && !MidiSomething.aBoolean1158) {
+      } else if (var1 != -1 && (AbstractFrameRegulator.anInt1691 != var1 || !BitVariable.method1391(
+        -1)) && BZipDecompressorState.anInt120 != 0 && !MidiSomething.aBoolean1158) {
         AbstractFileRequester.method2099(true, var1, 0, SomethingTexture1.fileUnpacker6, false,
           BZipDecompressorState.anInt120, 2);
       }
@@ -120,8 +120,7 @@ final class BlockConfig {
       }
 
       DummyClass5.anIntArray2985[var0] = var2;
-      VariableUpdate var3 =
-        (VariableUpdate) ClientScript.variableUpdates.get((long) var0);
+      VariableUpdate var3 = (VariableUpdate) ClientScript.variableUpdates.get((long) var0);
       if (var3 == null) {
         var3 = new VariableUpdate(Time.getCurrentTimeMillis() - -500L);
         ClientScript.variableUpdates.put((long) var0, var3);
@@ -130,8 +129,8 @@ final class BlockConfig {
       }
 
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "li.D(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "li.D(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 

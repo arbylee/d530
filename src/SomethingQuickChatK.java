@@ -35,8 +35,7 @@ final class SomethingQuickChatK {
 
   static final void method852(byte var0, int var1) {
     try {
-      Inventory var2 =
-        (Inventory) SceneGraphTile.aClass130_2220.get((long) var1);
+      Inventory var2 = (Inventory) SceneGraphTile.aClass130_2220.get((long) var1);
       if (var2 != null) {
         if (var0 != 114) {
           aClass153_152 = null;

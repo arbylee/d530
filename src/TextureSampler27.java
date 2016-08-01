@@ -3,6 +3,7 @@ import java.util.Random;
 
 final class TextureSampler27 extends AbstractTextureSampler {
 
+  private static GameString aClass94_3096 = SpawnedGameObject.createString("Close");
   static Widget aClass11_3087 = null;
   static Random random = new Random();
   static int anInt3090;
@@ -11,7 +12,6 @@ final class TextureSampler27 extends AbstractTextureSampler {
   static short[] aShortArray3095 = new short[500];
   static FileUnpacker aClass153_3098;
   static AbstractDirectColorSprite aClass3_Sub28_Sub16_3099;
-  private static GameString aClass94_3096 = SpawnedGameObject.createString("Close");
   static GameString aClass94_3097 = aClass94_3096;
   private int anInt3085 = 10;
   private int anInt3086 = 0;
@@ -22,45 +22,6 @@ final class TextureSampler27 extends AbstractTextureSampler {
 
   public TextureSampler27() {
     super(0, true);
-  }
-
-  public static void method200(byte var0) {
-    try {
-      aClass94_3097 = null;
-      aShortArray3095 = null;
-      if (var0 != 122) {
-        method201(62, -109, 127);
-      }
-
-      frame = null;
-      random = null;
-      aClass94_3096 = null;
-      aClass3_Sub28_Sub16_3099 = null;
-      aClass11_3087 = null;
-      aClass153_3098 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "d.E(" + var0 + ')');
-    }
-  }
-
-  static final int method201(int var0, int var1, int var2) {
-    try {
-      int var3 = var1 + -1 & var0 >> 31;
-      int var4 = -95 % ((33 - var2) / 54);
-      return var3 + (var0 + (var0 >>> 31)) % var1;
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5, "d.C(" + var0 + ',' + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final void method158(int var1) {
-    try {
-      if (var1 == 16251) {
-        this.method202(1);
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "d.P(" + var1 + ')');
-    }
   }
 
   private final void method202(int var1) {
@@ -83,28 +44,6 @@ final class TextureSampler27 extends AbstractTextureSampler {
       }
     } catch (RuntimeException var6) {
       throw AbstractGameWorld.cascadeException(var6, "d.B(" + var1 + ')');
-    }
-  }
-
-  final void parseConfig(int var1, Buffer var2, boolean var3) {
-    try {
-      if (~var1 == -1) {
-        this.anInt3085 = var2.readUnsignedByte();
-      } else if (-2 != ~var1) {
-        if (-3 == ~var1) {
-          this.anInt3086 = var2.readUnsignedByte();
-        }
-      } else {
-        this.anInt3093 = var2.readUnsignedShort();
-      }
-
-      if (!var3) {
-        this.anIntArray3089 = null;
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "d.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
     }
   }
 
@@ -163,6 +102,67 @@ final class TextureSampler27 extends AbstractTextureSampler {
       return var3;
     } catch (RuntimeException var11) {
       throw AbstractGameWorld.cascadeException(var11, "d.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void parseConfig(int var1, Buffer var2, boolean var3) {
+    try {
+      if (~var1 == -1) {
+        this.anInt3085 = var2.readUnsignedByte();
+      } else if (-2 != ~var1) {
+        if (-3 == ~var1) {
+          this.anInt3086 = var2.readUnsignedByte();
+        }
+      } else {
+        this.anInt3093 = var2.readUnsignedShort();
+      }
+
+      if (!var3) {
+        this.anIntArray3089 = null;
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "d.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
+  final void method158(int var1) {
+    try {
+      if (var1 == 16251) {
+        this.method202(1);
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "d.P(" + var1 + ')');
+    }
+  }
+
+  public static void method200(byte var0) {
+    try {
+      aClass94_3097 = null;
+      aShortArray3095 = null;
+      if (var0 != 122) {
+        method201(62, -109, 127);
+      }
+
+      frame = null;
+      random = null;
+      aClass94_3096 = null;
+      aClass3_Sub28_Sub16_3099 = null;
+      aClass11_3087 = null;
+      aClass153_3098 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "d.E(" + var0 + ')');
+    }
+  }
+
+  static final int method201(int var0, int var1, int var2) {
+    try {
+      int var3 = var1 + -1 & var0 >> 31;
+      int var4 = -95 % ((33 - var2) / 54);
+      return var3 + (var0 + (var0 >>> 31)) % var1;
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5, "d.C(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 

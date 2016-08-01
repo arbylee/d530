@@ -20,8 +20,41 @@ final class HashTableIterator {
     try {
       this.table = var1;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "l.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "l.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  final Node getNext() {
+    try {
+      Node var2;
+      if (-1 > ~this.anInt1132 && this.table.nodes[this.anInt1132 + -1] != this.iterator) {
+        var2 = this.iterator;
+        this.iterator = var2.nextNode;
+        return var2;
+      } else {
+        do {
+          if (~this.table.capacity >= ~this.anInt1132) {
+            return null;
+          }
+
+          var2 = this.table.nodes[this.anInt1132++].nextNode;
+        } while (var2 == this.table.nodes[-1 + this.anInt1132]);
+
+        this.iterator = var2.nextNode;
+        return var2;
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "l.D()");
+    }
+  }
+
+  final Node getFirst() {
+    try {
+      this.anInt1132 = 0;
+      return this.getNext();
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "l.C()");
     }
   }
 
@@ -93,39 +126,6 @@ final class HashTableIterator {
 
     } catch (RuntimeException var10) {
       throw AbstractGameWorld.cascadeException(var10, "l.A(" + var0 + ')');
-    }
-  }
-
-  final Node getNext() {
-    try {
-      Node var2;
-      if (-1 > ~this.anInt1132 && this.table.nodes[this.anInt1132 + -1] != this.iterator) {
-        var2 = this.iterator;
-        this.iterator = var2.nextNode;
-        return var2;
-      } else {
-        do {
-          if (~this.table.capacity >= ~this.anInt1132) {
-            return null;
-          }
-
-          var2 = this.table.nodes[this.anInt1132++].nextNode;
-        } while (var2 == this.table.nodes[-1 + this.anInt1132]);
-
-        this.iterator = var2.nextNode;
-        return var2;
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "l.D()");
-    }
-  }
-
-  final Node getFirst() {
-    try {
-      this.anInt1132 = 0;
-      return this.getNext();
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "l.C()");
     }
   }
 

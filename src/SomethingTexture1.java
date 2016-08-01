@@ -33,6 +33,51 @@ final class SomethingTexture1 extends AbstractSomethingTexture {
     }
   }
 
+  final void method1335(int var1, int var2, int var3) {
+    try {
+      int var4 = var2 * this.anInt2646 >> 12;
+      if (var3 != 4898) {
+        this.anInt2644 = -39;
+      }
+
+      int var7 = this.anInt2647 * var1 >> 12;
+      int var6 = this.anInt2644 * var1 >> 12;
+      int var5 = this.anInt2636 * var2 >> 12;
+      TextureSampler24.method223(true, this.anInt1106, var4, var6, var7, this.anInt1104,
+        this.anInt1101, var5);
+    } catch (RuntimeException var8) {
+      throw AbstractGameWorld.cascadeException(var8,
+        "kc.D(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final void method1337(int var1, boolean var2, int var3) {
+    try {
+      if (!var2) {
+        this.method1337(-7, false, 66);
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "kc.E(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final void method1341(int var1, int var2, int var3) {
+    try {
+      int var4 = this.anInt2646 * var2 >> 12;
+      int var5 = var2 * this.anInt2636 >> 12;
+      int var6 = this.anInt2644 * var3 >> 12;
+      int var7 = this.anInt2647 * var3 >> 12;
+      if (var1 == 2) {
+        DummyClass53.method1584(this.anInt1101, var7, var4, var6, -26571, var5);
+      }
+    } catch (RuntimeException var8) {
+      throw AbstractGameWorld.cascadeException(var8,
+        "kc.A(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
   static final AbstractDirectColorSprite method1344(int var0, FileUnpacker var1, int var2) {
     try {
       if (var0 < 29) {
@@ -61,51 +106,6 @@ final class SomethingTexture1 extends AbstractSomethingTexture {
       anIntArray2639 = null;
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "kc.B(" + var0 + ')');
-    }
-  }
-
-  final void method1341(int var1, int var2, int var3) {
-    try {
-      int var4 = this.anInt2646 * var2 >> 12;
-      int var5 = var2 * this.anInt2636 >> 12;
-      int var6 = this.anInt2644 * var3 >> 12;
-      int var7 = this.anInt2647 * var3 >> 12;
-      if (var1 == 2) {
-        DummyClass53.method1584(this.anInt1101, var7, var4, var6, -26571, var5);
-      }
-    } catch (RuntimeException var8) {
-      throw AbstractGameWorld
-        .cascadeException(var8, "kc.A(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final void method1337(int var1, boolean var2, int var3) {
-    try {
-      if (!var2) {
-        this.method1337(-7, false, 66);
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "kc.E(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final void method1335(int var1, int var2, int var3) {
-    try {
-      int var4 = var2 * this.anInt2646 >> 12;
-      if (var3 != 4898) {
-        this.anInt2644 = -39;
-      }
-
-      int var7 = this.anInt2647 * var1 >> 12;
-      int var6 = this.anInt2644 * var1 >> 12;
-      int var5 = this.anInt2636 * var2 >> 12;
-      TextureSampler24
-        .method223(true, this.anInt1106, var4, var6, var7, this.anInt1104, this.anInt1101, var5);
-    } catch (RuntimeException var8) {
-      throw AbstractGameWorld
-        .cascadeException(var8, "kc.D(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 

@@ -1,11 +1,13 @@
 final class SomethingAudio {
 
 
+  private static GameString aClass94_1998 =
+    SpawnedGameObject.createString("Connecting to update server");
   static int anInt1996;
   static SoftwareFont aClass3_Sub28_Sub17_Sub1_2000;
-  static GameString aClass94_2002 = SpawnedGameObject.createString("Chargement des fichiers config )2 ");
+  static GameString aClass94_2002 =
+    SpawnedGameObject.createString("Chargement des fichiers config )2 ");
   static GameString aClass94_2003 = SpawnedGameObject.createString("_labels");
-  private static GameString aClass94_1998 = SpawnedGameObject.createString("Connecting to update server");
   static GameString CONNECTING_TO_UPDATE_SERVER = aClass94_1998;
   private int anInt1997;
   private int[][] anIntArrayArray1999;
@@ -54,43 +56,6 @@ final class SomethingAudio {
     }
   }
 
-  static final long method2174(int var0, int var1, int var2) {
-    SceneGraphTile var3 = SomethingTexture1.sceneGraphTiles[var0][var1][var2];
-    return var3 != null && var3.aClass70_2234 != null ? var3.aClass70_2234.key : 0L;
-  }
-
-  public static void method2175(byte var0) {
-    try {
-      aClass94_2002 = null;
-      CONNECTING_TO_UPDATE_SERVER = null;
-      aClass3_Sub28_Sub17_Sub1_2000 = null;
-      if (var0 == -110) {
-        aClass94_2003 = null;
-        aClass94_1998 = null;
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "vj.F(" + var0 + ')');
-    }
-  }
-
-  static final SoftwareDirectColorSprite[] method2176(int var0, int var1, int var2,
-                                                      FileUnpacker var3) {
-    try {
-      if (SomethingTexture4.loadSprites(var3, var0, var2, -30901)) {
-        if (var1 != 32767) {
-          method2176(-111, 55, -18, null);
-        }
-
-        return SomethingQuickChatK.createSprites();
-      } else {
-        return null;
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "vj.A(" + var0 + ',' + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
-    }
-  }
-
   final byte[] method2173(byte[] var1, byte var2) {
     try {
       int var3 = 53 % ((var2 - -39) / 50);
@@ -134,8 +99,8 @@ final class SomethingAudio {
 
       return var1;
     } catch (RuntimeException var12) {
-      throw AbstractGameWorld
-        .cascadeException(var12, "vj.E(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var12,
+        "vj.E(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
     }
   }
 
@@ -164,6 +129,43 @@ final class SomethingAudio {
       }
     } catch (RuntimeException var4) {
       throw AbstractGameWorld.cascadeException(var4, "vj.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  static final long method2174(int var0, int var1, int var2) {
+    SceneGraphTile var3 = SomethingTexture1.sceneGraphTiles[var0][var1][var2];
+    return var3 != null && var3.aClass70_2234 != null ? var3.aClass70_2234.key : 0L;
+  }
+
+  public static void method2175(byte var0) {
+    try {
+      aClass94_2002 = null;
+      CONNECTING_TO_UPDATE_SERVER = null;
+      aClass3_Sub28_Sub17_Sub1_2000 = null;
+      if (var0 == -110) {
+        aClass94_2003 = null;
+        aClass94_1998 = null;
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "vj.F(" + var0 + ')');
+    }
+  }
+
+  static final SoftwareDirectColorSprite[] method2176(int var0, int var1, int var2,
+                                                      FileUnpacker var3) {
+    try {
+      if (SomethingTexture4.loadSprites(var3, var0, var2, -30901)) {
+        if (var1 != 32767) {
+          method2176(-111, 55, -18, null);
+        }
+
+        return SomethingQuickChatK.createSprites();
+      } else {
+        return null;
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "vj.A(" + var0 + ',' + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
     }
   }
 

@@ -31,15 +31,15 @@ final class DummyClass36 extends DummyClass35 {
           int var12 = var10 * var2 - -(var3 * var11) >> 16;
           int var13 = var11 * var2 + -(var3 * var10) >> 16;
           if (!GlRenderer.useOpenGlRenderer) {
-            ((SoftwareDirectColorSprite) var1)
-              .method666(var0.anInt168 / 2 + var6 - -var12 + -(var1.anInt3697 / 2),
-                -(var1.anInt3706 / 2) + var0.anInt193 / 2 + var4 + -var13, var0.anIntArray207,
-                var0.anIntArray291);
+            ((SoftwareDirectColorSprite) var1).method666(
+              var0.anInt168 / 2 + var6 - -var12 + -(var1.anInt3697 / 2),
+              -(var1.anInt3706 / 2) + var0.anInt193 / 2 + var4 + -var13, var0.anIntArray207,
+              var0.anIntArray291);
           } else {
-            ((GlDirectColorSprite) var1)
-              .method645(var0.anInt168 / 2 + var6 + var12 - var1.anInt3697 / 2,
-                var0.anInt193 / 2 + var4 - (var13 + var1.anInt3706 / 2),
-                (GlDirectColorSprite) var0.method866((byte) -113, false));
+            ((GlDirectColorSprite) var1).method645(
+              var0.anInt168 / 2 + var6 + var12 - var1.anInt3697 / 2,
+              var0.anInt193 / 2 + var4 - (var13 + var1.anInt3706 / 2),
+              (GlDirectColorSprite) var0.method866((byte) -113, false));
           }
 
         }

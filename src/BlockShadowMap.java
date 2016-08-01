@@ -27,10 +27,6 @@ final class BlockShadowMap {
     var1.glTexParameteri(3553, 10243, '\u812f');
   }
 
-  public static void clear() {
-    aByteArray2111 = null;
-  }
-
   final void update(int[][] heights, int x, int y) {
     Buffer vertexBuffers = new Buffer(1620);
 
@@ -191,5 +187,9 @@ final class BlockShadowMap {
 
       var1.glDrawElements(4, 384, 5125, this.elementBuffer);
     }
+  }
+
+  public static void clear() {
+    aByteArray2111 = null;
   }
 }

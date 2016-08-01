@@ -11,22 +11,46 @@ final class TextureSampler21 extends AbstractTextureSampler {
     super(3, false);
   }
 
-  static final void method194(int var0, int var1, int var2, int var3, int var4, int var5, int var6,
-                              int var7) {
+  final int[] method154(int var1, byte var2) {
     try {
-      if (~DummyClass55.anInt1425 >= ~var7 && GlTexture2d.anInt3765 >= var6
-        && var4 >= DummyClass13.anInt2020 && var1 <= LightIntensity.anInt902) {
-        TextureSampler4.method262(var3, 119, var4, var1, var2, var0, var6, var7);
-      } else {
-        DummyClass15.method2062(var6, var2, var5 + -4185, var1, var0, var3, var4, var7);
+      int[] var3 = this.monoChromaticImageCache.method1709(-16409, var1);
+      int var4 = 51 / ((30 - var2) / 36);
+      if (this.monoChromaticImageCache.aBoolean1580) {
+        int[] var5 = this.method152(0, var1, 32755);
+        int[] var6 = this.method152(1, var1, 32755);
+        int[] var7 = this.method152(2, var1, 32755);
+
+        for (int var8 = 0; ~SomethingLight0.anInt1559 < ~var8; ++var8) {
+          int var9 = var7[var8];
+          if (4096 == var9) {
+            var3[var8] = var5[var8];
+          } else if (~var9 != -1) {
+            var3[var8] = var9 * var5[var8] - -((-var9 + 4096) * var6[var8]) >> 12;
+          } else {
+            var3[var8] = var6[var8];
+          }
+        }
       }
 
-      if (var5 == 4096) {
+      return var3;
+    } catch (RuntimeException var10) {
+      throw AbstractGameWorld.cascadeException(var10, "bl.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void parseConfig(int var1, Buffer var2, boolean var3) {
+    try {
+      if (var1 == 0) {
+        this.monoChromatic = var2.readUnsignedByte() == 1;
       }
-    } catch (RuntimeException var9) {
-      throw AbstractGameWorld.cascadeException(var9,
-        "bl.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6
-          + ',' + var7 + ')');
+
+      if (!var3) {
+        this.parseConfig(118, null, true);
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "bl.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
     }
   }
 
@@ -78,46 +102,22 @@ final class TextureSampler21 extends AbstractTextureSampler {
     }
   }
 
-  final void parseConfig(int var1, Buffer var2, boolean var3) {
+  static final void method194(int var0, int var1, int var2, int var3, int var4, int var5, int var6,
+                              int var7) {
     try {
-      if (var1 == 0) {
-        this.monoChromatic = var2.readUnsignedByte() == 1;
+      if (~DummyClass55.anInt1425 >= ~var7 && GlTexture2d.anInt3765 >= var6
+        && var4 >= DummyClass13.anInt2020 && var1 <= LightIntensity.anInt902) {
+        TextureSampler4.method262(var3, 119, var4, var1, var2, var0, var6, var7);
+      } else {
+        DummyClass15.method2062(var6, var2, var5 + -4185, var1, var0, var3, var4, var7);
       }
 
-      if (!var3) {
-        this.parseConfig(118, null, true);
+      if (var5 == 4096) {
       }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "bl.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
-    }
-  }
-
-  final int[] method154(int var1, byte var2) {
-    try {
-      int[] var3 = this.monoChromaticImageCache.method1709(-16409, var1);
-      int var4 = 51 / ((30 - var2) / 36);
-      if (this.monoChromaticImageCache.aBoolean1580) {
-        int[] var5 = this.method152(0, var1, 32755);
-        int[] var6 = this.method152(1, var1, 32755);
-        int[] var7 = this.method152(2, var1, 32755);
-
-        for (int var8 = 0; ~SomethingLight0.anInt1559 < ~var8; ++var8) {
-          int var9 = var7[var8];
-          if (4096 == var9) {
-            var3[var8] = var5[var8];
-          } else if (~var9 != -1) {
-            var3[var8] = var9 * var5[var8] - -((-var9 + 4096) * var6[var8]) >> 12;
-          } else {
-            var3[var8] = var6[var8];
-          }
-        }
-      }
-
-      return var3;
-    } catch (RuntimeException var10) {
-      throw AbstractGameWorld.cascadeException(var10, "bl.D(" + var1 + ',' + var2 + ')');
+    } catch (RuntimeException var9) {
+      throw AbstractGameWorld.cascadeException(var9,
+        "bl.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6
+          + ',' + var7 + ')');
     }
   }
 

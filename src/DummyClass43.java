@@ -100,8 +100,8 @@ final class DummyClass43 {
             if (~AudioStreamEncoder4.anInt3507 < -1 && null == DummyClass36.aClass15_2613) {
               DummyClass36.aClass15_2613 = new AudioWorker();
               DummyClass36.aClass15_2613.aClass87_350 = var1;
-              var1
-                .createThread(var4 ^ 14, AudioStreamEncoder4.anInt3507, DummyClass36.aClass15_2613);
+              var1.createThread(var4 ^ 14, AudioStreamEncoder4.anInt3507,
+                DummyClass36.aClass15_2613);
             }
 
             if (DummyClass36.aClass15_2613 != null) {
@@ -152,8 +152,8 @@ final class DummyClass43 {
 
       DummyClass39.aClass153_737 = var0;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "id.E(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "id.E(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 

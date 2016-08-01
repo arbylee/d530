@@ -5,10 +5,47 @@ final class PlayerVariable {
   static FileUnpacker aClass153_557;
   static int[][][] anIntArrayArrayArray558;
   static GameString aClass94_559 = SpawnedGameObject.createString("m-Ochte mit Ihnen handeln)3");
-  static GameString aClass94_560 = SpawnedGameObject.createString(" zuerst von Ihrer Freunde)2Liste(Q");
+  static GameString aClass94_560 =
+    SpawnedGameObject.createString(" zuerst von Ihrer Freunde)2Liste(Q");
   static int mouseWheelOffset = 0;
   static int anInt562;
   int anInt556 = 0;
+
+  final void method970(int var1, Buffer var2) {
+    try {
+      while (true) {
+        int var3 = var2.readUnsignedByte();
+        if (0 == var3) {
+          if (var1 != -20638) {
+            method969(null, 55);
+          }
+
+          return;
+        }
+
+        this.method972(var2, (byte) -117, var3);
+      }
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "eh.B(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  private final void method972(Buffer var1, byte var2, int var3) {
+    try {
+      if (var2 > -86) {
+        this.method970(-83, null);
+      }
+
+      if (~var3 == -6) {
+        this.anInt556 = var1.readUnsignedShort();
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "eh.F(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
+    }
+  }
 
   static final void method968(int var0) {
     try {
@@ -46,8 +83,8 @@ final class PlayerVariable {
       }
 
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "eh.D(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "eh.D(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -65,9 +102,10 @@ final class PlayerVariable {
 
       int var23;
       for (var23 = 0; var23 < var22.length; ++var23) {
-        var22[var23] = BufferData
-          .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18, (byte) -125, var6,
-            false, var15, var2, var12, var20[var23 + var23], var4, var20[var23 + var23 + 1]);
+        var22[var23] =
+          BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+            (byte) -125, var6, false, var15, var2, var12, var20[var23 + var23], var4,
+            var20[var23 + var23 + 1]);
       }
 
       if (var9 == 88) {
@@ -75,21 +113,17 @@ final class PlayerVariable {
         if (var10) {
           int var24;
           if (1 == var11) {
-            var23 = BufferData
-              .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18, (byte) -122,
-                var6, true, var15, var2, var12, 64, var4, 128);
-            var24 = BufferData
-              .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18, (byte) -114,
-                var6, true, var15, var2, var12, 128, var4, 64);
+            var23 = BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+              (byte) -122, var6, true, var15, var2, var12, 64, var4, 128);
+            var24 = BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+              (byte) -114, var6, true, var15, var2, var12, 128, var4, 64);
             var21 = new int[] {var24, var23, var22[2], var23, var22[0], var22[2]};
           } else if (2 == var11) {
             var21 = new int[6];
-            var23 = BufferData
-              .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18, (byte) -121,
-                var6, true, var15, var2, var12, 128, var4, 128);
-            var24 = BufferData
-              .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18, (byte) -128,
-                var6, true, var15, var2, var12, 64, var4, 0);
+            var23 = BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+              (byte) -121, var6, true, var15, var2, var12, 128, var4, 128);
+            var24 = BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+              (byte) -128, var6, true, var15, var2, var12, 64, var4, 0);
             var21[2] = var23;
             var21[0] = var22[0];
             var21[5] = var22[0];
@@ -99,9 +133,9 @@ final class PlayerVariable {
           } else if (~var11 != -4) {
             if (~var11 == -5) {
               var21 = new int[3];
-              var23 = BufferData
-                .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18, (byte) -115,
-                  var6, true, var15, var2, var12, 0, var4, 128);
+              var23 =
+                BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+                  (byte) -115, var6, true, var15, var2, var12, 0, var4, 128);
               var21[0] = var22[3];
               var21[2] = var22[0];
               var21[1] = var23;
@@ -109,11 +143,11 @@ final class PlayerVariable {
               if (~var11 != -7) {
                 if (~var11 == -8) {
                   var21 = new int[6];
-                  var23 = BufferData
-                    .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+                  var23 =
+                    BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
                       (byte) -126, var6, true, var15, var2, var12, 0, var4, 128);
-                  var24 = BufferData
-                    .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+                  var24 =
+                    BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
                       (byte) -117, var6, true, var15, var2, var12, 128, var4, 0);
                   var21[3] = var23;
                   var21[2] = var23;
@@ -123,21 +157,21 @@ final class PlayerVariable {
                   var21[5] = var22[1];
                 } else if (var11 == 8) {
                   var21 = new int[3];
-                  var23 = BufferData
-                    .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+                  var23 =
+                    BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
                       (byte) -117, var6, true, var15, var2, var12, 0, var4, 0);
                   var21[2] = var22[4];
                   var21[0] = var22[3];
                   var21[1] = var23;
                 } else if (var11 == 9) {
-                  var23 = BufferData
-                    .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+                  var23 =
+                    BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
                       (byte) -118, var6, true, var15, var2, var12, 128, var4, 64);
-                  var24 = BufferData
-                    .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+                  var24 =
+                    BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
                       (byte) -121, var6, true, var15, var2, var12, 96, var4, 32);
-                  int var25 = BufferData
-                    .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+                  int var25 =
+                    BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
                       (byte) -120, var6, true, var15, var2, var12, 64, var4, 0);
                   var21 = new int[] {
                     var24, var23, var22[4], var24, var22[4], var22[3], var24, var22[3], var22[2],
@@ -146,12 +180,12 @@ final class PlayerVariable {
                 } else if (10 != var11) {
                   if (-12 == ~var11) {
                     var21 = new int[12];
-                    var23 = BufferData
-                      .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
-                        (byte) -119, var6, true, var15, var2, var12, 0, var4, 64);
-                    var24 = BufferData
-                      .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
-                        (byte) -121, var6, true, var15, var2, var12, 128, var4, 64);
+                    var23 =
+                      BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13,
+                        var18, (byte) -119, var6, true, var15, var2, var12, 0, var4, 64);
+                    var24 =
+                      BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13,
+                        var18, (byte) -121, var6, true, var15, var2, var12, 128, var4, 64);
                     var21[5] = var23;
                     var21[1] = var23;
                     var21[8] = var23;
@@ -167,8 +201,8 @@ final class PlayerVariable {
                   }
                 } else {
                   var21 = new int[9];
-                  var23 = BufferData
-                    .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+                  var23 =
+                    BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
                       (byte) -120, var6, true, var15, var2, var12, 0, var4, 128);
                   var21[0] = var22[2];
                   var21[8] = var22[0];
@@ -182,11 +216,11 @@ final class PlayerVariable {
                 }
               } else {
                 var21 = new int[6];
-                var23 = BufferData
-                  .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+                var23 =
+                  BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
                     (byte) -123, var6, true, var15, var2, var12, 128, var4, 0);
-                var24 = BufferData
-                  .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+                var24 =
+                  BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
                     (byte) -115, var6, true, var15, var2, var12, 128, var4, 128);
                 var21[1] = var23;
                 var21[0] = var22[3];
@@ -197,21 +231,19 @@ final class PlayerVariable {
               }
             } else {
               var21 = new int[3];
-              var23 = BufferData
-                .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18, (byte) -112,
-                  var6, true, var15, var2, var12, 128, var4, 128);
+              var23 =
+                BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+                  (byte) -112, var6, true, var15, var2, var12, 128, var4, 128);
               var21[1] = var23;
               var21[0] = var22[2];
               var21[2] = var22[3];
             }
           } else {
             var21 = new int[6];
-            var23 = BufferData
-              .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18, (byte) -114,
-                var6, true, var15, var2, var12, 0, var4, 128);
-            var24 = BufferData
-              .method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18, (byte) -115,
-                var6, true, var15, var2, var12, 64, var4, 0);
+            var23 = BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+              (byte) -114, var6, true, var15, var2, var12, 0, var4, 128);
+            var24 = BufferData.method1734(var19, 0.0F, var16, var17, null, var1, var3, var13, var18,
+              (byte) -115, var6, true, var15, var2, var12, 64, var4, 0);
             var21[4] = var24;
             var21[1] = var22[1];
             var21[0] = var22[2];
@@ -247,42 +279,6 @@ final class PlayerVariable {
 
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "eh.E(" + var0 + ')');
-    }
-  }
-
-  final void method970(int var1, Buffer var2) {
-    try {
-      while (true) {
-        int var3 = var2.readUnsignedByte();
-        if (0 == var3) {
-          if (var1 != -20638) {
-            method969(null, 55);
-          }
-
-          return;
-        }
-
-        this.method972(var2, (byte) -117, var3);
-      }
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "eh.B(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  private final void method972(Buffer var1, byte var2, int var3) {
-    try {
-      if (var2 > -86) {
-        this.method970(-83, null);
-      }
-
-      if (~var3 == -6) {
-        this.anInt556 = var1.readUnsignedShort();
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "eh.F(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
     }
   }
 

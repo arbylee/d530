@@ -1,10 +1,10 @@
 final class DummyHashTable {
 
+  private static GameString aClass94_1686 = SpawnedGameObject.createString("shake:");
   static int anInt1682 = 1;
   static ObjectCache aClass93_1683 = new ObjectCache(64);
   static boolean aBoolean1685 = true;
   static GameString aClass94_1687 = SpawnedGameObject.createString("(Z");
-  private static GameString aClass94_1686 = SpawnedGameObject.createString("shake:");
   static GameString aClass94_1688 = aClass94_1686;
   static GameString aClass94_1689 = aClass94_1686;
   private SubNode[] aClass3_Sub28Array1684;
@@ -71,9 +71,9 @@ final class DummyHashTable {
             }
 
             long var13 = (long) (1610612736 + (var0 << 7) + var2);
-            TextureSampler30.method213(GameWorldSomething.currentPlane, var2, var0, BufferData
-                .method1736(GameWorldSomething.currentPlane, 1, 64 + 128 * var2, 64 + var0 * 128),
-              var5.aClass140_Sub7_3676, var13, var12, var14);
+            TextureSampler30.method213(GameWorldSomething.currentPlane, var2, var0,
+              BufferData.method1736(GameWorldSomething.currentPlane, 1, 64 + 128 * var2,
+                64 + var0 * 128), var5.aClass140_Sub7_3676, var13, var12, var14);
           } else {
             GameObjectConfig.method1688(GameWorldSomething.currentPlane, var2, var0);
           }
@@ -82,8 +82,8 @@ final class DummyHashTable {
         GameObjectConfig.method1688(GameWorldSomething.currentPlane, var2, var0);
       }
     } catch (RuntimeException var11) {
-      throw AbstractGameWorld
-        .cascadeException(var11, "rm.E(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var11,
+        "rm.E(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -141,13 +141,12 @@ final class DummyHashTable {
       int var15;
       if (GlRenderer.useOpenGlRenderer) {
         GlModel var14 = (GlModel) var9;
-        if (var6 != BufferData
-          .method1736(GameWorldSomething.currentPlane, 1, var4 + var17, var2 + var12)
-          || var6 != BufferData
-          .method1736(GameWorldSomething.currentPlane, 1, var4 - -var11, var13 + var2)) {
+        if (var6 != BufferData.method1736(GameWorldSomething.currentPlane, 1, var4 + var17,
+          var2 + var12) || var6 != BufferData.method1736(GameWorldSomething.currentPlane, 1,
+          var4 - -var11, var13 + var2)) {
           for (var15 = 0; ~var15 > ~var14.vertexCCC; ++var15) {
-            var14.vy[var15] += BufferData
-              .method1736(GameWorldSomething.currentPlane, 1, var14.vx[var15] + var4,
+            var14.vy[var15] +=
+              BufferData.method1736(GameWorldSomething.currentPlane, 1, var14.vx[var15] + var4,
                 var14.vz[var15] + var2) - var6;
           }
 
@@ -156,14 +155,12 @@ final class DummyHashTable {
         }
       } else {
         SoftwareModel var18 = (SoftwareModel) var9;
-        if (var6 != BufferData
-          .method1736(GameWorldSomething.currentPlane, 1, var17 + var4, var12 + var2)
-          || var6 != BufferData
-          .method1736(GameWorldSomething.currentPlane, 1, var4 - -var11, var13 + var2)) {
+        if (var6 != BufferData.method1736(GameWorldSomething.currentPlane, 1, var17 + var4,
+          var12 + var2) || var6 != BufferData.method1736(GameWorldSomething.currentPlane, 1,
+          var4 - -var11, var13 + var2)) {
           for (var15 = 0; var18.anInt3891 > var15; ++var15) {
-            var18.anIntArray3883[var15] += BufferData
-              .method1736(GameWorldSomething.currentPlane, 1, var4 + var18.anIntArray3885[var15],
-                var18.anIntArray3895[var15] + var2) - var6;
+            var18.anIntArray3883[var15] += BufferData.method1736(GameWorldSomething.currentPlane, 1,
+              var4 + var18.anIntArray3885[var15], var18.anIntArray3895[var15] + var2) - var6;
           }
 
           var18.aBoolean3897 = false;
@@ -200,9 +197,8 @@ final class DummyHashTable {
             for (int var8 = 0; var8 < var6.anInt2223; ++var8) {
               SceneSomething var9 = var6.sceneGraphNodes[var8];
               if (var9 != null && var9.sceneNode.method1865()) {
-                TextureSampler30
-                  .method214(var9.sceneNode, var3, var4, var5, var9.anInt495 - var9.anInt483 + 1,
-                    var9.anInt481 - var9.anInt478 + 1);
+                TextureSampler30.method214(var9.sceneNode, var3, var4, var5,
+                  var9.anInt495 - var9.anInt483 + 1, var9.anInt481 - var9.anInt478 + 1);
                 var9.sceneNode = var9.sceneNode.method1861(var0, var1, var2);
               }
             }

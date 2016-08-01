@@ -22,8 +22,8 @@ final class ClassCheckRequest extends Node {
         MapScene.method75(SceneNode.aClass11ArrayArray1834[var2], true, var1);
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "ed.A(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "ed.A(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -42,14 +42,13 @@ final class ClassCheckRequest extends Node {
         int var6 = 0 + TextureCache.localPlayer.anInt2819 / 32 + 48;
         int var7 = 0 + -(TextureCache.localPlayer.anInt2829 / 32) + 464;
         if (!GlRenderer.useOpenGlRenderer) {
-          ((SoftwareDirectColorSprite) GZipDecompressor.aClass3_Sub28_Sub16_812)
-            .method664(var3, var2, var4.anInt168, var4.anInt193, var6, var7, var19,
-              256 - -Something3d2.anInt3020, var4.anIntArray207, var4.anIntArray291);
+          ((SoftwareDirectColorSprite) GZipDecompressor.aClass3_Sub28_Sub16_812).method664(var3,
+            var2, var4.anInt168, var4.anInt193, var6, var7, var19, 256 - -Something3d2.anInt3020,
+            var4.anIntArray207, var4.anIntArray291);
         } else {
-          ((GlDirectColorSprite) GZipDecompressor.aClass3_Sub28_Sub16_812)
-            .draw(var3, var2, var4.anInt168, var4.anInt193, var6, var7, var19,
-              Something3d2.anInt3020 + 256,
-              (GlDirectColorSprite) var4.method866((byte) -113, false));
+          ((GlDirectColorSprite) GZipDecompressor.aClass3_Sub28_Sub16_812).draw(var3, var2,
+            var4.anInt168, var4.anInt193, var6, var7, var19, Something3d2.anInt3020 + 256,
+            (GlDirectColorSprite) var4.method866((byte) -113, false));
         }
 
         int var9;
@@ -126,9 +125,8 @@ final class ClassCheckRequest extends Node {
             }
           }
 
-          DummyClass36
-            .method1030(var4, Mobile.aClass3_Sub28_Sub16Array2839[var20.anInt1482], var11, var10,
-              var2, (byte) 11, var3);
+          DummyClass36.method1030(var4, Mobile.aClass3_Sub28_Sub16Array2839[var20.anInt1482], var11,
+            var10, var2, (byte) 11, var3);
         }
 
         for (var9 = 0; 104 > var9; ++var9) {
@@ -137,9 +135,8 @@ final class ClassCheckRequest extends Node {
             if (null != var25) {
               var12 = 2 + var9 * 4 + -(TextureCache.localPlayer.anInt2819 / 32);
               var13 = -(TextureCache.localPlayer.anInt2829 / 32) + 2 + 4 * var10;
-              DummyClass36
-                .method1030(var4, HashTableIterator.aClass3_Sub28_Sub16Array1136[0], var13, var12,
-                  var2, (byte) 11, var3);
+              DummyClass36.method1030(var4, HashTableIterator.aClass3_Sub28_Sub16Array1136[0],
+                var13, var12, var2, (byte) 11, var3);
             }
           }
         }
@@ -156,13 +153,11 @@ final class ClassCheckRequest extends Node {
               var12 = var21.anInt2819 / 32 - TextureCache.localPlayer.anInt2819 / 32;
               var13 = var21.anInt2829 / 32 + -(TextureCache.localPlayer.anInt2829 / 32);
               if (~var22.anInt1283 != 0) {
-                DummyClass36
-                  .method1030(var4, Mobile.aClass3_Sub28_Sub16Array2839[var22.anInt1283], var13,
-                    var12, var2, (byte) 11, var3);
+                DummyClass36.method1030(var4, Mobile.aClass3_Sub28_Sub16Array2839[var22.anInt1283],
+                  var13, var12, var2, (byte) 11, var3);
               } else {
-                DummyClass36
-                  .method1030(var4, HashTableIterator.aClass3_Sub28_Sub16Array1136[1], var13, var12,
-                    var2, (byte) 11, var3);
+                DummyClass36.method1030(var4, HashTableIterator.aClass3_Sub28_Sub16Array1136[1],
+                  var13, var12, var2, (byte) 11, var3);
               }
             }
           }
@@ -200,23 +195,19 @@ final class ClassCheckRequest extends Node {
             }
 
             if (var28) {
-              DummyClass36
-                .method1030(var4, HashTableIterator.aClass3_Sub28_Sub16Array1136[3], var12, var11,
-                  var2, (byte) 11, var3);
+              DummyClass36.method1030(var4, HashTableIterator.aClass3_Sub28_Sub16Array1136[3],
+                var12, var11, var2, (byte) 11, var3);
             } else if (!var31) {
               if (var32) {
-                DummyClass36
-                  .method1030(var4, HashTableIterator.aClass3_Sub28_Sub16Array1136[4], var12, var11,
-                    var2, (byte) 11, var3);
+                DummyClass36.method1030(var4, HashTableIterator.aClass3_Sub28_Sub16Array1136[4],
+                  var12, var11, var2, (byte) 11, var3);
               } else {
-                DummyClass36
-                  .method1030(var4, HashTableIterator.aClass3_Sub28_Sub16Array1136[2], var12, var11,
-                    var2, (byte) 11, var3);
+                DummyClass36.method1030(var4, HashTableIterator.aClass3_Sub28_Sub16Array1136[2],
+                  var12, var11, var2, (byte) 11, var3);
               }
             } else {
-              DummyClass36
-                .method1030(var4, HashTableIterator.aClass3_Sub28_Sub16Array1136[5], var12, var11,
-                  var2, (byte) 11, var3);
+              DummyClass36.method1030(var4, HashTableIterator.aClass3_Sub28_Sub16Array1136[5],
+                var12, var11, var2, (byte) 11, var3);
             }
           }
         }
@@ -259,19 +250,16 @@ final class ClassCheckRequest extends Node {
         if (DummyClass45.anInt987 != 0) {
           var9 = 4 * DummyClass45.anInt987 + (2 - TextureCache.localPlayer.anInt2819 / 32);
           var10 = 2 + 4 * DummyClass38.anInt733 - TextureCache.localPlayer.anInt2829 / 32;
-          DummyClass36
-            .method1030(var4, DummyClass38.aClass3_Sub28_Sub16_736, var10, var9, var2, (byte) 11,
-              var3);
+          DummyClass36.method1030(var4, DummyClass38.aClass3_Sub28_Sub16_736, var10, var9, var2,
+            (byte) 11, var3);
         }
 
         if (!GlRenderer.useOpenGlRenderer) {
-          DummyClass47
-            .method1323(-1 + var4.anInt168 / 2 + var3, -1 + var4.anInt193 / 2 + var2, 3, 3,
-              16777215);
+          DummyClass47.method1323(-1 + var4.anInt168 / 2 + var3, -1 + var4.anInt193 / 2 + var2, 3,
+            3, 16777215);
         } else {
-          GlUtils
-            .fillQuad(-1 + (var3 - -(var4.anInt168 / 2)), -1 + var2 - -(var4.anInt193 / 2), 3, 3,
-              16777215);
+          GlUtils.fillQuad(-1 + (var3 - -(var4.anInt168 / 2)), -1 + var2 - -(var4.anInt193 / 2), 3,
+            3, 16777215);
         }
       } else if (!GlRenderer.useOpenGlRenderer) {
         DummyClass47.method1332(var3, var2, 0, var4.anIntArray207, var4.anIntArray291);
@@ -297,10 +285,10 @@ final class ClassCheckRequest extends Node {
     try {
       if (!var0) {
         if (~var4 <= ~DummyClass55.anInt1425 && var4 <= GlTexture2d.anInt3765) {
-          var2 = DummyClass59
-            .method1040(LightIntensity.anInt902, var2, (byte) 0, DummyClass13.anInt2020);
-          var1 = DummyClass59
-            .method1040(LightIntensity.anInt902, var1, (byte) 0, DummyClass13.anInt2020);
+          var2 = DummyClass59.method1040(LightIntensity.anInt902, var2, (byte) 0,
+            DummyClass13.anInt2020);
+          var1 = DummyClass59.method1040(LightIntensity.anInt902, var1, (byte) 0,
+            DummyClass13.anInt2020);
           TextureSampler15.method244(2, var2, var4, var1, var3);
         }
 
@@ -388,8 +376,8 @@ final class ClassCheckRequest extends Node {
 
       return (var0 >> 1) + (var2 >> 5 << 7) + (var3 >> 2 << 10);
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ed.D(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "ed.D(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -429,8 +417,7 @@ final class ClassCheckRequest extends Node {
           --SomethingLight0.anInt1552;
 
           for (int var2 = var1; var2 < SomethingLight0.anInt1552; ++var2) {
-            Inventory.anIntArray2550[var2] =
-              Inventory.anIntArray2550[var2 - -1];
+            Inventory.anIntArray2550[var2] = Inventory.anIntArray2550[var2 - -1];
             TextureCache.aClass135Array2131[var2] = TextureCache.aClass135Array2131[var2 + 1];
             SomethingIndex150.anIntArray2068[var2] = SomethingIndex150.anIntArray2068[1 + var2];
             GameString.anIntArray2157[var2] = GameString.anIntArray2157[1 + var2];
@@ -500,9 +487,8 @@ final class ClassCheckRequest extends Node {
 
       if (MidiSomething.aBoolean1158 && !BitVariable.method1391(-1)) {
         if (0 != BZipDecompressorState.anInt120 && AbstractFrameRegulator.anInt1691 != -1) {
-          SceneSomething2
-            .method1285(SomethingTexture1.fileUnpacker6, false, AbstractFrameRegulator.anInt1691, 0,
-              false, BZipDecompressorState.anInt120);
+          SceneSomething2.method1285(SomethingTexture1.fileUnpacker6, false,
+            AbstractFrameRegulator.anInt1691, 0, false, BZipDecompressorState.anInt120);
         }
 
         MidiSomething.aBoolean1158 = false;

@@ -37,6 +37,42 @@ final class InventoryConfig extends SubNode {
   static GameString aClass94_3656 = SpawnedGameObject.createString("Impossible de trouver ");
   int size = 0;
 
+  final void method610(Buffer var1, int var2) {
+    try {
+      if (var2 != 0) {
+        aClass94_3649 = null;
+      }
+
+      while (true) {
+        int var3 = var1.readUnsignedByte();
+        if (0 == var3) {
+          return;
+        }
+
+        this.method614(var1, var3, false);
+      }
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "md.E(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+    }
+  }
+
+  private final void method614(Buffer var1, int var2, boolean var3) {
+    try {
+      if (var3) {
+        this.method610(null, -89);
+      }
+
+      if (~var2 == -3) {
+        this.size = var1.readUnsignedShort();
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "md.A(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
   static final boolean method609(Widget var0, int var1) {
     try {
       if (null != var0.anIntArray275) {
@@ -70,8 +106,8 @@ final class InventoryConfig extends SubNode {
         return false;
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "md.C(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "md.C(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -127,42 +163,6 @@ final class InventoryConfig extends SubNode {
       }
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "md.B(" + var0 + ')');
-    }
-  }
-
-  final void method610(Buffer var1, int var2) {
-    try {
-      if (var2 != 0) {
-        aClass94_3649 = null;
-      }
-
-      while (true) {
-        int var3 = var1.readUnsignedByte();
-        if (0 == var3) {
-          return;
-        }
-
-        this.method614(var1, var3, false);
-      }
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "md.E(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
-    }
-  }
-
-  private final void method614(Buffer var1, int var2, boolean var3) {
-    try {
-      if (var3) {
-        this.method610(null, -89);
-      }
-
-      if (~var2 == -3) {
-        this.size = var1.readUnsignedShort();
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "md.A(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
     }
   }
 

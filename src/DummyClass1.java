@@ -222,8 +222,8 @@ final class DummyClass1 {
 
       }
     } catch (RuntimeException var8) {
-      throw AbstractGameWorld
-        .cascadeException(var8, "cm.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var8,
+        "cm.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

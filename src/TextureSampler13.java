@@ -13,6 +13,40 @@ final class TextureSampler13 extends AbstractTextureSampler {
     super(0, true);
   }
 
+  private final int method314(int var1, int var2, int var3) {
+    try {
+      if (var2 != 7001) {
+        this.method314(-83, 92, 48);
+      }
+
+      int var4 = var3 - -(57 * var1);
+      var4 ^= var4 << 1;
+      return 4096 + -((var4 * (var4 * var4 * 15731 - -789221) - -1376312589 & Integer.MAX_VALUE)
+        / 262144);
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "rj.O(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final int[] method154(int var1, byte var2) {
+    try {
+      int var4 = 104 % ((30 - var2) / 36);
+      int[] var3 = this.monoChromaticImageCache.method1709(-16409, var1);
+      if (this.monoChromaticImageCache.aBoolean1580) {
+        int var5 = DummyClass4.anIntArray2999[var1];
+
+        for (int var6 = 0; var6 < SomethingLight0.anInt1559; ++var6) {
+          var3[var6] = this.method314(var5, 7001, TextureCache.anIntArray2125[var6]) % 4096;
+        }
+      }
+
+      return var3;
+    } catch (RuntimeException var7) {
+      throw AbstractGameWorld.cascadeException(var7, "rj.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
   static final void method312(int var0, int var1, int var2, Player var3, int var4) {
     try {
       if (TextureCache.localPlayer != var3) {
@@ -44,8 +78,8 @@ final class TextureSampler13 extends AbstractTextureSampler {
             if (var3.combatLevel < var3.anInt3965) {
               var5 = RenderAnimation.concat(new GameString[] {
                 var3.getFullName(), var6 ?
-                SomethingScene
-                  .method1295(var3.combatLevel, (byte) -73, TextureCache.localPlayer.combatLevel) :
+                SomethingScene.method1295(var3.combatLevel, (byte) -73,
+                  TextureCache.localPlayer.combatLevel) :
                 MonoChromaticImageBuffer.aClass94_2562, SomethingScene.aClass94_1072, var13,
                 SomethingScene.toString(var3.combatLevel), DummyClass59.aClass94_673,
                 SomethingScene.toString(var3.anInt3965 + -var3.combatLevel),
@@ -54,8 +88,8 @@ final class TextureSampler13 extends AbstractTextureSampler {
             } else {
               var5 = RenderAnimation.concat(new GameString[] {
                 var3.getFullName(), var6 ?
-                SomethingScene
-                  .method1295(var3.combatLevel, (byte) -128, TextureCache.localPlayer.combatLevel) :
+                SomethingScene.method1295(var3.combatLevel, (byte) -128,
+                  TextureCache.localPlayer.combatLevel) :
                 MonoChromaticImageBuffer.aClass94_2562, SomethingScene.aClass94_1072, var13,
                 SomethingScene.toString(var3.combatLevel), AreaSoundEffect.aClass94_2335
               });
@@ -69,9 +103,9 @@ final class TextureSampler13 extends AbstractTextureSampler {
 
           int var12;
           if (~Something3d.anInt3012 == -2) {
-            ScriptState.method1177(DummyClass54.anInt1403, (long) var0, (byte) -80, RenderAnimation
-                .concat(
-                  new GameString[] {RenderAnimation.aClass94_378, DummyClass42.aClass94_892, var5}),
+            ScriptState.method1177(DummyClass54.anInt1403, (long) var0, (byte) -80,
+              RenderAnimation.concat(
+                new GameString[] {RenderAnimation.aClass94_378, DummyClass42.aClass94_892, var5}),
               var4, (short) 1, TextureSampler14.aClass94_3388, var2);
             ++MilliFrameRegulator.anInt2684;
           } else if (!SceneNode.aBoolean1837) {
@@ -80,8 +114,8 @@ final class TextureSampler13 extends AbstractTextureSampler {
                 ++Cursor.anInt880;
                 short var14 = 0;
                 boolean var16 = false;
-                if (~AbstractImageProducer.gameId == -1 && CollisionMap.playerOptions[var12]
-                  .method1531(TextureSampler36.aClass94_3427)) {
+                if (~AbstractImageProducer.gameId == -1
+                  && CollisionMap.playerOptions[var12].method1531(TextureSampler36.aClass94_3427)) {
                   if (var3.combatLevel > TextureCache.localPlayer.combatLevel) {
                     var14 = 2000;
                   }
@@ -99,17 +133,17 @@ final class TextureSampler13 extends AbstractTextureSampler {
 
                 short var15 = EnumStringFetcher.aShortArray2167[var12];
                 var15 += var14;
-                ScriptState
-                  .method1177(TextureSampler35.anIntArray3328[var12], (long) var0, (byte) -73,
-                    RenderAnimation.concat(new GameString[] {MonoChromaticImageBuffer.aClass94_2562, var5}),
-                    var4, var15, CollisionMap.playerOptions[var12], var2);
+                ScriptState.method1177(TextureSampler35.anIntArray3328[var12], (long) var0,
+                  (byte) -73, RenderAnimation.concat(
+                    new GameString[] {MonoChromaticImageBuffer.aClass94_2562, var5}), var4, var15,
+                  CollisionMap.playerOptions[var12], var2);
               }
             }
           } else if ((8 & Something3dRoot.anInt2051) != 0) {
             ++TextureSampler20.anInt3151;
-            ScriptState.method1177(BufferObject.anInt1887, (long) var0, (byte) -58, RenderAnimation
-                .concat(
-                  new GameString[] {DummyClass59.aClass94_676, DummyClass42.aClass94_892, var5}),
+            ScriptState.method1177(BufferObject.anInt1887, (long) var0, (byte) -58,
+              RenderAnimation.concat(
+                new GameString[] {DummyClass59.aClass94_676, DummyClass42.aClass94_892, var5}),
               var4, (short) 15, Parameter.aClass94_3621, var2);
           }
 
@@ -119,8 +153,8 @@ final class TextureSampler13 extends AbstractTextureSampler {
 
           for (var12 = 0; ~TextureSampler25.amountContextActions < ~var12; ++var12) {
             if (~TextureSampler27.aShortArray3095[var12] == -61) {
-              DummyClass8.aClass94Array4016[var12] =
-                RenderAnimation.concat(new GameString[] {MonoChromaticImageBuffer.aClass94_2562, var5});
+              DummyClass8.aClass94Array4016[var12] = RenderAnimation.concat(
+                new GameString[] {MonoChromaticImageBuffer.aClass94_2562, var5});
               break;
             }
           }
@@ -235,12 +269,12 @@ final class TextureSampler13 extends AbstractTextureSampler {
             if (~var3 == ~var18 && ~var17 <= ~var8 && var17 < 8 + var8 && var9 <= var16
               && 8 + var9 > var16) {
               GameObjectConfig var22 = DummyClass11.method2207(4, var12);
-              int var23 = VariableUpdate
-                .method121(var16 & 7, var4, var21, var22.anInt1485, var22.anInt1480, 1, 7 & var17)
-                + var5;
-              int var24 = SceneNode
-                .method1863(var22.anInt1480, var4, (byte) 126, var22.anInt1485, 7 & var17, var21,
-                  7 & var16) + var6;
+              int var23 =
+                VariableUpdate.method121(var16 & 7, var4, var21, var22.anInt1485, var22.anInt1480,
+                  1, 7 & var17) + var5;
+              int var24 =
+                SceneNode.method1863(var22.anInt1480, var4, (byte) 126, var22.anInt1485, 7 & var17,
+                  var21, 7 & var16) + var6;
               if (~var23 < -1 && var24 > 0 && -104 < ~var23 && var24 < 103) {
                 CollisionMap var25 = null;
                 if (!var7) {
@@ -254,9 +288,8 @@ final class TextureSampler13 extends AbstractTextureSampler {
                   }
                 }
 
-                DummyClass31
-                  .method1683(var1, !var7, var1, var7, var25, var12, var20, var23, (byte) 50, var24,
-                    3 & var21 + var4);
+                DummyClass31.method1683(var1, !var7, var1, var7, var25, var12, var20, var23,
+                  (byte) 50, var24, 3 & var21 + var4);
               }
             }
           }
@@ -268,40 +301,6 @@ final class TextureSampler13 extends AbstractTextureSampler {
           "{...}" :
           "null") + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6 + ',' + var7 + ',' + var8
           + ',' + var9 + ',' + var10 + ')');
-    }
-  }
-
-  private final int method314(int var1, int var2, int var3) {
-    try {
-      if (var2 != 7001) {
-        this.method314(-83, 92, 48);
-      }
-
-      int var4 = var3 - -(57 * var1);
-      var4 ^= var4 << 1;
-      return 4096 + -((var4 * (var4 * var4 * 15731 - -789221) - -1376312589 & Integer.MAX_VALUE)
-        / 262144);
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "rj.O(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final int[] method154(int var1, byte var2) {
-    try {
-      int var4 = 104 % ((30 - var2) / 36);
-      int[] var3 = this.monoChromaticImageCache.method1709(-16409, var1);
-      if (this.monoChromaticImageCache.aBoolean1580) {
-        int var5 = DummyClass4.anIntArray2999[var1];
-
-        for (int var6 = 0; var6 < SomethingLight0.anInt1559; ++var6) {
-          var3[var6] = this.method314(var5, 7001, TextureCache.anIntArray2125[var6]) % 4096;
-        }
-      }
-
-      return var3;
-    } catch (RuntimeException var7) {
-      throw AbstractGameWorld.cascadeException(var7, "rj.D(" + var1 + ',' + var2 + ')');
     }
   }
 

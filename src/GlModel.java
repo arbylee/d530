@@ -74,9 +74,9 @@ final class GlModel extends AbstractModel {
     this.vertexCounts = new int[model.amountVertices + 1];
 
     for (int face = 0; face < model.amountFaces; ++face) {
-      if ((model.normalTypes == null || model.normalTypes[face] != 2) && (
-        model.materials == null || model.materials[face] == -1
-          || !DummyClass40.textureCache.method12(model.materials[face] & '\uffff', -65))) {
+      if ((model.normalTypes == null || model.normalTypes[face] != 2) && (model.materials == null
+        || model.materials[face] == -1 || !DummyClass40.textureCache.method12(
+        model.materials[face] & '\uffff', -65))) {
         var5[this.anInt3852++] = face;
         ++this.vertexCounts[model.v0[face]];
         ++this.vertexCounts[model.v1[face]];
@@ -551,26 +551,27 @@ final class GlModel extends AbstractModel {
           this.method1907(model, var31, var86, var89.x, var89.y, var89.z, var89.c, var73, var78);
         var87 = model.v1[var70];
         VertexNormal var95 = model.vertexNormals[var87];
-        this.v1[var68] = this
-          .method1907(model, var87, var86 + (long) var81, var95.x, var95.y, var95.z, var95.c, var77,
-            var75);
+        this.v1[var68] =
+          this.method1907(model, var87, var86 + (long) var81, var95.x, var95.y, var95.z, var95.c,
+            var77, var75);
         int var92 = model.v2[var70];
         VertexNormal var91 = model.vertexNormals[var92];
-        this.v2[var68] = this
-          .method1907(model, var92, var86 + (long) var83, var91.x, var91.y, var91.z, var91.c, var82,
-            var79);
+        this.v2[var68] =
+          this.method1907(model, var92, var86 + (long) var83, var91.x, var91.y, var91.z, var91.c,
+            var82, var79);
       } else if (var28 == 1) {
         FaceNormal var85 = model.faceNormals[var70];
         long var84 = (long) ((var72 << 2) + (var85.x > 0 ? 1024 : 2048) + (var85.y + 256 << 12) + (
           var85.z + 256 << 22)) + ((long) (var27 << 24) + (long) (var67 << 8) + (long) var74 << 32);
-        this.v0[var68] = this
-          .method1907(model, model.v0[var70], var84, var85.x, var85.y, var85.z, 0, var73, var78);
-        this.v1[var68] = this
-          .method1907(model, model.v1[var70], var84 + (long) var81, var85.x, var85.y, var85.z, 0,
-            var77, var75);
-        this.v2[var68] = this
-          .method1907(model, model.v2[var70], var84 + (long) var83, var85.x, var85.y, var85.z, 0,
-            var82, var79);
+        this.v0[var68] =
+          this.method1907(model, model.v0[var70], var84, var85.x, var85.y, var85.z, 0, var73,
+            var78);
+        this.v1[var68] =
+          this.method1907(model, model.v1[var70], var84 + (long) var81, var85.x, var85.y, var85.z,
+            0, var77, var75);
+        this.v2[var68] =
+          this.method1907(model, model.v2[var70], var84 + (long) var83, var85.x, var85.y, var85.z,
+            0, var82, var79);
       }
 
       if (model.materials != null) {
@@ -626,274 +627,624 @@ final class GlModel extends AbstractModel {
     this.aFloatArray3847 = method1921(this.aFloatArray3847, this.amountVertices);
   }
 
-  private static final int method1901(float var0, float var1, float var2) {
-    float var3 = var0 < 0.0F ? -var0 : var0;
-    float var4 = var1 < 0.0F ? -var1 : var1;
-    float var5 = var2 < 0.0F ? -var2 : var2;
-    return var4 > var3 && var4 > var5 ?
-      (var1 > 0.0F ? 0 : 1) :
-      (var5 > var3 && var5 > var4 ? (var2 > 0.0F ? 2 : 3) : (var0 > 0.0F ? 4 : 5));
-  }
-
-  private static final void method1904(int var0, int var1, int var2, int var3, int var4, int var5,
-                                       float[] var6, float var7, int var8, float var9) {
-    var0 -= var3;
-    var1 -= var4;
-    var2 -= var5;
-    float var10 = (float) var0 * var6[0] + (float) var1 * var6[1] + (float) var2 * var6[2];
-    float var11 = (float) var0 * var6[3] + (float) var1 * var6[4] + (float) var2 * var6[5];
-    float var12 = (float) var0 * var6[6] + (float) var1 * var6[7] + (float) var2 * var6[8];
-    float var13 = (float) Math.atan2((double) var10, (double) var12) / 6.2831855F + 0.5F;
-    if (var7 != 1.0F) {
-      var13 *= var7;
-    }
-
-    float var14 = var11 + 0.5F + var9;
-    float var15;
-    if (var8 == 1) {
-      var15 = var13;
-      var13 = -var14;
-      var14 = var15;
-    } else if (var8 == 2) {
-      var13 = -var13;
-      var14 = -var14;
-    } else if (var8 == 3) {
-      var15 = var13;
-      var13 = var14;
-      var14 = -var15;
-    }
-
-    aFloat3863 = var13;
-    aFloat3866 = var14;
-  }
-
-  private static final int method1905(int var0, short var1, int var2, byte var3) {
-    int var4 = DummyClass40.hslTable[SoftwareModel.repackHSL(var0, var2)];
-    if (var1 != -1) {
-      int var5 = DummyClass40.textureCache.method19(93, var1 & '\uffff');
-      int var6;
-      int var8;
-      if (var5 != 0) {
-        if (var2 < 0) {
-          var6 = 0;
-        } else if (var2 > 127) {
-          var6 = 16777215;
-        } else {
-          var6 = 131586 * var2;
-        }
-
-        if (var5 == 256) {
-          var4 = var6;
-        } else {
-          var8 = 256 - var5;
-          var4 = ((var6 & 16711935) * var5 + (var4 & 16711935) * var8 & -16711936) + (
-            (var6 & '\uff00') * var5 + (var4 & '\uff00') * var8 & 16711680) >> 8;
-        }
-      }
-
-      var6 = DummyClass40.textureCache.method10(90, var1 & '\uffff');
-      if (var6 != 0) {
-        var6 += 256;
-        int var7 = ((var4 & 16711680) >> 16) * var6;
-        if (var7 > '\uffff') {
-          var7 = '\uffff';
-        }
-
-        var8 = ((var4 & '\uff00') >> 8) * var6;
-        if (var8 > '\uffff') {
-          var8 = '\uffff';
-        }
-
-        int var9 = (var4 & 255) * var6;
-        if (var9 > '\uffff') {
-          var9 = '\uffff';
-        }
-
-        var4 = (var7 << 8 & 16711680) + (var8 & '\uff00') + (var9 >> 8);
-      }
-    }
-
-    return (var4 << 8) + (255 - (var3 & 255));
-  }
-
-  private static final float[] method1906(int var0, int var1, int var2, int var3, float var4,
-                                          float var5, float var6) {
-    float[] var7 = new float[9];
-    float[] var8 = new float[9];
-    float var9 = (float) Math.cos((double) ((float) var3 * 0.024543693F));
-    float var10 = (float) Math.sin((double) ((float) var3 * 0.024543693F));
-    float var11 = 1.0F - var9;
-    var7[0] = var9;
-    var7[1] = 0.0F;
-    var7[2] = var10;
-    var7[3] = 0.0F;
-    var7[4] = 1.0F;
-    var7[5] = 0.0F;
-    var7[6] = -var10;
-    var7[7] = 0.0F;
-    var7[8] = var9;
-    float[] var12 = new float[9];
-    float var13 = 1.0F;
-    float var14 = 0.0F;
-    var9 = (float) var1 / 32767.0F;
-    var10 = -((float) Math.sqrt((double) (1.0F - var9 * var9)));
-    var11 = 1.0F - var9;
-    float var15 = (float) Math.sqrt((double) (var0 * var0 + var2 * var2));
-    if (var15 == 0.0F && var9 == 0.0F) {
-      var8 = var7;
+  final void method1902() {
+    if (this.aShortArray3810 == null) {
+      this.method1900();
     } else {
-      if (var15 != 0.0F) {
-        var13 = (float) (-var2) / var15;
-        var14 = (float) var0 / var15;
+      int var1;
+      for (var1 = 0; var1 < this.vertexCCC; ++var1) {
+        int var2 = this.vz[var1];
+        this.vz[var1] = this.vx[var1];
+        this.vx[var1] = -var2;
       }
 
-      var12[0] = var9 + var13 * var13 * var11;
-      var12[1] = var14 * var10;
-      var12[2] = var14 * var13 * var11;
-      var12[3] = -var14 * var10;
-      var12[4] = var9;
-      var12[5] = var13 * var10;
-      var12[6] = var13 * var14 * var11;
-      var12[7] = -var13 * var10;
-      var12[8] = var9 + var14 * var14 * var11;
-      var8[0] = var7[0] * var12[0] + var7[1] * var12[3] + var7[2] * var12[6];
-      var8[1] = var7[0] * var12[1] + var7[1] * var12[4] + var7[2] * var12[7];
-      var8[2] = var7[0] * var12[2] + var7[1] * var12[5] + var7[2] * var12[8];
-      var8[3] = var7[3] * var12[0] + var7[4] * var12[3] + var7[5] * var12[6];
-      var8[4] = var7[3] * var12[1] + var7[4] * var12[4] + var7[5] * var12[7];
-      var8[5] = var7[3] * var12[2] + var7[4] * var12[5] + var7[5] * var12[8];
-      var8[6] = var7[6] * var12[0] + var7[7] * var12[3] + var7[8] * var12[6];
-      var8[7] = var7[6] * var12[1] + var7[7] * var12[4] + var7[8] * var12[7];
-      var8[8] = var7[6] * var12[2] + var7[7] * var12[5] + var7[8] * var12[8];
-    }
+      for (var1 = 0; var1 < this.amountVertices; ++var1) {
+        short var3 = this.aShortArray3837[var1];
+        this.aShortArray3837[var1] = this.aShortArray3810[var1];
+        this.aShortArray3810[var1] = (short) (-var3);
+      }
 
-    var8[0] *= var4;
-    var8[1] *= var4;
-    var8[2] *= var4;
-    var8[3] *= var5;
-    var8[4] *= var5;
-    var8[5] *= var5;
-    var8[6] *= var6;
-    var8[7] *= var6;
-    var8[8] *= var6;
-    return var8;
+      this.aClass6_3835.aBoolean98 = false;
+      this.vertexPositionData.updated = false;
+      if (this.vertexNormalData != null) {
+        this.vertexNormalData.updated = false;
+      }
+
+    }
   }
 
-  private static final void method1910(int var0, int var1, int var2, int var3, int var4, int var5,
-                                       float[] var6, int var7, float var8) {
-    var0 -= var3;
-    var1 -= var4;
-    var2 -= var5;
-    float var9 = (float) var0 * var6[0] + (float) var1 * var6[1] + (float) var2 * var6[2];
-    float var10 = (float) var0 * var6[3] + (float) var1 * var6[4] + (float) var2 * var6[5];
-    float var11 = (float) var0 * var6[6] + (float) var1 * var6[7] + (float) var2 * var6[8];
-    float var12 = (float) Math.sqrt((double) (var9 * var9 + var10 * var10 + var11 * var11));
-    float var13 = (float) Math.atan2((double) var9, (double) var11) / 6.2831855F + 0.5F;
-    float var14 = (float) Math.asin((double) (var10 / var12)) / 3.1415927F + 0.5F + var8;
-    float var15;
-    if (var7 == 1) {
-      var15 = var13;
-      var13 = -var14;
-      var14 = var15;
-    } else if (var7 == 2) {
-      var13 = -var13;
-      var14 = -var14;
-    } else if (var7 == 3) {
-      var15 = var13;
-      var13 = var14;
-      var14 = -var15;
-    }
-
-    aFloat3867 = var13;
-    aFloat3860 = var14;
+  final int method1903() {
+    return this.aShort3849;
   }
 
-  private static final void method1913(int var0, int var1, int var2, int var3, int var4, int var5,
-                                       int var6, float[] var7, int var8, float var9, float var10,
-                                       float var11) {
-    var0 -= var3;
-    var1 -= var4;
-    var2 -= var5;
-    float var12 = (float) var0 * var7[0] + (float) var1 * var7[1] + (float) var2 * var7[2];
-    float var13 = (float) var0 * var7[3] + (float) var1 * var7[4] + (float) var2 * var7[5];
-    float var14 = (float) var0 * var7[6] + (float) var1 * var7[7] + (float) var2 * var7[8];
-    float var15;
-    float var16;
-    if (var6 == 0) {
-      var15 = var12 + var9 + 0.5F;
-      var16 = -var14 + var11 + 0.5F;
-    } else if (var6 == 1) {
-      var15 = var12 + var9 + 0.5F;
-      var16 = var14 + var11 + 0.5F;
-    } else if (var6 == 2) {
-      var15 = -var12 + var9 + 0.5F;
-      var16 = -var13 + var10 + 0.5F;
-    } else if (var6 == 3) {
-      var15 = var12 + var9 + 0.5F;
-      var16 = -var13 + var10 + 0.5F;
-    } else if (var6 == 4) {
-      var15 = var14 + var11 + 0.5F;
-      var16 = -var13 + var10 + 0.5F;
+  final int method1872() {
+    if (!this.aClass6_3835.aBoolean98) {
+      this.method1917();
+    }
+
+    return this.aClass6_3835.aShort96;
+  }
+
+  final int getMinimumY() {
+    if (!this.aClass6_3835.aBoolean98) {
+      this.method1917();
+    }
+
+    return this.aClass6_3835.aShort91;
+  }
+
+  final boolean method1873() {
+    if (this.anIntArrayArray3825 == null) {
+      return false;
     } else {
-      var15 = -var14 + var11 + 0.5F;
-      var16 = -var13 + var10 + 0.5F;
+      for (int var1 = 0; var1 < this.vertexCCC; ++var1) {
+        this.vx[var1] <<= 4;
+        this.vy[var1] <<= 4;
+        this.vz[var1] <<= 4;
+      }
+
+      anInt3859 = 0;
+      anInt3865 = 0;
+      anInt3862 = 0;
+      return true;
+    }
+  }
+
+  final void method1874() {
+    for (int var1 = 0; var1 < this.vertexCCC; ++var1) {
+      this.vx[var1] = -this.vx[var1];
+      this.vz[var1] = -this.vz[var1];
     }
 
-    float var17;
-    if (var8 == 1) {
-      var17 = var15;
-      var15 = -var16;
-      var16 = var17;
-    } else if (var8 == 2) {
-      var15 = -var15;
-      var16 = -var16;
-    } else if (var8 == 3) {
-      var17 = var15;
-      var15 = var16;
-      var16 = -var17;
+    this.aClass6_3835.aBoolean98 = false;
+    this.vertexPositionData.updated = false;
+  }
+
+  final void method1876(int var1) {
+    int var2 = DummyClass40.SINE_TABLE[var1];
+    int var3 = DummyClass40.COSINE_TABLE[var1];
+
+    for (int var4 = 0; var4 < this.vertexCCC; ++var4) {
+      int var5 = this.vz[var4] * var2 + this.vx[var4] * var3 >> 16;
+      this.vz[var4] = this.vz[var4] * var3 - this.vx[var4] * var2 >> 16;
+      this.vx[var4] = var5;
     }
 
-    aFloat3864 = var15;
-    aFloat3858 = var16;
+    this.aClass6_3835.aBoolean98 = false;
+    this.vertexPositionData.updated = false;
   }
 
-  public static void method1915() {
-    aLongArray3821 = null;
-    indicesBuffer = null;
-    aByteBuffer3834 = null;
-    aClass140_Sub1_Sub1_3842 = null;
-    aClass140_Sub1_Sub1_3850 = null;
-    aClass140_Sub1_Sub1_3853 = null;
-    aClass140_Sub1_Sub1_3854 = null;
-    aClass140_Sub1_Sub1_3855 = null;
-    aClass140_Sub1_Sub1_3856 = null;
-    screenCoordinatesX = null;
-    screenCoordinatesY = null;
+  final void method1879() {
+    for (int var1 = 0; var1 < this.vertexCCC; ++var1) {
+      this.vx[var1] = this.vx[var1] + 7 >> 4;
+      this.vy[var1] = this.vy[var1] + 7 >> 4;
+      this.vz[var1] = this.vz[var1] + 7 >> 4;
+    }
+
+    this.aClass6_3835.aBoolean98 = false;
+    this.vertexPositionData.updated = false;
   }
 
-  private static final float[] method1921(float[] var0, int var1) {
-    float[] var2 = new float[var1];
-    ArrayUtils.method1360(var0, 0, var2, 0, var1);
-    return var2;
-  }
+  final void scale(int var1, int var2, int var3) {
+    for (int var4 = 0; var4 < this.vertexCCC; ++var4) {
+      this.vx[var4] = this.vx[var4] * var1 >> 7;
+      this.vy[var4] = this.vy[var4] * var2 >> 7;
+      this.vz[var4] = this.vz[var4] * var3 >> 7;
+    }
 
-  private static final short[] method1928(short[] var0, int var1) {
-    short[] var2 = new short[var1];
-    ArrayUtils.method1361(var0, 0, var2, 0, var1);
-    return var2;
-  }
-
-  static final void method1929() {
-    aClass140_Sub1_Sub1_3842 = new GlModel();
-    aClass140_Sub1_Sub1_3850 = new GlModel();
-    aClass140_Sub1_Sub1_3853 = new GlModel();
-    aClass140_Sub1_Sub1_3854 = new GlModel();
-    aClass140_Sub1_Sub1_3855 = new GlModel();
-    aClass140_Sub1_Sub1_3856 = new GlModel();
+    this.aClass6_3835.aBoolean98 = false;
+    this.vertexPositionData.updated = false;
   }
 
   final AbstractModel method1882(boolean var1, boolean var2, boolean var3) {
     return this.method1923(var1, var2, var3, aClass140_Sub1_Sub1_3854, aClass140_Sub1_Sub1_3853);
+  }
+
+  final int method1883() {
+    if (!this.aClass6_3835.aBoolean98) {
+      this.method1917();
+    }
+
+    return this.aClass6_3835.aShort94;
+  }
+
+  final int method1884() {
+    if (!this.aClass6_3835.aBoolean98) {
+      this.method1917();
+    }
+
+    return this.aClass6_3835.aShort95;
+  }
+
+  final void rotateQuarterY() {
+    for (int var1 = 0; var1 < this.vertexCCC; ++var1) {
+      int var2 = this.vx[var1];
+      this.vx[var1] = this.vz[var1];
+      this.vz[var1] = -var2;
+    }
+
+    this.aClass6_3835.aBoolean98 = false;
+    this.vertexPositionData.updated = false;
+  }
+
+  final void method1886(int var1) {
+    int var2 = DummyClass40.SINE_TABLE[var1];
+    int var3 = DummyClass40.COSINE_TABLE[var1];
+
+    for (int var4 = 0; var4 < this.vertexCCC; ++var4) {
+      int var5 = this.vy[var4] * var2 + this.vx[var4] * var3 >> 16;
+      this.vy[var4] = this.vy[var4] * var3 - this.vx[var4] * var2 >> 16;
+      this.vx[var4] = var5;
+    }
+
+    this.aClass6_3835.aBoolean98 = false;
+    this.vertexPositionData.updated = false;
+  }
+
+  final int method1888() {
+    if (!this.aClass6_3835.aBoolean98) {
+      this.method1917();
+    }
+
+    return this.aClass6_3835.aShort93;
+  }
+
+  final void method1889(int var1, int var2, int var3, int var4) {
+    int var5;
+    int var6;
+    if (var1 == 0) {
+      var5 = 0;
+      anInt3859 = 0;
+      anInt3865 = 0;
+      anInt3862 = 0;
+
+      for (var6 = 0; var6 < this.vertexCCC; ++var6) {
+        anInt3859 += this.vx[var6];
+        anInt3865 += this.vy[var6];
+        anInt3862 += this.vz[var6];
+        ++var5;
+      }
+
+      if (var5 > 0) {
+        anInt3859 = anInt3859 / var5 + var2;
+        anInt3865 = anInt3865 / var5 + var3;
+        anInt3862 = anInt3862 / var5 + var4;
+      } else {
+        anInt3859 = var2;
+        anInt3865 = var3;
+        anInt3862 = var4;
+      }
+
+    } else if (var1 == 1) {
+      for (var5 = 0; var5 < this.vertexCCC; ++var5) {
+        this.vx[var5] += var2;
+        this.vy[var5] += var3;
+        this.vz[var5] += var4;
+      }
+
+    } else {
+      int var7;
+      int var8;
+      if (var1 == 2) {
+        for (var5 = 0; var5 < this.vertexCCC; ++var5) {
+          this.vx[var5] -= anInt3859;
+          this.vy[var5] -= anInt3865;
+          this.vz[var5] -= anInt3862;
+          if (var4 != 0) {
+            var6 = DummyClass40.SINE_TABLE[var4];
+            var7 = DummyClass40.COSINE_TABLE[var4];
+            var8 = this.vy[var5] * var6 + this.vx[var5] * var7 + 32767 >> 16;
+            this.vy[var5] = this.vy[var5] * var7 - this.vx[var5] * var6 + 32767 >> 16;
+            this.vx[var5] = var8;
+          }
+
+          if (var2 != 0) {
+            var6 = DummyClass40.SINE_TABLE[var2];
+            var7 = DummyClass40.COSINE_TABLE[var2];
+            var8 = this.vy[var5] * var7 - this.vz[var5] * var6 + 32767 >> 16;
+            this.vz[var5] = this.vy[var5] * var6 + this.vz[var5] * var7 + 32767 >> 16;
+            this.vy[var5] = var8;
+          }
+
+          if (var3 != 0) {
+            var6 = DummyClass40.SINE_TABLE[var3];
+            var7 = DummyClass40.COSINE_TABLE[var3];
+            var8 = this.vz[var5] * var6 + this.vx[var5] * var7 + 32767 >> 16;
+            this.vz[var5] = this.vz[var5] * var7 - this.vx[var5] * var6 + 32767 >> 16;
+            this.vx[var5] = var8;
+          }
+
+          this.vx[var5] += anInt3859;
+          this.vy[var5] += anInt3865;
+          this.vz[var5] += anInt3862;
+        }
+
+      } else if (var1 != 3) {
+        if (var1 == 5) {
+          for (var5 = 0; var5 < this.anInt3852; ++var5) {
+            var6 = (this.aByteArray3816[var5] & 255) + var2 * 8;
+            if (var6 < 0) {
+              var6 = 0;
+            } else if (var6 > 255) {
+              var6 = 255;
+            }
+
+            this.aByteArray3816[var5] = (byte) var6;
+          }
+
+          this.vertexColorData.updated = false;
+        } else if (var1 == 7) {
+          for (var5 = 0; var5 < this.anInt3852; ++var5) {
+            var6 = this.aShortArray3808[var5] & '\uffff';
+            var7 = var6 >> 10 & 63;
+            var8 = var6 >> 7 & 7;
+            int var9 = var6 & 127;
+            var7 = var7 + var2 & 63;
+            var8 += var3 / 4;
+            if (var8 < 0) {
+              var8 = 0;
+            } else if (var8 > 7) {
+              var8 = 7;
+            }
+
+            var9 += var4;
+            if (var9 < 0) {
+              var9 = 0;
+            } else if (var9 > 127) {
+              var9 = 127;
+            }
+
+            this.aShortArray3808[var5] = (short) (var7 << 10 | var8 << 7 | var9);
+          }
+
+          this.vertexColorData.updated = false;
+        }
+      } else {
+        for (var5 = 0; var5 < this.vertexCCC; ++var5) {
+          this.vx[var5] -= anInt3859;
+          this.vy[var5] -= anInt3865;
+          this.vz[var5] -= anInt3862;
+          this.vx[var5] = this.vx[var5] * var2 / 128;
+          this.vy[var5] = this.vy[var5] * var3 / 128;
+          this.vz[var5] = this.vz[var5] * var4 / 128;
+          this.vx[var5] += anInt3859;
+          this.vy[var5] += anInt3865;
+          this.vz[var5] += anInt3862;
+        }
+
+      }
+    }
+  }
+
+  final AbstractModel method1890(boolean var1, boolean var2, boolean var3) {
+    return this.method1923(var1, var2, var3, aClass140_Sub1_Sub1_3856, aClass140_Sub1_Sub1_3855);
+  }
+
+  final void method1891(int var1, int[] var2, int var3, int var4, int var5, boolean var6) {
+    int var7 = var2.length;
+    int var8;
+    int var9;
+    int var12;
+    int var13;
+    if (var1 == 0) {
+      var3 <<= 4;
+      var4 <<= 4;
+      var5 <<= 4;
+      var8 = 0;
+      anInt3859 = 0;
+      anInt3865 = 0;
+      anInt3862 = 0;
+
+      for (var9 = 0; var9 < var7; ++var9) {
+        int var20 = var2[var9];
+        if (var20 < this.anIntArrayArray3825.length) {
+          int[] var21 = this.anIntArrayArray3825[var20];
+
+          for (var12 = 0; var12 < var21.length; ++var12) {
+            var13 = var21[var12];
+            anInt3859 += this.vx[var13];
+            anInt3865 += this.vy[var13];
+            anInt3862 += this.vz[var13];
+            ++var8;
+          }
+        }
+      }
+
+      if (var8 > 0) {
+        anInt3859 = anInt3859 / var8 + var3;
+        anInt3865 = anInt3865 / var8 + var4;
+        anInt3862 = anInt3862 / var8 + var5;
+      } else {
+        anInt3859 = var3;
+        anInt3865 = var4;
+        anInt3862 = var5;
+      }
+
+    } else {
+      int[] var10;
+      int var11;
+      if (var1 == 1) {
+        var3 <<= 4;
+        var4 <<= 4;
+        var5 <<= 4;
+
+        for (var8 = 0; var8 < var7; ++var8) {
+          var9 = var2[var8];
+          if (var9 < this.anIntArrayArray3825.length) {
+            var10 = this.anIntArrayArray3825[var9];
+
+            for (var11 = 0; var11 < var10.length; ++var11) {
+              var12 = var10[var11];
+              this.vx[var12] += var3;
+              this.vy[var12] += var4;
+              this.vz[var12] += var5;
+            }
+          }
+        }
+
+      } else {
+        int var14;
+        int var15;
+        int var16;
+        if (var1 == 2) {
+          for (var8 = 0; var8 < var7; ++var8) {
+            var9 = var2[var8];
+            if (var9 < this.anIntArrayArray3825.length) {
+              var10 = this.anIntArrayArray3825[var9];
+
+              for (var11 = 0; var11 < var10.length; ++var11) {
+                var12 = var10[var11];
+                this.vx[var12] -= anInt3859;
+                this.vy[var12] -= anInt3865;
+                this.vz[var12] -= anInt3862;
+                if (var5 != 0) {
+                  var13 = DummyClass40.SINE_TABLE[var5];
+                  var14 = DummyClass40.COSINE_TABLE[var5];
+                  var15 = this.vy[var12] * var13 + this.vx[var12] * var14 + 32767 >> 16;
+                  this.vy[var12] = this.vy[var12] * var14 - this.vx[var12] * var13 + 32767 >> 16;
+                  this.vx[var12] = var15;
+                }
+
+                if (var3 != 0) {
+                  var13 = DummyClass40.SINE_TABLE[var3];
+                  var14 = DummyClass40.COSINE_TABLE[var3];
+                  var15 = this.vy[var12] * var14 - this.vz[var12] * var13 + 32767 >> 16;
+                  this.vz[var12] = this.vy[var12] * var13 + this.vz[var12] * var14 + 32767 >> 16;
+                  this.vy[var12] = var15;
+                }
+
+                if (var4 != 0) {
+                  var13 = DummyClass40.SINE_TABLE[var4];
+                  var14 = DummyClass40.COSINE_TABLE[var4];
+                  var15 = this.vz[var12] * var13 + this.vx[var12] * var14 + 32767 >> 16;
+                  this.vz[var12] = this.vz[var12] * var14 - this.vx[var12] * var13 + 32767 >> 16;
+                  this.vx[var12] = var15;
+                }
+
+                this.vx[var12] += anInt3859;
+                this.vy[var12] += anInt3865;
+                this.vz[var12] += anInt3862;
+              }
+            }
+          }
+
+          if (var6 && this.aShortArray3810 != null) {
+            for (var8 = 0; var8 < var7; ++var8) {
+              var9 = var2[var8];
+              if (var9 < this.anIntArrayArray3825.length) {
+                var10 = this.anIntArrayArray3825[var9];
+
+                for (var11 = 0; var11 < var10.length; ++var11) {
+                  var12 = var10[var11];
+                  var13 = this.vertexCounts[var12];
+                  var14 = this.vertexCounts[var12 + 1];
+
+                  for (var15 = var13; var15 < var14; ++var15) {
+                    var16 = this.aShortArray3828[var15] - 1;
+                    if (var16 == -1) {
+                      break;
+                    }
+
+                    int var17;
+                    int var19;
+                    int var18;
+                    if (var5 != 0) {
+                      var17 = DummyClass40.SINE_TABLE[var5];
+                      var18 = DummyClass40.COSINE_TABLE[var5];
+                      var19 =
+                        this.aShortArray3826[var16] * var17 + this.aShortArray3810[var16] * var18
+                          + 32767 >> 16;
+                      this.aShortArray3826[var16] = (short) (
+                        this.aShortArray3826[var16] * var18 - this.aShortArray3810[var16] * var17
+                          + 32767 >> 16);
+                      this.aShortArray3810[var16] = (short) var19;
+                    }
+
+                    if (var3 != 0) {
+                      var17 = DummyClass40.SINE_TABLE[var3];
+                      var18 = DummyClass40.COSINE_TABLE[var3];
+                      var19 =
+                        this.aShortArray3826[var16] * var18 - this.aShortArray3837[var16] * var17
+                          + 32767 >> 16;
+                      this.aShortArray3837[var16] = (short) (
+                        this.aShortArray3826[var16] * var17 + this.aShortArray3837[var16] * var18
+                          + 32767 >> 16);
+                      this.aShortArray3826[var16] = (short) var19;
+                    }
+
+                    if (var4 != 0) {
+                      var17 = DummyClass40.SINE_TABLE[var4];
+                      var18 = DummyClass40.COSINE_TABLE[var4];
+                      var19 =
+                        this.aShortArray3837[var16] * var17 + this.aShortArray3810[var16] * var18
+                          + 32767 >> 16;
+                      this.aShortArray3837[var16] = (short) (
+                        this.aShortArray3837[var16] * var18 - this.aShortArray3810[var16] * var17
+                          + 32767 >> 16);
+                      this.aShortArray3810[var16] = (short) var19;
+                    }
+                  }
+                }
+              }
+            }
+
+            if (this.vertexNormalData != null) {
+              this.vertexNormalData.updated = false;
+            }
+          }
+
+        } else if (var1 == 3) {
+          for (var8 = 0; var8 < var7; ++var8) {
+            var9 = var2[var8];
+            if (var9 < this.anIntArrayArray3825.length) {
+              var10 = this.anIntArrayArray3825[var9];
+
+              for (var11 = 0; var11 < var10.length; ++var11) {
+                var12 = var10[var11];
+                this.vx[var12] -= anInt3859;
+                this.vy[var12] -= anInt3865;
+                this.vz[var12] -= anInt3862;
+                this.vx[var12] = this.vx[var12] * var3 >> 7;
+                this.vy[var12] = this.vy[var12] * var4 >> 7;
+                this.vz[var12] = this.vz[var12] * var5 >> 7;
+                this.vx[var12] += anInt3859;
+                this.vy[var12] += anInt3865;
+                this.vz[var12] += anInt3862;
+              }
+            }
+          }
+
+        } else if (var1 == 5) {
+          if (this.anIntArrayArray3829 != null && this.aByteArray3816 != null) {
+            for (var8 = 0; var8 < var7; ++var8) {
+              var9 = var2[var8];
+              if (var9 < this.anIntArrayArray3829.length) {
+                var10 = this.anIntArrayArray3829[var9];
+
+                for (var11 = 0; var11 < var10.length; ++var11) {
+                  var12 = var10[var11];
+                  var13 = (this.aByteArray3816[var12] & 255) + var3 * 8;
+                  if (var13 < 0) {
+                    var13 = 0;
+                  } else if (var13 > 255) {
+                    var13 = 255;
+                  }
+
+                  this.aByteArray3816[var12] = (byte) var13;
+                }
+
+                if (var10.length > 0) {
+                  this.vertexColorData.updated = false;
+                }
+              }
+            }
+          }
+
+        } else if (var1 == 7) {
+          if (this.anIntArrayArray3829 != null) {
+            for (var8 = 0; var8 < var7; ++var8) {
+              var9 = var2[var8];
+              if (var9 < this.anIntArrayArray3829.length) {
+                var10 = this.anIntArrayArray3829[var9];
+
+                for (var11 = 0; var11 < var10.length; ++var11) {
+                  var12 = var10[var11];
+                  var13 = this.aShortArray3808[var12] & '\uffff';
+                  var14 = var13 >> 10 & 63;
+                  var15 = var13 >> 7 & 7;
+                  var16 = var13 & 127;
+                  var14 = var14 + var3 & 63;
+                  var15 += var4 / 4;
+                  if (var15 < 0) {
+                    var15 = 0;
+                  } else if (var15 > 7) {
+                    var15 = 7;
+                  }
+
+                  var16 += var5;
+                  if (var16 < 0) {
+                    var16 = 0;
+                  } else if (var16 > 127) {
+                    var16 = 127;
+                  }
+
+                  this.aShortArray3808[var12] = (short) (var14 << 10 | var15 << 7 | var16);
+                }
+
+                if (var10.length > 0) {
+                  this.vertexColorData.updated = false;
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  final void draw(int rotationX, int rotationY, int rotationZ, int rotationX1, int translateX,
+                  int translateY, int translateZ, long var8) {
+    if (this.amountVertices != 0) {
+      GL var10 = GlRenderer.gl;
+      var10.glPushMatrix();
+      if (rotationX1 != 0) {
+        var10.glRotatef((float) rotationX1 * 0.17578125F, 1.0F, 0.0F, 0.0F);
+      }
+
+      var10.glTranslatef((float) translateX, (float) translateY, (float) translateZ);
+      if (rotationY != 0) {
+        var10.glRotatef((float) rotationY * 0.17578125F, 0.0F, 1.0F, 0.0F);
+      }
+
+      if (rotationX != 0) {
+        var10.glRotatef((float) rotationX * 0.17578125F, 1.0F, 0.0F, 0.0F);
+      }
+
+      if (rotationZ != 0) {
+        var10.glRotatef((float) (-rotationZ) * 0.17578125F, 0.0F, 0.0F, 1.0F);
+      }
+
+      this.draw();
+      var10.glPopMatrix();
+    }
+  }
+
+  final AbstractModel method1894(boolean var1, boolean var2, boolean var3) {
+    return this.method1923(var1, var2, var3, aClass140_Sub1_Sub1_3850, aClass140_Sub1_Sub1_3842);
+  }
+
+  final void method1896(int var1) {
+    int var2 = DummyClass40.SINE_TABLE[var1];
+    int var3 = DummyClass40.COSINE_TABLE[var1];
+
+    for (int var4 = 0; var4 < this.vertexCCC; ++var4) {
+      int var5 = this.vy[var4] * var3 - this.vz[var4] * var2 >> 16;
+      this.vz[var4] = this.vy[var4] * var2 + this.vz[var4] * var3 >> 16;
+      this.vy[var4] = var5;
+    }
+
+    this.aClass6_3835.aBoolean98 = false;
+    this.vertexPositionData.updated = false;
+  }
+
+  final void method1897(int var1, int var2, int var3) {
+    for (int var4 = 0; var4 < this.vertexCCC; ++var4) {
+      this.vx[var4] += var1;
+      this.vy[var4] += var2;
+      this.vz[var4] += var3;
+    }
+
+    this.aClass6_3835.aBoolean98 = false;
+    this.vertexPositionData.updated = false;
+  }
+
+  final int method1898() {
+    if (!this.aClass6_3835.aBoolean98) {
+      this.method1917();
+    }
+
+    return this.aClass6_3835.aShort97;
   }
 
   final void draw(int rotationY, int var2, int var3, int var4, int var5, int translateX,
@@ -950,9 +1301,8 @@ final class GlModel extends AbstractModel {
                       var31 = var24 / depth;
                     }
 
-                    if (Structure.anInt3642 >= var28
-                      && Structure.anInt3642 <= var30 && RenderAnimation.anInt384 >= var29
-                      && RenderAnimation.anInt384 <= var31) {
+                    if (Structure.anInt3642 >= var28 && Structure.anInt3642 <= var30
+                      && RenderAnimation.anInt384 >= var29 && RenderAnimation.anInt384 <= var31) {
                       var28 = 999999;
                       var30 = -999999;
                       var29 = 999999;
@@ -1014,8 +1364,7 @@ final class GlModel extends AbstractModel {
                         }
                       }
 
-                      if (Structure.anInt3642 >= var28
-                        && Structure.anInt3642 <= var30
+                      if (Structure.anInt3642 >= var28 && Structure.anInt3642 <= var30
                         && RenderAnimation.anInt384 >= var29 && RenderAnimation.anInt384 <= var31) {
                         if (this.aBoolean2699) {
                           TextureSampler38.entityKeys[MapScene.anInt59++] = key;
@@ -1112,328 +1461,6 @@ final class GlModel extends AbstractModel {
         }
       }
     }
-  }
-
-  final void method1902() {
-    if (this.aShortArray3810 == null) {
-      this.method1900();
-    } else {
-      int var1;
-      for (var1 = 0; var1 < this.vertexCCC; ++var1) {
-        int var2 = this.vz[var1];
-        this.vz[var1] = this.vx[var1];
-        this.vx[var1] = -var2;
-      }
-
-      for (var1 = 0; var1 < this.amountVertices; ++var1) {
-        short var3 = this.aShortArray3837[var1];
-        this.aShortArray3837[var1] = this.aShortArray3810[var1];
-        this.aShortArray3810[var1] = (short) (-var3);
-      }
-
-      this.aClass6_3835.aBoolean98 = false;
-      this.vertexPositionData.updated = false;
-      if (this.vertexNormalData != null) {
-        this.vertexNormalData.updated = false;
-      }
-
-    }
-  }
-
-  final int method1903() {
-    return this.aShort3849;
-  }
-
-  final void method1886(int var1) {
-    int var2 = DummyClass40.SINE_TABLE[var1];
-    int var3 = DummyClass40.COSINE_TABLE[var1];
-
-    for (int var4 = 0; var4 < this.vertexCCC; ++var4) {
-      int var5 = this.vy[var4] * var2 + this.vx[var4] * var3 >> 16;
-      this.vy[var4] = this.vy[var4] * var3 - this.vx[var4] * var2 >> 16;
-      this.vx[var4] = var5;
-    }
-
-    this.aClass6_3835.aBoolean98 = false;
-    this.vertexPositionData.updated = false;
-  }
-
-  final int method1883() {
-    if (!this.aClass6_3835.aBoolean98) {
-      this.method1917();
-    }
-
-    return this.aClass6_3835.aShort94;
-  }
-
-  final int method1872() {
-    if (!this.aClass6_3835.aBoolean98) {
-      this.method1917();
-    }
-
-    return this.aClass6_3835.aShort96;
-  }
-
-  final boolean method1865() {
-    return this.aBoolean3809 && this.vx != null && this.aShortArray3810 != null;
-  }
-
-  final int method1898() {
-    if (!this.aClass6_3835.aBoolean98) {
-      this.method1917();
-    }
-
-    return this.aClass6_3835.aShort97;
-  }
-
-  final void method1897(int var1, int var2, int var3) {
-    for (int var4 = 0; var4 < this.vertexCCC; ++var4) {
-      this.vx[var4] += var1;
-      this.vy[var4] += var2;
-      this.vz[var4] += var3;
-    }
-
-    this.aClass6_3835.aBoolean98 = false;
-    this.vertexPositionData.updated = false;
-  }
-
-  final AbstractModel method1890(boolean var1, boolean var2, boolean var3) {
-    return this.method1923(var1, var2, var3, aClass140_Sub1_Sub1_3856, aClass140_Sub1_Sub1_3855);
-  }
-
-  final void method1866(SceneNode var1, int var2, int var3, int var4, boolean var5) {
-    GlModel var6 = (GlModel) var1;
-    if (this.anInt3852 != 0 && var6.anInt3852 != 0) {
-      int var7 = var6.vertexCCC;
-      int[] var8 = var6.vx;
-      int[] var9 = var6.vy;
-      int[] var10 = var6.vz;
-      short[] var11 = var6.aShortArray3810;
-      short[] var12 = var6.aShortArray3826;
-      short[] var13 = var6.aShortArray3837;
-      short[] var14 = var6.aShortArray3841;
-      short[] var15;
-      short[] var17;
-      short[] var16;
-      short[] var18;
-      if (this.aClass18_3843 != null) {
-        var15 = this.aClass18_3843.aShortArray417;
-        var16 = this.aClass18_3843.aShortArray419;
-        var17 = this.aClass18_3843.aShortArray418;
-        var18 = this.aClass18_3843.aShortArray416;
-      } else {
-        var15 = null;
-        var16 = null;
-        var17 = null;
-        var18 = null;
-      }
-
-      short[] var19;
-      short[] var21;
-      short[] var20;
-      short[] var22;
-      if (var6.aClass18_3843 != null) {
-        var19 = var6.aClass18_3843.aShortArray417;
-        var20 = var6.aClass18_3843.aShortArray419;
-        var21 = var6.aClass18_3843.aShortArray418;
-        var22 = var6.aClass18_3843.aShortArray416;
-      } else {
-        var19 = null;
-        var20 = null;
-        var21 = null;
-        var22 = null;
-      }
-
-      int[] var23 = var6.vertexCounts;
-      short[] var24 = var6.aShortArray3828;
-      if (!var6.aClass6_3835.aBoolean98) {
-        var6.method1917();
-      }
-
-      short var25 = var6.aClass6_3835.aShort91;
-      short var26 = var6.aClass6_3835.aShort92;
-      short var27 = var6.aClass6_3835.aShort95;
-      short var28 = var6.aClass6_3835.aShort94;
-      short var29 = var6.aClass6_3835.aShort97;
-      short var30 = var6.aClass6_3835.aShort96;
-
-      for (int var31 = 0; var31 < this.vertexCCC; ++var31) {
-        int var32 = this.vy[var31] - var3;
-        if (var32 >= var25 && var32 <= var26) {
-          int var33 = this.vx[var31] - var2;
-          if (var33 >= var27 && var33 <= var28) {
-            int var34 = this.vz[var31] - var4;
-            if (var34 >= var29 && var34 <= var30) {
-              int var35 = -1;
-              int var36 = this.vertexCounts[var31];
-              int var37 = this.vertexCounts[var31 + 1];
-
-              int var38;
-              for (var38 = var36; var38 < var37; ++var38) {
-                var35 = this.aShortArray3828[var38] - 1;
-                if (var35 == -1 || this.aShortArray3841[var35] != 0) {
-                  break;
-                }
-              }
-
-              if (var35 != -1) {
-                for (var38 = 0; var38 < var7; ++var38) {
-                  if (var33 == var8[var38] && var34 == var10[var38] && var32 == var9[var38]) {
-                    int var39 = -1;
-                    var36 = var23[var38];
-                    var37 = var23[var38 + 1];
-
-                    for (int var40 = var36; var40 < var37; ++var40) {
-                      var39 = var24[var40] - 1;
-                      if (var39 == -1 || var14[var39] != 0) {
-                        break;
-                      }
-                    }
-
-                    if (var39 != -1) {
-                      if (var15 == null) {
-                        this.aClass18_3843 = new SomethingGlModel();
-                        var15 = this.aClass18_3843.aShortArray417 =
-                          DummyOutputStream.copy(23032, this.aShortArray3810);
-                        var16 = this.aClass18_3843.aShortArray419 =
-                          DummyOutputStream.copy(23032, this.aShortArray3826);
-                        var17 = this.aClass18_3843.aShortArray418 =
-                          DummyOutputStream.copy(23032, this.aShortArray3837);
-                        var18 = this.aClass18_3843.aShortArray416 =
-                          DummyOutputStream.copy(23032, this.aShortArray3841);
-                      }
-
-                      if (var19 == null) {
-                        SomethingGlModel var47 = var6.aClass18_3843 = new SomethingGlModel();
-                        var19 = var47.aShortArray417 = DummyOutputStream.copy(23032, var11);
-                        var20 = var47.aShortArray419 = DummyOutputStream.copy(23032, var12);
-                        var21 = var47.aShortArray418 = DummyOutputStream.copy(23032, var13);
-                        var22 = var47.aShortArray416 = DummyOutputStream.copy(23032, var14);
-                      }
-
-                      short var46 = this.aShortArray3810[var35];
-                      short var41 = this.aShortArray3826[var35];
-                      short var42 = this.aShortArray3837[var35];
-                      short var43 = this.aShortArray3841[var35];
-                      var36 = var23[var38];
-                      var37 = var23[var38 + 1];
-
-                      int var44;
-                      int var45;
-                      for (var44 = var36; var44 < var37; ++var44) {
-                        var45 = var24[var44] - 1;
-                        if (var45 == -1) {
-                          break;
-                        }
-
-                        if (var22[var45] != 0) {
-                          var19[var45] += var46;
-                          var20[var45] += var41;
-                          var21[var45] += var42;
-                          var22[var45] += var43;
-                        }
-                      }
-
-                      var46 = var11[var39];
-                      var41 = var12[var39];
-                      var42 = var13[var39];
-                      var43 = var14[var39];
-                      var36 = this.vertexCounts[var31];
-                      var37 = this.vertexCounts[var31 + 1];
-
-                      for (var44 = var36; var44 < var37; ++var44) {
-                        var45 = this.aShortArray3828[var44] - 1;
-                        if (var45 == -1) {
-                          break;
-                        }
-
-                        if (var18[var45] != 0) {
-                          var15[var45] += var46;
-                          var16[var45] += var41;
-                          var17[var45] += var42;
-                          var18[var45] += var43;
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
-    }
-  }
-
-  final void draw(int rotationX, int rotationY, int rotationZ, int rotationX1, int translateX,
-                  int translateY, int translateZ, long var8) {
-    if (this.amountVertices != 0) {
-      GL var10 = GlRenderer.gl;
-      var10.glPushMatrix();
-      if (rotationX1 != 0) {
-        var10.glRotatef((float) rotationX1 * 0.17578125F, 1.0F, 0.0F, 0.0F);
-      }
-
-      var10.glTranslatef((float) translateX, (float) translateY, (float) translateZ);
-      if (rotationY != 0) {
-        var10.glRotatef((float) rotationY * 0.17578125F, 0.0F, 1.0F, 0.0F);
-      }
-
-      if (rotationX != 0) {
-        var10.glRotatef((float) rotationX * 0.17578125F, 1.0F, 0.0F, 0.0F);
-      }
-
-      if (rotationZ != 0) {
-        var10.glRotatef((float) (-rotationZ) * 0.17578125F, 0.0F, 0.0F, 1.0F);
-      }
-
-      this.draw();
-      var10.glPopMatrix();
-    }
-  }
-
-  private final short method1907(Model var1, int var2, long var3, int var5, int var6, int var7,
-                                 int var8, float var9, float var10) {
-    int var11 = this.vertexCounts[var2];
-    int var12 = this.vertexCounts[var2 + 1];
-    int var13 = 0;
-
-    for (int var14 = var11; var14 < var12; ++var14) {
-      short var15 = this.aShortArray3828[var14];
-      if (var15 == 0) {
-        var13 = var14;
-        break;
-      }
-
-      if (aLongArray3821[var14] == var3) {
-        return (short) (var15 - 1);
-      }
-    }
-
-    this.aShortArray3828[var13] = (short) (this.amountVertices + 1);
-    aLongArray3821[var13] = var3;
-    this.aShortArray3810[this.amountVertices] = (short) var5;
-    this.aShortArray3826[this.amountVertices] = (short) var6;
-    this.aShortArray3837[this.amountVertices] = (short) var7;
-    this.aShortArray3841[this.amountVertices] = (short) var8;
-    this.aFloatArray3824[this.amountVertices] = var9;
-    this.aFloatArray3847[this.amountVertices] = var10;
-    return (short) (this.amountVertices++);
-  }
-
-  final void method1876(int var1) {
-    int var2 = DummyClass40.SINE_TABLE[var1];
-    int var3 = DummyClass40.COSINE_TABLE[var1];
-
-    for (int var4 = 0; var4 < this.vertexCCC; ++var4) {
-      int var5 = this.vz[var4] * var2 + this.vx[var4] * var3 >> 16;
-      this.vz[var4] = this.vz[var4] * var3 - this.vx[var4] * var2 >> 16;
-      this.vx[var4] = var5;
-    }
-
-    this.aClass6_3835.aBoolean98 = false;
-    this.vertexPositionData.updated = false;
   }
 
   final void applyAnimationFrame(int opcode, int[] var2, int var3, int var4, int var5, boolean var6,
@@ -1942,12 +1969,44 @@ final class GlModel extends AbstractModel {
     }
   }
 
-  final int getMinimumY() {
-    if (!this.aClass6_3835.aBoolean98) {
-      this.method1917();
+  final void method1900() {
+    for (int var1 = 0; var1 < this.vertexCCC; ++var1) {
+      int var2 = this.vz[var1];
+      this.vz[var1] = this.vx[var1];
+      this.vx[var1] = -var2;
     }
 
-    return this.aClass6_3835.aShort91;
+    this.aClass6_3835.aBoolean98 = false;
+    this.vertexPositionData.updated = false;
+  }
+
+  private final short method1907(Model var1, int var2, long var3, int var5, int var6, int var7,
+                                 int var8, float var9, float var10) {
+    int var11 = this.vertexCounts[var2];
+    int var12 = this.vertexCounts[var2 + 1];
+    int var13 = 0;
+
+    for (int var14 = var11; var14 < var12; ++var14) {
+      short var15 = this.aShortArray3828[var14];
+      if (var15 == 0) {
+        var13 = var14;
+        break;
+      }
+
+      if (aLongArray3821[var14] == var3) {
+        return (short) (var15 - 1);
+      }
+    }
+
+    this.aShortArray3828[var13] = (short) (this.amountVertices + 1);
+    aLongArray3821[var13] = var3;
+    this.aShortArray3810[this.amountVertices] = (short) var5;
+    this.aShortArray3826[this.amountVertices] = (short) var6;
+    this.aShortArray3837[this.amountVertices] = (short) var7;
+    this.aShortArray3841[this.amountVertices] = (short) var8;
+    this.aFloatArray3824[this.amountVertices] = var9;
+    this.aFloatArray3847[this.amountVertices] = var10;
+    return (short) (this.amountVertices++);
   }
 
   final void method1908() {
@@ -2041,31 +2100,6 @@ final class GlModel extends AbstractModel {
     }
   }
 
-  final void scale(int var1, int var2, int var3) {
-    for (int var4 = 0; var4 < this.vertexCCC; ++var4) {
-      this.vx[var4] = this.vx[var4] * var1 >> 7;
-      this.vy[var4] = this.vy[var4] * var2 >> 7;
-      this.vz[var4] = this.vz[var4] * var3 >> 7;
-    }
-
-    this.aClass6_3835.aBoolean98 = false;
-    this.vertexPositionData.updated = false;
-  }
-
-  final AbstractModel method1894(boolean var1, boolean var2, boolean var3) {
-    return this.method1923(var1, var2, var3, aClass140_Sub1_Sub1_3850, aClass140_Sub1_Sub1_3842);
-  }
-
-  final void method1874() {
-    for (int var1 = 0; var1 < this.vertexCCC; ++var1) {
-      this.vx[var1] = -this.vx[var1];
-      this.vz[var1] = -this.vz[var1];
-    }
-
-    this.aClass6_3835.aBoolean98 = false;
-    this.vertexPositionData.updated = false;
-  }
-
   private final void initializeIndicesBuffer() {
     if (indicesBuffer.bytes.length < this.amountVertices * 12) {
       indicesBuffer = new Buffer((this.amountVertices + 100) * 12);
@@ -2109,23 +2143,6 @@ final class GlModel extends AbstractModel {
   final void method1914(int var1) {
     this.aShort3849 = (short) var1;
     this.vertexColorData.updated = false;
-  }
-
-  final boolean method1873() {
-    if (this.anIntArrayArray3825 == null) {
-      return false;
-    } else {
-      for (int var1 = 0; var1 < this.vertexCCC; ++var1) {
-        this.vx[var1] <<= 4;
-        this.vy[var1] <<= 4;
-        this.vz[var1] <<= 4;
-      }
-
-      anInt3859 = 0;
-      anInt3865 = 0;
-      anInt3862 = 0;
-      return true;
-    }
   }
 
   final void method1916(short var1, short var2) {
@@ -2974,6 +2991,175 @@ final class GlModel extends AbstractModel {
     return this;
   }
 
+  final boolean method1865() {
+    return this.aBoolean3809 && this.vx != null && this.aShortArray3810 != null;
+  }
+
+  final void method1866(SceneNode var1, int var2, int var3, int var4, boolean var5) {
+    GlModel var6 = (GlModel) var1;
+    if (this.anInt3852 != 0 && var6.anInt3852 != 0) {
+      int var7 = var6.vertexCCC;
+      int[] var8 = var6.vx;
+      int[] var9 = var6.vy;
+      int[] var10 = var6.vz;
+      short[] var11 = var6.aShortArray3810;
+      short[] var12 = var6.aShortArray3826;
+      short[] var13 = var6.aShortArray3837;
+      short[] var14 = var6.aShortArray3841;
+      short[] var15;
+      short[] var17;
+      short[] var16;
+      short[] var18;
+      if (this.aClass18_3843 != null) {
+        var15 = this.aClass18_3843.aShortArray417;
+        var16 = this.aClass18_3843.aShortArray419;
+        var17 = this.aClass18_3843.aShortArray418;
+        var18 = this.aClass18_3843.aShortArray416;
+      } else {
+        var15 = null;
+        var16 = null;
+        var17 = null;
+        var18 = null;
+      }
+
+      short[] var19;
+      short[] var21;
+      short[] var20;
+      short[] var22;
+      if (var6.aClass18_3843 != null) {
+        var19 = var6.aClass18_3843.aShortArray417;
+        var20 = var6.aClass18_3843.aShortArray419;
+        var21 = var6.aClass18_3843.aShortArray418;
+        var22 = var6.aClass18_3843.aShortArray416;
+      } else {
+        var19 = null;
+        var20 = null;
+        var21 = null;
+        var22 = null;
+      }
+
+      int[] var23 = var6.vertexCounts;
+      short[] var24 = var6.aShortArray3828;
+      if (!var6.aClass6_3835.aBoolean98) {
+        var6.method1917();
+      }
+
+      short var25 = var6.aClass6_3835.aShort91;
+      short var26 = var6.aClass6_3835.aShort92;
+      short var27 = var6.aClass6_3835.aShort95;
+      short var28 = var6.aClass6_3835.aShort94;
+      short var29 = var6.aClass6_3835.aShort97;
+      short var30 = var6.aClass6_3835.aShort96;
+
+      for (int var31 = 0; var31 < this.vertexCCC; ++var31) {
+        int var32 = this.vy[var31] - var3;
+        if (var32 >= var25 && var32 <= var26) {
+          int var33 = this.vx[var31] - var2;
+          if (var33 >= var27 && var33 <= var28) {
+            int var34 = this.vz[var31] - var4;
+            if (var34 >= var29 && var34 <= var30) {
+              int var35 = -1;
+              int var36 = this.vertexCounts[var31];
+              int var37 = this.vertexCounts[var31 + 1];
+
+              int var38;
+              for (var38 = var36; var38 < var37; ++var38) {
+                var35 = this.aShortArray3828[var38] - 1;
+                if (var35 == -1 || this.aShortArray3841[var35] != 0) {
+                  break;
+                }
+              }
+
+              if (var35 != -1) {
+                for (var38 = 0; var38 < var7; ++var38) {
+                  if (var33 == var8[var38] && var34 == var10[var38] && var32 == var9[var38]) {
+                    int var39 = -1;
+                    var36 = var23[var38];
+                    var37 = var23[var38 + 1];
+
+                    for (int var40 = var36; var40 < var37; ++var40) {
+                      var39 = var24[var40] - 1;
+                      if (var39 == -1 || var14[var39] != 0) {
+                        break;
+                      }
+                    }
+
+                    if (var39 != -1) {
+                      if (var15 == null) {
+                        this.aClass18_3843 = new SomethingGlModel();
+                        var15 = this.aClass18_3843.aShortArray417 =
+                          DummyOutputStream.copy(23032, this.aShortArray3810);
+                        var16 = this.aClass18_3843.aShortArray419 =
+                          DummyOutputStream.copy(23032, this.aShortArray3826);
+                        var17 = this.aClass18_3843.aShortArray418 =
+                          DummyOutputStream.copy(23032, this.aShortArray3837);
+                        var18 = this.aClass18_3843.aShortArray416 =
+                          DummyOutputStream.copy(23032, this.aShortArray3841);
+                      }
+
+                      if (var19 == null) {
+                        SomethingGlModel var47 = var6.aClass18_3843 = new SomethingGlModel();
+                        var19 = var47.aShortArray417 = DummyOutputStream.copy(23032, var11);
+                        var20 = var47.aShortArray419 = DummyOutputStream.copy(23032, var12);
+                        var21 = var47.aShortArray418 = DummyOutputStream.copy(23032, var13);
+                        var22 = var47.aShortArray416 = DummyOutputStream.copy(23032, var14);
+                      }
+
+                      short var46 = this.aShortArray3810[var35];
+                      short var41 = this.aShortArray3826[var35];
+                      short var42 = this.aShortArray3837[var35];
+                      short var43 = this.aShortArray3841[var35];
+                      var36 = var23[var38];
+                      var37 = var23[var38 + 1];
+
+                      int var44;
+                      int var45;
+                      for (var44 = var36; var44 < var37; ++var44) {
+                        var45 = var24[var44] - 1;
+                        if (var45 == -1) {
+                          break;
+                        }
+
+                        if (var22[var45] != 0) {
+                          var19[var45] += var46;
+                          var20[var45] += var41;
+                          var21[var45] += var42;
+                          var22[var45] += var43;
+                        }
+                      }
+
+                      var46 = var11[var39];
+                      var41 = var12[var39];
+                      var42 = var13[var39];
+                      var43 = var14[var39];
+                      var36 = this.vertexCounts[var31];
+                      var37 = this.vertexCounts[var31 + 1];
+
+                      for (var44 = var36; var44 < var37; ++var44) {
+                        var45 = this.aShortArray3828[var44] - 1;
+                        if (var45 == -1) {
+                          break;
+                        }
+
+                        if (var18[var45] != 0) {
+                          var15[var45] += var46;
+                          var16[var45] += var41;
+                          var17[var45] += var42;
+                          var18[var45] += var43;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+
   final int method1924() {
     return this.aShort3819;
   }
@@ -3115,17 +3301,6 @@ final class GlModel extends AbstractModel {
     return var12;
   }
 
-  final void rotateQuarterY() {
-    for (int var1 = 0; var1 < this.vertexCCC; ++var1) {
-      int var2 = this.vx[var1];
-      this.vx[var1] = this.vz[var1];
-      this.vz[var1] = -var2;
-    }
-
-    this.aClass6_3835.aBoolean98 = false;
-    this.vertexPositionData.updated = false;
-  }
-
   private final boolean isWithinBoundaries(int var1, int var2, int var3, int var4, int var5,
                                            int var6, int var7, int var8) {
     return var2 < var3 && var2 < var4 && var2 < var5 ?
@@ -3135,412 +3310,6 @@ final class GlModel extends AbstractModel {
         (var1 < var6 && var1 < var7 && var1 < var8 ?
           false :
           var1 <= var6 || var1 <= var7 || var1 <= var8));
-  }
-
-  final int method1888() {
-    if (!this.aClass6_3835.aBoolean98) {
-      this.method1917();
-    }
-
-    return this.aClass6_3835.aShort93;
-  }
-
-  final void method1891(int var1, int[] var2, int var3, int var4, int var5, boolean var6) {
-    int var7 = var2.length;
-    int var8;
-    int var9;
-    int var12;
-    int var13;
-    if (var1 == 0) {
-      var3 <<= 4;
-      var4 <<= 4;
-      var5 <<= 4;
-      var8 = 0;
-      anInt3859 = 0;
-      anInt3865 = 0;
-      anInt3862 = 0;
-
-      for (var9 = 0; var9 < var7; ++var9) {
-        int var20 = var2[var9];
-        if (var20 < this.anIntArrayArray3825.length) {
-          int[] var21 = this.anIntArrayArray3825[var20];
-
-          for (var12 = 0; var12 < var21.length; ++var12) {
-            var13 = var21[var12];
-            anInt3859 += this.vx[var13];
-            anInt3865 += this.vy[var13];
-            anInt3862 += this.vz[var13];
-            ++var8;
-          }
-        }
-      }
-
-      if (var8 > 0) {
-        anInt3859 = anInt3859 / var8 + var3;
-        anInt3865 = anInt3865 / var8 + var4;
-        anInt3862 = anInt3862 / var8 + var5;
-      } else {
-        anInt3859 = var3;
-        anInt3865 = var4;
-        anInt3862 = var5;
-      }
-
-    } else {
-      int[] var10;
-      int var11;
-      if (var1 == 1) {
-        var3 <<= 4;
-        var4 <<= 4;
-        var5 <<= 4;
-
-        for (var8 = 0; var8 < var7; ++var8) {
-          var9 = var2[var8];
-          if (var9 < this.anIntArrayArray3825.length) {
-            var10 = this.anIntArrayArray3825[var9];
-
-            for (var11 = 0; var11 < var10.length; ++var11) {
-              var12 = var10[var11];
-              this.vx[var12] += var3;
-              this.vy[var12] += var4;
-              this.vz[var12] += var5;
-            }
-          }
-        }
-
-      } else {
-        int var14;
-        int var15;
-        int var16;
-        if (var1 == 2) {
-          for (var8 = 0; var8 < var7; ++var8) {
-            var9 = var2[var8];
-            if (var9 < this.anIntArrayArray3825.length) {
-              var10 = this.anIntArrayArray3825[var9];
-
-              for (var11 = 0; var11 < var10.length; ++var11) {
-                var12 = var10[var11];
-                this.vx[var12] -= anInt3859;
-                this.vy[var12] -= anInt3865;
-                this.vz[var12] -= anInt3862;
-                if (var5 != 0) {
-                  var13 = DummyClass40.SINE_TABLE[var5];
-                  var14 = DummyClass40.COSINE_TABLE[var5];
-                  var15 = this.vy[var12] * var13 + this.vx[var12] * var14 + 32767 >> 16;
-                  this.vy[var12] = this.vy[var12] * var14 - this.vx[var12] * var13 + 32767 >> 16;
-                  this.vx[var12] = var15;
-                }
-
-                if (var3 != 0) {
-                  var13 = DummyClass40.SINE_TABLE[var3];
-                  var14 = DummyClass40.COSINE_TABLE[var3];
-                  var15 = this.vy[var12] * var14 - this.vz[var12] * var13 + 32767 >> 16;
-                  this.vz[var12] = this.vy[var12] * var13 + this.vz[var12] * var14 + 32767 >> 16;
-                  this.vy[var12] = var15;
-                }
-
-                if (var4 != 0) {
-                  var13 = DummyClass40.SINE_TABLE[var4];
-                  var14 = DummyClass40.COSINE_TABLE[var4];
-                  var15 = this.vz[var12] * var13 + this.vx[var12] * var14 + 32767 >> 16;
-                  this.vz[var12] = this.vz[var12] * var14 - this.vx[var12] * var13 + 32767 >> 16;
-                  this.vx[var12] = var15;
-                }
-
-                this.vx[var12] += anInt3859;
-                this.vy[var12] += anInt3865;
-                this.vz[var12] += anInt3862;
-              }
-            }
-          }
-
-          if (var6 && this.aShortArray3810 != null) {
-            for (var8 = 0; var8 < var7; ++var8) {
-              var9 = var2[var8];
-              if (var9 < this.anIntArrayArray3825.length) {
-                var10 = this.anIntArrayArray3825[var9];
-
-                for (var11 = 0; var11 < var10.length; ++var11) {
-                  var12 = var10[var11];
-                  var13 = this.vertexCounts[var12];
-                  var14 = this.vertexCounts[var12 + 1];
-
-                  for (var15 = var13; var15 < var14; ++var15) {
-                    var16 = this.aShortArray3828[var15] - 1;
-                    if (var16 == -1) {
-                      break;
-                    }
-
-                    int var17;
-                    int var19;
-                    int var18;
-                    if (var5 != 0) {
-                      var17 = DummyClass40.SINE_TABLE[var5];
-                      var18 = DummyClass40.COSINE_TABLE[var5];
-                      var19 =
-                        this.aShortArray3826[var16] * var17 + this.aShortArray3810[var16] * var18
-                          + 32767 >> 16;
-                      this.aShortArray3826[var16] = (short) (
-                        this.aShortArray3826[var16] * var18 - this.aShortArray3810[var16] * var17
-                          + 32767 >> 16);
-                      this.aShortArray3810[var16] = (short) var19;
-                    }
-
-                    if (var3 != 0) {
-                      var17 = DummyClass40.SINE_TABLE[var3];
-                      var18 = DummyClass40.COSINE_TABLE[var3];
-                      var19 =
-                        this.aShortArray3826[var16] * var18 - this.aShortArray3837[var16] * var17
-                          + 32767 >> 16;
-                      this.aShortArray3837[var16] = (short) (
-                        this.aShortArray3826[var16] * var17 + this.aShortArray3837[var16] * var18
-                          + 32767 >> 16);
-                      this.aShortArray3826[var16] = (short) var19;
-                    }
-
-                    if (var4 != 0) {
-                      var17 = DummyClass40.SINE_TABLE[var4];
-                      var18 = DummyClass40.COSINE_TABLE[var4];
-                      var19 =
-                        this.aShortArray3837[var16] * var17 + this.aShortArray3810[var16] * var18
-                          + 32767 >> 16;
-                      this.aShortArray3837[var16] = (short) (
-                        this.aShortArray3837[var16] * var18 - this.aShortArray3810[var16] * var17
-                          + 32767 >> 16);
-                      this.aShortArray3810[var16] = (short) var19;
-                    }
-                  }
-                }
-              }
-            }
-
-            if (this.vertexNormalData != null) {
-              this.vertexNormalData.updated = false;
-            }
-          }
-
-        } else if (var1 == 3) {
-          for (var8 = 0; var8 < var7; ++var8) {
-            var9 = var2[var8];
-            if (var9 < this.anIntArrayArray3825.length) {
-              var10 = this.anIntArrayArray3825[var9];
-
-              for (var11 = 0; var11 < var10.length; ++var11) {
-                var12 = var10[var11];
-                this.vx[var12] -= anInt3859;
-                this.vy[var12] -= anInt3865;
-                this.vz[var12] -= anInt3862;
-                this.vx[var12] = this.vx[var12] * var3 >> 7;
-                this.vy[var12] = this.vy[var12] * var4 >> 7;
-                this.vz[var12] = this.vz[var12] * var5 >> 7;
-                this.vx[var12] += anInt3859;
-                this.vy[var12] += anInt3865;
-                this.vz[var12] += anInt3862;
-              }
-            }
-          }
-
-        } else if (var1 == 5) {
-          if (this.anIntArrayArray3829 != null && this.aByteArray3816 != null) {
-            for (var8 = 0; var8 < var7; ++var8) {
-              var9 = var2[var8];
-              if (var9 < this.anIntArrayArray3829.length) {
-                var10 = this.anIntArrayArray3829[var9];
-
-                for (var11 = 0; var11 < var10.length; ++var11) {
-                  var12 = var10[var11];
-                  var13 = (this.aByteArray3816[var12] & 255) + var3 * 8;
-                  if (var13 < 0) {
-                    var13 = 0;
-                  } else if (var13 > 255) {
-                    var13 = 255;
-                  }
-
-                  this.aByteArray3816[var12] = (byte) var13;
-                }
-
-                if (var10.length > 0) {
-                  this.vertexColorData.updated = false;
-                }
-              }
-            }
-          }
-
-        } else if (var1 == 7) {
-          if (this.anIntArrayArray3829 != null) {
-            for (var8 = 0; var8 < var7; ++var8) {
-              var9 = var2[var8];
-              if (var9 < this.anIntArrayArray3829.length) {
-                var10 = this.anIntArrayArray3829[var9];
-
-                for (var11 = 0; var11 < var10.length; ++var11) {
-                  var12 = var10[var11];
-                  var13 = this.aShortArray3808[var12] & '\uffff';
-                  var14 = var13 >> 10 & 63;
-                  var15 = var13 >> 7 & 7;
-                  var16 = var13 & 127;
-                  var14 = var14 + var3 & 63;
-                  var15 += var4 / 4;
-                  if (var15 < 0) {
-                    var15 = 0;
-                  } else if (var15 > 7) {
-                    var15 = 7;
-                  }
-
-                  var16 += var5;
-                  if (var16 < 0) {
-                    var16 = 0;
-                  } else if (var16 > 127) {
-                    var16 = 127;
-                  }
-
-                  this.aShortArray3808[var12] = (short) (var14 << 10 | var15 << 7 | var16);
-                }
-
-                if (var10.length > 0) {
-                  this.vertexColorData.updated = false;
-                }
-              }
-            }
-          }
-
-        }
-      }
-    }
-  }
-
-  final void method1889(int var1, int var2, int var3, int var4) {
-    int var5;
-    int var6;
-    if (var1 == 0) {
-      var5 = 0;
-      anInt3859 = 0;
-      anInt3865 = 0;
-      anInt3862 = 0;
-
-      for (var6 = 0; var6 < this.vertexCCC; ++var6) {
-        anInt3859 += this.vx[var6];
-        anInt3865 += this.vy[var6];
-        anInt3862 += this.vz[var6];
-        ++var5;
-      }
-
-      if (var5 > 0) {
-        anInt3859 = anInt3859 / var5 + var2;
-        anInt3865 = anInt3865 / var5 + var3;
-        anInt3862 = anInt3862 / var5 + var4;
-      } else {
-        anInt3859 = var2;
-        anInt3865 = var3;
-        anInt3862 = var4;
-      }
-
-    } else if (var1 == 1) {
-      for (var5 = 0; var5 < this.vertexCCC; ++var5) {
-        this.vx[var5] += var2;
-        this.vy[var5] += var3;
-        this.vz[var5] += var4;
-      }
-
-    } else {
-      int var7;
-      int var8;
-      if (var1 == 2) {
-        for (var5 = 0; var5 < this.vertexCCC; ++var5) {
-          this.vx[var5] -= anInt3859;
-          this.vy[var5] -= anInt3865;
-          this.vz[var5] -= anInt3862;
-          if (var4 != 0) {
-            var6 = DummyClass40.SINE_TABLE[var4];
-            var7 = DummyClass40.COSINE_TABLE[var4];
-            var8 = this.vy[var5] * var6 + this.vx[var5] * var7 + 32767 >> 16;
-            this.vy[var5] = this.vy[var5] * var7 - this.vx[var5] * var6 + 32767 >> 16;
-            this.vx[var5] = var8;
-          }
-
-          if (var2 != 0) {
-            var6 = DummyClass40.SINE_TABLE[var2];
-            var7 = DummyClass40.COSINE_TABLE[var2];
-            var8 = this.vy[var5] * var7 - this.vz[var5] * var6 + 32767 >> 16;
-            this.vz[var5] = this.vy[var5] * var6 + this.vz[var5] * var7 + 32767 >> 16;
-            this.vy[var5] = var8;
-          }
-
-          if (var3 != 0) {
-            var6 = DummyClass40.SINE_TABLE[var3];
-            var7 = DummyClass40.COSINE_TABLE[var3];
-            var8 = this.vz[var5] * var6 + this.vx[var5] * var7 + 32767 >> 16;
-            this.vz[var5] = this.vz[var5] * var7 - this.vx[var5] * var6 + 32767 >> 16;
-            this.vx[var5] = var8;
-          }
-
-          this.vx[var5] += anInt3859;
-          this.vy[var5] += anInt3865;
-          this.vz[var5] += anInt3862;
-        }
-
-      } else if (var1 != 3) {
-        if (var1 == 5) {
-          for (var5 = 0; var5 < this.anInt3852; ++var5) {
-            var6 = (this.aByteArray3816[var5] & 255) + var2 * 8;
-            if (var6 < 0) {
-              var6 = 0;
-            } else if (var6 > 255) {
-              var6 = 255;
-            }
-
-            this.aByteArray3816[var5] = (byte) var6;
-          }
-
-          this.vertexColorData.updated = false;
-        } else if (var1 == 7) {
-          for (var5 = 0; var5 < this.anInt3852; ++var5) {
-            var6 = this.aShortArray3808[var5] & '\uffff';
-            var7 = var6 >> 10 & 63;
-            var8 = var6 >> 7 & 7;
-            int var9 = var6 & 127;
-            var7 = var7 + var2 & 63;
-            var8 += var3 / 4;
-            if (var8 < 0) {
-              var8 = 0;
-            } else if (var8 > 7) {
-              var8 = 7;
-            }
-
-            var9 += var4;
-            if (var9 < 0) {
-              var9 = 0;
-            } else if (var9 > 127) {
-              var9 = 127;
-            }
-
-            this.aShortArray3808[var5] = (short) (var7 << 10 | var8 << 7 | var9);
-          }
-
-          this.vertexColorData.updated = false;
-        }
-      } else {
-        for (var5 = 0; var5 < this.vertexCCC; ++var5) {
-          this.vx[var5] -= anInt3859;
-          this.vy[var5] -= anInt3865;
-          this.vz[var5] -= anInt3862;
-          this.vx[var5] = this.vx[var5] * var2 / 128;
-          this.vy[var5] = this.vy[var5] * var3 / 128;
-          this.vz[var5] = this.vz[var5] * var4 / 128;
-          this.vx[var5] += anInt3859;
-          this.vy[var5] += anInt3865;
-          this.vz[var5] += anInt3862;
-        }
-
-      }
-    }
-  }
-
-  final int method1884() {
-    if (!this.aClass6_3835.aBoolean98) {
-      this.method1917();
-    }
-
-    return this.aClass6_3835.aShort95;
   }
 
   private final void draw() {
@@ -3653,14 +3422,14 @@ final class GlModel extends AbstractModel {
 
         if (this.vertexColorData.buffer == null) {
           this.vertexColorData.byteBuffer.position(this.vertexColorData.pointer);
-          var1
-            .glColorPointer(4, 5121, this.vertexColorData.stride, this.vertexColorData.byteBuffer);
+          var1.glColorPointer(4, 5121, this.vertexColorData.stride,
+            this.vertexColorData.byteBuffer);
         }
 
         if (DisplayMode.useBumpMaps && this.vertexNormalData.buffer == null) {
           this.vertexNormalData.byteBuffer.position(this.vertexNormalData.pointer);
-          var1
-            .glNormalPointer(5126, this.vertexNormalData.stride, this.vertexNormalData.byteBuffer);
+          var1.glNormalPointer(5126, this.vertexNormalData.stride,
+            this.vertexNormalData.byteBuffer);
         }
 
         if (this.vertexTextureData.buffer == null) {
@@ -3698,17 +3467,6 @@ final class GlModel extends AbstractModel {
     }
   }
 
-  final void method1879() {
-    for (int var1 = 0; var1 < this.vertexCCC; ++var1) {
-      this.vx[var1] = this.vx[var1] + 7 >> 4;
-      this.vy[var1] = this.vy[var1] + 7 >> 4;
-      this.vz[var1] = this.vz[var1] + 7 >> 4;
-    }
-
-    this.aClass6_3835.aBoolean98 = false;
-    this.vertexPositionData.updated = false;
-  }
-
   final void method1931() {
     int var1;
     for (var1 = 0; var1 < this.vertexCCC; ++var1) {
@@ -3734,20 +3492,6 @@ final class GlModel extends AbstractModel {
     }
 
     this.indices.updated = false;
-  }
-
-  final void method1896(int var1) {
-    int var2 = DummyClass40.SINE_TABLE[var1];
-    int var3 = DummyClass40.COSINE_TABLE[var1];
-
-    for (int var4 = 0; var4 < this.vertexCCC; ++var4) {
-      int var5 = this.vy[var4] * var3 - this.vz[var4] * var2 >> 16;
-      this.vz[var4] = this.vy[var4] * var2 + this.vz[var4] * var3 >> 16;
-      this.vy[var4] = var5;
-    }
-
-    this.aClass6_3835.aBoolean98 = false;
-    this.vertexPositionData.updated = false;
   }
 
   final void method1932(int var1) {
@@ -3884,8 +3628,8 @@ final class GlModel extends AbstractModel {
           int var17 = screenCoordinatesY[var19];
           int var18 = screenCoordinatesY[var21];
           if ((var13 - var14) * (var17 - var18) - (var17 - var16) * (var15 - var14) > 0) {
-            DummyClass40
-              .method1147(var8.aByteArray2674, var16, var17, var18, var13, var14, var15, var6);
+            DummyClass40.method1147(var8.aByteArray2674, var16, var17, var18, var13, var14, var15,
+              var6);
           }
         }
       }
@@ -3894,15 +3638,270 @@ final class GlModel extends AbstractModel {
     }
   }
 
-  final void method1900() {
-    for (int var1 = 0; var1 < this.vertexCCC; ++var1) {
-      int var2 = this.vz[var1];
-      this.vz[var1] = this.vx[var1];
-      this.vx[var1] = -var2;
+  private static final int method1901(float var0, float var1, float var2) {
+    float var3 = var0 < 0.0F ? -var0 : var0;
+    float var4 = var1 < 0.0F ? -var1 : var1;
+    float var5 = var2 < 0.0F ? -var2 : var2;
+    return var4 > var3 && var4 > var5 ?
+      (var1 > 0.0F ? 0 : 1) :
+      (var5 > var3 && var5 > var4 ? (var2 > 0.0F ? 2 : 3) : (var0 > 0.0F ? 4 : 5));
+  }
+
+  private static final void method1904(int var0, int var1, int var2, int var3, int var4, int var5,
+                                       float[] var6, float var7, int var8, float var9) {
+    var0 -= var3;
+    var1 -= var4;
+    var2 -= var5;
+    float var10 = (float) var0 * var6[0] + (float) var1 * var6[1] + (float) var2 * var6[2];
+    float var11 = (float) var0 * var6[3] + (float) var1 * var6[4] + (float) var2 * var6[5];
+    float var12 = (float) var0 * var6[6] + (float) var1 * var6[7] + (float) var2 * var6[8];
+    float var13 = (float) Math.atan2((double) var10, (double) var12) / 6.2831855F + 0.5F;
+    if (var7 != 1.0F) {
+      var13 *= var7;
     }
 
-    this.aClass6_3835.aBoolean98 = false;
-    this.vertexPositionData.updated = false;
+    float var14 = var11 + 0.5F + var9;
+    float var15;
+    if (var8 == 1) {
+      var15 = var13;
+      var13 = -var14;
+      var14 = var15;
+    } else if (var8 == 2) {
+      var13 = -var13;
+      var14 = -var14;
+    } else if (var8 == 3) {
+      var15 = var13;
+      var13 = var14;
+      var14 = -var15;
+    }
+
+    aFloat3863 = var13;
+    aFloat3866 = var14;
+  }
+
+  private static final int method1905(int var0, short var1, int var2, byte var3) {
+    int var4 = DummyClass40.hslTable[SoftwareModel.repackHSL(var0, var2)];
+    if (var1 != -1) {
+      int var5 = DummyClass40.textureCache.method19(93, var1 & '\uffff');
+      int var6;
+      int var8;
+      if (var5 != 0) {
+        if (var2 < 0) {
+          var6 = 0;
+        } else if (var2 > 127) {
+          var6 = 16777215;
+        } else {
+          var6 = 131586 * var2;
+        }
+
+        if (var5 == 256) {
+          var4 = var6;
+        } else {
+          var8 = 256 - var5;
+          var4 = ((var6 & 16711935) * var5 + (var4 & 16711935) * var8 & -16711936) + (
+            (var6 & '\uff00') * var5 + (var4 & '\uff00') * var8 & 16711680) >> 8;
+        }
+      }
+
+      var6 = DummyClass40.textureCache.method10(90, var1 & '\uffff');
+      if (var6 != 0) {
+        var6 += 256;
+        int var7 = ((var4 & 16711680) >> 16) * var6;
+        if (var7 > '\uffff') {
+          var7 = '\uffff';
+        }
+
+        var8 = ((var4 & '\uff00') >> 8) * var6;
+        if (var8 > '\uffff') {
+          var8 = '\uffff';
+        }
+
+        int var9 = (var4 & 255) * var6;
+        if (var9 > '\uffff') {
+          var9 = '\uffff';
+        }
+
+        var4 = (var7 << 8 & 16711680) + (var8 & '\uff00') + (var9 >> 8);
+      }
+    }
+
+    return (var4 << 8) + (255 - (var3 & 255));
+  }
+
+  private static final float[] method1906(int var0, int var1, int var2, int var3, float var4,
+                                          float var5, float var6) {
+    float[] var7 = new float[9];
+    float[] var8 = new float[9];
+    float var9 = (float) Math.cos((double) ((float) var3 * 0.024543693F));
+    float var10 = (float) Math.sin((double) ((float) var3 * 0.024543693F));
+    float var11 = 1.0F - var9;
+    var7[0] = var9;
+    var7[1] = 0.0F;
+    var7[2] = var10;
+    var7[3] = 0.0F;
+    var7[4] = 1.0F;
+    var7[5] = 0.0F;
+    var7[6] = -var10;
+    var7[7] = 0.0F;
+    var7[8] = var9;
+    float[] var12 = new float[9];
+    float var13 = 1.0F;
+    float var14 = 0.0F;
+    var9 = (float) var1 / 32767.0F;
+    var10 = -((float) Math.sqrt((double) (1.0F - var9 * var9)));
+    var11 = 1.0F - var9;
+    float var15 = (float) Math.sqrt((double) (var0 * var0 + var2 * var2));
+    if (var15 == 0.0F && var9 == 0.0F) {
+      var8 = var7;
+    } else {
+      if (var15 != 0.0F) {
+        var13 = (float) (-var2) / var15;
+        var14 = (float) var0 / var15;
+      }
+
+      var12[0] = var9 + var13 * var13 * var11;
+      var12[1] = var14 * var10;
+      var12[2] = var14 * var13 * var11;
+      var12[3] = -var14 * var10;
+      var12[4] = var9;
+      var12[5] = var13 * var10;
+      var12[6] = var13 * var14 * var11;
+      var12[7] = -var13 * var10;
+      var12[8] = var9 + var14 * var14 * var11;
+      var8[0] = var7[0] * var12[0] + var7[1] * var12[3] + var7[2] * var12[6];
+      var8[1] = var7[0] * var12[1] + var7[1] * var12[4] + var7[2] * var12[7];
+      var8[2] = var7[0] * var12[2] + var7[1] * var12[5] + var7[2] * var12[8];
+      var8[3] = var7[3] * var12[0] + var7[4] * var12[3] + var7[5] * var12[6];
+      var8[4] = var7[3] * var12[1] + var7[4] * var12[4] + var7[5] * var12[7];
+      var8[5] = var7[3] * var12[2] + var7[4] * var12[5] + var7[5] * var12[8];
+      var8[6] = var7[6] * var12[0] + var7[7] * var12[3] + var7[8] * var12[6];
+      var8[7] = var7[6] * var12[1] + var7[7] * var12[4] + var7[8] * var12[7];
+      var8[8] = var7[6] * var12[2] + var7[7] * var12[5] + var7[8] * var12[8];
+    }
+
+    var8[0] *= var4;
+    var8[1] *= var4;
+    var8[2] *= var4;
+    var8[3] *= var5;
+    var8[4] *= var5;
+    var8[5] *= var5;
+    var8[6] *= var6;
+    var8[7] *= var6;
+    var8[8] *= var6;
+    return var8;
+  }
+
+  private static final void method1910(int var0, int var1, int var2, int var3, int var4, int var5,
+                                       float[] var6, int var7, float var8) {
+    var0 -= var3;
+    var1 -= var4;
+    var2 -= var5;
+    float var9 = (float) var0 * var6[0] + (float) var1 * var6[1] + (float) var2 * var6[2];
+    float var10 = (float) var0 * var6[3] + (float) var1 * var6[4] + (float) var2 * var6[5];
+    float var11 = (float) var0 * var6[6] + (float) var1 * var6[7] + (float) var2 * var6[8];
+    float var12 = (float) Math.sqrt((double) (var9 * var9 + var10 * var10 + var11 * var11));
+    float var13 = (float) Math.atan2((double) var9, (double) var11) / 6.2831855F + 0.5F;
+    float var14 = (float) Math.asin((double) (var10 / var12)) / 3.1415927F + 0.5F + var8;
+    float var15;
+    if (var7 == 1) {
+      var15 = var13;
+      var13 = -var14;
+      var14 = var15;
+    } else if (var7 == 2) {
+      var13 = -var13;
+      var14 = -var14;
+    } else if (var7 == 3) {
+      var15 = var13;
+      var13 = var14;
+      var14 = -var15;
+    }
+
+    aFloat3867 = var13;
+    aFloat3860 = var14;
+  }
+
+  private static final void method1913(int var0, int var1, int var2, int var3, int var4, int var5,
+                                       int var6, float[] var7, int var8, float var9, float var10,
+                                       float var11) {
+    var0 -= var3;
+    var1 -= var4;
+    var2 -= var5;
+    float var12 = (float) var0 * var7[0] + (float) var1 * var7[1] + (float) var2 * var7[2];
+    float var13 = (float) var0 * var7[3] + (float) var1 * var7[4] + (float) var2 * var7[5];
+    float var14 = (float) var0 * var7[6] + (float) var1 * var7[7] + (float) var2 * var7[8];
+    float var15;
+    float var16;
+    if (var6 == 0) {
+      var15 = var12 + var9 + 0.5F;
+      var16 = -var14 + var11 + 0.5F;
+    } else if (var6 == 1) {
+      var15 = var12 + var9 + 0.5F;
+      var16 = var14 + var11 + 0.5F;
+    } else if (var6 == 2) {
+      var15 = -var12 + var9 + 0.5F;
+      var16 = -var13 + var10 + 0.5F;
+    } else if (var6 == 3) {
+      var15 = var12 + var9 + 0.5F;
+      var16 = -var13 + var10 + 0.5F;
+    } else if (var6 == 4) {
+      var15 = var14 + var11 + 0.5F;
+      var16 = -var13 + var10 + 0.5F;
+    } else {
+      var15 = -var14 + var11 + 0.5F;
+      var16 = -var13 + var10 + 0.5F;
+    }
+
+    float var17;
+    if (var8 == 1) {
+      var17 = var15;
+      var15 = -var16;
+      var16 = var17;
+    } else if (var8 == 2) {
+      var15 = -var15;
+      var16 = -var16;
+    } else if (var8 == 3) {
+      var17 = var15;
+      var15 = var16;
+      var16 = -var17;
+    }
+
+    aFloat3864 = var15;
+    aFloat3858 = var16;
+  }
+
+  public static void method1915() {
+    aLongArray3821 = null;
+    indicesBuffer = null;
+    aByteBuffer3834 = null;
+    aClass140_Sub1_Sub1_3842 = null;
+    aClass140_Sub1_Sub1_3850 = null;
+    aClass140_Sub1_Sub1_3853 = null;
+    aClass140_Sub1_Sub1_3854 = null;
+    aClass140_Sub1_Sub1_3855 = null;
+    aClass140_Sub1_Sub1_3856 = null;
+    screenCoordinatesX = null;
+    screenCoordinatesY = null;
+  }
+
+  private static final float[] method1921(float[] var0, int var1) {
+    float[] var2 = new float[var1];
+    ArrayUtils.method1360(var0, 0, var2, 0, var1);
+    return var2;
+  }
+
+  private static final short[] method1928(short[] var0, int var1) {
+    short[] var2 = new short[var1];
+    ArrayUtils.method1361(var0, 0, var2, 0, var1);
+    return var2;
+  }
+
+  static final void method1929() {
+    aClass140_Sub1_Sub1_3842 = new GlModel();
+    aClass140_Sub1_Sub1_3850 = new GlModel();
+    aClass140_Sub1_Sub1_3853 = new GlModel();
+    aClass140_Sub1_Sub1_3854 = new GlModel();
+    aClass140_Sub1_Sub1_3855 = new GlModel();
+    aClass140_Sub1_Sub1_3856 = new GlModel();
   }
 
 }

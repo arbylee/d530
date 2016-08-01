@@ -1,5 +1,8 @@
 final class DummyClass14 {
 
+  private static GameString aClass94_1958 =
+    SpawnedGameObject.createString("Please wait )2 attempting to reestablish)3");
+  private static GameString aClass94_1963 = SpawnedGameObject.createString("glow2:");
   static ObjectCache aClass93_1955 = new ObjectCache(64);
   static int anInt1956;
   static int anInt1957;
@@ -8,10 +11,7 @@ final class DummyClass14 {
   static ObjectCache aClass93_1965 = new ObjectCache(50);
   static int titleBackgroundFileId = -1;
   static FileUnpacker aClass153_1967;
-  private static GameString aClass94_1958 =
-    SpawnedGameObject.createString("Please wait )2 attempting to reestablish)3");
   static GameString ATTEMPTING_TO_RECONNECT = aClass94_1958;
-  private static GameString aClass94_1963 = SpawnedGameObject.createString("glow2:");
   static GameString aClass94_1961 = aClass94_1963;
   static GameString aClass94_1962 = aClass94_1963;
 

@@ -60,9 +60,8 @@ final class DummyClass10 {
             var3.setPosition(var3.getSize(), TextureCache.localPlayer.waypointsX[0] + var8,
               var7 + TextureCache.localPlayer.waypointsY[0], ~var4 == -2);
             if (var3.config.method1474(-1)) {
-              SceneSomething2
-                .method1286(var3.waypointsY[0], false, null, 0, var3, var3.waypointsX[0],
-                  GameWorldSomething.currentPlane, null);
+              SceneSomething2.method1286(var3.waypointsY[0], false, null, 0, var3,
+                var3.waypointsX[0], GameWorldSomething.currentPlane, null);
             }
             continue;
           }
@@ -114,7 +113,8 @@ final class DummyClass10 {
     if (var0) {
       SomethingTexture1.sceneGraphTiles = SomethingIndex150.aClass3_Sub2ArrayArrayArray2065;
       AbstractGameWorld.heightMap = AbstractObjectNode.othrrHeightMap;
-      SomethingOtherWorldMap.aClass3_Sub11ArrayArray2542 = TextureSampler32.aClass3_Sub11ArrayArray3346;
+      SomethingOtherWorldMap.aClass3_Sub11ArrayArray2542 =
+        TextureSampler32.aClass3_Sub11ArrayArray3346;
     } else {
       SomethingTexture1.sceneGraphTiles = OndemandFileRequest.tiles;
       AbstractGameWorld.heightMap = DummyClass43.somethingHeightMap;
@@ -149,8 +149,8 @@ final class DummyClass10 {
       }
 
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "wj.D(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "wj.D(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -242,8 +242,7 @@ final class DummyClass10 {
 
   static final int method2268(byte var0, int var1, int var2) {
     try {
-      Inventory var3 =
-        (Inventory) SceneGraphTile.aClass130_2220.get((long) var1);
+      Inventory var3 = (Inventory) SceneGraphTile.aClass130_2220.get((long) var1);
       if (var3 != null) {
         if (var2 != -1) {
           int var4 = 0;
@@ -266,8 +265,8 @@ final class DummyClass10 {
         return 0;
       }
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "wj.H(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "wj.H(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 

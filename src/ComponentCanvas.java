@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 final class ComponentCanvas extends Canvas {
 
+  private static GameString aClass94_34 = SpawnedGameObject.createString("flash2:");
   static int anInt27;
   static GameString aClass94_28 =
     SpawnedGameObject.createString("; Expires=Thu)1 01)2Jan)21970 00:00:00 GMT; Max)2Age=0");
@@ -11,7 +12,6 @@ final class ComponentCanvas extends Canvas {
   static int anInt30;
   static int anInt31 = 0;
   static GameString aClass94_35 = SpawnedGameObject.createString("Annuler");
-  private static GameString aClass94_34 = SpawnedGameObject.createString("flash2:");
   static GameString aClass94_32 = aClass94_34;
   static GameString aClass94_36 = aClass94_34;
   private Component component;
@@ -21,8 +21,26 @@ final class ComponentCanvas extends Canvas {
     try {
       this.component = component;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "tm.<init>(" + (component != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "tm.<init>(" + (component != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public final void paint(Graphics var1) {
+    try {
+      this.component.paint(var1);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "tm.paint(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public final void update(Graphics var1) {
+    try {
+      this.component.update(var1);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "tm.update(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -131,8 +149,9 @@ final class ComponentCanvas extends Canvas {
           for (var13 = 0; 8 > var13; ++var13) {
             if (0 < var1 - -var12 && var12 + var1 < 103 && -1 > ~(var13 + var4) && -104 < ~(var4
               + var13)) {
-              var3[var2].anIntArrayArray1304[var12 + var1][var13 + var4] = ClientScript
-                .bitAnd(var3[var2].anIntArrayArray1304[var12 + var1][var13 + var4], -16777217);
+              var3[var2].anIntArrayArray1304[var12 + var1][var13 + var4] =
+                ClientScript.bitAnd(var3[var2].anIntArrayArray1304[var12 + var1][var13 + var4],
+                  -16777217);
             }
           }
         }
@@ -277,12 +296,11 @@ final class ComponentCanvas extends Canvas {
                 var20 = var30.anInt708 >> 7;
                 if (~var7 == ~var30.anInt704 && ~var29 <= ~var9 && var9 - -8 > var29
                   && ~var8 >= ~var20 && ~(var8 - -8) < ~var20) {
-                  var21 = MonoChromaticImageBuffer
-                    .method514(var0, var30.anInt703 & 1023, (byte) -83, 1023 & var30.anInt708) + (
-                    var1 << 7);
-                  var22 = TextureSampler28
-                    .method293(var30.anInt703 & 1023, var0, false, 1023 & var30.anInt708) + (var4
-                    << 7);
+                  var21 =
+                    MonoChromaticImageBuffer.method514(var0, var30.anInt703 & 1023, (byte) -83,
+                      1023 & var30.anInt708) + (var1 << 7);
+                  var22 = TextureSampler28.method293(var30.anInt703 & 1023, var0, false,
+                    1023 & var30.anInt708) + (var4 << 7);
                   var30.anInt703 = var21;
                   var30.anInt708 = var22;
                   var29 = var30.anInt703 >> 7;
@@ -325,24 +343,6 @@ final class ComponentCanvas extends Canvas {
         "tm.E(" + var0 + ',' + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ','
           + var4 + ',' + var5 + ',' + (var6 != null ? "{...}" : "null") + ',' + var7 + ',' + var8
           + ',' + var9 + ',' + var10 + ')');
-    }
-  }
-
-  public final void update(Graphics var1) {
-    try {
-      this.component.update(var1);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "tm.update(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  public final void paint(Graphics var1) {
-    try {
-      this.component.paint(var1);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "tm.paint(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

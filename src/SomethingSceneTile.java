@@ -1,10 +1,5 @@
 final class SomethingSceneTile {
 
-  static int[] anIntArray614 = new int[6];
-  static int[] anIntArray622 = new int[6];
-  static int[] anIntArray623 = new int[6];
-  static int[] anIntArray628 = new int[6];
-  static int[] anIntArray630 = new int[6];
   private static int[][] anIntArrayArray619 = new int[][] {
     {1, 3, 5, 7}, {1, 3, 5, 7}, {1, 3, 5, 7}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6},
     {1, 3, 5, 7, 6}, {1, 3, 5, 7, 2, 6}, {1, 3, 5, 7, 2, 8}, {1, 3, 5, 7, 2, 8},
@@ -21,6 +16,11 @@ final class SomethingSceneTile {
     {1, 0, 1, 5, 1, 1, 4, 5, 1, 1, 2, 4, 0, 0, 5, 3, 0, 5, 4, 3, 0, 4, 2, 3},
     {1, 0, 5, 4, 1, 0, 1, 5, 0, 0, 4, 3, 0, 4, 5, 3, 0, 5, 2, 3, 0, 1, 2, 5}
   };
+  static int[] anIntArray614 = new int[6];
+  static int[] anIntArray622 = new int[6];
+  static int[] anIntArray623 = new int[6];
+  static int[] anIntArray628 = new int[6];
+  static int[] anIntArray630 = new int[6];
   int anInt611;
   int anInt612;
   int[] anIntArray613;

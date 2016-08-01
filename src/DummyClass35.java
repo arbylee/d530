@@ -1,6 +1,8 @@
 class DummyClass35 {
 
-  static GameString aClass94_659 = SpawnedGameObject.createString("V-Brification des mises -9 jour )2 ");
+  private static GameString aClass94_658 = SpawnedGameObject.createString("Please remove ");
+  static GameString aClass94_659 =
+    SpawnedGameObject.createString("V-Brification des mises -9 jour )2 ");
   static int anInt660;
   static boolean aBoolean661 = true;
   static int[][] anIntArrayArray663;
@@ -8,7 +10,6 @@ class DummyClass35 {
   static SignLink signLink;
   static GameString aClass94_667 = SpawnedGameObject.createString("ondulation2:");
   static AbstractMouseWheel mouseWheel;
-  private static GameString aClass94_658 = SpawnedGameObject.createString("Please remove ");
   static GameString aClass94_662 = aClass94_658;
   static GameString aClass94_666 = aClass94_658;
 
@@ -16,8 +17,8 @@ class DummyClass35 {
     try {
       ItemConfig var2 = (ItemConfig) SomethingQuickChat.aClass93_3572.get((long) var0);
       if (var2 == null) {
-        byte[] var3 = TriChromaticImageCache.aClass153_1370
-          .getBytes(StillGraphic.method1951(var0, (byte) -115),
+        byte[] var3 =
+          TriChromaticImageCache.aClass153_1370.getBytes(StillGraphic.method1951(var0, (byte) -115),
             Unsure.method2075(var0, (byte) 102));
         if (var1 <= 68) {
           method1027(-113, (byte) 110);

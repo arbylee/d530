@@ -106,13 +106,11 @@ final class BufferData {
         int var32 = var17 + (var14 << 7);
         int var33 = SomethingOtherWorldMap.method408(var15, (byte) -51, var14, var5, var6, var17);
         int var31 = (var6 << 7) - -var15;
-        return var12
-          .method146(var31, var33, var32, var30, var19, var20, !var11 ? var21 : -256 & var21,
-            var4 != null ?
-              (float) (var33 + -SomethingOtherWorldMap
-                .method408(var15, (byte) 103, var14, var4, var6, var17))
-                / var1 :
-              0.0F);
+        return var12.method146(var31, var33, var32, var30, var19, var20,
+          !var11 ? var21 : -256 & var21, var4 != null ?
+            (float) (var33 + -SomethingOtherWorldMap.method408(var15, (byte) 103, var14, var4, var6,
+              var17)) / var1 :
+            0.0F);
       }
     } catch (RuntimeException var29) {
       throw AbstractGameWorld.cascadeException(var29,
@@ -137,8 +135,9 @@ final class BufferData {
             return 0;
           }
 
-          AreaSoundEffect.socketRequest = DummyClass35.signLink
-            .method1441((byte) 8, GameException.serverHost, DummyClass24.anInt1658);
+          AreaSoundEffect.socketRequest =
+            DummyClass35.signLink.method1441((byte) 8, GameException.serverHost,
+              DummyClass24.anInt1658);
           Widget.aLong261 = Time.getCurrentTimeMillis();
           Light.anInt692 = 1;
         }
@@ -169,8 +168,8 @@ final class BufferData {
 
           TextureSampler12.secureBuffer.writeByte(255);
           TextureSampler12.secureBuffer.writeInt(var1);
-          SomethingVolume15.gameSocket
-            .write(TextureSampler12.secureBuffer.bytes, 0, TextureSampler12.secureBuffer.position);
+          SomethingVolume15.gameSocket.write(TextureSampler12.secureBuffer.bytes, 0,
+            TextureSampler12.secureBuffer.position);
           if (null != GameWorld.audioOutputStream0) {
             GameWorld.audioOutputStream0.pause();
           }
@@ -218,8 +217,8 @@ final class BufferData {
             var1 = OndemandRequester.anInt1002 + -TriChromaticImageBuffer.anInt2484;
           }
 
-          SomethingVolume15.gameSocket
-            .read(TextureSampler29.aByteArray3396, TriChromaticImageBuffer.anInt2484, var1);
+          SomethingVolume15.gameSocket.read(TextureSampler29.aByteArray3396,
+            TriChromaticImageBuffer.anInt2484, var1);
           TriChromaticImageBuffer.anInt2484 += var1;
           if (TriChromaticImageBuffer.anInt2484 >= OndemandRequester.anInt1002) {
             if (TextureSampler39.method278(4, TextureSampler29.aByteArray3396)) {
@@ -287,8 +286,8 @@ final class BufferData {
         }
       }
     } catch (RuntimeException var11) {
-      throw AbstractGameWorld
-        .cascadeException(var11, "ql.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var11,
+        "ql.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 

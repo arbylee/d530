@@ -25,8 +25,8 @@ final class StringNode0 extends Node {
       OndemandRequester.method1250(var1 ^ 93, false);
       AbstractSomethingTexture.method1339(var0, var1 + var1);
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "hb.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "hb.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 

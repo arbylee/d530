@@ -34,8 +34,32 @@ final class LinearHashTable {
       }
 
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "jg.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "jg.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  final int get(int var1) {
+    try {
+
+      int var3 = (this.anIntArray1041.length >> 1) + -1;
+      int var4 = var3 & var1;
+
+      while (true) {
+        int var5 = this.anIntArray1041[1 + var4 + var4];
+        if (var5 == -1) {
+          return -1;
+        }
+
+        if (var1 == this.anIntArray1041[var4 + var4]) {
+          return var5;
+        }
+
+        var4 = var4 - -1 & var3;
+      }
+
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6, "jg.D(" + var1 + ')');
     }
   }
 
@@ -85,30 +109,6 @@ final class LinearHashTable {
       int var1 = -9 / ((var0 - 64) / 53);
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "jg.B(" + var0 + ')');
-    }
-  }
-
-  final int get(int var1) {
-    try {
-
-      int var3 = (this.anIntArray1041.length >> 1) + -1;
-      int var4 = var3 & var1;
-
-      while (true) {
-        int var5 = this.anIntArray1041[1 + var4 + var4];
-        if (var5 == -1) {
-          return -1;
-        }
-
-        if (var1 == this.anIntArray1041[var4 + var4]) {
-          return var5;
-        }
-
-        var4 = var4 - -1 & var3;
-      }
-
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6, "jg.D(" + var1 + ')');
     }
   }
 

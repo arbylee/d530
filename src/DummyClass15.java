@@ -1,12 +1,12 @@
 final class DummyClass15 {
 
+  private static GameString aClass94_1876 = SpawnedGameObject.createString("Loaded fonts");
   static int anInt1873;
   static ObjectCache aClass93_1874 = new ObjectCache(50);
   static int state = 0;
   static GameString aClass94_1877 = SpawnedGameObject.createString(":assist:");
   static GameString aClass94_1878 = SpawnedGameObject.createString("tremblement:");
   static GameString aClass94_1880 = SpawnedGameObject.createString(")1");
-  private static GameString aClass94_1876 = SpawnedGameObject.createString("Loaded fonts");
   static GameString aClass94_1879 = aClass94_1876;
 
   static final void method2062(int var0, int var1, int var2, int var3, int var4, int var5, int var6,
@@ -20,10 +20,10 @@ final class DummyClass15 {
         DummyClass59.method1040(GlTexture2d.anInt3765, var7, (byte) 0, DummyClass55.anInt1425);
       int var15 =
         DummyClass59.method1040(GlTexture2d.anInt3765, var0, (byte) 0, DummyClass55.anInt1425);
-      int var8 = DummyClass59
-        .method1040(LightIntensity.anInt902, var4 + var6, (byte) 0, DummyClass13.anInt2020);
-      int var9 = DummyClass59
-        .method1040(LightIntensity.anInt902, -var4 + var3, (byte) 0, DummyClass13.anInt2020);
+      int var8 = DummyClass59.method1040(LightIntensity.anInt902, var4 + var6, (byte) 0,
+        DummyClass13.anInt2020);
+      int var9 = DummyClass59.method1040(LightIntensity.anInt902, -var4 + var3, (byte) 0,
+        DummyClass13.anInt2020);
 
       int var16;
       for (var16 = var12; ~var16 > ~var8; ++var16) {
@@ -34,10 +34,10 @@ final class DummyClass15 {
         TextureSampler18.method282(DummyClass35.anIntArrayArray663[var16], var14, 94, var15, var5);
       }
 
-      int var10 = DummyClass59
-        .method1040(GlTexture2d.anInt3765, var4 + var7, (byte) 0, DummyClass55.anInt1425);
-      int var11 = DummyClass59
-        .method1040(GlTexture2d.anInt3765, -var4 + var0, (byte) 0, DummyClass55.anInt1425);
+      int var10 = DummyClass59.method1040(GlTexture2d.anInt3765, var4 + var7, (byte) 0,
+        DummyClass55.anInt1425);
+      int var11 = DummyClass59.method1040(GlTexture2d.anInt3765, -var4 + var0, (byte) 0,
+        DummyClass55.anInt1425);
       if (var2 >= -88) {
         aClass94_1876 = null;
       }

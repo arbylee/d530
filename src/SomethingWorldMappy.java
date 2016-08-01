@@ -17,8 +17,22 @@ final class SomethingWorldMappy extends Node {
       this.anInt2495 = var3;
       this.anInt2492 = var1;
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "lh.<init>(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "lh.<init>(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
+    }
+  }
+
+  final boolean method393(byte var1, int var2, int var3) {
+    try {
+      if (var1 != -45) {
+        method394(6, -105);
+      }
+
+      return var3 >= this.anInt2492 && ~this.anInt2495 <= ~var3 && this.anInt2494 <= var2
+        && var2 <= this.anInt2497;
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "lh.D(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -82,10 +96,10 @@ final class SomethingWorldMappy extends Node {
       int var17 = SomethingSceneTile.anIntArray622[var11];
       int var18 = SomethingSceneTile.anIntArray622[var12];
       if ((var13 - var14) * (var18 - var17) - (var16 - var17) * (var15 - var14) > 0) {
-        if (TextureSampler37.aBoolean3261 && TextureSampler34
-          .method185(GZipDecompressor.anInt819 + DummyClass40.anInt846,
-            TextureSampler18.anInt4039 + DummyClass40.anInt835, var16, var17, var18, var13, var14,
-            var15)) {
+        if (TextureSampler37.aBoolean3261 && TextureSampler34.method185(
+          GZipDecompressor.anInt819 + DummyClass40.anInt846,
+          TextureSampler18.anInt4039 + DummyClass40.anInt835, var16, var17, var18, var13, var14,
+          var15)) {
           DummyClass32.anInt515 = var5;
           OndemandRequester.anInt999 = var6;
         }
@@ -98,27 +112,21 @@ final class SomethingWorldMappy extends Node {
           if (var0.anIntArray616 != null && var0.anIntArray616[var9] != -1) {
             if (TextureSampler0.aBoolean3275) {
               if (var0.aBoolean629) {
-                DummyClass40
-                  .method1135(var16, var17, var18, var13, var14, var15, var0.anIntArray625[var9],
-                    var0.anIntArray632[var9], var0.anIntArray631[var9],
-                    SomethingSceneTile.anIntArray614[0], SomethingSceneTile.anIntArray614[1],
-                    SomethingSceneTile.anIntArray614[3], SomethingSceneTile.anIntArray630[0],
-                    SomethingSceneTile.anIntArray630[1], SomethingSceneTile.anIntArray630[3],
-                    SomethingSceneTile.anIntArray628[0], SomethingSceneTile.anIntArray628[1],
-                    SomethingSceneTile.anIntArray628[3], var0.anIntArray616[var9]);
+                DummyClass40.method1135(var16, var17, var18, var13, var14, var15,
+                  var0.anIntArray625[var9], var0.anIntArray632[var9], var0.anIntArray631[var9],
+                  SomethingSceneTile.anIntArray614[0], SomethingSceneTile.anIntArray614[1],
+                  SomethingSceneTile.anIntArray614[3], SomethingSceneTile.anIntArray630[0],
+                  SomethingSceneTile.anIntArray630[1], SomethingSceneTile.anIntArray630[3],
+                  SomethingSceneTile.anIntArray628[0], SomethingSceneTile.anIntArray628[1],
+                  SomethingSceneTile.anIntArray628[3], var0.anIntArray616[var9]);
               } else {
-                DummyClass40
-                  .method1135(var16, var17, var18, var13, var14, var15, var0.anIntArray625[var9],
-                    var0.anIntArray632[var9], var0.anIntArray631[var9],
-                    SomethingSceneTile.anIntArray614[var10],
-                    SomethingSceneTile.anIntArray614[var11],
-                    SomethingSceneTile.anIntArray614[var12],
-                    SomethingSceneTile.anIntArray630[var10],
-                    SomethingSceneTile.anIntArray630[var11],
-                    SomethingSceneTile.anIntArray630[var12],
-                    SomethingSceneTile.anIntArray628[var10],
-                    SomethingSceneTile.anIntArray628[var11],
-                    SomethingSceneTile.anIntArray628[var12], var0.anIntArray616[var9]);
+                DummyClass40.method1135(var16, var17, var18, var13, var14, var15,
+                  var0.anIntArray625[var9], var0.anIntArray632[var9], var0.anIntArray631[var9],
+                  SomethingSceneTile.anIntArray614[var10], SomethingSceneTile.anIntArray614[var11],
+                  SomethingSceneTile.anIntArray614[var12], SomethingSceneTile.anIntArray630[var10],
+                  SomethingSceneTile.anIntArray630[var11], SomethingSceneTile.anIntArray630[var12],
+                  SomethingSceneTile.anIntArray628[var10], SomethingSceneTile.anIntArray628[var11],
+                  SomethingSceneTile.anIntArray628[var12], var0.anIntArray616[var9]);
               }
             } else {
               int var19 = DummyClass40.textureCache.method15(var0.anIntArray616[var9], '\uffff');
@@ -128,9 +136,8 @@ final class SomethingWorldMappy extends Node {
                 DummyClass2.repackHSL(var19, var0.anIntArray631[var9]));
             }
           } else if (var0.anIntArray625[var9] != 12345678) {
-            DummyClass40
-              .method1154(var16, var17, var18, var13, var14, var15, var0.anIntArray625[var9],
-                var0.anIntArray632[var9], var0.anIntArray631[var9]);
+            DummyClass40.method1154(var16, var17, var18, var13, var14, var15,
+              var0.anIntArray625[var9], var0.anIntArray632[var9], var0.anIntArray631[var9]);
           }
         }
       }
@@ -163,20 +170,6 @@ final class SomethingWorldMappy extends Node {
       Cache.aClass93_743.method1524(3);
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "lh.C(" + var0 + ')');
-    }
-  }
-
-  final boolean method393(byte var1, int var2, int var3) {
-    try {
-      if (var1 != -45) {
-        method394(6, -105);
-      }
-
-      return var3 >= this.anInt2492 && ~this.anInt2495 <= ~var3 && this.anInt2494 <= var2
-        && var2 <= this.anInt2497;
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "lh.D(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 

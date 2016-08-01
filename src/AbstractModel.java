@@ -2,23 +2,7 @@ abstract class AbstractModel extends SceneNode {
 
   boolean aBoolean2699 = false;
 
-  private static final int method1878(int[][] var0, int var1, int var2) {
-    int var3 = var1 >> 7;
-    int var4 = var2 >> 7;
-    if (var3 >= 0 && var4 >= 0 && var3 < var0.length && var4 < var0[0].length) {
-      int var5 = var1 & 127;
-      int var6 = var2 & 127;
-      int var7 = var0[var3][var4] * (128 - var5) + var0[var3 + 1][var4] * var5 >> 7;
-      int var8 = var0[var3][var4 + 1] * (128 - var5) + var0[var3 + 1][var4 + 1] * var5 >> 7;
-      return var7 * (128 - var6) + var8 * var6 >> 7;
-    } else {
-      return 0;
-    }
-  }
-
   abstract int method1872();
-
-  abstract int getMinimumY();
 
   abstract boolean method1873();
 
@@ -386,16 +370,32 @@ abstract class AbstractModel extends SceneNode {
   final void method1867(int var1, int var2, int var3, int var4, int var5) {
   }
 
+  abstract void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
+                     long var9, int var11, DummyClass0 var12);
+
+  abstract int getMinimumY();
+
   abstract void method1897(int var1, int var2, int var3);
 
   abstract int method1898();
-
-  abstract void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
-                     long var9, int var11, DummyClass0 var12);
 
   abstract void applyAnimationFrame(int var1, int[] var2, int var3, int var4, int var5,
                                     boolean var6, int var7, int[] var8);
 
   abstract void method1900();
+
+  private static final int method1878(int[][] var0, int var1, int var2) {
+    int var3 = var1 >> 7;
+    int var4 = var2 >> 7;
+    if (var3 >= 0 && var4 >= 0 && var3 < var0.length && var4 < var0[0].length) {
+      int var5 = var1 & 127;
+      int var6 = var2 & 127;
+      int var7 = var0[var3][var4] * (128 - var5) + var0[var3 + 1][var4] * var5 >> 7;
+      int var8 = var0[var3][var4 + 1] * (128 - var5) + var0[var3 + 1][var4 + 1] * var5 >> 7;
+      return var7 * (128 - var6) + var8 * var6 >> 7;
+    } else {
+      return 0;
+    }
+  }
 
 }

@@ -19,6 +19,17 @@ final class DummyCanvas extends Canvas implements FocusListener {
   static int anInt25 = 1;
   static GameString aClass94_26 = SpawnedGameObject.createString("n");
 
+  @Override
+  public void focusGained(FocusEvent e) {
+    // TODO Auto-generated method stub
+
+  }
+
+  @Override
+  public void focusLost(FocusEvent e) {
+    // TODO Auto-generated method stub
+
+  }
 
   public static void method53(int var0) {
     try {
@@ -57,16 +68,6 @@ final class DummyCanvas extends Canvas implements FocusListener {
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "oe.B(" + var0 + ')');
     }
-  }
-
-  @Override public void focusGained(FocusEvent e) {
-    // TODO Auto-generated method stub
-
-  }
-
-  @Override public void focusLost(FocusEvent e) {
-    // TODO Auto-generated method stub
-
   }
 
 }

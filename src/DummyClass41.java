@@ -9,7 +9,8 @@ final class DummyClass41 {
   static int anInt865 = -1;
   static long aLong866 = 0L;
   static int secondaryPort;
-  static GameString aClass94_868 = SpawnedGameObject.createString("Chargement de l(W-Bcran)2titre )2 ");
+  static GameString aClass94_868 =
+    SpawnedGameObject.createString("Chargement de l(W-Bcran)2titre )2 ");
 
 
   public static void method1169(boolean var0) {
@@ -44,9 +45,8 @@ final class DummyClass41 {
         }
 
         if (var8 * var8 >= var7) {
-          DummyClass36
-            .method1030(var5, MilliFrameRegulator.aClass3_Sub28_Sub16Array2690[var0], var4, var3,
-              var1, (byte) 11, var2);
+          DummyClass36.method1030(var5, MilliFrameRegulator.aClass3_Sub28_Sub16Array2690[var0],
+            var4, var3, var1, (byte) 11, var2);
         } else {
           var8 -= 10;
           int var9 = 2047 & TextureSampler9.anInt3102 + SpotAnimationConfig.anInt531;
@@ -60,13 +60,13 @@ final class DummyClass41 {
           int var16 = (int) (Math.sin(var14) * (double) var8);
           int var17 = (int) (Math.cos(var14) * (double) var8);
           if (GlRenderer.useOpenGlRenderer) {
-            ((GlDirectColorSprite) TextureSampler8.aClass3_Sub28_Sub16Array3458[var0])
-              .method648(240, 240, (var5.anInt168 / 2 + var2 + var16) * 16,
-                16 * (-var17 + var5.anInt193 / 2 + var1), (int) (10430.378D * var14), 4096);
+            ((GlDirectColorSprite) TextureSampler8.aClass3_Sub28_Sub16Array3458[var0]).method648(
+              240, 240, (var5.anInt168 / 2 + var2 + var16) * 16,
+              16 * (-var17 + var5.anInt193 / 2 + var1), (int) (10430.378D * var14), 4096);
           } else {
-            ((SoftwareDirectColorSprite) TextureSampler8.aClass3_Sub28_Sub16Array3458[var0])
-              .method660(-10 + var16 + var5.anInt168 / 2 + var2,
-                -10 + var5.anInt193 / 2 + var1 + -var17, 20, 20, 15, 15, var14, 256);
+            ((SoftwareDirectColorSprite) TextureSampler8.aClass3_Sub28_Sub16Array3458[var0]).method660(
+              -10 + var16 + var5.anInt168 / 2 + var2, -10 + var5.anInt193 / 2 + var1 + -var17, 20,
+              20, 15, 15, var14, 256);
           }
         }
 
@@ -164,8 +164,8 @@ final class DummyClass41 {
       AbstractObjectNode.anInt3608 = var0.readInt();
       BufferedFile.aBoolean579 = true;
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "hi.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "hi.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -178,8 +178,8 @@ final class DummyClass41 {
           (LinearHashTable.aBoolean1040 ? GameException.aClass94_2116 : null)) :
         null;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "hi.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "hi.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 

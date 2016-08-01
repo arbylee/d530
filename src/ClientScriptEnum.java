@@ -17,69 +17,6 @@ final class ClientScriptEnum extends SubNode {
     this.defaultValue = Cache.aClass94_750;
   }
 
-  static final SoftwareIndexedColorSprite[] createSprites(byte var0, int var1, FileUnpacker var2) {
-    try {
-      return GroundItem.loadSprites(var2, var1) ?
-        (var0 <= 52 ? null : LinearHashTable.createSprites(0)) :
-        null;
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4,
-        "ml.A(" + var0 + ',' + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  static final byte[] method623(byte var0, byte[] var1) {
-    try {
-      if (var0 > -112) {
-        createSprites((byte) 43, -121, null);
-      }
-
-      Buffer var2 = new Buffer(var1);
-      int var3 = var2.readUnsignedByte();
-      int var4 = var2.readInt();
-      if (0 <= var4 && (-1 == ~AbstractSomethingTexture.anInt1108
-        || ~AbstractSomethingTexture.anInt1108 <= ~var4)) {
-        if (-1 == ~var3) {
-          byte[] var8 = new byte[var4];
-          var2.method764(0, var4, var8, (byte) 93);
-          return var8;
-        } else {
-          int var5 = var2.readInt();
-          if (0 <= var5 && (AbstractSomethingTexture.anInt1108 == 0
-            || ~AbstractSomethingTexture.anInt1108 <= ~var5)) {
-            byte[] var6 = new byte[var5];
-            if (1 != var3) {
-              AudioSomethingSomething.aClass49_2505.decompress(var6, var2, false);
-            } else {
-              BZipDecompressor.method1640(var6, var5, var1, var4, 9);
-            }
-
-            return var6;
-          } else {
-            throw new RuntimeException();
-          }
-        }
-      } else {
-        throw new RuntimeException();
-      }
-    } catch (RuntimeException var7) {
-      throw AbstractGameWorld
-        .cascadeException(var7, "ml.R(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  public static void method624(int var0) {
-    try {
-      aClass94_3661 = null;
-      if (var0 != -1) {
-        method623((byte) -86, null);
-      }
-
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "ml.P(" + var0 + ')');
-    }
-  }
-
   private final void parseOpcode(int opcode, Buffer var2, byte var3) {
     try {
       if (var3 > -29) {
@@ -160,8 +97,8 @@ final class ClientScriptEnum extends SubNode {
         return false;
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "ml.F(" + (name != null ? "{...}" : "null") + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "ml.F(" + (name != null ? "{...}" : "null") + ',' + var2 + ')');
     }
   }
 
@@ -239,8 +176,71 @@ final class ClientScriptEnum extends SubNode {
         this.parseOpcode(opcode, buffer, (byte) -84);
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "ml.Q(" + (buffer != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "ml.Q(" + (buffer != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  static final SoftwareIndexedColorSprite[] createSprites(byte var0, int var1, FileUnpacker var2) {
+    try {
+      return GroundItem.loadSprites(var2, var1) ?
+        (var0 <= 52 ? null : LinearHashTable.createSprites(0)) :
+        null;
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "ml.A(" + var0 + ',' + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  static final byte[] method623(byte var0, byte[] var1) {
+    try {
+      if (var0 > -112) {
+        createSprites((byte) 43, -121, null);
+      }
+
+      Buffer var2 = new Buffer(var1);
+      int var3 = var2.readUnsignedByte();
+      int var4 = var2.readInt();
+      if (0 <= var4 && (-1 == ~AbstractSomethingTexture.anInt1108
+        || ~AbstractSomethingTexture.anInt1108 <= ~var4)) {
+        if (-1 == ~var3) {
+          byte[] var8 = new byte[var4];
+          var2.method764(0, var4, var8, (byte) 93);
+          return var8;
+        } else {
+          int var5 = var2.readInt();
+          if (0 <= var5 && (AbstractSomethingTexture.anInt1108 == 0
+            || ~AbstractSomethingTexture.anInt1108 <= ~var5)) {
+            byte[] var6 = new byte[var5];
+            if (1 != var3) {
+              AudioSomethingSomething.aClass49_2505.decompress(var6, var2, false);
+            } else {
+              BZipDecompressor.method1640(var6, var5, var1, var4, 9);
+            }
+
+            return var6;
+          } else {
+            throw new RuntimeException();
+          }
+        }
+      } else {
+        throw new RuntimeException();
+      }
+    } catch (RuntimeException var7) {
+      throw AbstractGameWorld.cascadeException(var7,
+        "ml.R(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public static void method624(int var0) {
+    try {
+      aClass94_3661 = null;
+      if (var0 != -1) {
+        method623((byte) -86, null);
+      }
+
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "ml.P(" + var0 + ')');
     }
   }
 

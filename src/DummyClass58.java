@@ -22,8 +22,8 @@ final class DummyClass58 {
         && ~var7 <= ~DummyClass13.anInt2020 && LightIntensity.anInt902 >= var7
         && var2 >= DummyClass13.anInt2020 && ~LightIntensity.anInt902 <= ~var2
         && ~var3 <= ~DummyClass13.anInt2020 && ~var3 >= ~LightIntensity.anInt902) {
-        SomethingInScenePacket202
-          .method114(3, var2, var8, var7, var6, var1, var3, var4, var0, var5);
+        SomethingInScenePacket202.method114(3, var2, var8, var7, var6, var1, var3, var4, var0,
+          var5);
       } else {
         DummyClass53.method1583(var5, var0, var7, 3, var8, var3, var2, var1, var6, var4);
       }
@@ -76,8 +76,8 @@ final class DummyClass58 {
         return var2;
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "oi.H(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "oi.H(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -97,8 +97,8 @@ final class DummyClass58 {
         DummyClass59.titlebackground.draw((DummyClass30.viewWidth + -var3) / 2, 0, var3, var2);
         AnimationSequence.logoSprite =
           WidgetUpdate.createIndexedColorSprite(var0, BitVariable.logoFileId);
-        AnimationSequence.logoSprite
-          .draw(DummyClass30.viewWidth / 2 + -(AnimationSequence.logoSprite.width / 2), 18);
+        AnimationSequence.logoSprite.draw(
+          DummyClass30.viewWidth / 2 + -(AnimationSequence.logoSprite.width / 2), 18);
         StillGraphic.aBoolean2713 = true;
         if (var1 > -50) {
           method1654(-27);
@@ -106,8 +106,8 @@ final class DummyClass58 {
 
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "oi.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "oi.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 

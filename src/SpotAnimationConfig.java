@@ -1,5 +1,6 @@
 final class SpotAnimationConfig {
 
+  private static GameString aClass94_553 = SpawnedGameObject.createString("slide:");
   static int anInt529;
   static int anInt531 = 0;
   static GameBuffer gameBuffer = new GameBuffer(5000);
@@ -9,7 +10,6 @@ final class SpotAnimationConfig {
   static volatile int anInt549 = 0;
   static GameString aClass94_550 = SpawnedGameObject.createString("Jeter");
   static GameString aClass94_552 = SpawnedGameObject.createString("Sprites geladen)3");
-  private static GameString aClass94_553 = SpawnedGameObject.createString("slide:");
   static GameString aClass94_547 = aClass94_553;
   static GameString aClass94_551 = aClass94_553;
   boolean aBoolean536 = false;
@@ -26,40 +26,6 @@ final class SpotAnimationConfig {
   private int rotationY = 0;
   private short[] colorIds;
 
-  public static void method964(int var0) {
-    try {
-      aClass94_553 = null;
-      gameBuffer = null;
-      if (var0 != 6) {
-        method964(-57);
-      }
-
-      aClass94_550 = null;
-      aClass94_547 = null;
-      aClass94_551 = null;
-      aClass94_552 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "eg.E(" + var0 + ')');
-    }
-  }
-
-  static final void method967(int var0, int var1, int var2, int var3, int var4, int var5, int var6,
-                              int var7) {
-    try {
-      if (ComponentCanvas.method57(var5, 104)) {
-        if (var2 == 2) {
-          GameClient
-            .method50(SceneNode.aClass11ArrayArray1834[var5], -1, var6, var1, var4, var7, var0,
-              var3);
-        }
-      }
-    } catch (RuntimeException var9) {
-      throw AbstractGameWorld.cascadeException(var9,
-        "eg.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6
-          + ',' + var7 + ')');
-    }
-  }
-
   final void method963(Buffer var1, byte var2) {
     try {
       if (var2 != -113) {
@@ -75,8 +41,8 @@ final class SpotAnimationConfig {
         this.method965(var1, var3, 128);
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "eg.A(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "eg.A(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
     }
   }
 
@@ -198,8 +164,41 @@ final class SpotAnimationConfig {
         return var9;
       }
     } catch (RuntimeException var8) {
-      throw AbstractGameWorld
-        .cascadeException(var8, "eg.C(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
+      throw AbstractGameWorld.cascadeException(var8,
+        "eg.C(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
+    }
+  }
+
+  public static void method964(int var0) {
+    try {
+      aClass94_553 = null;
+      gameBuffer = null;
+      if (var0 != 6) {
+        method964(-57);
+      }
+
+      aClass94_550 = null;
+      aClass94_547 = null;
+      aClass94_551 = null;
+      aClass94_552 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "eg.E(" + var0 + ')');
+    }
+  }
+
+  static final void method967(int var0, int var1, int var2, int var3, int var4, int var5, int var6,
+                              int var7) {
+    try {
+      if (ComponentCanvas.method57(var5, 104)) {
+        if (var2 == 2) {
+          GameClient.method50(SceneNode.aClass11ArrayArray1834[var5], -1, var6, var1, var4, var7,
+            var0, var3);
+        }
+      }
+    } catch (RuntimeException var9) {
+      throw AbstractGameWorld.cascadeException(var9,
+        "eg.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6
+          + ',' + var7 + ')');
     }
   }
 

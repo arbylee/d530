@@ -9,6 +9,27 @@ class Node {
   Node nextNode;
   Node prevNode;
 
+  final boolean method82(int var1) {
+    try {
+      return var1 != 0 ? false : null != this.prevNode;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "ab.I(" + var1 + ')');
+    }
+  }
+
+  final void unlinkNode() {
+    try {
+      if (null != this.prevNode) {
+        this.prevNode.nextNode = this.nextNode;
+        this.nextNode.prevNode = this.prevNode;
+        this.prevNode = null;
+        this.nextNode = null;
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "ab.L()");
+    }
+  }
+
   public static void method83(byte var0) {
     try {
       aClass94_77 = null;
@@ -36,8 +57,8 @@ class Node {
           DummyClass25.aClass131_1624.aShortArray1718[var2]);
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "ab.N(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "ab.N(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -137,27 +158,6 @@ class Node {
           "null") + ',' + (var3 != null ? "{...}" : "null") + ',' + (var4 != null ?
           "{...}" :
           "null") + ')');
-    }
-  }
-
-  final boolean method82(int var1) {
-    try {
-      return var1 != 0 ? false : null != this.prevNode;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "ab.I(" + var1 + ')');
-    }
-  }
-
-  final void unlinkNode() {
-    try {
-      if (null != this.prevNode) {
-        this.prevNode.nextNode = this.nextNode;
-        this.nextNode.prevNode = this.prevNode;
-        this.prevNode = null;
-        this.nextNode = null;
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "ab.L()");
     }
   }
 

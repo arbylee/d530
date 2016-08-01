@@ -1,7 +1,8 @@
 final class LightIntensity {
 
   static AbstractDirectColorSprite aClass3_Sub28_Sub16_895;
-  static GameString aClass94_897 = SpawnedGameObject.createString("Liste des mises -9 jour charg-Be");
+  static GameString aClass94_897 =
+    SpawnedGameObject.createString("Liste des mises -9 jour charg-Be");
   static int[] variables = new int[2500];
   static int anInt900;
   static GameString aClass94_901 = SpawnedGameObject.createString(
@@ -15,21 +16,6 @@ final class LightIntensity {
   int anInt899 = 2048;
   int anInt907 = 0;
   int anInt908 = 2048;
-
-  public static void method1192(byte var0) {
-    try {
-      aClass94_897 = null;
-      variables = null;
-      aClass94_901 = null;
-      anIntArray904 = null;
-      aClass94_905 = null;
-      if (var0 == -86) {
-        aClass3_Sub28_Sub16_895 = null;
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "ic.B(" + var0 + ')');
-    }
-  }
 
   final void method1190(int var1, Buffer var2, int var3) {
     try {
@@ -72,6 +58,21 @@ final class LightIntensity {
     } catch (RuntimeException var6) {
       throw AbstractGameWorld.cascadeException(var6,
         "ic.C(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ',' + var4 + ')');
+    }
+  }
+
+  public static void method1192(byte var0) {
+    try {
+      aClass94_897 = null;
+      variables = null;
+      aClass94_901 = null;
+      anIntArray904 = null;
+      aClass94_905 = null;
+      if (var0 == -86) {
+        aClass3_Sub28_Sub16_895 = null;
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "ic.B(" + var0 + ')');
     }
   }
 

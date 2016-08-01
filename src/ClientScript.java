@@ -1,5 +1,6 @@
 final class ClientScript extends SubNode {
 
+  private static GameString aClass94_3692 = SpawnedGameObject.createString("Members object");
   static HashTable variableUpdates = new HashTable(16);
   static int anInt3681;
   static int loadingPercent = 10;
@@ -7,7 +8,6 @@ final class ClientScript extends SubNode {
   static int[] anIntArray3693 = new int[1000];
   static ClanChatUser[] aClass3_Sub19Array3694;
   static int anInt3695;
-  private static GameString aClass94_3692 = SpawnedGameObject.createString("Members object");
   static GameString aClass94_3691 = aClass94_3692;
   int anInt3678;
   int anInt3680;
@@ -56,8 +56,8 @@ final class ClientScript extends SubNode {
         ScriptState.amountFloors = AnimationSomething.configs.getAmountChildren(4, (byte) 112);
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "qc.D(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "qc.D(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

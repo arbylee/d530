@@ -35,30 +35,6 @@ abstract class Something3dRoot {
     }
   }
 
-  static final int method2234(int var0, int var1) {
-    try {
-      int var2 = -27 / ((var1 - -87) / 39);
-      return 1023 & var0;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "wf.K(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  public static void method2235(int var0) {
-    try {
-      anIntArray2048 = null;
-      configs = null;
-      if (var0 == 4) {
-        aClass94_2053 = null;
-        aClass140_Sub5Array2058 = null;
-        aClass94_2061 = null;
-        aClass11_2055 = null;
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "wf.J(" + var0 + ')');
-    }
-  }
-
   final void method2230(int var1, int var2, int var3, int var4) {
     try {
       int[] var39 = new int[var2];
@@ -140,26 +116,34 @@ abstract class Something3dRoot {
               int var18 = DummyClass3.anIntArray52[var6];
               int var22 = var7 - 4096;
               short var26 = this.aShortArray2047[var23 + var14];
-              int var29 = WorldMapLabel
-                .method1788(var5, var7, var6, this.aShortArray2047[var25 + var11], true);
-              int var30 = WorldMapLabel
-                .method1788(var20, var7, var6, this.aShortArray2047[var12 - -var25], true);
+              int var29 =
+                WorldMapLabel.method1788(var5, var7, var6, this.aShortArray2047[var25 + var11],
+                  true);
+              int var30 =
+                WorldMapLabel.method1788(var20, var7, var6, this.aShortArray2047[var12 - -var25],
+                  true);
               int var31 = var29 - -(var17 * (var30 - var29) >> 12);
-              var29 = WorldMapLabel
-                .method1788(var5, var7, var21, this.aShortArray2047[var26 + var11], true);
-              var30 = WorldMapLabel
-                .method1788(var20, var7, var21, this.aShortArray2047[var12 + var26], true);
+              var29 =
+                WorldMapLabel.method1788(var5, var7, var21, this.aShortArray2047[var26 + var11],
+                  true);
+              var30 =
+                WorldMapLabel.method1788(var20, var7, var21, this.aShortArray2047[var12 + var26],
+                  true);
               int var32 = var29 + (var17 * (-var29 + var30) >> 12);
               int var33 = ((-var31 + var32) * var18 >> 12) + var31;
-              var29 = WorldMapLabel
-                .method1788(var5, var22, var6, this.aShortArray2047[var11 + var27], true);
-              var30 = WorldMapLabel
-                .method1788(var20, var22, var6, this.aShortArray2047[var12 + var27], true);
+              var29 =
+                WorldMapLabel.method1788(var5, var22, var6, this.aShortArray2047[var11 + var27],
+                  true);
+              var30 =
+                WorldMapLabel.method1788(var20, var22, var6, this.aShortArray2047[var12 + var27],
+                  true);
               var31 = (var17 * (var30 + -var29) >> 12) + var29;
-              var29 = WorldMapLabel
-                .method1788(var5, var22, var21, this.aShortArray2047[var11 - -var28], true);
-              var30 = WorldMapLabel
-                .method1788(var20, var22, var21, this.aShortArray2047[var12 + var28], true);
+              var29 =
+                WorldMapLabel.method1788(var5, var22, var21, this.aShortArray2047[var11 - -var28],
+                  true);
+              var30 =
+                WorldMapLabel.method1788(var20, var22, var21, this.aShortArray2047[var12 + var28],
+                  true);
               var32 = var29 + ((-var29 + var30) * var17 >> 12);
               int var34 = var31 - -((var32 + -var31) * var18 >> 12);
               this.method2237(((-var33 + var34) * var19 >> 12) + var33, var38, -20975);
@@ -171,8 +155,8 @@ abstract class Something3dRoot {
       }
 
     } catch (RuntimeException var43) {
-      throw AbstractGameWorld
-        .cascadeException(var43, "wf.M(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
+      throw AbstractGameWorld.cascadeException(var43,
+        "wf.M(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
     }
   }
 
@@ -225,5 +209,29 @@ abstract class Something3dRoot {
   }
 
   abstract void method2237(int var1, int var2, int var3);
+
+  static final int method2234(int var0, int var1) {
+    try {
+      int var2 = -27 / ((var1 - -87) / 39);
+      return 1023 & var0;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "wf.K(" + var0 + ',' + var1 + ')');
+    }
+  }
+
+  public static void method2235(int var0) {
+    try {
+      anIntArray2048 = null;
+      configs = null;
+      if (var0 == 4) {
+        aClass94_2053 = null;
+        aClass140_Sub5Array2058 = null;
+        aClass94_2061 = null;
+        aClass11_2055 = null;
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "wf.J(" + var0 + ')');
+    }
+  }
 
 }

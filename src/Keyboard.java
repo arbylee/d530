@@ -20,6 +20,113 @@ final class Keyboard implements KeyListener, FocusListener {
   static GameString aClass94_1917 = SpawnedGameObject.createString(" <col=00ff80>");
   static int anInt1918 = 0;
 
+  public final void keyTyped(KeyEvent var1) {
+    try {
+      if (TextureSampler33.keyboard != null) {
+        int var2 = BitVariable.method1386(true, var1);
+        if (-1 >= ~var2) {
+          int var3 = 1 + SceneSomething.anInt491 & 127;
+          if (~Parameter.anInt3620 != ~var3) {
+            AbstractFrameRegulator.keyQueue[SceneSomething.anInt491] = -1;
+            AbstractAudioOutputStream.otherKeyQueue[SceneSomething.anInt491] = var2;
+            SceneSomething.anInt491 = var3;
+          }
+        }
+      }
+
+      var1.consume();
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "uf.keyTyped(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public final synchronized void keyPressed(KeyEvent var1) {
+    try {
+      if (null != TextureSampler33.keyboard) {
+        TextureSampler29.anInt3398 = 0;
+        int var2 = var1.getKeyCode();
+        if (0 <= var2 && DummyClass26.keyTable.length > var2) {
+          var2 = DummyClass26.keyTable[var2];
+          if (0 != (var2 & 128)) {
+            var2 = -1;
+          }
+        } else {
+          var2 = -1;
+        }
+
+        if (-1 >= ~AbstractTextureSampler.anInt2384 && -1 >= ~var2) {
+          FileRequester.anIntArray2952[AbstractTextureSampler.anInt2384] = var2;
+          AbstractTextureSampler.anInt2384 = 127 & AbstractTextureSampler.anInt2384 - -1;
+          if (AbstractTextureSampler.anInt2384 == SomethingPacket116.anInt1744) {
+            AbstractTextureSampler.anInt2384 = -1;
+          }
+        }
+
+        int var3;
+        if (~var2 <= -1) {
+          var3 = 127 & 1 + SceneSomething.anInt491;
+          if (var3 != Parameter.anInt3620) {
+            AbstractFrameRegulator.keyQueue[SceneSomething.anInt491] = var2;
+            AbstractAudioOutputStream.otherKeyQueue[SceneSomething.anInt491] = -1;
+            SceneSomething.anInt491 = var3;
+          }
+        }
+
+        var3 = var1.getModifiers();
+        if (-1 != ~(var3 & 10) || 85 == var2 || -11 == ~var2) {
+          var1.consume();
+        }
+      }
+
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "uf.keyPressed(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public final synchronized void keyReleased(KeyEvent var1) {
+    try {
+      if (null != TextureSampler33.keyboard) {
+        TextureSampler29.anInt3398 = 0;
+        int var2 = var1.getKeyCode();
+        if (var2 >= 0 && ~DummyClass26.keyTable.length < ~var2) {
+          var2 = DummyClass26.keyTable[var2] & -129;
+        } else {
+          var2 = -1;
+        }
+
+        if (AbstractTextureSampler.anInt2384 >= 0 && ~var2 <= -1) {
+          FileRequester.anIntArray2952[AbstractTextureSampler.anInt2384] = ~var2;
+          AbstractTextureSampler.anInt2384 = 127 & 1 + AbstractTextureSampler.anInt2384;
+          if (~SomethingPacket116.anInt1744 == ~AbstractTextureSampler.anInt2384) {
+            AbstractTextureSampler.anInt2384 = -1;
+          }
+        }
+      }
+
+      var1.consume();
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "uf.keyReleased(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public final void focusGained(FocusEvent var1) {
+  }
+
+  public final synchronized void focusLost(FocusEvent var1) {
+    try {
+      if (null != TextureSampler33.keyboard) {
+        AbstractTextureSampler.anInt2384 = -1;
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "uf.focusLost(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
   public static void method2085(int var0) {
     try {
       aClass93_1911 = null;
@@ -103,113 +210,6 @@ final class Keyboard implements KeyListener, FocusListener {
     } catch (RuntimeException var5) {
       throw AbstractGameWorld.cascadeException(var5, "uf.B(" + var0 + ')');
     }
-  }
-
-  public final synchronized void keyPressed(KeyEvent var1) {
-    try {
-      if (null != TextureSampler33.keyboard) {
-        TextureSampler29.anInt3398 = 0;
-        int var2 = var1.getKeyCode();
-        if (0 <= var2 && DummyClass26.keyTable.length > var2) {
-          var2 = DummyClass26.keyTable[var2];
-          if (0 != (var2 & 128)) {
-            var2 = -1;
-          }
-        } else {
-          var2 = -1;
-        }
-
-        if (-1 >= ~AbstractTextureSampler.anInt2384 && -1 >= ~var2) {
-          FileRequester.anIntArray2952[AbstractTextureSampler.anInt2384] = var2;
-          AbstractTextureSampler.anInt2384 = 127 & AbstractTextureSampler.anInt2384 - -1;
-          if (AbstractTextureSampler.anInt2384 == SomethingPacket116.anInt1744) {
-            AbstractTextureSampler.anInt2384 = -1;
-          }
-        }
-
-        int var3;
-        if (~var2 <= -1) {
-          var3 = 127 & 1 + SceneSomething.anInt491;
-          if (var3 != Parameter.anInt3620) {
-            AbstractFrameRegulator.keyQueue[SceneSomething.anInt491] = var2;
-            AbstractAudioOutputStream.otherKeyQueue[SceneSomething.anInt491] = -1;
-            SceneSomething.anInt491 = var3;
-          }
-        }
-
-        var3 = var1.getModifiers();
-        if (-1 != ~(var3 & 10) || 85 == var2 || -11 == ~var2) {
-          var1.consume();
-        }
-      }
-
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "uf.keyPressed(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  public final void keyTyped(KeyEvent var1) {
-    try {
-      if (TextureSampler33.keyboard != null) {
-        int var2 = BitVariable.method1386(true, var1);
-        if (-1 >= ~var2) {
-          int var3 = 1 + SceneSomething.anInt491 & 127;
-          if (~Parameter.anInt3620 != ~var3) {
-            AbstractFrameRegulator.keyQueue[SceneSomething.anInt491] = -1;
-            AbstractAudioOutputStream.otherKeyQueue[SceneSomething.anInt491] = var2;
-            SceneSomething.anInt491 = var3;
-          }
-        }
-      }
-
-      var1.consume();
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "uf.keyTyped(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  public final synchronized void focusLost(FocusEvent var1) {
-    try {
-      if (null != TextureSampler33.keyboard) {
-        AbstractTextureSampler.anInt2384 = -1;
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "uf.focusLost(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  public final synchronized void keyReleased(KeyEvent var1) {
-    try {
-      if (null != TextureSampler33.keyboard) {
-        TextureSampler29.anInt3398 = 0;
-        int var2 = var1.getKeyCode();
-        if (var2 >= 0 && ~DummyClass26.keyTable.length < ~var2) {
-          var2 = DummyClass26.keyTable[var2] & -129;
-        } else {
-          var2 = -1;
-        }
-
-        if (AbstractTextureSampler.anInt2384 >= 0 && ~var2 <= -1) {
-          FileRequester.anIntArray2952[AbstractTextureSampler.anInt2384] = ~var2;
-          AbstractTextureSampler.anInt2384 = 127 & 1 + AbstractTextureSampler.anInt2384;
-          if (~SomethingPacket116.anInt1744 == ~AbstractTextureSampler.anInt2384) {
-            AbstractTextureSampler.anInt2384 = -1;
-          }
-        }
-      }
-
-      var1.consume();
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "uf.keyReleased(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  public final void focusGained(FocusEvent var1) {
   }
 
 }

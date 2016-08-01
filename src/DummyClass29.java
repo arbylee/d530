@@ -53,9 +53,8 @@ final class DummyClass29 {
       var11 /= 128;
       var12 /= 128;
       var13 /= 128;
-      return DummyClass42
-        .addNodeToSceneGraph(var0, var10, var11, var12 - var10 + 1, var13 - var11 + 1, var1, var2,
-          var3, var5, var6, true, var7);
+      return DummyClass42.addNodeToSceneGraph(var0, var10, var11, var12 - var10 + 1,
+        var13 - var11 + 1, var1, var2, var3, var5, var6, true, var7);
     }
   }
 
@@ -82,8 +81,8 @@ final class DummyClass29 {
 
       int var2 = -100 / ((var0 - 55) / 52);
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "dg.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "dg.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -173,9 +172,8 @@ final class DummyClass29 {
                   if (var13 instanceof GameObject) {
                     ((GameObject) var13).method1960(-1);
                   } else {
-                    FileSystem
-                      .method840(var12, (byte) -120, 0, 4 - -(3 & 2 + var18), 0, 4, var2, var1,
-                        var5);
+                    FileSystem.method840(var12, (byte) -120, 0, 4 - -(3 & 2 + var18), 0, 4, var2,
+                      var1, var5);
                   }
                 } else if (var19 == 8) {
                   if (!(var13 instanceof GameObject)) {
@@ -207,9 +205,9 @@ final class DummyClass29 {
               } else if (var13 instanceof GameObject) {
                 ((GameObject) var13).method1960(-1);
               } else {
-                FileSystem
-                  .method840(var12, (byte) -119, AudioStreamEncoder3.anIntArray3491[var18] * 8,
-                    var18, RenderAnimation.anIntArray356[var18] * 8, 4, var2, var1, var5);
+                FileSystem.method840(var12, (byte) -119,
+                  AudioStreamEncoder3.anIntArray3491[var18] * 8, var18,
+                  RenderAnimation.anIntArray356[var18] * 8, 4, var2, var1, var5);
               }
             } else {
               if (var13 instanceof GameObject) {
@@ -221,8 +219,8 @@ final class DummyClass29 {
               if (var14 instanceof GameObject) {
                 ((GameObject) var14).method1960(-1);
               } else {
-                FileSystem
-                  .method840(var12, (byte) -100, 0, 3 & var18 - -1, 0, var19, var2, var1, var5);
+                FileSystem.method840(var12, (byte) -100, 0, 3 & var18 - -1, 0, var19, var2, var1,
+                  var5);
               }
             }
           }

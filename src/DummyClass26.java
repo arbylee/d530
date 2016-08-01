@@ -1,5 +1,6 @@
 final class DummyClass26 {
 
+  private static GameString aClass94_1610 = SpawnedGameObject.createString("Loaded wordpack");
   static GameWorld[] aClass44_Sub1Array1609;
   static int[] keyTable = new int[] {
     -1, -1, -1, -1, -1, -1, -1, -1, 85, 80, 84, -1, 91, -1, -1, -1, 81, 82, 86, -1, -1, -1, -1, -1,
@@ -29,7 +30,6 @@ final class DummyClass26 {
   static int[] anIntArray1613 = new int[500];
   static GameString TRADE_REQUEST = SpawnedGameObject.createString(":tradereq:");
   static int anInt1616 = 0;
-  private static GameString aClass94_1610 = SpawnedGameObject.createString("Loaded wordpack");
   static GameString aClass94_1615 = aClass94_1610;
 
   static final void setState(int var0, int var1) {
@@ -74,9 +74,8 @@ final class DummyClass26 {
           if (var2) {
             AbstractFrameRegulator.anInt1691 = Keyboard.openingMusicFileId;
             if (BZipDecompressorState.anInt120 != 0) {
-              AbstractFileRequester
-                .method2099(true, Keyboard.openingMusicFileId, 0, SomethingTexture1.fileUnpacker6,
-                  false, 255, 2);
+              AbstractFileRequester.method2099(true, Keyboard.openingMusicFileId, 0,
+                SomethingTexture1.fileUnpacker6, false, 255, 2);
             } else {
               Queue.method882(-1, 2);
             }

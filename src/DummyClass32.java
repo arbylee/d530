@@ -1,5 +1,8 @@
 final class DummyClass32 {
 
+  private static GameString aClass94_519 = SpawnedGameObject.createString("skill: ");
+  private static GameString aClass94_521 = SpawnedGameObject.createString("scroll:");
+  private static GameString aClass94_527 = SpawnedGameObject.createString("level: ");
   static int[] anIntArray510 = new int[] {768, 1024, 1280, 512, 1536, 256, 0, 1792};
   static ObjectCache aClass93_511 = new ObjectCache(30);
   static int[] anIntArray512 = new int[500];
@@ -12,12 +15,9 @@ final class DummyClass32 {
   static GameString aClass94_520 = SpawnedGameObject.createString("Chargement des interfaces )2 ");
   static SomethingAudio aClass157_524;
   static Widget aClass11_526 = null;
-  private static GameString aClass94_519 = SpawnedGameObject.createString("skill: ");
   static GameString SKILL = aClass94_519;
-  private static GameString aClass94_521 = SpawnedGameObject.createString("scroll:");
   static GameString aClass94_523 = aClass94_521;
   static GameString aClass94_528 = aClass94_521;
-  private static GameString aClass94_527 = SpawnedGameObject.createString("level: ");
   static GameString aClass94_525 = aClass94_527;
 
   static final int method961(int var0) {

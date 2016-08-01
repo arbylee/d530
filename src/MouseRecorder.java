@@ -9,6 +9,23 @@ final class MouseRecorder implements Runnable {
   int[] anIntArray1019 = new int[500];
   int[] anIntArray1020 = new int[500];
 
+  public final void run() {
+    try {
+      for (; this.aBoolean1015; TextureSampler25.sleep(50L)) {
+        Object var1 = this.anObject1016;
+        synchronized (var1) {
+          if (-501 < ~this.anInt1018) {
+            this.anIntArray1020[this.anInt1018] = SomethingTilek.anInt1676;
+            this.anIntArray1019[this.anInt1018] = HashTable.anInt1709;
+            ++this.anInt1018;
+          }
+        }
+      }
+
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "jd.run()");
+    }
+  }
 
   public static void method1257(int var0) {
     try {
@@ -50,8 +67,8 @@ final class MouseRecorder implements Runnable {
     try {
       for (int var3 = 0; var3 < var2.length; ++var3) {
         Widget var4 = var2[var3];
-        if (null != var4 && ~var4.anInt190 == ~var1 && (!var4.aBoolean233 || !GameClient
-          .method51(var4))) {
+        if (null != var4 && ~var4.anInt190 == ~var1 && (!var4.aBoolean233 || !GameClient.method51(
+          var4))) {
           if (-1 == ~var4.anInt187) {
             if (!var4.aBoolean233 && GameClient.method51(var4)
               && var4 != DummyClass56.aClass11_1453) {
@@ -85,8 +102,8 @@ final class MouseRecorder implements Runnable {
                 if (null != var7) {
                   for (
                     var4.anInt267 += DisplayMode.loopCycle;
-                    ~var4.anInt267 < ~var7.anIntArray1869[var4.anInt283]; DummyClass29
-                      .method909(115, var4)) {
+                    ~var4.anInt267 < ~var7.anIntArray1869[var4.anInt283]; DummyClass29.method909(
+                    115, var4)) {
                     var4.anInt267 -= var7.anIntArray1869[var4.anInt283];
                     ++var4.anInt283;
                     if (var7.anIntArray1851.length <= var4.anInt283) {
@@ -175,24 +192,6 @@ final class MouseRecorder implements Runnable {
       return var1 & 127;
     } catch (RuntimeException var3) {
       throw AbstractGameWorld.cascadeException(var3, "jd.F(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  public final void run() {
-    try {
-      for (; this.aBoolean1015; TextureSampler25.sleep(50L)) {
-        Object var1 = this.anObject1016;
-        synchronized (var1) {
-          if (-501 < ~this.anInt1018) {
-            this.anIntArray1020[this.anInt1018] = SomethingTilek.anInt1676;
-            this.anIntArray1019[this.anInt1018] = HashTable.anInt1709;
-            ++this.anInt1018;
-          }
-        }
-      }
-
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "jd.run()");
     }
   }
 

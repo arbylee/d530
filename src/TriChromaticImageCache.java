@@ -18,8 +18,8 @@ final class TriChromaticImageCache {
 
     for (int var1 = 0; var1 < 256; ++var1) {
       for (int var2 = 0; var2 <= var1; ++var2) {
-        aByteArray1364[var0++] = (byte) ((int) (255.0D / Math
-          .sqrt((double) ((float) ('\uffff' + var2 * var2 + var1 * var1) / 65535.0F))));
+        aByteArray1364[var0++] = (byte) ((int) (255.0D / Math.sqrt(
+          (double) ((float) ('\uffff' + var2 * var2 + var1 * var1) / 65535.0F))));
       }
     }
 
@@ -45,61 +45,8 @@ final class TriChromaticImageCache {
       this.aClass3_Sub20Array1371 = new TriChromaticImageBuffer[this.anInt1369];
       this.anIntArrayArrayArray1362 = new int[this.anInt1367][3][var3];
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "nd.<init>(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  static final void method1591(boolean var0, AudioStreamEncoder var1) {
-    try {
-      if (var1.aClass3_Sub12_2544 != null) {
-        var1.aClass3_Sub12_2544.anInt2374 = 0;
-      }
-
-      var1.aBoolean2545 = false;
-
-      for (AudioStreamEncoder var2 = var1.method411(); var2 != null; var2 = var1.method414()) {
-        method1591(true, var2);
-      }
-
-      if (!var0) {
-        cameraTileX = -103;
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "nd.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  public static void method1592(byte var0) {
-    try {
-      materials = null;
-      aClass153_1378 = null;
-      anIntArrayArray1373 = null;
-      aClass94_1363 = null;
-      aClass3_Sub28_Sub16_Sub2_1381 = null;
-      if (var0 > 25) {
-        aClass94_1377 = null;
-        aClass94_1380 = null;
-        aClass153_1372 = null;
-        aClass153_1370 = null;
-        aByteArray1364 = null;
-        aClass94_1374 = null;
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "nd.B(" + var0 + ')');
-    }
-  }
-
-  static final void method1593(int var0, FileUnpacker var1) {
-    try {
-      DummyClass14.titleBackgroundFileId = var1.getFileId(SomethingQuickChat.TITLE_BACKGROUND);
-      BitVariable.logoFileId = var1.getFileId(DummyClass53.LOGO);
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "nd.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "nd.<init>(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -159,7 +106,8 @@ final class TriChromaticImageCache {
               var4 = new TriChromaticImageBuffer(var2, this.anInt1368);
               ++this.anInt1368;
             } else {
-              TriChromaticImageBuffer var5 = (TriChromaticImageBuffer) this.aClass61_1366.method1212(2);
+              TriChromaticImageBuffer var5 =
+                (TriChromaticImageBuffer) this.aClass61_1366.method1212(2);
               var4 = new TriChromaticImageBuffer(var2, var5.anInt2483);
               this.aClass3_Sub20Array1371[var5.anInt2489] = null;
               var5.unlinkNode();
@@ -180,6 +128,59 @@ final class TriChromaticImageCache {
       }
     } catch (RuntimeException var6) {
       throw AbstractGameWorld.cascadeException(var6, "nd.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  static final void method1591(boolean var0, AudioStreamEncoder var1) {
+    try {
+      if (var1.aClass3_Sub12_2544 != null) {
+        var1.aClass3_Sub12_2544.anInt2374 = 0;
+      }
+
+      var1.aBoolean2545 = false;
+
+      for (AudioStreamEncoder var2 = var1.method411(); var2 != null; var2 = var1.method414()) {
+        method1591(true, var2);
+      }
+
+      if (!var0) {
+        cameraTileX = -103;
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "nd.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public static void method1592(byte var0) {
+    try {
+      materials = null;
+      aClass153_1378 = null;
+      anIntArrayArray1373 = null;
+      aClass94_1363 = null;
+      aClass3_Sub28_Sub16_Sub2_1381 = null;
+      if (var0 > 25) {
+        aClass94_1377 = null;
+        aClass94_1380 = null;
+        aClass153_1372 = null;
+        aClass153_1370 = null;
+        aByteArray1364 = null;
+        aClass94_1374 = null;
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "nd.B(" + var0 + ')');
+    }
+  }
+
+  static final void method1593(int var0, FileUnpacker var1) {
+    try {
+      DummyClass14.titleBackgroundFileId = var1.getFileId(SomethingQuickChat.TITLE_BACKGROUND);
+      BitVariable.logoFileId = var1.getFileId(DummyClass53.LOGO);
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "nd.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 }

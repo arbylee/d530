@@ -65,125 +65,32 @@ final class Projectile extends SceneNode {
     }
   }
 
-  public static void method2019(boolean var0) {
-    try {
-      if (var0) {
-        sprites = null;
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "ra.C(" + var0 + ')');
-    }
-  }
-
-  static final void method2020(int var0, GameObjectConfig var1, byte var2, int var3, int var4) {
-    try {
-      AreaSoundEffect var5 = (AreaSoundEffect) Node.aClass61_78.getFirst();
-      if (var2 != -73) {
-        method2019(true);
-      }
-
-      while (null != var5) {
-        if (var4 == var5.anInt2314 && ~var5.anInt2326 == ~(128 * var0)
-          && var5.anInt2308 == 128 * var3 && ~var1.anInt1527 == ~var5.aClass111_2320.anInt1527) {
-          if (null != var5.aClass3_Sub24_Sub1_2312) {
-            MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(var5.aClass3_Sub24_Sub1_2312);
-            var5.aClass3_Sub24_Sub1_2312 = null;
-          }
-
-          if (var5.aClass3_Sub24_Sub1_2315 != null) {
-            MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(var5.aClass3_Sub24_Sub1_2315);
-            var5.aClass3_Sub24_Sub1_2315 = null;
-          }
-
-          var5.unlinkNode();
-          return;
-        }
-
-        var5 = (AreaSoundEffect) Node.aClass61_78.getNext();
-      }
-
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "ra.E(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ','
-          + var4 + ')');
-    }
-  }
-
-  static final boolean isPo2(byte var0, int var1) {
-    try {
-      if (var0 > -63) {
-        anInt2905 = 66;
-      }
-
-      return var1 == (-var1 & var1);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "ra.H(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  static final void method2025(byte var0, int var1) {
-    try {
-      if (var0 <= -25) {
-        ObjectNode.aClass93_4043.method1522(-128, var1);
-        ClientScriptCall.aClass93_2442.method1522(-126, var1);
-        DummyClass14.aClass93_1964.method1522(-127, var1);
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "ra.F(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  static final void method2026(byte var0, int var1, int var2, int var3) {
-    try {
-      if (var0 > 114) {
-        WidgetUpdate var4 = AudioStreamEncoder3.method466(4, 9, var1);
-        var4.g((byte) 33);
-        var4.anInt3598 = var3;
-        var4.anInt3597 = var2;
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ra.I(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  static final AbstractDirectColorSprite[] method2027(int var0, byte var1, int var2,
-                                                      FileUnpacker var3) {
-    try {
-      return !SomethingTexture4.loadSprites(var3, var0, var2, -30901) ?
-        null :
-        (var1 != 11 ? null : SomethingTexture3.method1347(-26802));
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "ra.B(" + var0 + ',' + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  static final int method2028(int var0, int var1, int var2) {
-    try {
-      int var3 = 96 / ((var2 - -75) / 33);
-
-      int var4;
-      for (var4 = 1; 1 < var0; var0 >>= 1) {
-        if (0 != (1 & var0)) {
-          var4 *= var1;
-        }
-
-        var1 *= var1;
-      }
-
-      if (var0 != 1) {
-        return var4;
-      } else {
-        return var4 * var1;
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ra.A(" + var0 + ',' + var1 + ',' + var2 + ')');
-    }
-  }
-
   final void method1867(int var1, int var2, int var3, int var4, int var5) {
+  }
+
+  final void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
+                  long var9, int var11, DummyClass0 var12) {
+    try {
+      AbstractModel var13 = this.method2022(-126);
+      if (null != var13) {
+        var13.draw(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11,
+          this.aClass127_Sub1_2909);
+        this.anInt2912 = var13.getMinimumY();
+      }
+    } catch (RuntimeException var14) {
+      throw AbstractGameWorld.cascadeException(var14,
+        "ra.IA(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6 + ','
+          + var7 + ',' + var8 + ',' + var9 + ',' + var11 + ',' + (var12 != null ? "{...}" : "null")
+          + ')');
+    }
+  }
+
+  final int getMinimumY() {
+    try {
+      return this.anInt2912;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "ra.MA()");
+    }
   }
 
   private final AbstractModel method2022(int var1) {
@@ -287,28 +194,123 @@ final class Projectile extends SceneNode {
     }
   }
 
-  final void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
-                  long var9, int var11, DummyClass0 var12) {
+  public static void method2019(boolean var0) {
     try {
-      AbstractModel var13 = this.method2022(-126);
-      if (null != var13) {
-        var13.draw(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11,
-          this.aClass127_Sub1_2909);
-        this.anInt2912 = var13.getMinimumY();
+      if (var0) {
+        sprites = null;
       }
-    } catch (RuntimeException var14) {
-      throw AbstractGameWorld.cascadeException(var14,
-        "ra.IA(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6 + ','
-          + var7 + ',' + var8 + ',' + var9 + ',' + var11 + ',' + (var12 != null ? "{...}" : "null")
-          + ')');
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "ra.C(" + var0 + ')');
     }
   }
 
-  final int getMinimumY() {
+  static final void method2020(int var0, GameObjectConfig var1, byte var2, int var3, int var4) {
     try {
-      return this.anInt2912;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "ra.MA()");
+      AreaSoundEffect var5 = (AreaSoundEffect) Node.aClass61_78.getFirst();
+      if (var2 != -73) {
+        method2019(true);
+      }
+
+      while (null != var5) {
+        if (var4 == var5.anInt2314 && ~var5.anInt2326 == ~(128 * var0)
+          && var5.anInt2308 == 128 * var3 && ~var1.anInt1527 == ~var5.aClass111_2320.anInt1527) {
+          if (null != var5.aClass3_Sub24_Sub1_2312) {
+            MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(
+              var5.aClass3_Sub24_Sub1_2312);
+            var5.aClass3_Sub24_Sub1_2312 = null;
+          }
+
+          if (var5.aClass3_Sub24_Sub1_2315 != null) {
+            MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(
+              var5.aClass3_Sub24_Sub1_2315);
+            var5.aClass3_Sub24_Sub1_2315 = null;
+          }
+
+          var5.unlinkNode();
+          return;
+        }
+
+        var5 = (AreaSoundEffect) Node.aClass61_78.getNext();
+      }
+
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "ra.E(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ','
+          + var4 + ')');
+    }
+  }
+
+  static final boolean isPo2(byte var0, int var1) {
+    try {
+      if (var0 > -63) {
+        anInt2905 = 66;
+      }
+
+      return var1 == (-var1 & var1);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "ra.H(" + var0 + ',' + var1 + ')');
+    }
+  }
+
+  static final void method2025(byte var0, int var1) {
+    try {
+      if (var0 <= -25) {
+        ObjectNode.aClass93_4043.method1522(-128, var1);
+        ClientScriptCall.aClass93_2442.method1522(-126, var1);
+        DummyClass14.aClass93_1964.method1522(-127, var1);
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "ra.F(" + var0 + ',' + var1 + ')');
+    }
+  }
+
+  static final void method2026(byte var0, int var1, int var2, int var3) {
+    try {
+      if (var0 > 114) {
+        WidgetUpdate var4 = AudioStreamEncoder3.method466(4, 9, var1);
+        var4.g((byte) 33);
+        var4.anInt3598 = var3;
+        var4.anInt3597 = var2;
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "ra.I(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  static final AbstractDirectColorSprite[] method2027(int var0, byte var1, int var2,
+                                                      FileUnpacker var3) {
+    try {
+      return !SomethingTexture4.loadSprites(var3, var0, var2, -30901) ?
+        null :
+        (var1 != 11 ? null : SomethingTexture3.method1347(-26802));
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "ra.B(" + var0 + ',' + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  static final int method2028(int var0, int var1, int var2) {
+    try {
+      int var3 = 96 / ((var2 - -75) / 33);
+
+      int var4;
+      for (var4 = 1; 1 < var0; var0 >>= 1) {
+        if (0 != (1 & var0)) {
+          var4 *= var1;
+        }
+
+        var1 *= var1;
+      }
+
+      if (var0 != 1) {
+        return var4;
+      } else {
+        return var4 * var1;
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "ra.A(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 

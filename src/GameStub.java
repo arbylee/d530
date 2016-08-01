@@ -14,6 +14,8 @@ import java.net.URL;
 
 public abstract class GameStub extends Applet implements Runnable, FocusListener, WindowListener {
 
+  private static GameString aClass94_5 =
+    SpawnedGameObject.createString(" from your ignore list first)3");
   public static int anInt12;
   public static boolean aBoolean13;
   static int anInt2;
@@ -24,89 +26,18 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
   static GameString aClass94_9 = SpawnedGameObject.createString(")3)3)3");
   static GameString COMMAND_RECTANGLE_DEBUG = SpawnedGameObject.createString("::rect_debug");
   static boolean aBoolean11 = false;
-  private static GameString aClass94_5 = SpawnedGameObject.createString(" from your ignore list first)3");
   static GameString aClass94_4 = aClass94_5;
   private boolean encounteredError = false;
 
-  public static void method26(int var0) {
+  abstract void update();
+
+  public final void focusGained(FocusEvent var1) {
     try {
-      if (var0 < 15) {
-        method27(null, true);
-      }
-
-      aClass94_7 = null;
-      aClass94_8 = null;
-      COMMAND_RECTANGLE_DEBUG = null;
-      aClass94_9 = null;
-      aClass94_5 = null;
-      aClass94_4 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "rc.W(" + var0 + ')');
-    }
-  }
-
-  static final GameString method27(GameString var0, boolean var1) {
-    try {
-      if (!var1) {
-        method26(-78);
-      }
-
-      int var2 = FloorUnderlay.method1602(0, var0);
-      return var2 != -1 ?
-        DummyClass25.aClass131_1624.aClass94Array1721[var2]
-          .method1560(TextureSampler15.aClass94_3192, true, OndemandFileRequest.aClass94_4066) :
-        ObjectNode.aClass94_4049;
+      DummyClass8.focused = true;
+      TextureSampler30.aBoolean3116 = true;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "rc.V(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
-    }
-  }
-
-  static final void method28(boolean var0) {
-    try {
-      DummyClass15.aClass93_1874.method1524(3);
-      if (!var0) {
-        aBoolean11 = false;
-      }
-
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "rc.Q(" + var0 + ')');
-    }
-  }
-
-  static final void method34(int var0) {
-    try {
-      if (null != GameWorld.audioOutputStream0) {
-        GameWorld.audioOutputStream0.method2163(false);
-      }
-
-      if (var0 != -32589) {
-        method26(-25);
-      }
-
-      if (SomethingWorldMappy.audioOutputStream1 != null) {
-        SomethingWorldMappy.audioOutputStream1.method2163(false);
-      }
-
-      GameObject.method1959(256, 2, 22050, TextureSampler17.aBoolean3184);
-      GameWorld.audioOutputStream0 = DummyClass43
-        .createAudioOutputStream(22050, DummyClass35.signLink, InventoryConfig.canvas, 0, 14);
-      GameWorld.audioOutputStream0.method2154(114, BlockConfig.aClass3_Sub24_Sub4_1193);
-      SomethingWorldMappy.audioOutputStream1 = DummyClass43
-        .createAudioOutputStream(2048, DummyClass35.signLink, InventoryConfig.canvas, 1, 14);
-      SomethingWorldMappy.audioOutputStream1.method2154(-126, MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563);
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "rc.DA(" + var0 + ')');
-    }
-  }
-
-  public static final void provideSignLink(SignLink var0) {
-    try {
-      DummyClass35.signLink = var0;
-      TextureSampler30.signLink = var0;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld
-        .cascadeException(var2, "rc.provideSignLink(" + (var0 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "rc.focusGained(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -114,51 +45,9 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
     try {
       DummyClass8.focused = false;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "rc.focusLost(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "rc.focusLost(" + (var1 != null ? "{...}" : "null") + ')');
     }
-  }
-
-  abstract void update();
-
-  public final void windowClosing(WindowEvent var1) {
-    try {
-      this.destroy();
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "rc.windowClosing(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  public final void windowIconified(WindowEvent var1) {
-  }
-
-  public final void windowDeactivated(WindowEvent var1) {
-  }
-
-  public final AppletContext getAppletContext() {
-    try {
-      return null != TextureSampler27.frame ?
-        null :
-        (DummyClass35.signLink != null && this != DummyClass35.signLink.applet ?
-          DummyClass35.signLink.applet.getAppletContext() :
-          super.getAppletContext());
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "rc.getAppletContext()");
-    }
-  }
-
-  public final void focusGained(FocusEvent var1) {
-    try {
-      DummyClass8.focused = true;
-      TextureSampler30.aBoolean3116 = true;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "rc.focusGained(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  public final void windowClosed(WindowEvent var1) {
   }
 
   final boolean isValidHost() {
@@ -190,8 +79,8 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
         InventoryConfig.canvas.setLocation(DummyClass51.viewX, DisplayMode.viewY);
       } else {
         Insets var3 = TextureSampler27.frame.getInsets();
-        InventoryConfig.canvas
-          .setLocation(DummyClass51.viewX + var3.left, var3.top + DisplayMode.viewY);
+        InventoryConfig.canvas.setLocation(DummyClass51.viewX + var3.left,
+          var3.top + DisplayMode.viewY);
       }
       InventoryConfig.canvas.addFocusListener(this);
       InventoryConfig.canvas.requestFocus();
@@ -205,25 +94,12 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
     }
   }
 
-  public final void destroy() {
-    try {
-      if (this == StringNode.applet && !PlayerVariable.aBoolean554) {
-        AreaSoundEffect.destroyTime = Time.getCurrentTimeMillis();
-        TextureSampler25.sleep(5000L);
-        TextureSampler30.signLink = null;
-        this.shutdown(46, false);
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "rc.destroy()");
-    }
-  }
-
   public final void handleUpdate(Graphics var1) {
     try {
       this.paint(var1);
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "rc.update(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "rc.update(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -235,15 +111,15 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
 
         try {
 
-          getAppletContext()
-            .showDocument(new URL(this.getCodeBase(), "error_game_" + var1 + ".ws"), "_top");
+          getAppletContext().showDocument(new URL(this.getCodeBase(), "error_game_" + var1 + ".ws"),
+            "_top");
         } catch (Exception var4) {
         }
 
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "rc.U(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "rc.U(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -263,6 +139,74 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
     }
   }
 
+  public final URL getCodeBase() {
+    return TextureSampler27.frame == null ?
+      (null != DummyClass35.signLink && this != DummyClass35.signLink.applet ?
+        DummyClass35.signLink.applet.getCodeBase() :
+        super.getCodeBase()) :
+      null;
+  }
+
+  public final String getParameter(String var1) {
+    try {
+      return TextureSampler27.frame == null ?
+        (DummyClass35.signLink != null && this != DummyClass35.signLink.applet ?
+          DummyClass35.signLink.applet.getParameter(var1) :
+          super.getParameter(var1)) :
+        null;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "rc.getParameter(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public final AppletContext getAppletContext() {
+    try {
+      return null != TextureSampler27.frame ?
+        null :
+        (DummyClass35.signLink != null && this != DummyClass35.signLink.applet ?
+          DummyClass35.signLink.applet.getAppletContext() :
+          super.getAppletContext());
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "rc.getAppletContext()");
+    }
+  }
+
+  public abstract void init();
+
+  public final void start() {
+    try {
+      if (StringNode.applet == this && !PlayerVariable.aBoolean554) {
+        AreaSoundEffect.destroyTime = 0L;
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "rc.start()");
+    }
+  }
+
+  public final void stop() {
+    try {
+      if (StringNode.applet == this && !PlayerVariable.aBoolean554) {
+        AreaSoundEffect.destroyTime = 4000L + Time.getCurrentTimeMillis();
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "rc.stop()");
+    }
+  }
+
+  public final void destroy() {
+    try {
+      if (this == StringNode.applet && !PlayerVariable.aBoolean554) {
+        AreaSoundEffect.destroyTime = Time.getCurrentTimeMillis();
+        TextureSampler25.sleep(5000L);
+        TextureSampler30.signLink = null;
+        this.shutdown(46, false);
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "rc.destroy()");
+    }
+  }
+
   public final synchronized void paint(Graphics var1) {
     try {
       if (this == StringNode.applet && !PlayerVariable.aBoolean554) {
@@ -278,12 +222,9 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
 
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "rc.paint(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "rc.paint(" + (var1 != null ? "{...}" : "null") + ')');
     }
-  }
-
-  public final void windowDeiconified(WindowEvent var1) {
   }
 
   private final void shutdown(int var1, boolean clean) {
@@ -338,9 +279,6 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
     }
   }
 
-  public final void windowActivated(WindowEvent var1) {
-  }
-
   private final void handleUpdate() {
     try {
       long currentTime = Time.getCurrentTimeMillis();
@@ -378,8 +316,8 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
         InventoryConfig.canvas.setVisible(true);
         if (TextureSampler27.frame != null && null == TextureSampler30.fullScreenFrame) {
           Insets var8 = TextureSampler27.frame.getInsets();
-          InventoryConfig.canvas
-            .setLocation(var8.left + DummyClass51.viewX, DisplayMode.viewY + var8.top);
+          InventoryConfig.canvas.setLocation(var8.left + DummyClass51.viewX,
+            DisplayMode.viewY + var8.top);
         } else {
           InventoryConfig.canvas.setLocation(DummyClass51.viewX, DisplayMode.viewY);
         }
@@ -393,29 +331,21 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
 
   abstract void handleDraw(int var1);
 
-  public final URL getCodeBase() {
-    return TextureSampler27.frame == null ?
-      (null != DummyClass35.signLink && this != DummyClass35.signLink.applet ?
-        DummyClass35.signLink.applet.getCodeBase() :
-        super.getCodeBase()) :
-      null;
-  }
-
   public final void run() {
     try {
       try {
         if (null != SignLink.aString1216) {
           String var1 = SignLink.aString1216.toLowerCase();
           if (var1.indexOf("sun") == -1 && -1 == var1.indexOf("apple")) {
-            if (0 != ~var1.indexOf("ibm") && (SignLink.aString1196 == null || SignLink.aString1196
-              .equals("1.4.2"))) {
+            if (0 != ~var1.indexOf("ibm") && (SignLink.aString1196 == null
+              || SignLink.aString1196.equals("1.4.2"))) {
               this.reportError("wrongjava");
               return;
             }
           } else {
             String var2 = SignLink.aString1196;
-            if (var2.equals("1.1") || var2.startsWith("1.1.") || var2.equals("1.2") || var2
-              .startsWith("1.2.")) {
+            if (var2.equals("1.1") || var2.startsWith("1.1.") || var2.equals("1.2")
+              || var2.startsWith("1.2.")) {
               this.reportError("wrongjava");
               return;
             }
@@ -455,16 +385,16 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
 
         GlTexture2d.method713(0);
         this.initializeCanvas();
-        Something3d.viewImageProducer = TextureSampler18
-          .createImageProducer(GroundItem.viewHeight, DummyClass30.viewWidth, true,
+        Something3d.viewImageProducer =
+          TextureSampler18.createImageProducer(GroundItem.viewHeight, DummyClass30.viewWidth, true,
             InventoryConfig.canvas);
         this.initialize(2);
         Inventory.frameRateRegulator = HuffmanEncoder.method1012((byte) -31);
 
-        while (-1L == ~AreaSoundEffect.destroyTime || AreaSoundEffect.destroyTime > Time
-          .getCurrentTimeMillis()) {
-          SomethingPacket116.cycles = Inventory.frameRateRegulator
-            .sleep(-1, DummyClass22.minimumDelta, GameWorld.deltaTime);
+        while (-1L == ~AreaSoundEffect.destroyTime
+          || AreaSoundEffect.destroyTime > Time.getCurrentTimeMillis()) {
+          SomethingPacket116.cycles =
+            Inventory.frameRateRegulator.sleep(-1, DummyClass22.minimumDelta, GameWorld.deltaTime);
 
           for (var7 = 0; var7 < SomethingPacket116.cycles; ++var7) {
             this.handleUpdate();
@@ -484,32 +414,7 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
     }
   }
 
-  public final String getParameter(String var1) {
-    try {
-      return TextureSampler27.frame == null ?
-        (DummyClass35.signLink != null && this != DummyClass35.signLink.applet ?
-          DummyClass35.signLink.applet.getParameter(var1) :
-          super.getParameter(var1)) :
-        null;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "rc.getParameter(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
   abstract void initialize(int var1);
-
-  public final void stop() {
-    try {
-      if (StringNode.applet == this && !PlayerVariable.aBoolean554) {
-        AreaSoundEffect.destroyTime = 4000L + Time.getCurrentTimeMillis();
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "rc.stop()");
-    }
-  }
-
-  public abstract void init();
 
   final void start(int build, int width, int height, int nodeId, String gameName, int amountVolumes,
                    boolean var3) {
@@ -554,14 +459,28 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
   public final void windowOpened(WindowEvent var1) {
   }
 
-  public final void start() {
+  public final void windowClosing(WindowEvent var1) {
     try {
-      if (StringNode.applet == this && !PlayerVariable.aBoolean554) {
-        AreaSoundEffect.destroyTime = 0L;
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "rc.start()");
+      this.destroy();
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "rc.windowClosing(" + (var1 != null ? "{...}" : "null") + ')');
     }
+  }
+
+  public final void windowClosed(WindowEvent var1) {
+  }
+
+  public final void windowIconified(WindowEvent var1) {
+  }
+
+  public final void windowDeiconified(WindowEvent var1) {
+  }
+
+  public final void windowActivated(WindowEvent var1) {
+  }
+
+  public final void windowDeactivated(WindowEvent var1) {
   }
 
   final void method41(byte var1, int var2, int var3, int var4, int var5) {
@@ -612,6 +531,91 @@ public abstract class GameStub extends Applet implements Runnable, FocusListener
     } catch (RuntimeException var9) {
       throw AbstractGameWorld.cascadeException(var9,
         "rc.CA(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ')');
+    }
+  }
+
+  public static void method26(int var0) {
+    try {
+      if (var0 < 15) {
+        method27(null, true);
+      }
+
+      aClass94_7 = null;
+      aClass94_8 = null;
+      COMMAND_RECTANGLE_DEBUG = null;
+      aClass94_9 = null;
+      aClass94_5 = null;
+      aClass94_4 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "rc.W(" + var0 + ')');
+    }
+  }
+
+  static final GameString method27(GameString var0, boolean var1) {
+    try {
+      if (!var1) {
+        method26(-78);
+      }
+
+      int var2 = FloorUnderlay.method1602(0, var0);
+      return var2 != -1 ?
+        DummyClass25.aClass131_1624.aClass94Array1721[var2].method1560(
+          TextureSampler15.aClass94_3192, true, OndemandFileRequest.aClass94_4066) :
+        ObjectNode.aClass94_4049;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "rc.V(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+    }
+  }
+
+  static final void method28(boolean var0) {
+    try {
+      DummyClass15.aClass93_1874.method1524(3);
+      if (!var0) {
+        aBoolean11 = false;
+      }
+
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "rc.Q(" + var0 + ')');
+    }
+  }
+
+  static final void method34(int var0) {
+    try {
+      if (null != GameWorld.audioOutputStream0) {
+        GameWorld.audioOutputStream0.method2163(false);
+      }
+
+      if (var0 != -32589) {
+        method26(-25);
+      }
+
+      if (SomethingWorldMappy.audioOutputStream1 != null) {
+        SomethingWorldMappy.audioOutputStream1.method2163(false);
+      }
+
+      GameObject.method1959(256, 2, 22050, TextureSampler17.aBoolean3184);
+      GameWorld.audioOutputStream0 =
+        DummyClass43.createAudioOutputStream(22050, DummyClass35.signLink, InventoryConfig.canvas,
+          0, 14);
+      GameWorld.audioOutputStream0.method2154(114, BlockConfig.aClass3_Sub24_Sub4_1193);
+      SomethingWorldMappy.audioOutputStream1 =
+        DummyClass43.createAudioOutputStream(2048, DummyClass35.signLink, InventoryConfig.canvas, 1,
+          14);
+      SomethingWorldMappy.audioOutputStream1.method2154(-126,
+        MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563);
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "rc.DA(" + var0 + ')');
+    }
+  }
+
+  public static final void provideSignLink(SignLink var0) {
+    try {
+      DummyClass35.signLink = var0;
+      TextureSampler30.signLink = var0;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2,
+        "rc.provideSignLink(" + (var0 != null ? "{...}" : "null") + ')');
     }
   }
 

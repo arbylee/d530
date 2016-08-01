@@ -29,6 +29,80 @@ class Something3d2 extends Something3dRoot {
     }
   }
 
+  void method2244(int var1, byte var2) {
+    try {
+      this.aByteArray3025[var1] = var2;
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "we.G(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void method2231(byte var1) {
+    try {
+      this.anInt3018 = this.anInt3021;
+      this.anInt3029 >>= 4;
+      if (0 > this.anInt3029) {
+        this.anInt3029 = 0;
+      } else if (255 < this.anInt3029) {
+        this.anInt3029 = 255;
+      }
+
+      this.method2244(this.anInt3028++, (byte) this.anInt3029);
+      if (var1 == -92) {
+        this.anInt3029 = 0;
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "we.A(" + var1 + ')');
+    }
+  }
+
+  final void method2233(int var1) {
+    try {
+      this.anInt3028 = 0;
+      this.anInt3029 = 0;
+      if (var1 != -949697716) {
+        method2249((byte) -82, -73);
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "we.C(" + var1 + ')');
+    }
+  }
+
+  final void method2237(int var1, int var2, int var3) {
+    try {
+      if (0 != var2) {
+        this.anInt3023 = this.anInt3022 * this.anInt3024 >> 12;
+        if (-1 >= ~this.anInt3023) {
+          if (~this.anInt3023 < -4097) {
+            this.anInt3023 = 4096;
+          }
+        } else {
+          this.anInt3023 = 0;
+        }
+
+        this.anInt3024 = -(-1 >= ~var1 ? var1 : -var1) + this.anInt3026;
+        this.anInt3024 = this.anInt3024 * this.anInt3024 >> 12;
+        this.anInt3024 = this.anInt3024 * this.anInt3023 >> 12;
+        this.anInt3029 += this.anInt3018 * this.anInt3024 >> 12;
+        this.anInt3018 = this.anInt3021 * this.anInt3018 >> 12;
+      } else {
+        this.anInt3023 = 4096;
+        this.anInt3024 = -(-1 >= ~var1 ? var1 : -var1) + this.anInt3026;
+        this.anInt3024 = this.anInt3024 * this.anInt3024 >> 12;
+        this.anInt3029 = this.anInt3024;
+      }
+
+      if (var3 != -20975) {
+        this.method2244(-80, (byte) -24);
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "we.H(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
   public static void method2245(byte var0) {
     try {
       aClass33_3019 = null;
@@ -124,7 +198,8 @@ class Something3d2 extends Something3dRoot {
             }
 
             if (6 == var8) {
-              var9 = ItemConfig.anIntArray781[-1 + TriChromaticImageBuffer.anIntArray2480[var4[var6++]]];
+              var9 =
+                ItemConfig.anIntArray781[-1 + TriChromaticImageBuffer.anIntArray2480[var4[var6++]]];
             }
 
             if (~var8 == -8) {
@@ -255,80 +330,6 @@ class Something3d2 extends Something3dRoot {
 
     } catch (RuntimeException var3) {
       throw AbstractGameWorld.cascadeException(var3, "we.F(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  void method2244(int var1, byte var2) {
-    try {
-      this.aByteArray3025[var1] = var2;
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "we.G(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final void method2231(byte var1) {
-    try {
-      this.anInt3018 = this.anInt3021;
-      this.anInt3029 >>= 4;
-      if (0 > this.anInt3029) {
-        this.anInt3029 = 0;
-      } else if (255 < this.anInt3029) {
-        this.anInt3029 = 255;
-      }
-
-      this.method2244(this.anInt3028++, (byte) this.anInt3029);
-      if (var1 == -92) {
-        this.anInt3029 = 0;
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "we.A(" + var1 + ')');
-    }
-  }
-
-  final void method2237(int var1, int var2, int var3) {
-    try {
-      if (0 != var2) {
-        this.anInt3023 = this.anInt3022 * this.anInt3024 >> 12;
-        if (-1 >= ~this.anInt3023) {
-          if (~this.anInt3023 < -4097) {
-            this.anInt3023 = 4096;
-          }
-        } else {
-          this.anInt3023 = 0;
-        }
-
-        this.anInt3024 = -(-1 >= ~var1 ? var1 : -var1) + this.anInt3026;
-        this.anInt3024 = this.anInt3024 * this.anInt3024 >> 12;
-        this.anInt3024 = this.anInt3024 * this.anInt3023 >> 12;
-        this.anInt3029 += this.anInt3018 * this.anInt3024 >> 12;
-        this.anInt3018 = this.anInt3021 * this.anInt3018 >> 12;
-      } else {
-        this.anInt3023 = 4096;
-        this.anInt3024 = -(-1 >= ~var1 ? var1 : -var1) + this.anInt3026;
-        this.anInt3024 = this.anInt3024 * this.anInt3024 >> 12;
-        this.anInt3029 = this.anInt3024;
-      }
-
-      if (var3 != -20975) {
-        this.method2244(-80, (byte) -24);
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "we.H(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final void method2233(int var1) {
-    try {
-      this.anInt3028 = 0;
-      this.anInt3029 = 0;
-      if (var1 != -949697716) {
-        method2249((byte) -82, -73);
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "we.C(" + var1 + ')');
     }
   }
 

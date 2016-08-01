@@ -16,8 +16,8 @@ final class GroundItemNode extends SubNode {
     try {
       this.aClass140_Sub7_3676 = var1;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "pa.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "pa.<init>(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -25,10 +25,10 @@ final class GroundItemNode extends SubNode {
     try {
       if (null != Buffer.aClass3_Sub28_Sub3_2600) {
         if (GameObject.anInt2737 < 10) {
-          if (!TextureSampler23.worldMaps
-            .method2127((byte) -83, Buffer.aClass3_Sub28_Sub3_2600.aClass94_3561)) {
-            GameObject.anInt2737 = SomethingPacket116.worldMapData
-              .method2116(22813, Buffer.aClass3_Sub28_Sub3_2600.aClass94_3561) / 10;
+          if (!TextureSampler23.worldMaps.method2127((byte) -83,
+            Buffer.aClass3_Sub28_Sub3_2600.aClass94_3561)) {
+            GameObject.anInt2737 = SomethingPacket116.worldMapData.method2116(22813,
+              Buffer.aClass3_Sub28_Sub3_2600.aClass94_3561) / 10;
             return;
           }
 
@@ -80,8 +80,9 @@ final class GroundItemNode extends SubNode {
             SomethingQuickChat2.anInt3536 = var1;
             SpawnedGameObject.anInt2251 = var2;
           } else {
-            SpawnedGameObject.anInt2251 = MapScene.anInt65 - Buffer.aClass3_Sub28_Sub3_2600.anInt3556 * 64
-              + DummyClass58.anInt1460 + -1;
+            SpawnedGameObject.anInt2251 =
+              MapScene.anInt65 - Buffer.aClass3_Sub28_Sub3_2600.anInt3556 * 64
+                + DummyClass58.anInt1460 + -1;
             SomethingQuickChat2.anInt3536 =
               Buffer.aClass3_Sub28_Sub3_2600.anInt3558 * 64 + -TextureSampler37.anInt3256;
           }
@@ -108,8 +109,8 @@ final class GroundItemNode extends SubNode {
           }
 
           if (GameObject.anInt2737 == 30) {
-            DummyClass7.method2219(new Buffer(TextureSampler23.worldMaps
-              .method2123(0, DummyClass18.aClass94_85,
+            DummyClass7.method2219(new Buffer(
+              TextureSampler23.worldMaps.method2123(0, DummyClass18.aClass94_85,
                 Buffer.aClass3_Sub28_Sub3_2600.aClass94_3561)), false);
             GameObject.anInt2737 = 40;
             SomethingTexture4.resetFrameRegulator();
@@ -121,8 +122,8 @@ final class GroundItemNode extends SubNode {
                 }), -106)) {
                   DummyClass25.aClass131_1624 = new WorldMapLabel(0);
                 } else {
-                  if (!TextureSampler23.worldMaps
-                    .method2127((byte) -83, RenderAnimation.concat(new GameString[] {
+                  if (!TextureSampler23.worldMaps.method2127((byte) -83,
+                    RenderAnimation.concat(new GameString[] {
                       Buffer.aClass3_Sub28_Sub3_2600.aClass94_3561, SomethingAudio.aClass94_2003
                     }))) {
                     return;
@@ -137,15 +138,13 @@ final class GroundItemNode extends SubNode {
                 GameObject.anInt2737 = 70;
                 SomethingTexture4.resetFrameRegulator();
               } else if (GameObject.anInt2737 == 70) {
-                Something3d2.aClass33_3019 =
-                  new SomethingFont(11, true, InventoryConfig.canvas);
+                Something3d2.aClass33_3019 = new SomethingFont(11, true, InventoryConfig.canvas);
                 GameObject.anInt2737 = 73;
                 DummyClass5.method2210((byte) -90, true);
                 SomethingTexture4.resetFrameRegulator();
               } else if (GameObject.anInt2737 != 73) {
                 if (~GameObject.anInt2737 == -77) {
-                  DummyClass54.aClass33_1399 =
-                    new SomethingFont(14, true, InventoryConfig.canvas);
+                  DummyClass54.aClass33_1399 = new SomethingFont(14, true, InventoryConfig.canvas);
                   GameObject.anInt2737 = 79;
                   DummyClass5.method2210((byte) -90, true);
                   SomethingTexture4.resetFrameRegulator();
@@ -156,8 +155,7 @@ final class GroundItemNode extends SubNode {
                   DummyClass5.method2210((byte) -90, true);
                   SomethingTexture4.resetFrameRegulator();
                 } else if (~GameObject.anInt2737 == -83) {
-                  DummyClass25.aClass33_1626 =
-                    new SomethingFont(19, true, InventoryConfig.canvas);
+                  DummyClass25.aClass33_1626 = new SomethingFont(19, true, InventoryConfig.canvas);
                   GameObject.anInt2737 = 85;
                   DummyClass5.method2210((byte) -90, true);
                   SomethingTexture4.resetFrameRegulator();
@@ -168,15 +166,13 @@ final class GroundItemNode extends SubNode {
                   DummyClass5.method2210((byte) -90, true);
                   SomethingTexture4.resetFrameRegulator();
                 } else if (88 != GameObject.anInt2737) {
-                  CollisionMap.aClass33_1305 =
-                    new SomethingFont(30, true, InventoryConfig.canvas);
+                  CollisionMap.aClass33_1305 = new SomethingFont(30, true, InventoryConfig.canvas);
                   GameObject.anInt2737 = 100;
                   DummyClass5.method2210((byte) -90, true);
                   SomethingTexture4.resetFrameRegulator();
                   System.gc();
                 } else {
-                  DummyClass12.aClass33_2034 =
-                    new SomethingFont(26, true, InventoryConfig.canvas);
+                  DummyClass12.aClass33_2034 = new SomethingFont(26, true, InventoryConfig.canvas);
                   GameObject.anInt2737 = 91;
                   DummyClass5.method2210((byte) -90, true);
                   SomethingTexture4.resetFrameRegulator();
@@ -188,23 +184,23 @@ final class GroundItemNode extends SubNode {
                 SomethingTexture4.resetFrameRegulator();
               }
             } else {
-              HintMarker.method1587((byte) -83, new Buffer(TextureSampler23.worldMaps
-                .method2123(var0 + -64, SomethingSceneI.aClass94_422,
+              HintMarker.method1587((byte) -83, new Buffer(
+                TextureSampler23.worldMaps.method2123(var0 + -64, SomethingSceneI.aClass94_422,
                   Buffer.aClass3_Sub28_Sub3_2600.aClass94_3561)));
               GameObject.anInt2737 = 60;
               DummyClass5.method2210((byte) -90, true);
               SomethingTexture4.resetFrameRegulator();
             }
           } else {
-            TextureSampler25.method328(-21774, new Buffer(TextureSampler23.worldMaps
-              .method2123(0, TextureSampler1.aClass94_3140,
+            TextureSampler25.method328(-21774, new Buffer(
+              TextureSampler23.worldMaps.method2123(0, TextureSampler1.aClass94_3140,
                 Buffer.aClass3_Sub28_Sub3_2600.aClass94_3561)));
             GameObject.anInt2737 = 50;
             SomethingTexture4.resetFrameRegulator();
           }
         } else {
-          AudioWorker.method889((byte) 105, new Buffer(TextureSampler23.worldMaps
-            .method2123(0, HintMarker.aClass94_1349,
+          AudioWorker.method889((byte) 105, new Buffer(
+            TextureSampler23.worldMaps.method2123(0, HintMarker.aClass94_1349,
               Buffer.aClass3_Sub28_Sub3_2600.aClass94_3561)));
           GameObject.anInt2737 = 30;
           DummyClass5.method2210((byte) -90, true);
@@ -253,8 +249,8 @@ final class GroundItemNode extends SubNode {
           var3.anInt2773 = 0;
         }
       } else if (-1 == var2 || var3.animationId == -1
-        || GameClient.method45(var2, (byte) -20).anInt1857 >= GameClient
-        .method45(var3.animationId, (byte) -20).anInt1857) {
+        || GameClient.method45(var2, (byte) -20).anInt1857 >= GameClient.method45(var3.animationId,
+        (byte) -20).anInt1857) {
         var3.anInt2776 = 1;
         var3.anInt2832 = 0;
         var3.anInt2828 = var1;
@@ -263,9 +259,8 @@ final class GroundItemNode extends SubNode {
         var3.anInt2760 = 0;
         var3.animationId = var2;
         if (var3.animationId != -1) {
-          SocketStream
-            .method1470(var3.anInt2829, GameClient.method45(var3.animationId, (byte) -20), 183921384,
-              var3.anInt2819, var3 == TextureCache.localPlayer, var3.anInt2832);
+          SocketStream.method1470(var3.anInt2829, GameClient.method45(var3.animationId, (byte) -20),
+            183921384, var3.anInt2819, var3 == TextureCache.localPlayer, var3.anInt2832);
         }
       }
 

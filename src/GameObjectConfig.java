@@ -116,41 +116,14 @@ final class GameObjectConfig {
     this.aBoolean1542 = false;
   }
 
-  public static void method1687(int var0) {
-    try {
-      aClass94_1508 = null;
-      aClass94_1523 = null;
-      anIntArrayArrayArray1497 = null;
-      aBooleanArray1490 = null;
-      aClass94_1509 = null;
-      if (var0 != -11) {
-        anInt1521 = -96;
-      }
-
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "pb.B(" + var0 + ')');
-    }
-  }
-
-  static final SomethingScene method1688(int var0, int var1, int var2) {
-    SceneGraphTile var3 = SomethingTexture1.sceneGraphTiles[var0][var1][var2];
-    if (var3 == null) {
-      return null;
-    } else {
-      SomethingScene var4 = var3.aClass72_2245;
-      var3.aClass72_2245 = null;
-      return var4;
-    }
-  }
-
   final boolean method1684(int var1, int var2) {
     try {
       int var3 = -1 % ((31 - var1) / 41);
       if (this.anIntArray1487 != null) {
         for (int var7 = 0; ~this.anIntArray1487.length < ~var7; ++var7) {
           if (~var2 == ~this.anIntArray1487[var7]) {
-            return LinearHashTable.aClass153_1043
-              .method2129((byte) 72, 0, this.anIntArray1519[var7] & '\uffff');
+            return LinearHashTable.aClass153_1043.method2129((byte) 72, 0,
+              this.anIntArray1519[var7] & '\uffff');
           }
         }
 
@@ -163,8 +136,8 @@ final class GameObjectConfig {
         boolean var4 = true;
 
         for (int var5 = 0; this.anIntArray1519.length > var5; ++var5) {
-          var4 &= LinearHashTable.aClass153_1043
-            .method2129((byte) 71, 0, '\uffff' & this.anIntArray1519[var5]);
+          var4 &= LinearHashTable.aClass153_1043.method2129((byte) 71, 0,
+            '\uffff' & this.anIntArray1519[var5]);
         }
 
         return var4;
@@ -336,8 +309,8 @@ final class GameObjectConfig {
 
       return var13;
     } catch (RuntimeException var10) {
-      throw AbstractGameWorld
-        .cascadeException(var10, "pb.O(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var10,
+        "pb.O(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -408,8 +381,8 @@ final class GameObjectConfig {
         return var4 != null ? var4.anInt2467 : var1;
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "pb.N(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "pb.N(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -428,8 +401,8 @@ final class GameObjectConfig {
         this.method1693(var2, var3, -80);
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "pb.G(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "pb.G(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -481,8 +454,8 @@ final class GameObjectConfig {
                             this.anInt1489 = var1.readByte() * 5;
                           } else if (~var2 <= -31 && -36 < ~var2) {
                             this.aClass94Array1499[var2 - 30] = var1.readString();
-                            if (this.aClass94Array1499[-30 + var2]
-                              .method1531(TextureSampler33.aClass94_3051)) {
+                            if (this.aClass94Array1499[-30 + var2].method1531(
+                              TextureSampler33.aClass94_3051)) {
                               this.aClass94Array1499[-30 + var2] = null;
                             }
                           } else if (var2 == 40) {
@@ -556,18 +529,19 @@ final class GameObjectConfig {
                                                                 if (249 == var2) {
                                                                   var4 = var1.readUnsignedByte();
                                                                   if (null == this.aClass130_1501) {
-                                                                    var5 = DummyClass53
-                                                                      .nearestPo2((byte) 83, var4);
+                                                                    var5 = DummyClass53.nearestPo2(
+                                                                      (byte) 83, var4);
                                                                     this.aClass130_1501 =
                                                                       new HashTable(var5);
                                                                   }
 
                                                                   for (
                                                                     var5 = 0; var4 > var5; ++var5) {
-                                                                    boolean var10 = -2 == ~var1
-                                                                      .readUnsignedByte();
+                                                                    boolean var10 = -2
+                                                                      == ~var1.readUnsignedByte();
                                                                     int var7 =
-                                                                      var1.readUnsignedMedium((byte) 122);
+                                                                      var1.readUnsignedMedium(
+                                                                        (byte) 122);
                                                                     Object var8;
                                                                     if (!var10) {
                                                                       var8 = new IntegerNode(
@@ -577,9 +551,8 @@ final class GameObjectConfig {
                                                                         var1.readString());
                                                                     }
 
-                                                                    this.aClass130_1501
-                                                                      .put((long) var7,
-                                                                        (Node) var8);
+                                                                    this.aClass130_1501.put(
+                                                                      (long) var7, (Node) var8);
                                                                   }
                                                                 }
                                                               } else {
@@ -748,8 +721,8 @@ final class GameObjectConfig {
         boolean var2 = true;
 
         for (int var3 = 0; ~this.anIntArray1519.length < ~var3; ++var3) {
-          var2 &= LinearHashTable.aClass153_1043
-            .method2129((byte) 64, 0, '\uffff' & this.anIntArray1519[var3]);
+          var2 &= LinearHashTable.aClass153_1043.method2129((byte) 64, 0,
+            '\uffff' & this.anIntArray1519[var3]);
         }
 
         return var1 ? true : var2;
@@ -825,8 +798,9 @@ final class GameObjectConfig {
           Model var17 = null;
 
           for (var12 = 0; ~var8 < ~var12; ++var12) {
-            var17 = Model
-              .getModel(LinearHashTable.aClass153_1043, this.anIntArray1519[var12] & '\uffff', 0);
+            var17 =
+              Model.getModel(LinearHashTable.aClass153_1043, this.anIntArray1519[var12] & '\uffff',
+                0);
             if (null == var17) {
               return null;
             }
@@ -854,10 +828,9 @@ final class GameObjectConfig {
       boolean var18 =
         -1 == ~var1 && 128 == this.anInt1479 && ~this.anInt1481 == -129 && ~this.anInt1496 == -1
           && this.anInt1534 == 0 && !var14;
-      GlModel var19 = var5
-        .createCopy(var18, var15, this.aShortArray1477 == null, true, ~var5.method1903() == ~var6,
-          -1 == ~var1 && !var14, var3, ~var7 == ~var5.method1924(), true, !var14,
-          this.aShortArray1476 == null);
+      GlModel var19 = var5.createCopy(var18, var15, this.aShortArray1477 == null, true,
+        ~var5.method1903() == ~var6, -1 == ~var1 && !var14, var3, ~var7 == ~var5.method1924(), true,
+        !var14, this.aShortArray1476 == null);
       if (var14) {
         var19.method1931();
       }
@@ -908,8 +881,8 @@ final class GameObjectConfig {
 
       return var19;
     } catch (RuntimeException var13) {
-      throw AbstractGameWorld
-        .cascadeException(var13, "pb.L(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
+      throw AbstractGameWorld.cascadeException(var13,
+        "pb.L(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
     }
   }
 
@@ -970,13 +943,14 @@ final class GameObjectConfig {
           if (0 != this.aByte1505) {
             if (!(var22 instanceof SoftwareModel)) {
               if (var22 instanceof Model) {
-                var22 = ((Model) var22)
-                  .method1999(this.aByte1505, this.aShort1500, var3, var6, var2, var5, var11, true,
-                    false);
+                var22 =
+                  ((Model) var22).method1999(this.aByte1505, this.aShort1500, var3, var6, var2,
+                    var5, var11, true, false);
               }
             } else {
-              var22 = ((SoftwareModel) var22)
-                .method1941(this.aByte1505, this.aShort1500, var3, var6, var2, var5, var11, true);
+              var22 =
+                ((SoftwareModel) var22).method1941(this.aByte1505, this.aShort1500, var3, var6,
+                  var2, var5, var11, true);
             }
           }
 
@@ -1020,9 +994,9 @@ final class GameObjectConfig {
           }
 
           boolean var17 = this.aBoolean1541 & var7;
-          GlModel var18 = var14
-            .createCopy(3 != this.aByte1505, ~this.aByte1505 == -1, true, true, true, true, !var17,
-              true, true, true, true);
+          GlModel var18 =
+            var14.createCopy(3 != this.aByte1505, ~this.aByte1505 == -1, true, true, true, true,
+              !var17, true, true, true, true);
           if (~this.aByte1505 != -1) {
             var18.method1919(this.aByte1505, this.aShort1500, var14, var3, var6, var2, var5, var11);
           }
@@ -1179,6 +1153,33 @@ final class GameObjectConfig {
     } catch (RuntimeException var5) {
       throw AbstractGameWorld.cascadeException(var5,
         "pb.E(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  public static void method1687(int var0) {
+    try {
+      aClass94_1508 = null;
+      aClass94_1523 = null;
+      anIntArrayArrayArray1497 = null;
+      aBooleanArray1490 = null;
+      aClass94_1509 = null;
+      if (var0 != -11) {
+        anInt1521 = -96;
+      }
+
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "pb.B(" + var0 + ')');
+    }
+  }
+
+  static final SomethingScene method1688(int var0, int var1, int var2) {
+    SceneGraphTile var3 = SomethingTexture1.sceneGraphTiles[var0][var1][var2];
+    if (var3 == null) {
+      return null;
+    } else {
+      SomethingScene var4 = var3.aClass72_2245;
+      var3.aClass72_2245 = null;
+      return var4;
     }
   }
 

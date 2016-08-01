@@ -46,20 +46,6 @@ final class SomethingGl0 extends Node {
     this.anInt2355 = var5;
   }
 
-  static final void method144() {
-    aClass3_Sub30_2372 = null;
-    aClass3_Sub30_2362 = null;
-    aByteBuffer2368 = null;
-    aByteBuffer2361 = null;
-  }
-
-  public static void method147() {
-    aClass3_Sub30_2372 = null;
-    aClass3_Sub30_2362 = null;
-    aByteBuffer2368 = null;
-    aByteBuffer2361 = null;
-  }
-
   final void method145() {
     this.anIntArray2371 = new int[this.anInt2342];
     this.anIntArray2358 = new int[this.anInt2342];
@@ -353,5 +339,19 @@ final class SomethingGl0 extends Node {
     this.anIntArray2349[this.anInt2366] = var3;
     this.anIntArrayArray2357[this.anInt2366] = var4;
     return this.anInt2366++;
+  }
+
+  static final void method144() {
+    aClass3_Sub30_2372 = null;
+    aClass3_Sub30_2362 = null;
+    aByteBuffer2368 = null;
+    aByteBuffer2361 = null;
+  }
+
+  public static void method147() {
+    aClass3_Sub30_2372 = null;
+    aClass3_Sub30_2362 = null;
+    aByteBuffer2368 = null;
+    aByteBuffer2361 = null;
   }
 }

@@ -18,6 +18,8 @@ import java.util.Vector;
 
 public class SignLink implements Runnable {
 
+  private static String aString1209;
+  private static Hashtable aHashtable1211 = new Hashtable(16);
   public static String aString1196;
   public static String formattedOsName;
   public static String aString1205;
@@ -28,8 +30,6 @@ public class SignLink implements Runnable {
   public static Method aMethod1220;
   public static Method setFocusTraversalKeyEnabledMethod;
   static volatile long aLong1221 = 0L;
-  private static String aString1209;
-  private static Hashtable aHashtable1211 = new Hashtable(16);
   public FileOnDisk[] cacheIndexFiles;
   public FileOnDisk cacheDataFile = null;
   public EventQueue eventQueue;
@@ -164,87 +164,6 @@ public class SignLink implements Runnable {
     this.aThread1200.setPriority(10);
     this.aThread1200.setDaemon(true);
     this.aThread1200.start();
-  }
-
-  private static final FileOnDisk method1438(boolean var0, String var1) {
-    if (var0) {
-      method1438(true, null);
-    }
-
-    String[] var2 = new String[] {
-      "c:/rscache/", "/rscache/", aString1209, "c:/windows/", "c:/winnt/", "c:/", "/tmp/", ""
-    };
-
-    for (int var3 = 0; var2.length > var3; ++var3) {
-      String var4 = var2[var3];
-      if (var4.length() <= 0 || (new File(var4)).exists()) {
-        try {
-          FileOnDisk var5 =
-            new FileOnDisk(new File(var4, "jagex_" + var1 + "_preferences.dat"), "rw", 10000L);
-          return var5;
-        } catch (Exception var6) {
-        }
-      }
-    }
-
-    return null;
-  }
-
-  public static final File method1448(String var0, int var1, boolean var2, String var3) {
-    File var4 = (File) aHashtable1211.get(var3);
-    if (var4 != null) {
-      return var4;
-    } else {
-      if (!var2) {
-        method1438(true, null);
-      }
-
-      String[] var5 = new String[] {
-        "./cache/"
-      };
-      String[] var6 = new String[] {".530jagex_cache_" + var1, ".530file_store_" + var1};
-
-      for (int var7 = 0; ~var7 > -3; ++var7) {
-        for (int var8 = 0; var6.length > var8; ++var8) {
-          for (int var9 = 0; var5.length > var9; ++var9) {
-            String var10 = var5[var9] + var6[var8] + "/" + (var0 != null ? var0 + "/" : "") + var3;
-            RandomAccessFile var11 = null;
-
-            try {
-              File var12 = new File(var10);
-              if (var7 != 0 || var12.exists()) {
-                String var13 = var5[var9];
-                if (var7 != 1 || ~var13.length() >= -1 || (new File(var13)).exists()) {
-                  (new File(var5[var9] + var6[var8])).mkdir();
-                  if (var0 != null) {
-                    (new File(var5[var9] + var6[var8] + "/" + var0)).mkdir();
-                  }
-
-                  var11 = new RandomAccessFile(var12, "rw");
-                  int var14 = var11.read();
-                  var11.seek(0L);
-                  var11.write(var14);
-                  var11.seek(0L);
-                  var11.close();
-                  aHashtable1211.put(var3, var12);
-                  return var12;
-                }
-              }
-            } catch (Exception var16) {
-              try {
-                if (var11 != null) {
-                  var11.close();
-                  var11 = null;
-                }
-              } catch (Exception var15) {
-              }
-            }
-          }
-        }
-      }
-
-      throw new RuntimeException();
-    }
   }
 
   public final void method1431(int var1) {
@@ -399,9 +318,9 @@ public class SignLink implements Runnable {
                     Frame var5 = new Frame("Jagex Full Screen");
                     var1.result = var5;
                     var5.setResizable(false);
-                    this.aDisplay1208
-                      .method918(-56, var1.anInt980 & '\uffff', var1.anInt980 >> -246436720,
-                        '\uffff' & var1.anInt979, var5, var1.anInt979 >>> -106794832);
+                    this.aDisplay1208.method918(-56, var1.anInt980 & '\uffff',
+                      var1.anInt980 >> -246436720, '\uffff' & var1.anInt979, var5,
+                      var1.anInt979 >>> -106794832);
                   } else if (-8 != ~var2) {
                     if (10 == var2) {
                       Class[] var17 = new Class[] {
@@ -419,31 +338,31 @@ public class SignLink implements Runnable {
 
                       var7 = Class.forName("java.lang.Runtime").getDeclaredMethod("load0", var17);
                       var7.setAccessible(true);
-                      if (!formattedOsName.startsWith("linux") && !formattedOsName
-                        .startsWith("sunos")) {
+                      if (!formattedOsName.startsWith("linux") && !formattedOsName.startsWith(
+                        "sunos")) {
                         if (formattedOsName.startsWith("mac")) {
                           var7.invoke(var6, var1.anObject977,
-                            method1448(this.gameName, this.anInt1215, true, "libjogl.jnilib")
-                              .toString());
+                            method1448(this.gameName, this.anInt1215, true,
+                              "libjogl.jnilib").toString());
                           var7.invoke(var6, var1.anObject977,
-                            method1448(this.gameName, this.anInt1215, true, "libjogl_awt.jnilib")
-                              .toString());
+                            method1448(this.gameName, this.anInt1215, true,
+                              "libjogl_awt.jnilib").toString());
                         } else {
                           if (!formattedOsName.startsWith("win")) {
                             throw new Exception();
                           }
 
                           var7.invoke(var6, var1.anObject977,
-                            method1448(this.gameName, this.anInt1215, true, "jogl.dll")
-                              .getAbsolutePath());
+                            method1448(this.gameName, this.anInt1215, true,
+                              "jogl.dll").getAbsolutePath());
                           var7.invoke(var6, var1.anObject977,
-                            method1448(this.gameName, this.anInt1215, true, "jogl_awt.dll")
-                              .getAbsolutePath());
+                            method1448(this.gameName, this.anInt1215, true,
+                              "jogl_awt.dll").getAbsolutePath());
                         }
                       } else {
                         var7.invoke(var6, var1.anObject977,
-                          method1448(this.gameName, this.anInt1215, true, "libgluegen-rt.so")
-                            .toString());
+                          method1448(this.gameName, this.anInt1215, true,
+                            "libgluegen-rt.so").toString());
                         Class var8 = ((Class) var1.anObject977).getClassLoader()
                           .loadClass("com.sun.opengl.impl.x11.DRIHack");
                         var8.getMethod("begin", new Class[0]).invoke(null);
@@ -451,8 +370,8 @@ public class SignLink implements Runnable {
                           method1448(this.gameName, this.anInt1215, true, "libjogl.so").toString());
                         var8.getMethod("end", new Class[0]).invoke(null);
                         var7.invoke(var6, var1.anObject977,
-                          method1448(this.gameName, this.anInt1215, true, "libjogl_awt.so")
-                            .toString());
+                          method1448(this.gameName, this.anInt1215, true,
+                            "libjogl_awt.so").toString());
                       }
 
                       var7.setAccessible(false);
@@ -677,5 +596,86 @@ public class SignLink implements Runnable {
     }
 
     return this.method1435(5, 0, null, 0, -127);
+  }
+
+  private static final FileOnDisk method1438(boolean var0, String var1) {
+    if (var0) {
+      method1438(true, null);
+    }
+
+    String[] var2 = new String[] {
+      "c:/rscache/", "/rscache/", aString1209, "c:/windows/", "c:/winnt/", "c:/", "/tmp/", ""
+    };
+
+    for (int var3 = 0; var2.length > var3; ++var3) {
+      String var4 = var2[var3];
+      if (var4.length() <= 0 || (new File(var4)).exists()) {
+        try {
+          FileOnDisk var5 =
+            new FileOnDisk(new File(var4, "jagex_" + var1 + "_preferences.dat"), "rw", 10000L);
+          return var5;
+        } catch (Exception var6) {
+        }
+      }
+    }
+
+    return null;
+  }
+
+  public static final File method1448(String var0, int var1, boolean var2, String var3) {
+    File var4 = (File) aHashtable1211.get(var3);
+    if (var4 != null) {
+      return var4;
+    } else {
+      if (!var2) {
+        method1438(true, null);
+      }
+
+      String[] var5 = new String[] {
+        "./cache/"
+      };
+      String[] var6 = new String[] {".530jagex_cache_" + var1, ".530file_store_" + var1};
+
+      for (int var7 = 0; ~var7 > -3; ++var7) {
+        for (int var8 = 0; var6.length > var8; ++var8) {
+          for (int var9 = 0; var5.length > var9; ++var9) {
+            String var10 = var5[var9] + var6[var8] + "/" + (var0 != null ? var0 + "/" : "") + var3;
+            RandomAccessFile var11 = null;
+
+            try {
+              File var12 = new File(var10);
+              if (var7 != 0 || var12.exists()) {
+                String var13 = var5[var9];
+                if (var7 != 1 || ~var13.length() >= -1 || (new File(var13)).exists()) {
+                  (new File(var5[var9] + var6[var8])).mkdir();
+                  if (var0 != null) {
+                    (new File(var5[var9] + var6[var8] + "/" + var0)).mkdir();
+                  }
+
+                  var11 = new RandomAccessFile(var12, "rw");
+                  int var14 = var11.read();
+                  var11.seek(0L);
+                  var11.write(var14);
+                  var11.seek(0L);
+                  var11.close();
+                  aHashtable1211.put(var3, var12);
+                  return var12;
+                }
+              }
+            } catch (Exception var16) {
+              try {
+                if (var11 != null) {
+                  var11.close();
+                  var11 = null;
+                }
+              } catch (Exception var15) {
+              }
+            }
+          }
+        }
+      }
+
+      throw new RuntimeException();
+    }
   }
 }

@@ -46,8 +46,8 @@ final class DummyClass22 {
       var1.anInt2253 = var5;
       var1.anInt2257 = var6;
     } catch (RuntimeException var7) {
-      throw AbstractGameWorld
-        .cascadeException(var7, "sf.B(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var7,
+        "sf.B(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -56,8 +56,8 @@ final class DummyClass22 {
       TextureSampler27.aClass153_3098 = var1;
       int var2 = 113 / ((1 - var0) / 63);
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "sf.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "sf.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

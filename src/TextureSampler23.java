@@ -13,6 +13,108 @@ final class TextureSampler23 extends AbstractTextureSampler {
     super(1, false);
   }
 
+  private final void method248(int var1, byte var2, int var3) {
+    try {
+      if (var2 > 80) {
+        int var4 = TextureCache.anIntArray2125[var3];
+        int var5 = DummyClass4.anIntArray2999[var1];
+        float var6 = (float) Math.atan2((double) (var4 - 2048), (double) (var5 - 2048));
+        if ((double) var6 >= -3.141592653589793D && -2.356194490192345D >= (double) var6) {
+          VertexNormal.anInt828 = var1;
+          DummyClass13.anInt2024 = var3;
+        } else if ((double) var6 <= -1.5707963267948966D && -2.356194490192345D <= (double) var6) {
+          DummyClass13.anInt2024 = var1;
+          VertexNormal.anInt828 = var3;
+        } else if ((double) var6 <= -0.7853981633974483D && (double) var6 >= -1.5707963267948966D) {
+          DummyClass13.anInt2024 = -var1 + SomethingLight0.anInt1559;
+          VertexNormal.anInt828 = var3;
+        } else if (0.0F >= var6 && (double) var6 >= -0.7853981633974483D) {
+          DummyClass13.anInt2024 = var3;
+          VertexNormal.anInt828 = DummyClass55.anInt1427 - var1;
+        } else if (var6 >= 0.0F && (double) var6 <= 0.7853981633974483D) {
+          DummyClass13.anInt2024 = -var3 + SomethingLight0.anInt1559;
+          VertexNormal.anInt828 = -var1 + DummyClass55.anInt1427;
+        } else if ((double) var6 >= 0.7853981633974483D && (double) var6 <= 1.5707963267948966D) {
+          DummyClass13.anInt2024 = -var1 + SomethingLight0.anInt1559;
+          VertexNormal.anInt828 = -var3 + DummyClass55.anInt1427;
+        } else if ((double) var6 >= 1.5707963267948966D && 2.356194490192345D >= (double) var6) {
+          VertexNormal.anInt828 = -var3 + DummyClass55.anInt1427;
+          DummyClass13.anInt2024 = var1;
+        } else if (2.356194490192345D <= (double) var6 && (double) var6 <= 3.141592653589793D) {
+          DummyClass13.anInt2024 = -var3 + SomethingLight0.anInt1559;
+          VertexNormal.anInt828 = var1;
+        }
+
+        DummyClass13.anInt2024 &= RenderAnimation.anInt396;
+        VertexNormal.anInt828 &= TriChromaticImageBuffer.anInt2487;
+      }
+    } catch (RuntimeException var7) {
+      throw AbstractGameWorld.cascadeException(var7,
+        "je.Q(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final int[] method154(int var1, byte var2) {
+    try {
+      int var3 = -113 % ((30 - var2) / 36);
+      int[] var4 = this.monoChromaticImageCache.method1709(-16409, var1);
+      if (this.monoChromaticImageCache.aBoolean1580) {
+        for (int var5 = 0; var5 < SomethingLight0.anInt1559; ++var5) {
+          this.method248(var1, (byte) 105, var5);
+          int[] var6 = this.method152(0, VertexNormal.anInt828, 32755);
+          var4[var5] = var6[DummyClass13.anInt2024];
+        }
+      }
+
+      return var4;
+    } catch (RuntimeException var7) {
+      throw AbstractGameWorld.cascadeException(var7, "je.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void parseConfig(int var1, Buffer var2, boolean var3) {
+    try {
+      if (~var1 == -1) {
+        this.monoChromatic = ~var2.readUnsignedByte() == -2;
+      }
+
+      if (!var3) {
+        worldMaps = null;
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "je.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
+  final int[][] method166(int var1, int var2) {
+    try {
+      if (var1 != -1) {
+        this.method166(-38, 67);
+      }
+
+      int[][] var3 = this.triChromaticImageCache.method1594((byte) -125, var2);
+      if (this.triChromaticImageCache.aBoolean1379) {
+        int[] var4 = var3[0];
+        int[] var6 = var3[2];
+        int[] var5 = var3[1];
+
+        for (int var7 = 0; SomethingLight0.anInt1559 > var7; ++var7) {
+          this.method248(var2, (byte) 107, var7);
+          int[][] var8 = this.method162(VertexNormal.anInt828, 0, (byte) -49);
+          var4[var7] = var8[0][DummyClass13.anInt2024];
+          var5[var7] = var8[1][DummyClass13.anInt2024];
+          var6[var7] = var8[2][DummyClass13.anInt2024];
+        }
+      }
+
+      return var3;
+    } catch (RuntimeException var9) {
+      throw AbstractGameWorld.cascadeException(var9, "je.T(" + var1 + ',' + var2 + ')');
+    }
+  }
+
   static final void method246(int var0) {
     try {
       Texture.method724(-109);
@@ -79,8 +181,8 @@ final class TextureSampler23 extends AbstractTextureSampler {
         FileSystem.aClass153_105 = var1;
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "je.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "je.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -148,108 +250,6 @@ final class TextureSampler23 extends AbstractTextureSampler {
     } catch (RuntimeException var6) {
       throw AbstractGameWorld.cascadeException(var6,
         "je.E(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
-    }
-  }
-
-  private final void method248(int var1, byte var2, int var3) {
-    try {
-      if (var2 > 80) {
-        int var4 = TextureCache.anIntArray2125[var3];
-        int var5 = DummyClass4.anIntArray2999[var1];
-        float var6 = (float) Math.atan2((double) (var4 - 2048), (double) (var5 - 2048));
-        if ((double) var6 >= -3.141592653589793D && -2.356194490192345D >= (double) var6) {
-          VertexNormal.anInt828 = var1;
-          DummyClass13.anInt2024 = var3;
-        } else if ((double) var6 <= -1.5707963267948966D && -2.356194490192345D <= (double) var6) {
-          DummyClass13.anInt2024 = var1;
-          VertexNormal.anInt828 = var3;
-        } else if ((double) var6 <= -0.7853981633974483D && (double) var6 >= -1.5707963267948966D) {
-          DummyClass13.anInt2024 = -var1 + SomethingLight0.anInt1559;
-          VertexNormal.anInt828 = var3;
-        } else if (0.0F >= var6 && (double) var6 >= -0.7853981633974483D) {
-          DummyClass13.anInt2024 = var3;
-          VertexNormal.anInt828 = DummyClass55.anInt1427 - var1;
-        } else if (var6 >= 0.0F && (double) var6 <= 0.7853981633974483D) {
-          DummyClass13.anInt2024 = -var3 + SomethingLight0.anInt1559;
-          VertexNormal.anInt828 = -var1 + DummyClass55.anInt1427;
-        } else if ((double) var6 >= 0.7853981633974483D && (double) var6 <= 1.5707963267948966D) {
-          DummyClass13.anInt2024 = -var1 + SomethingLight0.anInt1559;
-          VertexNormal.anInt828 = -var3 + DummyClass55.anInt1427;
-        } else if ((double) var6 >= 1.5707963267948966D && 2.356194490192345D >= (double) var6) {
-          VertexNormal.anInt828 = -var3 + DummyClass55.anInt1427;
-          DummyClass13.anInt2024 = var1;
-        } else if (2.356194490192345D <= (double) var6 && (double) var6 <= 3.141592653589793D) {
-          DummyClass13.anInt2024 = -var3 + SomethingLight0.anInt1559;
-          VertexNormal.anInt828 = var1;
-        }
-
-        DummyClass13.anInt2024 &= RenderAnimation.anInt396;
-        VertexNormal.anInt828 &= TriChromaticImageBuffer.anInt2487;
-      }
-    } catch (RuntimeException var7) {
-      throw AbstractGameWorld
-        .cascadeException(var7, "je.Q(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final void parseConfig(int var1, Buffer var2, boolean var3) {
-    try {
-      if (~var1 == -1) {
-        this.monoChromatic = ~var2.readUnsignedByte() == -2;
-      }
-
-      if (!var3) {
-        worldMaps = null;
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "je.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
-    }
-  }
-
-  final int[] method154(int var1, byte var2) {
-    try {
-      int var3 = -113 % ((30 - var2) / 36);
-      int[] var4 = this.monoChromaticImageCache.method1709(-16409, var1);
-      if (this.monoChromaticImageCache.aBoolean1580) {
-        for (int var5 = 0; var5 < SomethingLight0.anInt1559; ++var5) {
-          this.method248(var1, (byte) 105, var5);
-          int[] var6 = this.method152(0, VertexNormal.anInt828, 32755);
-          var4[var5] = var6[DummyClass13.anInt2024];
-        }
-      }
-
-      return var4;
-    } catch (RuntimeException var7) {
-      throw AbstractGameWorld.cascadeException(var7, "je.D(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final int[][] method166(int var1, int var2) {
-    try {
-      if (var1 != -1) {
-        this.method166(-38, 67);
-      }
-
-      int[][] var3 = this.triChromaticImageCache.method1594((byte) -125, var2);
-      if (this.triChromaticImageCache.aBoolean1379) {
-        int[] var4 = var3[0];
-        int[] var6 = var3[2];
-        int[] var5 = var3[1];
-
-        for (int var7 = 0; SomethingLight0.anInt1559 > var7; ++var7) {
-          this.method248(var2, (byte) 107, var7);
-          int[][] var8 = this.method162(VertexNormal.anInt828, 0, (byte) -49);
-          var4[var7] = var8[0][DummyClass13.anInt2024];
-          var5[var7] = var8[1][DummyClass13.anInt2024];
-          var6[var7] = var8[2][DummyClass13.anInt2024];
-        }
-      }
-
-      return var3;
-    } catch (RuntimeException var9) {
-      throw AbstractGameWorld.cascadeException(var9, "je.T(" + var1 + ',' + var2 + ')');
     }
   }
 

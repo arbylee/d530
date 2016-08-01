@@ -14,36 +14,6 @@ abstract class AbstractDirectColorSprite extends SubNode {
   int anInt3706;
   int anInt3707;
 
-  public static void method634(byte var0) {
-    try {
-      aClass11_3708 = null;
-      aClass94_3702 = null;
-      aClass94_3705 = null;
-      if (var0 == 108) {
-        aClass94_3703 = null;
-        COMMAND_CARD_MEMORY = null;
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "qf.R(" + var0 + ')');
-    }
-  }
-
-  static final Widget method638(byte var0, int var1, int var2) {
-    try {
-      Widget var3 = EnumStringFetcher.getWidget((byte) 109, var1);
-      return 0 == ~var2 ?
-        var3 :
-        (var0 != -19 ?
-          null :
-          (var3 != null && var3.aClass11Array262 != null && ~var3.aClass11Array262.length < ~var2 ?
-            var3.aClass11Array262[var2] :
-            null));
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "qf.P(" + var0 + ',' + var1 + ',' + var2 + ')');
-    }
-  }
-
   abstract void method635(int var1, int var2);
 
   abstract void method636(int var1, int var2, int var3, int var4, int var5, int var6);
@@ -72,5 +42,35 @@ abstract class AbstractDirectColorSprite extends SubNode {
   abstract void method642(int var1, int var2, int var3, int var4, int var5);
 
   abstract void method643(int var1, int var2);
+
+  public static void method634(byte var0) {
+    try {
+      aClass11_3708 = null;
+      aClass94_3702 = null;
+      aClass94_3705 = null;
+      if (var0 == 108) {
+        aClass94_3703 = null;
+        COMMAND_CARD_MEMORY = null;
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "qf.R(" + var0 + ')');
+    }
+  }
+
+  static final Widget method638(byte var0, int var1, int var2) {
+    try {
+      Widget var3 = EnumStringFetcher.getWidget((byte) 109, var1);
+      return 0 == ~var2 ?
+        var3 :
+        (var0 != -19 ?
+          null :
+          (var3 != null && var3.aClass11Array262 != null && ~var3.aClass11Array262.length < ~var2 ?
+            var3.aClass11Array262[var2] :
+            null));
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "qf.P(" + var0 + ',' + var1 + ',' + var2 + ')');
+    }
+  }
 
 }

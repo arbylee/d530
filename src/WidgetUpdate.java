@@ -17,6 +17,68 @@ final class WidgetUpdate extends SubNode {
     }
   }
 
+  final void createIndexedColorSprite(boolean var1) {
+    try {
+      this.subnodeKey = Time.getCurrentTimeMillis() - -500L | Long.MIN_VALUE & this.subnodeKey;
+      if (!var1) {
+        f(-42);
+      }
+
+      DummyClass50.aClass13_1139.addLast(this);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "da.U(" + var1 + ')');
+    }
+  }
+
+  final long b(boolean var1) {
+    try {
+      if (!var1) {
+        this.e(90);
+      }
+
+      return this.subnodeKey & Long.MAX_VALUE;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "da.A(" + var1 + ')');
+    }
+  }
+
+  final int e(int var1) {
+    try {
+      if (var1 != 2063817568) {
+        this.anInt3598 = -47;
+      }
+
+      return (int) (255L & this.key >>> 32);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "da.D(" + var1 + ')');
+    }
+  }
+
+  final int f(byte var1) {
+    try {
+      int var2 = -88 / ((var1 - 83) / 34);
+      return (int) this.key;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "da.P(" + var1 + ')');
+    }
+  }
+
+  final void g(byte var1) {
+    try {
+      this.subnodeKey |= Long.MIN_VALUE;
+      if (~this.b(true) == -1L) {
+        SomethingTilek.aClass13_1666.addLast(this);
+      }
+
+      if (var1 != 33) {
+        anInt3600 = 3;
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "da.T(" + var1 + ')');
+    }
+  }
+
   static final void d(int var0) {
     try {
       if (0 != ~NpcConfiguration.anInt1252 && 0 != ~VariableUpdate.anInt2293) {
@@ -71,24 +133,18 @@ final class WidgetUpdate extends SubNode {
           var6 = DummyClass37.anInt670 * 2;
 
           for (var7 = 0; ~var7 > -4; ++var7) {
-            var8 =
-              DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][var6][var7] * 3;
-            var10 =
-              (DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][2 + var6][var7]
-                - DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][3
-                + var6][var7]
-                + DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][var6
-                - -2][var7]) * 3;
-            var11 =
-              DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][var6][var7];
+            var8 = DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][var6][var7] * 3;
+            var10 = (DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][2 + var6][var7]
+              - DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][3 + var6][var7]
+              + DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][var6 - -2][var7])
+              * 3;
+            var11 = DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][var6][var7];
             var9 =
-              DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][1 + var6][var7]
-                * 3;
+              DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][1 + var6][var7] * 3;
             var12 = var9 + -var8;
             int var13 = var10 + var8 + -(2 * var9);
-            int var14 =
-              -var10 + DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][var6
-                - -2][var7] + -var11 + var9;
+            int var14 = -var10 + DummyClass43.anIntArrayArrayArray911[VariableUpdate.anInt2293][var6
+              - -2][var7] + -var11 + var9;
             var16[var7] = (float) var11 + var2 * (var2 * (var2 * (float) var14 + (float) var13)
               + (float) var12);
           }
@@ -110,10 +166,12 @@ final class WidgetUpdate extends SubNode {
 
   static final AbstractIndexedColorSprite createIndexedColorSprite(FileUnpacker var1, int fileId) {
     try {
-      return !GroundItem.loadSprites(var1, fileId) ? null : (SomethingIndex150.createIndexedColorSprite());
+      return !GroundItem.loadSprites(var1, fileId) ?
+        null :
+        (SomethingIndex150.createIndexedColorSprite());
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "da.C(" + fileId + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "da.C(" + fileId + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -232,68 +290,6 @@ final class WidgetUpdate extends SubNode {
       Cache.aClass93_743.method1523((byte) -106);
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "da.E(" + var0 + ')');
-    }
-  }
-
-  final void createIndexedColorSprite(boolean var1) {
-    try {
-      this.subnodeKey = Time.getCurrentTimeMillis() - -500L | Long.MIN_VALUE & this.subnodeKey;
-      if (!var1) {
-        f(-42);
-      }
-
-      DummyClass50.aClass13_1139.addLast(this);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "da.U(" + var1 + ')');
-    }
-  }
-
-  final long b(boolean var1) {
-    try {
-      if (!var1) {
-        this.e(90);
-      }
-
-      return this.subnodeKey & Long.MAX_VALUE;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "da.A(" + var1 + ')');
-    }
-  }
-
-  final int e(int var1) {
-    try {
-      if (var1 != 2063817568) {
-        this.anInt3598 = -47;
-      }
-
-      return (int) (255L & this.key >>> 32);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "da.D(" + var1 + ')');
-    }
-  }
-
-  final int f(byte var1) {
-    try {
-      int var2 = -88 / ((var1 - 83) / 34);
-      return (int) this.key;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "da.P(" + var1 + ')');
-    }
-  }
-
-  final void g(byte var1) {
-    try {
-      this.subnodeKey |= Long.MIN_VALUE;
-      if (~this.b(true) == -1L) {
-        SomethingTilek.aClass13_1666.addLast(this);
-      }
-
-      if (var1 != 33) {
-        anInt3600 = 3;
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "da.T(" + var1 + ')');
     }
   }
 

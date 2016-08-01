@@ -1,5 +1,6 @@
 final class WidgetAccess extends Node {
 
+  private static GameString aClass94_2206 = SpawnedGameObject.createString("white:");
   static FileUnpacker scripts;
   static int anInt2204;
   static GameString aClass94_2207 = SpawnedGameObject.createString("brillant2:");
@@ -9,7 +10,6 @@ final class WidgetAccess extends Node {
   static int anInt2212 = 0;
   static int[] anIntArray2213 =
     new int[] {16776960, 16711680, '\uff00', '\uffff', 16711935, 16777215};
-  private static GameString aClass94_2206 = SpawnedGameObject.createString("white:");
   static GameString aClass94_2210 = aClass94_2206;
   static GameString aClass94_2214 = aClass94_2206;
   int anInt2202;
@@ -22,6 +22,107 @@ final class WidgetAccess extends Node {
       this.anInt2205 = var1;
     } catch (RuntimeException var4) {
       throw AbstractGameWorld.cascadeException(var4, "bf.<init>(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final boolean method92(int var1, byte var2) {
+    try {
+      int var3 = 13 / ((-60 - var2) / 46);
+      return 0 != (this.anInt2205 >> 1 + var1 & 1);
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "bf.C(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final boolean method93(int var1) {
+    try {
+      return var1 != 572878952 ? true : 0 != (572878952 & this.anInt2205) >> 29;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "bf.S(" + var1 + ')');
+    }
+  }
+
+  final int method94(byte var1) {
+    try {
+      if (var1 != -74) {
+        this.method96(90);
+      }
+
+      return this.anInt2205 >> 18 & 7;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "bf.A(" + var1 + ')');
+    }
+  }
+
+  final boolean method95(int var1) {
+    try {
+      if (var1 != -13081) {
+        anInt2212 = 71;
+      }
+
+      return ~(1 & this.anInt2205) != -1;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "bf.Q(" + var1 + ')');
+    }
+  }
+
+  final boolean method96(int var1) {
+    try {
+      return var1 != -2063688673 ? false : (this.anInt2205 >> 31 & 1) != 0;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "bf.T(" + var1 + ')');
+    }
+  }
+
+  final boolean method97(int var1) {
+    try {
+      return var1 != -20710 ? true : 0 != (1 & this.anInt2205 >> 22);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "bf.R(" + var1 + ')');
+    }
+  }
+
+  final boolean method98(boolean var1) {
+    try {
+      if (var1) {
+        anIntArray2209 = null;
+      }
+
+      return -1 != ~(this.anInt2205 >> 21 & 1);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "bf.E(" + var1 + ')');
+    }
+  }
+
+  final boolean method99(int var1) {
+    try {
+      if (var1 != 31595) {
+        scripts = null;
+      }
+
+      return -1 != ~((1738913629 & this.anInt2205) >> 30);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "bf.F(" + var1 + ')');
+    }
+  }
+
+  final boolean method100(byte var1) {
+    try {
+      return var1 != -9 ? true : (this.anInt2205 & 455226656) >> 28 != 0;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "bf.O(" + var1 + ')');
+    }
+  }
+
+  final int method101(int var1) {
+    try {
+      if (var1 > -51) {
+        anInt2208 = -42;
+      }
+
+      return ClientScript.method630((byte) -34, this.anInt2205);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "bf.B(" + var1 + ')');
     }
   }
 
@@ -130,107 +231,6 @@ final class WidgetAccess extends Node {
       aClass94_2214 = null;
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "bf.P(" + var0 + ')');
-    }
-  }
-
-  final boolean method92(int var1, byte var2) {
-    try {
-      int var3 = 13 / ((-60 - var2) / 46);
-      return 0 != (this.anInt2205 >> 1 + var1 & 1);
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "bf.C(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final boolean method93(int var1) {
-    try {
-      return var1 != 572878952 ? true : 0 != (572878952 & this.anInt2205) >> 29;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "bf.S(" + var1 + ')');
-    }
-  }
-
-  final int method94(byte var1) {
-    try {
-      if (var1 != -74) {
-        this.method96(90);
-      }
-
-      return this.anInt2205 >> 18 & 7;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "bf.A(" + var1 + ')');
-    }
-  }
-
-  final boolean method95(int var1) {
-    try {
-      if (var1 != -13081) {
-        anInt2212 = 71;
-      }
-
-      return ~(1 & this.anInt2205) != -1;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "bf.Q(" + var1 + ')');
-    }
-  }
-
-  final boolean method96(int var1) {
-    try {
-      return var1 != -2063688673 ? false : (this.anInt2205 >> 31 & 1) != 0;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "bf.T(" + var1 + ')');
-    }
-  }
-
-  final boolean method97(int var1) {
-    try {
-      return var1 != -20710 ? true : 0 != (1 & this.anInt2205 >> 22);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "bf.R(" + var1 + ')');
-    }
-  }
-
-  final boolean method98(boolean var1) {
-    try {
-      if (var1) {
-        anIntArray2209 = null;
-      }
-
-      return -1 != ~(this.anInt2205 >> 21 & 1);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "bf.E(" + var1 + ')');
-    }
-  }
-
-  final boolean method99(int var1) {
-    try {
-      if (var1 != 31595) {
-        scripts = null;
-      }
-
-      return -1 != ~((1738913629 & this.anInt2205) >> 30);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "bf.F(" + var1 + ')');
-    }
-  }
-
-  final boolean method100(byte var1) {
-    try {
-      return var1 != -9 ? true : (this.anInt2205 & 455226656) >> 28 != 0;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "bf.O(" + var1 + ')');
-    }
-  }
-
-  final int method101(int var1) {
-    try {
-      if (var1 > -51) {
-        anInt2208 = -42;
-      }
-
-      return ClientScript.method630((byte) -34, this.anInt2205);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "bf.B(" + var1 + ')');
     }
   }
 

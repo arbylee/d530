@@ -25,80 +25,6 @@ final class ObjectCache {
     }
   }
 
-  static final void method1516(int var0, int var1) {
-    try {
-      WidgetUpdate var2 = AudioStreamEncoder3.method466(4, 3, var0);
-      var2.createIndexedColorSprite(true);
-      if (var1 < 87) {
-        aClass94_1326 = null;
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "n.L(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  static final void method1517(byte var0) {
-    try {
-      DummyClass17.aFontMetrics1822 = null;
-      TextureSampler14.aFont3384 = null;
-      if (var0 != -118) {
-        method1516(64, 82);
-      }
-
-      MilliFrameRegulator.anImage2695 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "n.J(" + var0 + ')');
-    }
-  }
-
-  static int bitXor(int var0, int var1) {
-    try {
-      return var0 ^ var1;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "n.E(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  public static void method1521(int var0) {
-    try {
-      tileOrientation = null;
-      aClass94_1326 = null;
-      if (var0 != 3101) {
-        method1516(99, -14);
-      }
-
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "n.A(" + var0 + ')');
-    }
-  }
-
-  static final void method1525(int var0, int var1, int var2, int var3, int var4, int var5) {
-    try {
-      int var6 =
-        DummyClass59.method1040(LightIntensity.anInt902, var3, (byte) 0, DummyClass13.anInt2020);
-      int var7 =
-        DummyClass59.method1040(LightIntensity.anInt902, var5, (byte) 0, DummyClass13.anInt2020);
-      int var8 =
-        DummyClass59.method1040(GlTexture2d.anInt3765, var4, (byte) 0, DummyClass55.anInt1425);
-      if (var0 != 3074) {
-        method1516(75, -7);
-      }
-
-      int var9 =
-        DummyClass59.method1040(GlTexture2d.anInt3765, var2, (byte) 0, DummyClass55.anInt1425);
-
-      for (int var10 = var6; var10 <= var7; ++var10) {
-        TextureSampler18
-          .method282(DummyClass35.anIntArrayArray663[var10], var8, var0 + -2974, var9, var1);
-      }
-
-    } catch (RuntimeException var11) {
-      throw AbstractGameWorld.cascadeException(var11,
-        "n.I(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ')');
-    }
-  }
-
   final void get(byte var1, Object var2, long var3) {
     try {
       this.method1518(var3, (byte) -124);
@@ -253,6 +179,80 @@ final class ObjectCache {
       }
     } catch (RuntimeException var7) {
       throw AbstractGameWorld.cascadeException(var7, "n.K(" + var1 + ')');
+    }
+  }
+
+  static final void method1516(int var0, int var1) {
+    try {
+      WidgetUpdate var2 = AudioStreamEncoder3.method466(4, 3, var0);
+      var2.createIndexedColorSprite(true);
+      if (var1 < 87) {
+        aClass94_1326 = null;
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "n.L(" + var0 + ',' + var1 + ')');
+    }
+  }
+
+  static final void method1517(byte var0) {
+    try {
+      DummyClass17.aFontMetrics1822 = null;
+      TextureSampler14.aFont3384 = null;
+      if (var0 != -118) {
+        method1516(64, 82);
+      }
+
+      MilliFrameRegulator.anImage2695 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "n.J(" + var0 + ')');
+    }
+  }
+
+  static int bitXor(int var0, int var1) {
+    try {
+      return var0 ^ var1;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "n.E(" + var0 + ',' + var1 + ')');
+    }
+  }
+
+  public static void method1521(int var0) {
+    try {
+      tileOrientation = null;
+      aClass94_1326 = null;
+      if (var0 != 3101) {
+        method1516(99, -14);
+      }
+
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "n.A(" + var0 + ')');
+    }
+  }
+
+  static final void method1525(int var0, int var1, int var2, int var3, int var4, int var5) {
+    try {
+      int var6 =
+        DummyClass59.method1040(LightIntensity.anInt902, var3, (byte) 0, DummyClass13.anInt2020);
+      int var7 =
+        DummyClass59.method1040(LightIntensity.anInt902, var5, (byte) 0, DummyClass13.anInt2020);
+      int var8 =
+        DummyClass59.method1040(GlTexture2d.anInt3765, var4, (byte) 0, DummyClass55.anInt1425);
+      if (var0 != 3074) {
+        method1516(75, -7);
+      }
+
+      int var9 =
+        DummyClass59.method1040(GlTexture2d.anInt3765, var2, (byte) 0, DummyClass55.anInt1425);
+
+      for (int var10 = var6; var10 <= var7; ++var10) {
+        TextureSampler18.method282(DummyClass35.anIntArrayArray663[var10], var8, var0 + -2974, var9,
+          var1);
+      }
+
+    } catch (RuntimeException var11) {
+      throw AbstractGameWorld.cascadeException(var11,
+        "n.I(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ')');
     }
   }
 

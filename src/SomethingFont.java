@@ -75,11 +75,6 @@ final class SomethingFont {
     this.aByteArray594 = var8;
   }
 
-  public static void method999() {
-    aString597 = null;
-    anIntArray599 = null;
-  }
-
   private final void method997(GameString var1, int var2, int var3, int var4, boolean var5) {
     if (this.aBoolean595 || var4 == 0) {
       var5 = false;
@@ -359,8 +354,7 @@ final class SomethingFont {
     int var2 = 0;
 
     for (int var3 = 0; var3 < var1.getLength(); ++var3) {
-      if (var1.charAt(var3) == 64 && var3 + 4 < var1.getLength()
-        && var1.charAt(var3 + 4) == 64) {
+      if (var1.charAt(var3) == 64 && var3 + 4 < var1.getLength() && var1.charAt(var3 + 4) == 64) {
         var3 += 4;
       } else if (var1.charAt(var3) == 126 && var3 + 4 < var1.getLength()
         && var1.charAt(var3 + 4) == 126) {
@@ -375,5 +369,10 @@ final class SomethingFont {
 
   final int method1006() {
     return this.aByteArray594[6];
+  }
+
+  public static void method999() {
+    aString597 = null;
+    anIntArray599 = null;
   }
 }

@@ -8,7 +8,8 @@ final class DummyClass50 {
     SpawnedGameObject.createString(" steht bereits auf Ihrer Ignorieren)2Liste(Q");
   static int anInt1141;
   static int[][][] anIntArrayArrayArray1142;
-  static GameString aClass94_1143 = SpawnedGameObject.createString("Chargement du module texte )2 ");
+  static GameString aClass94_1143 =
+    SpawnedGameObject.createString("Chargement du module texte )2 ");
 
 
   static final void writeUUID(Buffer var0, boolean var1) {
@@ -39,8 +40,8 @@ final class DummyClass50 {
 
       var0.write(var2, 0, 24);
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "la.G(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "la.G(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -66,8 +67,8 @@ final class DummyClass50 {
 
       return var2;
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "la.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "la.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -90,8 +91,8 @@ final class DummyClass50 {
 
           for (var5 = 0; FileSystem.anInt104 > var5; ++var5) {
             if (~VertexNormal.aLongArray826[var5] == ~var1) {
-              GameBuffer.printMessage(GroundItemNode.EMPTY_STRING, 0, RenderAnimation.concat(
-                new GameString[] {
+              GameBuffer.printMessage(GroundItemNode.EMPTY_STRING, 0,
+                RenderAnimation.concat(new GameString[] {
                   DummyClass35.aClass94_666, var4, OndemandFileRequest.aClass94_4071
                 }), -1);
               return;

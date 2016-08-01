@@ -1,14 +1,14 @@
 final class WorldMapLabel {
 
+  private static GameString aClass94_1717 = SpawnedGameObject.createString("Prepared sound engine");
+  private static GameString aClass94_1726 = SpawnedGameObject.createString("Select");
   static int anInt1716;
   static int anInt1719 = -1;
   static FileUnpacker animationBases;
   static GameString aClass94_1724 = SpawnedGameObject.createString(" )2>");
   static GameString aClass94_1728 = SpawnedGameObject.createString("Eingabeprozedur geladen)3");
   static int[] anIntArray1729 = new int[] {12543016, 15504954, 15914854, 16773818};
-  private static GameString aClass94_1717 = SpawnedGameObject.createString("Prepared sound engine");
   static GameString aClass94_1731 = aClass94_1717;
-  private static GameString aClass94_1726 = SpawnedGameObject.createString("Select");
   static GameString aClass94_1722 = aClass94_1726;
   short[] aShortArray1718;
   int anInt1720;
@@ -27,6 +27,50 @@ final class WorldMapLabel {
       this.aShortArray1727 = new short[this.anInt1720];
     } catch (RuntimeException var3) {
       throw AbstractGameWorld.cascadeException(var3, "se.<init>(" + var1 + ')');
+    }
+  }
+
+  final boolean method1787(int var1, byte var2) {
+    try {
+      if (var2 != -124) {
+        method1793(null, null, -17, (byte) 94);
+      }
+
+      return (this.aByteArray1730[var1] & 8) != 0;
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "se.G(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final boolean method1789(int var1, int var2) {
+    try {
+      if (var2 != 530) {
+        this.method1794(-111, 26);
+      }
+
+      return ~(4 & this.aByteArray1730[var1]) != -1;
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "se.A(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final int method1791(int var1, int var2) {
+    try {
+      return var2 != 8 ? 35 : this.aByteArray1730[var1] & 3;
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "se.I(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final boolean method1794(int var1, int var2) {
+    try {
+      if (var2 != -20138) {
+        method1788(122, 38, -120, -29, false);
+      }
+
+      return 0 == (this.aByteArray1730[var1] & 16);
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "se.E(" + var1 + ',' + var2 + ')');
     }
   }
 
@@ -113,8 +157,8 @@ final class WorldMapLabel {
       var3.g((byte) 33);
       var3.anInt3598 = var1;
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "se.B(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "se.B(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -171,50 +215,6 @@ final class WorldMapLabel {
       throw AbstractGameWorld.cascadeException(var6,
         "se.C(" + (var0 != null ? "{...}" : "null") + ',' + (var1 != null ? "{...}" : "null") + ','
           + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final boolean method1787(int var1, byte var2) {
-    try {
-      if (var2 != -124) {
-        method1793(null, null, -17, (byte) 94);
-      }
-
-      return (this.aByteArray1730[var1] & 8) != 0;
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "se.G(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final boolean method1789(int var1, int var2) {
-    try {
-      if (var2 != 530) {
-        this.method1794(-111, 26);
-      }
-
-      return ~(4 & this.aByteArray1730[var1]) != -1;
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "se.A(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final int method1791(int var1, int var2) {
-    try {
-      return var2 != 8 ? 35 : this.aByteArray1730[var1] & 3;
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "se.I(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final boolean method1794(int var1, int var2) {
-    try {
-      if (var2 != -20138) {
-        method1788(122, 38, -120, -29, false);
-      }
-
-      return 0 == (this.aByteArray1730[var1] & 16);
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "se.E(" + var1 + ',' + var2 + ')');
     }
   }
 

@@ -1,5 +1,6 @@
 class SubNode extends Node {
 
+  private static GameString aClass94_2568 = SpawnedGameObject.createString("Started 3d Library");
   static GameString[] aClass94Array2566 = new GameString[200];
   static int anInt2567 = -1;
   static int anInt2571;
@@ -8,17 +9,27 @@ class SubNode extends Node {
   static int[] anIntArray2574 = new int[14];
   static int anInt2575;
   static int anInt2577 = 0;
-  private static GameString aClass94_2568 = SpawnedGameObject.createString("Started 3d Library");
   static GameString aClass94_2576 = aClass94_2568;
   long subnodeKey;
   SubNode prevSubNode;
   SubNode nextSubNode;
 
+  final void unlinkSubNode() {
+    try {
+      if (this.prevSubNode != null) {
+        this.prevSubNode.nextSubNode = this.nextSubNode;
+        this.nextSubNode.prevSubNode = this.prevSubNode;
+        this.nextSubNode = null;
+        this.prevSubNode = null;
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "rg.TA()");
+    }
+  }
 
   static final void method518(Player var0, int var1) {
     try {
-      AreaSoundEffect var2 =
-        (AreaSoundEffect) ObjectNode.aClass130_4046.get(var0.name.toBase37());
+      AreaSoundEffect var2 = (AreaSoundEffect) ObjectNode.aClass130_4046.get(var0.name.toBase37());
       if (var1 >= -85) {
         method523(40, -17, -52, -32, 9, -51, -85, -84, -19);
       }
@@ -31,8 +42,8 @@ class SubNode extends Node {
       }
 
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "rg.UA(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "rg.UA(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -45,8 +56,8 @@ class SubNode extends Node {
 
       return 0 != var0 ? (~var0 != -2 ? (~var0 == -3 ? -var3 + 7 : -var2 + 7) : var2) : var3;
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "rg.RA(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "rg.RA(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -77,8 +88,8 @@ class SubNode extends Node {
     try {
       NpcConfiguration var2 = (NpcConfiguration) ObjectNode.aClass93_4043.get((long) var0);
       if (null == var2) {
-        byte[] var3 = PlayerVariable.aClass153_557
-          .getBytes(DummyClass36.method1031(var0, 2), DummyCanvas.method54(var0, false));
+        byte[] var3 = PlayerVariable.aClass153_557.getBytes(DummyClass36.method1031(var0, 2),
+          DummyCanvas.method54(var0, false));
         var2 = new NpcConfiguration();
 
         var2.anInt1284 = var0;
@@ -109,19 +120,6 @@ class SubNode extends Node {
       throw AbstractGameWorld.cascadeException(var13,
         "rg.SA(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ','
           + var6 + ',' + var7 + ',' + var8 + ')');
-    }
-  }
-
-  final void unlinkSubNode() {
-    try {
-      if (this.prevSubNode != null) {
-        this.prevSubNode.nextSubNode = this.nextSubNode;
-        this.nextSubNode.prevSubNode = this.prevSubNode;
-        this.nextSubNode = null;
-        this.prevSubNode = null;
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "rg.TA()");
     }
   }
 

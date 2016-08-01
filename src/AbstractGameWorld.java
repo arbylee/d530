@@ -11,6 +11,50 @@ abstract class AbstractGameWorld {
   int anInt722;
   int flags;
 
+  final boolean method1070(int var1) {
+    try {
+      if (var1 != 8) {
+        this.method1070(15);
+      }
+
+      return 0 != (1 & this.flags);
+    } catch (RuntimeException var3) {
+      throw cascadeException(var3, "gj.E(" + var1 + ')');
+    }
+  }
+
+  final boolean method1072(boolean var1) {
+    try {
+      return var1 ? false : (this.flags & 4) != 0;
+    } catch (RuntimeException var3) {
+      throw cascadeException(var3, "gj.G(" + var1 + ')');
+    }
+  }
+
+  final boolean method1074(int var1) {
+    try {
+      if (var1 >= -106) {
+        aFloat727 = -0.6283864F;
+      }
+
+      return ~(this.flags & 8) != -1;
+    } catch (RuntimeException var3) {
+      throw cascadeException(var3, "gj.I(" + var1 + ')');
+    }
+  }
+
+  final boolean method1075(int var1) {
+    try {
+      if (var1 != 64) {
+        this.flags = 51;
+      }
+
+      return ~(2 & this.flags) != -1;
+    } catch (RuntimeException var3) {
+      throw cascadeException(var3, "gj.H(" + var1 + ')');
+    }
+  }
+
   static final boolean method1066(int var0, int var1) {
     try {
       if (97 <= var0 && ~var0 >= -123) {
@@ -106,50 +150,6 @@ abstract class AbstractGameWorld {
 
     } catch (RuntimeException var2) {
       throw cascadeException(var2, "gj.L(" + var0 + ')');
-    }
-  }
-
-  final boolean method1070(int var1) {
-    try {
-      if (var1 != 8) {
-        this.method1070(15);
-      }
-
-      return 0 != (1 & this.flags);
-    } catch (RuntimeException var3) {
-      throw cascadeException(var3, "gj.E(" + var1 + ')');
-    }
-  }
-
-  final boolean method1072(boolean var1) {
-    try {
-      return var1 ? false : (this.flags & 4) != 0;
-    } catch (RuntimeException var3) {
-      throw cascadeException(var3, "gj.G(" + var1 + ')');
-    }
-  }
-
-  final boolean method1074(int var1) {
-    try {
-      if (var1 >= -106) {
-        aFloat727 = -0.6283864F;
-      }
-
-      return ~(this.flags & 8) != -1;
-    } catch (RuntimeException var3) {
-      throw cascadeException(var3, "gj.I(" + var1 + ')');
-    }
-  }
-
-  final boolean method1075(int var1) {
-    try {
-      if (var1 != 64) {
-        this.flags = 51;
-      }
-
-      return ~(2 & this.flags) != -1;
-    } catch (RuntimeException var3) {
-      throw cascadeException(var3, "gj.H(" + var1 + ')');
     }
   }
 

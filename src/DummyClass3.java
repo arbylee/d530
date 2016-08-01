@@ -27,8 +27,8 @@ final class DummyClass3 {
 
       TextureSampler16.huffmanEncoder = var0;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "a.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "a.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -345,17 +345,16 @@ final class DummyClass3 {
             SomethingGl0 var66 = AnimationSequence.method2052(var12, false, var62);
             byte var67 = var8[var13][var14];
             byte var68 = var5[var13][var14];
-            var22 = TextureSampler34
-              .method190(var62.anInt2095, var62.anInt2103, (byte) -111, var6[var13][var14]);
-            var23 = TextureSampler34
-              .method190(var62.anInt2095, var62.anInt2103, (byte) 65, var6[var13 + 1][var14]);
-            var24 = TextureSampler34
-              .method190(var62.anInt2095, var62.anInt2103, (byte) 68, var6[1 + var13][var14 + 1]);
-            var25 = TextureSampler34
-              .method190(var62.anInt2095, var62.anInt2103, (byte) -84, var6[var13][var14 - -1]);
-            PlayerVariable
-              .method971(var22, var2, var1, var13, var0, var23, var68, var15, var24, (byte) 88,
-                ~var16 != -1 && var62.aBoolean2092, var67, var14, var4, var25, var66);
+            var22 = TextureSampler34.method190(var62.anInt2095, var62.anInt2103, (byte) -111,
+              var6[var13][var14]);
+            var23 = TextureSampler34.method190(var62.anInt2095, var62.anInt2103, (byte) 65,
+              var6[var13 + 1][var14]);
+            var24 = TextureSampler34.method190(var62.anInt2095, var62.anInt2103, (byte) 68,
+              var6[1 + var13][var14 + 1]);
+            var25 = TextureSampler34.method190(var62.anInt2095, var62.anInt2103, (byte) -84,
+              var6[var13][var14 - -1]);
+            PlayerVariable.method971(var22, var2, var1, var13, var0, var23, var68, var15, var24,
+              (byte) 88, ~var16 != -1 && var62.aBoolean2092, var67, var14, var4, var25, var66);
           }
 
           if (~(var9[var13][var14] & 255) != -1 || ~var58 != -1 && 0 == var8[var13][var14]) {
@@ -579,18 +578,17 @@ final class DummyClass3 {
               boolean[] var84 = TextureSampler8.aBooleanArrayArray3468[var78 != var27 ? 0 : var23];
               FloorOverlay var82 = TextureSampler10.method350((byte) 121, -1 + var78);
               SomethingGl0 var39 = AnimationSequence.method2052(var12, false, var82);
-              int var40 = TextureSampler34
-                .method190(var82.anInt2095, var82.anInt2103, (byte) -76, var6[var13][var14]) << 8
-                | 255;
+              int var40 = TextureSampler34.method190(var82.anInt2095, var82.anInt2103, (byte) -76,
+                var6[var13][var14]) << 8 | 255;
               byte var44 = 6;
-              int var41 = 255 | TextureSampler34
-                .method190(var82.anInt2095, var82.anInt2103, (byte) -85, var6[1 + var13][var14])
-                << 8;
+              int var41 = 255 |
+                TextureSampler34.method190(var82.anInt2095, var82.anInt2103, (byte) -85,
+                  var6[1 + var13][var14]) << 8;
               int var42 = TextureSampler34.method190(var82.anInt2095, var82.anInt2103, (byte) 123,
                 var6[var13 - -1][var14 - -1]) << 8 | 255;
-              int var43 = 255 | TextureSampler34
-                .method190(var82.anInt2095, var82.anInt2103, (byte) 106, var6[var13][var14 - -1])
-                << 8;
+              int var43 = 255 |
+                TextureSampler34.method190(var82.anInt2095, var82.anInt2103, (byte) 106,
+                  var6[var13][var14 - -1]) << 8;
               boolean var48 = ~var78 != ~var29 && var81[0] && var75[1];
               boolean var47 = ~var78 != ~var73 && var79[0] && var84[1];
               boolean var46 = var28 != var78 && var75[0] && var79[1];
@@ -599,50 +597,50 @@ final class DummyClass3 {
               var85 += -2 + var75.length;
               var85 += var81.length - 2;
               var85 += -2 + var84.length;
-              int var50 = BufferData
-                .method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42, (byte) -127,
-                  0, true, var39, var1, var14, 64, var0, 64);
+              int var50 =
+                BufferData.method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
+                  (byte) -127, 0, true, var39, var1, var14, 64, var0, 64);
               int[] var45 = new int[var85];
               var44 = 0;
-              int var51 = BufferData
-                .method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42, (byte) -112,
-                  0, var46, var39, var1, var14, 0, var0, 128);
-              int var52 = BufferData
-                .method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42, (byte) -119,
-                  0, var47, var39, var1, var14, 128, var0, 128);
-              int var53 = BufferData
-                .method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42, (byte) -127,
-                  0, var48, var39, var1, var14, 0, var0, 0);
-              int var54 = BufferData
-                .method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42, (byte) -114,
-                  0, var49, var39, var1, var14, 128, var0, 0);
+              int var51 =
+                BufferData.method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
+                  (byte) -112, 0, var46, var39, var1, var14, 0, var0, 128);
+              int var52 =
+                BufferData.method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
+                  (byte) -119, 0, var47, var39, var1, var14, 128, var0, 128);
+              int var53 =
+                BufferData.method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
+                  (byte) -127, 0, var48, var39, var1, var14, 0, var0, 0);
+              int var54 =
+                BufferData.method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
+                  (byte) -114, 0, var49, var39, var1, var14, 128, var0, 0);
               var85 = var44 + 1;
               var45[var44] = var50;
               var45[var85++] = var52;
               if (-3 > ~var79.length) {
-                var45[var85++] = BufferData
-                  .method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
+                var45[var85++] =
+                  BufferData.method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
                     (byte) -117, 0, var79[2], var39, var1, var14, 64, var0, 128);
               }
 
               var45[var85++] = var51;
               if (var75.length > 2) {
-                var45[var85++] = BufferData
-                  .method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
+                var45[var85++] =
+                  BufferData.method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
                     (byte) -128, 0, var75[2], var39, var1, var14, 0, var0, 64);
               }
 
               var45[var85++] = var53;
               if (var81.length > 2) {
-                var45[var85++] = BufferData
-                  .method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
+                var45[var85++] =
+                  BufferData.method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
                     (byte) -112, 0, var81[2], var39, var1, var14, 64, var0, 0);
               }
 
               var45[var85++] = var54;
               if (-3 > ~var84.length) {
-                var45[var85++] = BufferData
-                  .method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
+                var45[var85++] =
+                  BufferData.method1734(var43, 0.0F, var40, var41, null, var2, var13, var4, var42,
                     (byte) -127, 0, var84[2], var39, var1, var14, 128, var0, 64);
               }
 
@@ -716,8 +714,8 @@ final class DummyClass3 {
           || HuffmanEncoder.aClass3_Sub28_Sub16_637.anInt3696 != var1) {
           SoftwareDirectColorSprite var5 = new SoftwareDirectColorSprite(var2, var1);
           DummyClass47.method1319(var5.pixels, var2, var1);
-          SubNode
-            .method523(var2, 0, 0, DummyClass30.anInt455, 0, 0, DummyClass58.anInt1460, var1, 0);
+          SubNode.method523(var2, 0, 0, DummyClass30.anInt455, 0, 0, DummyClass58.anInt1460, var1,
+            0);
           if (GlRenderer.useOpenGlRenderer) {
             HuffmanEncoder.aClass3_Sub28_Sub16_637 = new GlDirectColorSprite(var5);
           } else {
@@ -761,8 +759,10 @@ final class DummyClass3 {
             var10 = 25 * ByteArrayNode.anInt3611;
           }
 
-          for (SomethingOtherWorldMap var11 = (SomethingOtherWorldMap) DummyClass51.aClass61_1162.getFirst();
-               var11 != null; var11 = (SomethingOtherWorldMap) DummyClass51.aClass61_1162.getNext()) {
+          for (SomethingOtherWorldMap var11 =
+               (SomethingOtherWorldMap) DummyClass51.aClass61_1162.getFirst();
+               var11 != null;
+               var11 = (SomethingOtherWorldMap) DummyClass51.aClass61_1162.getNext()) {
             if (~var11.anInt2532 == ~FileSystem.anInt101) {
               int var13 = var4 - -(var11.anInt2539 * var1 / DummyClass58.anInt1460);
               int var12 = var2 * var11.anInt2531 / DummyClass30.anInt455 + var0;

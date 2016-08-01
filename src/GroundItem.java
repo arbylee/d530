@@ -13,6 +13,36 @@ final class GroundItem extends SceneNode {
   int anInt2936;
   private int anInt2932 = -32768;
 
+  final void method1867(int var1, int var2, int var3, int var4, int var5) {
+  }
+
+  final void draw(int var1, int var2, int var3, int var4, int var5, int translateX, int translateY,
+                  int translateZ, long var9, int var11, DummyClass0 var12) {
+    try {
+      AbstractModel var13 = DummyClass35.getItemConfig(this.anInt2936, (byte) 84)
+        .getModel(124, -1, 0, null, this.anInt2930, 0);
+      if (null != var13) {
+        var13.draw(var1, var2, var3, var4, var5, translateX, translateY, translateZ, var9, var11,
+          var12);
+        this.anInt2932 = var13.getMinimumY();
+      }
+    } catch (RuntimeException var14) {
+      throw AbstractGameWorld.cascadeException(var14,
+        "uj.IA(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + translateX + ','
+          + translateY + ',' + translateZ + ',' + var9 + ',' + var11 + ',' + (var12 != null ?
+          "{...}" :
+          "null") + ')');
+    }
+  }
+
+  final int getMinimumY() {
+    try {
+      return this.anInt2932;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "uj.MA()");
+    }
+  }
+
   static final boolean loadSprites(FileUnpacker sprites, int fileId) {
     try {
       byte[] bytes = sprites.getBytes(fileId);
@@ -197,8 +227,8 @@ final class GroundItem extends SceneNode {
                   == -1 &&
                 ~(BZipDecompressorState.tileFlags[GameWorldSomething.currentPlane][-1 + var9][var12
                   + -1] & 4) == -1) {
-                TextureSampler38.anIntArray3456[var23] = TextureSampler3
-                  .method308(1375731712, TextureSampler3.method308(1179648, -1 + var9));
+                TextureSampler38.anIntArray3456[var23] = TextureSampler3.method308(1375731712,
+                  TextureSampler3.method308(1179648, -1 + var9));
                 DummyClass38.anIntArray729[var23] = TextureSampler3.method308(var12, 1245184);
                 AbstractImageProducer.aByteArrayArrayArray2008[GameWorldSomething.currentPlane][-1
                   + var9][var12] = var6;
@@ -222,8 +252,8 @@ final class GroundItem extends SceneNode {
                 &&
                 ~(BZipDecompressorState.tileFlags[GameWorldSomething.currentPlane][1 + var9][var12
                   - 1] & 4) == -1) {
-                TextureSampler38.anIntArray3456[var23] = TextureSampler3
-                  .method308(-1845493760, TextureSampler3.method308(5373952, var9 + 1));
+                TextureSampler38.anIntArray3456[var23] = TextureSampler3.method308(-1845493760,
+                  TextureSampler3.method308(5373952, var9 + 1));
                 DummyClass38.anIntArray729[var23] = TextureSampler3.method308(5439488, var12);
                 AbstractImageProducer.aByteArrayArrayArray2008[GameWorldSomething.currentPlane][var9
                   - -1][var12] = var6;
@@ -252,8 +282,9 @@ final class GroundItem extends SceneNode {
                   == -1 &&
                 ~(BZipDecompressorState.tileFlags[GameWorldSomething.currentPlane][var9 + -1][1
                   + var12] & 4) == -1) {
-                TextureSampler38.anIntArray3456[var23] = TextureSampler3
-                  .method308(TextureSampler3.method308(-1 + var9, 13762560), 301989888);
+                TextureSampler38.anIntArray3456[var23] =
+                  TextureSampler3.method308(TextureSampler3.method308(-1 + var9, 13762560),
+                    301989888);
                 DummyClass38.anIntArray729[var23] = TextureSampler3.method308(var12, 13828096);
                 AbstractImageProducer.aByteArrayArrayArray2008[GameWorldSomething.currentPlane][-1
                   + var9][var12] = var6;
@@ -277,8 +308,8 @@ final class GroundItem extends SceneNode {
                   == -1 &&
                 ~(BZipDecompressorState.tileFlags[GameWorldSomething.currentPlane][1 + var9][1
                   + var12] & 4) == -1) {
-                TextureSampler38.anIntArray3456[var23] = TextureSampler3
-                  .method308(-771751936, TextureSampler3.method308(var9 - -1, 9568256));
+                TextureSampler38.anIntArray3456[var23] = TextureSampler3.method308(-771751936,
+                  TextureSampler3.method308(var9 - -1, 9568256));
                 DummyClass38.anIntArray729[var23] = TextureSampler3.method308(9633792, var12);
                 AbstractImageProducer.aByteArrayArrayArray2008[GameWorldSomething.currentPlane][var9
                   + 1][var12] = var6;
@@ -326,8 +357,8 @@ final class GroundItem extends SceneNode {
           len = maximumLen;
         }
         byte[] dest = new byte[len];
-        buffer.position += TextureSampler16.huffmanEncoder
-          .decompress(buffer.bytes, buffer.position, dest, 0, len);
+        buffer.position +=
+          TextureSampler16.huffmanEncoder.decompress(buffer.bytes, buffer.position, dest, 0, len);
         GameString var5 = TextureSampler33.createString(dest, 0, len);
         return var5;
       } catch (Exception var6) {
@@ -336,36 +367,6 @@ final class GroundItem extends SceneNode {
     } catch (RuntimeException var7) {
       throw AbstractGameWorld.cascadeException(var7,
         "uj.D(" + (buffer != null ? "{...}" : "null") + maximumLen + ')');
-    }
-  }
-
-  final void method1867(int var1, int var2, int var3, int var4, int var5) {
-  }
-
-  final void draw(int var1, int var2, int var3, int var4, int var5, int translateX, int translateY,
-                  int translateZ, long var9, int var11, DummyClass0 var12) {
-    try {
-      AbstractModel var13 = DummyClass35.getItemConfig(this.anInt2936, (byte) 84)
-        .getModel(124, -1, 0, null, this.anInt2930, 0);
-      if (null != var13) {
-        var13.draw(var1, var2, var3, var4, var5, translateX, translateY, translateZ, var9, var11,
-          var12);
-        this.anInt2932 = var13.getMinimumY();
-      }
-    } catch (RuntimeException var14) {
-      throw AbstractGameWorld.cascadeException(var14,
-        "uj.IA(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + translateX + ','
-          + translateY + ',' + translateZ + ',' + var9 + ',' + var11 + ',' + (var12 != null ?
-          "{...}" :
-          "null") + ')');
-    }
-  }
-
-  final int getMinimumY() {
-    try {
-      return this.anInt2932;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "uj.MA()");
     }
   }
 

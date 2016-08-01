@@ -11,6 +11,9 @@ abstract class AbstractIndexedColorSprite {
   int anInt1469;
   int offsetX;
 
+  abstract void draw(int var1, int var2, int var3);
+
+  abstract void draw(int var1, int var2);
 
   static final void addLast(Node first, Node second) {
     try {
@@ -55,8 +58,8 @@ abstract class AbstractIndexedColorSprite {
       int var6 = 30 % ((64 - var2) / 54);
       return var3;
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ok.B(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "ok.B(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -94,9 +97,5 @@ abstract class AbstractIndexedColorSprite {
           + ')');
     }
   }
-
-  abstract void draw(int var1, int var2, int var3);
-
-  abstract void draw(int var1, int var2);
 
 }

@@ -3,6 +3,7 @@ import java.util.TimeZone;
 
 final class AnimationSomething extends SubNode {
 
+  private static GameString aClass94_3582 = SpawnedGameObject.createString("K");
   static FileUnpacker configs;
   static Calendar aCalendar3581 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
   static GameString aClass94_3583 = SpawnedGameObject.createString("brillant3:");
@@ -13,7 +14,6 @@ final class AnimationSomething extends SubNode {
   static int anInt3591 = 0;
   static int[] anIntArray3592 = new int[256];
   static volatile boolean replaceCanvas = false;
-  private static GameString aClass94_3582 = SpawnedGameObject.createString("K");
   static GameString aClass94_3584 = aClass94_3582;
   static GameString aClass94_3586 = aClass94_3582;
   AnimationBase[] aClass98Array3588;
@@ -69,6 +69,22 @@ final class AnimationSomething extends SubNode {
     }
   }
 
+  final boolean method559(int var1, int var2) {
+    try {
+      return var1 != 1317095745 ? false : this.aClass98Array3588[var2].aBoolean1386;
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "cl.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final boolean method561(int var1, byte var2) {
+    try {
+      return var2 < 114 ? true : this.aClass98Array3588[var1].aBoolean1382;
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "cl.F(" + var1 + ',' + var2 + ')');
+    }
+  }
+
   static final void method556(int var0, int var1, int var2, byte var3, int var4, int var5) {
     try {
       if (var3 < -93) {
@@ -89,10 +105,10 @@ final class AnimationSomething extends SubNode {
         int var21;
         int var22;
         if (var5 >= DummyClass13.anInt2020 && LightIntensity.anInt902 >= var5) {
-          var21 = DummyClass59
-            .method1040(GlTexture2d.anInt3765, var2 + var4, (byte) 0, DummyClass55.anInt1425);
-          var22 = DummyClass59
-            .method1040(GlTexture2d.anInt3765, -var2 + var4, (byte) 0, DummyClass55.anInt1425);
+          var21 = DummyClass59.method1040(GlTexture2d.anInt3765, var2 + var4, (byte) 0,
+            DummyClass55.anInt1425);
+          var22 = DummyClass59.method1040(GlTexture2d.anInt3765, -var2 + var4, (byte) 0,
+            DummyClass55.anInt1425);
           TextureSampler18.method282(DummyClass35.anIntArrayArray663[var5], var22, 91, var21, var0);
         }
 
@@ -122,18 +138,18 @@ final class AnimationSomething extends SubNode {
           var13 += -var20;
           var22 = var7 + var5;
           if (~DummyClass13.anInt2020 >= ~var22 && ~LightIntensity.anInt902 <= ~var21) {
-            int var23 = DummyClass59
-              .method1040(GlTexture2d.anInt3765, var6 + var4, (byte) 0, DummyClass55.anInt1425);
-            int var24 = DummyClass59
-              .method1040(GlTexture2d.anInt3765, -var6 + var4, (byte) 0, DummyClass55.anInt1425);
+            int var23 = DummyClass59.method1040(GlTexture2d.anInt3765, var6 + var4, (byte) 0,
+              DummyClass55.anInt1425);
+            int var24 = DummyClass59.method1040(GlTexture2d.anInt3765, -var6 + var4, (byte) 0,
+              DummyClass55.anInt1425);
             if (var21 >= DummyClass13.anInt2020) {
-              TextureSampler18
-                .method282(DummyClass35.anIntArrayArray663[var21], var24, 121, var23, var0);
+              TextureSampler18.method282(DummyClass35.anIntArrayArray663[var21], var24, 121, var23,
+                var0);
             }
 
             if (~LightIntensity.anInt902 <= ~var22) {
-              TextureSampler18
-                .method282(DummyClass35.anIntArrayArray663[var22], var24, -110, var23, var0);
+              TextureSampler18.method282(DummyClass35.anIntArrayArray663[var22], var24, -110, var23,
+                var0);
             }
           }
         }
@@ -198,22 +214,6 @@ final class AnimationSomething extends SubNode {
       SomethingPacket116.anInt1753 = 1;
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "cl.A(" + var0 + ')');
-    }
-  }
-
-  final boolean method559(int var1, int var2) {
-    try {
-      return var1 != 1317095745 ? false : this.aClass98Array3588[var2].aBoolean1386;
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "cl.D(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final boolean method561(int var1, byte var2) {
-    try {
-      return var2 < 114 ? true : this.aClass98Array3588[var1].aBoolean1382;
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "cl.F(" + var1 + ',' + var2 + ')');
     }
   }
 

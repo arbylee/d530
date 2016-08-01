@@ -460,8 +460,61 @@ final class SomethingVolume15 extends Node {
       }
 
     } catch (RuntimeException var36) {
-      throw AbstractGameWorld
-        .cascadeException(var36, "jk.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var36,
+        "jk.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  final void method369(byte var1) {
+    try {
+      int var2 = 127 % ((-70 - var1) / 42);
+      this.anIntArray2423 = null;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "jk.A(" + var1 + ')');
+    }
+  }
+
+  final boolean method373(int var1, int[] var2, MidiSomething var3, byte[] var4) {
+    try {
+      if (var1 != 17904) {
+        return false;
+      } else {
+        int var6 = 0;
+        SomethingMusic0 var7 = null;
+        boolean var5 = true;
+
+        for (int var8 = 0; ~var8 > -129; ++var8) {
+          if (null == var4 || var4[var8] != 0) {
+            int var9 = this.anIntArray2423[var8];
+            if (-1 != ~var9) {
+              if (var6 != var9) {
+                var6 = var9--;
+                if ((var9 & 1) == 0) {
+                  var7 = var3.method1413(var9 >> 2, 33, var2);
+                } else {
+                  var7 = var3.method1416(10089, var9 >> 2, var2);
+                }
+
+                if (var7 == null) {
+                  var5 = false;
+                }
+              }
+
+              if (null != var7) {
+                this.aClass3_Sub12_Sub1Array2431[var8] = var7;
+                this.anIntArray2423[var8] = 0;
+              }
+            }
+          }
+        }
+
+        return var5;
+      }
+    } catch (RuntimeException var10) {
+      throw AbstractGameWorld.cascadeException(var10,
+        "jk.E(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + (var3 != null ?
+          "{...}" :
+          "null") + ',' + (var4 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -489,8 +542,8 @@ final class SomethingVolume15 extends Node {
 
       return null;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "jk.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "jk.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -553,9 +606,8 @@ final class SomethingVolume15 extends Node {
               }
             }
 
-            DummyClass31
-              .method1683(var13, !var1, var13, var1, var19, var7, var15, var17, (byte) 50, var18,
-                var16);
+            DummyClass31.method1683(var13, !var1, var13, var1, var19, var7, var15, var17, (byte) 50,
+              var18, var16);
           }
         }
       }
@@ -563,59 +615,6 @@ final class SomethingVolume15 extends Node {
       throw AbstractGameWorld.cascadeException(var21,
         "jk.F(" + var0 + ',' + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ','
           + var4 + ',' + (var5 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  final void method369(byte var1) {
-    try {
-      int var2 = 127 % ((-70 - var1) / 42);
-      this.anIntArray2423 = null;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "jk.A(" + var1 + ')');
-    }
-  }
-
-  final boolean method373(int var1, int[] var2, MidiSomething var3, byte[] var4) {
-    try {
-      if (var1 != 17904) {
-        return false;
-      } else {
-        int var6 = 0;
-        SomethingMusic0 var7 = null;
-        boolean var5 = true;
-
-        for (int var8 = 0; ~var8 > -129; ++var8) {
-          if (null == var4 || var4[var8] != 0) {
-            int var9 = this.anIntArray2423[var8];
-            if (-1 != ~var9) {
-              if (var6 != var9) {
-                var6 = var9--;
-                if ((var9 & 1) == 0) {
-                  var7 = var3.method1413(var9 >> 2, 33, var2);
-                } else {
-                  var7 = var3.method1416(10089, var9 >> 2, var2);
-                }
-
-                if (var7 == null) {
-                  var5 = false;
-                }
-              }
-
-              if (null != var7) {
-                this.aClass3_Sub12_Sub1Array2431[var8] = var7;
-                this.anIntArray2423[var8] = 0;
-              }
-            }
-          }
-        }
-
-        return var5;
-      }
-    } catch (RuntimeException var10) {
-      throw AbstractGameWorld.cascadeException(var10,
-        "jk.E(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + (var3 != null ?
-          "{...}" :
-          "null") + ',' + (var4 != null ? "{...}" : "null") + ')');
     }
   }
 

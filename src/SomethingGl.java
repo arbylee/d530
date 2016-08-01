@@ -3,13 +3,13 @@ import java.nio.ByteBuffer;
 
 final class SomethingGl {
 
+  private static ByteBuffer aByteBuffer1225;
+  private static ByteBuffer aByteBuffer1226;
   static int[] anIntArray1223 = null;
   static int[] anIntArray1224 = null;
   static boolean aBoolean1227;
   static int anInt1228 = -1;
   static int anInt1229 = -1;
-  private static ByteBuffer aByteBuffer1225;
-  private static ByteBuffer aByteBuffer1226;
 
   static final void method1454() {
     byte[] var1;

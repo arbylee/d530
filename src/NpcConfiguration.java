@@ -91,113 +91,6 @@ final class NpcConfiguration {
     this.anInt1298 = -1;
   }
 
-  public static void method1473(byte var0) {
-    try {
-      anIntArray1277 = null;
-      if (var0 != 103) {
-        anInt1297 = -20;
-      }
-
-      aClass94_1294 = null;
-      aClass94_1281 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "me.K(" + var0 + ')');
-    }
-  }
-
-  static final void method1479(int var0, byte var1) {
-    try {
-      TextureSampler13.anInt3362 = -1;
-      if (var1 < 5) {
-        anIntArray1277 = null;
-      }
-
-      if (-38 == ~var0) {
-        NPC.aFloat3979 = 3.0F;
-      } else if (50 != var0) {
-        if (var0 == 75) {
-          NPC.aFloat3979 = 6.0F;
-        } else if (var0 != 100) {
-          if (var0 == 200) {
-            NPC.aFloat3979 = 16.0F;
-          }
-        } else {
-          NPC.aFloat3979 = 8.0F;
-        }
-      } else {
-        NPC.aFloat3979 = 4.0F;
-      }
-
-      TextureSampler13.anInt3362 = -1;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "me.C(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  static final void method1480(boolean var0, GameString var1, int var2) {
-    try {
-      short[] var3 = new short[16];
-      var1 = var1.method1534();
-      int var4 = 0;
-
-      for (int var5 = 0; ~var5 > ~TextureSampler39.anInt3287; ++var5) {
-        ItemConfig var6 = DummyClass35.getItemConfig(var5, (byte) 93);
-        if ((!var0 || var6.aBoolean807) && var6.anInt791 == -1 && -1 == var6.anInt762
-          && -1 == ~var6.anInt800 && var6.aClass94_770.method1534().indexOf(var1) != -1) {
-          if (~var4 <= -251) {
-            DummyClass54.aShortArray1398 = null;
-            FileTable.anInt952 = -1;
-            return;
-          }
-
-          if (~var4 <= ~var3.length) {
-            short[] var7 = new short[2 * var3.length];
-
-            for (int var8 = 0; var8 < var4; ++var8) {
-              var7[var8] = var3[var8];
-            }
-
-            var3 = var7;
-          }
-
-          var3[var4++] = (short) var5;
-        }
-      }
-
-      DummyClass54.aShortArray1398 = var3;
-      Mobile.anInt2756 = 0;
-      FileTable.anInt952 = var4;
-      GameString[] var10 = new GameString[FileTable.anInt952];
-
-      for (int var11 = 0; FileTable.anInt952 > var11; ++var11) {
-        var10[var11] = DummyClass35.getItemConfig(var3[var11], (byte) 112).aClass94_770;
-      }
-
-      int var12 = -44 / ((45 - var2) / 33);
-      TextureSampler3.method307(var10, DummyClass54.aShortArray1398, 77);
-    } catch (RuntimeException var9) {
-      throw AbstractGameWorld.cascadeException(var9,
-        "me.J(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
-    }
-  }
-
-  static final int method1484(int var0, int var1) {
-    try {
-      if (var0 != 64835055) {
-        anIntArray1277 = null;
-      }
-
-      BitVariable var2 = ClientScriptCall.method378(var1, (byte) 127);
-      int var3 = var2.id;
-      int var5 = var2.high;
-      int var4 = var2.low;
-      int var6 = SomethingMidiFile.BIT_MASKS[var5 + -var4];
-      return DummyClass5.anIntArray2985[var3] >> var4 & var6;
-    } catch (RuntimeException var7) {
-      throw AbstractGameWorld.cascadeException(var7, "me.B(" + var0 + ',' + var1 + ')');
-    }
-  }
-
   final NpcConfiguration method1471(byte var1) {
     try {
       int var2 = -1;
@@ -290,8 +183,8 @@ final class NpcConfiguration {
         return var3;
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "me.N(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "me.N(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -323,8 +216,8 @@ final class NpcConfiguration {
           var12 = false;
 
           for (int var13 = 0; var13 < this.anIntArray1288.length; ++var13) {
-            if (this.anIntArray1288[var13] != -1 && !TextureSampler31.aClass153_3173
-              .method2129((byte) 102, 0, this.anIntArray1288[var13])) {
+            if (this.anIntArray1288[var13] != -1 && !TextureSampler31.aClass153_3173.method2129(
+              (byte) 102, 0, this.anIntArray1288[var13])) {
               var12 = true;
             }
           }
@@ -341,9 +234,8 @@ final class NpcConfiguration {
                 Model.getModel(TextureSampler31.aClass153_3173, this.anIntArray1288[var15], 0);
               if (null != this.anIntArrayArray1261 && this.anIntArrayArray1261[var15] != null
                 && var14[var15] != null) {
-                var14[var15]
-                  .translate(this.anIntArrayArray1261[var15][0], this.anIntArrayArray1261[var15][1],
-                    this.anIntArrayArray1261[var15][2]);
+                var14[var15].translate(this.anIntArrayArray1261[var15][0],
+                  this.anIntArrayArray1261[var15][1], this.anIntArrayArray1261[var15][2]);
               }
             }
           }
@@ -485,10 +377,10 @@ final class NpcConfiguration {
                 var22 &= '\uffff';
                 BufferedFile.anIntArray574[var17] = var22;
                 if (null != TextureSampler18.aClass3_Sub28_Sub5Array4031[var17]) {
-                  var35 |= TextureSampler18.aClass3_Sub28_Sub5Array4031[var17]
-                    .method561(var22, (byte) 124);
-                  var37 |= TextureSampler18.aClass3_Sub28_Sub5Array4031[var17]
-                    .method559(1317095745, var22);
+                  var35 |= TextureSampler18.aClass3_Sub28_Sub5Array4031[var17].method561(var22,
+                    (byte) 124);
+                  var37 |= TextureSampler18.aClass3_Sub28_Sub5Array4031[var17].method559(1317095745,
+                    var22);
                 }
               } else {
                 DummyClass35.anIntArray664[var17] = 0;
@@ -601,9 +493,9 @@ final class NpcConfiguration {
           }
 
           if (var40 != null && var44 != null) {
-            var45
-              .method1892(var40, var17, var43, var18, var6 + -1, var19, var44, var22, var46, var42,
-                var9 + -1, var24, var10.aBooleanArray1855, var10.aBoolean1848 | var8.aBoolean1848);
+            var45.method1892(var40, var17, var43, var18, var6 + -1, var19, var44, var22, var46,
+              var42, var9 + -1, var24, var10.aBooleanArray1855,
+              var10.aBoolean1848 | var8.aBoolean1848);
           } else if (var40 == null) {
             if (null != var44) {
               var45.method1880(var44, var22, var46, var42, -1 + var9, var24, var8.aBoolean1848);
@@ -659,8 +551,8 @@ final class NpcConfiguration {
         this.method1483(27, var3, var1);
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "me.F(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "me.F(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
     }
   }
 
@@ -684,8 +576,8 @@ final class NpcConfiguration {
             boolean var7 = false;
 
             for (int var8 = 0; ~var8 > ~this.anIntArray1250.length; ++var8) {
-              if (!TextureSampler31.aClass153_3173
-                .method2129((byte) -69, 0, this.anIntArray1250[var8])) {
+              if (!TextureSampler31.aClass153_3173.method2129((byte) -69, 0,
+                this.anIntArray1250[var8])) {
                 var7 = true;
               }
             }
@@ -981,6 +873,113 @@ final class NpcConfiguration {
     } catch (RuntimeException var9) {
       throw AbstractGameWorld.cascadeException(var9,
         "me.H(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public static void method1473(byte var0) {
+    try {
+      anIntArray1277 = null;
+      if (var0 != 103) {
+        anInt1297 = -20;
+      }
+
+      aClass94_1294 = null;
+      aClass94_1281 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "me.K(" + var0 + ')');
+    }
+  }
+
+  static final void method1479(int var0, byte var1) {
+    try {
+      TextureSampler13.anInt3362 = -1;
+      if (var1 < 5) {
+        anIntArray1277 = null;
+      }
+
+      if (-38 == ~var0) {
+        NPC.aFloat3979 = 3.0F;
+      } else if (50 != var0) {
+        if (var0 == 75) {
+          NPC.aFloat3979 = 6.0F;
+        } else if (var0 != 100) {
+          if (var0 == 200) {
+            NPC.aFloat3979 = 16.0F;
+          }
+        } else {
+          NPC.aFloat3979 = 8.0F;
+        }
+      } else {
+        NPC.aFloat3979 = 4.0F;
+      }
+
+      TextureSampler13.anInt3362 = -1;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "me.C(" + var0 + ',' + var1 + ')');
+    }
+  }
+
+  static final void method1480(boolean var0, GameString var1, int var2) {
+    try {
+      short[] var3 = new short[16];
+      var1 = var1.method1534();
+      int var4 = 0;
+
+      for (int var5 = 0; ~var5 > ~TextureSampler39.anInt3287; ++var5) {
+        ItemConfig var6 = DummyClass35.getItemConfig(var5, (byte) 93);
+        if ((!var0 || var6.aBoolean807) && var6.anInt791 == -1 && -1 == var6.anInt762
+          && -1 == ~var6.anInt800 && var6.aClass94_770.method1534().indexOf(var1) != -1) {
+          if (~var4 <= -251) {
+            DummyClass54.aShortArray1398 = null;
+            FileTable.anInt952 = -1;
+            return;
+          }
+
+          if (~var4 <= ~var3.length) {
+            short[] var7 = new short[2 * var3.length];
+
+            for (int var8 = 0; var8 < var4; ++var8) {
+              var7[var8] = var3[var8];
+            }
+
+            var3 = var7;
+          }
+
+          var3[var4++] = (short) var5;
+        }
+      }
+
+      DummyClass54.aShortArray1398 = var3;
+      Mobile.anInt2756 = 0;
+      FileTable.anInt952 = var4;
+      GameString[] var10 = new GameString[FileTable.anInt952];
+
+      for (int var11 = 0; FileTable.anInt952 > var11; ++var11) {
+        var10[var11] = DummyClass35.getItemConfig(var3[var11], (byte) 112).aClass94_770;
+      }
+
+      int var12 = -44 / ((45 - var2) / 33);
+      TextureSampler3.method307(var10, DummyClass54.aShortArray1398, 77);
+    } catch (RuntimeException var9) {
+      throw AbstractGameWorld.cascadeException(var9,
+        "me.J(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+    }
+  }
+
+  static final int method1484(int var0, int var1) {
+    try {
+      if (var0 != 64835055) {
+        anIntArray1277 = null;
+      }
+
+      BitVariable var2 = ClientScriptCall.method378(var1, (byte) 127);
+      int var3 = var2.id;
+      int var5 = var2.high;
+      int var4 = var2.low;
+      int var6 = SomethingMidiFile.BIT_MASKS[var5 + -var4];
+      return DummyClass5.anIntArray2985[var3] >> var4 & var6;
+    } catch (RuntimeException var7) {
+      throw AbstractGameWorld.cascadeException(var7, "me.B(" + var0 + ',' + var1 + ')');
     }
   }
 

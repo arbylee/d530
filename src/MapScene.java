@@ -1,5 +1,6 @@
 final class MapScene {
 
+  private static GameString aClass94_68 = SpawnedGameObject.createString("glow1:");
   static int anInt59 = 0;
   static short[] aShortArray63 =
     new short[] {(short) 960, (short) 957, (short) -21568, (short) -21571, (short) 22464};
@@ -7,12 +8,88 @@ final class MapScene {
   static boolean aBoolean66 = false;
   static int viewportUpperX;
   static MaterialShader[] anInterface5Array70;
-  private static GameString aClass94_68 = SpawnedGameObject.createString("glow1:");
   static GameString aClass94_60 = aClass94_68;
   static GameString aClass94_62 = aClass94_68;
   int anInt61;
   int spriteId;
   boolean aBoolean69 = false;
+
+  final void method74(byte var1, Buffer var2, int var3) {
+    try {
+      while (true) {
+        int var4 = var2.readUnsignedByte();
+        if (-1 == ~var4) {
+          if (var1 > -108) {
+            this.method74((byte) 85, null, 63);
+          }
+
+          return;
+        }
+
+        this.method79(var4, var2, var3, 95);
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "aa.F(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
+  final SoftwareIndexedColorSprite getSprite(int var1, byte var2) {
+    try {
+      SoftwareIndexedColorSprite var3 =
+        (SoftwareIndexedColorSprite) TextureSampler2.aClass93_3369.get(
+          (long) (var1 << 16 | this.spriteId));
+      if (var3 != null) {
+        return var3;
+      } else {
+        Keyboard.sprites.isLoaded(this.spriteId);
+        int var4 = 125 % ((var2 - -21) / 50);
+        var3 = GameString.createSprite(0, true, this.spriteId, Keyboard.sprites);
+        if (var3 != null) {
+          var3.method1668(TextureCache.anInt2136, DummyClass39.anInt740,
+            AbstractImageProducer.anInt2015);
+          var3.anInt1469 = var3.width;
+          var3.anInt1467 = var3.height;
+
+          for (int var5 = 0; ~var1 < ~var5; ++var5) {
+            var3.method1674();
+          }
+
+          TextureSampler2.aClass93_3369.get((byte) -125, var3, (long) (var1 << 16 | this.spriteId));
+        }
+
+        return var3;
+      }
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6, "aa.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  private final void method79(int var1, Buffer var2, int var3, int var4) {
+    try {
+      if (var1 == 1) {
+        this.spriteId = var2.readUnsignedShort();
+      } else if (var1 != 2) {
+        if (~var1 != -4) {
+          if (var1 == 4) {
+            this.spriteId = -1;
+          }
+        } else {
+          this.aBoolean69 = true;
+        }
+      } else {
+        this.anInt61 = var2.readUnsignedMedium((byte) 96);
+      }
+
+      if (var4 <= 7) {
+        anInt65 = 123;
+      }
+
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "aa.B(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ',' + var4 + ')');
+    }
+  }
 
   static final boolean method73(short var0, int var1) {
     try {
@@ -49,8 +126,8 @@ final class MapScene {
                 method75(var4.aClass11Array262, true, var2);
               }
 
-              SomethingPacket151 var5 = (SomethingPacket151) TextureSampler23.aClass130_3208
-                .get((long) var4.anInt279);
+              SomethingPacket151 var5 =
+                (SomethingPacket151) TextureSampler23.aClass130_3208.get((long) var4.anInt279);
               if (null != var5) {
                 ClassCheckRequest.method124(49, var2, var5.anInt2602);
               }
@@ -126,21 +203,22 @@ final class MapScene {
 
         if (-1 != ~var1) {
           if ((5 > var1 || -11 == ~var1)
-            && BlockConfig.collisionMaps[GameWorldSomething.currentPlane]
-            .method1488(var4, var12, false, var13, var8, -1 + var1, 2, var7)) {
+            && BlockConfig.collisionMaps[GameWorldSomething.currentPlane].method1488(var4, var12,
+            false, var13, var8, -1 + var1, 2, var7)) {
             var16 = true;
             break;
           }
 
-          if (var1 < 10 && BlockConfig.collisionMaps[GameWorldSomething.currentPlane]
-            .method1492(var4, var1 + -1, var8, var13, 2, var7, var12, 88)) {
+          if (var1 < 10 && BlockConfig.collisionMaps[GameWorldSomething.currentPlane].method1492(
+            var4, var1 + -1, var8, var13, 2, var7, var12, 88)) {
             var16 = true;
             break;
           }
         }
 
-        if (0 != var0 && ~var6 != -1 && BlockConfig.collisionMaps[GameWorldSomething.currentPlane]
-          .method1498(true, var8, var13, var12, 2, var0, var2, var4, var6)) {
+        if (0 != var0 && ~var6 != -1
+          && BlockConfig.collisionMaps[GameWorldSomething.currentPlane].method1498(true, var8,
+          var13, var12, 2, var0, var2, var4, var6)) {
           var16 = true;
           break;
         }
@@ -338,8 +416,8 @@ final class MapScene {
         TextureSampler12.secureBuffer.writeShortLE(-1, var0);
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "aa.E(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "aa.E(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -416,84 +494,8 @@ final class MapScene {
 
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "aa.H(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  final void method74(byte var1, Buffer var2, int var3) {
-    try {
-      while (true) {
-        int var4 = var2.readUnsignedByte();
-        if (-1 == ~var4) {
-          if (var1 > -108) {
-            this.method74((byte) 85, null, 63);
-          }
-
-          return;
-        }
-
-        this.method79(var4, var2, var3, 95);
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "aa.F(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
-    }
-  }
-
-  final SoftwareIndexedColorSprite getSprite(int var1, byte var2) {
-    try {
-      SoftwareIndexedColorSprite var3 = (SoftwareIndexedColorSprite) TextureSampler2.aClass93_3369
-        .get((long) (var1 << 16 | this.spriteId));
-      if (var3 != null) {
-        return var3;
-      } else {
-        Keyboard.sprites.isLoaded(this.spriteId);
-        int var4 = 125 % ((var2 - -21) / 50);
-        var3 = GameString.createSprite(0, true, this.spriteId, Keyboard.sprites);
-        if (var3 != null) {
-          var3.method1668(TextureCache.anInt2136, DummyClass39.anInt740,
-            AbstractImageProducer.anInt2015);
-          var3.anInt1469 = var3.width;
-          var3.anInt1467 = var3.height;
-
-          for (int var5 = 0; ~var1 < ~var5; ++var5) {
-            var3.method1674();
-          }
-
-          TextureSampler2.aClass93_3369.get((byte) -125, var3, (long) (var1 << 16 | this.spriteId));
-        }
-
-        return var3;
-      }
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6, "aa.D(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  private final void method79(int var1, Buffer var2, int var3, int var4) {
-    try {
-      if (var1 == 1) {
-        this.spriteId = var2.readUnsignedShort();
-      } else if (var1 != 2) {
-        if (~var1 != -4) {
-          if (var1 == 4) {
-            this.spriteId = -1;
-          }
-        } else {
-          this.aBoolean69 = true;
-        }
-      } else {
-        this.anInt61 = var2.readUnsignedMedium((byte) 96);
-      }
-
-      if (var4 <= 7) {
-        anInt65 = 123;
-      }
-
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "aa.B(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ',' + var4 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "aa.H(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

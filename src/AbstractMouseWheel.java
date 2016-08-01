@@ -8,6 +8,12 @@ abstract class AbstractMouseWheel {
   static int[][][] anIntArrayArrayArray1903;
   static int anInt1904;
 
+  abstract int pollOffset(int var1);
+
+  abstract void unbind(boolean var1, Component var2);
+
+  abstract void bind(Component var1, int var2);
+
   static final boolean updateInterfaceCounter(int counter, byte var1) {
     try {
       SomethingLight0.interfaceCounter = counter - -1 & '\uffff';
@@ -58,7 +64,9 @@ abstract class AbstractMouseWheel {
       SceneGraphTile[][] var13 = SomethingTexture1.sceneGraphTiles[var12];
 
       for (var14 = DummyClass9.viewportLowerX; var14 < MapScene.viewportUpperX; ++var14) {
-        for (var15 = AbstractObjectNode.viewportLowerZ; var15 < SomethingTilek.viewportUpperZ; ++var15) {
+        for (
+          var15 = AbstractObjectNode.viewportLowerZ;
+          var15 < SomethingTilek.viewportUpperZ; ++var15) {
           SceneGraphTile var16 = var13[var14][var15];
           if (var16 != null) {
             if (DummyClass30.adjacentTileOnScreen[var14 - TriChromaticImageCache.cameraTileX
@@ -77,38 +85,35 @@ abstract class AbstractMouseWheel {
               if (var14 >= var8 && var14 <= var9 && var15 >= var10 && var15 <= var11) {
                 if (var16.aClass70_2234 != null) {
                   SceneSomething2 var17 = var16.aClass70_2234;
-                  var17.sceneNode0
-                    .method1867(0, var12, var17.positionY, var17.positionX, var17.positionZ);
+                  var17.sceneNode0.method1867(0, var12, var17.positionY, var17.positionX,
+                    var17.positionZ);
                   if (var17.sceneNode1 != null) {
-                    var17.sceneNode1
-                      .method1867(0, var12, var17.positionY, var17.positionX, var17.positionZ);
+                    var17.sceneNode1.method1867(0, var12, var17.positionY, var17.positionX,
+                      var17.positionZ);
                   }
                 }
 
                 if (var16.aClass19_2233 != null) {
                   SomethingSceneI var31 = var16.aClass19_2233;
-                  var31.aClass140_429
-                    .method1867(var31.anInt420, var12, var31.anInt425, var31.anInt424,
-                      var31.anInt427);
+                  var31.aClass140_429.method1867(var31.anInt420, var12, var31.anInt425,
+                    var31.anInt424, var31.anInt427);
                   if (var31.aClass140_423 != null) {
-                    var31.aClass140_423
-                      .method1867(var31.anInt420, var12, var31.anInt425, var31.anInt424,
-                        var31.anInt427);
+                    var31.aClass140_423.method1867(var31.anInt420, var12, var31.anInt425,
+                      var31.anInt424, var31.anInt427);
                   }
                 }
 
                 if (var16.aClass12_2230 != null) {
                   SomethingSceneJ var30 = var16.aClass12_2230;
-                  var30.aClass140_320
-                    .method1867(0, var12, var30.anInt326, var30.anInt324, var30.anInt330);
+                  var30.aClass140_320.method1867(0, var12, var30.anInt326, var30.anInt324,
+                    var30.anInt330);
                 }
 
                 if (var16.sceneGraphNodes != null) {
                   for (var29 = 0; var29 < var16.anInt2223; ++var29) {
                     SceneSomething var18 = var16.sceneGraphNodes[var29];
-                    var18.sceneNode
-                      .method1867(var18.anInt496, var12, var18.anInt489, var18.anInt482,
-                        var18.anInt484);
+                    var18.sceneNode.method1867(var18.anInt496, var12, var18.anInt489,
+                      var18.anInt482, var18.anInt484);
                   }
                 }
               }
@@ -131,7 +136,9 @@ abstract class AbstractMouseWheel {
         SocketStream.anInt1244 = -1;
         TextureSampler21.anInt3072 = -1;
 
-        for (var14 = 0; var14 < SomethingOtherWorldMap.aClass3_Sub11ArrayArray2542[0].length; ++var14) {
+        for (
+          var14 = 0;
+          var14 < SomethingOtherWorldMap.aClass3_Sub11ArrayArray2542[0].length; ++var14) {
           SomethingGl0 var28 = SomethingOtherWorldMap.aClass3_Sub11ArrayArray2542[0][var14];
           float var26 = 251.5F - (var28.aBoolean2364 ? 1.0F : 0.5F);
           if (var28.anInt2355 != SocketStream.anInt1244) {
@@ -146,7 +153,9 @@ abstract class AbstractMouseWheel {
         MaterialShader3.method2253();
       } else {
         for (var14 = TextureSampler22.anInt3419; var14 < AnimationFrame.anInt2456; ++var14) {
-          for (var15 = 0; var15 < SomethingOtherWorldMap.aClass3_Sub11ArrayArray2542[var14].length; ++var15) {
+          for (
+            var15 = 0;
+            var15 < SomethingOtherWorldMap.aClass3_Sub11ArrayArray2542[var14].length; ++var15) {
             SomethingGl0 var25 = SomethingOtherWorldMap.aClass3_Sub11ArrayArray2542[var14][var15];
             float var33 = 201.5F - 50.0F * (float) var14 - (var25.aBoolean2364 ? 1.0F : 0.5F);
             if (var25.materialId != -1
@@ -160,10 +169,9 @@ abstract class AbstractMouseWheel {
 
           if (var14 == 0 && HashTableIterator.anInt1137 > 0) {
             GlRenderer.method1832(101.5F);
-            DummyClass16
-              .drawShadows(TriChromaticImageCache.cameraTileX, TextureSampler7.cameraTileZ,
-                TextureSampler8.viewportLength, var1, DummyClass30.adjacentTileOnScreen,
-                AbstractGameWorld.heightMap[0]);
+            DummyClass16.drawShadows(TriChromaticImageCache.cameraTileX,
+              TextureSampler7.cameraTileZ, TextureSampler8.viewportLength, var1,
+              DummyClass30.adjacentTileOnScreen, AbstractGameWorld.heightMap[0]);
           }
         }
 
@@ -291,11 +299,5 @@ abstract class AbstractMouseWheel {
 
     TextureSampler37.aBoolean3261 = false;
   }
-
-  abstract int pollOffset(int var1);
-
-  abstract void unbind(boolean var1, Component var2);
-
-  abstract void bind(Component var1, int var2);
 
 }

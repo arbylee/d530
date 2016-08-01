@@ -12,6 +12,109 @@ final class GameBuffer extends Buffer {
     super(var1);
   }
 
+  final void method807(byte var1) {
+    try {
+      this.bitOffset = this.position * 8;
+      int var2 = -12 % ((-32 - var1) / 54);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "i.R(" + var1 + ')');
+    }
+  }
+
+  final void method811(byte var1, int var2, byte[] var3, int var4) {
+    try {
+      if (var1 < 16) {
+        printMessage(null, 126, null, -28);
+      }
+
+      for (int var5 = 0; var5 < var4; ++var5) {
+        var3[var2 + var5] = (byte) (this.bytes[this.position++] + -this.cipher.getNextValue(-9356));
+      }
+
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "i.S(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ',' + var4 + ')');
+    }
+  }
+
+  final int readBits(int len) {
+    try {
+      int byteOffset = this.bitOffset >> 3;
+      int pass = 8 - (7 & this.bitOffset);
+      int value = 0;
+      bitOffset += len;
+
+      while (~pass > ~len) {
+        value += (StillGraphic.BIT_MASKS[pass] & this.bytes[byteOffset++]) << -pass + len;
+        len -= pass;
+        pass = 8;
+      }
+
+      if (~pass == ~len) {
+        value += this.bytes[byteOffset] & StillGraphic.BIT_MASKS[pass];
+      } else {
+        value += this.bytes[byteOffset] >> pass - len & StillGraphic.BIT_MASKS[len];
+      }
+
+      return value;
+
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6, "i.C(" + len + ')');
+    }
+  }
+
+  final void initializeCipher(int[] var1) {
+    try {
+      this.cipher = new ISAACCipher(var1);
+
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "i.T(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  final int method815(int var1, int var2) {
+    try {
+      if (var2 != 32666) {
+        this.method811((byte) 96, 46, null, -50);
+      }
+
+      return var1 * 8 - this.bitOffset;
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "i.U(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void writePacket(int id) {
+    try {
+
+      this.bytes[this.position++] = (byte) (id + this.cipher.getNextValue(-9356));
+
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "i.B(" + id + ')');
+    }
+  }
+
+  final int readPacketId() {
+    try {
+      return 255 & this.bytes[this.position++] - this.cipher.getNextValue(-9356);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "i.P()");
+    }
+  }
+
+  final void method818(boolean var1) {
+    try {
+      this.position = (this.bitOffset + 7) / 8;
+      if (var1) {
+        this.readBits(-75);
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "i.Q(" + var1 + ')');
+    }
+  }
+
   static final void printMessage(GameString var0, int var1, GameString var2, int var3) {
     try {
       InventoryConfig.method611(var3, var1, var2, null, (byte) 50, var0);
@@ -140,8 +243,8 @@ final class GameBuffer extends Buffer {
           TextureSampler12.secureBuffer.writePacket(254);
           TextureSampler12.secureBuffer.writeShortLE(-1, var2 + WorldMapLabel.anInt1716);
           ++TextureSampler11.anInt3248;
-          TextureSampler12.secureBuffer
-            .method783((int) (var6 >>> 32) & Integer.MAX_VALUE, -268435456);
+          TextureSampler12.secureBuffer.method783((int) (var6 >>> 32) & Integer.MAX_VALUE,
+            -268435456);
           TextureSampler12.secureBuffer.writeShort(var3 - -ProceduralTexture.anInt1152);
         }
 
@@ -170,17 +273,14 @@ final class GameBuffer extends Buffer {
         boolean var14;
         if (18 == var4) {
           if (AbstractImageProducer.gameId == 1) {
-            Parameter
-              .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2, 1, 0, 2,
-                var3, TextureCache.localPlayer.waypointsX[0]);
+            Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2, 1,
+              0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
           } else {
-            var14 = Parameter
-              .method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0, var0 ^ 2599, var2,
-                0, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
+            var14 = Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0,
+              var0 ^ 2599, var2, 0, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
             if (!var14) {
-              Parameter
-                .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2, 1, 0, 2,
-                  var3, TextureCache.localPlayer.waypointsX[0]);
+              Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2,
+                1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
             }
           }
 
@@ -199,8 +299,8 @@ final class GameBuffer extends Buffer {
           ++Unsure.anInt1896;
           DummyClass8.method2224((byte) 39, var6, var3, var2);
           TextureSampler12.secureBuffer.writePacket(170);
-          TextureSampler12.secureBuffer
-            .method765(Integer.MAX_VALUE & (int) (var6 >>> 32), (byte) 3);
+          TextureSampler12.secureBuffer.method765(Integer.MAX_VALUE & (int) (var6 >>> 32),
+            (byte) 3);
           TextureSampler12.secureBuffer.method765(var2 - -WorldMapLabel.anInt1716, (byte) 3);
           TextureSampler12.secureBuffer.method765(var3 - -ProceduralTexture.anInt1152, (byte) 3);
         }
@@ -239,12 +339,10 @@ final class GameBuffer extends Buffer {
             if (-2 == ~var5) {
               if (0 < TextureSampler35.rights && GameObjectConfig.aBooleanArray1490[82]
                 && GameObjectConfig.aBooleanArray1490[81]) {
-                BufferedFile
-                  .method979(WorldMapLabel.anInt1716 + var2, ProceduralTexture.anInt1152 + var3,
-                    GameWorldSomething.currentPlane, (byte) -4);
-              } else if (Parameter
-                .method582(TextureCache.localPlayer.waypointsY[0], 0, 0, true, 0, 2, var2, 0, 0, 1,
-                  var3, TextureCache.localPlayer.waypointsX[0])) {
+                BufferedFile.method979(WorldMapLabel.anInt1716 + var2,
+                  ProceduralTexture.anInt1152 + var3, GameWorldSomething.currentPlane, (byte) -4);
+              } else if (Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 0, true, 0,
+                2, var2, 0, 0, 1, var3, TextureCache.localPlayer.waypointsX[0])) {
                 TextureSampler12.secureBuffer.writeByte(DummyClass3.anInt56);
                 TextureSampler12.secureBuffer.writeByte(DummyClass43.anInt916);
                 TextureSampler12.secureBuffer.writeShort(SpotAnimationConfig.anInt531);
@@ -333,8 +431,8 @@ final class GameBuffer extends Buffer {
           ++AbstractFileRequest.anInt3630;
           DummyClass8.method2224((byte) 39, var6, var3, var2);
           TextureSampler12.secureBuffer.writePacket(84);
-          TextureSampler12.secureBuffer
-            .method765(Integer.MAX_VALUE & (int) (var6 >>> 32), (byte) 3);
+          TextureSampler12.secureBuffer.method765(Integer.MAX_VALUE & (int) (var6 >>> 32),
+            (byte) 3);
           TextureSampler12.secureBuffer.method765(ProceduralTexture.anInt1152 + var3, (byte) 3);
           TextureSampler12.secureBuffer.writeShortLE(var0 + -2598, var2 - -WorldMapLabel.anInt1716);
         }
@@ -353,14 +451,14 @@ final class GameBuffer extends Buffer {
         if (-15 == ~var4 && DummyClass8.method2224((byte) 39, var6, var3, var2)) {
           ++OndemandFileRequest.anInt4065;
           TextureSampler12.secureBuffer.writePacket(134);
-          TextureSampler12.secureBuffer
-            .method783(WorldMapLabel.anInt1716 + var2, var0 ^ -268432859);
+          TextureSampler12.secureBuffer.method783(WorldMapLabel.anInt1716 + var2,
+            var0 ^ -268432859);
           TextureSampler12.secureBuffer.writeShort(Something3dRoot.anInt2050);
           TextureSampler12.secureBuffer.writeShortLE(-1, var3 - -ProceduralTexture.anInt1152);
           TextureSampler12.secureBuffer.writeShort(DummyClass31.anInt1473);
           TextureSampler12.secureBuffer.method759(var0 ^ -2588, GlTexture2d.anInt3764);
-          TextureSampler12.secureBuffer
-            .method783((int) (var6 >>> 32) & Integer.MAX_VALUE, -268435456);
+          TextureSampler12.secureBuffer.method783((int) (var6 >>> 32) & Integer.MAX_VALUE,
+            -268435456);
         }
 
         if (var4 == 37) {
@@ -380,8 +478,8 @@ final class GameBuffer extends Buffer {
         }
 
         if (var4 == 9 || 1003 == var4) {
-          DummyOutputStream
-            .method66(DummyClass8.aClass94Array4016[var1], var2, var5, (byte) -19, var3);
+          DummyOutputStream.method66(DummyClass8.aClass94Array4016[var1], var2, var5, (byte) -19,
+            var3);
         }
 
         if (-6 == ~var4) {
@@ -397,18 +495,15 @@ final class GameBuffer extends Buffer {
 
         if (-22 == ~var4) {
           if (~AbstractImageProducer.gameId != -2) {
-            var14 = Parameter
-              .method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0, var0 + -2595, var2,
-                0, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
+            var14 = Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0,
+              var0 + -2595, var2, 0, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
             if (!var14) {
-              Parameter
-                .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, var0 + -2595,
-                  var2, 1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
+              Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0,
+                var0 + -2595, var2, 1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
             }
           } else {
-            Parameter
-              .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, var0 + -2595, var2,
-                1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
+            Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0,
+              var0 + -2595, var2, 1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
           }
 
           HuffmanEncoder.anInt638 = 2;
@@ -443,9 +538,8 @@ final class GameBuffer extends Buffer {
           if (null != var13) {
             SceneSomething.method958((byte) -126);
             WidgetAccess var16 = GameClient.method44(var13);
-            Unsure
-              .method2074(var3, var2, var16.method101(-120), var16.anInt2202, var13.anInt266, -120,
-                var13.anInt238);
+            Unsure.method2074(var3, var2, var16.method101(-120), var16.anInt2202, var13.anInt266,
+              -120, var13.anInt238);
             Something3d.anInt3012 = 0;
             Parameter.aClass94_3621 = DummyClass41.method1174(var13, (byte) -94);
             if (Parameter.aClass94_3621 == null) {
@@ -453,11 +547,12 @@ final class GameBuffer extends Buffer {
             }
 
             if (var13.aBoolean233) {
-              DummyClass59.aClass94_676 = RenderAnimation
-                .concat(new GameString[] {var13.aClass94_277, MonoChromaticImageBuffer.aClass94_2562});
+              DummyClass59.aClass94_676 = RenderAnimation.concat(
+                new GameString[] {var13.aClass94_277, MonoChromaticImageBuffer.aClass94_2562});
             } else {
               DummyClass59.aClass94_676 = RenderAnimation.concat(new GameString[] {
-                SomethingSceneI.aClass94_431, var13.aClass94_243, MonoChromaticImageBuffer.aClass94_2562
+                SomethingSceneI.aClass94_431, var13.aClass94_243,
+                MonoChromaticImageBuffer.aClass94_2562
               });
             }
           }
@@ -510,18 +605,15 @@ final class GameBuffer extends Buffer {
 
           if (34 == var4) {
             if (AbstractImageProducer.gameId != 1) {
-              var14 = Parameter
-                .method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0, var0 ^ 2599,
-                  var2, 0, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
+              var14 = Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0,
+                var0 ^ 2599, var2, 0, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
               if (!var14) {
-                Parameter
-                  .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2, 1, 0,
-                    2, var3, TextureCache.localPlayer.waypointsX[0]);
+                Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2,
+                  1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
               }
             } else {
-              Parameter
-                .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2, 1, 0, 2,
-                  var3, TextureCache.localPlayer.waypointsX[0]);
+              Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2,
+                1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
             }
 
             SceneSomething2.anInt1053 = DummyClass5.anInt2993;
@@ -549,10 +641,9 @@ final class GameBuffer extends Buffer {
           if (~var4 == -3) {
             var11 = TextureSampler5.npcs[var5];
             if (var11 != null) {
-              Parameter
-                .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, var0 + -2595,
-                  var11.waypointsX[0], 1, 0, 2, var11.waypointsY[0],
-                  TextureCache.localPlayer.waypointsX[0]);
+              Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0,
+                var0 + -2595, var11.waypointsX[0], 1, 0, 2, var11.waypointsY[0],
+                TextureCache.localPlayer.waypointsX[0]);
               FileCacheRequest.anInt4062 = DummyClass36.anInt2614;
               HuffmanEncoder.anInt638 = 2;
               SceneSomething2.anInt1053 = DummyClass5.anInt2993;
@@ -610,14 +701,13 @@ final class GameBuffer extends Buffer {
           }
 
           if (~var4 == -34) {
-            var14 = Parameter
-              .method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0, 2, var2, 0, 0, 2,
-                var3, TextureCache.localPlayer.waypointsX[0]);
+            var14 =
+              Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0, 2, var2,
+                0, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
             ++Deque.anInt938;
             if (!var14) {
-              Parameter
-                .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, var0 + -2595,
-                  var2, 1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
+              Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0,
+                var0 + -2595, var2, 1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
             }
 
             SceneSomething2.anInt1053 = DummyClass5.anInt2993;
@@ -649,11 +739,11 @@ final class GameBuffer extends Buffer {
                 TextureSampler12.secureBuffer.writePacket(131);
                 ++OndemandRequester.anInt994;
                 TextureSampler12.secureBuffer.method759(-57, ScriptState.anInt872);
-                TextureSampler12.secureBuffer
-                  .method783(WorldMapLabel.anInt1716 + var2, var0 + -268438053);
+                TextureSampler12.secureBuffer.method783(WorldMapLabel.anInt1716 + var2,
+                  var0 + -268438053);
                 TextureSampler12.secureBuffer.method765(Widget.anInt278, (byte) 3);
-                TextureSampler12.secureBuffer
-                  .method783(var3 + ProceduralTexture.anInt1152, -268435456);
+                TextureSampler12.secureBuffer.method783(var3 + ProceduralTexture.anInt1152,
+                  -268435456);
               }
             } else {
               ClientScriptCall.anInt2440 = 1;
@@ -707,18 +797,16 @@ final class GameBuffer extends Buffer {
 
           if (~var4 == -25) {
             if (-2 != ~AbstractImageProducer.gameId) {
-              var14 = Parameter
-                .method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0, 2, var2, 0, 0, 2,
-                  var3, TextureCache.localPlayer.waypointsX[0]);
+              var14 =
+                Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0, 2, var2,
+                  0, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
               if (!var14) {
-                Parameter
-                  .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2, 1, 0,
-                    2, var3, TextureCache.localPlayer.waypointsX[0]);
+                Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2,
+                  1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
               }
             } else {
-              Parameter
-                .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, var0 + -2595,
-                  var2, 1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
+              Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0,
+                var0 + -2595, var2, 1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
             }
 
             HuffmanEncoder.anInt638 = 2;
@@ -739,8 +827,8 @@ final class GameBuffer extends Buffer {
             TextureSampler12.secureBuffer.method783(WorldMapLabel.anInt1716 + var2, -268435456);
             TextureSampler12.secureBuffer.method765(Widget.anInt278, (byte) 3);
             TextureSampler12.secureBuffer.method775(ScriptState.anInt872, 1437452424);
-            TextureSampler12.secureBuffer
-              .method783((int) (var6 >>> 32) & Integer.MAX_VALUE, var0 ^ -268432859);
+            TextureSampler12.secureBuffer.method783((int) (var6 >>> 32) & Integer.MAX_VALUE,
+              var0 ^ -268432859);
           }
 
           if (~var4 == -14) {
@@ -795,10 +883,9 @@ final class GameBuffer extends Buffer {
               var8 = TextureSampler0.players[var5];
               if (null != var8) {
                 ++ItemConfig.anInt759;
-                Parameter
-                  .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2,
-                    var8.waypointsX[0], 1, 0, 2, var8.waypointsY[0],
-                    TextureCache.localPlayer.waypointsX[0]);
+                Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2,
+                  var8.waypointsX[0], 1, 0, 2, var8.waypointsY[0],
+                  TextureCache.localPlayer.waypointsX[0]);
                 FileRequester.anInt2958 = 0;
                 SceneSomething2.anInt1053 = DummyClass5.anInt2993;
                 FileCacheRequest.anInt4062 = DummyClass36.anInt2614;
@@ -821,13 +908,12 @@ final class GameBuffer extends Buffer {
 
             if (-40 == ~var4) {
               ++BufferObject.anInt1883;
-              var14 = Parameter
-                .method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0, 2, var2, 0, 0, 2,
-                  var3, TextureCache.localPlayer.waypointsX[0]);
+              var14 =
+                Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0, 2, var2,
+                  0, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
               if (!var14) {
-                Parameter
-                  .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2, 1, 0,
-                    2, var3, TextureCache.localPlayer.waypointsX[0]);
+                Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2,
+                  1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
               }
 
               FileCacheRequest.anInt4062 = DummyClass36.anInt2614;
@@ -874,10 +960,9 @@ final class GameBuffer extends Buffer {
               if (6 == var4) {
                 var8 = TextureSampler0.players[var5];
                 if (var8 != null) {
-                  Parameter
-                    .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2,
-                      var8.waypointsX[0], 1, 0, 2, var8.waypointsY[0],
-                      TextureCache.localPlayer.waypointsX[0]);
+                  Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2,
+                    var8.waypointsX[0], 1, 0, 2, var8.waypointsY[0],
+                    TextureCache.localPlayer.waypointsX[0]);
                   FileCacheRequest.anInt4062 = DummyClass36.anInt2614;
                   ++Structure.anInt3640;
                   FileRequester.anInt2958 = 0;
@@ -891,17 +976,15 @@ final class GameBuffer extends Buffer {
               if (var4 == 20) {
                 ++SomethingTexture1.anInt2640;
                 if (1 == AbstractImageProducer.gameId) {
-                  Parameter
-                    .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2, 1,
-                      0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
+                  Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2,
+                    var2, 1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
                 } else {
-                  var14 = Parameter
-                    .method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0, 2, var2, 0,
-                      0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
+                  var14 =
+                    Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 0, false, 0, 2,
+                      var2, 0, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
                   if (!var14) {
-                    Parameter
-                      .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2, var2, 1,
-                        0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
+                    Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2,
+                      var2, 1, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
                   }
                 }
 
@@ -919,10 +1002,9 @@ final class GameBuffer extends Buffer {
                 var11 = TextureSampler5.npcs[var5];
                 if (null != var11) {
                   ++GroundItemNode.anInt3677;
-                  Parameter
-                    .method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2,
-                      var11.waypointsX[0], 1, 0, 2, var11.waypointsY[0],
-                      TextureCache.localPlayer.waypointsX[0]);
+                  Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, 1, false, 0, 2,
+                    var11.waypointsX[0], 1, 0, 2, var11.waypointsY[0],
+                    TextureCache.localPlayer.waypointsX[0]);
                   SceneSomething2.anInt1053 = DummyClass5.anInt2993;
                   FileRequester.anInt2958 = 0;
                   FileCacheRequest.anInt4062 = DummyClass36.anInt2614;
@@ -934,8 +1016,8 @@ final class GameBuffer extends Buffer {
 
               if (~Something3d.anInt3012 != -1) {
                 Something3d.anInt3012 = 0;
-                DummyClass29
-                  .method909(120, EnumStringFetcher.getWidget((byte) 121, GlTexture2d.anInt3764));
+                DummyClass29.method909(120,
+                  EnumStringFetcher.getWidget((byte) 121, GlTexture2d.anInt3764));
               }
 
               if (SceneNode.aBoolean1837) {
@@ -957,7 +1039,8 @@ final class GameBuffer extends Buffer {
             DummyClass29.method909(var0 ^ -2612, var13);
             RenderAnimation.aClass94_378 = RenderAnimation.concat(new GameString[] {
               TextureSampler6.aClass94_3042,
-              DummyClass35.getItemConfig(var5, (byte) 109).aClass94_770, MonoChromaticImageBuffer.aClass94_2562
+              DummyClass35.getItemConfig(var5, (byte) 109).aClass94_770,
+              MonoChromaticImageBuffer.aClass94_2562
             });
             if (RenderAnimation.aClass94_378 == null) {
               RenderAnimation.aClass94_378 = VertexNormal.aClass94_829;
@@ -1051,14 +1134,13 @@ final class GameBuffer extends Buffer {
       GlEnvironment.setSunColor(FileUnpacker.sunColor, BufferedFile.ambientIntensity,
         TextureSampler36.diffuseIntensity, SomethingSceneJ.aFloat319);
       GlEnvironment.setFogColor(InventoryConfig.fogColor, FileCache.fogOffset);
-      GlEnvironment
-        .setSunPosition((float) DummyClass39.sunPositionX, (float) TextureSampler0.sunPositionY,
-          (float) BlockConfig.sunPositionZ);
+      GlEnvironment.setSunPosition((float) DummyClass39.sunPositionX,
+        (float) TextureSampler0.sunPositionY, (float) BlockConfig.sunPositionZ);
       GlEnvironment.updateSunPosition();
       return InventoryConfig.fogColor;
     } catch (RuntimeException var16) {
-      throw AbstractGameWorld
-        .cascadeException(var16, "i.F(" + var0 + ',' + y + ',' + var2 + ',' + x + ',' + var4 + ')');
+      throw AbstractGameWorld.cascadeException(var16,
+        "i.F(" + var0 + ',' + y + ',' + var2 + ',' + x + ',' + var4 + ')');
     }
   }
 
@@ -1115,109 +1197,6 @@ final class GameBuffer extends Buffer {
       }
     } catch (RuntimeException var7) {
       throw AbstractGameWorld.cascadeException(var7, "i.A(" + var0 + ')');
-    }
-  }
-
-  final void method807(byte var1) {
-    try {
-      this.bitOffset = this.position * 8;
-      int var2 = -12 % ((-32 - var1) / 54);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "i.R(" + var1 + ')');
-    }
-  }
-
-  final void method811(byte var1, int var2, byte[] var3, int var4) {
-    try {
-      if (var1 < 16) {
-        printMessage(null, 126, null, -28);
-      }
-
-      for (int var5 = 0; var5 < var4; ++var5) {
-        var3[var2 + var5] = (byte) (this.bytes[this.position++] + -this.cipher.getNextValue(-9356));
-      }
-
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "i.S(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ',' + var4 + ')');
-    }
-  }
-
-  final int readBits(int len) {
-    try {
-      int byteOffset = this.bitOffset >> 3;
-      int pass = 8 - (7 & this.bitOffset);
-      int value = 0;
-      bitOffset += len;
-
-      while (~pass > ~len) {
-        value += (StillGraphic.BIT_MASKS[pass] & this.bytes[byteOffset++]) << -pass + len;
-        len -= pass;
-        pass = 8;
-      }
-
-      if (~pass == ~len) {
-        value += this.bytes[byteOffset] & StillGraphic.BIT_MASKS[pass];
-      } else {
-        value += this.bytes[byteOffset] >> pass - len & StillGraphic.BIT_MASKS[len];
-      }
-
-      return value;
-
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6, "i.C(" + len + ')');
-    }
-  }
-
-  final void initializeCipher(int[] var1) {
-    try {
-      this.cipher = new ISAACCipher(var1);
-
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "i.T(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  final int method815(int var1, int var2) {
-    try {
-      if (var2 != 32666) {
-        this.method811((byte) 96, 46, null, -50);
-      }
-
-      return var1 * 8 - this.bitOffset;
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "i.U(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final void writePacket(int id) {
-    try {
-
-      this.bytes[this.position++] = (byte) (id + this.cipher.getNextValue(-9356));
-
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "i.B(" + id + ')');
-    }
-  }
-
-  final int readPacketId() {
-    try {
-      return 255 & this.bytes[this.position++] - this.cipher.getNextValue(-9356);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "i.P()");
-    }
-  }
-
-  final void method818(boolean var1) {
-    try {
-      this.position = (this.bitOffset + 7) / 8;
-      if (var1) {
-        this.readBits(-75);
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "i.Q(" + var1 + ')');
     }
   }
 

@@ -12,10 +12,29 @@ final class EnumStringFetcher implements Interface4 {
   };
   static GameString aClass94_2168 = SpawnedGameObject.createString("<br>");
 
+  public final GameString method20(int var1, int[] enums, int var3, long key) {
+    try {
+      if (var1 != 0) {
+        if (var1 != 1 && ~var1 != -11) {
+          return var1 != 6 && var1 != 7 && 11 != var1 ?
+            (var3 != 4936 ? (GameString) null : null) :
+            TextureSampler36.getEnum(enums[0], true).getString((int) key, (byte) -69);
+        } else {
+          ItemConfig var8 = DummyClass35.getItemConfig((int) key, (byte) 82);
+          return var8.aClass94_770;
+        }
+      } else {
+        ClientScriptEnum var6 = TextureSampler36.getEnum(enums[0], true);
+        return var6.getString((int) key, (byte) 120);
+      }
+    } catch (RuntimeException var7) {
+      throw AbstractGameWorld.cascadeException(var7,
+        "af.A(" + var1 + ',' + (enums != null ? "{...}" : "null") + ',' + var3 + ',' + key + ')');
+    }
+  }
 
   static final void printError(int var0, String var1) {
-    System.out
-      .println("Error: " + WidgetUpdate.createIndexedColorSprite("%0a", "\n", 105, var1));
+    System.out.println("Error: " + WidgetUpdate.createIndexedColorSprite("%0a", "\n", 105, var1));
     if (var0 < 33) {
       aClass94_2163 = null;
     }
@@ -78,30 +97,8 @@ final class EnumStringFetcher implements Interface4 {
     } else {
       int var10 = var1 * 128 + 64 * var4;
       int var11 = var2 * 128 + 64 * var5;
-      return DummyClass42
-        .addNodeToSceneGraph(var0, var1, var2, var4, var5, var10, var11, var3, var6, var7, false,
-          var8);
-    }
-  }
-
-  public final GameString method20(int var1, int[] enums, int var3, long key) {
-    try {
-      if (var1 != 0) {
-        if (var1 != 1 && ~var1 != -11) {
-          return var1 != 6 && var1 != 7 && 11 != var1 ?
-            (var3 != 4936 ? (GameString) null : null) :
-            TextureSampler36.getEnum(enums[0], true).getString((int) key, (byte) -69);
-        } else {
-          ItemConfig var8 = DummyClass35.getItemConfig((int) key, (byte) 82);
-          return var8.aClass94_770;
-        }
-      } else {
-        ClientScriptEnum var6 = TextureSampler36.getEnum(enums[0], true);
-        return var6.getString((int) key, (byte) 120);
-      }
-    } catch (RuntimeException var7) {
-      throw AbstractGameWorld.cascadeException(var7,
-        "af.A(" + var1 + ',' + (enums != null ? "{...}" : "null") + ',' + var3 + ',' + key + ')');
+      return DummyClass42.addNodeToSceneGraph(var0, var1, var2, var4, var5, var10, var11, var3,
+        var6, var7, false, var8);
     }
   }
 

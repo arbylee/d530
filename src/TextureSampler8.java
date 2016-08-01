@@ -22,52 +22,6 @@ final class TextureSampler8 extends AbstractTextureSampler {
     super(1, true);
   }
 
-  static final boolean method353(int var0, int var1) {
-    try {
-      if (var1 > var0) {
-        return false;
-      } else {
-        int var2 = TextureSampler27.aShortArray3095[var0];
-        if (var2 >= 2000) {
-          var2 -= 2000;
-        }
-
-        return ~var2 == -1004;
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "wi.Q(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  static final void method354(int var0, int var1) {
-    try {
-      TextureSampler13.anInt3362 = -1;
-      if (var0 >= -121) {
-        viewportLength = -58;
-      }
-
-      TextureSampler13.anInt3362 = -1;
-      SpawnedGameObject.anInt2251 = var1;
-      SomethingInScenePacket202.method117((byte) 87);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "wi.B(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  public static void method357(boolean var0) {
-    try {
-      aByteArrayArray3461 = null;
-      aClass3_Sub28_Sub16Array3458 = null;
-      if (var0) {
-        method353(-71, 100);
-      }
-
-      aBooleanArrayArray3468 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "wi.O(" + var0 + ')');
-    }
-  }
-
   private final void method352(int var1) {
     try {
       int var2 = this.anInt3462;
@@ -199,6 +153,28 @@ final class TextureSampler8 extends AbstractTextureSampler {
     }
   }
 
+  final void parseConfig(int var1, Buffer var2, boolean var3) {
+    try {
+      if (0 == var1) {
+        this.anInt3462 = var2.readUnsignedByte();
+        this.anIntArrayArray3469 = new int[var2.readUnsignedByte()][2];
+
+        for (int var4 = 0; ~this.anIntArrayArray3469.length < ~var4; ++var4) {
+          this.anIntArrayArray3469[var4][0] = var2.readUnsignedShort();
+          this.anIntArrayArray3469[var4][1] = var2.readUnsignedShort();
+        }
+      }
+
+      if (!var3) {
+        this.anInt3462 = -6;
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "wi.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
   final void method158(int var1) {
     try {
       if (null == this.anIntArrayArray3469) {
@@ -242,28 +218,6 @@ final class TextureSampler8 extends AbstractTextureSampler {
     }
   }
 
-  final void parseConfig(int var1, Buffer var2, boolean var3) {
-    try {
-      if (0 == var1) {
-        this.anInt3462 = var2.readUnsignedByte();
-        this.anIntArrayArray3469 = new int[var2.readUnsignedByte()][2];
-
-        for (int var4 = 0; ~this.anIntArrayArray3469.length < ~var4; ++var4) {
-          this.anIntArrayArray3469[var4][0] = var2.readUnsignedShort();
-          this.anIntArrayArray3469[var4][1] = var2.readUnsignedShort();
-        }
-      }
-
-      if (!var3) {
-        this.anInt3462 = -6;
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "wi.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
-    }
-  }
-
   private final int[] method356(byte var1, int var2) {
     try {
       if (~var2 <= -1) {
@@ -281,6 +235,52 @@ final class TextureSampler8 extends AbstractTextureSampler {
       }
     } catch (RuntimeException var4) {
       throw AbstractGameWorld.cascadeException(var4, "wi.F(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  static final boolean method353(int var0, int var1) {
+    try {
+      if (var1 > var0) {
+        return false;
+      } else {
+        int var2 = TextureSampler27.aShortArray3095[var0];
+        if (var2 >= 2000) {
+          var2 -= 2000;
+        }
+
+        return ~var2 == -1004;
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "wi.Q(" + var0 + ',' + var1 + ')');
+    }
+  }
+
+  static final void method354(int var0, int var1) {
+    try {
+      TextureSampler13.anInt3362 = -1;
+      if (var0 >= -121) {
+        viewportLength = -58;
+      }
+
+      TextureSampler13.anInt3362 = -1;
+      SpawnedGameObject.anInt2251 = var1;
+      SomethingInScenePacket202.method117((byte) 87);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "wi.B(" + var0 + ',' + var1 + ')');
+    }
+  }
+
+  public static void method357(boolean var0) {
+    try {
+      aByteArrayArray3461 = null;
+      aClass3_Sub28_Sub16Array3458 = null;
+      if (var0) {
+        method353(-71, 100);
+      }
+
+      aBooleanArrayArray3468 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "wi.O(" + var0 + ')');
     }
   }
 

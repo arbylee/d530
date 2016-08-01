@@ -3,9 +3,11 @@ final class Player extends Mobile {
   static int[] anIntArray3951 = new int[4];
   static byte aByte3953;
   static int[] quady0 = new int[100];
-  static GameString aClass94_3957 = SpawnedGameObject.createString("Gestionnaire de saisie charg-B");
+  static GameString aClass94_3957 =
+    SpawnedGameObject.createString("Gestionnaire de saisie charg-B");
   static int[] anIntArray3959 = new int[2];
-  static GameString FORCED_TWEENING_ENABLED = SpawnedGameObject.createString("Forced tweening ENABLED(Q");
+  static GameString FORCED_TWEENING_ENABLED =
+    SpawnedGameObject.createString("Forced tweening ENABLED(Q");
   static GameString LABELS = SpawnedGameObject.createString("_labels");
   static GameString aClass94_3971 = SpawnedGameObject.createString("www)2wtqa");
   int anInt3952 = -1;
@@ -24,44 +26,6 @@ final class Player extends Mobile {
   int anInt3973 = -1;
   int skillTotal = 0;
   private int titleId = 0;
-
-  public static void method1982(byte var0) {
-    try {
-      aClass94_3971 = null;
-      aClass94_3957 = null;
-      anIntArray3951 = null;
-      FORCED_TWEENING_ENABLED = null;
-      anIntArray3959 = null;
-      if (var0 <= 116) {
-        method1982((byte) -48);
-      }
-
-      quady0 = null;
-      LABELS = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "e.R(" + var0 + ')');
-    }
-  }
-
-  final int getSize() {
-    try {
-      if (this.appearance != null && this.appearance.npcId != -1) {
-        return SubNode.getNpcConfiguration(this.appearance.npcId).size;
-      } else {
-        return super.getSize();
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "e.H((");
-    }
-  }
-
-  final int getRenderAnimationId() {
-    try {
-      return this.renderAnimationId;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "e.B()");
-    }
-  }
 
   final void parseConfig(Buffer buffer) {
     try {
@@ -173,9 +137,99 @@ final class Player extends Mobile {
       }
 
     } catch (RuntimeException var18) {
-      throw AbstractGameWorld
-        .cascadeException(var18, "e.P(" + (buffer != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var18,
+        "e.P(" + (buffer != null ? "{...}" : "null") + ')');
     }
+  }
+
+  private final void draw(DummyClass0 var1, int var2, AbstractModel var3, int var4, int var5,
+                          int var6, int var7, int var8, int var9, int var10, int var11, int var12,
+                          int var13, int var14, int var15) {
+    try {
+      int var16 = var4 * var4 - -(var2 * var2);
+      if (-17 >= ~var16 && -360001 <= ~var16) {
+        int var17 = (int) (325.949D * Math.atan2((double) var4, (double) var2)) & var7;
+        AbstractModel var18 =
+          DummyHashTable.method1763(true, var17, this.anInt2829, var13, this.anInt2819, var3,
+            this.anInt2831);
+        if (var18 != null) {
+          if (GlRenderer.useOpenGlRenderer) {
+            float var19 = GlRenderer.method1852();
+            float var20 = GlRenderer.method1839();
+            GlRenderer.method1851();
+            GlRenderer.method1825(var19, var20 - 150.0F);
+            var18.draw(0, var12, var14, var11, var10, var5, var15, var9, -1L, var6, var1);
+            GlRenderer.method1830();
+            GlRenderer.method1825(var19, var20);
+          } else {
+            var18.draw(0, var12, var14, var11, var10, var5, var15, var9, -1L, var6, var1);
+          }
+        }
+
+      }
+    } catch (RuntimeException var21) {
+      throw AbstractGameWorld.cascadeException(var21,
+        "e.N(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + (var3 != null ?
+          "{...}" :
+          "null") + ',' + var4 + ',' + var5 + ',' + var6 + ',' + var7 + ',' + var8 + ',' + var9
+          + ',' + var10 + ',' + var11 + ',' + var12 + ',' + var13 + ',' + var14 + ',' + var15
+          + ')');
+    }
+  }
+
+  final boolean hasConfiguration(byte var1) {
+    try {
+      if (var1 != 17) {
+        quady0 = null;
+      }
+
+      return this.appearance != null;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "e.L(" + var1 + ')');
+    }
+  }
+
+  final int getRenderAnimationId() {
+    try {
+      return this.renderAnimationId;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "e.B()");
+    }
+  }
+
+  final int getSize() {
+    try {
+      if (this.appearance != null && this.appearance.npcId != -1) {
+        return SubNode.getNpcConfiguration(this.appearance.npcId).size;
+      } else {
+        return super.getSize();
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "e.H((");
+    }
+  }
+
+  final GameString getFullName() {
+    try {
+      GameString name = this.name;
+
+      if (GameBuffer.titlePrefixes != null) {
+        name =
+          RenderAnimation.concat(new GameString[] {GameBuffer.titlePrefixes[this.titleId], name});
+      }
+
+      if (null != DummyOutputStream.titleSuffixes) {
+        name = RenderAnimation.concat(
+          new GameString[] {name, DummyOutputStream.titleSuffixes[this.titleId]});
+      }
+
+      return name;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "e.Q()");
+    }
+  }
+
+  final void method1867(int var1, int var2, int var3, int var4, int var5) {
   }
 
   final void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
@@ -189,9 +243,10 @@ final class Player extends Mobile {
           ~this.anInt2764 != ~this.getRenderAnimationId(false).anInt368 || var13 == null) ?
           GameClient.method45(this.anInt2764, (byte) -20) :
           null;
-        AbstractModel var15 = this.appearance
-          .method1165(this.aClass145Array2809, this.anInt2776, var14, var13, this.anInt2802,
-            this.anInt2793, -120, this.anInt2760, true, this.anInt2832, this.anInt2813);
+        AbstractModel var15 =
+          this.appearance.method1165(this.aClass145Array2809, this.anInt2776, var14, var13,
+            this.anInt2802, this.anInt2793, -120, this.anInt2760, true, this.anInt2832,
+            this.anInt2813);
         int var16 = AbstractObjectNodeWrapper.method1727((byte) 123);
         if (GlRenderer.useOpenGlRenderer && AudioStreamEncoder3.anInt3492 < 96 && ~var16 < -51) {
           WidgetAccess.method90(1);
@@ -212,12 +267,11 @@ final class Player extends Mobile {
         if (var15 != null) {
           this.anInt2820 = var15.getMinimumY();
           AbstractModel var23;
-          if (Projectile.aBoolean2910 && (-1 == this.appearance.npcId || SubNode
-            .getNpcConfiguration(this.appearance.npcId).aBoolean1249)) {
-            var23 = GameObject
-              .method1957(160, this.aBoolean2810, var14 == null ? var13 : var14, this.anInt2819, 0,
-                this.anInt2829, 0, 1, var15, var1, null != var14 ? this.anInt2813 : this.anInt2832,
-                this.anInt2831, 240, (byte) -49);
+          if (Projectile.aBoolean2910 && (-1 == this.appearance.npcId
+            || SubNode.getNpcConfiguration(this.appearance.npcId).aBoolean1249)) {
+            var23 = GameObject.method1957(160, this.aBoolean2810, var14 == null ? var13 : var14,
+              this.anInt2819, 0, this.anInt2829, 0, 1, var15, var1,
+              null != var14 ? this.anInt2813 : this.anInt2832, this.anInt2831, 240, (byte) -49);
             if (GlRenderer.useOpenGlRenderer) {
               float var18 = GlRenderer.method1852();
               float var19 = GlRenderer.method1839();
@@ -370,92 +424,41 @@ final class Player extends Mobile {
     }
   }
 
-  private final void draw(DummyClass0 var1, int var2, AbstractModel var3, int var4, int var5,
-                          int var6, int var7, int var8, int var9, int var10, int var11, int var12,
-                          int var13, int var14, int var15) {
+  final int getMinimumY() {
     try {
-      int var16 = var4 * var4 - -(var2 * var2);
-      if (-17 >= ~var16 && -360001 <= ~var16) {
-        int var17 = (int) (325.949D * Math.atan2((double) var4, (double) var2)) & var7;
-        AbstractModel var18 = DummyHashTable
-          .method1763(true, var17, this.anInt2829, var13, this.anInt2819, var3, this.anInt2831);
-        if (var18 != null) {
-          if (GlRenderer.useOpenGlRenderer) {
-            float var19 = GlRenderer.method1852();
-            float var20 = GlRenderer.method1839();
-            GlRenderer.method1851();
-            GlRenderer.method1825(var19, var20 - 150.0F);
-            var18.draw(0, var12, var14, var11, var10, var5, var15, var9, -1L, var6, var1);
-            GlRenderer.method1830();
-            GlRenderer.method1825(var19, var20);
-          } else {
-            var18.draw(0, var12, var14, var11, var10, var5, var15, var9, -1L, var6, var1);
-          }
-        }
-
-      }
-    } catch (RuntimeException var21) {
-      throw AbstractGameWorld.cascadeException(var21,
-        "e.N(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + (var3 != null ?
-          "{...}" :
-          "null") + ',' + var4 + ',' + var5 + ',' + var6 + ',' + var7 + ',' + var8 + ',' + var9
-          + ',' + var10 + ',' + var11 + ',' + var12 + ',' + var13 + ',' + var14 + ',' + var15
-          + ')');
+      return this.anInt2820;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "e.MA()");
     }
-  }
-
-  final boolean hasConfiguration(byte var1) {
-    try {
-      if (var1 != 17) {
-        quady0 = null;
-      }
-
-      return this.appearance != null;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "e.L(" + var1 + ')');
-    }
-  }
-
-  final GameString getFullName() {
-    try {
-      GameString name = this.name;
-
-      if (GameBuffer.titlePrefixes != null) {
-        name =
-          RenderAnimation.concat(new GameString[] {GameBuffer.titlePrefixes[this.titleId], name});
-      }
-
-      if (null != DummyOutputStream.titleSuffixes) {
-        name = RenderAnimation
-          .concat(new GameString[] {name, DummyOutputStream.titleSuffixes[this.titleId]});
-      }
-
-      return name;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "e.Q()");
-    }
-  }
-
-  final void method1867(int var1, int var2, int var3, int var4, int var5) {
   }
 
   final void setPosition(byte var1, int x, boolean var3, int y) {
     try {
       super.setPosition(this.getSize(), x, y, var3);
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "e.O(" + var1 + ',' + x + ',' + var3 + ',' + y + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "e.O(" + var1 + ',' + x + ',' + var3 + ',' + y + ')');
     }
   }
 
   protected final void finalize() {
   }
 
-  final int getMinimumY() {
+  public static void method1982(byte var0) {
     try {
-      return this.anInt2820;
+      aClass94_3971 = null;
+      aClass94_3957 = null;
+      anIntArray3951 = null;
+      FORCED_TWEENING_ENABLED = null;
+      anIntArray3959 = null;
+      if (var0 <= 116) {
+        method1982((byte) -48);
+      }
+
+      quady0 = null;
+      LABELS = null;
     } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "e.MA()");
+      throw AbstractGameWorld.cascadeException(var2, "e.R(" + var0 + ')');
     }
   }
 

@@ -1,5 +1,6 @@
 final class TextureSampler35 extends AbstractTextureSampler {
 
+  private static GameString aClass94_3334 = SpawnedGameObject.createString("wave2:");
   static int anInt3332 = 50;
   static GameString[] aClass94Array3317 = new GameString[anInt3332];
   static int[] anIntArray3318 = new int[anInt3332];
@@ -17,7 +18,6 @@ final class TextureSampler35 extends AbstractTextureSampler {
   static byte[][] aByteArrayArray3335;
   static int[] anIntArray3336 = new int[anInt3332];
   static int[] anIntArray3337 = new int[anInt3332];
-  private static GameString aClass94_3334 = SpawnedGameObject.createString("wave2:");
   static GameString aClass94_3325 = aClass94_3334;
   static GameString aClass94_3333 = aClass94_3334;
   private int anInt3322 = 4096;
@@ -25,31 +25,6 @@ final class TextureSampler35 extends AbstractTextureSampler {
 
   public TextureSampler35() {
     super(1, true);
-  }
-
-  public static void method294(byte var0) {
-    try {
-      anIntArray3327 = null;
-      anIntArray3337 = null;
-      aClass94_3326 = null;
-      aClass94Array3317 = null;
-      aClass94_3334 = null;
-      anIntArray3328 = null;
-      ASSIST_REQ = null;
-      aClass94_3324 = null;
-      anIntArray3319 = null;
-      aByteArrayArray3335 = null;
-      anIntArray3329 = null;
-      aClass94_3333 = null;
-      anIntArray3336 = null;
-      int var1 = -62 % ((-59 - var0) / 47);
-      anIntArray3321 = null;
-      anIntArray3318 = null;
-      anIntArray3331 = null;
-      aClass94_3325 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "pg.B(" + var0 + ')');
-    }
   }
 
   final int[] method154(int var1, byte var2) {
@@ -95,6 +70,31 @@ final class TextureSampler35 extends AbstractTextureSampler {
     } catch (RuntimeException var5) {
       throw AbstractGameWorld.cascadeException(var5,
         "pg.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
+  public static void method294(byte var0) {
+    try {
+      anIntArray3327 = null;
+      anIntArray3337 = null;
+      aClass94_3326 = null;
+      aClass94Array3317 = null;
+      aClass94_3334 = null;
+      anIntArray3328 = null;
+      ASSIST_REQ = null;
+      aClass94_3324 = null;
+      anIntArray3319 = null;
+      aByteArrayArray3335 = null;
+      anIntArray3329 = null;
+      aClass94_3333 = null;
+      anIntArray3336 = null;
+      int var1 = -62 % ((-59 - var0) / 47);
+      anIntArray3321 = null;
+      anIntArray3318 = null;
+      anIntArray3331 = null;
+      aClass94_3325 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "pg.B(" + var0 + ')');
     }
   }
 

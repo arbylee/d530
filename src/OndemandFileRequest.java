@@ -4,17 +4,46 @@ import java.awt.Insets;
 
 final class OndemandFileRequest extends AbstractFileRequest {
 
+  private static GameString aClass94_4072 =
+    SpawnedGameObject.createString(" from your friend list first)3");
   static int anInt4065;
   static GameString aClass94_4066 = SpawnedGameObject.createString("<br>");
   static boolean aBoolean4068 = true;
   static SceneGraphTile[][][] tiles;
   static int anInt4073;
-  private static GameString aClass94_4072 =
-    SpawnedGameObject.createString(" from your friend list first)3");
   static GameString aClass94_4071 = aClass94_4072;
   byte aByte4064;
   int anInt4067;
   Buffer buffer;
+
+  final int method586(boolean var1) {
+    try {
+      return var1 ?
+        92 :
+        (this.buffer == null ?
+          0 :
+          this.buffer.position * 100 / (-this.aByte4064 + this.buffer.bytes.length));
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "pm.A(" + var1 + ')');
+    }
+  }
+
+  final byte[] method587(boolean var1) {
+    try {
+      if (!this.aBoolean3632 && ~this.buffer.position <= ~(-this.aByte4064
+        + this.buffer.bytes.length)) {
+        if (var1) {
+          this.method586(false);
+        }
+
+        return this.buffer.bytes;
+      } else {
+        throw new RuntimeException();
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "pm.E(" + var1 + ')');
+    }
+  }
 
   static final DisplayMode[] method596(int var0, SignLink var1) {
     try {
@@ -50,8 +79,8 @@ final class OndemandFileRequest extends AbstractFileRequest {
         }
       }
     } catch (RuntimeException var7) {
-      throw AbstractGameWorld
-        .cascadeException(var7, "pm.P(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var7,
+        "pm.P(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -140,8 +169,8 @@ final class OndemandFileRequest extends AbstractFileRequest {
           InventoryConfig.canvas.setSize(DummyClass30.viewWidth, GroundItem.viewHeight);
           if (TextureSampler27.frame == var7) {
             var8 = TextureSampler27.frame.getInsets();
-            InventoryConfig.canvas
-              .setLocation(var8.left - -DummyClass51.viewX, var8.top + DisplayMode.viewY);
+            InventoryConfig.canvas.setLocation(var8.left - -DummyClass51.viewX,
+              var8.top + DisplayMode.viewY);
           } else {
             InventoryConfig.canvas.setLocation(DummyClass51.viewX, DisplayMode.viewY);
           }
@@ -169,9 +198,9 @@ final class OndemandFileRequest extends AbstractFileRequest {
           if (!GameStub.aBoolean11) {
             DummyClass34.method995();
             Something3d.viewImageProducer = null;
-            Something3d.viewImageProducer = TextureSampler18
-              .createImageProducer(GroundItem.viewHeight, DummyClass30.viewWidth, true,
-                InventoryConfig.canvas);
+            Something3d.viewImageProducer =
+              TextureSampler18.createImageProducer(GroundItem.viewHeight, DummyClass30.viewWidth,
+                true, InventoryConfig.canvas);
             DummyClass47.method1320();
             if (5 != DummyClass15.state) {
               AbstractTextureSampler.drawLoadingBox(TextureSampler39.LOADING_PLEASE_WAIT, false);
@@ -279,36 +308,6 @@ final class OndemandFileRequest extends AbstractFileRequest {
       throw AbstractGameWorld.cascadeException(var10,
         "pm.F(" + replaceCanvas + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5
           + ',' + var6 + ')');
-    }
-  }
-
-  final int method586(boolean var1) {
-    try {
-      return var1 ?
-        92 :
-        (this.buffer == null ?
-          0 :
-          this.buffer.position * 100 / (-this.aByte4064
-            + this.buffer.bytes.length));
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "pm.A(" + var1 + ')');
-    }
-  }
-
-  final byte[] method587(boolean var1) {
-    try {
-      if (!this.aBoolean3632 && ~this.buffer.position <= ~(-this.aByte4064
-        + this.buffer.bytes.length)) {
-        if (var1) {
-          this.method586(false);
-        }
-
-        return this.buffer.bytes;
-      } else {
-        throw new RuntimeException();
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "pm.E(" + var1 + ')');
     }
   }
 

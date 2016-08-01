@@ -64,9 +64,8 @@ final class DummyClass21 {
 
   static final void method1808(int var0, boolean var1, byte var2, int var3, boolean var4) {
     try {
-      FileCache
-        .method1047(var0, var3, TextureSampler15.aClass44_Sub1Array3201.length - 1, var4, 0, var1,
-          false);
+      FileCache.method1047(var0, var3, TextureSampler15.aClass44_Sub1Array3201.length - 1, var4, 0,
+        var1, false);
       if (var2 != 30) {
         aClass94_1760 = null;
       }

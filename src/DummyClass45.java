@@ -30,8 +30,8 @@ final class DummyClass45 {
         return null;
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "ja.H(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "ja.H(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -53,16 +53,16 @@ final class DummyClass45 {
         return TextureSampler39.method275(var12, var13, var7, 87, var0);
       }
     } catch (RuntimeException var14) {
-      throw AbstractGameWorld
-        .cascadeException(var14, "ja.G(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var14,
+        "ja.G(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
   static final void method1235(int var0, int var1, int var2, int var3, byte var4) {
     try {
       if (HuffmanEncoder.anInt638 == 1) {
-        DummyClass17.aClass3_Sub28_Sub16Array1825[FileRequester.anInt2958 / 100]
-          .method643(-8 + SceneSomething2.anInt1053, -8 + FileCacheRequest.anInt4062);
+        DummyClass17.aClass3_Sub28_Sub16Array1825[FileRequester.anInt2958 / 100].method643(
+          -8 + SceneSomething2.anInt1053, -8 + FileCacheRequest.anInt4062);
       }
 
       if (var4 != -121) {
@@ -70,8 +70,8 @@ final class DummyClass45 {
       }
 
       if (~HuffmanEncoder.anInt638 == -3) {
-        DummyClass17.aClass3_Sub28_Sub16Array1825[4 + FileRequester.anInt2958 / 100]
-          .method643(SceneSomething2.anInt1053 + -8, -8 + FileCacheRequest.anInt4062);
+        DummyClass17.aClass3_Sub28_Sub16Array1825[4 + FileRequester.anInt2958 / 100].method643(
+          SceneSomething2.anInt1053 + -8, -8 + FileCacheRequest.anInt4062);
       }
 
       TextureSampler10.method347(true);

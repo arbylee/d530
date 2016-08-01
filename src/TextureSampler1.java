@@ -28,6 +28,59 @@ final class TextureSampler1 extends AbstractTextureSampler {
     this(0);
   }
 
+  private final void method218(byte var1, int var2) {
+    try {
+      this.anInt3134 = 4080 & var2 >> 4;
+      this.anInt3135 = var2 << 4 & 4080;
+      if (var1 == 75) {
+        this.anInt3129 = (var2 & 16711680) >> 12;
+      }
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "fm.Q(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void parseConfig(int var1, Buffer var2, boolean var3) {
+    try {
+      if (!var3) {
+        method221(-64, null, null, null, 34);
+      }
+
+      if (-1 == ~var1) {
+        this.method218((byte) 75, var2.readUnsignedMedium((byte) 82));
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "fm.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
+  final int[][] method166(int var1, int var2) {
+    try {
+      if (var1 != -1) {
+        method222(-87, 26, 75, -56, 22, -68);
+      }
+
+      int[][] var3 = this.triChromaticImageCache.method1594((byte) -123, var2);
+      if (this.triChromaticImageCache.aBoolean1379) {
+        int[] var4 = var3[0];
+        int[] var5 = var3[1];
+        int[] var6 = var3[2];
+
+        for (int var7 = 0; ~var7 > ~SomethingLight0.anInt1559; ++var7) {
+          var4[var7] = this.anInt3129;
+          var5[var7] = this.anInt3134;
+          var6[var7] = this.anInt3135;
+        }
+      }
+
+      return var3;
+    } catch (RuntimeException var8) {
+      throw AbstractGameWorld.cascadeException(var8, "fm.T(" + var1 + ',' + var2 + ')');
+    }
+  }
+
   public static void method217(int var0) {
     try {
       FONT_B12 = null;
@@ -100,9 +153,8 @@ final class TextureSampler1 extends AbstractTextureSampler {
       DummyClass39.sunPositionX = DummyClass27.blockConfigs[x][y].sunPositionX;
       TextureSampler0.sunPositionY = DummyClass27.blockConfigs[x][y].sunPositionY;
       BlockConfig.sunPositionZ = DummyClass27.blockConfigs[x][y].sunPosZ;
-      GlEnvironment
-        .setSunPosition((float) DummyClass39.sunPositionX, (float) TextureSampler0.sunPositionY,
-          (float) BlockConfig.sunPositionZ);
+      GlEnvironment.setSunPosition((float) DummyClass39.sunPositionX,
+        (float) TextureSampler0.sunPositionY, (float) BlockConfig.sunPositionZ);
     } catch (RuntimeException var4) {
       throw AbstractGameWorld.cascadeException(var4, "fm.C(" + y + ',' + x + ')');
     }
@@ -129,15 +181,14 @@ final class TextureSampler1 extends AbstractTextureSampler {
       } else {
         var6 = var1 << 7;
         var7 = var3 << 7;
-        return TextureSampler10
-          .method349(var6 + 1, AbstractGameWorld.heightMap[var0][var1][var3] + var5, var7 + 1)
-          && TextureSampler10
-          .method349(var6 + 128 - 1, AbstractGameWorld.heightMap[var0][var1 + 1][var3] + var5,
-            var7 + 1) && TextureSampler10
-          .method349(var6 + 128 - 1, AbstractGameWorld.heightMap[var0][var1 + 1][var3 + 1] + var5,
-            var7 + 128 - 1) && TextureSampler10
-          .method349(var6 + 1, AbstractGameWorld.heightMap[var0][var1][var3 + 1] + var5,
-            var7 + 128 - 1);
+        return
+          TextureSampler10.method349(var6 + 1, AbstractGameWorld.heightMap[var0][var1][var3] + var5,
+            var7 + 1) && TextureSampler10.method349(var6 + 128 - 1,
+            AbstractGameWorld.heightMap[var0][var1 + 1][var3] + var5, var7 + 1)
+            && TextureSampler10.method349(var6 + 128 - 1,
+            AbstractGameWorld.heightMap[var0][var1 + 1][var3 + 1] + var5, var7 + 128 - 1)
+            && TextureSampler10.method349(var6 + 1,
+            AbstractGameWorld.heightMap[var0][var1][var3 + 1] + var5, var7 + 128 - 1);
       }
     } else {
       for (var6 = var1; var6 <= var2; ++var6) {
@@ -167,59 +218,6 @@ final class TextureSampler1 extends AbstractTextureSampler {
           }
         }
       }
-    }
-  }
-
-  private final void method218(byte var1, int var2) {
-    try {
-      this.anInt3134 = 4080 & var2 >> 4;
-      this.anInt3135 = var2 << 4 & 4080;
-      if (var1 == 75) {
-        this.anInt3129 = (var2 & 16711680) >> 12;
-      }
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "fm.Q(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final int[][] method166(int var1, int var2) {
-    try {
-      if (var1 != -1) {
-        method222(-87, 26, 75, -56, 22, -68);
-      }
-
-      int[][] var3 = this.triChromaticImageCache.method1594((byte) -123, var2);
-      if (this.triChromaticImageCache.aBoolean1379) {
-        int[] var4 = var3[0];
-        int[] var5 = var3[1];
-        int[] var6 = var3[2];
-
-        for (int var7 = 0; ~var7 > ~SomethingLight0.anInt1559; ++var7) {
-          var4[var7] = this.anInt3129;
-          var5[var7] = this.anInt3134;
-          var6[var7] = this.anInt3135;
-        }
-      }
-
-      return var3;
-    } catch (RuntimeException var8) {
-      throw AbstractGameWorld.cascadeException(var8, "fm.T(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final void parseConfig(int var1, Buffer var2, boolean var3) {
-    try {
-      if (!var3) {
-        method221(-64, null, null, null, 34);
-      }
-
-      if (-1 == ~var1) {
-        this.method218((byte) 75, var2.readUnsignedMedium((byte) 82));
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "fm.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
     }
   }
 

@@ -1,6 +1,5 @@
 final class MidiInstrument extends Node {
 
-  static SomethingMidiInstrument[] aClass71Array2406;
   private static float[] aFloatArray2387;
   private static float[] aFloatArray2388;
   private static int[] anIntArray2391;
@@ -21,6 +20,7 @@ final class MidiInstrument extends Node {
   private static float[] aFloatArray2416;
   private static byte[] aByteArray2417;
   private static int[] anIntArray2420;
+  static SomethingMidiInstrument[] aClass71Array2406;
   private int anInt2389;
   private int anInt2390;
   private float[] aFloatArray2394;
@@ -38,206 +38,6 @@ final class MidiInstrument extends Node {
 
   private MidiInstrument(byte[] var1) {
     this.method360(var1);
-  }
-
-  static final float method358(int var0) {
-    int var1 = var0 & 2097151;
-    int var2 = var0 & Integer.MIN_VALUE;
-    int var3 = (var0 & 2145386496) >> 21;
-    if (var2 != 0) {
-      var1 = -var1;
-    }
-
-    return (float) ((double) var1 * Math.pow(2.0D, (double) (var3 - 788)));
-  }
-
-  public static void method361() {
-    aByteArray2417 = null;
-    aClass71Array2406 = null;
-    aClass59Array2407 = null;
-    aClass152Array2392 = null;
-    aClass150Array2398 = null;
-    aBooleanArray2393 = null;
-    anIntArray2420 = null;
-    aFloatArray2403 = null;
-    aFloatArray2400 = null;
-    aFloatArray2413 = null;
-    aFloatArray2416 = null;
-    aFloatArray2399 = null;
-    aFloatArray2387 = null;
-    aFloatArray2388 = null;
-    anIntArray2391 = null;
-    anIntArray2409 = null;
-  }
-
-  private static final boolean method362(FileUnpacker var0) {
-    if (!aBoolean2405) {
-      byte[] var1 = var0.getBytes(0, 0);
-      if (var1 == null) {
-        return false;
-      }
-
-      method367(var1);
-      aBoolean2405 = true;
-    }
-
-    return true;
-  }
-
-  static final MidiInstrument method363(FileUnpacker var0, int var1, int var2) {
-    if (!method362(var0)) {
-      var0.method2129((byte) 95, var2, var1);
-      return null;
-    } else {
-      byte[] var3 = var0.getBytes(var1, var2);
-      return var3 == null ? null : new MidiInstrument(var3);
-    }
-  }
-
-  static final int method364() {
-    int var0 = aByteArray2417[anInt2404] >> anInt2414 & 1;
-    ++anInt2414;
-    anInt2404 += anInt2414 >> 3;
-    anInt2414 &= 7;
-    return var0;
-  }
-
-  private static final void method365(byte[] var0, int var1) {
-    aByteArray2417 = var0;
-    anInt2404 = var1;
-    anInt2414 = 0;
-  }
-
-  private static final void method367(byte[] var0) {
-    method365(var0, 0);
-    anInt2402 = 1 << method368(4);
-    anInt2396 = 1 << method368(4);
-    aFloatArray2403 = new float[anInt2396];
-
-    int var1;
-    int var2;
-    int var3;
-    int var4;
-    int var5;
-    for (var1 = 0; var1 < 2; ++var1) {
-      var2 = var1 != 0 ? anInt2396 : anInt2402;
-      var3 = var2 >> 1;
-      var4 = var2 >> 2;
-      var5 = var2 >> 3;
-      float[] var6 = new float[var3];
-
-      for (int var7 = 0; var7 < var4; ++var7) {
-        var6[2 * var7] = (float) Math.cos((double) (4 * var7) * 3.141592653589793D / (double) var2);
-        var6[2 * var7 + 1] =
-          -((float) Math.sin((double) (4 * var7) * 3.141592653589793D / (double) var2));
-      }
-
-      float[] var13 = new float[var3];
-
-      for (int var8 = 0; var8 < var4; ++var8) {
-        var13[2 * var8] =
-          (float) Math.cos((double) (2 * var8 + 1) * 3.141592653589793D / (double) (2 * var2));
-        var13[2 * var8 + 1] =
-          (float) Math.sin((double) (2 * var8 + 1) * 3.141592653589793D / (double) (2 * var2));
-      }
-
-      float[] var14 = new float[var4];
-
-      for (int var9 = 0; var9 < var5; ++var9) {
-        var14[2 * var9] =
-          (float) Math.cos((double) (4 * var9 + 2) * 3.141592653589793D / (double) var2);
-        var14[2 * var9 + 1] =
-          -((float) Math.sin((double) (4 * var9 + 2) * 3.141592653589793D / (double) var2));
-      }
-
-      int[] var15 = new int[var5];
-      int var10 = MonoChromaticImageBuffer.method513(var5 - 1, 4);
-
-      for (int var11 = 0; var11 < var5; ++var11) {
-        var15[var11] = SomethingWorldMapy.method540(var10, -14314, var11);
-      }
-
-      if (var1 != 0) {
-        aFloatArray2399 = var6;
-        aFloatArray2387 = var13;
-        aFloatArray2388 = var14;
-        anIntArray2409 = var15;
-      } else {
-        aFloatArray2400 = var6;
-        aFloatArray2413 = var13;
-        aFloatArray2416 = var14;
-        anIntArray2391 = var15;
-      }
-    }
-
-    var1 = method368(8) + 1;
-    aClass71Array2406 = new SomethingMidiInstrument[var1];
-
-    for (var2 = 0; var2 < var1; ++var2) {
-      aClass71Array2406[var2] = new SomethingMidiInstrument();
-    }
-
-    var2 = method368(6) + 1;
-
-    for (var3 = 0; var3 < var2; ++var3) {
-      method368(16);
-    }
-
-    var2 = method368(6) + 1;
-    aClass59Array2407 = new SomethingMidiI[var2];
-
-    for (var3 = 0; var3 < var2; ++var3) {
-      aClass59Array2407[var3] = new SomethingMidiI();
-    }
-
-    var3 = method368(6) + 1;
-    aClass152Array2392 = new SomethingMidik[var3];
-
-    for (var4 = 0; var4 < var3; ++var4) {
-      aClass152Array2392[var4] = new SomethingMidik();
-    }
-
-    var4 = method368(6) + 1;
-    aClass150Array2398 = new SomethingMidiOther[var4];
-
-    for (var5 = 0; var5 < var4; ++var5) {
-      aClass150Array2398[var5] = new SomethingMidiOther();
-    }
-
-    var5 = method368(6) + 1;
-    aBooleanArray2393 = new boolean[var5];
-    anIntArray2420 = new int[var5];
-
-    for (int var12 = 0; var12 < var5; ++var12) {
-      aBooleanArray2393[var12] = method364() != 0;
-      method368(16);
-      method368(16);
-      anIntArray2420[var12] = method368(8);
-    }
-
-  }
-
-  static final int method368(int var0) {
-    int var1 = 0;
-
-    int var2;
-    int var3;
-    for (var2 = 0; var0 >= 8 - anInt2414; var0 -= var3) {
-      var3 = 8 - anInt2414;
-      int var4 = (1 << var3) - 1;
-      var1 += (aByteArray2417[anInt2404] >> anInt2414 & var4) << var2;
-      anInt2414 = 0;
-      ++anInt2404;
-      var2 += var3;
-    }
-
-    if (var0 > 0) {
-      var3 = (1 << var0) - 1;
-      var1 += (aByteArray2417[anInt2404] >> anInt2414 & var3) << var2;
-      anInt2414 += var0;
-    }
-
-    return var1;
   }
 
   final SomethingMusic0 method359(int[] var1) {
@@ -535,8 +335,8 @@ final class MidiInstrument extends Node {
       }
 
       for (var49 = var8; var49 < var9; ++var49) {
-        var27 = (float) Math
-          .sin(((double) (var49 - var8) + 0.5D) / (double) var10 * 0.5D * 3.141592653589793D);
+        var27 = (float) Math.sin(
+          ((double) (var49 - var8) + 0.5D) / (double) var10 * 0.5D * 3.141592653589793D);
         aFloatArray2403[var49] *=
           (float) Math.sin(1.5707963267948966D * (double) var27 * (double) var27);
       }
@@ -577,6 +377,206 @@ final class MidiInstrument extends Node {
     this.anInt2412 = var12 - (var4 >> 1);
     this.aBoolean2411 = var15;
     return var42;
+  }
+
+  static final float method358(int var0) {
+    int var1 = var0 & 2097151;
+    int var2 = var0 & Integer.MIN_VALUE;
+    int var3 = (var0 & 2145386496) >> 21;
+    if (var2 != 0) {
+      var1 = -var1;
+    }
+
+    return (float) ((double) var1 * Math.pow(2.0D, (double) (var3 - 788)));
+  }
+
+  public static void method361() {
+    aByteArray2417 = null;
+    aClass71Array2406 = null;
+    aClass59Array2407 = null;
+    aClass152Array2392 = null;
+    aClass150Array2398 = null;
+    aBooleanArray2393 = null;
+    anIntArray2420 = null;
+    aFloatArray2403 = null;
+    aFloatArray2400 = null;
+    aFloatArray2413 = null;
+    aFloatArray2416 = null;
+    aFloatArray2399 = null;
+    aFloatArray2387 = null;
+    aFloatArray2388 = null;
+    anIntArray2391 = null;
+    anIntArray2409 = null;
+  }
+
+  private static final boolean method362(FileUnpacker var0) {
+    if (!aBoolean2405) {
+      byte[] var1 = var0.getBytes(0, 0);
+      if (var1 == null) {
+        return false;
+      }
+
+      method367(var1);
+      aBoolean2405 = true;
+    }
+
+    return true;
+  }
+
+  static final MidiInstrument method363(FileUnpacker var0, int var1, int var2) {
+    if (!method362(var0)) {
+      var0.method2129((byte) 95, var2, var1);
+      return null;
+    } else {
+      byte[] var3 = var0.getBytes(var1, var2);
+      return var3 == null ? null : new MidiInstrument(var3);
+    }
+  }
+
+  static final int method364() {
+    int var0 = aByteArray2417[anInt2404] >> anInt2414 & 1;
+    ++anInt2414;
+    anInt2404 += anInt2414 >> 3;
+    anInt2414 &= 7;
+    return var0;
+  }
+
+  private static final void method365(byte[] var0, int var1) {
+    aByteArray2417 = var0;
+    anInt2404 = var1;
+    anInt2414 = 0;
+  }
+
+  private static final void method367(byte[] var0) {
+    method365(var0, 0);
+    anInt2402 = 1 << method368(4);
+    anInt2396 = 1 << method368(4);
+    aFloatArray2403 = new float[anInt2396];
+
+    int var1;
+    int var2;
+    int var3;
+    int var4;
+    int var5;
+    for (var1 = 0; var1 < 2; ++var1) {
+      var2 = var1 != 0 ? anInt2396 : anInt2402;
+      var3 = var2 >> 1;
+      var4 = var2 >> 2;
+      var5 = var2 >> 3;
+      float[] var6 = new float[var3];
+
+      for (int var7 = 0; var7 < var4; ++var7) {
+        var6[2 * var7] = (float) Math.cos((double) (4 * var7) * 3.141592653589793D / (double) var2);
+        var6[2 * var7 + 1] =
+          -((float) Math.sin((double) (4 * var7) * 3.141592653589793D / (double) var2));
+      }
+
+      float[] var13 = new float[var3];
+
+      for (int var8 = 0; var8 < var4; ++var8) {
+        var13[2 * var8] =
+          (float) Math.cos((double) (2 * var8 + 1) * 3.141592653589793D / (double) (2 * var2));
+        var13[2 * var8 + 1] =
+          (float) Math.sin((double) (2 * var8 + 1) * 3.141592653589793D / (double) (2 * var2));
+      }
+
+      float[] var14 = new float[var4];
+
+      for (int var9 = 0; var9 < var5; ++var9) {
+        var14[2 * var9] =
+          (float) Math.cos((double) (4 * var9 + 2) * 3.141592653589793D / (double) var2);
+        var14[2 * var9 + 1] =
+          -((float) Math.sin((double) (4 * var9 + 2) * 3.141592653589793D / (double) var2));
+      }
+
+      int[] var15 = new int[var5];
+      int var10 = MonoChromaticImageBuffer.method513(var5 - 1, 4);
+
+      for (int var11 = 0; var11 < var5; ++var11) {
+        var15[var11] = SomethingWorldMapy.method540(var10, -14314, var11);
+      }
+
+      if (var1 != 0) {
+        aFloatArray2399 = var6;
+        aFloatArray2387 = var13;
+        aFloatArray2388 = var14;
+        anIntArray2409 = var15;
+      } else {
+        aFloatArray2400 = var6;
+        aFloatArray2413 = var13;
+        aFloatArray2416 = var14;
+        anIntArray2391 = var15;
+      }
+    }
+
+    var1 = method368(8) + 1;
+    aClass71Array2406 = new SomethingMidiInstrument[var1];
+
+    for (var2 = 0; var2 < var1; ++var2) {
+      aClass71Array2406[var2] = new SomethingMidiInstrument();
+    }
+
+    var2 = method368(6) + 1;
+
+    for (var3 = 0; var3 < var2; ++var3) {
+      method368(16);
+    }
+
+    var2 = method368(6) + 1;
+    aClass59Array2407 = new SomethingMidiI[var2];
+
+    for (var3 = 0; var3 < var2; ++var3) {
+      aClass59Array2407[var3] = new SomethingMidiI();
+    }
+
+    var3 = method368(6) + 1;
+    aClass152Array2392 = new SomethingMidik[var3];
+
+    for (var4 = 0; var4 < var3; ++var4) {
+      aClass152Array2392[var4] = new SomethingMidik();
+    }
+
+    var4 = method368(6) + 1;
+    aClass150Array2398 = new SomethingMidiOther[var4];
+
+    for (var5 = 0; var5 < var4; ++var5) {
+      aClass150Array2398[var5] = new SomethingMidiOther();
+    }
+
+    var5 = method368(6) + 1;
+    aBooleanArray2393 = new boolean[var5];
+    anIntArray2420 = new int[var5];
+
+    for (int var12 = 0; var12 < var5; ++var12) {
+      aBooleanArray2393[var12] = method364() != 0;
+      method368(16);
+      method368(16);
+      anIntArray2420[var12] = method368(8);
+    }
+
+  }
+
+  static final int method368(int var0) {
+    int var1 = 0;
+
+    int var2;
+    int var3;
+    for (var2 = 0; var0 >= 8 - anInt2414; var0 -= var3) {
+      var3 = 8 - anInt2414;
+      int var4 = (1 << var3) - 1;
+      var1 += (aByteArray2417[anInt2404] >> anInt2414 & var4) << var2;
+      anInt2414 = 0;
+      ++anInt2404;
+      var2 += var3;
+    }
+
+    if (var0 > 0) {
+      var3 = (1 << var0) - 1;
+      var1 += (aByteArray2417[anInt2404] >> anInt2414 & var3) << var2;
+      anInt2414 += var0;
+    }
+
+    return var1;
   }
 
 }

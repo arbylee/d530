@@ -30,8 +30,29 @@ final class SomethingPacket116 {
       this.anInt1746 = var1.readInt();
       this.anInt1750 = var1.readInt();
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "sg.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "sg.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  final int method1804(boolean var1) {
+    try {
+      if (var1) {
+        anInt1753 = -21;
+      }
+
+      return this.aByte1742 & 7;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "sg.B(" + var1 + ')');
+    }
+  }
+
+  final int method1805(byte var1) {
+    try {
+      int var2 = -74 % ((var1 - 73) / 35);
+      return 8 != (this.aByte1742 & 8) ? 0 : 1;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "sg.C(" + var1 + ')');
     }
   }
 
@@ -59,27 +80,6 @@ final class SomethingPacket116 {
       }
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "sg.D(" + var0 + ')');
-    }
-  }
-
-  final int method1804(boolean var1) {
-    try {
-      if (var1) {
-        anInt1753 = -21;
-      }
-
-      return this.aByte1742 & 7;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "sg.B(" + var1 + ')');
-    }
-  }
-
-  final int method1805(byte var1) {
-    try {
-      int var2 = -74 % ((var1 - 73) / 35);
-      return 8 != (this.aByte1742 & 8) ? 0 : 1;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "sg.C(" + var1 + ')');
     }
   }
 

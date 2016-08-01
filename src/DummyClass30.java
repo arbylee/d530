@@ -1,12 +1,12 @@
 final class DummyClass30 {
 
+  private static GameString aClass94_458 = SpawnedGameObject.createString("Opened title screen");
   static int anInt452;
   static int anInt453 = 0;
   static int viewWidth;
   static int anInt455;
   static int anInt456;
   static boolean[][] adjacentTileOnScreen;
-  private static GameString aClass94_458 = SpawnedGameObject.createString("Opened title screen");
   static GameString aClass94_459 = aClass94_458;
 
 

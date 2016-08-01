@@ -370,32 +370,6 @@ final class Model extends SceneNode {
     this.aShort2876 = var1.aShort2876;
   }
 
-  public static void destroy() {
-    anIntArray2861 = null;
-    anIntArray2875 = null;
-    SINE_TABLE = null;
-    COSINE_TABLE = null;
-  }
-
-  private static final int method2009(int[][] var0, int var1, int var2) {
-    int var3 = var1 >> 7;
-    int var4 = var2 >> 7;
-    if (var3 >= 0 && var4 >= 0 && var3 < var0.length && var4 < var0[0].length) {
-      int var5 = var1 & 127;
-      int var6 = var2 & 127;
-      int var7 = var0[var3][var4] * (128 - var5) + var0[var3 + 1][var4] * var5 >> 7;
-      int var8 = var0[var3][var4 + 1] * (128 - var5) + var0[var3 + 1][var4 + 1] * var5 >> 7;
-      return var7 * (128 - var6) + var8 * var6 >> 7;
-    } else {
-      return 0;
-    }
-  }
-
-  static final Model getModel(FileUnpacker var0, int var1, int var2) {
-    byte[] var3 = var0.getBytes(var1, var2);
-    return var3 == null ? null : new Model(var3);
-  }
-
   final void rotateHalfY() {
     for (int var1 = 0; var1 < this.amountVertices; ++var1) {
       this.vx[var1] = -this.vx[var1];
@@ -490,6 +464,113 @@ final class Model extends SceneNode {
     return this.method2008(this.aShort2879, this.aShort2876, var1, var2, var3);
   }
 
+  final boolean method1865() {
+    return true;
+  }
+
+  final void method1866(SceneNode var1, int var2, int var3, int var4, boolean var5) {
+    Model var6 = (Model) var1;
+    var6.updateDimensions();
+    var6.updateNormals();
+    ++anInt2868;
+    int var7 = 0;
+    int[] var8 = var6.vx;
+    int var9 = var6.amountVertices;
+
+    int var10;
+    for (var10 = 0; var10 < this.amountVertices; ++var10) {
+      VertexNormal var11 = this.vertexNormals[var10];
+      if (var11.c != 0) {
+        int var12 = this.vy[var10] - var3;
+        if (var12 >= var6.minimumY && var12 <= var6.maximumY) {
+          int var13 = this.vx[var10] - var2;
+          if (var13 >= var6.minimumX && var13 <= var6.maximumX) {
+            int var14 = this.vz[var10] - var4;
+            if (var14 >= var6.minimumZ && var14 <= var6.maximumZ) {
+              for (int var15 = 0; var15 < var9; ++var15) {
+                VertexNormal var16 = var6.vertexNormals[var15];
+                if (var13 == var8[var15] && var14 == var6.vz[var15] && var12 == var6.vy[var15]
+                  && var16.c != 0) {
+                  if (this.aClass50Array2883 == null) {
+                    this.aClass50Array2883 = new VertexNormal[this.amountVertices];
+                  }
+
+                  if (var6.aClass50Array2883 == null) {
+                    var6.aClass50Array2883 = new VertexNormal[var9];
+                  }
+
+                  VertexNormal var17 = this.aClass50Array2883[var10];
+                  if (var17 == null) {
+                    var17 = this.aClass50Array2883[var10] = new VertexNormal(var11);
+                  }
+
+                  VertexNormal var18 = var6.aClass50Array2883[var15];
+                  if (var18 == null) {
+                    var18 = var6.aClass50Array2883[var15] = new VertexNormal(var16);
+                  }
+
+                  var17.x += var16.x;
+                  var17.y += var16.y;
+                  var17.z += var16.z;
+                  var17.c += var16.c;
+                  var18.x += var11.x;
+                  var18.y += var11.y;
+                  var18.z += var11.z;
+                  var18.c += var11.c;
+                  ++var7;
+                  anIntArray2861[var10] = anInt2868;
+                  anIntArray2875[var15] = anInt2868;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    if (var7 >= 3 && var5) {
+      for (var10 = 0; var10 < this.amountFaces; ++var10) {
+        if (anIntArray2861[this.v0[var10]] == anInt2868
+          && anIntArray2861[this.v1[var10]] == anInt2868
+          && anIntArray2861[this.v2[var10]] == anInt2868) {
+          if (this.normalTypes == null) {
+            this.normalTypes = new byte[this.amountFaces];
+          }
+
+          this.normalTypes[var10] = 2;
+        }
+      }
+
+      for (var10 = 0; var10 < var6.amountFaces; ++var10) {
+        if (anIntArray2875[var6.v0[var10]] == anInt2868
+          && anIntArray2875[var6.v1[var10]] == anInt2868
+          && anIntArray2875[var6.v2[var10]] == anInt2868) {
+          if (var6.normalTypes == null) {
+            var6.normalTypes = new byte[var6.amountFaces];
+          }
+
+          var6.normalTypes[var10] = 2;
+        }
+      }
+
+    }
+  }
+
+  final void method1867(int var1, int var2, int var3, int var4, int var5) {
+  }
+
+  final void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
+                  long var9, int var11, DummyClass0 var12) {
+  }
+
+  final int getMinimumY() {
+    if (!this.dimensionsUpdated) {
+      this.updateDimensions();
+    }
+
+    return this.minimumY;
+  }
+
   private final int method1995(Model var1, int var2, short var3) {
     int var4 = var1.vx[var2];
     int var5 = var1.vy[var2];
@@ -556,10 +637,6 @@ final class Model extends SceneNode {
     if (ty != 0) {
       this.translate(0, ty, 0);
     }
-  }
-
-  final void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
-                  long var9, int var11, DummyClass0 var12) {
   }
 
   final void updateNormals() {
@@ -832,9 +909,6 @@ final class Model extends SceneNode {
     return new SoftwareModel(this, var1, var2, var3, var4, var5);
   }
 
-  final void method1867(int var1, int var2, int var3, int var4, int var5) {
-  }
-
   final void translate(int vx, int vy, int vz) {
     for (int var4 = 0; var4 < this.amountVertices; var4++) {
       this.vx[var4] += vx;
@@ -858,10 +932,6 @@ final class Model extends SceneNode {
     }
 
     this.invalidate();
-  }
-
-  final boolean method1865() {
-    return true;
   }
 
   private final void parseRt4Config(byte[] var1) {
@@ -1319,107 +1389,11 @@ final class Model extends SceneNode {
     }
   }
 
-  final int getMinimumY() {
-    if (!this.dimensionsUpdated) {
-      this.updateDimensions();
-    }
-
-    return this.minimumY;
-  }
-
   final void method2010() {
     this.anIntArray2860 = null;
     this.anIntArray2847 = null;
     this.boneGroups = null;
     this.skinGroups = null;
-  }
-
-  final void method1866(SceneNode var1, int var2, int var3, int var4, boolean var5) {
-    Model var6 = (Model) var1;
-    var6.updateDimensions();
-    var6.updateNormals();
-    ++anInt2868;
-    int var7 = 0;
-    int[] var8 = var6.vx;
-    int var9 = var6.amountVertices;
-
-    int var10;
-    for (var10 = 0; var10 < this.amountVertices; ++var10) {
-      VertexNormal var11 = this.vertexNormals[var10];
-      if (var11.c != 0) {
-        int var12 = this.vy[var10] - var3;
-        if (var12 >= var6.minimumY && var12 <= var6.maximumY) {
-          int var13 = this.vx[var10] - var2;
-          if (var13 >= var6.minimumX && var13 <= var6.maximumX) {
-            int var14 = this.vz[var10] - var4;
-            if (var14 >= var6.minimumZ && var14 <= var6.maximumZ) {
-              for (int var15 = 0; var15 < var9; ++var15) {
-                VertexNormal var16 = var6.vertexNormals[var15];
-                if (var13 == var8[var15] && var14 == var6.vz[var15] && var12 == var6.vy[var15]
-                  && var16.c != 0) {
-                  if (this.aClass50Array2883 == null) {
-                    this.aClass50Array2883 = new VertexNormal[this.amountVertices];
-                  }
-
-                  if (var6.aClass50Array2883 == null) {
-                    var6.aClass50Array2883 = new VertexNormal[var9];
-                  }
-
-                  VertexNormal var17 = this.aClass50Array2883[var10];
-                  if (var17 == null) {
-                    var17 = this.aClass50Array2883[var10] = new VertexNormal(var11);
-                  }
-
-                  VertexNormal var18 = var6.aClass50Array2883[var15];
-                  if (var18 == null) {
-                    var18 = var6.aClass50Array2883[var15] = new VertexNormal(var16);
-                  }
-
-                  var17.x += var16.x;
-                  var17.y += var16.y;
-                  var17.z += var16.z;
-                  var17.c += var16.c;
-                  var18.x += var11.x;
-                  var18.y += var11.y;
-                  var18.z += var11.z;
-                  var18.c += var11.c;
-                  ++var7;
-                  anIntArray2861[var10] = anInt2868;
-                  anIntArray2875[var15] = anInt2868;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    if (var7 >= 3 && var5) {
-      for (var10 = 0; var10 < this.amountFaces; ++var10) {
-        if (anIntArray2861[this.v0[var10]] == anInt2868
-          && anIntArray2861[this.v1[var10]] == anInt2868
-          && anIntArray2861[this.v2[var10]] == anInt2868) {
-          if (this.normalTypes == null) {
-            this.normalTypes = new byte[this.amountFaces];
-          }
-
-          this.normalTypes[var10] = 2;
-        }
-      }
-
-      for (var10 = 0; var10 < var6.amountFaces; ++var10) {
-        if (anIntArray2875[var6.v0[var10]] == anInt2868
-          && anIntArray2875[var6.v1[var10]] == anInt2868
-          && anIntArray2875[var6.v2[var10]] == anInt2868) {
-          if (var6.normalTypes == null) {
-            var6.normalTypes = new byte[var6.amountFaces];
-          }
-
-          var6.normalTypes[var10] = 2;
-        }
-      }
-
-    }
   }
 
   final void method2011(int var1) {
@@ -1459,9 +1433,7 @@ final class Model extends SceneNode {
         var1[var3] = 0;
       }
 
-      for (
-        var3 = 0;
-        var3 < this.amountVertices; this.boneGroups[var4][var1[var4]++] = var3++) {
+      for (var3 = 0; var3 < this.amountVertices; this.boneGroups[var4][var1[var4]++] = var3++) {
         var4 = this.anIntArray2860[var3];
       }
 
@@ -1487,8 +1459,7 @@ final class Model extends SceneNode {
         var1[var3] = 0;
       }
 
-      for (
-        var3 = 0; var3 < this.amountFaces; this.skinGroups[var4][var1[var4]++] = var3++) {
+      for (var3 = 0; var3 < this.amountFaces; this.skinGroups[var4][var1[var4]++] = var3++) {
         var4 = this.anIntArray2847[var3];
       }
 
@@ -1845,6 +1816,32 @@ final class Model extends SceneNode {
     }
 
     this.invalidate();
+  }
+
+  public static void destroy() {
+    anIntArray2861 = null;
+    anIntArray2875 = null;
+    SINE_TABLE = null;
+    COSINE_TABLE = null;
+  }
+
+  private static final int method2009(int[][] var0, int var1, int var2) {
+    int var3 = var1 >> 7;
+    int var4 = var2 >> 7;
+    if (var3 >= 0 && var4 >= 0 && var3 < var0.length && var4 < var0[0].length) {
+      int var5 = var1 & 127;
+      int var6 = var2 & 127;
+      int var7 = var0[var3][var4] * (128 - var5) + var0[var3 + 1][var4] * var5 >> 7;
+      int var8 = var0[var3][var4 + 1] * (128 - var5) + var0[var3 + 1][var4 + 1] * var5 >> 7;
+      return var7 * (128 - var6) + var8 * var6 >> 7;
+    } else {
+      return 0;
+    }
+  }
+
+  static final Model getModel(FileUnpacker var0, int var1, int var2) {
+    byte[] var3 = var0.getBytes(var1, var2);
+    return var3 == null ? null : new Model(var3);
   }
 
 }

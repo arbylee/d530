@@ -19,8 +19,8 @@ final class ClanChatUser extends Node {
         var0.method787((byte) 66), var0.method787((byte) 68), var0.readUnsignedMedium((byte) 86),
         var0.readUnsignedMedium((byte) 86), var0.readUnsignedByte());
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "kl.C(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "kl.C(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 

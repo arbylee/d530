@@ -273,9 +273,8 @@ final class DummyClass37 {
         var6 = ((125 & var5) >> 4) + DummyClass45.spawnSceneX;
         var7 = (7 & var5) + DummyClass56.spawnSceneY;
         if (0 <= var6 && var7 >= 0 && ~var6 > -105 && 104 > var7) {
-          Queue
-            .method881(GameWorldSomething.currentPlane, var7, -101, var3, var6, -1, -1, var4, var2,
-              0);
+          Queue.method881(GameWorldSomething.currentPlane, var7, -101, var3, var6, -1, -1, var4,
+            var2, 0);
         }
 
       } else if (~GameString.packetId == -34) {
@@ -292,8 +291,8 @@ final class DummyClass37 {
             TextureSampler0.groundItems[GameWorldSomething.currentPlane][var3][var4] = new Deque();
           }
 
-          TextureSampler0.groundItems[GameWorldSomething.currentPlane][var3][var4]
-            .addLast(new GroundItemNode(var31));
+          TextureSampler0.groundItems[GameWorldSomething.currentPlane][var3][var4].addLast(
+            new GroundItemNode(var31));
           DummyHashTable.method1760(var4, (byte) 65, var3);
         }
 
@@ -386,9 +385,8 @@ final class DummyClass37 {
             var13 = SpotAnimationConfig.gameBuffer.readUnsignedShort();
             var14 = SpotAnimationConfig.gameBuffer.method788(-1741292848);
             if (!GlRenderer.useOpenGlRenderer) {
-              TextureSampler39
-                .method280(var12, var13, var14, var11, var6, var9, var3, var25, var5, var2,
-                  -745213428, var30, var10);
+              TextureSampler39.method280(var12, var13, var14, var11, var6, var9, var3, var25, var5,
+                var2, -745213428, var30, var10);
             }
           }
 
@@ -434,8 +432,8 @@ final class DummyClass37 {
                   new Deque();
               }
 
-              TextureSampler0.groundItems[GameWorldSomething.currentPlane][var3][var4]
-                .addLast(new GroundItemNode(var27));
+              TextureSampler0.groundItems[GameWorldSomething.currentPlane][var3][var4].addLast(
+                new GroundItemNode(var27));
               DummyHashTable.method1760(var4, (byte) 65, var3);
             }
 
@@ -506,10 +504,9 @@ final class DummyClass37 {
 
                   Projectile var37 =
                     new Projectile(var8, GameWorldSomething.currentPlane, var2, var3,
-                      -var28 + BufferData
-                        .method1736(GameWorldSomething.currentPlane, 1, var2, var3),
-                      var11 + AbstractGameWorld.updateCycle, var35 + AbstractGameWorld.updateCycle,
-                      var13, var14, var7, var10);
+                      -var28 + BufferData.method1736(GameWorldSomething.currentPlane, 1, var2,
+                        var3), var11 + AbstractGameWorld.updateCycle,
+                      var35 + AbstractGameWorld.updateCycle, var13, var14, var7, var10);
                   var37.method2024(var5, 1, var11 + AbstractGameWorld.updateCycle,
                     -var10 + BufferData.method1736(GameWorldSomething.currentPlane, 1, var4, var5),
                     var4);
@@ -623,8 +620,8 @@ final class DummyClass37 {
             var8 = -1;
           }
 
-          VertexNormal
-            .method1131(GameWorldSomething.currentPlane, 125, var6, var5, var3, var7, var2, var8);
+          VertexNormal.method1131(GameWorldSomething.currentPlane, 125, var6, var5, var3, var7,
+            var2, var8);
         }
       }
     } catch (RuntimeException var23) {
@@ -657,8 +654,8 @@ final class DummyClass37 {
       ObjectCache.anInt1325 = var1.getFileId(FloorOverlay.aClass94_2089);
       IntegerNode.anInt2471 = var1.getFileId(EnumStringFetcher.aClass94_2164);
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "g.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "g.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

@@ -31,6 +31,24 @@ abstract class AbstractImageProducer {
   int anInt2011;
   int anInt2012;
 
+  abstract void draw(int var1, int var2, Graphics var3, int var4);
+
+  final void method2182(int var1) {
+    try {
+      DummyClass47.method1319(this.anIntArray2007, this.anInt2012, this.anInt2011);
+      if (var1 != 0) {
+        anInt2015 = -118;
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "vk.G(" + var1 + ')');
+    }
+  }
+
+  abstract void draw(Graphics var5, int var1, int var2, int var4, int var6, int var3);
+
+  abstract void setDimensions(int var1, boolean var2, int var3, Component var4);
+
   static final void method2180(FileUnpacker var0, FileUnpacker var1, int var2) {
     try {
       if (var2 != 11504) {
@@ -132,23 +150,5 @@ abstract class AbstractImageProducer {
     }
 
   }
-
-  abstract void draw(int var1, int var2, Graphics var3, int var4);
-
-  final void method2182(int var1) {
-    try {
-      DummyClass47.method1319(this.anIntArray2007, this.anInt2012, this.anInt2011);
-      if (var1 != 0) {
-        anInt2015 = -118;
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "vk.G(" + var1 + ')');
-    }
-  }
-
-  abstract void draw(Graphics var5, int var1, int var2, int var4, int var6, int var3);
-
-  abstract void setDimensions(int var1, boolean var2, int var3, Component var4);
 
 }

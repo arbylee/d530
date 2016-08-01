@@ -1,5 +1,11 @@
 final class DummyClass40 {
 
+  private static int[] anIntArray836 = new int[1024];
+  private static int[] anIntArray839 = new int[512];
+  private static boolean aBoolean842 = false;
+  private static int anInt844;
+  private static boolean aBoolean845 = false;
+  private static float brightness = 1.0F;
   static int[] hslTable = new int[65536];
   static int anInt835;
   static boolean aBoolean837 = false;
@@ -12,12 +18,6 @@ final class DummyClass40 {
   static boolean aBoolean849 = false;
   static int anInt850 = 0;
   static int[] COSINE_TABLE = new int[2048];
-  private static int[] anIntArray836 = new int[1024];
-  private static int[] anIntArray839 = new int[512];
-  private static boolean aBoolean842 = false;
-  private static int anInt844;
-  private static boolean aBoolean845 = false;
-  private static float brightness = 1.0F;
 
   static {
     int var0;

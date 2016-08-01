@@ -1,11 +1,12 @@
 final class AnimationFrame extends Node {
 
+  private static GameString aClass94_2465 = SpawnedGameObject.createString("");
   static int anInt2456;
   static float aFloat2457;
   static GameString aClass94_2458 = SpawnedGameObject.createString("Module texte charg-B");
   static int anInt2459;
-  static GameString aClass94_2461 = SpawnedGameObject.createString("3D)2Softwarebibliothek gestartet)3");
-  private static GameString aClass94_2465 = SpawnedGameObject.createString("");
+  static GameString aClass94_2461 =
+    SpawnedGameObject.createString("3D)2Softwarebibliothek gestartet)3");
   static GameString loadingText = aClass94_2465;
   int anInt2454;
   int[] anIntArray2455;

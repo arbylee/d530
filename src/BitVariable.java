@@ -2,7 +2,8 @@ import java.awt.event.KeyEvent;
 
 final class BitVariable {
 
-  static GameString aClass94_1122 = SpawnedGameObject.createString("M-Bmoire en cours d(Wattribution");
+  static GameString aClass94_1122 =
+    SpawnedGameObject.createString("M-Bmoire en cours d(Wattribution");
   static int logoFileId = -1;
   static int anInt1126;
   static int anInt1127 = 0;
@@ -11,6 +12,37 @@ final class BitVariable {
   int low;
   int high;
   int id;
+
+  final void method1387(Buffer var1, int var2) {
+    try {
+      while (true) {
+        int var3 = var1.readUnsignedByte();
+        if (var3 == 0) {
+          var3 = -26 % ((-36 - var2) / 58);
+          return;
+        }
+
+        this.method1389(var1, 1, var3);
+      }
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "kk.G(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+    }
+  }
+
+  private final void method1389(Buffer var1, int var2, int var3) {
+    try {
+      if (var2 == var3) {
+        this.id = var1.readUnsignedShort();
+        this.low = var1.readUnsignedByte();
+        this.high = var1.readUnsignedByte();
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "kk.B(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
+    }
+  }
 
   static final void method1385(int var0, int var1, byte var2) {
     try {
@@ -22,8 +54,8 @@ final class BitVariable {
 
       var3.anInt3598 = var0;
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "kk.E(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "kk.E(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -42,8 +74,8 @@ final class BitVariable {
         return var2;
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "kk.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "kk.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -202,8 +234,8 @@ final class BitVariable {
         }
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "kk.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "kk.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -214,37 +246,6 @@ final class BitVariable {
         true;
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "kk.A(" + var0 + ')');
-    }
-  }
-
-  final void method1387(Buffer var1, int var2) {
-    try {
-      while (true) {
-        int var3 = var1.readUnsignedByte();
-        if (var3 == 0) {
-          var3 = -26 % ((-36 - var2) / 58);
-          return;
-        }
-
-        this.method1389(var1, 1, var3);
-      }
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "kk.G(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
-    }
-  }
-
-  private final void method1389(Buffer var1, int var2, int var3) {
-    try {
-      if (var2 == var3) {
-        this.id = var1.readUnsignedShort();
-        this.low = var1.readUnsignedByte();
-        this.high = var1.readUnsignedByte();
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "kk.B(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
     }
   }
 

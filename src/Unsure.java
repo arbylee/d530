@@ -1,10 +1,10 @@
 final class Unsure {
 
+  private static GameString aClass94_1899 = SpawnedGameObject.createString("Loading textures )2 ");
   static GameString aClass94_1889 = SpawnedGameObject.createString("blinken2:");
   static SomethingLight0[] aClass113Array1895;
   static int anInt1896;
   static int screenUpperX;
-  private static GameString aClass94_1899 = SpawnedGameObject.createString("Loading textures )2 ");
   static GameString aClass94_1892 = aClass94_1899;
   int anInt1890;
   int anInt1891;
@@ -214,12 +214,11 @@ final class Unsure {
                     TextureSampler13.cameraZ, var5, var3, var4);
                 }
 
-                var25.sceneNode
-                  .draw(var25.anInt496, DummyClass44.pitchSine, LinearHashTable.pitchCosine,
-                    TextureSampler25.yawSine, TextureSampler20.yawCosine,
-                    var25.anInt482 - MilliFrameRegulator.cameraPosX,
-                    var25.anInt489 - ClientScriptEnum.cameraY,
-                    var25.anInt484 - TextureSampler13.cameraZ, var25.aLong498, var5, null);
+                var25.sceneNode.draw(var25.anInt496, DummyClass44.pitchSine,
+                  LinearHashTable.pitchCosine, TextureSampler25.yawSine, TextureSampler20.yawCosine,
+                  var25.anInt482 - MilliFrameRegulator.cameraPosX,
+                  var25.anInt489 - ClientScriptEnum.cameraY,
+                  var25.anInt484 - TextureSampler13.cameraZ, var25.aLong498, var5, null);
               }
             }
 
@@ -246,13 +245,13 @@ final class Unsure {
           } else if (var2.aClass35_2226 != null) {
             if (!FileSystem.method846(var6, var3, var4)) {
               var22 = true;
-              SomethingWorldMappy
-                .method395(var2.aClass35_2226, DummyClass44.pitchSine, LinearHashTable.pitchCosine,
-                  TextureSampler25.yawSine, TextureSampler20.yawCosine, var3, var4, false);
+              SomethingWorldMappy.method395(var2.aClass35_2226, DummyClass44.pitchSine,
+                LinearHashTable.pitchCosine, TextureSampler25.yawSine, TextureSampler20.yawCosine,
+                var3, var4, false);
             } else {
-              SomethingWorldMappy
-                .method395(var2.aClass35_2226, DummyClass44.pitchSine, LinearHashTable.pitchCosine,
-                  TextureSampler25.yawSine, TextureSampler20.yawCosine, var3, var4, true);
+              SomethingWorldMappy.method395(var2.aClass35_2226, DummyClass44.pitchSine,
+                LinearHashTable.pitchCosine, TextureSampler25.yawSine, TextureSampler20.yawCosine,
+                var3, var4, true);
             }
           }
 
@@ -323,8 +322,8 @@ final class Unsure {
               var2.anInt2227 = 0;
             }
 
-            if ((var26.anInt1055 & var11) != 0 && !Something3d
-              .method2239(var6, var3, var4, var26.anInt1055)) {
+            if ((var26.anInt1055 & var11) != 0 && !Something3d.method2239(var6, var3, var4,
+              var26.anInt1055)) {
               if (GlRenderer.useOpenGlRenderer) {
                 DummyClass46.method1268(MilliFrameRegulator.cameraPosX, ClientScriptEnum.cameraY,
                   TextureSampler13.cameraZ, var5, var3, var4);
@@ -337,8 +336,8 @@ final class Unsure {
                 var26.positionZ - TextureSampler13.cameraZ, var26.key, var5, null);
             }
 
-            if ((var26.anInt1059 & var11) != 0 && !Something3d
-              .method2239(var6, var3, var4, var26.anInt1059)) {
+            if ((var26.anInt1059 & var11) != 0 && !Something3d.method2239(var6, var3, var4,
+              var26.anInt1059)) {
               if (GlRenderer.useOpenGlRenderer) {
                 DummyClass46.method1268(MilliFrameRegulator.cameraPosX, ClientScriptEnum.cameraY,
                   TextureSampler13.cameraZ, var5, var3, var4);
@@ -352,8 +351,8 @@ final class Unsure {
             }
           }
 
-          if (var13 != null && !SomethingIndex150
-            .method2256(var6, var3, var4, var13.aClass140_429.getMinimumY())) {
+          if (var13 != null && !SomethingIndex150.method2256(var6, var3, var4,
+            var13.aClass140_429.getMinimumY())) {
             if (GlRenderer.useOpenGlRenderer) {
               GlRenderer.method1832(var8 - 0.5F);
             }
@@ -527,9 +526,9 @@ final class Unsure {
                       var11 -= 64;
                       var12 += 64;
                       if (var12 < var11 && var3 > 0 && var4 < TextureSampler17.sceneHeight - 1) {
-                        DummyClass46
-                          .method1268(MilliFrameRegulator.cameraPosX, ClientScriptEnum.cameraY,
-                            TextureSampler13.cameraZ, var5, var3 - 1, var4 + 1);
+                        DummyClass46.method1268(MilliFrameRegulator.cameraPosX,
+                          ClientScriptEnum.cameraY, TextureSampler13.cameraZ, var5, var3 - 1,
+                          var4 + 1);
                         break label736;
                       }
                     } else if (var27 == 1) {
@@ -537,27 +536,27 @@ final class Unsure {
                       var12 += 64;
                       if (var12 < -var11 && var3 < SocketStream.sceneWidth - 1
                         && var4 < TextureSampler17.sceneHeight - 1) {
-                        DummyClass46
-                          .method1268(MilliFrameRegulator.cameraPosX, ClientScriptEnum.cameraY,
-                            TextureSampler13.cameraZ, var5, var3 + 1, var4 + 1);
+                        DummyClass46.method1268(MilliFrameRegulator.cameraPosX,
+                          ClientScriptEnum.cameraY, TextureSampler13.cameraZ, var5, var3 + 1,
+                          var4 + 1);
                         break label736;
                       }
                     } else if (var27 == 2) {
                       var11 += 64;
                       var12 -= 64;
                       if (var12 > var11 && var3 < SocketStream.sceneWidth - 1 && var4 > 0) {
-                        DummyClass46
-                          .method1268(MilliFrameRegulator.cameraPosX, ClientScriptEnum.cameraY,
-                            TextureSampler13.cameraZ, var5, var3 + 1, var4 - 1);
+                        DummyClass46.method1268(MilliFrameRegulator.cameraPosX,
+                          ClientScriptEnum.cameraY, TextureSampler13.cameraZ, var5, var3 + 1,
+                          var4 - 1);
                         break label736;
                       }
                     } else if (var27 == 3) {
                       var11 -= 64;
                       var12 -= 64;
                       if (var12 > -var11 && var3 > 0 && var4 > 0) {
-                        DummyClass46
-                          .method1268(MilliFrameRegulator.cameraPosX, ClientScriptEnum.cameraY,
-                            TextureSampler13.cameraZ, var5, var3 - 1, var4 - 1);
+                        DummyClass46.method1268(MilliFrameRegulator.cameraPosX,
+                          ClientScriptEnum.cameraY, TextureSampler13.cameraZ, var5, var3 - 1,
+                          var4 - 1);
                         break label736;
                       }
                     }
@@ -670,14 +669,12 @@ final class Unsure {
 
               SceneSomething var32 = FileCacheRequest.aClass25Array4060[var12];
               var32.anInt490 = SomethingQuickChat2.anInt3539;
-              if (!TextureSampler1
-                .method222(var6, var32.anInt483, var32.anInt495, var32.anInt478, var32.anInt481,
-                  var32.sceneNode.getMinimumY())) {
+              if (!TextureSampler1.method222(var6, var32.anInt483, var32.anInt495, var32.anInt478,
+                var32.anInt481, var32.sceneNode.getMinimumY())) {
                 if (GlRenderer.useOpenGlRenderer) {
                   if ((var32.aLong498 & 1032192L) == 147456L) {
-                    DummyClass46
-                      .method1268(MilliFrameRegulator.cameraPosX, ClientScriptEnum.cameraY,
-                        TextureSampler13.cameraZ, var5, var3, var4);
+                    DummyClass46.method1268(MilliFrameRegulator.cameraPosX,
+                      ClientScriptEnum.cameraY, TextureSampler13.cameraZ, var5, var3, var4);
                     var14 = var32.anInt482 - MilliFrameRegulator.cameraPosX;
                     var15 = var32.anInt484 - TextureSampler13.cameraZ;
                     var16 = (int) (var32.aLong498 >> 20 & 3L);
@@ -693,19 +690,17 @@ final class Unsure {
                       DummyClass46.method1272(var5, var3, var4 + 1, var3 + 1, var4);
                     }
                   } else {
-                    DummyClass46
-                      .method1266(MilliFrameRegulator.cameraPosX, ClientScriptEnum.cameraY,
-                        TextureSampler13.cameraZ, var5, var32.anInt483, var32.anInt478,
-                        var32.anInt495, var32.anInt481);
+                    DummyClass46.method1266(MilliFrameRegulator.cameraPosX,
+                      ClientScriptEnum.cameraY, TextureSampler13.cameraZ, var5, var32.anInt483,
+                      var32.anInt478, var32.anInt495, var32.anInt481);
                   }
                 }
 
-                var32.sceneNode
-                  .draw(var32.anInt496, DummyClass44.pitchSine, LinearHashTable.pitchCosine,
-                    TextureSampler25.yawSine, TextureSampler20.yawCosine,
-                    var32.anInt482 - MilliFrameRegulator.cameraPosX,
-                    var32.anInt489 - ClientScriptEnum.cameraY,
-                    var32.anInt484 - TextureSampler13.cameraZ, var32.aLong498, var5, null);
+                var32.sceneNode.draw(var32.anInt496, DummyClass44.pitchSine,
+                  LinearHashTable.pitchCosine, TextureSampler25.yawSine, TextureSampler20.yawCosine,
+                  var32.anInt482 - MilliFrameRegulator.cameraPosX,
+                  var32.anInt489 - ClientScriptEnum.cameraY,
+                  var32.anInt484 - TextureSampler13.cameraZ, var32.aLong498, var5, null);
               }
 
               for (var14 = var32.anInt483; var14 <= var32.anInt495; ++var14) {
@@ -793,8 +788,8 @@ final class Unsure {
 
           if (var2.anInt2241 != 0) {
             SomethingSceneI var36 = var2.aClass19_2233;
-            if (var36 != null && !SomethingIndex150
-              .method2256(var6, var3, var4, var36.aClass140_429.getMinimumY())) {
+            if (var36 != null && !SomethingIndex150.method2256(var6, var3, var4,
+              var36.aClass140_429.getMinimumY())) {
               if ((var36.anInt432 & var2.anInt2241) != 0) {
                 if (GlRenderer.useOpenGlRenderer) {
                   DummyClass46.method1268(MilliFrameRegulator.cameraPosX, ClientScriptEnum.cameraY,
@@ -826,9 +821,8 @@ final class Unsure {
 
                 if (var16 >= var15) {
                   if (GlRenderer.useOpenGlRenderer) {
-                    DummyClass46
-                      .method1268(MilliFrameRegulator.cameraPosX, ClientScriptEnum.cameraY,
-                        TextureSampler13.cameraZ, var5, var3, var4);
+                    DummyClass46.method1268(MilliFrameRegulator.cameraPosX,
+                      ClientScriptEnum.cameraY, TextureSampler13.cameraZ, var5, var3, var4);
                   }
 
                   var36.aClass140_429.draw(0, DummyClass44.pitchSine, LinearHashTable.pitchCosine,
@@ -836,9 +830,8 @@ final class Unsure {
                     var12, var27 + var36.anInt426, var36.aLong428, var5, null);
                 } else if (var36.aClass140_423 != null) {
                   if (GlRenderer.useOpenGlRenderer) {
-                    DummyClass46
-                      .method1268(MilliFrameRegulator.cameraPosX, ClientScriptEnum.cameraY,
-                        TextureSampler13.cameraZ, var5, var3, var4);
+                    DummyClass46.method1268(MilliFrameRegulator.cameraPosX,
+                      ClientScriptEnum.cameraY, TextureSampler13.cameraZ, var5, var3, var4);
                   }
 
                   var36.aClass140_423.draw(0, DummyClass44.pitchSine, LinearHashTable.pitchCosine,
@@ -850,8 +843,8 @@ final class Unsure {
 
             SceneSomething2 var31 = var2.aClass70_2234;
             if (var31 != null) {
-              if ((var31.anInt1059 & var2.anInt2241) != 0 && !Something3d
-                .method2239(var6, var3, var4, var31.anInt1059)) {
+              if ((var31.anInt1059 & var2.anInt2241) != 0 && !Something3d.method2239(var6, var3,
+                var4, var31.anInt1059)) {
                 if (GlRenderer.useOpenGlRenderer) {
                   DummyClass46.method1263(var31.anInt1059, MilliFrameRegulator.cameraPosX,
                     ClientScriptEnum.cameraY, TextureSampler13.cameraZ, var6, var3, var4);
@@ -864,8 +857,8 @@ final class Unsure {
                   var31.positionZ - TextureSampler13.cameraZ, var31.key, var5, null);
               }
 
-              if ((var31.anInt1055 & var2.anInt2241) != 0 && !Something3d
-                .method2239(var6, var3, var4, var31.anInt1055)) {
+              if ((var31.anInt1055 & var2.anInt2241) != 0 && !Something3d.method2239(var6, var3,
+                var4, var31.anInt1055)) {
                 if (GlRenderer.useOpenGlRenderer) {
                   DummyClass46.method1263(var31.anInt1055, MilliFrameRegulator.cameraPosX,
                     ClientScriptEnum.cameraY, TextureSampler13.cameraZ, var6, var3, var4);

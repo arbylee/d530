@@ -64,8 +64,8 @@ final class DummyClass28 {
         DummyClass52.method1424(var1, (byte) -12, 0, SomethingVolume15.anInt2436);
       TextureSampler0.aClass109Array3270 =
         DummyClass52.method1424(var1, (byte) -12, 0, GlTexture2d.anInt3757);
-      AbstractTextureSampler.aClass3_Sub28_Sub17_2379
-        .method697(TextureSampler0.aClass109Array3270, null);
+      AbstractTextureSampler.aClass3_Sub28_Sub17_2379.method697(TextureSampler0.aClass109Array3270,
+        null);
       SomethingTilek.p12Font.method697(TextureSampler0.aClass109Array3270, null);
       FloorOverlay.aClass3_Sub28_Sub17_2096.method697(TextureSampler0.aClass109Array3270, null);
       if (GlRenderer.useOpenGlRenderer) {
@@ -110,8 +110,8 @@ final class DummyClass28 {
 
       int var8;
       for (var8 = 0; var8 < TextureCache.aClass3_Sub28_Sub16_Sub2Array2140.length; ++var8) {
-        TextureCache.aClass3_Sub28_Sub16_Sub2Array2140[var8]
-          .method669(var4 + var7, var7 + var5, var7 + var6);
+        TextureCache.aClass3_Sub28_Sub16_Sub2Array2140[var8].method669(var4 + var7, var7 + var5,
+          var7 + var6);
       }
 
       if (!GlRenderer.useOpenGlRenderer) {
@@ -127,8 +127,8 @@ final class DummyClass28 {
       }
 
     } catch (RuntimeException var9) {
-      throw AbstractGameWorld
-        .cascadeException(var9, "cg.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var9,
+        "cg.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

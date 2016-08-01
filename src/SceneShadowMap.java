@@ -1,5 +1,6 @@
 final class SceneShadowMap {
 
+  private static GameString aClass94_1775 = SpawnedGameObject.createString("Connection lost)3");
   static int anInt1771;
   static ObjectCache aClass93_1772 = new ObjectCache(64);
   static byte[][][] aByteArrayArrayArray1774;
@@ -7,7 +8,6 @@ final class SceneShadowMap {
   static SignLinkRequest aClass64_1778;
   static short[] aShortArray1779 = new short[256];
   static int anInt1780;
-  private static GameString aClass94_1775 = SpawnedGameObject.createString("Connection lost)3");
   static GameString CONNECTION_LOST = aClass94_1775;
   SoftwareIndexedColorSprite shadow;
   SceneNode node;
@@ -61,8 +61,8 @@ final class SceneShadowMap {
                         var30.anInt2532 = var14.anInt1482;
                         DummyClass55.aClass61_1424.addLast(var30);
                       } else {
-                        SceneNode.aClass3_Sub28_Sub16_Sub2Array1839[var14.anInt1482]
-                          .method643(var18 + -7, -7 + var24);
+                        SceneNode.aClass3_Sub28_Sub16_Sub2Array1839[var14.anInt1482].method643(
+                          var18 + -7, -7 + var24);
                       }
                     }
                   }
@@ -74,14 +74,15 @@ final class SceneShadowMap {
       }
 
       if (var7 >= 124) {
-        for (SomethingOtherWorldMap var32 = (SomethingOtherWorldMap) DummyClass55.aClass61_1424.getFirst();
+        for (SomethingOtherWorldMap var32 =
+             (SomethingOtherWorldMap) DummyClass55.aClass61_1424.getFirst();
              null != var32; var32 = (SomethingOtherWorldMap) DummyClass55.aClass61_1424.getNext()) {
           DummyClass47.method1330(var32.anInt2531, var32.anInt2539, 15, 16776960, var13);
           DummyClass47.method1330(var32.anInt2531, var32.anInt2539, 13, 16776960, var13);
           DummyClass47.method1330(var32.anInt2531, var32.anInt2539, 11, 16776960, var13);
           DummyClass47.method1330(var32.anInt2531, var32.anInt2539, 9, 16776960, var13);
-          SceneNode.aClass3_Sub28_Sub16_Sub2Array1839[var32.anInt2532]
-            .method643(-7 + var32.anInt2531, -7 + var32.anInt2539);
+          SceneNode.aClass3_Sub28_Sub16_Sub2Array1839[var32.anInt2532].method643(
+            -7 + var32.anInt2531, -7 + var32.anInt2539);
         }
 
         DummyClass55.aClass61_1424.clear(-76);

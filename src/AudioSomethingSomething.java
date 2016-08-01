@@ -2,15 +2,16 @@ import javax.media.opengl.GL;
 
 final class AudioSomethingSomething extends Node {
 
+  private static GameString aClass94_2525 = SpawnedGameObject.createString("rating: ");
   static GameString aClass94_2499 = SpawnedGameObject.createString("Okay");
   static int anInt2500;
   static GZipDecompressor aClass49_2505 = new GZipDecompressor();
   static GameString aClass94_2518 = SpawnedGameObject.createString("Poser");
   static byte[][] landscapesData;
-  static GameString aClass94_2524 = SpawnedGameObject.createString("Starte 3D)2Softwarebibliothek)3");
+  static GameString aClass94_2524 =
+    SpawnedGameObject.createString("Starte 3D)2Softwarebibliothek)3");
   static FileUnpacker fileUnpacker22;
   static int anInt2529;
-  private static GameString aClass94_2525 = SpawnedGameObject.createString("rating: ");
   static GameString aClass94_2526 = aClass94_2525;
   int anInt2501;
   int anInt2502;
@@ -33,6 +34,21 @@ final class AudioSomethingSomething extends Node {
   int anInt2522;
   int anInt2523;
   SomethingVolume15 aClass3_Sub15_2527;
+
+  final void method401(int var1) {
+    try {
+      this.aClass166_2504 = null;
+      this.aClass3_Sub12_Sub1_2509 = null;
+      this.aClass3_Sub24_Sub1_2507 = null;
+      this.aClass3_Sub15_2527 = null;
+      if (var1 != 221) {
+        aClass94_2518 = null;
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "mf.A(" + var1 + ')');
+    }
+  }
 
   static final void drawScene(int cameraX, int cameraY, int cameraZ, int pitch, int yaw,
                               byte[][][] var5, int[] var6, int[] var7, int[] var8, int[] var9,
@@ -266,23 +282,8 @@ final class AudioSomethingSomething extends Node {
           var1.method787((byte) 81), var1.method787((byte) 95), var1.readUnsignedMedium((byte) 124),
           var1.readUnsignedMedium((byte) 120), var1.readUnsignedByte());
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "mf.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  final void method401(int var1) {
-    try {
-      this.aClass166_2504 = null;
-      this.aClass3_Sub12_Sub1_2509 = null;
-      this.aClass3_Sub24_Sub1_2507 = null;
-      this.aClass3_Sub15_2527 = null;
-      if (var1 != 221) {
-        aClass94_2518 = null;
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "mf.A(" + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "mf.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

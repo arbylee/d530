@@ -26,8 +26,8 @@ final class DummyClass13 {
     try {
       if (Structure.aBoolean3641) {
         try {
-          return !((Boolean) TextureSampler23.aClass94_3209
-            .method1577(var0 + -2112, DummyClass35.signLink.applet)).booleanValue();
+          return !((Boolean) TextureSampler23.aClass94_3209.method1577(var0 + -2112,
+            DummyClass35.signLink.applet)).booleanValue();
         } catch (Throwable var2) {
         }
       }
@@ -95,9 +95,9 @@ final class DummyClass13 {
 
       for (var6 = var2 - var0; var2 > var6; ++var6) {
         AnimationSomething.anIntArray3592[var6] =
-          (int) (Math.sin((double) DummyClass3.anInt57 / 14.0D) * 16.0D + 14.0D * Math
-            .sin((double) DummyClass3.anInt57 / 15.0D) + 12.0D * Math
-            .sin((double) DummyClass3.anInt57 / 16.0D));
+          (int) (Math.sin((double) DummyClass3.anInt57 / 14.0D) * 16.0D + 14.0D * Math.sin(
+            (double) DummyClass3.anInt57 / 15.0D) + 12.0D * Math.sin(
+            (double) DummyClass3.anInt57 / 16.0D));
         ++DummyClass3.anInt57;
       }
 

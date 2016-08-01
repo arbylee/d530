@@ -2,13 +2,13 @@ import javax.media.opengl.GL;
 
 final class MaterialShader5 implements MaterialShader {
 
+  private static GameString aClass94_2175 = SpawnedGameObject.createString(")4a=");
   static boolean[] aBooleanArray2169 = new boolean[5];
   static GameString aClass94_2170 = SpawnedGameObject.createString("Fertigkeit: ");
   static GameString aClass94_2171 = SpawnedGameObject.createString("");
   static FileUnpacker aClass153_2172;
   static GameString aClass94_2176 =
     SpawnedGameObject.createString("(U0a )2 non)2existant gosub script)2num: ");
-  private static GameString aClass94_2175 = SpawnedGameObject.createString(")4a=");
   private int anInt2173;
   private float[] aFloatArray2174 = new float[4];
 
@@ -18,6 +18,123 @@ final class MaterialShader5 implements MaterialShader {
       this.method1631(2);
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "ob.<init>()");
+    }
+  }
+
+  public final void disable() {
+    try {
+      GL var1 = GlRenderer.gl;
+      var1.glCallList(1 + this.anInt2173);
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "ob.A()");
+    }
+  }
+
+  public final void enable() {
+    try {
+      GL var1 = GlRenderer.gl;
+      var1.glCallList(this.anInt2173);
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "ob.D()");
+    }
+  }
+
+  public final void set(int var1) {
+    try {
+      GL var2 = GlRenderer.gl;
+      float var4 = (float) (1 + (var1 >> 3 & 3)) * 0.01F;
+      float var3 = -0.01F * (float) (1 + (var1 & 3));
+      float var5 = 0 == (var1 & 64) ? 4.8828125E-4F : 9.765625E-4F;
+      boolean var6 = -1 != ~(128 & var1);
+      if (var6) {
+        this.aFloatArray2174[0] = var5;
+        this.aFloatArray2174[1] = 0.0F;
+        this.aFloatArray2174[2] = 0.0F;
+        this.aFloatArray2174[3] = 0.0F;
+      } else {
+        this.aFloatArray2174[2] = var5;
+        this.aFloatArray2174[1] = 0.0F;
+        this.aFloatArray2174[3] = 0.0F;
+        this.aFloatArray2174[0] = 0.0F;
+      }
+
+      var2.glActiveTexture('\u84c1');
+      var2.glMatrixMode(5888);
+      var2.glPushMatrix();
+      var2.glLoadIdentity();
+      var2.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
+      var2.glRotatef((float) GroundItem.anInt2938 * 360.0F / 2048.0F, 1.0F, 0.0F, 0.0F);
+      var2.glRotatef(360.0F * (float) TextureSampler9.anInt3103 / 2048.0F, 0.0F, 1.0F, 0.0F);
+      var2.glTranslatef((float) (-BZipDecompressorState.anInt144),
+        (float) (-ClientScript.anInt3695), (float) (-StringNode.anInt2587));
+      var2.glTexGenfv(8192, 9474, this.aFloatArray2174, 0);
+      this.aFloatArray2174[3] = var3 * (float) GlRenderer.anInt1791;
+      this.aFloatArray2174[0] = 0.0F;
+      this.aFloatArray2174[2] = 0.0F;
+      this.aFloatArray2174[1] = var5;
+      var2.glTexGenfv(8193, 9474, this.aFloatArray2174, 0);
+      var2.glPopMatrix();
+      if (!SomethingGl.aBoolean1227) {
+        int var7 = (int) ((float) GlRenderer.anInt1791 * var4 * 64.0F);
+        var2.glBindTexture(3553, SomethingGl.anIntArray1223[var7 % 64]);
+      } else {
+        this.aFloatArray2174[3] = (float) GlRenderer.anInt1791 * var4;
+        this.aFloatArray2174[1] = 0.0F;
+        this.aFloatArray2174[0] = 0.0F;
+        this.aFloatArray2174[2] = 0.0F;
+        var2.glTexGenfv(8194, 9473, this.aFloatArray2174, 0);
+      }
+
+      var2.glActiveTexture('\u84c0');
+    } catch (RuntimeException var8) {
+      throw AbstractGameWorld.cascadeException(var8, "ob.B(" + var1 + ')');
+    }
+  }
+
+  public final int method24() {
+    try {
+      return 0;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "ob.C()");
+    }
+  }
+
+  private final void method1631(int var1) {
+    try {
+      GL var2 = GlRenderer.gl;
+      this.anInt2173 = var2.glGenLists(var1);
+      var2.glNewList(this.anInt2173, 4864);
+      var2.glActiveTexture('\u84c1');
+      if (!SomethingGl.aBoolean1227) {
+        var2.glEnable(3553);
+      } else {
+        var2.glBindTexture('\u806f', SomethingGl.anInt1229);
+        var2.glTexGeni(8194, 9472, 9217);
+        var2.glEnable(3170);
+        var2.glEnable('\u806f');
+      }
+
+      var2.glTexGeni(8192, 9472, 9216);
+      var2.glTexGeni(8193, 9472, 9216);
+      var2.glEnable(3168);
+      var2.glEnable(3169);
+      var2.glActiveTexture('\u84c0');
+      var2.glEndList();
+      var2.glNewList(this.anInt2173 + 1, 4864);
+      var2.glActiveTexture('\u84c1');
+      if (SomethingGl.aBoolean1227) {
+        var2.glDisable('\u806f');
+        var2.glDisable(3170);
+      } else {
+        var2.glDisable(3553);
+      }
+
+      var2.glDisable(3168);
+      var2.glDisable(3169);
+      var2.glActiveTexture('\u84c0');
+      var2.glEndList();
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "ob.I(" + var1 + ')');
     }
   }
 
@@ -68,7 +185,8 @@ final class MaterialShader5 implements MaterialShader {
             });
 
             try {
-              SomethingTilek.client.getAppletContext().showDocument(var5.method1527(false), "_self");
+              SomethingTilek.client.getAppletContext()
+                .showDocument(var5.method1527(false), "_self");
             } catch (Exception var7) {
               return false;
             }
@@ -111,18 +229,16 @@ final class MaterialShader5 implements MaterialShader {
           Widget var13 =
             AbstractDirectColorSprite.method638((byte) -19, ScriptState.anInt872, Widget.anInt278);
           if (var13 != null) {
-            ScriptState
-              .method1177(BufferObject.anInt1887, 0L, (byte) -53, WorldMapLabel.aClass94_1724,
-                var11, (short) 11, Parameter.aClass94_3621, var12);
+            ScriptState.method1177(BufferObject.anInt1887, 0L, (byte) -53,
+              WorldMapLabel.aClass94_1724, var11, (short) 11, Parameter.aClass94_3621, var12);
           } else {
             SceneSomething.method958((byte) -87);
           }
         } else {
           ++SubNode.anInt2571;
           if (~AbstractImageProducer.gameId == -2) {
-            ScriptState
-              .method1177(-1, 0L, (byte) -62, GroundItemNode.EMPTY_STRING, var11, (short) 36,
-                GlTexture2d.aClass94_3762, var12);
+            ScriptState.method1177(-1, 0L, (byte) -62, GroundItemNode.EMPTY_STRING, var11,
+              (short) 36, GlTexture2d.aClass94_3762, var12);
           }
 
           ScriptState.method1177(-1, 0L, (byte) -75, GroundItemNode.EMPTY_STRING, var11, (short) 60,
@@ -142,8 +258,8 @@ final class MaterialShader5 implements MaterialShader {
           if (~var26 != ~var25) {
             var25 = var26;
             int var18;
-            if (~var14 == -3 && AbstractFileRequester
-              .method2096(GameWorldSomething.currentPlane, var12, var27, var26)) {
+            if (~var14 == -3 && AbstractFileRequester.method2096(GameWorldSomething.currentPlane,
+              var12, var27, var26)) {
               GameObjectConfig var16 = DummyClass11.method2207(4, var15);
               if (null != var16.anIntArray1524) {
                 var16 = var16.method1685(0);
@@ -201,17 +317,17 @@ final class MaterialShader5 implements MaterialShader {
                         var19 = 1001;
                       }
 
-                      ScriptState.method1177(var20, var26, (byte) -91, RenderAnimation
-                          .concat(new GameString[] {DummyClass17.aClass94_1826, var16.aClass94_1504}),
-                        var12, var19, var29[var18], var27);
+                      ScriptState.method1177(var20, var26, (byte) -91, RenderAnimation.concat(
+                        new GameString[] {DummyClass17.aClass94_1826, var16.aClass94_1504}), var12,
+                        var19, var29[var18], var27);
                     }
                   }
                 }
 
                 ScriptState.method1177(WorldMapLabel.anInt1719, (long) var16.anInt1527, (byte) -26,
-                  RenderAnimation
-                    .concat(new GameString[] {DummyClass17.aClass94_1826, var16.aClass94_1504}),
-                  var12, (short) 1004, BlockConfig.aClass94_1180, var27);
+                  RenderAnimation.concat(
+                    new GameString[] {DummyClass17.aClass94_1826, var16.aClass94_1504}), var12,
+                  (short) 1004, BlockConfig.aClass94_1180, var27);
               } else {
                 Parameter var17 = -1 == LinearHashTable.anInt1038 ?
                   null :
@@ -252,9 +368,8 @@ final class MaterialShader5 implements MaterialShader {
                     && var31.config.size - (-var33 + var21 >> 7) >= var36.config.size
                     && var18 <= var22
                     && var36.config.size <= -(-var18 + var22 >> 7) + var31.config.size) {
-                    BufferObject
-                      .method2068(var36.config, var12, -126, AudioWorker.anIntArray347[var37],
-                        var27);
+                    BufferObject.method2068(var36.config, var12, -126,
+                      AudioWorker.anIntArray347[var37], var27);
                   }
                 }
 
@@ -265,8 +380,8 @@ final class MaterialShader5 implements MaterialShader {
                   if (var38 != null && var21 >= var33 && ~var38.getSize() >= ~(var31.config.size - (
                     var21 - var33 >> 7)) && ~var22 <= ~var18
                     && var38.getSize() <= -(-var18 + var22 >> 7) + var31.config.size) {
-                    TextureSampler13
-                      .method312(DummyClass42.anIntArray887[var37], 5, var27, var38, var12);
+                    TextureSampler13.method312(DummyClass42.anIntArray887[var37], 5, var27, var38,
+                      var12);
                   }
                 }
               }
@@ -286,11 +401,10 @@ final class MaterialShader5 implements MaterialShader {
                   var22 = var36.anInt2829 - 64 * var36.config.size - -64;
                   if (var36 != null && var21 >= var33
                     && var36.config.size <= -(var21 - var33 >> 7) + var30.getSize()
-                    && ~var22 <= ~var18 && ~var36.config.size >= ~(-(-var18 + var22 >> 7) + var30
-                    .getSize())) {
-                    BufferObject
-                      .method2068(var36.config, var12, -121, AudioWorker.anIntArray347[var37],
-                        var27);
+                    && ~var22 <= ~var18 && ~var36.config.size >= ~(-(-var18 + var22 >> 7)
+                    + var30.getSize())) {
+                    BufferObject.method2068(var36.config, var12, -121,
+                      AudioWorker.anIntArray347[var37], var27);
                   }
                 }
 
@@ -301,8 +415,8 @@ final class MaterialShader5 implements MaterialShader {
                   if (null != var38 && var38 != var30 && ~var33 >= ~var21
                     && var38.getSize() <= var30.getSize() - (var21 - var33 >> 7) && ~var22 <= ~var18
                     && ~var38.getSize() >= ~(-(var22 + -var18 >> 7) + var30.getSize())) {
-                    TextureSampler13
-                      .method312(DummyClass42.anIntArray887[var37], 9, var27, var38, var12);
+                    TextureSampler13.method312(DummyClass42.anIntArray887[var37], 9, var27, var38,
+                      var12);
                   }
                 }
               }
@@ -364,9 +478,9 @@ final class MaterialShader5 implements MaterialShader {
                           var35 = 24;
                         }
 
-                        ScriptState.method1177(var23, (long) var18, (byte) -43, RenderAnimation
-                            .concat(
-                              new GameString[] {TextureSampler6.aClass94_3042, var40.aClass94_770}),
+                        ScriptState.method1177(var23, (long) var18, (byte) -43,
+                          RenderAnimation.concat(
+                            new GameString[] {TextureSampler6.aClass94_3042, var40.aClass94_770}),
                           var12, var35, var34[var21], var27);
                       }
                     }
@@ -478,124 +592,6 @@ final class MaterialShader5 implements MaterialShader {
     } catch (RuntimeException var7) {
       throw AbstractGameWorld.cascadeException(var7,
         "ob.G(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ')');
-    }
-  }
-
-  public final int method24() {
-    try {
-      return 0;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "ob.C()");
-    }
-  }
-
-  public final void set(int var1) {
-    try {
-      GL var2 = GlRenderer.gl;
-      float var4 = (float) (1 + (var1 >> 3 & 3)) * 0.01F;
-      float var3 = -0.01F * (float) (1 + (var1 & 3));
-      float var5 = 0 == (var1 & 64) ? 4.8828125E-4F : 9.765625E-4F;
-      boolean var6 = -1 != ~(128 & var1);
-      if (var6) {
-        this.aFloatArray2174[0] = var5;
-        this.aFloatArray2174[1] = 0.0F;
-        this.aFloatArray2174[2] = 0.0F;
-        this.aFloatArray2174[3] = 0.0F;
-      } else {
-        this.aFloatArray2174[2] = var5;
-        this.aFloatArray2174[1] = 0.0F;
-        this.aFloatArray2174[3] = 0.0F;
-        this.aFloatArray2174[0] = 0.0F;
-      }
-
-      var2.glActiveTexture('\u84c1');
-      var2.glMatrixMode(5888);
-      var2.glPushMatrix();
-      var2.glLoadIdentity();
-      var2.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
-      var2.glRotatef((float) GroundItem.anInt2938 * 360.0F / 2048.0F, 1.0F, 0.0F, 0.0F);
-      var2.glRotatef(360.0F * (float) TextureSampler9.anInt3103 / 2048.0F, 0.0F, 1.0F, 0.0F);
-      var2
-        .glTranslatef((float) (-BZipDecompressorState.anInt144), (float) (-ClientScript.anInt3695),
-          (float) (-StringNode.anInt2587));
-      var2.glTexGenfv(8192, 9474, this.aFloatArray2174, 0);
-      this.aFloatArray2174[3] = var3 * (float) GlRenderer.anInt1791;
-      this.aFloatArray2174[0] = 0.0F;
-      this.aFloatArray2174[2] = 0.0F;
-      this.aFloatArray2174[1] = var5;
-      var2.glTexGenfv(8193, 9474, this.aFloatArray2174, 0);
-      var2.glPopMatrix();
-      if (!SomethingGl.aBoolean1227) {
-        int var7 = (int) ((float) GlRenderer.anInt1791 * var4 * 64.0F);
-        var2.glBindTexture(3553, SomethingGl.anIntArray1223[var7 % 64]);
-      } else {
-        this.aFloatArray2174[3] = (float) GlRenderer.anInt1791 * var4;
-        this.aFloatArray2174[1] = 0.0F;
-        this.aFloatArray2174[0] = 0.0F;
-        this.aFloatArray2174[2] = 0.0F;
-        var2.glTexGenfv(8194, 9473, this.aFloatArray2174, 0);
-      }
-
-      var2.glActiveTexture('\u84c0');
-    } catch (RuntimeException var8) {
-      throw AbstractGameWorld.cascadeException(var8, "ob.B(" + var1 + ')');
-    }
-  }
-
-  public final void disable() {
-    try {
-      GL var1 = GlRenderer.gl;
-      var1.glCallList(1 + this.anInt2173);
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "ob.A()");
-    }
-  }
-
-  public final void enable() {
-    try {
-      GL var1 = GlRenderer.gl;
-      var1.glCallList(this.anInt2173);
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "ob.D()");
-    }
-  }
-
-  private final void method1631(int var1) {
-    try {
-      GL var2 = GlRenderer.gl;
-      this.anInt2173 = var2.glGenLists(var1);
-      var2.glNewList(this.anInt2173, 4864);
-      var2.glActiveTexture('\u84c1');
-      if (!SomethingGl.aBoolean1227) {
-        var2.glEnable(3553);
-      } else {
-        var2.glBindTexture('\u806f', SomethingGl.anInt1229);
-        var2.glTexGeni(8194, 9472, 9217);
-        var2.glEnable(3170);
-        var2.glEnable('\u806f');
-      }
-
-      var2.glTexGeni(8192, 9472, 9216);
-      var2.glTexGeni(8193, 9472, 9216);
-      var2.glEnable(3168);
-      var2.glEnable(3169);
-      var2.glActiveTexture('\u84c0');
-      var2.glEndList();
-      var2.glNewList(this.anInt2173 + 1, 4864);
-      var2.glActiveTexture('\u84c1');
-      if (SomethingGl.aBoolean1227) {
-        var2.glDisable('\u806f');
-        var2.glDisable(3170);
-      } else {
-        var2.glDisable(3553);
-      }
-
-      var2.glDisable(3168);
-      var2.glDisable(3169);
-      var2.glActiveTexture('\u84c0');
-      var2.glEndList();
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "ob.I(" + var1 + ')');
     }
   }
 

@@ -114,125 +114,8 @@ final class HuffmanEncoder {
       }
 
     } catch (RuntimeException var15) {
-      throw AbstractGameWorld
-        .cascadeException(var15, "fi.<init>(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  static final AbstractFrameRegulator method1012(byte var0) {
-    try {
-      try {
-        if (var0 != -31) {
-          aClass3_Sub28_Sub16_637 = null;
-        }
-
-        return (AbstractFrameRegulator) Class.forName("NanoFrameRegulator").newInstance();
-      } catch (Throwable var2) {
-        return new MilliFrameRegulator();
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "fi.F(" + var0 + ')');
-    }
-  }
-
-  static final GameString method1013(byte var0, int var1) {
-    try {
-      GameString var2 = SomethingScene.toString(var1);
-      if (var0 >= -87) {
-        return null;
-      } else {
-        for (int var3 = var2.getLength() + -3; var3 > 0; var3 -= 3) {
-          var2 = RenderAnimation.concat(new GameString[] {
-            var2.substring(var3, 0, 0), TextureSampler0.aClass94_3268, var2.substring(var3)
-          });
-        }
-
-        return var2.getLength() > 9 ? RenderAnimation.concat(new GameString[] {
-          Keyboard.aClass94_1917, var2.substring(-8 + var2.getLength(), 0, 0),
-          TextureSampler30.aClass94_3124, SomethingScene.aClass94_1072, var2,
-          OndemandRequester.aClass94_995
-        }) : (6 < var2.getLength() ?
-          RenderAnimation.concat(new GameString[] {
-            TextureSampler23.aClass94_3211, var2.substring(-4 + var2.getLength(), 0, 0),
-            AnimationSomething.aClass94_3586, SomethingScene.aClass94_1072, var2,
-            OndemandRequester.aClass94_995
-          }) :
-          RenderAnimation
-            .concat(new GameString[] {DummyClass10.aClass94_2082, var2, StringNode.aClass94_2584}));
-      }
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "fi.D(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  static final void method1014(int var0, int var1, int var2) {
-    try {
-      int var3 = 120 / ((15 - var0) / 41);
-
-      for (int var4 = 0; var4 < ScriptState.amountFloors; ++var4) {
-        FloorOverlay var5 = TextureSampler10.method350((byte) 120, var4);
-        if (null != var5) {
-          int var6 = var5.anInt2095;
-          if (0 <= var6 && !DummyClass40.textureCache.method17(var6, 126)) {
-            var6 = -1;
-          }
-
-          int var7;
-          int var8;
-          int var9;
-          int var10;
-          if (-1 < ~var5.anInt2098) {
-            if (var6 >= 0) {
-              var7 = DummyClass40.hslTable[StringNode
-                .method729((byte) -74, DummyClass40.textureCache.method15(var6, '\uffff'), 96)];
-            } else if (-1 == var5.anInt2103) {
-              var7 = -1;
-            } else {
-              var8 = var5.anInt2103;
-              var9 = var1 + (var8 & 127);
-              if (var9 < 0) {
-                var9 = 0;
-              } else if (var9 > 127) {
-                var9 = 127;
-              }
-
-              var10 = var9 + (896 & var8) + ('\ufc00' & var8 + var2);
-              var7 = DummyClass40.hslTable[StringNode.method729((byte) -127, var10, 96)];
-            }
-          } else {
-            var8 = var5.anInt2098;
-            var9 = (127 & var8) + var1;
-            if (~var9 > -1) {
-              var9 = 0;
-            } else if (-128 > ~var9) {
-              var9 = 127;
-            }
-
-            var10 = (896 & var8) + ('\ufc00' & var2 + var8) + var9;
-            var7 = DummyClass40.hslTable[StringNode.method729((byte) -63, var10, 96)];
-          }
-
-          DummyClass51.anIntArray1161[1 + var4] = var7;
-        }
-      }
-
-    } catch (RuntimeException var11) {
-      throw AbstractGameWorld
-        .cascadeException(var11, "fi.B(" + var0 + ',' + var1 + ',' + var2 + ')');
-    }
-  }
-
-  public static void method1016(byte var0) {
-    try {
-      aByteArrayArrayArray640 = null;
-      if (var0 <= 85) {
-        anInt638 = 33;
-      }
-
-      anIntArray634 = null;
-      aClass3_Sub28_Sub16_637 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "fi.C(" + var0 + ')');
+      throw AbstractGameWorld.cascadeException(var15,
+        "fi.<init>(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -431,9 +314,124 @@ final class HuffmanEncoder {
     } catch (RuntimeException var11) {
       throw AbstractGameWorld.cascadeException(var11,
         "fi.E(" + destOff + ',' + len + ',' + (dest != null ? "{...}" : "null") + ',' + (
-          src != null ?
-            "{...}" :
-            "null") + ',' + srcOff + ')');
+          src != null ? "{...}" : "null") + ',' + srcOff + ')');
+    }
+  }
+
+  static final AbstractFrameRegulator method1012(byte var0) {
+    try {
+      try {
+        if (var0 != -31) {
+          aClass3_Sub28_Sub16_637 = null;
+        }
+
+        return (AbstractFrameRegulator) Class.forName("NanoFrameRegulator").newInstance();
+      } catch (Throwable var2) {
+        return new MilliFrameRegulator();
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "fi.F(" + var0 + ')');
+    }
+  }
+
+  static final GameString method1013(byte var0, int var1) {
+    try {
+      GameString var2 = SomethingScene.toString(var1);
+      if (var0 >= -87) {
+        return null;
+      } else {
+        for (int var3 = var2.getLength() + -3; var3 > 0; var3 -= 3) {
+          var2 = RenderAnimation.concat(new GameString[] {
+            var2.substring(var3, 0, 0), TextureSampler0.aClass94_3268, var2.substring(var3)
+          });
+        }
+
+        return var2.getLength() > 9 ? RenderAnimation.concat(new GameString[] {
+          Keyboard.aClass94_1917, var2.substring(-8 + var2.getLength(), 0, 0),
+          TextureSampler30.aClass94_3124, SomethingScene.aClass94_1072, var2,
+          OndemandRequester.aClass94_995
+        }) : (6 < var2.getLength() ?
+          RenderAnimation.concat(new GameString[] {
+            TextureSampler23.aClass94_3211, var2.substring(-4 + var2.getLength(), 0, 0),
+            AnimationSomething.aClass94_3586, SomethingScene.aClass94_1072, var2,
+            OndemandRequester.aClass94_995
+          }) :
+          RenderAnimation.concat(
+            new GameString[] {DummyClass10.aClass94_2082, var2, StringNode.aClass94_2584}));
+      }
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "fi.D(" + var0 + ',' + var1 + ')');
+    }
+  }
+
+  static final void method1014(int var0, int var1, int var2) {
+    try {
+      int var3 = 120 / ((15 - var0) / 41);
+
+      for (int var4 = 0; var4 < ScriptState.amountFloors; ++var4) {
+        FloorOverlay var5 = TextureSampler10.method350((byte) 120, var4);
+        if (null != var5) {
+          int var6 = var5.anInt2095;
+          if (0 <= var6 && !DummyClass40.textureCache.method17(var6, 126)) {
+            var6 = -1;
+          }
+
+          int var7;
+          int var8;
+          int var9;
+          int var10;
+          if (-1 < ~var5.anInt2098) {
+            if (var6 >= 0) {
+              var7 = DummyClass40.hslTable[StringNode.method729((byte) -74,
+                DummyClass40.textureCache.method15(var6, '\uffff'), 96)];
+            } else if (-1 == var5.anInt2103) {
+              var7 = -1;
+            } else {
+              var8 = var5.anInt2103;
+              var9 = var1 + (var8 & 127);
+              if (var9 < 0) {
+                var9 = 0;
+              } else if (var9 > 127) {
+                var9 = 127;
+              }
+
+              var10 = var9 + (896 & var8) + ('\ufc00' & var8 + var2);
+              var7 = DummyClass40.hslTable[StringNode.method729((byte) -127, var10, 96)];
+            }
+          } else {
+            var8 = var5.anInt2098;
+            var9 = (127 & var8) + var1;
+            if (~var9 > -1) {
+              var9 = 0;
+            } else if (-128 > ~var9) {
+              var9 = 127;
+            }
+
+            var10 = (896 & var8) + ('\ufc00' & var2 + var8) + var9;
+            var7 = DummyClass40.hslTable[StringNode.method729((byte) -63, var10, 96)];
+          }
+
+          DummyClass51.anIntArray1161[1 + var4] = var7;
+        }
+      }
+
+    } catch (RuntimeException var11) {
+      throw AbstractGameWorld.cascadeException(var11,
+        "fi.B(" + var0 + ',' + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public static void method1016(byte var0) {
+    try {
+      aByteArrayArrayArray640 = null;
+      if (var0 <= 85) {
+        anInt638 = 33;
+      }
+
+      anIntArray634 = null;
+      aClass3_Sub28_Sub16_637 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "fi.C(" + var0 + ')');
     }
   }
 }

@@ -23,76 +23,6 @@ final class OndemandRequester {
   private byte encryptionKey = 0;
   private OndemandFileRequest currentRequest;
 
-  public static void method1242(byte var0) {
-    try {
-      aClass3_Sub28_Sub16Array996 = null;
-      if (var0 != -88) {
-        method1250(-72, true);
-      }
-
-      aClass94_995 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "jb.G(" + var0 + ')');
-    }
-  }
-
-  static final SomethingVolume15 method1245(int var0, FileUnpacker var1, int var2) {
-    try {
-      if (var0 <= 12) {
-        anInt1002 = 107;
-      }
-
-      byte[] var3 = var1.getBytes(var2);
-      return var3 != null ? new SomethingVolume15(var3) : null;
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4,
-        "jb.F(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
-    }
-  }
-
-  static final void method1250(int var0, boolean var1) {
-    try {
-      StringNode0.aByteArrayArrayArray2339 = null;
-      AbstractGameWorld.anIntArrayArrayArray720 = null;
-      if (var0 < 14) {
-        method1250(10, true);
-      }
-
-      SomethingWorldMapy.aClass11_3551 = null;
-      RenderAnimation.aByteArrayArrayArray383 = null;
-      DummyClass51.anIntArray1161 = null;
-      ClientScriptCall.aByteArrayArrayArray2452 = null;
-      if (var1 && null != Buffer.aClass3_Sub28_Sub3_2600) {
-        TextureSampler4.aClass94_3220 = Buffer.aClass3_Sub28_Sub3_2600.aClass94_3561;
-      } else {
-        TextureSampler4.aClass94_3220 = null;
-      }
-
-      HuffmanEncoder.aByteArrayArrayArray640 = null;
-      TextureSampler29.aByteArrayArrayArray3390 = null;
-      PlayerVariable.anIntArrayArrayArray558 = null;
-      AbstractMouseWheel.anIntArrayArrayArray1903 = null;
-      GameObject.anInt2737 = 0;
-      Buffer.aClass3_Sub28_Sub3_2600 = null;
-      DummyClass51.aClass61_1162.clear(-108);
-      DummyClass25.aClass131_1624 = null;
-      TextureSampler13.anInt3362 = -1;
-      SomethingTexture1.aClass33_2648 = null;
-      CollisionMap.aClass33_1305 = null;
-      SocketStream.aClass33_1238 = null;
-      DummyClass12.aClass33_2034 = null;
-      Something3d2.aClass33_3019 = null;
-      DummyClass54.aClass33_1399 = null;
-      SomethingTexture1.aClass33_2637 = null;
-      DummyClass25.aClass33_1626 = null;
-      HuffmanEncoder.aClass3_Sub28_Sub16_637 = null;
-      ProceduralTexture.anInt1150 = -1;
-      TextureSampler4.aClass3_Sub28_Sub16_Sub2_3221 = null;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "jb.E(" + var0 + ',' + var1 + ')');
-    }
-  }
-
   final boolean method1241(int var1) {
     try {
       if (var1 != -30064) {
@@ -178,8 +108,7 @@ final class OndemandRequester {
             int var7;
             int var8;
             if (0 >= read) {
-              var6 = -this.currentRequest.aByte4064
-                + this.currentRequest.buffer.bytes.length;
+              var6 = -this.currentRequest.aByte4064 + this.currentRequest.buffer.bytes.length;
               var7 = -this.currentRequest.anInt4067 + 512;
               if (var7 > -this.currentRequest.buffer.position + var6) {
                 var7 = -this.currentRequest.buffer.position + var6;
@@ -193,11 +122,9 @@ final class OndemandRequester {
                 this.currentRequest.buffer.position, var7);
               if (-1 != ~this.encryptionKey) {
                 for (var8 = 0; ~var7 < ~var8; ++var8) {
-                  this.currentRequest.buffer.bytes[
-                    this.currentRequest.buffer.position - -var8] =
+                  this.currentRequest.buffer.bytes[this.currentRequest.buffer.position - -var8] =
                     (byte) ObjectCache.bitXor(
-                      this.currentRequest.buffer.bytes[
-                        this.currentRequest.buffer.position + var8],
+                      this.currentRequest.buffer.bytes[this.currentRequest.buffer.position + var8],
                       this.encryptionKey);
                 }
               }
@@ -219,8 +146,8 @@ final class OndemandRequester {
                 var6 = avail;
               }
 
-              this.socketStream
-                .read(this.aClass3_Sub30_1008.bytes, this.aClass3_Sub30_1008.position, var6);
+              this.socketStream.read(this.aClass3_Sub30_1008.bytes,
+                this.aClass3_Sub30_1008.position, var6);
               if (0 != this.encryptionKey) {
                 for (var7 = 0; var7 < var6; ++var7) {
                   this.aClass3_Sub30_1008.bytes[var7 + this.aClass3_Sub30_1008.position] =
@@ -273,7 +200,8 @@ final class OndemandRequester {
 
                   int var16 = compression != 0 ? 9 : 5;
                   this.currentRequest = var15;
-                  this.currentRequest.buffer = new Buffer(length - (-var16 - this.currentRequest.aByte4064));
+                  this.currentRequest.buffer =
+                    new Buffer(length - (-var16 - this.currentRequest.aByte4064));
                   this.currentRequest.buffer.writeByte(compression);
                   this.currentRequest.buffer.writeInt(length);
                   this.currentRequest.anInt4067 = 8;
@@ -438,8 +366,8 @@ final class OndemandRequester {
         this.aClass13_993.addLast(var4);
       }
     } catch (RuntimeException var9) {
-      throw AbstractGameWorld
-        .cascadeException(var9, "jb.M(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var9,
+        "jb.M(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -550,6 +478,76 @@ final class OndemandRequester {
       }
     } catch (RuntimeException var6) {
       throw AbstractGameWorld.cascadeException(var6, "jb.J(" + var1 + ')');
+    }
+  }
+
+  public static void method1242(byte var0) {
+    try {
+      aClass3_Sub28_Sub16Array996 = null;
+      if (var0 != -88) {
+        method1250(-72, true);
+      }
+
+      aClass94_995 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "jb.G(" + var0 + ')');
+    }
+  }
+
+  static final SomethingVolume15 method1245(int var0, FileUnpacker var1, int var2) {
+    try {
+      if (var0 <= 12) {
+        anInt1002 = 107;
+      }
+
+      byte[] var3 = var1.getBytes(var2);
+      return var3 != null ? new SomethingVolume15(var3) : null;
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "jb.F(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+    }
+  }
+
+  static final void method1250(int var0, boolean var1) {
+    try {
+      StringNode0.aByteArrayArrayArray2339 = null;
+      AbstractGameWorld.anIntArrayArrayArray720 = null;
+      if (var0 < 14) {
+        method1250(10, true);
+      }
+
+      SomethingWorldMapy.aClass11_3551 = null;
+      RenderAnimation.aByteArrayArrayArray383 = null;
+      DummyClass51.anIntArray1161 = null;
+      ClientScriptCall.aByteArrayArrayArray2452 = null;
+      if (var1 && null != Buffer.aClass3_Sub28_Sub3_2600) {
+        TextureSampler4.aClass94_3220 = Buffer.aClass3_Sub28_Sub3_2600.aClass94_3561;
+      } else {
+        TextureSampler4.aClass94_3220 = null;
+      }
+
+      HuffmanEncoder.aByteArrayArrayArray640 = null;
+      TextureSampler29.aByteArrayArrayArray3390 = null;
+      PlayerVariable.anIntArrayArrayArray558 = null;
+      AbstractMouseWheel.anIntArrayArrayArray1903 = null;
+      GameObject.anInt2737 = 0;
+      Buffer.aClass3_Sub28_Sub3_2600 = null;
+      DummyClass51.aClass61_1162.clear(-108);
+      DummyClass25.aClass131_1624 = null;
+      TextureSampler13.anInt3362 = -1;
+      SomethingTexture1.aClass33_2648 = null;
+      CollisionMap.aClass33_1305 = null;
+      SocketStream.aClass33_1238 = null;
+      DummyClass12.aClass33_2034 = null;
+      Something3d2.aClass33_3019 = null;
+      DummyClass54.aClass33_1399 = null;
+      SomethingTexture1.aClass33_2637 = null;
+      DummyClass25.aClass33_1626 = null;
+      HuffmanEncoder.aClass3_Sub28_Sub16_637 = null;
+      ProceduralTexture.anInt1150 = -1;
+      TextureSampler4.aClass3_Sub28_Sub16_Sub2_3221 = null;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "jb.E(" + var0 + ',' + var1 + ')');
     }
   }
 

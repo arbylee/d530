@@ -6,9 +6,12 @@ abstract class AbstractFrameRegulator {
   static int[] keyQueue = new int[128];
   static GameString aClass94_1694 = SpawnedGameObject.createString("document)3cookie=(R");
   static int[] anIntArray1695;
-  static GameString aClass94_1696 =
-    SpawnedGameObject.createString("Sie k-Onnen sich selbst nicht auf Ihre Freunde)2Liste setzen(Q");
+  static GameString aClass94_1696 = SpawnedGameObject.createString(
+    "Sie k-Onnen sich selbst nicht auf Ihre Freunde)2Liste setzen(Q");
 
+  abstract int sleep(int var1, int var2, int var3);
+
+  abstract void reset(int var1);
 
   static final int method1765(int var0, int var1) {
     try {
@@ -96,16 +99,15 @@ abstract class AbstractFrameRegulator {
         if (!GlRenderer.useOpenGlRenderer) {
           TriChromaticImageCache.aClass3_Sub28_Sub16_Sub2_1381.method635(var0, var2);
         } else {
-          GlUtils
-            .drawImage(TriChromaticImageCache.aClass3_Sub28_Sub16_Sub2_1381.pixels, var0,
-              var2, TriChromaticImageCache.aClass3_Sub28_Sub16_Sub2_1381.anInt3707,
-              TriChromaticImageCache.aClass3_Sub28_Sub16_Sub2_1381.anInt3696);
+          GlUtils.drawImage(TriChromaticImageCache.aClass3_Sub28_Sub16_Sub2_1381.pixels, var0, var2,
+            TriChromaticImageCache.aClass3_Sub28_Sub16_Sub2_1381.anInt3707,
+            TriChromaticImageCache.aClass3_Sub28_Sub16_Sub2_1381.anInt3696);
         }
 
       }
     } catch (RuntimeException var14) {
-      throw AbstractGameWorld
-        .cascadeException(var14, "s.F(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var14,
+        "s.F(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -401,9 +403,8 @@ abstract class AbstractFrameRegulator {
                   }
 
                   if (null != var45) {
-                    TextureSampler18
-                      .method284(var0, var9, var23, var6, var19, var45, var14, (byte) 98, var13,
-                        var11, var38);
+                    TextureSampler18.method284(var0, var9, var23, var6, var19, var45, var14,
+                      (byte) 98, var13, var11, var38);
                   }
                   continue;
                 }
@@ -417,9 +418,8 @@ abstract class AbstractFrameRegulator {
                   DummyClass21.anIntArrayArray1763[var7[var23][var19]], var14, (byte) -117, var13,
                   var11, var2[var23][var19]);
               } else {
-                TextureSampler18
-                  .method284(var0, var9, var23, var6, var19, DummyClass21.anIntArrayArray1763[0],
-                    var14, (byte) 61, var13, var11, var38);
+                TextureSampler18.method284(var0, var9, var23, var6, var19,
+                  DummyClass21.anIntArrayArray1763[0], var14, (byte) 61, var13, var11, var38);
               }
             }
 
@@ -448,9 +448,5 @@ abstract class AbstractFrameRegulator {
           "null") + ',' + var10 + ',' + (var11 != null ? "{...}" : "null") + ')');
     }
   }
-
-  abstract int sleep(int var1, int var2, int var3);
-
-  abstract void reset(int var1);
 
 }

@@ -4,13 +4,13 @@ import java.util.Date;
 
 final class ItemConfig {
 
+  private static GameString aClass94_806;
+  private static GameString aClass94_811;
   static int anInt759;
   static int anInt763;
   static int[] anIntArray781 = new int[99];
   static GameString aClass94_808;
   static GameString aClass94_809;
-  private static GameString aClass94_806;
-  private static GameString aClass94_811;
 
   static {
     int var0 = 0;
@@ -122,6 +122,662 @@ final class ItemConfig {
     this.inventoryOptions = new GameString[] {null, null, null, null, GameObject.OPTION_DROP};
     this.anInt810 = 2000;
     this.aBoolean807 = false;
+  }
+
+  final boolean method1102(boolean var1, boolean var2) {
+    try {
+      int var3 = this.anInt803;
+      int var4 = this.anInt796;
+      if (var1) {
+        var3 = this.anInt773;
+        var4 = this.anInt753;
+      }
+
+      if (var2) {
+        this.method1113(41, null);
+      }
+
+      if (~var3 == 0) {
+        return true;
+      } else {
+        boolean var5 = true;
+        if (!StringNode.aClass153_2581.method2129((byte) -75, 0, var3)) {
+          var5 = false;
+        }
+
+        if (~var4 != 0 && !StringNode.aClass153_2581.method2129((byte) 58, 0, var4)) {
+          var5 = false;
+        }
+
+        return var5;
+      }
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6, "h.G(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  private final GameString method1105(int var1, GameString var2, int var3) {
+    try {
+      if (this.aClass130_798 == null) {
+        return var2;
+      } else {
+        if (var1 < 90) {
+          method1111(-111);
+        }
+
+        StringNode var4 = (StringNode) this.aClass130_798.get((long) var3);
+        return null != var4 ? var4.aClass94_2586 : var2;
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "h.S(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
+  final ItemConfig method1106(int var1, int var2) {
+    try {
+      int var3 = 58 % ((-28 - var2) / 48);
+      if (this.anIntArray804 != null && -2 > ~var1) {
+        int var4 = -1;
+
+        for (int var5 = 0; 10 > var5; ++var5) {
+          if (this.anIntArray766[var5] <= var1 && -1 != ~this.anIntArray766[var5]) {
+            var4 = this.anIntArray804[var5];
+          }
+        }
+
+        if (0 != ~var4) {
+          return DummyClass35.getItemConfig(var4, (byte) 97);
+        }
+      }
+
+      return this;
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6, "h.H(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final boolean method1108(byte var1, boolean var2) {
+    try {
+      int var4 = this.anInt771;
+      int var3 = this.anInt793;
+      int var6 = 106 % ((var1 - 24) / 58);
+      int var5 = this.anInt769;
+      if (var2) {
+        var5 = this.anInt776;
+        var3 = this.anInt761;
+        var4 = this.anInt794;
+      }
+
+      if (~var3 != 0) {
+        boolean var7 = true;
+        if (!StringNode.aClass153_2581.method2129((byte) -90, 0, var3)) {
+          var7 = false;
+        }
+
+        if (~var4 != 0 && !StringNode.aClass153_2581.method2129((byte) -114, 0, var4)) {
+          var7 = false;
+        }
+
+        if (-1 != var5 && !StringNode.aClass153_2581.method2129((byte) 83, 0, var5)) {
+          var7 = false;
+        }
+
+        return var7;
+      } else {
+        return true;
+      }
+    } catch (RuntimeException var8) {
+      throw AbstractGameWorld.cascadeException(var8, "h.C(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void method1109(byte var1, ItemConfig var2, ItemConfig var3) {
+    try {
+      this.aByteArray785 = var2.aByteArray785;
+      this.anInt778 = var2.anInt778;
+      this.aClass130_798 = var2.aClass130_798;
+      this.anInt769 = var2.anInt769;
+      this.anInt761 = var2.anInt761;
+      this.anInt775 = var2.anInt775;
+      this.inventoryOptions = new GameString[5];
+      this.anInt755 = var3.anInt755;
+      this.anInt810 = var3.anInt810;
+      this.anInt757 = 0;
+      this.anInt782 = var2.anInt782;
+      this.anInt773 = var2.anInt773;
+      this.aShortArray774 = var2.aShortArray774;
+      this.rotationZ = var3.rotationZ;
+      this.anInt771 = var2.anInt771;
+      this.rotationY = var3.rotationY;
+      this.anInt803 = var2.anInt803;
+      this.anInt796 = var2.anInt796;
+      this.anInt760 = var2.anInt760;
+      this.rotationX = var3.rotationX;
+      this.translateOther = var3.translateOther;
+      this.anInt753 = var2.anInt753;
+      this.anInt777 = var2.anInt777;
+      this.aShortArray772 = var2.aShortArray772;
+      this.anInt802 = var2.anInt802;
+      this.anInt752 = var2.anInt752;
+      this.translateX = var3.translateX;
+      if (var1 != 69) {
+        this.anInt757 = 109;
+      }
+
+      this.anInt793 = var2.anInt793;
+      this.anInt794 = var2.anInt794;
+      this.aClass94_770 = var2.aClass94_770;
+      this.aShortArray751 = var2.aShortArray751;
+      this.aShortArray765 = var2.aShortArray765;
+      this.aClass94Array801 = var2.aClass94Array801;
+      this.aBoolean779 = var2.aBoolean779;
+      this.anInt776 = var2.anInt776;
+      if (null != var2.inventoryOptions) {
+        for (int var4 = 0; -5 < ~var4; ++var4) {
+          this.inventoryOptions[var4] = var2.inventoryOptions[var4];
+        }
+      }
+
+      this.inventoryOptions[4] = RenderAnimation.aClass94_361;
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "h.J(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + (var3 != null ?
+          "{...}" :
+          "null") + ')');
+    }
+  }
+
+  final AbstractModel getModel(int var1, int var2, int var3, AnimationSequence var4, int var5,
+                               int var6) {
+    try {
+      if (var1 < 94) {
+        this.anInt755 = -67;
+      }
+
+      if (this.anIntArray804 != null && -2 > ~var5) {
+        int var7 = -1;
+
+        for (int var8 = 0; var8 < 10; ++var8) {
+          if (~var5 <= ~this.anIntArray766[var8] && ~this.anIntArray766[var8] != -1) {
+            var7 = this.anIntArray804[var8];
+          }
+        }
+
+        if (~var7 != 0) {
+          return DummyClass35.getItemConfig(var7, (byte) 109)
+            .getModel(113, var2, var3, var4, 1, var6);
+        }
+      }
+
+      AbstractModel var11 = (AbstractModel) DummyClass15.aClass93_1874.get((long) this.anInt787);
+      if (var11 == null) {
+        Model var12 = Model.getModel(StringNode.aClass153_2581, this.anInt755, 0);
+        if (null == var12) {
+          return null;
+        }
+
+        int var9;
+        if (null != this.aShortArray774) {
+          for (var9 = 0; this.aShortArray774.length > var9; ++var9) {
+            if (null != this.aByteArray785 && ~var9 > ~this.aByteArray785.length) {
+              var12.replaceColor(this.aShortArray774[var9],
+                TextureSampler38.aShortArray3453[this.aByteArray785[var9] & 255]);
+            } else {
+              var12.replaceColor(this.aShortArray774[var9], this.aShortArray772[var9]);
+            }
+          }
+        }
+
+        if (this.aShortArray765 != null) {
+          for (var9 = 0; var9 < this.aShortArray765.length; ++var9) {
+            var12.replaceMaterial(this.aShortArray765[var9], this.aShortArray751[var9]);
+          }
+        }
+
+        var11 = var12.method2008(this.anInt784 + 64, 768 + this.anInt790, -50, -10, -50);
+        if (~this.anInt805 != -129 || this.anInt780 != 128 || ~this.anInt797 != -129) {
+          var11.scale(this.anInt805, this.anInt780, this.anInt797);
+        }
+
+        var11.aBoolean2699 = true;
+        if (GlRenderer.useOpenGlRenderer) {
+          ((GlModel) var11).method1920(false, false, false, true, false, false, true);
+        }
+
+        DummyClass15.aClass93_1874.get((byte) -123, var11, (long) this.anInt787);
+      }
+
+      if (var4 != null) {
+        var11 = var4.method2055(var11, (byte) -88, var2, var3, var6);
+      }
+
+      return var11;
+    } catch (RuntimeException var10) {
+      throw AbstractGameWorld.cascadeException(var10,
+        "h.E(" + var1 + ',' + var2 + ',' + var3 + ',' + (var4 != null ? "{...}" : "null") + ','
+          + var5 + ',' + var6 + ')');
+    }
+  }
+
+  final void method1112(int var1) {
+    try {
+      if (var1 != 5401) {
+        method1103(null, null, true);
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "h.O(" + var1 + ')');
+    }
+  }
+
+  final void method1113(int var1, Buffer var2) {
+    try {
+      while (true) {
+        int var3 = var2.readUnsignedByte();
+        if (0 == var3) {
+          if (var1 != 1) {
+            this.anInt789 = -40;
+          }
+
+          return;
+        }
+
+        this.method1114((byte) -72, var2, var3);
+      }
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "h.M(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  private final void method1114(byte var1, Buffer var2, int var3) {
+    try {
+      int var4 = -118 % ((var1 - 48) / 61);
+      if (~var3 != -2) {
+        if (var3 != 2) {
+          if (-5 == ~var3) {
+            this.anInt810 = var2.readUnsignedShort();
+          } else if (~var3 == -6) {
+            this.rotationX = var2.readUnsignedShort();
+          } else if (~var3 == -7) {
+            this.rotationY = var2.readUnsignedShort();
+          } else if (~var3 == -8) {
+            this.translateX = var2.readUnsignedShort();
+            if (~this.translateX < -32768) {
+              this.translateX -= 65536;
+            }
+          } else if (~var3 != -9) {
+            if (var3 == 11) {
+              this.anInt764 = 1;
+            } else if (-13 == ~var3) {
+              this.anInt757 = var2.readInt();
+            } else if (-17 != ~var3) {
+              if (23 == var3) {
+                this.anInt793 = var2.readUnsignedShort();
+              } else if (var3 != 24) {
+                if (~var3 != -26) {
+                  if (~var3 != -27) {
+                    if (var3 >= 30 && -36 < ~var3) {
+                      this.aClass94Array801[-30 + var3] = var2.readString();
+                      if (this.aClass94Array801[var3 + -30].method1531(
+                        TextureSampler33.aClass94_3051)) {
+                        this.aClass94Array801[-30 + var3] = null;
+                      }
+                    } else if (35 <= var3 && 40 > var3) {
+                      this.inventoryOptions[-35 + var3] = var2.readString();
+                    } else {
+                      int var5;
+                      int var6;
+                      if (-41 != ~var3) {
+                        if (-42 == ~var3) {
+                          var5 = var2.readUnsignedByte();
+                          this.aShortArray751 = new short[var5];
+                          this.aShortArray765 = new short[var5];
+
+                          for (var6 = 0; ~var5 < ~var6; ++var6) {
+                            this.aShortArray765[var6] = (short) var2.readUnsignedShort();
+                            this.aShortArray751[var6] = (short) var2.readUnsignedShort();
+                          }
+                        } else if (42 == var3) {
+                          var5 = var2.readUnsignedByte();
+                          this.aByteArray785 = new byte[var5];
+
+                          for (var6 = 0; ~var6 > ~var5; ++var6) {
+                            this.aByteArray785[var6] = var2.readByte();
+                          }
+                        } else if (var3 == 65) {
+                          this.aBoolean807 = true;
+                        } else if (-79 != ~var3) {
+                          if (-80 == ~var3) {
+                            this.anInt776 = var2.readUnsignedShort();
+                          } else if (90 == var3) {
+                            this.anInt803 = var2.readUnsignedShort();
+                          } else if (var3 == 91) {
+                            this.anInt773 = var2.readUnsignedShort();
+                          } else if (var3 != 92) {
+                            if (var3 != 93) {
+                              if (-96 == ~var3) {
+                                this.rotationZ = var2.readUnsignedShort();
+                              } else if (-97 == ~var3) {
+                                this.anInt800 = var2.readUnsignedByte();
+                              } else if (var3 == 97) {
+                                this.anInt789 = var2.readUnsignedShort();
+                              } else if (-99 == ~var3) {
+                                this.anInt791 = var2.readUnsignedShort();
+                              } else if (-101 >= ~var3 && ~var3 > -111) {
+                                if (null == this.anIntArray804) {
+                                  this.anIntArray804 = new int[10];
+                                  this.anIntArray766 = new int[10];
+                                }
+
+                                this.anIntArray804[-100 + var3] = var2.readUnsignedShort();
+                                this.anIntArray766[var3 + -100] = var2.readUnsignedShort();
+                              } else if (110 != var3) {
+                                if (~var3 != -112) {
+                                  if (-113 == ~var3) {
+                                    this.anInt797 = var2.readUnsignedShort();
+                                  } else if (-114 != ~var3) {
+                                    if (~var3 == -115) {
+                                      this.anInt790 = 5 * var2.readByte();
+                                    } else if (var3 == 115) {
+                                      this.anInt782 = var2.readUnsignedByte();
+                                    } else if (var3 != 121) {
+                                      if (var3 == 122) {
+                                        this.anInt762 = var2.readUnsignedShort();
+                                      } else if (125 != var3) {
+                                        if (~var3 == -127) {
+                                          this.anInt777 = var2.readByte();
+                                          this.anInt802 = var2.readByte();
+                                          this.anInt752 = var2.readByte();
+                                        } else if (var3 == 127) {
+                                          this.anInt767 = var2.readUnsignedByte();
+                                          this.anInt758 = var2.readUnsignedShort();
+                                        } else if (~var3 != -129) {
+                                          if (-130 != ~var3) {
+                                            if (-131 == ~var3) {
+                                              var2.readUnsignedByte();
+                                              var2.readUnsignedShort();
+                                            } else if (249 == var3) {
+                                              var5 = var2.readUnsignedByte();
+                                              if (null == this.aClass130_798) {
+                                                var6 = DummyClass53.nearestPo2((byte) 97, var5);
+                                                this.aClass130_798 = new HashTable(var6);
+                                              }
+
+                                              for (var6 = 0; var6 < var5; ++var6) {
+                                                boolean var7 = var2.readUnsignedByte() == 1;
+                                                int var8 = var2.readUnsignedMedium((byte) 122);
+                                                Object var9;
+                                                if (!var7) {
+                                                  var9 = new IntegerNode(var2.readInt());
+                                                } else {
+                                                  var9 = new StringNode(var2.readString());
+                                                }
+
+                                                this.aClass130_798.put((long) var8, (Node) var9);
+                                              }
+                                            }
+                                          } else {
+                                            var2.readUnsignedByte();
+                                            var2.readUnsignedShort();
+                                          }
+                                        } else {
+                                          this.anInt788 = var2.readUnsignedByte();
+                                          this.anInt756 = var2.readUnsignedShort();
+                                        }
+                                      } else {
+                                        this.anInt760 = var2.readByte();
+                                        this.anInt778 = var2.readByte();
+                                        this.anInt775 = var2.readByte();
+                                      }
+                                    } else {
+                                      this.anInt795 = var2.readUnsignedShort();
+                                    }
+                                  } else {
+                                    this.anInt784 = var2.readByte();
+                                  }
+                                } else {
+                                  this.anInt780 = var2.readUnsignedShort();
+                                }
+                              } else {
+                                this.anInt805 = var2.readUnsignedShort();
+                              }
+                            } else {
+                              this.anInt753 = var2.readUnsignedShort();
+                            }
+                          } else {
+                            this.anInt796 = var2.readUnsignedShort();
+                          }
+                        } else {
+                          this.anInt769 = var2.readUnsignedShort();
+                        }
+                      } else {
+                        var5 = var2.readUnsignedByte();
+                        this.aShortArray772 = new short[var5];
+                        this.aShortArray774 = new short[var5];
+
+                        for (var6 = 0; var5 > var6; ++var6) {
+                          this.aShortArray774[var6] = (short) var2.readUnsignedShort();
+                          this.aShortArray772[var6] = (short) var2.readUnsignedShort();
+                        }
+                      }
+                    }
+                  } else {
+                    this.anInt794 = var2.readUnsignedShort();
+                  }
+                } else {
+                  this.anInt761 = var2.readUnsignedShort();
+                }
+              } else {
+                this.anInt771 = var2.readUnsignedShort();
+              }
+            } else {
+              this.aBoolean779 = true;
+            }
+          } else {
+            this.translateOther = var2.readUnsignedShort();
+            if (this.translateOther > 32767) {
+              this.translateOther -= 65536;
+            }
+          }
+        } else {
+          this.aClass94_770 = var2.readString();
+        }
+      } else {
+        this.anInt755 = var2.readUnsignedShort();
+      }
+
+    } catch (RuntimeException var10) {
+      throw AbstractGameWorld.cascadeException(var10,
+        "h.Q(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    }
+  }
+
+  final int method1115(int var1, int var2, int var3) {
+    try {
+      int var4 = -82 % ((-63 - var2) / 55);
+      if (this.aClass130_798 != null) {
+        IntegerNode var5 = (IntegerNode) this.aClass130_798.get((long) var3);
+        return null != var5 ? var5.anInt2467 : var1;
+      } else {
+        return var1;
+      }
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6, "h.I(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final Model method1116(boolean var1, byte var2) {
+    try {
+      int var4 = this.anInt796;
+      if (var2 != -109) {
+        return null;
+      } else {
+        int var3 = this.anInt803;
+        if (var1) {
+          var4 = this.anInt753;
+          var3 = this.anInt773;
+        }
+
+        if (-1 != var3) {
+          Model var5 = Model.getModel(StringNode.aClass153_2581, var3, 0);
+          if (-1 != var4) {
+            Model var6 = Model.getModel(StringNode.aClass153_2581, var4, 0);
+            Model[] var7 = new Model[] {var5, var6};
+            var5 = new Model(var7, 2);
+          }
+
+          int var9;
+          if (this.aShortArray774 != null) {
+            for (var9 = 0; var9 < this.aShortArray774.length; ++var9) {
+              var5.replaceColor(this.aShortArray774[var9], this.aShortArray772[var9]);
+            }
+          }
+
+          if (this.aShortArray765 != null) {
+            for (var9 = 0; ~this.aShortArray765.length < ~var9; ++var9) {
+              var5.replaceMaterial(this.aShortArray765[var9], this.aShortArray751[var9]);
+            }
+          }
+
+          return var5;
+        } else {
+          return null;
+        }
+      }
+    } catch (RuntimeException var8) {
+      throw AbstractGameWorld.cascadeException(var8, "h.A(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final Model method1117(boolean var1, int var2) {
+    try {
+      int var3 = this.anInt793;
+      if (var2 < 77) {
+        this.aClass130_798 = null;
+      }
+
+      int var4 = this.anInt771;
+      int var5 = this.anInt769;
+      if (var1) {
+        var5 = this.anInt776;
+        var3 = this.anInt761;
+        var4 = this.anInt794;
+      }
+
+      if (~var3 == 0) {
+        return null;
+      } else {
+        Model var6 = Model.getModel(StringNode.aClass153_2581, var3, 0);
+        if (0 != ~var4) {
+          Model var7 = Model.getModel(StringNode.aClass153_2581, var4, 0);
+          if (-1 == var5) {
+            Model[] var8 = new Model[] {var6, var7};
+            var6 = new Model(var8, 2);
+          } else {
+            Model var12 = Model.getModel(StringNode.aClass153_2581, var5, 0);
+            Model[] var9 = new Model[] {var6, var7, var12};
+            var6 = new Model(var9, 3);
+          }
+        }
+
+        if (!var1 && (~this.anInt760 != -1 || ~this.anInt778 != -1 || -1 != ~this.anInt775)) {
+          var6.translate(this.anInt760, this.anInt778, this.anInt775);
+        }
+
+        if (var1 && (~this.anInt777 != -1 || ~this.anInt802 != -1 || ~this.anInt752 != -1)) {
+          var6.translate(this.anInt777, this.anInt802, this.anInt752);
+        }
+
+        int var11;
+        if (this.aShortArray774 != null) {
+          for (var11 = 0; var11 < this.aShortArray774.length; ++var11) {
+            var6.replaceColor(this.aShortArray774[var11], this.aShortArray772[var11]);
+          }
+        }
+
+        if (this.aShortArray765 != null) {
+          for (var11 = 0; var11 < this.aShortArray765.length; ++var11) {
+            var6.replaceMaterial(this.aShortArray765[var11], this.aShortArray751[var11]);
+          }
+        }
+
+        return var6;
+      }
+    } catch (RuntimeException var10) {
+      throw AbstractGameWorld.cascadeException(var10, "h.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void method1118(ItemConfig var1, ItemConfig var2, boolean var3) {
+    try {
+      this.aClass94_770 = var1.aClass94_770;
+      this.anInt810 = var2.anInt810;
+      if (var3) {
+        this.anInt780 = -70;
+      }
+
+      this.aShortArray774 = var2.aShortArray774;
+      this.aShortArray772 = var2.aShortArray772;
+      this.rotationX = var2.rotationX;
+      this.rotationY = var2.rotationY;
+      this.aShortArray751 = var2.aShortArray751;
+      this.anInt755 = var2.anInt755;
+      this.aByteArray785 = var2.aByteArray785;
+      this.rotationZ = var2.rotationZ;
+      this.anInt757 = var1.anInt757;
+      this.anInt764 = 1;
+      this.translateOther = var2.translateOther;
+      this.translateX = var2.translateX;
+      this.aShortArray765 = var2.aShortArray765;
+      this.aBoolean779 = var1.aBoolean779;
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "h.N(" + (var1 != null ? "{...}" : "null") + ',' + (var2 != null ? "{...}" : "null") + ','
+          + var3 + ')');
+    }
+  }
+
+  final SoftwareModel method1120(int var1) {
+    try {
+      Model var2 = Model.getModel(StringNode.aClass153_2581, this.anInt755, 0);
+      if (var2 == null) {
+        return null;
+      } else {
+        int var3;
+        if (this.aShortArray774 != null) {
+          for (var3 = 0; this.aShortArray774.length > var3; ++var3) {
+            if (null != this.aByteArray785 && ~var3 > ~this.aByteArray785.length) {
+              var2.replaceColor(this.aShortArray774[var3],
+                TextureSampler38.aShortArray3453[this.aByteArray785[var3] & 255]);
+            } else {
+              var2.replaceColor(this.aShortArray774[var3], this.aShortArray772[var3]);
+            }
+          }
+        }
+
+        if (this.aShortArray765 != null) {
+          for (var3 = 0; var3 < this.aShortArray765.length; ++var3) {
+            var2.replaceMaterial(this.aShortArray765[var3], this.aShortArray751[var3]);
+          }
+        }
+
+        SoftwareModel var5 =
+          var2.method2000(64 - -this.anInt784, 768 - -this.anInt790, -50, -10, -50);
+        if (var1 != 18206) {
+          this.method1105(-67, null, -37);
+        }
+
+        if (-129 != ~this.anInt805 || -129 != ~this.anInt780 || -129 != ~this.anInt797) {
+          var5.scale(this.anInt805, this.anInt780, this.anInt797);
+        }
+
+        return var5;
+      }
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "h.L(" + var1 + ')');
+    }
   }
 
   static final void method1103(FileUnpacker var0, FileUnpacker var1, boolean var2) {
@@ -424,8 +1080,7 @@ final class ItemConfig {
         }
         if (j1 == 51) {
           HashTable class130 = class3_sub28_sub15.aClass130Array3685[ai1[i1]];
-          IntegerNode class3_sub18 =
-            (IntegerNode) class130.get(GroundItem.anIntArray2929[--k]);
+          IntegerNode class3_sub18 = (IntegerNode) class130.get(GroundItem.anIntArray2929[--k]);
           if (null != class3_sub18) {
             i1 += class3_sub18.anInt2467;
           }
@@ -687,7 +1342,8 @@ final class ItemConfig {
             }
             if ((-1401 < ~j1 || ~j1 <= -1501) && (2400 > j1 || j1 >= 2500)) {
               if (1600 > j1) {
-                Widget class11_4 = flag ? Something3dRoot.aClass11_2055 : SomethingPacket116.aClass11_1749;
+                Widget class11_4 =
+                  flag ? Something3dRoot.aClass11_2055 : SomethingPacket116.aClass11_1749;
                 if (j1 == 1500) {
                   GroundItem.anIntArray2929[k++] = class11_4.anInt306;
                   continue;
@@ -715,7 +1371,8 @@ final class ItemConfig {
                 continue;
               }
               if (j1 < 1700) {
-                Widget class11_5 = flag ? Something3dRoot.aClass11_2055 : SomethingPacket116.aClass11_1749;
+                Widget class11_5 =
+                  flag ? Something3dRoot.aClass11_2055 : SomethingPacket116.aClass11_1749;
                 if (~j1 == -1601) {
                   GroundItem.anIntArray2929[k++] = class11_5.anInt247;
                   continue;
@@ -955,8 +1612,7 @@ final class ItemConfig {
                         }
                         if (3304 == j1) {
                           int l8 = GroundItem.anIntArray2929[--k];
-                          GroundItem.anIntArray2929[k++] =
-                            BufferObject.method2069(l8, -127).size;
+                          GroundItem.anIntArray2929[k++] = BufferObject.method2069(l8, -127).size;
                           continue;
                         }
                         if (~j1 == -3306) {
@@ -966,7 +1622,8 @@ final class ItemConfig {
                         }
                         if (j1 == 3306) {
                           int j9 = GroundItem.anIntArray2929[--k];
-                          GroundItem.anIntArray2929[k++] = TriChromaticImageBuffer.anIntArray2480[j9];
+                          GroundItem.anIntArray2929[k++] =
+                            TriChromaticImageBuffer.anIntArray2480[j9];
                           continue;
                         }
                         if (3307 == j1) {
@@ -1088,7 +1745,8 @@ final class ItemConfig {
                         }
                         if (~j1 == -3331) {
                           int k11 = GroundItem.anIntArray2929[--k];
-                          GroundItem.anIntArray2929[k++] = GameWorld.getInventoryFreeSpace(k11, (byte) -80);
+                          GroundItem.anIntArray2929[k++] =
+                            GameWorld.getInventoryFreeSpace(k11, (byte) -80);
                           continue;
                         }
                         if (~j1 == -3332) {
@@ -1159,7 +1817,8 @@ final class ItemConfig {
                             throw new RuntimeException("C3408-1");
                           }
                           if (-116 != ~k49) {
-                            GroundItem.anIntArray2929[k++] = class3_sub28_sub13_4.getInteger(0, l76);
+                            GroundItem.anIntArray2929[k++] =
+                              class3_sub28_sub13_4.getInteger(0, l76);
                           } else {
                             Node.aClass94Array75[l++] =
                               class3_sub28_sub13_4.getString(l76, (byte) -25);
@@ -1203,8 +1862,7 @@ final class ItemConfig {
                         }
                         int k13 = GroundItem.anIntArray2929[--k];
                         ClientScriptEnum class3_sub28_sub13 = TextureSampler36.getEnum(k13, true);
-                        GroundItem.anIntArray2929[k++] =
-                          class3_sub28_sub13.table.getSize();
+                        GroundItem.anIntArray2929[k++] = class3_sub28_sub13.table.getSize();
                         continue;
                       }
                       if (3700 > j1) {
@@ -1273,8 +1931,8 @@ final class ItemConfig {
                         }
                         if (~j1 == -3610) {
                           GameString class94_12 = Node.aClass94Array75[--l];
-                          if (class94_12.method1558(AreaSoundEffect.aClass94_2323, 0) || class94_12
-                            .method1558(TextureSampler15.aClass94_3190, 0)) {
+                          if (class94_12.method1558(AreaSoundEffect.aClass94_2323, 0)
+                            || class94_12.method1558(TextureSampler15.aClass94_3190, 0)) {
                             class94_12 = class94_12.substring(7);
                           }
                           GroundItem.anIntArray2929[k++] =
@@ -1312,8 +1970,7 @@ final class ItemConfig {
                             Node.aClass94Array75[l++] = AreaSoundEffect.aClass94_2331;
                           } else {
                             Node.aClass94Array75[l++] =
-                              ClientScript.aClass3_Sub19Array3694[l14].name
-                                .formatName((byte) -50);
+                              ClientScript.aClass3_Sub19Array3694[l14].name.formatName((byte) -50);
                           }
                           continue;
                         }
@@ -1369,20 +2026,18 @@ final class ItemConfig {
                         }
                         if (3622 == j1) {
                           int k15 = GroundItem.anIntArray2929[--k];
-                          if (HintMarker.anInt1357 == 0
-                            || AnimationSomething.anInt3591 <= k15) {
+                          if (HintMarker.anInt1357 == 0 || AnimationSomething.anInt3591 <= k15) {
                             Node.aClass94Array75[l++] = AreaSoundEffect.aClass94_2331;
                           } else {
-                            Node.aClass94Array75[l++] = FileCache
-                              .stringFromBase37(-29664, MonoChromaticImageCache.aLongArray1574[k15])
-                              .formatName((byte) -50);
+                            Node.aClass94Array75[l++] = FileCache.stringFromBase37(-29664,
+                              MonoChromaticImageCache.aLongArray1574[k15]).formatName((byte) -50);
                           }
                           continue;
                         }
                         if (3623 == j1) {
                           GameString class94_15 = Node.aClass94Array75[--l];
-                          if (class94_15.method1558(AreaSoundEffect.aClass94_2323, 0) || class94_15
-                            .method1558(TextureSampler15.aClass94_3190, 0)) {
+                          if (class94_15.method1558(AreaSoundEffect.aClass94_2323, 0)
+                            || class94_15.method1558(TextureSampler15.aClass94_3190, 0)) {
                             class94_15 = class94_15.substring(7);
                           }
                           GroundItem.anIntArray2929[k++] =
@@ -1393,8 +2048,8 @@ final class ItemConfig {
                           int l15 = GroundItem.anIntArray2929[--k];
                           if (null != ClientScript.aClass3_Sub19Array3694
                             && ~SubNode.anInt2572 < ~l15
-                            && ClientScript.aClass3_Sub19Array3694[l15].name
-                            .method1531(TextureCache.localPlayer.name)) {
+                            && ClientScript.aClass3_Sub19Array3694[l15].name.method1531(
+                            TextureCache.localPlayer.name)) {
                             GroundItem.anIntArray2929[k++] = 1;
                           } else {
                             GroundItem.anIntArray2929[k++] = 0;
@@ -1432,8 +2087,8 @@ final class ItemConfig {
                         }
                         if (j1 == 3628) {
                           GameString class94_16 = Node.aClass94Array75[--l];
-                          if (class94_16.method1558(AreaSoundEffect.aClass94_2323, 0) || class94_16
-                            .method1558(TextureSampler15.aClass94_3190, 0)) {
+                          if (class94_16.method1558(AreaSoundEffect.aClass94_2323, 0)
+                            || class94_16.method1558(TextureSampler15.aClass94_3190, 0)) {
                             class94_16 = class94_16.substring(7);
                           }
                           GroundItem.anIntArray2929[k++] = DummyClass18.method826(class94_16, -1);
@@ -1694,8 +2349,8 @@ final class ItemConfig {
                                   IdentityKit.anInt467 = GroundItem.anIntArray2929[1 + k];
                                   DummyClass38.anInt734 = GroundItem.anIntArray2929[2 + k];
                                   TextureSampler12.secureBuffer.writePacket(157);
-                                  TextureSampler12.secureBuffer
-                                    .writeByte(TextureSampler9.anInt3101);
+                                  TextureSampler12.secureBuffer.writeByte(
+                                    TextureSampler9.anInt3101);
                                   TextureSampler12.secureBuffer.writeByte(IdentityKit.anInt467);
                                   TextureSampler12.secureBuffer.writeByte(DummyClass38.anInt734);
                                   continue;
@@ -1749,100 +2404,94 @@ final class ItemConfig {
                                     byte byte3 = 0;
                                     if (class94_47.method1558(StillGraphicNode.aClass94_3548, 0)) {
                                       byte3 = 0;
-                                      string = string
-                                        .substring(StillGraphicNode.aClass94_3548.getLength());
-                                    } else if (!class94_47
-                                      .method1558(TriChromaticImageBuffer.aClass94_2490, 0)) {
+                                      string = string.substring(
+                                        StillGraphicNode.aClass94_3548.getLength());
+                                    } else if (!class94_47.method1558(
+                                      TriChromaticImageBuffer.aClass94_2490, 0)) {
                                       if (!class94_47.method1558(aClass94_806, 0)) {
                                         if (class94_47.method1558(GameClient.aClass94_2197, 0)) {
                                           byte3 = 3;
                                           string =
                                             string.substring(GameClient.aClass94_2197.getLength());
-                                        } else if (class94_47
-                                          .method1558(VertexNormal.aClass94_833, 0)) {
+                                        } else if (class94_47.method1558(VertexNormal.aClass94_833,
+                                          0)) {
                                           string =
                                             string.substring(VertexNormal.aClass94_833.getLength());
                                           byte3 = 4;
-                                        } else if (class94_47
-                                          .method1558(WidgetAccess.aClass94_2214, 0)) {
-                                          string = string
-                                            .substring(WidgetAccess.aClass94_2214.getLength());
+                                        } else if (class94_47.method1558(WidgetAccess.aClass94_2214,
+                                          0)) {
+                                          string = string.substring(
+                                            WidgetAccess.aClass94_2214.getLength());
                                           byte3 = 5;
-                                        } else if (!class94_47
-                                          .method1558(TextureSampler11.aClass94_3246, 0)) {
-                                          if (!class94_47
-                                            .method1558(ComponentCanvas.aClass94_32, 0)) {
+                                        } else if (!class94_47.method1558(
+                                          TextureSampler11.aClass94_3246, 0)) {
+                                          if (!class94_47.method1558(ComponentCanvas.aClass94_32,
+                                            0)) {
                                             if (class94_47.method1558(NPC.aClass94_3981, 0)) {
                                               string =
                                                 string.substring(NPC.aClass94_3981.getLength());
                                               byte3 = 8;
-                                            } else if (!class94_47
-                                              .method1558(MapScene.aClass94_60, 0)) {
-                                              if (class94_47
-                                                .method1558(DummyClass14.aClass94_1961, 0)) {
+                                            } else if (!class94_47.method1558(MapScene.aClass94_60,
+                                              0)) {
+                                              if (class94_47.method1558(DummyClass14.aClass94_1961,
+                                                0)) {
                                                 byte3 = 10;
                                                 string = string.substring(
                                                   DummyClass14.aClass94_1961.getLength());
-                                              } else if (!class94_47
-                                                .method1558(DummyClass5.aClass94_2992, 0)) {
+                                              } else if (!class94_47.method1558(
+                                                DummyClass5.aClass94_2992, 0)) {
                                                 if (0 != TriChromaticImageBuffer.languageId) {
-                                                  if (class94_47
-                                                    .method1558(StillGraphicNode.aClass94_3544,
-                                                      0)) {
+                                                  if (class94_47.method1558(
+                                                    StillGraphicNode.aClass94_3544, 0)) {
                                                     byte3 = 0;
                                                     string = string.substring(
                                                       StillGraphicNode.aClass94_3544.getLength());
-                                                  } else if (class94_47
-                                                    .method1558(TriChromaticImageBuffer.aClass94_2481, 0)) {
+                                                  } else if (class94_47.method1558(
+                                                    TriChromaticImageBuffer.aClass94_2481, 0)) {
                                                     string = string.substring(
                                                       TriChromaticImageBuffer.aClass94_2481.getLength());
                                                     byte3 = 1;
-                                                  } else if (class94_47
-                                                    .method1558(aClass94_809, 0)) {
+                                                  } else if (class94_47.method1558(aClass94_809,
+                                                    0)) {
                                                     string =
                                                       string.substring(aClass94_809.getLength());
                                                     byte3 = 2;
-                                                  } else if (!class94_47
-                                                    .method1558(GameClient.aClass94_2196, 0)) {
-                                                    if (!class94_47
-                                                      .method1558(VertexNormal.aClass94_825, 0)) {
-                                                      if (class94_47
-                                                        .method1558(WidgetAccess.aClass94_2210,
-                                                          0)) {
+                                                  } else if (!class94_47.method1558(
+                                                    GameClient.aClass94_2196, 0)) {
+                                                    if (!class94_47.method1558(
+                                                      VertexNormal.aClass94_825, 0)) {
+                                                      if (class94_47.method1558(
+                                                        WidgetAccess.aClass94_2210, 0)) {
                                                         byte3 = 5;
                                                         string = string.substring(
                                                           WidgetAccess.aClass94_2210.getLength());
-                                                      } else if (class94_47
-                                                        .method1558(TextureSampler11.aClass94_3249,
-                                                          0)) {
+                                                      } else if (class94_47.method1558(
+                                                        TextureSampler11.aClass94_3249, 0)) {
                                                         string = string.substring(
-                                                          TextureSampler11.aClass94_3249
-                                                            .getLength());
+                                                          TextureSampler11.aClass94_3249.getLength());
                                                         byte3 = 6;
-                                                      } else if (class94_47
-                                                        .method1558(ComponentCanvas.aClass94_36,
-                                                          0)) {
+                                                      } else if (class94_47.method1558(
+                                                        ComponentCanvas.aClass94_36, 0)) {
                                                         byte3 = 7;
                                                         string = string.substring(
                                                           ComponentCanvas.aClass94_36.getLength());
-                                                      } else if (class94_47
-                                                        .method1558(NPC.aClass94_3988, 0)) {
+                                                      } else if (class94_47.method1558(
+                                                        NPC.aClass94_3988, 0)) {
                                                         byte3 = 8;
-                                                        string = string
-                                                          .substring(NPC.aClass94_3988.getLength());
-                                                      } else if (class94_47
-                                                        .method1558(MapScene.aClass94_62, 0)) {
+                                                        string = string.substring(
+                                                          NPC.aClass94_3988.getLength());
+                                                      } else if (class94_47.method1558(
+                                                        MapScene.aClass94_62, 0)) {
                                                         byte3 = 9;
                                                         string = string.substring(
                                                           MapScene.aClass94_62.getLength());
-                                                      } else if (class94_47
-                                                        .method1558(DummyClass14.aClass94_1962,
-                                                          0)) {
+                                                      } else if (class94_47.method1558(
+                                                        DummyClass14.aClass94_1962, 0)) {
                                                         string = string.substring(
                                                           DummyClass14.aClass94_1962.getLength());
                                                         byte3 = 10;
-                                                      } else if (class94_47
-                                                        .method1558(DummyClass5.aClass94_2991, 0)) {
+                                                      } else if (class94_47.method1558(
+                                                        DummyClass5.aClass94_2991, 0)) {
                                                         string = string.substring(
                                                           DummyClass5.aClass94_2991.getLength());
                                                         byte3 = 11;
@@ -1859,8 +2508,8 @@ final class ItemConfig {
                                                   }
                                                 }
                                               } else {
-                                                string = string
-                                                  .substring(DummyClass5.aClass94_2992.getLength());
+                                                string = string.substring(
+                                                  DummyClass5.aClass94_2992.getLength());
                                                 byte3 = 11;
                                               }
                                             } else {
@@ -1870,21 +2519,21 @@ final class ItemConfig {
                                             }
                                           } else {
                                             byte3 = 7;
-                                            string = string
-                                              .substring(ComponentCanvas.aClass94_32.getLength());
+                                            string = string.substring(
+                                              ComponentCanvas.aClass94_32.getLength());
                                           }
                                         } else {
                                           byte3 = 6;
-                                          string = string
-                                            .substring(TextureSampler11.aClass94_3246.getLength());
+                                          string = string.substring(
+                                            TextureSampler11.aClass94_3246.getLength());
                                         }
                                       } else {
                                         string = string.substring(aClass94_806.getLength());
                                         byte3 = 2;
                                       }
                                     } else {
-                                      string =
-                                        string.substring(TriChromaticImageBuffer.aClass94_2490.getLength());
+                                      string = string.substring(
+                                        TriChromaticImageBuffer.aClass94_2490.getLength());
                                       byte3 = 1;
                                     }
                                     byte byte4 = 0;
@@ -1893,30 +2542,28 @@ final class ItemConfig {
                                       string =
                                         string.substring(GameObject.aClass94_2740.getLength());
                                       byte4 = 1;
-                                    } else if (!class94_47
-                                      .method1558(TextureSampler35.aClass94_3325, 0)) {
+                                    } else if (!class94_47.method1558(
+                                      TextureSampler35.aClass94_3325, 0)) {
                                       if (!class94_47.method1558(DummyHashTable.aClass94_1689, 0)) {
                                         if (!class94_47.method1558(DummyClass32.aClass94_528, 0)) {
-                                          if (class94_47
-                                            .method1558(SpotAnimationConfig.aClass94_547, 0)) {
+                                          if (class94_47.method1558(
+                                            SpotAnimationConfig.aClass94_547, 0)) {
                                             byte4 = 5;
                                             string = string.substring(
                                               SpotAnimationConfig.aClass94_547.getLength());
                                           } else if (0 != TriChromaticImageBuffer.languageId) {
-                                            if (!class94_47
-                                              .method1558(GameObject.aClass94_2751, 0)) {
-                                              if (!class94_47
-                                                .method1558(TextureSampler35.aClass94_3333, 0)) {
-                                                if (!class94_47
-                                                  .method1558(DummyHashTable.aClass94_1688, 0)) {
-                                                  if (!class94_47
-                                                    .method1558(DummyClass32.aClass94_523, 0)) {
-                                                    if (class94_47
-                                                      .method1558(SpotAnimationConfig.aClass94_551,
-                                                        0)) {
+                                            if (!class94_47.method1558(GameObject.aClass94_2751,
+                                              0)) {
+                                              if (!class94_47.method1558(
+                                                TextureSampler35.aClass94_3333, 0)) {
+                                                if (!class94_47.method1558(
+                                                  DummyHashTable.aClass94_1688, 0)) {
+                                                  if (!class94_47.method1558(
+                                                    DummyClass32.aClass94_523, 0)) {
+                                                    if (class94_47.method1558(
+                                                      SpotAnimationConfig.aClass94_551, 0)) {
                                                       string = string.substring(
-                                                        SpotAnimationConfig.aClass94_551
-                                                          .getLength());
+                                                        SpotAnimationConfig.aClass94_551.getLength());
                                                       byte4 = 5;
                                                     }
                                                   } else {
@@ -1935,8 +2582,8 @@ final class ItemConfig {
                                                   TextureSampler35.aClass94_3333.getLength());
                                               }
                                             } else {
-                                              string = string
-                                                .substring(GameObject.aClass94_2751.getLength());
+                                              string = string.substring(
+                                                GameObject.aClass94_2751.getLength());
                                               byte4 = 1;
                                             }
                                           }
@@ -1946,22 +2593,22 @@ final class ItemConfig {
                                             string.substring(DummyClass32.aClass94_528.getLength());
                                         }
                                       } else {
-                                        string = string
-                                          .substring(DummyHashTable.aClass94_1689.getLength());
+                                        string = string.substring(
+                                          DummyHashTable.aClass94_1689.getLength());
                                         byte4 = 3;
                                       }
                                     } else {
                                       byte4 = 2;
-                                      string = string
-                                        .substring(TextureSampler35.aClass94_3325.getLength());
+                                      string = string.substring(
+                                        TextureSampler35.aClass94_3325.getLength());
                                     }
                                     TextureSampler12.secureBuffer.writePacket(237);
                                     TextureSampler12.secureBuffer.writeByte(0);
                                     int k79 = TextureSampler12.secureBuffer.position;
                                     TextureSampler12.secureBuffer.writeByte(byte3);
                                     TextureSampler12.secureBuffer.writeByte(byte4);
-                                    DummyClass52
-                                      .method1423(false, TextureSampler12.secureBuffer, string);
+                                    DummyClass52.method1423(false, TextureSampler12.secureBuffer,
+                                      string);
                                     TextureSampler12.secureBuffer.method769((byte) -127,
                                       -k79 + TextureSampler12.secureBuffer.position);
                                   }
@@ -1979,8 +2626,8 @@ final class ItemConfig {
                                     TextureSampler12.secureBuffer.writeByte(0);
                                     int k69 = TextureSampler12.secureBuffer.position;
                                     TextureSampler12.secureBuffer.writeLong(class94_19.toBase37());
-                                    DummyClass52
-                                      .method1423(false, TextureSampler12.secureBuffer, class94_48);
+                                    DummyClass52.method1423(false, TextureSampler12.secureBuffer,
+                                      class94_48);
                                     TextureSampler12.secureBuffer.method769((byte) -127,
                                       TextureSampler12.secureBuffer.position - k69);
                                   }
@@ -2116,11 +2763,12 @@ final class ItemConfig {
                                   SceneSomething2.aClass10_1056 = new SomethingQuickChatK();
                                   SceneSomething2.aClass10_1056.anInt149 =
                                     GroundItem.anIntArray2929[--k];
-                                  SceneSomething2.aClass10_1056.aClass3_Sub28_Sub4_151 = StringNode
-                                    .method733(0xbc614e, SceneSomething2.aClass10_1056.anInt149);
+                                  SceneSomething2.aClass10_1056.aClass3_Sub28_Sub4_151 =
+                                    StringNode.method733(0xbc614e,
+                                      SceneSomething2.aClass10_1056.anInt149);
                                   SceneSomething2.aClass10_1056.anIntArray153 =
-                                    new int[SceneSomething2.aClass10_1056.aClass3_Sub28_Sub4_151
-                                      .method552(true)];
+                                    new int[SceneSomething2.aClass10_1056.aClass3_Sub28_Sub4_151.method552(
+                                      true)];
                                   continue;
                                 }
                                 if (5059 == j1) {
@@ -2129,11 +2777,11 @@ final class ItemConfig {
                                   TextureSampler12.secureBuffer.writeByte(0);
                                   int j27 = TextureSampler12.secureBuffer.position;
                                   TextureSampler12.secureBuffer.writeByte(0);
-                                  TextureSampler12.secureBuffer
-                                    .writeShort(SceneSomething2.aClass10_1056.anInt149);
-                                  SceneSomething2.aClass10_1056.aClass3_Sub28_Sub4_151
-                                    .method545(TextureSampler12.secureBuffer,
-                                      SceneSomething2.aClass10_1056.anIntArray153, false);
+                                  TextureSampler12.secureBuffer.writeShort(
+                                    SceneSomething2.aClass10_1056.anInt149);
+                                  SceneSomething2.aClass10_1056.aClass3_Sub28_Sub4_151.method545(
+                                    TextureSampler12.secureBuffer,
+                                    SceneSomething2.aClass10_1056.anIntArray153, false);
                                   TextureSampler12.secureBuffer.method769((byte) -126,
                                     -j27 + TextureSampler12.secureBuffer.position);
                                   continue;
@@ -2145,11 +2793,11 @@ final class ItemConfig {
                                   TextureSampler12.secureBuffer.writeByte(0);
                                   int l56 = TextureSampler12.secureBuffer.position;
                                   TextureSampler12.secureBuffer.writeLong(class94_21.toBase37());
-                                  TextureSampler12.secureBuffer
-                                    .writeShort(SceneSomething2.aClass10_1056.anInt149);
-                                  SceneSomething2.aClass10_1056.aClass3_Sub28_Sub4_151
-                                    .method545(TextureSampler12.secureBuffer,
-                                      SceneSomething2.aClass10_1056.anIntArray153, false);
+                                  TextureSampler12.secureBuffer.writeShort(
+                                    SceneSomething2.aClass10_1056.anInt149);
+                                  SceneSomething2.aClass10_1056.aClass3_Sub28_Sub4_151.method545(
+                                    TextureSampler12.secureBuffer,
+                                    SceneSomething2.aClass10_1056.anIntArray153, false);
                                   TextureSampler12.secureBuffer.method769((byte) 108,
                                     TextureSampler12.secureBuffer.position + -l56);
                                   continue;
@@ -2160,11 +2808,11 @@ final class ItemConfig {
                                   TextureSampler12.secureBuffer.writeByte(0);
                                   int k27 = TextureSampler12.secureBuffer.position;
                                   TextureSampler12.secureBuffer.writeByte(1);
-                                  TextureSampler12.secureBuffer
-                                    .writeShort(SceneSomething2.aClass10_1056.anInt149);
-                                  SceneSomething2.aClass10_1056.aClass3_Sub28_Sub4_151
-                                    .method545(TextureSampler12.secureBuffer,
-                                      SceneSomething2.aClass10_1056.anIntArray153, false);
+                                  TextureSampler12.secureBuffer.writeShort(
+                                    SceneSomething2.aClass10_1056.anInt149);
+                                  SceneSomething2.aClass10_1056.aClass3_Sub28_Sub4_151.method545(
+                                    TextureSampler12.secureBuffer,
+                                    SceneSomething2.aClass10_1056.anIntArray153, false);
                                   TextureSampler12.secureBuffer.method769((byte) -126,
                                     -k27 + TextureSampler12.secureBuffer.position);
                                   continue;
@@ -2264,9 +2912,8 @@ final class ItemConfig {
                                     || ~Mobile.anInt2756 <= ~FileTable.anInt952) {
                                     GroundItem.anIntArray2929[k++] = -1;
                                   } else {
-                                    GroundItem.anIntArray2929[k++] = ClientScript
-                                      .bitAnd(DummyClass54.aShortArray1398[Mobile.anInt2756++],
-                                        65535);
+                                    GroundItem.anIntArray2929[k++] = ClientScript.bitAnd(
+                                      DummyClass54.aShortArray1398[Mobile.anInt2756++], 65535);
                                   }
                                   continue;
                                 }
@@ -2305,18 +2952,17 @@ final class ItemConfig {
                               }
                               if (~j1 > -5301) {
                                 if (-5201 == ~j1) {
-                                  NpcConfiguration
-                                    .method1479(GroundItem.anIntArray2929[--k], (byte) 56);
+                                  NpcConfiguration.method1479(GroundItem.anIntArray2929[--k],
+                                    (byte) 56);
                                   continue;
                                 }
                                 if (5201 == j1) {
-                                  GroundItem.anIntArray2929[k++] =
-                                    ByteArrayNode.method571(-109);
+                                  GroundItem.anIntArray2929[k++] = ByteArrayNode.method571(-109);
                                   continue;
                                 }
                                 if (j1 == 5202) {
-                                  AudioStreamEncoder4
-                                    .method503((byte) -53, GroundItem.anIntArray2929[--k]);
+                                  AudioStreamEncoder4.method503((byte) -53,
+                                    GroundItem.anIntArray2929[--k]);
                                   continue;
                                 }
                                 if (5203 == j1) {
@@ -2334,8 +2980,8 @@ final class ItemConfig {
                                 }
                                 if (~j1 == -5207) {
                                   int i30 = GroundItem.anIntArray2929[--k];
-                                  SomethingWorldMapy class3_sub28_sub3_4 = Queue
-                                    .method884(0x3fff & i30 >> 0x36628f6e, (byte) 111,
+                                  SomethingWorldMapy class3_sub28_sub3_4 =
+                                    Queue.method884(0x3fff & i30 >> 0x36628f6e, (byte) 111,
                                       0x3fff & i30);
                                   if (class3_sub28_sub3_4 != null) {
                                     Node.aClass94Array75[l++] = class3_sub28_sub3_4.aClass94_3561;
@@ -2430,17 +3076,16 @@ final class ItemConfig {
                                 }
                                 if (j1 == 5214) {
                                   int l30 = GroundItem.anIntArray2929[--k];
-                                  AbstractObjectNode
-                                    .method565((byte) 86, 0x3fff & l30 >> 0xa1b3276e, 0x3fff & l30);
+                                  AbstractObjectNode.method565((byte) 86,
+                                    0x3fff & l30 >> 0xa1b3276e, 0x3fff & l30);
                                   continue;
                                 }
                                 if (~j1 == -5216) {
                                   int i31 = GroundItem.anIntArray2929[--k];
                                   GameString class94_53 = Node.aClass94Array75[--l];
                                   boolean flag10 = false;
-                                  Queue class13 = AbstractIndexedColorSprite
-                                    .method1664(0x3fff & i31 >> 0xa4e408ae, 0x3fff & i31,
-                                      (byte) -118);
+                                  Queue class13 = AbstractIndexedColorSprite.method1664(
+                                    0x3fff & i31 >> 0xa4e408ae, 0x3fff & i31, (byte) -118);
                                   SomethingWorldMapy class3_sub28_sub3_5 =
                                     (SomethingWorldMapy) class13.getFirst();
                                   do {
@@ -2451,8 +3096,7 @@ final class ItemConfig {
                                       flag10 = true;
                                       break;
                                     }
-                                    class3_sub28_sub3_5 =
-                                      (SomethingWorldMapy) class13.getNext();
+                                    class3_sub28_sub3_5 = (SomethingWorldMapy) class13.getNext();
                                   } while (true);
                                   if (!flag10) {
                                     GroundItem.anIntArray2929[k++] = 0;
@@ -2508,8 +3152,8 @@ final class ItemConfig {
                                 }
                                 if (-5302 == ~j1) {
                                   if (null != TextureSampler30.fullScreenFrame) {
-                                    SceneNode
-                                      .setWindowMode(false, SubNode.anInt2577, -8914, -1, -1);
+                                    SceneNode.setWindowMode(false, SubNode.anInt2577, -8914, -1,
+                                      -1);
                                   }
                                   continue;
                                 }
@@ -2591,8 +3235,8 @@ final class ItemConfig {
                                 if (j1 == 5401) {
                                   k -= 2;
                                   TextureSampler38.aShortArray3455[GroundItem.anIntArray2929[k]] =
-                                    (short) DummyClass42
-                                      .method1186(0, GroundItem.anIntArray2929[k + 1]);
+                                    (short) DummyClass42.method1186(0,
+                                      GroundItem.anIntArray2929[k + 1]);
                                   GameStub.method28(true);
                                   Buffer.method746((byte) -29);
                                   DummyClass10.method2265(0);
@@ -2644,12 +3288,12 @@ final class ItemConfig {
                                 }
                                 if (-5412 == ~j1) {
                                   if (TextureSampler30.fullScreenFrame != null) {
-                                    SceneNode
-                                      .setWindowMode(false, SubNode.anInt2577, -8914, -1, -1);
+                                    SceneNode.setWindowMode(false, SubNode.anInt2577, -8914, -1,
+                                      -1);
                                   }
                                   if (null == TextureSampler27.frame) {
-                                    DummyClass54
-                                      .method1596(Widget.method856(true), (byte) 126, false);
+                                    DummyClass54.method1596(Widget.method856(true), (byte) 126,
+                                      false);
                                   } else {
                                     System.exit(0);
                                   }
@@ -2658,13 +3302,15 @@ final class ItemConfig {
                                 if (j1 == 5419) {
                                   GameString class94_24 = AreaSoundEffect.aClass94_2331;
                                   if (null != SceneShadowMap.aClass64_1778) {
-                                    class94_24 = DummyClass58
-                                      .method1653(SceneShadowMap.aClass64_1778.anInt979, 0);
+                                    class94_24 =
+                                      DummyClass58.method1653(SceneShadowMap.aClass64_1778.anInt979,
+                                        0);
                                     if (SceneShadowMap.aClass64_1778.result != null) {
                                       byte abyte0[] = null;
                                       try {
-                                        abyte0 = ((String) SceneShadowMap.aClass64_1778.result)
-                                          .getBytes("ISO-8859-1");
+                                        abyte0 =
+                                          ((String) SceneShadowMap.aClass64_1778.result).getBytes(
+                                            "ISO-8859-1");
                                       } catch (UnsupportedEncodingException e) {
                                         // TODO Auto-generated catch block
                                         e.printStackTrace();
@@ -2682,8 +3328,8 @@ final class ItemConfig {
                                 }
                                 if (j1 == 5421) {
                                   if (null != TextureSampler30.fullScreenFrame) {
-                                    SceneNode
-                                      .setWindowMode(false, SubNode.anInt2577, -8914, -1, -1);
+                                    SceneNode.setWindowMode(false, SubNode.anInt2577, -8914, -1,
+                                      -1);
                                   }
                                   boolean flag5 = 1 == GroundItem.anIntArray2929[--k];
                                   GameString class94_25 = Node.aClass94Array75[--l];
@@ -2691,8 +3337,9 @@ final class ItemConfig {
                                     Widget.method856(true), class94_25
                                   });
                                   if (null == TextureSampler27.frame && (!flag5
-                                    || -4 == ~SignLink.anInt1214 || !SignLink.formattedOsName
-                                    .startsWith("win") || DisplayMode.aBoolean1451)) {
+                                    || -4 == ~SignLink.anInt1214
+                                    || !SignLink.formattedOsName.startsWith("win")
+                                    || DisplayMode.aBoolean1451)) {
                                     DummyClass54.method1596(class94_64, (byte) 127, flag5);
                                   } else {
                                     GameString.aBoolean2154 = flag5;
@@ -2777,8 +3424,8 @@ final class ItemConfig {
                                   int l77 = GroundItem.anIntArray2929[k - -3];
                                   int j72 = GroundItem.anIntArray2929[k - -2];
                                   int i60 = GroundItem.anIntArray2929[k + 1];
-                                  TriChromaticImageBuffer.method390(false, j72, i60, l77, (byte) -128,
-                                    -ProceduralTexture.anInt1152 + (0x3fff & l33),
+                                  TriChromaticImageBuffer.method390(false, j72, i60, l77,
+                                    (byte) -128, -ProceduralTexture.anInt1152 + (0x3fff & l33),
                                     ((0xffffe30 & l33) >> 0x372f8c2e) - WorldMapLabel.anInt1716);
                                   continue;
                                 }
@@ -2788,11 +3435,10 @@ final class ItemConfig {
                                   int i34 = GroundItem.anIntArray2929[k];
                                   int i78 = GroundItem.anIntArray2929[k - -3];
                                   int k72 = GroundItem.anIntArray2929[k + 2];
-                                  Something3d
-                                    .method2238(j60, (0x3fff & i34) - ProceduralTexture.anInt1152,
-                                      k72,
-                                      -WorldMapLabel.anInt1716 + ((0xffff221 & i34) >> 0xcd90732e),
-                                      (byte) -21, i78);
+                                  Something3d.method2238(j60,
+                                    (0x3fff & i34) - ProceduralTexture.anInt1152, k72,
+                                    -WorldMapLabel.anInt1716 + ((0xffff221 & i34) >> 0xcd90732e),
+                                    (byte) -21, i78);
                                   continue;
                                 }
                                 if (~j1 == -5503) {
@@ -2890,8 +3536,8 @@ final class ItemConfig {
                                     continue;
                                   }
                                   if (j1 == 6002) {
-                                    SceneSomething
-                                      .method957(96, 1 == GroundItem.anIntArray2929[--k]);
+                                    SceneSomething.method957(96,
+                                      1 == GroundItem.anIntArray2929[--k]);
                                     StringNode0.method139(66);
                                     DummyClass51.method1417(101);
                                     Buffer.method792(0x8c1111);
@@ -2917,8 +3563,8 @@ final class ItemConfig {
                                   if (-6007 == ~j1) {
                                     SceneSomething.aBoolean488 =
                                       GroundItem.anIntArray2929[--k] == 1;
-                                    ((TextureCache) DummyClass40.textureCache)
-                                      .method1616(!SceneSomething.aBoolean488, -17830);
+                                    ((TextureCache) DummyClass40.textureCache).method1616(
+                                      !SceneSomething.aBoolean488, -17830);
                                     DummyClass25.writeSettings(DummyClass35.signLink);
                                     StillGraphic.aBoolean2705 = false;
                                     continue;
@@ -3047,9 +3693,8 @@ final class ItemConfig {
                                     if (~k35 != ~BZipDecompressorState.anInt120) {
                                       if (-1 == ~BZipDecompressorState.anInt120
                                         && 0 != ~AbstractFrameRegulator.anInt1691) {
-                                        SceneSomething2
-                                          .method1285(SomethingTexture1.fileUnpacker6, false,
-                                            AbstractFrameRegulator.anInt1691, 0, false, k35);
+                                        SceneSomething2.method1285(SomethingTexture1.fileUnpacker6,
+                                          false, AbstractFrameRegulator.anInt1691, 0, false, k35);
                                         MidiSomething.aBoolean1158 = false;
                                       } else if (-1 == ~k35) {
                                         SceneNode.method1870(false);
@@ -3242,15 +3887,15 @@ final class ItemConfig {
                                       Parameter.aCalendar3616.clear();
                                       Parameter.aCalendar3616.set(11, 12);
                                       Parameter.aCalendar3616.set(i73, l60, k36);
-                                      GroundItem.anIntArray2929[k++] = -11745 + (int) (
-                                        Parameter.aCalendar3616.getTime().getTime()
+                                      GroundItem.anIntArray2929[k++] =
+                                        -11745 + (int) (Parameter.aCalendar3616.getTime().getTime()
                                           / 0x5265c00L);
                                       continue;
                                     }
                                     if (6303 == j1) {
                                       Parameter.aCalendar3616.clear();
-                                      Parameter.aCalendar3616
-                                        .setTime(new Date(Time.getCurrentTimeMillis()));
+                                      Parameter.aCalendar3616.setTime(
+                                        new Date(Time.getCurrentTimeMillis()));
                                       GroundItem.anIntArray2929[k++] =
                                         Parameter.aCalendar3616.get(1);
                                       continue;
@@ -3401,7 +4046,8 @@ final class ItemConfig {
                                     if (j1 != 6601) {
                                       break;
                                     }
-                                    GroundItem.anIntArray2929[k++] = AudioWorker.aBoolean346 ? 1 : 0;
+                                    GroundItem.anIntArray2929[k++] =
+                                      AudioWorker.aBoolean346 ? 1 : 0;
                                     continue;
                                   }
                                   if (6405 == j1) {
@@ -3474,9 +4120,8 @@ final class ItemConfig {
                                   continue;
                                 }
                                 if (~j1 == -6204) {
-                                  DummyClass45
-                                    .method1239(FloorOverlay.aClass11_2091.anInt168, 81, 0,
-                                      FloorOverlay.aClass11_2091.anInt193, 0, false);
+                                  DummyClass45.method1239(FloorOverlay.aClass11_2091.anInt168, 81,
+                                    0, FloorOverlay.aClass11_2091.anInt193, 0, false);
                                   GroundItem.anIntArray2929[k++] = HintMarker.anInt1358;
                                   GroundItem.anIntArray2929[k++] = ComponentCanvas.anInt31;
                                   continue;
@@ -3531,8 +4176,8 @@ final class ItemConfig {
                                 if (~DummyClass15.state == -11 && TextureSampler2.anInt3375 == 0
                                   && ~TextureSampler28.loginState == -1
                                   && -1 == ~DummyCanvas.anInt23 && ~Light.anInt692 == -1) {
-                                  DummyClass59
-                                    .method1041(Node.aClass94Array75[l].toBase37(), -28236);
+                                  DummyClass59.method1041(Node.aClass94Array75[l].toBase37(),
+                                    -28236);
                                 }
                                 continue;
                               }
@@ -3542,12 +4187,12 @@ final class ItemConfig {
                                 if (~DummyClass15.state == -11 && 0 == TextureSampler2.anInt3375
                                   && ~TextureSampler28.loginState == -1 && DummyCanvas.anInt23 == 0
                                   && Light.anInt692 == 0) {
-                                  WidgetUpdate
-                                    .createIndexedColorSprite(GroundItem.anIntArray2929[k], 10603,
-                                      GroundItem.anIntArray2929[k - -3],
-                                      GroundItem.anIntArray2929[1 + k], Node.aClass94Array75[1 + l],
-                                      Node.aClass94Array75[l].toBase37(),
-                                      GroundItem.anIntArray2929[2 + k]);
+                                  WidgetUpdate.createIndexedColorSprite(
+                                    GroundItem.anIntArray2929[k], 10603,
+                                    GroundItem.anIntArray2929[k - -3],
+                                    GroundItem.anIntArray2929[1 + k], Node.aClass94Array75[1 + l],
+                                    Node.aClass94Array75[l].toBase37(),
+                                    GroundItem.anIntArray2929[2 + k]);
                                 }
                                 continue;
                               }
@@ -3575,8 +4220,8 @@ final class ItemConfig {
                                   Node.aClass94Array75[l++] =
                                     TextureSampler29.aClass94Array3391.length <= l37 ?
                                       AreaSoundEffect.aClass94_2331 :
-                                      TextureSampler29.aClass94Array3391[l37]
-                                        .formatName((byte) -50);
+                                      TextureSampler29.aClass94Array3391[l37].formatName(
+                                        (byte) -50);
                                 }
 
                                 TextureSampler29.aClass94Array3391 = null;
@@ -3718,8 +4363,9 @@ final class ItemConfig {
                             || Mobile.anInt2756 >= FileTable.anInt952) {
                             GroundItem.anIntArray2929[k++] = -1;
                           } else {
-                            GroundItem.anIntArray2929[k++] = ClientScript
-                              .bitAnd(DummyClass54.aShortArray1398[Mobile.anInt2756++], 65535);
+                            GroundItem.anIntArray2929[k++] =
+                              ClientScript.bitAnd(DummyClass54.aShortArray1398[Mobile.anInt2756++],
+                                65535);
                           }
                           continue;
                         }
@@ -3792,8 +4438,9 @@ final class ItemConfig {
                       }
                       if (~j1 == -4108) {
                         l -= 2;
-                        GroundItem.anIntArray2929[k++] = Node.aClass94Array75[l]
-                          .method1546((byte) -63, Node.aClass94Array75[l - -1]);
+                        GroundItem.anIntArray2929[k++] =
+                          Node.aClass94Array75[l].method1546((byte) -63,
+                            Node.aClass94Array75[l - -1]);
                         continue;
                       }
                       if (4108 == j1) {
@@ -3841,8 +4488,7 @@ final class ItemConfig {
                       }
                       if (-4114 == ~j1) {
                         int j41 = GroundItem.anIntArray2929[--k];
-                        GroundItem.anIntArray2929[k++] =
-                          Something3d2.method2248(-157, j41) ? 1 : 0;
+                        GroundItem.anIntArray2929[k++] = Something3d2.method2248(-157, j41) ? 1 : 0;
                         continue;
                       }
                       if (-4115 == ~j1) {
@@ -3935,8 +4581,8 @@ final class ItemConfig {
                       boolean flag1 = ~GroundItem.anIntArray2929[--k] != -1;
                       int k64 = GroundItem.anIntArray2929[--k];
                       Node.aClass94Array75[l++] =
-                        SomethingOtherWorldMap
-                          .method407(TriChromaticImageBuffer.languageId, flag1, 0, k64, 2);
+                        SomethingOtherWorldMap.method407(TriChromaticImageBuffer.languageId, flag1,
+                          0, k64, 2);
                       continue;
                     }
                     Widget class11_8 =
@@ -4088,7 +4734,8 @@ final class ItemConfig {
                 GroundItem.anIntArray2929[k++] = class11_12.anInt224;
                 continue;
               }
-              Widget class11_13 = flag ? Something3dRoot.aClass11_2055 : SomethingPacket116.aClass11_1749;
+              Widget class11_13 =
+                flag ? Something3dRoot.aClass11_2055 : SomethingPacket116.aClass11_1749;
               if (j1 == 1700) {
                 GroundItem.anIntArray2929[k++] = class11_13.anInt192;
                 continue;
@@ -4108,7 +4755,8 @@ final class ItemConfig {
             } else {
               Widget class11_14;
               if (-2001 < ~j1) {
-                class11_14 = flag ? Something3dRoot.aClass11_2055 : SomethingPacket116.aClass11_1749;
+                class11_14 =
+                  flag ? Something3dRoot.aClass11_2055 : SomethingPacket116.aClass11_1749;
               } else {
                 j1 -= 1000;
                 class11_14 =
@@ -4116,8 +4764,8 @@ final class ItemConfig {
               }
               int ai3[] = null;
               GameString class94_62 = Node.aClass94Array75[--l];
-              if (~class94_62.getLength() < -1 && -90 == ~class94_62
-                .charAt(class94_62.getLength() + -1)) {
+              if (~class94_62.getLength() < -1 && -90 == ~class94_62.charAt(
+                class94_62.getLength() + -1)) {
                 int i79 = GroundItem.anIntArray2929[--k];
                 if (i79 > 0) {
                   ai3 = new int[i79];
@@ -4582,665 +5230,8 @@ final class ItemConfig {
       var0.addMouseMotionListener(ObjectNode.mouse);
       var0.addFocusListener(ObjectNode.mouse);
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "h.K(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
-    }
-  }
-
-  final boolean method1102(boolean var1, boolean var2) {
-    try {
-      int var3 = this.anInt803;
-      int var4 = this.anInt796;
-      if (var1) {
-        var3 = this.anInt773;
-        var4 = this.anInt753;
-      }
-
-      if (var2) {
-        this.method1113(41, null);
-      }
-
-      if (~var3 == 0) {
-        return true;
-      } else {
-        boolean var5 = true;
-        if (!StringNode.aClass153_2581.method2129((byte) -75, 0, var3)) {
-          var5 = false;
-        }
-
-        if (~var4 != 0 && !StringNode.aClass153_2581.method2129((byte) 58, 0, var4)) {
-          var5 = false;
-        }
-
-        return var5;
-      }
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6, "h.G(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  private final GameString method1105(int var1, GameString var2, int var3) {
-    try {
-      if (this.aClass130_798 == null) {
-        return var2;
-      } else {
-        if (var1 < 90) {
-          method1111(-111);
-        }
-
-        StringNode var4 = (StringNode) this.aClass130_798.get((long) var3);
-        return null != var4 ? var4.aClass94_2586 : var2;
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "h.S(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
-    }
-  }
-
-  final ItemConfig method1106(int var1, int var2) {
-    try {
-      int var3 = 58 % ((-28 - var2) / 48);
-      if (this.anIntArray804 != null && -2 > ~var1) {
-        int var4 = -1;
-
-        for (int var5 = 0; 10 > var5; ++var5) {
-          if (this.anIntArray766[var5] <= var1 && -1 != ~this.anIntArray766[var5]) {
-            var4 = this.anIntArray804[var5];
-          }
-        }
-
-        if (0 != ~var4) {
-          return DummyClass35.getItemConfig(var4, (byte) 97);
-        }
-      }
-
-      return this;
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6, "h.H(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final boolean method1108(byte var1, boolean var2) {
-    try {
-      int var4 = this.anInt771;
-      int var3 = this.anInt793;
-      int var6 = 106 % ((var1 - 24) / 58);
-      int var5 = this.anInt769;
-      if (var2) {
-        var5 = this.anInt776;
-        var3 = this.anInt761;
-        var4 = this.anInt794;
-      }
-
-      if (~var3 != 0) {
-        boolean var7 = true;
-        if (!StringNode.aClass153_2581.method2129((byte) -90, 0, var3)) {
-          var7 = false;
-        }
-
-        if (~var4 != 0 && !StringNode.aClass153_2581.method2129((byte) -114, 0, var4)) {
-          var7 = false;
-        }
-
-        if (-1 != var5 && !StringNode.aClass153_2581.method2129((byte) 83, 0, var5)) {
-          var7 = false;
-        }
-
-        return var7;
-      } else {
-        return true;
-      }
-    } catch (RuntimeException var8) {
-      throw AbstractGameWorld.cascadeException(var8, "h.C(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final void method1109(byte var1, ItemConfig var2, ItemConfig var3) {
-    try {
-      this.aByteArray785 = var2.aByteArray785;
-      this.anInt778 = var2.anInt778;
-      this.aClass130_798 = var2.aClass130_798;
-      this.anInt769 = var2.anInt769;
-      this.anInt761 = var2.anInt761;
-      this.anInt775 = var2.anInt775;
-      this.inventoryOptions = new GameString[5];
-      this.anInt755 = var3.anInt755;
-      this.anInt810 = var3.anInt810;
-      this.anInt757 = 0;
-      this.anInt782 = var2.anInt782;
-      this.anInt773 = var2.anInt773;
-      this.aShortArray774 = var2.aShortArray774;
-      this.rotationZ = var3.rotationZ;
-      this.anInt771 = var2.anInt771;
-      this.rotationY = var3.rotationY;
-      this.anInt803 = var2.anInt803;
-      this.anInt796 = var2.anInt796;
-      this.anInt760 = var2.anInt760;
-      this.rotationX = var3.rotationX;
-      this.translateOther = var3.translateOther;
-      this.anInt753 = var2.anInt753;
-      this.anInt777 = var2.anInt777;
-      this.aShortArray772 = var2.aShortArray772;
-      this.anInt802 = var2.anInt802;
-      this.anInt752 = var2.anInt752;
-      this.translateX = var3.translateX;
-      if (var1 != 69) {
-        this.anInt757 = 109;
-      }
-
-      this.anInt793 = var2.anInt793;
-      this.anInt794 = var2.anInt794;
-      this.aClass94_770 = var2.aClass94_770;
-      this.aShortArray751 = var2.aShortArray751;
-      this.aShortArray765 = var2.aShortArray765;
-      this.aClass94Array801 = var2.aClass94Array801;
-      this.aBoolean779 = var2.aBoolean779;
-      this.anInt776 = var2.anInt776;
-      if (null != var2.inventoryOptions) {
-        for (int var4 = 0; -5 < ~var4; ++var4) {
-          this.inventoryOptions[var4] = var2.inventoryOptions[var4];
-        }
-      }
-
-      this.inventoryOptions[4] = RenderAnimation.aClass94_361;
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "h.J(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + (var3 != null ?
-          "{...}" :
-          "null") + ')');
-    }
-  }
-
-  final AbstractModel getModel(int var1, int var2, int var3, AnimationSequence var4, int var5,
-                               int var6) {
-    try {
-      if (var1 < 94) {
-        this.anInt755 = -67;
-      }
-
-      if (this.anIntArray804 != null && -2 > ~var5) {
-        int var7 = -1;
-
-        for (int var8 = 0; var8 < 10; ++var8) {
-          if (~var5 <= ~this.anIntArray766[var8] && ~this.anIntArray766[var8] != -1) {
-            var7 = this.anIntArray804[var8];
-          }
-        }
-
-        if (~var7 != 0) {
-          return DummyClass35.getItemConfig(var7, (byte) 109)
-            .getModel(113, var2, var3, var4, 1, var6);
-        }
-      }
-
-      AbstractModel var11 = (AbstractModel) DummyClass15.aClass93_1874.get((long) this.anInt787);
-      if (var11 == null) {
-        Model var12 = Model.getModel(StringNode.aClass153_2581, this.anInt755, 0);
-        if (null == var12) {
-          return null;
-        }
-
-        int var9;
-        if (null != this.aShortArray774) {
-          for (var9 = 0; this.aShortArray774.length > var9; ++var9) {
-            if (null != this.aByteArray785 && ~var9 > ~this.aByteArray785.length) {
-              var12.replaceColor(this.aShortArray774[var9],
-                TextureSampler38.aShortArray3453[this.aByteArray785[var9] & 255]);
-            } else {
-              var12.replaceColor(this.aShortArray774[var9], this.aShortArray772[var9]);
-            }
-          }
-        }
-
-        if (this.aShortArray765 != null) {
-          for (var9 = 0; var9 < this.aShortArray765.length; ++var9) {
-            var12.replaceMaterial(this.aShortArray765[var9], this.aShortArray751[var9]);
-          }
-        }
-
-        var11 = var12.method2008(this.anInt784 + 64, 768 + this.anInt790, -50, -10, -50);
-        if (~this.anInt805 != -129 || this.anInt780 != 128 || ~this.anInt797 != -129) {
-          var11.scale(this.anInt805, this.anInt780, this.anInt797);
-        }
-
-        var11.aBoolean2699 = true;
-        if (GlRenderer.useOpenGlRenderer) {
-          ((GlModel) var11).method1920(false, false, false, true, false, false, true);
-        }
-
-        DummyClass15.aClass93_1874.get((byte) -123, var11, (long) this.anInt787);
-      }
-
-      if (var4 != null) {
-        var11 = var4.method2055(var11, (byte) -88, var2, var3, var6);
-      }
-
-      return var11;
-    } catch (RuntimeException var10) {
-      throw AbstractGameWorld.cascadeException(var10,
-        "h.E(" + var1 + ',' + var2 + ',' + var3 + ',' + (var4 != null ? "{...}" : "null") + ','
-          + var5 + ',' + var6 + ')');
-    }
-  }
-
-  final void method1112(int var1) {
-    try {
-      if (var1 != 5401) {
-        method1103(null, null, true);
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "h.O(" + var1 + ')');
-    }
-  }
-
-  final void method1113(int var1, Buffer var2) {
-    try {
-      while (true) {
-        int var3 = var2.readUnsignedByte();
-        if (0 == var3) {
-          if (var1 != 1) {
-            this.anInt789 = -40;
-          }
-
-          return;
-        }
-
-        this.method1114((byte) -72, var2, var3);
-      }
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "h.M(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  private final void method1114(byte var1, Buffer var2, int var3) {
-    try {
-      int var4 = -118 % ((var1 - 48) / 61);
-      if (~var3 != -2) {
-        if (var3 != 2) {
-          if (-5 == ~var3) {
-            this.anInt810 = var2.readUnsignedShort();
-          } else if (~var3 == -6) {
-            this.rotationX = var2.readUnsignedShort();
-          } else if (~var3 == -7) {
-            this.rotationY = var2.readUnsignedShort();
-          } else if (~var3 == -8) {
-            this.translateX = var2.readUnsignedShort();
-            if (~this.translateX < -32768) {
-              this.translateX -= 65536;
-            }
-          } else if (~var3 != -9) {
-            if (var3 == 11) {
-              this.anInt764 = 1;
-            } else if (-13 == ~var3) {
-              this.anInt757 = var2.readInt();
-            } else if (-17 != ~var3) {
-              if (23 == var3) {
-                this.anInt793 = var2.readUnsignedShort();
-              } else if (var3 != 24) {
-                if (~var3 != -26) {
-                  if (~var3 != -27) {
-                    if (var3 >= 30 && -36 < ~var3) {
-                      this.aClass94Array801[-30 + var3] = var2.readString();
-                      if (this.aClass94Array801[var3 + -30]
-                        .method1531(TextureSampler33.aClass94_3051)) {
-                        this.aClass94Array801[-30 + var3] = null;
-                      }
-                    } else if (35 <= var3 && 40 > var3) {
-                      this.inventoryOptions[-35 + var3] = var2.readString();
-                    } else {
-                      int var5;
-                      int var6;
-                      if (-41 != ~var3) {
-                        if (-42 == ~var3) {
-                          var5 = var2.readUnsignedByte();
-                          this.aShortArray751 = new short[var5];
-                          this.aShortArray765 = new short[var5];
-
-                          for (var6 = 0; ~var5 < ~var6; ++var6) {
-                            this.aShortArray765[var6] = (short) var2.readUnsignedShort();
-                            this.aShortArray751[var6] = (short) var2.readUnsignedShort();
-                          }
-                        } else if (42 == var3) {
-                          var5 = var2.readUnsignedByte();
-                          this.aByteArray785 = new byte[var5];
-
-                          for (var6 = 0; ~var6 > ~var5; ++var6) {
-                            this.aByteArray785[var6] = var2.readByte();
-                          }
-                        } else if (var3 == 65) {
-                          this.aBoolean807 = true;
-                        } else if (-79 != ~var3) {
-                          if (-80 == ~var3) {
-                            this.anInt776 = var2.readUnsignedShort();
-                          } else if (90 == var3) {
-                            this.anInt803 = var2.readUnsignedShort();
-                          } else if (var3 == 91) {
-                            this.anInt773 = var2.readUnsignedShort();
-                          } else if (var3 != 92) {
-                            if (var3 != 93) {
-                              if (-96 == ~var3) {
-                                this.rotationZ = var2.readUnsignedShort();
-                              } else if (-97 == ~var3) {
-                                this.anInt800 = var2.readUnsignedByte();
-                              } else if (var3 == 97) {
-                                this.anInt789 = var2.readUnsignedShort();
-                              } else if (-99 == ~var3) {
-                                this.anInt791 = var2.readUnsignedShort();
-                              } else if (-101 >= ~var3 && ~var3 > -111) {
-                                if (null == this.anIntArray804) {
-                                  this.anIntArray804 = new int[10];
-                                  this.anIntArray766 = new int[10];
-                                }
-
-                                this.anIntArray804[-100 + var3] = var2.readUnsignedShort();
-                                this.anIntArray766[var3 + -100] = var2.readUnsignedShort();
-                              } else if (110 != var3) {
-                                if (~var3 != -112) {
-                                  if (-113 == ~var3) {
-                                    this.anInt797 = var2.readUnsignedShort();
-                                  } else if (-114 != ~var3) {
-                                    if (~var3 == -115) {
-                                      this.anInt790 = 5 * var2.readByte();
-                                    } else if (var3 == 115) {
-                                      this.anInt782 = var2.readUnsignedByte();
-                                    } else if (var3 != 121) {
-                                      if (var3 == 122) {
-                                        this.anInt762 = var2.readUnsignedShort();
-                                      } else if (125 != var3) {
-                                        if (~var3 == -127) {
-                                          this.anInt777 = var2.readByte();
-                                          this.anInt802 = var2.readByte();
-                                          this.anInt752 = var2.readByte();
-                                        } else if (var3 == 127) {
-                                          this.anInt767 = var2.readUnsignedByte();
-                                          this.anInt758 = var2.readUnsignedShort();
-                                        } else if (~var3 != -129) {
-                                          if (-130 != ~var3) {
-                                            if (-131 == ~var3) {
-                                              var2.readUnsignedByte();
-                                              var2.readUnsignedShort();
-                                            } else if (249 == var3) {
-                                              var5 = var2.readUnsignedByte();
-                                              if (null == this.aClass130_798) {
-                                                var6 = DummyClass53.nearestPo2((byte) 97, var5);
-                                                this.aClass130_798 = new HashTable(var6);
-                                              }
-
-                                              for (var6 = 0; var6 < var5; ++var6) {
-                                                boolean var7 = var2.readUnsignedByte() == 1;
-                                                int var8 = var2.readUnsignedMedium((byte) 122);
-                                                Object var9;
-                                                if (!var7) {
-                                                  var9 =
-                                                    new IntegerNode(var2.readInt());
-                                                } else {
-                                                  var9 = new StringNode(var2.readString());
-                                                }
-
-                                                this.aClass130_798.put((long) var8, (Node) var9);
-                                              }
-                                            }
-                                          } else {
-                                            var2.readUnsignedByte();
-                                            var2.readUnsignedShort();
-                                          }
-                                        } else {
-                                          this.anInt788 = var2.readUnsignedByte();
-                                          this.anInt756 = var2.readUnsignedShort();
-                                        }
-                                      } else {
-                                        this.anInt760 = var2.readByte();
-                                        this.anInt778 = var2.readByte();
-                                        this.anInt775 = var2.readByte();
-                                      }
-                                    } else {
-                                      this.anInt795 = var2.readUnsignedShort();
-                                    }
-                                  } else {
-                                    this.anInt784 = var2.readByte();
-                                  }
-                                } else {
-                                  this.anInt780 = var2.readUnsignedShort();
-                                }
-                              } else {
-                                this.anInt805 = var2.readUnsignedShort();
-                              }
-                            } else {
-                              this.anInt753 = var2.readUnsignedShort();
-                            }
-                          } else {
-                            this.anInt796 = var2.readUnsignedShort();
-                          }
-                        } else {
-                          this.anInt769 = var2.readUnsignedShort();
-                        }
-                      } else {
-                        var5 = var2.readUnsignedByte();
-                        this.aShortArray772 = new short[var5];
-                        this.aShortArray774 = new short[var5];
-
-                        for (var6 = 0; var5 > var6; ++var6) {
-                          this.aShortArray774[var6] = (short) var2.readUnsignedShort();
-                          this.aShortArray772[var6] = (short) var2.readUnsignedShort();
-                        }
-                      }
-                    }
-                  } else {
-                    this.anInt794 = var2.readUnsignedShort();
-                  }
-                } else {
-                  this.anInt761 = var2.readUnsignedShort();
-                }
-              } else {
-                this.anInt771 = var2.readUnsignedShort();
-              }
-            } else {
-              this.aBoolean779 = true;
-            }
-          } else {
-            this.translateOther = var2.readUnsignedShort();
-            if (this.translateOther > 32767) {
-              this.translateOther -= 65536;
-            }
-          }
-        } else {
-          this.aClass94_770 = var2.readString();
-        }
-      } else {
-        this.anInt755 = var2.readUnsignedShort();
-      }
-
-    } catch (RuntimeException var10) {
-      throw AbstractGameWorld.cascadeException(var10,
-        "h.Q(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
-    }
-  }
-
-  final int method1115(int var1, int var2, int var3) {
-    try {
-      int var4 = -82 % ((-63 - var2) / 55);
-      if (this.aClass130_798 != null) {
-        IntegerNode var5 = (IntegerNode) this.aClass130_798.get((long) var3);
-        return null != var5 ? var5.anInt2467 : var1;
-      } else {
-        return var1;
-      }
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6, "h.I(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final Model method1116(boolean var1, byte var2) {
-    try {
-      int var4 = this.anInt796;
-      if (var2 != -109) {
-        return null;
-      } else {
-        int var3 = this.anInt803;
-        if (var1) {
-          var4 = this.anInt753;
-          var3 = this.anInt773;
-        }
-
-        if (-1 != var3) {
-          Model var5 = Model.getModel(StringNode.aClass153_2581, var3, 0);
-          if (-1 != var4) {
-            Model var6 = Model.getModel(StringNode.aClass153_2581, var4, 0);
-            Model[] var7 = new Model[] {var5, var6};
-            var5 = new Model(var7, 2);
-          }
-
-          int var9;
-          if (this.aShortArray774 != null) {
-            for (var9 = 0; var9 < this.aShortArray774.length; ++var9) {
-              var5.replaceColor(this.aShortArray774[var9], this.aShortArray772[var9]);
-            }
-          }
-
-          if (this.aShortArray765 != null) {
-            for (var9 = 0; ~this.aShortArray765.length < ~var9; ++var9) {
-              var5.replaceMaterial(this.aShortArray765[var9], this.aShortArray751[var9]);
-            }
-          }
-
-          return var5;
-        } else {
-          return null;
-        }
-      }
-    } catch (RuntimeException var8) {
-      throw AbstractGameWorld.cascadeException(var8, "h.A(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final Model method1117(boolean var1, int var2) {
-    try {
-      int var3 = this.anInt793;
-      if (var2 < 77) {
-        this.aClass130_798 = null;
-      }
-
-      int var4 = this.anInt771;
-      int var5 = this.anInt769;
-      if (var1) {
-        var5 = this.anInt776;
-        var3 = this.anInt761;
-        var4 = this.anInt794;
-      }
-
-      if (~var3 == 0) {
-        return null;
-      } else {
-        Model var6 = Model.getModel(StringNode.aClass153_2581, var3, 0);
-        if (0 != ~var4) {
-          Model var7 = Model.getModel(StringNode.aClass153_2581, var4, 0);
-          if (-1 == var5) {
-            Model[] var8 = new Model[] {var6, var7};
-            var6 = new Model(var8, 2);
-          } else {
-            Model var12 = Model.getModel(StringNode.aClass153_2581, var5, 0);
-            Model[] var9 = new Model[] {var6, var7, var12};
-            var6 = new Model(var9, 3);
-          }
-        }
-
-        if (!var1 && (~this.anInt760 != -1 || ~this.anInt778 != -1 || -1 != ~this.anInt775)) {
-          var6.translate(this.anInt760, this.anInt778, this.anInt775);
-        }
-
-        if (var1 && (~this.anInt777 != -1 || ~this.anInt802 != -1 || ~this.anInt752 != -1)) {
-          var6.translate(this.anInt777, this.anInt802, this.anInt752);
-        }
-
-        int var11;
-        if (this.aShortArray774 != null) {
-          for (var11 = 0; var11 < this.aShortArray774.length; ++var11) {
-            var6.replaceColor(this.aShortArray774[var11], this.aShortArray772[var11]);
-          }
-        }
-
-        if (this.aShortArray765 != null) {
-          for (var11 = 0; var11 < this.aShortArray765.length; ++var11) {
-            var6.replaceMaterial(this.aShortArray765[var11], this.aShortArray751[var11]);
-          }
-        }
-
-        return var6;
-      }
-    } catch (RuntimeException var10) {
-      throw AbstractGameWorld.cascadeException(var10, "h.D(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final void method1118(ItemConfig var1, ItemConfig var2, boolean var3) {
-    try {
-      this.aClass94_770 = var1.aClass94_770;
-      this.anInt810 = var2.anInt810;
-      if (var3) {
-        this.anInt780 = -70;
-      }
-
-      this.aShortArray774 = var2.aShortArray774;
-      this.aShortArray772 = var2.aShortArray772;
-      this.rotationX = var2.rotationX;
-      this.rotationY = var2.rotationY;
-      this.aShortArray751 = var2.aShortArray751;
-      this.anInt755 = var2.anInt755;
-      this.aByteArray785 = var2.aByteArray785;
-      this.rotationZ = var2.rotationZ;
-      this.anInt757 = var1.anInt757;
-      this.anInt764 = 1;
-      this.translateOther = var2.translateOther;
-      this.translateX = var2.translateX;
-      this.aShortArray765 = var2.aShortArray765;
-      this.aBoolean779 = var1.aBoolean779;
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "h.N(" + (var1 != null ? "{...}" : "null") + ',' + (var2 != null ? "{...}" : "null") + ','
-          + var3 + ')');
-    }
-  }
-
-  final SoftwareModel method1120(int var1) {
-    try {
-      Model var2 = Model.getModel(StringNode.aClass153_2581, this.anInt755, 0);
-      if (var2 == null) {
-        return null;
-      } else {
-        int var3;
-        if (this.aShortArray774 != null) {
-          for (var3 = 0; this.aShortArray774.length > var3; ++var3) {
-            if (null != this.aByteArray785 && ~var3 > ~this.aByteArray785.length) {
-              var2.replaceColor(this.aShortArray774[var3],
-                TextureSampler38.aShortArray3453[this.aByteArray785[var3] & 255]);
-            } else {
-              var2.replaceColor(this.aShortArray774[var3], this.aShortArray772[var3]);
-            }
-          }
-        }
-
-        if (this.aShortArray765 != null) {
-          for (var3 = 0; var3 < this.aShortArray765.length; ++var3) {
-            var2.replaceMaterial(this.aShortArray765[var3], this.aShortArray751[var3]);
-          }
-        }
-
-        SoftwareModel var5 =
-          var2.method2000(64 - -this.anInt784, 768 - -this.anInt790, -50, -10, -50);
-        if (var1 != 18206) {
-          this.method1105(-67, null, -37);
-        }
-
-        if (-129 != ~this.anInt805 || -129 != ~this.anInt780 || -129 != ~this.anInt797) {
-          var5.scale(this.anInt805, this.anInt780, this.anInt797);
-        }
-
-        return var5;
-      }
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "h.L(" + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "h.K(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 }

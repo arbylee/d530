@@ -11,6 +11,13 @@ final class DummyOutputStream extends OutputStream {
   static GameString aClass94_50 = SpawnedGameObject.createString("<col=80ff00>");
   static GameString aClass94_51 = SpawnedGameObject.createString("; Expires=");
 
+  public final void write(int var1) throws IOException {
+    try {
+      throw new IOException();
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "vg.writeByte(" + var1 + ')');
+    }
+  }
 
   static final short[] copy(int var0, short[] var1) {
     try {
@@ -24,8 +31,8 @@ final class DummyOutputStream extends OutputStream {
         return null;
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "vg.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "vg.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -187,14 +194,6 @@ final class DummyOutputStream extends OutputStream {
     } catch (RuntimeException var4) {
       throw AbstractGameWorld.cascadeException(var4,
         "vg.C(" + var0 + ',' + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  public final void write(int var1) throws IOException {
-    try {
-      throw new IOException();
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "vg.writeByte(" + var1 + ')');
     }
   }
 

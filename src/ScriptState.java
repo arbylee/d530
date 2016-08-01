@@ -44,8 +44,8 @@ final class ScriptState {
         return false;
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "hj.A(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "hj.A(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 

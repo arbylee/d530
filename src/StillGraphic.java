@@ -49,6 +49,78 @@ final class StillGraphic extends SceneNode {
     }
   }
 
+  private final AbstractModel getModel(boolean var1) {
+    try {
+      SpotAnimationConfig var2 = RenderAnimation.method898((byte) 42, this.anInt2708);
+      if (var1) {
+        aClass94_2707 = null;
+      }
+
+      AbstractModel var3;
+      if (!this.aBoolean2718) {
+        var3 = var2.method966(this.anInt2714, (byte) -30, this.anInt2706, this.anInt2719);
+      } else {
+        var3 = var2.method966(-1, (byte) -30, -1, 0);
+      }
+
+      return var3 == null ? null : var3;
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "bh.E(" + var1 + ')');
+    }
+  }
+
+  final void method1955(boolean var1, int var2) {
+    try {
+      if (!this.aBoolean2718) {
+        if (!var1) {
+          this.method1955(true, -72);
+        }
+
+        this.anInt2719 += var2;
+
+        while (~this.anInt2719 < ~this.aClass142_2711.anIntArray1869[this.anInt2706]) {
+          this.anInt2719 -= this.aClass142_2711.anIntArray1869[this.anInt2706];
+          ++this.anInt2706;
+          if (~this.aClass142_2711.anIntArray1851.length >= ~this.anInt2706) {
+            this.aBoolean2718 = true;
+            break;
+          }
+        }
+
+      }
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "bh.A(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void method1867(int var1, int var2, int var3, int var4, int var5) {
+  }
+
+  final void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
+                  long var9, int var11, DummyClass0 var12) {
+    try {
+      AbstractModel var13 = this.getModel(false);
+      if (var13 != null) {
+        var13.draw(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11,
+          this.aClass127_Sub1_2704);
+        this.anInt2715 = var13.getMinimumY();
+      }
+    } catch (RuntimeException var14) {
+      throw AbstractGameWorld.cascadeException(var14,
+        "bh.IA(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6 + ','
+          + var7 + ',' + var8 + ',' + var9 + ',' + var11 + ',' + (var12 != null ? "{...}" : "null")
+          + ')');
+    }
+  }
+
+  final int getMinimumY() {
+    try {
+      return this.anInt2715;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "bh.MA()");
+    }
+  }
+
   static final void method1950(Mobile var0, boolean var1) {
     try {
       int var2 = var0.anInt2800 - AbstractGameWorld.updateCycle;
@@ -76,8 +148,8 @@ final class StillGraphic extends SceneNode {
 
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "bh.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "bh.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -185,78 +257,6 @@ final class StillGraphic extends SceneNode {
         var5.anInt426 = var5.anInt426 * var3 / 16;
       }
     }
-  }
-
-  private final AbstractModel getModel(boolean var1) {
-    try {
-      SpotAnimationConfig var2 = RenderAnimation.method898((byte) 42, this.anInt2708);
-      if (var1) {
-        aClass94_2707 = null;
-      }
-
-      AbstractModel var3;
-      if (!this.aBoolean2718) {
-        var3 = var2.method966(this.anInt2714, (byte) -30, this.anInt2706, this.anInt2719);
-      } else {
-        var3 = var2.method966(-1, (byte) -30, -1, 0);
-      }
-
-      return var3 == null ? null : var3;
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "bh.E(" + var1 + ')');
-    }
-  }
-
-  final int getMinimumY() {
-    try {
-      return this.anInt2715;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "bh.MA()");
-    }
-  }
-
-  final void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
-                  long var9, int var11, DummyClass0 var12) {
-    try {
-      AbstractModel var13 = this.getModel(false);
-      if (var13 != null) {
-        var13.draw(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11,
-          this.aClass127_Sub1_2704);
-        this.anInt2715 = var13.getMinimumY();
-      }
-    } catch (RuntimeException var14) {
-      throw AbstractGameWorld.cascadeException(var14,
-        "bh.IA(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6 + ','
-          + var7 + ',' + var8 + ',' + var9 + ',' + var11 + ',' + (var12 != null ? "{...}" : "null")
-          + ')');
-    }
-  }
-
-  final void method1955(boolean var1, int var2) {
-    try {
-      if (!this.aBoolean2718) {
-        if (!var1) {
-          this.method1955(true, -72);
-        }
-
-        this.anInt2719 += var2;
-
-        while (~this.anInt2719 < ~this.aClass142_2711.anIntArray1869[this.anInt2706]) {
-          this.anInt2719 -= this.aClass142_2711.anIntArray1869[this.anInt2706];
-          ++this.anInt2706;
-          if (~this.aClass142_2711.anIntArray1851.length >= ~this.anInt2706) {
-            this.aBoolean2718 = true;
-            break;
-          }
-        }
-
-      }
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "bh.A(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final void method1867(int var1, int var2, int var3, int var4, int var5) {
   }
 
 }

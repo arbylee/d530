@@ -34,6 +34,162 @@ final class FileCacheRequester implements Runnable {
     }
   }
 
+  private final void method1299(FileCacheRequest var1, int var2) {
+    try {
+      Queue var3 = this.aClass13_1086;
+      synchronized (var3) {
+        if (var2 != 104) {
+          this.shutdown(-114);
+        }
+
+        this.aClass13_1086.addLast(var1);
+        ++this.anInt1087;
+        this.aClass13_1086.notifyAll();
+      }
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "k.G(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+    }
+  }
+
+  final void shutdown(int var1) {
+    try {
+      this.aBoolean1091 = true;
+      Queue var2 = this.aClass13_1086;
+      synchronized (var2) {
+        this.aClass13_1086.notifyAll();
+      }
+
+      try {
+        this.aThread1090.join();
+      } catch (InterruptedException var4) {
+      }
+
+      this.aThread1090 = null;
+      if (var1 != 3208) {
+        this.aThread1090 = null;
+      }
+
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6, "k.B(" + var1 + ')');
+    }
+  }
+
+  final FileCacheRequest method1305(FileCache var1, int var2, byte[] var3, int var4) {
+    try {
+      FileCacheRequest var5 = new FileCacheRequest();
+      var5.aByteArray4059 = var3;
+      var5.aBoolean3628 = false;
+      var5.subnodeKey = (long) var4;
+      var5.aClass41_4056 = var1;
+      var5.anInt4061 = var2;
+      this.method1299(var5, 104);
+      return var5;
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "k.A(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + (var3 != null ?
+          "{...}" :
+          "null") + ',' + var4 + ')');
+    }
+  }
+
+  final FileCacheRequest method1307(int var1, int var2, FileCache var3) {
+    try {
+      FileCacheRequest var4 = new FileCacheRequest();
+      var4.aClass41_4056 = var3;
+      var4.anInt4061 = 3;
+      var4.aBoolean3628 = false;
+      if (var2 != -27447) {
+        aBoolean1084 = false;
+      }
+
+      var4.subnodeKey = (long) var1;
+      this.method1299(var4, 104);
+      return var4;
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "k.E(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  final FileCacheRequest method1309(FileCache var1, byte var2, int var3) {
+    try {
+      FileCacheRequest var4 = new FileCacheRequest();
+      var4.anInt4061 = 1;
+      Queue var5 = this.aClass13_1086;
+      synchronized (var5) {
+        if (var2 < 39) {
+          return null;
+        }
+
+        FileCacheRequest var6 = (FileCacheRequest) this.aClass13_1086.getFirst();
+
+        while (true) {
+          if (var6 == null) {
+            break;
+          }
+
+          if (~var6.subnodeKey == ~((long) var3) && var6.aClass41_4056 == var1
+            && var6.anInt4061 == 2) {
+            var4.aByteArray4059 = var6.aByteArray4059;
+            var4.aBoolean3632 = false;
+            return var4;
+          }
+
+          var6 = (FileCacheRequest) this.aClass13_1086.getNext();
+        }
+      }
+
+      var4.aByteArray4059 = var1.method1051(var3, (byte) 85);
+      var4.aBoolean3632 = false;
+      var4.aBoolean3628 = true;
+      return var4;
+    } catch (RuntimeException var9) {
+      throw AbstractGameWorld.cascadeException(var9,
+        "k.F(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  public final void run() {
+    try {
+      while (!this.aBoolean1091) {
+        Queue var2 = this.aClass13_1086;
+        FileCacheRequest var1;
+        synchronized (var2) {
+          var1 = (FileCacheRequest) this.aClass13_1086.poll();
+          if (null == var1) {
+            try {
+              this.aClass13_1086.wait();
+            } catch (InterruptedException var6) {
+            }
+            continue;
+          }
+
+          --this.anInt1087;
+        }
+
+        try {
+          if (var1.anInt4061 != 2) {
+            if (-4 == ~var1.anInt4061) {
+              var1.aByteArray4059 =
+                var1.aClass41_4056.method1051((int) var1.subnodeKey, (byte) -77);
+            }
+          } else {
+            var1.aClass41_4056.method1050((int) var1.subnodeKey, var1.aByteArray4059.length,
+              var1.aByteArray4059, (byte) -41);
+          }
+        } catch (Exception var5) {
+          GZipDecompressor.reportError(null, var5, (byte) 111);
+        }
+
+        var1.aBoolean3632 = false;
+      }
+
+    } catch (RuntimeException var8) {
+      throw AbstractGameWorld.cascadeException(var8, "k.run()");
+    }
+  }
+
   static final AbstractFont createFont(int var0, int var1, byte var2, FileUnpacker var3,
                                        FileUnpacker var4) {
     try {
@@ -76,8 +232,8 @@ final class FileCacheRequester implements Runnable {
         int var7 = WorldMapLabel.anInt1716;
         ProceduralTexture.anInt1152 = var1 * 8 - 48;
         WorldMapLabel.anInt1716 = 8 * (-6 + var2);
-        TextureSampler37.aClass3_Sub28_Sub3_3264 = Queue
-          .method884(8 * AbstractObjectNode.anInt3606, (byte) 88,
+        TextureSampler37.aClass3_Sub28_Sub3_3264 =
+          Queue.method884(8 * AbstractObjectNode.anInt3606, (byte) 88,
             8 * VariableUpdate.anInt2294);
         int var10 = -var8 + ProceduralTexture.anInt1152;
         int var9 = WorldMapLabel.anInt1716 + -var7;
@@ -173,7 +329,8 @@ final class FileCacheRequester implements Runnable {
           }
         }
 
-        for (SpawnedGameObject var27 = (SpawnedGameObject) TextureSampler26.aClass61_3075.getFirst();
+        for (SpawnedGameObject var27 =
+             (SpawnedGameObject) TextureSampler26.aClass61_3075.getFirst();
              var27 != null; var27 = (SpawnedGameObject) TextureSampler26.aClass61_3075.getNext()) {
           var27.anInt2248 -= var10;
           var27.anInt2264 -= var9;
@@ -201,8 +358,8 @@ final class FileCacheRequester implements Runnable {
         }
 
         if (var6) {
-          if (GlRenderer.useOpenGlRenderer && var4 && (Math.abs(var9) > 104 || 104 < Math
-            .abs(var10))) {
+          if (GlRenderer.useOpenGlRenderer && var4 && (Math.abs(var9) > 104 || 104 < Math.abs(
+            var10))) {
             TextureSampler31.method236((byte) 64);
           }
 
@@ -280,8 +437,9 @@ final class FileCacheRequester implements Runnable {
 
                                 try {
                                   if (null != SceneShadowMap.aClass64_1778.result) {
-                                    byte[] var5 = ((String) SceneShadowMap.aClass64_1778.result)
-                                      .getBytes("ISO-8859-1");
+                                    byte[] var5 =
+                                      ((String) SceneShadowMap.aClass64_1778.result).getBytes(
+                                        "ISO-8859-1");
                                     var4 = TextureSampler33.createString(var5, 0, var5.length);
                                   }
                                 } catch (UnsupportedEncodingException var6) {
@@ -408,8 +566,8 @@ final class FileCacheRequester implements Runnable {
           }), -1);
         }
 
-        if (GlRenderer.useOpenGlRenderer && command
-          .method1531(AbstractDirectColorSprite.COMMAND_CARD_MEMORY)) {
+        if (GlRenderer.useOpenGlRenderer && command.method1531(
+          AbstractDirectColorSprite.COMMAND_CARD_MEMORY)) {
           System.out.println("oncard_geometry:" + DummyClass33.anInt585);
           System.out.println("oncard_2d:" + DummyClass33.texture2dMemory);
           System.out.println("oncard_texture:" + DummyClass33.textureMemory);
@@ -493,7 +651,8 @@ final class FileCacheRequester implements Runnable {
         if (command.method1558(GameStub.COMMAND_RECTANGLE_DEBUG, 0)) {
           ClientScript.rectangleDebugType = command.substring(12).method1564(1).toInteger();
           GameBuffer.printMessage(null, 0, RenderAnimation.concat(new GameString[] {
-            SomethingIndex150.RECTANGLE_DEBUG_EQ, SomethingScene.toString(ClientScript.rectangleDebugType)
+            SomethingIndex150.RECTANGLE_DEBUG_EQ,
+            SomethingScene.toString(ClientScript.rectangleDebugType)
           }), -1);
         }
 
@@ -529,164 +688,8 @@ final class FileCacheRequester implements Runnable {
 
 
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "k.H(" + (command != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  private final void method1299(FileCacheRequest var1, int var2) {
-    try {
-      Queue var3 = this.aClass13_1086;
-      synchronized (var3) {
-        if (var2 != 104) {
-          this.shutdown(-114);
-        }
-
-        this.aClass13_1086.addLast(var1);
-        ++this.anInt1087;
-        this.aClass13_1086.notifyAll();
-      }
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "k.G(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
-    }
-  }
-
-  final void shutdown(int var1) {
-    try {
-      this.aBoolean1091 = true;
-      Queue var2 = this.aClass13_1086;
-      synchronized (var2) {
-        this.aClass13_1086.notifyAll();
-      }
-
-      try {
-        this.aThread1090.join();
-      } catch (InterruptedException var4) {
-      }
-
-      this.aThread1090 = null;
-      if (var1 != 3208) {
-        this.aThread1090 = null;
-      }
-
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6, "k.B(" + var1 + ')');
-    }
-  }
-
-  final FileCacheRequest method1305(FileCache var1, int var2, byte[] var3, int var4) {
-    try {
-      FileCacheRequest var5 = new FileCacheRequest();
-      var5.aByteArray4059 = var3;
-      var5.aBoolean3628 = false;
-      var5.subnodeKey = (long) var4;
-      var5.aClass41_4056 = var1;
-      var5.anInt4061 = var2;
-      this.method1299(var5, 104);
-      return var5;
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "k.A(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + (var3 != null ?
-          "{...}" :
-          "null") + ',' + var4 + ')');
-    }
-  }
-
-  final FileCacheRequest method1307(int var1, int var2, FileCache var3) {
-    try {
-      FileCacheRequest var4 = new FileCacheRequest();
-      var4.aClass41_4056 = var3;
-      var4.anInt4061 = 3;
-      var4.aBoolean3628 = false;
-      if (var2 != -27447) {
-        aBoolean1084 = false;
-      }
-
-      var4.subnodeKey = (long) var1;
-      this.method1299(var4, 104);
-      return var4;
-    } catch (RuntimeException var5) {
       throw AbstractGameWorld.cascadeException(var5,
-        "k.E(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  final FileCacheRequest method1309(FileCache var1, byte var2, int var3) {
-    try {
-      FileCacheRequest var4 = new FileCacheRequest();
-      var4.anInt4061 = 1;
-      Queue var5 = this.aClass13_1086;
-      synchronized (var5) {
-        if (var2 < 39) {
-          return null;
-        }
-
-        FileCacheRequest var6 = (FileCacheRequest) this.aClass13_1086.getFirst();
-
-        while (true) {
-          if (var6 == null) {
-            break;
-          }
-
-          if (~var6.subnodeKey == ~((long) var3) && var6.aClass41_4056 == var1
-            && var6.anInt4061 == 2) {
-            var4.aByteArray4059 = var6.aByteArray4059;
-            var4.aBoolean3632 = false;
-            return var4;
-          }
-
-          var6 = (FileCacheRequest) this.aClass13_1086.getNext();
-        }
-      }
-
-      var4.aByteArray4059 = var1.method1051(var3, (byte) 85);
-      var4.aBoolean3632 = false;
-      var4.aBoolean3628 = true;
-      return var4;
-    } catch (RuntimeException var9) {
-      throw AbstractGameWorld.cascadeException(var9,
-        "k.F(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  public final void run() {
-    try {
-      while (!this.aBoolean1091) {
-        Queue var2 = this.aClass13_1086;
-        FileCacheRequest var1;
-        synchronized (var2) {
-          var1 = (FileCacheRequest) this.aClass13_1086.poll();
-          if (null == var1) {
-            try {
-              this.aClass13_1086.wait();
-            } catch (InterruptedException var6) {
-            }
-            continue;
-          }
-
-          --this.anInt1087;
-        }
-
-        try {
-          if (var1.anInt4061 != 2) {
-            if (-4 == ~var1.anInt4061) {
-              var1.aByteArray4059 = var1.aClass41_4056.method1051((int) var1.subnodeKey, (byte) -77);
-            }
-          } else {
-            var1.aClass41_4056
-              .method1050((int) var1.subnodeKey, var1.aByteArray4059.length, var1.aByteArray4059,
-                (byte) -41);
-          }
-        } catch (Exception var5) {
-          GZipDecompressor.reportError(null, var5, (byte) 111);
-        }
-
-        var1.aBoolean3632 = false;
-      }
-
-    } catch (RuntimeException var8) {
-      throw AbstractGameWorld.cascadeException(var8, "k.run()");
+        "k.H(" + (command != null ? "{...}" : "null") + ')');
     }
   }
 

@@ -11,21 +11,6 @@ import java.nio.IntBuffer;
 
 final class GlRenderer {
 
-  static int maxTextureUnits;
-  static boolean bigEndian;
-  static int anInt1791 = 0;
-  static boolean aBoolean1798 = true;
-  static boolean texture3dSupport;
-  static GL gl;
-  static boolean useOpenGlRenderer = false;
-  static boolean multiSampleSupport;
-  static int anInt1810;
-  static int viewHeight;
-  static boolean vertexBufferSupport;
-  static boolean aBoolean1817;
-  static boolean vertexProgramSupport;
-  static int viewWidth;
-  static boolean cubemapSupport;
   private static String aString1785;
   private static String aString1786;
   private static float aFloat1787;
@@ -48,6 +33,21 @@ final class GlRenderer {
   private static GLDrawable glDrawable;
   private static boolean fogEnabled = true;
   private static GameString aClass94_1819 = SpawnedGameObject.createString("radeon");
+  static int maxTextureUnits;
+  static boolean bigEndian;
+  static int anInt1791 = 0;
+  static boolean aBoolean1798 = true;
+  static boolean texture3dSupport;
+  static GL gl;
+  static boolean useOpenGlRenderer = false;
+  static boolean multiSampleSupport;
+  static int anInt1810;
+  static int viewHeight;
+  static boolean vertexBufferSupport;
+  static boolean aBoolean1817;
+  static boolean vertexProgramSupport;
+  static int viewWidth;
+  static boolean cubemapSupport;
 
   private static final GameString method1820(String var0) {
     byte[] var1;

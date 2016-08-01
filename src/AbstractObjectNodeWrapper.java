@@ -221,6 +221,7 @@ abstract class AbstractObjectNodeWrapper {
   static GameString aClass94_1622 = SpawnedGameObject.createString("Card:");
   static int anInt1623;
 
+  abstract AbstractObjectNode wrap(AbstractObjectNode var1, int var2);
 
   static final GameString method1723(byte var0, boolean var1, int var2, int var3) {
     try {
@@ -271,8 +272,8 @@ abstract class AbstractObjectNodeWrapper {
         throw new IllegalArgumentException("Invalid radix:" + var2);
       }
     } catch (RuntimeException var10) {
-      throw AbstractGameWorld
-        .cascadeException(var10, "q.A(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var10,
+        "q.A(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -347,7 +348,5 @@ abstract class AbstractObjectNodeWrapper {
       throw AbstractGameWorld.cascadeException(var2, "q.D(" + var0 + ')');
     }
   }
-
-  abstract AbstractObjectNode wrap(AbstractObjectNode var1, int var2);
 
 }

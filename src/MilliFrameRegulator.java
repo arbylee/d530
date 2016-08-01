@@ -35,35 +35,6 @@ final class MilliFrameRegulator extends AbstractFrameRegulator {
     }
   }
 
-  public static void method1771(int var0) {
-    try {
-      aClass94_2687 = null;
-      anIntArray2696 = null;
-      anImage2695 = null;
-      if (var0 != 14635) {
-        aClass47_2686 = null;
-      }
-
-      aClass3_Sub28_Sub16Array2690 = null;
-      aClass47_2686 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "lj.G(" + var0 + ')');
-    }
-  }
-
-  final void reset(int var1) {
-    try {
-      int var2;
-      for (var2 = 0; ~var2 > -11; ++var2) {
-        this.aLongArray2694[var2] = 0L;
-      }
-
-      var2 = -114 % ((var1 - -82) / 42);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "lj.A(" + var1 + ')');
-    }
-  }
-
   final int sleep(int var1, int var2, int var3) {
     try {
       if (var1 != -1) {
@@ -121,8 +92,37 @@ final class MilliFrameRegulator extends AbstractFrameRegulator {
       this.anInt2692 &= 255;
       return var6;
     } catch (RuntimeException var7) {
-      throw AbstractGameWorld
-        .cascadeException(var7, "lj.B(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var7,
+        "lj.B(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final void reset(int var1) {
+    try {
+      int var2;
+      for (var2 = 0; ~var2 > -11; ++var2) {
+        this.aLongArray2694[var2] = 0L;
+      }
+
+      var2 = -114 % ((var1 - -82) / 42);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "lj.A(" + var1 + ')');
+    }
+  }
+
+  public static void method1771(int var0) {
+    try {
+      aClass94_2687 = null;
+      anIntArray2696 = null;
+      anImage2695 = null;
+      if (var0 != 14635) {
+        aClass47_2686 = null;
+      }
+
+      aClass3_Sub28_Sub16Array2690 = null;
+      aClass47_2686 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "lj.G(" + var0 + ')');
     }
   }
 

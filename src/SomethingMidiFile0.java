@@ -34,10 +34,6 @@ final class SomethingMidiFile0 {
     this.method1380(var1);
   }
 
-  public static void method1369() {
-    aByteArray1117 = null;
-  }
-
   final long method1370(int var1) {
     return this.aLong1119 + (long) var1 * (long) this.anInt1121;
   }
@@ -214,6 +210,10 @@ final class SomethingMidiFile0 {
 
   final void method1384() {
     this.aClass3_Sub30_1113.position = -1;
+  }
+
+  public static void method1369() {
+    aByteArray1117 = null;
   }
 
 }

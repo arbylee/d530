@@ -15,6 +15,32 @@ final class AudioWorker implements Runnable {
   volatile AbstractAudioOutputStream[] aClass155Array352 = new AbstractAudioOutputStream[2];
   volatile boolean aBoolean353 = false;
 
+  public final void run() {
+    try {
+      this.aBoolean353 = true;
+
+      try {
+        while (!this.aBoolean345) {
+          for (int var1 = 0; ~var1 > -3; ++var1) {
+            AbstractAudioOutputStream var2 = this.aClass155Array352[var1];
+            if (var2 != null) {
+              var2.process((byte) -34);
+            }
+          }
+
+          TextureSampler25.sleep(10L);
+          DummyClass50.method1400(this.aClass87_350, null);
+        }
+      } catch (Exception var7) {
+        GZipDecompressor.reportError(null, var7, (byte) 111);
+      } finally {
+        this.aBoolean353 = false;
+      }
+
+    } catch (RuntimeException var9) {
+      throw AbstractGameWorld.cascadeException(var9, "cj.run()");
+    }
+  }
 
   static final boolean method888(int var0, GameObjectConfig var1, boolean var2, int var3, int var4,
                                  int var5, int var6) {
@@ -213,8 +239,8 @@ final class AudioWorker implements Runnable {
       }
 
     } catch (RuntimeException var26) {
-      throw AbstractGameWorld
-        .cascadeException(var26, "cj.H(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var26,
+        "cj.H(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -267,9 +293,10 @@ final class AudioWorker implements Runnable {
               Something3dRoot.anIntArray2048[var2], Buffer.anIntArray2591[var2],
               GroundItem.anIntArray2931[var2], TextureSampler26.anIntArray3076[var2], var5);
         } else {
-          var1[var2] = new GlDirectColorSprite(SomethingVolume15.anInt2426, SomethingPacket116.anInt1748,
-            Something3dRoot.anIntArray2048[var2], Buffer.anIntArray2591[var2],
-            GroundItem.anIntArray2931[var2], TextureSampler26.anIntArray3076[var2], var5);
+          var1[var2] =
+            new GlDirectColorSprite(SomethingVolume15.anInt2426, SomethingPacket116.anInt1748,
+              Something3dRoot.anIntArray2048[var2], Buffer.anIntArray2591[var2],
+              GroundItem.anIntArray2931[var2], TextureSampler26.anIntArray3076[var2], var5);
         }
       }
 
@@ -359,33 +386,6 @@ final class AudioWorker implements Runnable {
       throw AbstractGameWorld.cascadeException(var12,
         "cj.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6
           + ',' + var7 + ',' + var8 + ')');
-    }
-  }
-
-  public final void run() {
-    try {
-      this.aBoolean353 = true;
-
-      try {
-        while (!this.aBoolean345) {
-          for (int var1 = 0; ~var1 > -3; ++var1) {
-            AbstractAudioOutputStream var2 = this.aClass155Array352[var1];
-            if (var2 != null) {
-              var2.process((byte) -34);
-            }
-          }
-
-          TextureSampler25.sleep(10L);
-          DummyClass50.method1400(this.aClass87_350, null);
-        }
-      } catch (Exception var7) {
-        GZipDecompressor.reportError(null, var7, (byte) 111);
-      } finally {
-        this.aBoolean353 = false;
-      }
-
-    } catch (RuntimeException var9) {
-      throw AbstractGameWorld.cascadeException(var9, "cj.run()");
     }
   }
 

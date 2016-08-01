@@ -1,5 +1,6 @@
 final class DummyClass12 {
 
+  private static GameString aClass94_2032 = SpawnedGameObject.createString("Cancel");
   static GameString aClass94_2025 = SpawnedGameObject.createString(")2");
   static int[] anIntArray2026;
   static int anInt2027 = -1;
@@ -9,7 +10,6 @@ final class DummyClass12 {
   static GameString aClass94_2033 = SpawnedGameObject.createString("Memory after cleanup=");
   static SomethingFont aClass33_2034;
   static GameString aClass94_2035 = null;
-  private static GameString aClass94_2032 = SpawnedGameObject.createString("Cancel");
   static GameString aClass94_2031 = aClass94_2032;
 
   static final void method2200(int var0, int var1, int var2, int var3, int var4, int var5, int var6,
@@ -112,23 +112,23 @@ final class DummyClass12 {
         if (var40) {
           int var45 = var1 + var10;
           int var46 = -var10 + var1;
-          TextureSampler18
-            .method282(DummyClass35.anIntArrayArray663[var41], var44, -93, var46, var3);
-          TextureSampler18
-            .method282(DummyClass35.anIntArrayArray663[var41], var46, 121, var45, var0);
-          TextureSampler18
-            .method282(DummyClass35.anIntArrayArray663[var41], var45, -47, var43, var3);
-          TextureSampler18
-            .method282(DummyClass35.anIntArrayArray663[var42], var44, 124, var46, var3);
-          TextureSampler18
-            .method282(DummyClass35.anIntArrayArray663[var42], var46, -73, var45, var0);
-          TextureSampler18
-            .method282(DummyClass35.anIntArrayArray663[var42], var45, 111, var43, var3);
+          TextureSampler18.method282(DummyClass35.anIntArrayArray663[var41], var44, -93, var46,
+            var3);
+          TextureSampler18.method282(DummyClass35.anIntArrayArray663[var41], var46, 121, var45,
+            var0);
+          TextureSampler18.method282(DummyClass35.anIntArrayArray663[var41], var45, -47, var43,
+            var3);
+          TextureSampler18.method282(DummyClass35.anIntArrayArray663[var42], var44, 124, var46,
+            var3);
+          TextureSampler18.method282(DummyClass35.anIntArrayArray663[var42], var46, -73, var45,
+            var0);
+          TextureSampler18.method282(DummyClass35.anIntArrayArray663[var42], var45, 111, var43,
+            var3);
         } else {
-          TextureSampler18
-            .method282(DummyClass35.anIntArrayArray663[var41], var44, 96, var43, var3);
-          TextureSampler18
-            .method282(DummyClass35.anIntArrayArray663[var42], var44, 124, var43, var3);
+          TextureSampler18.method282(DummyClass35.anIntArrayArray663[var41], var44, 96, var43,
+            var3);
+          TextureSampler18.method282(DummyClass35.anIntArrayArray663[var42], var44, 124, var43,
+            var3);
         }
       }
 
@@ -157,8 +157,8 @@ final class DummyClass12 {
         return -var6 + var5;
       } else {
         return 2 == var1 ?
-          var0.method1078(102).aClass94_508
-            .method1546((byte) -67, var3.method1078(-119).aClass94_508) :
+          var0.method1078(102).aClass94_508.method1546((byte) -67,
+            var3.method1078(-119).aClass94_508) :
           (~var1 == -4 ?
             (var0.aClass94_2620.method1528((byte) -42, FileTable.aClass94_946) ?
               (var3.aClass94_2620.method1528((byte) -42, FileTable.aClass94_946) ?

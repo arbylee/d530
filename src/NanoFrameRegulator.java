@@ -2,12 +2,6 @@ final class NanoFrameRegulator extends AbstractFrameRegulator {
 
   private long aLong2698 = System.nanoTime();
 
-
-  final void reset(int var1) {
-    int var2 = 37 / ((-82 - var1) / 42);
-    this.aLong2698 = System.nanoTime();
-  }
-
   final int sleep(int var1, int var2, int var3) {
     if (var1 != -1) {
       return 37;
@@ -35,6 +29,11 @@ final class NanoFrameRegulator extends AbstractFrameRegulator {
 
       return var10;
     }
+  }
+
+  final void reset(int var1) {
+    int var2 = 37 / ((-82 - var1) / 42);
+    this.aLong2698 = System.nanoTime();
   }
 
 }

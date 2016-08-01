@@ -1,14 +1,18 @@
 abstract class BufferObject {
 
+  private static GameString aClass94_1888 =
+    SpawnedGameObject.createString("Your ignore list is full)3 Max of 100 users)3");
   static int anInt1881 = 0;
   static GameString aClass94_1882 = SpawnedGameObject.createString("Librairie 3D d-Bmarr-Be");
   static int anInt1883;
   static GameString COOKIE_HOST = SpawnedGameObject.createString("cookiehost");
   static int anInt1886;
   static int anInt1887;
-  private static GameString aClass94_1888 =
-    SpawnedGameObject.createString("Your ignore list is full)3 Max of 100 users)3");
   static GameString aClass94_1884 = aClass94_1888;
+
+  abstract byte[] get(int var1);
+
+  abstract void put(int var1, byte[] var2);
 
   static final void method2065(byte var0, FileUnpacker var1, FileUnpacker var2) {
     try {
@@ -92,8 +96,8 @@ abstract class BufferObject {
               int var7;
               if (var11 != null) {
                 for (var7 = 4; var7 >= 0; --var7) {
-                  if (var11[var7] != null && (AbstractImageProducer.gameId != 0 || !var11[var7]
-                    .method1531(TextureSampler36.aClass94_3427))) {
+                  if (var11[var7] != null && (AbstractImageProducer.gameId != 0
+                    || !var11[var7].method1531(TextureSampler36.aClass94_3427))) {
                     ++ItemConfig.anInt763;
                     byte var8 = 0;
                     if (var7 == 0) {
@@ -134,8 +138,8 @@ abstract class BufferObject {
 
               if (0 == AbstractImageProducer.gameId && var11 != null) {
                 for (var7 = 4; var7 >= 0; --var7) {
-                  if (null != var11[var7] && var11[var7]
-                    .method1531(TextureSampler36.aClass94_3427)) {
+                  if (null != var11[var7] && var11[var7].method1531(
+                    TextureSampler36.aClass94_3427)) {
                     ++FileCacheRequest.anInt4054;
                     short var14 = 0;
                     if (var0.anInt1260 > TextureCache.localPlayer.combatLevel) {
@@ -184,8 +188,8 @@ abstract class BufferObject {
               if (~(2 & Something3dRoot.anInt2051) != -1 && (var12 == null
                 || var0.method1475(LinearHashTable.anInt1038, -26460, var12.anInt3614)
                 != var12.anInt3614)) {
-                ScriptState.method1177(anInt1887, (long) var3, (byte) -93, RenderAnimation.concat(
-                  new GameString[] {
+                ScriptState.method1177(anInt1887, (long) var3, (byte) -93,
+                  RenderAnimation.concat(new GameString[] {
                     DummyClass59.aClass94_676, AbstractDirectColorSprite.aClass94_3702, var5
                   }), var1, (short) 45, Parameter.aClass94_3621, var4);
                 ++DummyClass25.anInt1629;
@@ -241,9 +245,5 @@ abstract class BufferObject {
       throw AbstractGameWorld.cascadeException(var2, "u.F(" + var0 + ')');
     }
   }
-
-  abstract byte[] get(int var1);
-
-  abstract void put(int var1, byte[] var2);
 
 }

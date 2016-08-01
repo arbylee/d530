@@ -1,11 +1,12 @@
 final class DummyClass24 {
 
 
+  private static GameString aClass94_1655 =
+    SpawnedGameObject.createString("Loading world list data");
   static AnimationSequence[] aClass142Array1654 = new AnimationSequence[14];
   static boolean aBoolean1656 = false;
   static int anInt1657;
   static int anInt1658;
-  private static GameString aClass94_1655 = SpawnedGameObject.createString("Loading world list data");
   static GameString aClass94_1653 = aClass94_1655;
 
   public static void method1743(boolean var0) {

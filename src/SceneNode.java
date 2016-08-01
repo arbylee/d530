@@ -10,6 +10,32 @@ abstract class SceneNode {
   static int[] anIntArray1838;
   static SoftwareDirectColorSprite[] aClass3_Sub28_Sub16_Sub2Array1839;
 
+  SceneNode method1861(int var1, int var2, int var3) {
+    try {
+      return this;
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "th.JB(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  boolean method1865() {
+    try {
+      return false;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "th.AB()");
+    }
+  }
+
+  void method1866(SceneNode var1, int var2, int var3, int var4, boolean var5) {
+  }
+
+  abstract void method1867(int var1, int var2, int var3, int var4, int var5);
+
+  abstract void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
+                     long var9, int var11, DummyClass0 var12);
+
+  abstract int getMinimumY();
 
   static final void method1859(double var0, int var2) {
     try {
@@ -76,8 +102,8 @@ abstract class SceneNode {
         var6 = true;
       }
 
-      OndemandFileRequest
-        .setWindowMode(replaceCanvas, windowMode, var6, currentWindowMode, false, var3, var4);
+      OndemandFileRequest.setWindowMode(replaceCanvas, windowMode, var6, currentWindowMode, false,
+        var3, var4);
     } catch (RuntimeException var7) {
       throw AbstractGameWorld.cascadeException(var7,
         "th.EC(" + replaceCanvas + ',' + windowMode + ',' + var2 + ',' + var3 + ',' + var4 + ')');
@@ -218,32 +244,5 @@ abstract class SceneNode {
       throw AbstractGameWorld.cascadeException(var2, "th.GC(" + var0 + ')');
     }
   }
-
-  SceneNode method1861(int var1, int var2, int var3) {
-    try {
-      return this;
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "th.JB(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  boolean method1865() {
-    try {
-      return false;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "th.AB()");
-    }
-  }
-
-  void method1866(SceneNode var1, int var2, int var3, int var4, boolean var5) {
-  }
-
-  abstract void method1867(int var1, int var2, int var3, int var4, int var5);
-
-  abstract void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
-                     long var9, int var11, DummyClass0 var12);
-
-  abstract int getMinimumY();
 
 }

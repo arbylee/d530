@@ -14,8 +14,7 @@ final class DummyClass11 {
 
   static final void method2203(Player var0, int var1) {
     try {
-      AreaSoundEffect var2 =
-        (AreaSoundEffect) ObjectNode.aClass130_4046.get(var0.name.toBase37());
+      AreaSoundEffect var2 = (AreaSoundEffect) ObjectNode.aClass130_4046.get(var0.name.toBase37());
       if (var1 != 8) {
         writeUID(null, -44);
       }
@@ -30,8 +29,8 @@ final class DummyClass11 {
       }
 
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "wc.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "wc.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -49,8 +48,8 @@ final class DummyClass11 {
         var0.position += 24;
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "wc.E(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "wc.E(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -84,8 +83,8 @@ final class DummyClass11 {
 
       GameObjectConfig var2 = (GameObjectConfig) DummyCanvas.aClass93_21.get((long) var1);
       if (var2 == null) {
-        byte[] var3 = DummyClass52.aClass153_1171
-          .getBytes(TextureSampler36.method340(var1, -51), AudioWorker.method893(var1, (byte) 110));
+        byte[] var3 = DummyClass52.aClass153_1171.getBytes(TextureSampler36.method340(var1, -51),
+          AudioWorker.method893(var1, (byte) 110));
         var2 = new GameObjectConfig();
         var2.anInt1527 = var1;
         if (null != var3) {

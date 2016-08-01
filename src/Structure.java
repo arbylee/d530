@@ -1,16 +1,104 @@
 final class Structure extends SubNode {
 
+  private static GameString aClass94_3638 = SpawnedGameObject.createString("Loading fonts )2 ");
+  private static GameString aClass94_3639 =
+    SpawnedGameObject.createString(" is already on your friend list)3");
   static GameString aClass94_3637 = SpawnedGameObject.createString(")4p=");
   static int anInt3640;
   static boolean aBoolean3641 = false;
   static int anInt3642 = 0;
   static int anInt3644 = 0;
-  private static GameString aClass94_3638 = SpawnedGameObject.createString("Loading fonts )2 ");
   static GameString aClass94_3643 = aClass94_3638;
-  private static GameString aClass94_3639 =
-    SpawnedGameObject.createString(" is already on your friend list)3");
   static GameString aClass94_3645 = aClass94_3639;
   private HashTable aClass130_3636;
+
+  final int method600(int var1, int var2, byte var3) {
+    try {
+      if (this.aClass130_3636 != null) {
+        if (var3 != -29) {
+          this.method604(null, (byte) 56, 110);
+        }
+
+        IntegerNode var4 = (IntegerNode) this.aClass130_3636.get((long) var1);
+        return null == var4 ? var2 : var4.anInt2467;
+      } else {
+        return var2;
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "lk.Q(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  private final void method601(Buffer var1, int var2, byte var3) {
+    try {
+      if (var3 < -2) {
+        if (249 == var2) {
+          int var4 = var1.readUnsignedByte();
+          int var5;
+          if (this.aClass130_3636 == null) {
+            var5 = DummyClass53.nearestPo2((byte) 105, var4);
+            this.aClass130_3636 = new HashTable(var5);
+          }
+
+          for (var5 = 0; var4 > var5; ++var5) {
+            boolean var6 = 1 == var1.readUnsignedByte();
+            int var7 = var1.readUnsignedMedium((byte) 95);
+            Object var8;
+            if (!var6) {
+              var8 = new IntegerNode(var1.readInt());
+            } else {
+              var8 = new StringNode(var1.readString());
+            }
+
+            this.aClass130_3636.put((long) var7, (Node) var8);
+          }
+        }
+
+      }
+    } catch (RuntimeException var9) {
+      throw AbstractGameWorld.cascadeException(var9,
+        "lk.P(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final GameString method604(GameString var1, byte var2, int var3) {
+    try {
+      if (this.aClass130_3636 == null) {
+        return var1;
+      } else {
+        StringNode var4 = (StringNode) this.aClass130_3636.get((long) var3);
+        if (var2 != -44) {
+          method607(false);
+        }
+
+        return null != var4 ? var4.aClass94_2586 : var1;
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "lk.B(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final void method608(int var1, Buffer var2) {
+    try {
+      while (true) {
+        int var3 = var2.readUnsignedByte();
+        if (0 == var3) {
+          if (var1 != 5) {
+            method607(false);
+          }
+
+          return;
+        }
+
+        this.method601(var2, var3, (byte) -5);
+      }
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "lk.C(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+    }
+  }
 
   static final int method599(int var0, FileUnpacker var1) {
     try {
@@ -29,8 +117,8 @@ final class Structure extends SubNode {
         return var2;
       }
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "lk.F(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "lk.F(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -204,8 +292,9 @@ final class Structure extends SubNode {
               }
             } else if (var1.anIntArray2333 != null && ~(var1.anInt2316 -= var3) >= -1) {
               int var13 = (int) ((double) var1.anIntArray2333.length * Math.random());
-              SoundEffect var14 = SoundEffect
-                .method1811(AbstractMouseWheel.soundEffects, var1.anIntArray2333[var13], 0);
+              SoundEffect var14 =
+                SoundEffect.method1811(AbstractMouseWheel.soundEffects, var1.anIntArray2333[var13],
+                  0);
               if (null != var14) {
                 SomethingMusic0 var15 = var14.method1812().method151(DummyClass32.aClass157_524);
                 AudioStreamEncoder1 var11 = AudioStreamEncoder1.method437(var15, 100, var7);
@@ -219,12 +308,14 @@ final class Structure extends SubNode {
 
           } else {
             if (null != var1.aClass3_Sub24_Sub1_2312) {
-              MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(var1.aClass3_Sub24_Sub1_2312);
+              MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(
+                var1.aClass3_Sub24_Sub1_2312);
               var1.aClass3_Sub24_Sub1_2312 = null;
             }
 
             if (var1.aClass3_Sub24_Sub1_2315 != null) {
-              MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(var1.aClass3_Sub24_Sub1_2315);
+              MonoChromaticImageBuffer.aClass3_Sub24_Sub2_2563.method461(
+                var1.aClass3_Sub24_Sub1_2315);
               var1.aClass3_Sub24_Sub1_2315 = null;
             }
 
@@ -336,94 +427,6 @@ final class Structure extends SubNode {
       DummyClass32.aClass94_525 = GameWorld.aClass94_2628;
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "lk.A(" + var0 + ')');
-    }
-  }
-
-  final int method600(int var1, int var2, byte var3) {
-    try {
-      if (this.aClass130_3636 != null) {
-        if (var3 != -29) {
-          this.method604(null, (byte) 56, 110);
-        }
-
-        IntegerNode var4 = (IntegerNode) this.aClass130_3636.get((long) var1);
-        return null == var4 ? var2 : var4.anInt2467;
-      } else {
-        return var2;
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "lk.Q(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  private final void method601(Buffer var1, int var2, byte var3) {
-    try {
-      if (var3 < -2) {
-        if (249 == var2) {
-          int var4 = var1.readUnsignedByte();
-          int var5;
-          if (this.aClass130_3636 == null) {
-            var5 = DummyClass53.nearestPo2((byte) 105, var4);
-            this.aClass130_3636 = new HashTable(var5);
-          }
-
-          for (var5 = 0; var4 > var5; ++var5) {
-            boolean var6 = 1 == var1.readUnsignedByte();
-            int var7 = var1.readUnsignedMedium((byte) 95);
-            Object var8;
-            if (!var6) {
-              var8 = new IntegerNode(var1.readInt());
-            } else {
-              var8 = new StringNode(var1.readString());
-            }
-
-            this.aClass130_3636.put((long) var7, (Node) var8);
-          }
-        }
-
-      }
-    } catch (RuntimeException var9) {
-      throw AbstractGameWorld.cascadeException(var9,
-        "lk.P(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final GameString method604(GameString var1, byte var2, int var3) {
-    try {
-      if (this.aClass130_3636 == null) {
-        return var1;
-      } else {
-        StringNode var4 = (StringNode) this.aClass130_3636.get((long) var3);
-        if (var2 != -44) {
-          method607(false);
-        }
-
-        return null != var4 ? var4.aClass94_2586 : var1;
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "lk.B(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final void method608(int var1, Buffer var2) {
-    try {
-      while (true) {
-        int var3 = var2.readUnsignedByte();
-        if (0 == var3) {
-          if (var1 != 5) {
-            method607(false);
-          }
-
-          return;
-        }
-
-        this.method601(var2, var3, (byte) -5);
-      }
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "lk.C(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
     }
   }
 

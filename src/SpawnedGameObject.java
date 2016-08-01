@@ -89,8 +89,8 @@ final class SpawnedGameObject extends Node {
 
       return var2;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "cd.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "cd.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -119,8 +119,8 @@ final class SpawnedGameObject extends Node {
       str.pack();
       return str.cache();
     } catch (RuntimeException var8) {
-      throw AbstractGameWorld
-        .cascadeException(var8, "cd.D(" + (string != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var8,
+        "cd.D(" + (string != null ? "{...}" : "null") + ')');
     }
   }
 

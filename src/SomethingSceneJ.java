@@ -1,11 +1,12 @@
 final class SomethingSceneJ {
 
+  private static GameString aClass94_321 =
+    SpawnedGameObject.createString("Checking for updates )2 ");
   static float aFloat319;
   static FileUnpacker aClass153_322;
   static FileUnpacker aClass153_323;
   static GameString aClass94_325 = SpawnedGameObject.createString(",Mcran)2titre charg-B");
   static GameString aClass94_331 = SpawnedGameObject.createString("(U1");
-  private static GameString aClass94_321 = SpawnedGameObject.createString("Checking for updates )2 ");
   static GameString aClass94_327 = aClass94_321;
   SceneNode aClass140_320;
   int anInt324;
@@ -106,14 +107,13 @@ final class SomethingSceneJ {
 
   static final int method872(int var0, int var1, int var2) {
     try {
-      Inventory var3 =
-        (Inventory) SceneGraphTile.aClass130_2220.get((long) var1);
+      Inventory var3 = (Inventory) SceneGraphTile.aClass130_2220.get((long) var1);
       return null == var3 ?
         0 :
         (var0 >= ~var2 && var2 < var3.counts.length ? var3.counts[var2] : 0);
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "bm.C(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "bm.C(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -128,8 +128,8 @@ final class SomethingSceneJ {
         return var3;
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "bm.D(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "bm.D(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

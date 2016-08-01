@@ -132,9 +132,8 @@ final class DummyClass31 {
             if (10 != var6 && 11 != var6) {
               if (12 <= var6) {
                 if (-1 == var11.anInt1531 && null == var11.anIntArray1524 && !var11.aBoolean1510) {
-                  var28 = var11
-                    .method1696(var10, var20, var18, var6, var19, var23, var1, null, (byte) -82,
-                      var26, var21);
+                  var28 = var11.method1696(var10, var20, var18, var6, var19, var23, var1, null,
+                    (byte) -82, var26, var21);
                   if (GlRenderer.useOpenGlRenderer && var26) {
                     DummyClass16.method2051(var28.shadow, var20, var22, var21);
                   }
@@ -145,11 +144,12 @@ final class DummyClass31 {
                     var11.aBoolean1492, null);
                 }
 
-                EnumStringFetcher
-                  .method835(var2, var7, var9, var19, 1, 1, (SceneNode) var27, 0, var24);
+                EnumStringFetcher.method835(var2, var7, var9, var19, 1, 1, (SceneNode) var27, 0,
+                  var24);
                 if (var1 && 12 <= var6 && -18 <= ~var6 && -14 != ~var6 && var2 > 0) {
-                  DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] = TextureSampler3
-                    .method308(DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 4);
+                  DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] =
+                    TextureSampler3.method308(
+                      DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 4);
                 }
 
                 if (-1 != ~var11.anInt1538 && null != var4) {
@@ -158,9 +158,9 @@ final class DummyClass31 {
 
               } else if (0 == var6) {
                 if (0 == ~var11.anInt1531 && null == var11.anIntArray1524 && !var11.aBoolean1510) {
-                  var28 = var11
-                    .method1696(var10, var20, var18, 0, var19, var23, var1, null, (byte) -74, var26,
-                      var21);
+                  var28 =
+                    var11.method1696(var10, var20, var18, 0, var19, var23, var1, null, (byte) -74,
+                      var26, var21);
                   if (GlRenderer.useOpenGlRenderer && var26) {
                     DummyClass16.method2051(var28.shadow, var20, var22, var21);
                   }
@@ -181,8 +181,9 @@ final class DummyClass31 {
                     }
 
                     if (var11.aBoolean1542) {
-                      DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] = TextureSampler3
-                        .method308(DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 1);
+                      DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] =
+                        TextureSampler3.method308(
+                          DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 1);
                     }
                   } else if (1 != var10) {
                     if (~var10 != -3) {
@@ -193,8 +194,9 @@ final class DummyClass31 {
                         }
 
                         if (var11.aBoolean1542) {
-                          DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] = TextureSampler3
-                            .method308(DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 2);
+                          DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] =
+                            TextureSampler3.method308(
+                              DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 2);
                         }
                       }
                     } else {
@@ -205,9 +207,8 @@ final class DummyClass31 {
 
                       if (var11.aBoolean1542) {
                         DummyClass36.anIntArrayArrayArray2609[var2][var7 - -1][var9] =
-                          TextureSampler3
-                            .method308(DummyClass36.anIntArrayArrayArray2609[var2][var7 - -1][var9],
-                              1);
+                          TextureSampler3.method308(
+                            DummyClass36.anIntArrayArrayArray2609[var2][var7 - -1][var9], 1);
                       }
                     }
                   } else {
@@ -217,8 +218,9 @@ final class DummyClass31 {
                     }
 
                     if (var11.aBoolean1542) {
-                      DummyClass36.anIntArrayArrayArray2609[var2][var7][1 + var9] = TextureSampler3
-                        .method308(DummyClass36.anIntArrayArrayArray2609[var2][var7][1 + var9], 2);
+                      DummyClass36.anIntArrayArrayArray2609[var2][var7][1 + var9] =
+                        TextureSampler3.method308(
+                          DummyClass36.anIntArrayArrayArray2609[var2][var7][1 + var9], 2);
                     }
                   }
                 }
@@ -233,9 +235,9 @@ final class DummyClass31 {
 
               } else if (~var6 == -2) {
                 if (-1 == var11.anInt1531 && var11.anIntArray1524 == null && !var11.aBoolean1510) {
-                  var28 = var11
-                    .method1696(var10, var20, var18, 1, var19, var23, var1, null, (byte) -83, var26,
-                      var21);
+                  var28 =
+                    var11.method1696(var10, var20, var18, 1, var19, var23, var1, null, (byte) -83,
+                      var26, var21);
                   if (GlRenderer.useOpenGlRenderer && var26) {
                     DummyClass16.method2051(var28.shadow, var20, var22, var21);
                   }
@@ -276,16 +278,16 @@ final class DummyClass31 {
                   Object var42;
                   if (~var11.anInt1531 == 0 && var11.anIntArray1524 == null
                     && !var11.aBoolean1510) {
-                    SceneShadowMap var45 = var11
-                      .method1696(var10 + 4, var20, var18, 2, var19, var23, var1, null, (byte) -108,
-                        var26, var21);
+                    SceneShadowMap var45 =
+                      var11.method1696(var10 + 4, var20, var18, 2, var19, var23, var1, null,
+                        (byte) -108, var26, var21);
                     if (GlRenderer.useOpenGlRenderer && var26) {
                       DummyClass16.method2051(var45.shadow, var20, var22, var21);
                     }
 
                     var42 = var45.node;
-                    var45 = var11
-                      .method1696(var43, var20, var18, 2, var19, var23, var1, null, (byte) -69,
+                    var45 =
+                      var11.method1696(var43, var20, var18, 2, var19, var23, var1, null, (byte) -69,
                         var26, var21);
                     if (GlRenderer.useOpenGlRenderer && var26) {
                       DummyClass16.method2051(var45.shadow, var20, var22, var21);
@@ -299,10 +301,9 @@ final class DummyClass31 {
                       var11.aBoolean1492, null);
                   }
 
-                  DummyClass14
-                    .method2146(var2, var7, var9, var19, (SceneNode) var42, (SceneNode) var38,
-                      DummyClass13.anIntArray2017[var10], DummyClass13.anIntArray2017[var43],
-                      var24);
+                  DummyClass14.method2146(var2, var7, var9, var19, (SceneNode) var42,
+                    (SceneNode) var38, DummyClass13.anIntArray2017[var10],
+                    DummyClass13.anIntArray2017[var43], var24);
                   if (var11.aBoolean1542 && var1) {
                     if (-1 != ~var10) {
                       if (-2 != ~var10) {
@@ -310,29 +311,32 @@ final class DummyClass31 {
                           DummyClass36.anIntArrayArrayArray2609[var2][1 + var7][var9] =
                             TextureSampler3.method308(
                               DummyClass36.anIntArrayArrayArray2609[var2][1 + var7][var9], 1);
-                          DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] = TextureSampler3
-                            .method308(DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 2);
+                          DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] =
+                            TextureSampler3.method308(
+                              DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 2);
                         } else if (~var10 == -4) {
-                          DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] = TextureSampler3
-                            .method308(DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 2);
-                          DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] = TextureSampler3
-                            .method308(DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 1);
+                          DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] =
+                            TextureSampler3.method308(
+                              DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 2);
+                          DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] =
+                            TextureSampler3.method308(
+                              DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 1);
                         }
                       } else {
                         DummyClass36.anIntArrayArrayArray2609[var2][var7][var9 - -1] =
-                          TextureSampler3
-                            .method308(DummyClass36.anIntArrayArrayArray2609[var2][var7][var9 - -1],
-                              2);
+                          TextureSampler3.method308(
+                            DummyClass36.anIntArrayArrayArray2609[var2][var7][var9 - -1], 2);
                         DummyClass36.anIntArrayArrayArray2609[var2][var7 - -1][var9] =
-                          TextureSampler3
-                            .method308(DummyClass36.anIntArrayArrayArray2609[var2][var7 - -1][var9],
-                              1);
+                          TextureSampler3.method308(
+                            DummyClass36.anIntArrayArrayArray2609[var2][var7 - -1][var9], 1);
                       }
                     } else {
-                      DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] = TextureSampler3
-                        .method308(DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 1);
-                      DummyClass36.anIntArrayArrayArray2609[var2][var7][1 + var9] = TextureSampler3
-                        .method308(DummyClass36.anIntArrayArrayArray2609[var2][var7][1 + var9], 2);
+                      DummyClass36.anIntArrayArrayArray2609[var2][var7][var9] =
+                        TextureSampler3.method308(
+                          DummyClass36.anIntArrayArrayArray2609[var2][var7][var9], 1);
+                      DummyClass36.anIntArrayArrayArray2609[var2][var7][1 + var9] =
+                        TextureSampler3.method308(
+                          DummyClass36.anIntArrayArrayArray2609[var2][var7][1 + var9], 2);
                     }
                   }
 
@@ -347,8 +351,8 @@ final class DummyClass31 {
                 } else if (var6 == 3) {
                   if (~var11.anInt1531 == 0 && null == var11.anIntArray1524
                     && !var11.aBoolean1510) {
-                    var28 = var11
-                      .method1696(var10, var20, var18, 3, var19, var23, var1, null, (byte) -54,
+                    var28 =
+                      var11.method1696(var10, var20, var18, 3, var19, var23, var1, null, (byte) -54,
                         var26, var21);
                     if (GlRenderer.useOpenGlRenderer && var26) {
                       DummyClass16.method2051(var28.shadow, var20, var22, var21);
@@ -394,9 +398,8 @@ final class DummyClass31 {
                             var43 = 8;
                             var44 = SomethingAudio.method2174(var2, var7, var9);
                             if (-1L != ~var44) {
-                              var43 = DummyClass11
-                                .method2207(4, Integer.MAX_VALUE & (int) (var44 >>> 32)).anInt1528
-                                / 2;
+                              var43 = DummyClass11.method2207(4,
+                                Integer.MAX_VALUE & (int) (var44 >>> 32)).anInt1528 / 2;
                             }
 
                             int var32 = var10 + 2 & 3;
@@ -405,21 +408,21 @@ final class DummyClass31 {
                               && !var11.aBoolean1510) {
                               int var34 = 8 * DummyClass4.anIntArray3007[var10];
                               int var33 = AbstractTextureSampler.anIntArray2386[var10] * 8;
-                              SceneShadowMap var35 = var11
-                                .method1696(4 + var10, var20, var18, 4, var19, var23, var1, null,
-                                  (byte) -25, var26, var21);
+                              SceneShadowMap var35 =
+                                var11.method1696(4 + var10, var20, var18, 4, var19, var23, var1,
+                                  null, (byte) -25, var26, var21);
                               if (GlRenderer.useOpenGlRenderer && var26) {
-                                DummyClass16
-                                  .method2051(var35.shadow, var20 + -var33, var22, -var34 + var21);
+                                DummyClass16.method2051(var35.shadow, var20 + -var33, var22,
+                                  -var34 + var21);
                               }
 
                               var39 = var35.node;
-                              var35 = var11
-                                .method1696(var32 - -4, var20, var18, 4, var19, var23, var1, null,
-                                  (byte) -101, var26, var21);
+                              var35 =
+                                var11.method1696(var32 - -4, var20, var18, 4, var19, var23, var1,
+                                  null, (byte) -101, var26, var21);
                               if (GlRenderer.useOpenGlRenderer && var26) {
-                                DummyClass16
-                                  .method2051(var35.shadow, var20 - var33, var22, -var34 + var21);
+                                DummyClass16.method2051(var35.shadow, var20 - var33, var22,
+                                  -var34 + var21);
                               }
 
                               var46 = var35.node;
@@ -439,9 +442,9 @@ final class DummyClass31 {
                           int var40 = 3 & var10 - -2;
                           if (~var11.anInt1531 == 0 && var11.anIntArray1524 == null
                             && !var11.aBoolean1510) {
-                            SceneShadowMap var41 = var11
-                              .method1696(var40 - -4, var20, var18, 4, var19, var23, var1, null,
-                                (byte) -39, var26, var21);
+                            SceneShadowMap var41 =
+                              var11.method1696(var40 - -4, var20, var18, 4, var19, var23, var1,
+                                null, (byte) -39, var26, var21);
                             if (GlRenderer.useOpenGlRenderer && var26) {
                               DummyClass16.method2051(var41.shadow, var20, var22, var21);
                             }
@@ -453,22 +456,21 @@ final class DummyClass31 {
                                 var11.aBoolean1492, null);
                           }
 
-                          ByteArrayNode
-                            .method577(var2, var7, var9, var19, (SceneNode) var27, null, 256, var40,
-                              0, 0, var24);
+                          ByteArrayNode.method577(var2, var7, var9, var19, (SceneNode) var27, null,
+                            256, var40, 0, 0, var24);
                         }
                       } else {
                         var43 = 8;
                         var44 = SomethingAudio.method2174(var2, var7, var9);
                         if (-1L != ~var44) {
-                          var43 = DummyClass11
-                            .method2207(4, Integer.MAX_VALUE & (int) (var44 >>> 32)).anInt1528 / 2;
+                          var43 = DummyClass11.method2207(4,
+                            Integer.MAX_VALUE & (int) (var44 >>> 32)).anInt1528 / 2;
                         }
 
                         if (var11.anInt1531 == -1 && var11.anIntArray1524 == null
                           && !var11.aBoolean1510) {
-                          var47 = var11
-                            .method1696(var10 + 4, var20, var18, 4, var19, var23, var1, null,
+                          var47 =
+                            var11.method1696(var10 + 4, var20, var18, 4, var19, var23, var1, null,
                               (byte) -65, var26, var21);
                           if (GlRenderer.useOpenGlRenderer && var26) {
                             DummyClass16.method2051(var47.shadow,
@@ -483,24 +485,22 @@ final class DummyClass31 {
                               var11.aBoolean1492, null);
                         }
 
-                        ByteArrayNode
-                          .method577(var2, var7, var9, var19, (SceneNode) var39, null, 256, var10,
-                            var43 * AbstractTextureSampler.anIntArray2386[var10],
-                            var43 * DummyClass4.anIntArray3007[var10], var24);
+                        ByteArrayNode.method577(var2, var7, var9, var19, (SceneNode) var39, null,
+                          256, var10, var43 * AbstractTextureSampler.anIntArray2386[var10],
+                          var43 * DummyClass4.anIntArray3007[var10], var24);
                       }
                     } else {
                       var43 = 16;
                       var44 = SomethingAudio.method2174(var2, var7, var9);
                       if (~var44 != -1L) {
-                        var43 = DummyClass11
-                          .method2207(4, Integer.MAX_VALUE & (int) (var44 >>> 32)).anInt1528;
+                        var43 = DummyClass11.method2207(4,
+                          Integer.MAX_VALUE & (int) (var44 >>> 32)).anInt1528;
                       }
 
                       if (0 == ~var11.anInt1531 && null == var11.anIntArray1524
                         && !var11.aBoolean1510) {
-                        var47 = var11
-                          .method1696(var10, var20, var18, 4, var19, var23, var1, null, (byte) -125,
-                            var26, var21);
+                        var47 = var11.method1696(var10, var20, var18, 4, var19, var23, var1, null,
+                          (byte) -125, var26, var21);
                         if (GlRenderer.useOpenGlRenderer && var26) {
                           DummyClass16.method2051(var47.shadow,
                             var20 + -(RenderAnimation.anIntArray356[var10] * 8), var22,
@@ -521,9 +521,8 @@ final class DummyClass31 {
                   } else {
                     if (var11.anInt1531 == -1 && null == var11.anIntArray1524
                       && !var11.aBoolean1510) {
-                      var28 = var11
-                        .method1696(var10, var20, var18, 4, var19, var23, var1, null, (byte) -103,
-                          var26, var21);
+                      var28 = var11.method1696(var10, var20, var18, 4, var19, var23, var1, null,
+                        (byte) -103, var26, var21);
                       if (GlRenderer.useOpenGlRenderer && var26) {
                         DummyClass16.method2051(var28.shadow, var20, var22, var21);
                       }
@@ -540,9 +539,8 @@ final class DummyClass31 {
                 } else {
                   if (~var11.anInt1531 == 0 && var11.anIntArray1524 == null
                     && !var11.aBoolean1510) {
-                    var28 = var11
-                      .method1696(var10, var20, var18, var6, var19, var23, var1, null, (byte) -30,
-                        var26, var21);
+                    var28 = var11.method1696(var10, var20, var18, var6, var19, var23, var1, null,
+                      (byte) -30, var26, var21);
                     if (GlRenderer.useOpenGlRenderer && var26) {
                       DummyClass16.method2051(var28.shadow, var20, var22, var21);
                     }
@@ -553,8 +551,8 @@ final class DummyClass31 {
                       var11.aBoolean1492, null);
                   }
 
-                  EnumStringFetcher
-                    .method835(var2, var7, var9, var19, 1, 1, (SceneNode) var27, 0, var24);
+                  EnumStringFetcher.method835(var2, var7, var9, var19, 1, 1, (SceneNode) var27, 0,
+                    var24);
                   if (-1 != ~var11.anInt1538 && var4 != null) {
                     var4.method1489(var7, var11.aBoolean1486, (byte) 127, var9, var12, var13);
                   }
@@ -567,9 +565,9 @@ final class DummyClass31 {
               }
             } else {
               if (~var11.anInt1531 == 0 && var11.anIntArray1524 == null && !var11.aBoolean1510) {
-                var28 = var11
-                  .method1696(var6 == 11 ? 4 + var10 : var10, var20, var18, 10, var19, var23, var1,
-                    null, (byte) -26, var26, var21);
+                var28 =
+                  var11.method1696(var6 == 11 ? 4 + var10 : var10, var20, var18, 10, var19, var23,
+                    var1, null, (byte) -26, var26, var21);
                 if (GlRenderer.useOpenGlRenderer && var26) {
                   DummyClass16.method2051(var28.shadow, var20, var22, var21);
                 }
@@ -581,8 +579,8 @@ final class DummyClass31 {
               }
 
               if (var27 != null) {
-                boolean var37 = EnumStringFetcher
-                  .method835(var2, var7, var9, var19, var12, var13, (SceneNode) var27, 0, var24);
+                boolean var37 = EnumStringFetcher.method835(var2, var7, var9, var19, var12, var13,
+                  (SceneNode) var27, 0, var24);
                 if (var11.aBoolean1525 && var37 && var1) {
                   int var29 = 15;
                   if (var27 instanceof AbstractModel) {
@@ -612,9 +610,9 @@ final class DummyClass31 {
           } else if (Keyboard.aBoolean1905 || ~var11.anInt1529 != -1 || -2 == ~var11.anInt1538
             || var11.aBoolean1483) {
             if (0 == ~var11.anInt1531 && var11.anIntArray1524 == null && !var11.aBoolean1510) {
-              var28 = var11
-                .method1696(var10, var20, var18, 22, var19, var23, var1, null, (byte) -126, var26,
-                  var21);
+              var28 =
+                var11.method1696(var10, var20, var18, 22, var19, var23, var1, null, (byte) -126,
+                  var26, var21);
               if (GlRenderer.useOpenGlRenderer && var26) {
                 DummyClass16.method2051(var28.shadow, var20, var22, var21);
               }
@@ -625,8 +623,8 @@ final class DummyClass31 {
                 var11.aBoolean1492, null);
             }
 
-            TextureSampler39
-              .method276(var2, var7, var9, var19, (SceneNode) var27, var24, var11.aBoolean1502);
+            TextureSampler39.method276(var2, var7, var9, var19, (SceneNode) var27, var24,
+              var11.aBoolean1502);
             if (var11.anInt1538 == 1 && null != var4) {
               var4.method1503(var7, var9, var8 + -55);
             }

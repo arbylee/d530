@@ -11,6 +11,9 @@ abstract class AbstractObjectNode extends SubNode {
   static int[] anIntArray3607 = new int[] {0, 2, 2, 2, 1, 1, 2, 2, 1, 3, 1, 1};
   static int anInt3608;
 
+  abstract Object getObject(boolean var1);
+
+  abstract boolean method568(int var1);
 
   static final SoftwareDirectColorSprite method562(FileUnpacker var0, int var1, int var2,
                                                    byte var3) {
@@ -108,8 +111,8 @@ abstract class AbstractObjectNode extends SubNode {
       }
 
     } catch (RuntimeException var9) {
-      throw AbstractGameWorld
-        .cascadeException(var9, "gf.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var9,
+        "gf.F(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -156,8 +159,8 @@ abstract class AbstractObjectNode extends SubNode {
       }
 
     } catch (RuntimeException var7) {
-      throw AbstractGameWorld
-        .cascadeException(var7, "gf.E(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var7,
+        "gf.E(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -175,9 +178,5 @@ abstract class AbstractObjectNode extends SubNode {
         "gf.P(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ',' + var2 + ')');
     }
   }
-
-  abstract Object getObject(boolean var1);
-
-  abstract boolean method568(int var1);
 
 }

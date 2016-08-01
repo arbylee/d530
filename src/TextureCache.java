@@ -119,6 +119,266 @@ final class TextureCache implements ITextureCache {
     }
   }
 
+  final void update(boolean var1, int cycle) {
+    try {
+      if (!var1) {
+        this.method7((byte) 113, 17);
+      }
+
+      for (Texture var3 = (Texture) this.aClass47_2142.method1094(0);
+           null != var3; var3 = (Texture) this.aClass47_2142.method1099(-1)) {
+        if (var3.needsUpdate) {
+          var3.update(cycle, (byte) -120);
+          var3.needsUpdate = false;
+        }
+      }
+
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.P(" + var1 + ',' + cycle + ')');
+    }
+  }
+
+  private final Texture getConfig(int var1, int var2) {
+    try {
+      if (var2 != 1) {
+        this.aBooleanArray2128 = null;
+      }
+
+      Texture var3 = (Texture) this.aClass47_2142.get((long) var1, 1400);
+      if (null != var3) {
+        return var3;
+      } else {
+        byte[] var4 = this.textures.getBytes(var1, 0);
+        if (null != var4) {
+          Buffer var5 = new Buffer(var4);
+          var3 = new Texture(var5);
+          this.aClass47_2142.put((long) var1, var3);
+          return var3;
+        } else {
+          return null;
+        }
+      }
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6, "nk.T(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public final boolean method7(byte var1, int var2) {
+    try {
+      if (var1 != 88) {
+        this.method19(-99, -37);
+      }
+
+      return this.aBooleanArray2128[var2];
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.M(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public final void initializeMaterial(int var1, boolean var2) {
+    try {
+      SomethingQuickChat.method551(0, 255 & this.aByteArray2143[var1],
+        this.aByteArray2144[var1] & 255);
+      if (var2) {
+        boolean var3 = false;
+        Texture var4 = this.getConfig(var1, 1);
+        if (var4 != null) {
+          var3 = var4.method719(this.sprites, this, 579100487,
+            this.aBoolean2134 || this.aBooleanArray2122[var1]);
+        }
+
+        if (!var3) {
+          GlTexture2d var6 = this.getTexture(var1);
+          var6.initialize((byte) 6);
+        }
+
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5, "nk.G(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public final int method9(int var1, boolean var2) {
+    try {
+      return var2 ? -63 : 255 & this.aByteArray2143[var1];
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public final int method10(int var1, int var2) {
+    try {
+      int var3 = -81 % ((var1 - 4) / 55);
+      return this.aByteArray2126[var2] & 255;
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.C(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public final boolean method11(int var1, int var2) {
+    try {
+      if (var1 < 0) {
+        this.method7((byte) 68, -47);
+      }
+
+      Texture var3 = this.getConfig(var2, 1);
+      return null != var3 ? var3.method722(-5, this, this.sprites) : false;
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.H(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public final boolean method12(int var1, int var2) {
+    try {
+      if (var2 != -65) {
+        method1614(false, null, null);
+      }
+
+      return this.aBooleanArray2135[var1];
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.I(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public final int[] method13(int var1, boolean var2, float var3) {
+    try {
+      Texture var4 = this.getConfig(var1, 1);
+      if (null == var4) {
+        return null;
+      } else {
+        var4.needsUpdate = var2;
+        return var4.method718(this, 0, var3, this.sprites,
+          this.aBoolean2134 || this.aBooleanArray2122[var1]);
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "nk.L(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  public final boolean method14(byte var1, int var2) {
+    try {
+      return var1 >= -97 ? true : this.aBoolean2134 || this.aBooleanArray2122[var2];
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.J(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public final int method15(int var1, int var2) {
+    try {
+      if (var2 != '\uffff') {
+        this.method11(-82, -17);
+      }
+
+      return '\uffff' & this.textureColors[var1];
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.E(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public final int[] method16(int var1, int var2) {
+    try {
+      if (var1 != 64) {
+        this.method12(105, -92);
+      }
+
+      Texture var3 = this.getConfig(var2, 1);
+      return null == var3 ?
+        null :
+        var3.method720(false, this.aBoolean2134 || this.aBooleanArray2122[var2], this,
+          this.sprites);
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.F(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public final boolean method17(int var1, int var2) {
+    try {
+      int var3 = -8 / ((20 - var2) / 45);
+      return this.aBooleanArray2124[var1];
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.K(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public final int method18(int var1, int var2) {
+    try {
+      if (var2 != 255) {
+        method1612(-48);
+      }
+
+      return 255 & this.aByteArray2144[var1];
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.B(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public final int method19(int var1, int var2) {
+    try {
+      int var3 = -115 / ((-12 - var1) / 56);
+      return 255 & this.aByteArray2129[var2];
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.A(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  private final GlTexture2d getTexture(int textureId) {
+    try {
+      GlTexture2d var4 = (GlTexture2d) this.glTextures.get((long) textureId, 1400);
+      if (null == var4) {
+        var4 = new GlTexture2d(this.textureColors[textureId] & '\uffff');
+        this.glTextures.put((long) textureId, var4);
+        return var4;
+      } else {
+        return var4;
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5, "nk.U(" + textureId + ')');
+    }
+  }
+
+  final void method1616(boolean var1, int var2) {
+    try {
+      this.aBoolean2134 = var1;
+      this.method1618(var2 ^ var2);
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.S(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void method1618(int var1) {
+    try {
+      this.aClass47_2142.method1101(2);
+      if (var1 == 0) {
+        if (null != this.glTextures) {
+          this.glTextures.method1101(2);
+        }
+
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "nk.O(" + var1 + ')');
+    }
+  }
+
+  final void method1619(int var1, int var2) {
+    try {
+      if (var2 != -1) {
+        localPlayer = null;
+      }
+
+      this.cacheSize = var1;
+      this.aClass47_2142 = new Cache(this.cacheSize);
+      if (!GlRenderer.useOpenGlRenderer) {
+        this.glTextures = null;
+      } else {
+        this.glTextures = new Cache(this.cacheSize);
+      }
+
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4, "nk.N(" + var1 + ',' + var2 + ')');
+    }
+  }
+
   static final void method1611(int var0, boolean var1) {
     try {
       int var2;
@@ -250,11 +510,11 @@ final class TextureCache implements ITextureCache {
             var15 |= Long.MIN_VALUE;
           }
 
-          var3.anInt2831 = BufferData
-            .method1736(GameWorldSomething.currentPlane, 1, var3.anInt2819, var3.anInt2829);
-          DummyClass29
-            .addNodeToSceneGraph(GameWorldSomething.currentPlane, var3.anInt2819, var3.anInt2829,
-              var3.anInt2831, -64 + 64 * var6 + 60, var3, var3.rotationY, var15, var3.aBoolean2810);
+          var3.anInt2831 = BufferData.method1736(GameWorldSomething.currentPlane, 1, var3.anInt2819,
+            var3.anInt2829);
+          DummyClass29.addNodeToSceneGraph(GameWorldSomething.currentPlane, var3.anInt2819,
+            var3.anInt2829, var3.anInt2831, -64 + 64 * var6 + 60, var3, var3.rotationY, var15,
+            var3.aBoolean2810);
         }
       }
 
@@ -325,13 +585,13 @@ final class TextureCache implements ITextureCache {
         if (DummyClass13.anInt2020 > var4) {
           var4 = DummyClass13.anInt2020;
         } else {
-          TextureSampler18
-            .method282(DummyClass35.anIntArrayArray663[var4++], var1, -66, var3, var0);
+          TextureSampler18.method282(DummyClass35.anIntArrayArray663[var4++], var1, -66, var3,
+            var0);
         }
 
         if (var2 <= LightIntensity.anInt902) {
-          TextureSampler18
-            .method282(DummyClass35.anIntArrayArray663[var2--], var1, -54, var3, var0);
+          TextureSampler18.method282(DummyClass35.anIntArrayArray663[var2--], var1, -54, var3,
+            var0);
         } else {
           var2 = LightIntensity.anInt902;
         }
@@ -360,266 +620,6 @@ final class TextureCache implements ITextureCache {
     } catch (RuntimeException var10) {
       throw AbstractGameWorld.cascadeException(var10,
         "nk.R(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ')');
-    }
-  }
-
-  final void update(boolean var1, int cycle) {
-    try {
-      if (!var1) {
-        this.method7((byte) 113, 17);
-      }
-
-      for (Texture var3 = (Texture) this.aClass47_2142.method1094(0);
-           null != var3; var3 = (Texture) this.aClass47_2142.method1099(-1)) {
-        if (var3.needsUpdate) {
-          var3.update(cycle, (byte) -120);
-          var3.needsUpdate = false;
-        }
-      }
-
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.P(" + var1 + ',' + cycle + ')');
-    }
-  }
-
-  public final int[] method16(int var1, int var2) {
-    try {
-      if (var1 != 64) {
-        this.method12(105, -92);
-      }
-
-      Texture var3 = this.getConfig(var2, 1);
-      return null == var3 ?
-        null :
-        var3
-          .method720(false, this.aBoolean2134 || this.aBooleanArray2122[var2], this, this.sprites);
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.F(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  public final void initializeMaterial(int var1, boolean var2) {
-    try {
-      SomethingQuickChat
-        .method551(0, 255 & this.aByteArray2143[var1], this.aByteArray2144[var1] & 255);
-      if (var2) {
-        boolean var3 = false;
-        Texture var4 = this.getConfig(var1, 1);
-        if (var4 != null) {
-          var3 = var4.method719(this.sprites, this, 579100487,
-            this.aBoolean2134 || this.aBooleanArray2122[var1]);
-        }
-
-        if (!var3) {
-          GlTexture2d var6 = this.getTexture(var1);
-          var6.initialize((byte) 6);
-        }
-
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5, "nk.G(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  private final Texture getConfig(int var1, int var2) {
-    try {
-      if (var2 != 1) {
-        this.aBooleanArray2128 = null;
-      }
-
-      Texture var3 = (Texture) this.aClass47_2142.get((long) var1, 1400);
-      if (null != var3) {
-        return var3;
-      } else {
-        byte[] var4 = this.textures.getBytes(var1, 0);
-        if (null != var4) {
-          Buffer var5 = new Buffer(var4);
-          var3 = new Texture(var5);
-          this.aClass47_2142.put((long) var1, var3);
-          return var3;
-        } else {
-          return null;
-        }
-      }
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6, "nk.T(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  public final int method9(int var1, boolean var2) {
-    try {
-      return var2 ? -63 : 255 & this.aByteArray2143[var1];
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.D(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  public final int method18(int var1, int var2) {
-    try {
-      if (var2 != 255) {
-        method1612(-48);
-      }
-
-      return 255 & this.aByteArray2144[var1];
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.B(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  public final int method10(int var1, int var2) {
-    try {
-      int var3 = -81 % ((var1 - 4) / 55);
-      return this.aByteArray2126[var2] & 255;
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.C(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  public final boolean method7(byte var1, int var2) {
-    try {
-      if (var1 != 88) {
-        this.method19(-99, -37);
-      }
-
-      return this.aBooleanArray2128[var2];
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.M(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  private final GlTexture2d getTexture(int textureId) {
-    try {
-      GlTexture2d var4 = (GlTexture2d) this.glTextures.get((long) textureId, 1400);
-      if (null == var4) {
-        var4 = new GlTexture2d(this.textureColors[textureId] & '\uffff');
-        this.glTextures.put((long) textureId, var4);
-        return var4;
-      } else {
-        return var4;
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5, "nk.U(" + textureId + ')');
-    }
-  }
-
-  public final boolean method11(int var1, int var2) {
-    try {
-      if (var1 < 0) {
-        this.method7((byte) 68, -47);
-      }
-
-      Texture var3 = this.getConfig(var2, 1);
-      return null != var3 ? var3.method722(-5, this, this.sprites) : false;
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.H(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final void method1616(boolean var1, int var2) {
-    try {
-      this.aBoolean2134 = var1;
-      this.method1618(var2 ^ var2);
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.S(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  public final boolean method12(int var1, int var2) {
-    try {
-      if (var2 != -65) {
-        method1614(false, null, null);
-      }
-
-      return this.aBooleanArray2135[var1];
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.I(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  public final int method19(int var1, int var2) {
-    try {
-      int var3 = -115 / ((-12 - var1) / 56);
-      return 255 & this.aByteArray2129[var2];
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.A(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final void method1618(int var1) {
-    try {
-      this.aClass47_2142.method1101(2);
-      if (var1 == 0) {
-        if (null != this.glTextures) {
-          this.glTextures.method1101(2);
-        }
-
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "nk.O(" + var1 + ')');
-    }
-  }
-
-  public final int method15(int var1, int var2) {
-    try {
-      if (var2 != '\uffff') {
-        this.method11(-82, -17);
-      }
-
-      return '\uffff' & this.textureColors[var1];
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.E(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  public final boolean method14(byte var1, int var2) {
-    try {
-      return var1 >= -97 ? true : this.aBoolean2134 || this.aBooleanArray2122[var2];
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.J(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  final void method1619(int var1, int var2) {
-    try {
-      if (var2 != -1) {
-        localPlayer = null;
-      }
-
-      this.cacheSize = var1;
-      this.aClass47_2142 = new Cache(this.cacheSize);
-      if (!GlRenderer.useOpenGlRenderer) {
-        this.glTextures = null;
-      } else {
-        this.glTextures = new Cache(this.cacheSize);
-      }
-
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.N(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  public final boolean method17(int var1, int var2) {
-    try {
-      int var3 = -8 / ((20 - var2) / 45);
-      return this.aBooleanArray2124[var1];
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld.cascadeException(var4, "nk.K(" + var1 + ',' + var2 + ')');
-    }
-  }
-
-  public final int[] method13(int var1, boolean var2, float var3) {
-    try {
-      Texture var4 = this.getConfig(var1, 1);
-      if (null == var4) {
-        return null;
-      } else {
-        var4.needsUpdate = var2;
-        return var4.method718(this, 0, var3, this.sprites,
-          this.aBoolean2134 || this.aBooleanArray2122[var1]);
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "nk.L(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 

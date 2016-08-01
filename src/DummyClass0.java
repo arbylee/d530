@@ -16,6 +16,9 @@ final class DummyClass0 extends DummyClass2 {
     new Deque();
   }
 
+  final void method1759() {
+  }
+
   static final void method1755() {
     GL var0 = GlRenderer.gl;
     if (var0.isExtensionAvailable("GL_ARB_point_parameters")) {
@@ -46,8 +49,5 @@ final class DummyClass0 extends DummyClass2 {
 
   static final void method1758(int var0) {
     anInt2682 = var0;
-  }
-
-  final void method1759() {
   }
 }

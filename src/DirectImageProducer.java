@@ -18,6 +18,148 @@ final class DirectImageProducer extends AbstractImageProducer
   private ImageConsumer anImageConsumer2978;
   private ColorModel aColorModel2979;
 
+  public final synchronized void addConsumer(ImageConsumer var1) {
+    try {
+      this.anImageConsumer2978 = var1;
+      var1.setDimensions(this.anInt2012, this.anInt2011);
+      var1.setProperties(null);
+      var1.setColorModel(this.aColorModel2979);
+      var1.setHints(14);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "di.addConsumer(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public final synchronized boolean isConsumer(ImageConsumer var1) {
+    try {
+      return this.anImageConsumer2978 == var1;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "di.isConsumer(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public final synchronized void removeConsumer(ImageConsumer var1) {
+    try {
+      if (this.anImageConsumer2978 == var1) {
+        this.anImageConsumer2978 = null;
+      }
+
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "di.removeConsumer(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public final void startProduction(ImageConsumer var1) {
+    try {
+      this.addConsumer(var1);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "di.startProduction(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public final void requestTopDownLeftRightResend(ImageConsumer var1) {
+  }
+
+  private final synchronized void method2188(int var1, int var2, int var3, byte var4, int var5) {
+    try {
+      if (null != this.anImageConsumer2978) {
+        this.anImageConsumer2978.setPixels(var3, var5, var1, var2, this.aColorModel2979,
+          this.anIntArray2007, var5 * this.anInt2012 + var3, this.anInt2012);
+        this.anImageConsumer2978.imageComplete(2);
+        if (var4 > -29) {
+          method2189(null, false, -53);
+        }
+
+      }
+    } catch (RuntimeException var7) {
+      throw AbstractGameWorld.cascadeException(var7,
+        "di.N(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ')');
+    }
+  }
+
+  private final synchronized void method2190(int var1) {
+    try {
+      if (var1 == 19661184) {
+        if (this.anImageConsumer2978 != null) {
+          this.anImageConsumer2978.setPixels(0, 0, this.anInt2012, this.anInt2011,
+            this.aColorModel2979, this.anIntArray2007, 0, this.anInt2012);
+          this.anImageConsumer2978.imageComplete(2);
+        }
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "di.L(" + var1 + ')');
+    }
+  }
+
+  final void draw(int var1, int var2, Graphics var3, int var4) {
+    try {
+      if (var4 != 0) {
+        aBoolean2981 = true;
+      }
+
+      this.method2190(var4 ^ 19661184);
+      var3.drawImage(this.anImage2009, var1, var2, this);
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "di.C(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ',' + var4 + ')');
+    }
+  }
+
+  final void draw(Graphics var5, int var1, int var2, int var4, int var6, int var3) {
+    try {
+      this.method2188(var1, var4, var2, (byte) -124, var6);
+      if (var3 == 6260) {
+        Shape var7 = var5.getClip();
+        var5.clipRect(var2, var6, var1, var4);
+        var5.drawImage(this.anImage2009, 0, 0, this);
+        var5.setClip(var7);
+      }
+    } catch (RuntimeException var8) {
+      throw AbstractGameWorld.cascadeException(var8,
+        "di.E(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + (var5 != null ?
+          "{...}" :
+          "null") + ',' + var6 + ')');
+    }
+  }
+
+  final void setDimensions(int var1, boolean var2, int var3, Component var4) {
+    try {
+      this.anInt2011 = var1;
+      this.anIntArray2007 = new int[var3 * var1 + 1];
+      this.anInt2012 = var3;
+      this.aColorModel2979 = new DirectColorModel(32, 16711680, '\uff00', 255);
+      this.anImage2009 = var4.createImage(this);
+      this.method2190(19661184);
+      var4.prepareImage(this.anImage2009, this);
+      this.method2190(19661184);
+      var4.prepareImage(this.anImage2009, this);
+      this.method2190(19661184);
+      var4.prepareImage(this.anImage2009, this);
+      this.method2182(0);
+      if (var2) {
+        this.addConsumer(null);
+      }
+
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "di.F(" + var1 + ',' + var2 + ',' + var3 + ',' + (var4 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  public final boolean imageUpdate(Image var1, int var2, int var3, int var4, int var5, int var6) {
+    try {
+      return true;
+    } catch (RuntimeException var8) {
+      throw AbstractGameWorld.cascadeException(var8,
+        "di.imageUpdate(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ',' + var4
+          + ',' + var5 + ',' + var6 + ')');
+    }
+  }
+
   public static void method2187(int var0) {
     try {
       aClass94Array2977 = null;
@@ -234,8 +376,9 @@ final class DirectImageProducer extends AbstractImageProducer
               }
 
               if (0 <= var16 && -1 > ~var15) {
-                var34[lightPosX][var16] = ClassCheckRequest
-                  .method129(lightMagnitude / var15, 2, lightPosZ / var15, 256 * lightPosY / var14);
+                var34[lightPosX][var16] =
+                  ClassCheckRequest.method129(lightMagnitude / var15, 2, lightPosZ / var15,
+                    256 * lightPosY / var14);
               }
             }
           }
@@ -266,8 +409,8 @@ final class DirectImageProducer extends AbstractImageProducer
                     var47 = false;
                   }
 
-                  if (-1 > ~lightMagnitude && !TextureSampler10
-                    .method350((byte) -73, lightMagnitude + -1).aBoolean2102) {
+                  if (-1 > ~lightMagnitude && !TextureSampler10.method350((byte) -73,
+                    lightMagnitude + -1).aBoolean2102) {
                     var47 = false;
                   }
 
@@ -323,8 +466,9 @@ final class DirectImageProducer extends AbstractImageProducer
                             if (-1 != ~var29) {
                               FloorOverlay var30 =
                                 TextureSampler10.method350((byte) -14, -1 + var29);
-                              if (0 != ~var30.anInt2095 && -5 == ~DummyClass40.textureCache
-                                .method18(var30.anInt2095, 255)) {
+                              if (0 != ~var30.anInt2095
+                                && -5 == ~DummyClass40.textureCache.method18(var30.anInt2095,
+                                255)) {
                                 TextureSampler16.anIntArrayArray3115[lightPosX][lightPosY] =
                                   var30.anInt2094 + (var30.anInt2101 << 24);
                                 break label722;
@@ -363,9 +507,8 @@ final class DirectImageProducer extends AbstractImageProducer
                     }
                   } else {
                     var28 = -1;
-                    var29 = DummyClass40.hslTable[StringNode
-                      .method729((byte) -126, DummyClass40.textureCache.method15(var27, '\uffff'),
-                        96)];
+                    var29 = DummyClass40.hslTable[StringNode.method729((byte) -126,
+                      DummyClass40.textureCache.method15(var27, '\uffff'), 96)];
                   }
 
                   if (~var26.anInt2098 <= -1) {
@@ -383,15 +526,14 @@ final class DirectImageProducer extends AbstractImageProducer
                     var29 = DummyClass40.hslTable[StringNode.method729((byte) -101, var32, 96)];
                   }
 
-                  MaterialShader5
-                    .method1629(var8, lightPosX, lightPosY, var24, var25, var27, var14, var15,
-                      var16, var44, Cache.repackHSL(var20, true, var18),
-                      Cache.repackHSL(var21, true, var18), Cache.repackHSL(var22, true, var18),
-                      Cache.repackHSL(var23, true, var18),
-                      StringNode.method729((byte) -72, var28, var20),
-                      StringNode.method729((byte) -107, var28, var21),
-                      StringNode.method729((byte) -82, var28, var22),
-                      StringNode.method729((byte) -93, var28, var23), var19, var29);
+                  MaterialShader5.method1629(var8, lightPosX, lightPosY, var24, var25, var27, var14,
+                    var15, var16, var44, Cache.repackHSL(var20, true, var18),
+                    Cache.repackHSL(var21, true, var18), Cache.repackHSL(var22, true, var18),
+                    Cache.repackHSL(var23, true, var18),
+                    StringNode.method729((byte) -72, var28, var20),
+                    StringNode.method729((byte) -107, var28, var21),
+                    StringNode.method729((byte) -82, var28, var22),
+                    StringNode.method729((byte) -93, var28, var23), var19, var29);
                   if (GlRenderer.useOpenGlRenderer && -1 > ~var8) {
                     DummyClass16.method2037(var24, var25, 1 == ~var28 || !var26.aBoolean2093,
                       -1 == var18 || !ClientScript.getFloorUnderlay(-1 + lightPosZ).aBoolean1411,
@@ -402,13 +544,12 @@ final class DirectImageProducer extends AbstractImageProducer
                       -AbstractGameWorld.heightMap[0][lightPosX][1 + lightPosY] + var44);
                   }
                 } else {
-                  MaterialShader5
-                    .method1629(var8, lightPosX, lightPosY, 0, 0, -1, var14, var15, var16, var44,
-                      Cache.repackHSL(var20, true, var18), Cache.repackHSL(var21, true, var18),
-                      Cache.repackHSL(var22, true, var18), Cache.repackHSL(var23, true, var18), 0,
-                      0, 0, 0, var19, 0);
-                  if (GlRenderer.useOpenGlRenderer && var8 > 0 && 0 != ~var18 && ClientScript
-                    .getFloorUnderlay(-1 + lightPosZ).aBoolean1411) {
+                  MaterialShader5.method1629(var8, lightPosX, lightPosY, 0, 0, -1, var14, var15,
+                    var16, var44, Cache.repackHSL(var20, true, var18),
+                    Cache.repackHSL(var21, true, var18), Cache.repackHSL(var22, true, var18),
+                    Cache.repackHSL(var23, true, var18), 0, 0, 0, 0, var19, 0);
+                  if (GlRenderer.useOpenGlRenderer && var8 > 0 && 0 != ~var18
+                    && ClientScript.getFloorUnderlay(-1 + lightPosZ).aBoolean1411) {
                     DummyClass16.method2037(0, 0, true, false, lightPosX, lightPosY,
                       var14 - AbstractGameWorld.heightMap[0][lightPosX][lightPosY],
                       -AbstractGameWorld.heightMap[0][1 + lightPosX][lightPosY] + var15,
@@ -425,8 +566,8 @@ final class DirectImageProducer extends AbstractImageProducer
                           int var54 = DummyClass17.tileFloors[var8][var24][var52] & 255;
                           if (var54 != 0) {
                             FloorOverlay var53 = TextureSampler10.method350((byte) -25, -1 + var54);
-                            if (~var53.anInt2095 != 0 && 4 == DummyClass40.textureCache
-                              .method18(var53.anInt2095, 255)) {
+                            if (~var53.anInt2095 != 0 && 4 == DummyClass40.textureCache.method18(
+                              var53.anInt2095, 255)) {
                               TextureSampler16.anIntArrayArray3115[lightPosX][lightPosY] =
                                 var53.anInt2094 + (var53.anInt2101 << 24);
                               continue label754;
@@ -461,13 +602,12 @@ final class DirectImageProducer extends AbstractImageProducer
 
           SomethingGl0[] var50;
           if (!var1) {
-            var50 = TextureSampler7
-              .method298(BZipDecompressorState.tileFlags, ObjectCache.tileOrientation[var8],
-                TextureSampler36.floorUnderlayIds[var8], var35, var40, null,
-                DummyClass17.tileFloors[var8], DummyClass18.aByteArrayArrayArray81[var8], var38,
-                var8, var43, var34, AbstractGameWorld.heightMap[var8], null, 4096);
-            SomethingGl0[] var46 = DummyClass3
-              .method70(var40, var38, AbstractGameWorld.heightMap[var8], var8, var43,
+            var50 = TextureSampler7.method298(BZipDecompressorState.tileFlags,
+              ObjectCache.tileOrientation[var8], TextureSampler36.floorUnderlayIds[var8], var35,
+              var40, null, DummyClass17.tileFloors[var8], DummyClass18.aByteArrayArrayArray81[var8],
+              var38, var8, var43, var34, AbstractGameWorld.heightMap[var8], null, 4096);
+            SomethingGl0[] var46 =
+              DummyClass3.method70(var40, var38, AbstractGameWorld.heightMap[var8], var8, var43,
                 DummyClass18.aByteArrayArrayArray81[var8], var35, 0,
                 ObjectCache.tileOrientation[var8], TextureSampler36.floorUnderlayIds[var8],
                 DummyClass17.tileFloors[var8], BZipDecompressorState.tileFlags);
@@ -487,12 +627,11 @@ final class DirectImageProducer extends AbstractImageProducer
               DummyClass46.anInt1032, var40, ObjectCache.tileOrientation[var8],
               DummyClass17.tileFloors[var8], AbstractGameWorld.heightMap[var8], -8771, var38);
           } else {
-            var50 = TextureSampler7
-              .method298(BZipDecompressorState.tileFlags, ObjectCache.tileOrientation[var8],
-                TextureSampler36.floorUnderlayIds[var8], var35, var40,
-                TextureSampler16.anIntArrayArray3115, DummyClass17.tileFloors[var8],
-                DummyClass18.aByteArrayArrayArray81[var8], var38, var8, var43, var34,
-                AbstractGameWorld.heightMap[var8], DummyClass43.somethingHeightMap[0], 4096);
+            var50 = TextureSampler7.method298(BZipDecompressorState.tileFlags,
+              ObjectCache.tileOrientation[var8], TextureSampler36.floorUnderlayIds[var8], var35,
+              var40, TextureSampler16.anIntArrayArray3115, DummyClass17.tileFloors[var8],
+              DummyClass18.aByteArrayArrayArray81[var8], var38, var8, var43, var34,
+              AbstractGameWorld.heightMap[var8], DummyClass43.somethingHeightMap[0], 4096);
             Deque.method1213(var8, var50);
           }
         }
@@ -575,8 +714,9 @@ final class DirectImageProducer extends AbstractImageProducer
 
                   for (var19 = lightMagnitude; ~var14 <= ~var19; ++var19) {
                     for (var20 = lightPosY; lightPosZ >= var20; ++var20) {
-                      DummyClass36.anIntArrayArrayArray2609[var19][lightPosX][var20] = ClientScript
-                        .bitAnd(DummyClass36.anIntArrayArrayArray2609[var19][lightPosX][var20], -2);
+                      DummyClass36.anIntArrayArrayArray2609[var19][lightPosX][var20] =
+                        ClientScript.bitAnd(
+                          DummyClass36.anIntArrayArrayArray2609[var19][lightPosX][var20], -2);
                     }
                   }
                 }
@@ -627,14 +767,14 @@ final class DirectImageProducer extends AbstractImageProducer
                   var48 = 240;
                   var44 = AbstractGameWorld.heightMap[var14][lightPosY][var36] - var48;
                   var18 = AbstractGameWorld.heightMap[lightMagnitude][lightPosY][var36];
-                  DummyClass10
-                    .method2263(2, lightPosY * 128, 128 * lightPosZ + 128, 128 * var36, var36 * 128,
-                      var44, var18);
+                  DummyClass10.method2263(2, lightPosY * 128, 128 * lightPosZ + 128, 128 * var36,
+                    var36 * 128, var44, var18);
 
                   for (var19 = lightMagnitude; var14 >= var19; ++var19) {
                     for (var20 = lightPosY; var20 <= lightPosZ; ++var20) {
-                      DummyClass36.anIntArrayArrayArray2609[var19][var20][var36] = ClientScript
-                        .bitAnd(DummyClass36.anIntArrayArrayArray2609[var19][var20][var36], -3);
+                      DummyClass36.anIntArrayArrayArray2609[var19][var20][var36] =
+                        ClientScript.bitAnd(
+                          DummyClass36.anIntArrayArrayArray2609[var19][var20][var36], -3);
                     }
                   }
                 }
@@ -682,14 +822,14 @@ final class DirectImageProducer extends AbstractImageProducer
 
                 if (4 <= (1 + -lightPosY + lightPosZ) * (var14 - (lightMagnitude - 1))) {
                   var15 = AbstractGameWorld.heightMap[var8][lightPosY][lightMagnitude];
-                  DummyClass10
-                    .method2263(4, lightPosY * 128, 128 * lightPosZ - -128, lightMagnitude * 128,
-                      128 + 128 * var14, var15, var15);
+                  DummyClass10.method2263(4, lightPosY * 128, 128 * lightPosZ - -128,
+                    lightMagnitude * 128, 128 + 128 * var14, var15, var15);
 
                   for (var16 = lightPosY; lightPosZ >= var16; ++var16) {
                     for (var44 = lightMagnitude; var14 >= var44; ++var44) {
-                      DummyClass36.anIntArrayArrayArray2609[var8][var16][var44] = ClientScript
-                        .bitAnd(DummyClass36.anIntArrayArrayArray2609[var8][var16][var44], -5);
+                      DummyClass36.anIntArrayArrayArray2609[var8][var16][var44] =
+                        ClientScript.bitAnd(
+                          DummyClass36.anIntArrayArrayArray2609[var8][var16][var44], -5);
                     }
                   }
                 }
@@ -746,21 +886,23 @@ final class DirectImageProducer extends AbstractImageProducer
 
           if (~var9 != -1) {
             if ((~var9 > -6 || 10 == var9)
-              && BlockConfig.collisionMaps[GameWorldSomething.currentPlane]
-              .method1488(var4, var12, false, var13, var0, var9 + -1, 1, var7)) {
+              && BlockConfig.collisionMaps[GameWorldSomething.currentPlane].method1488(var4, var12,
+              false, var13, var0, var9 + -1, 1, var7)) {
               var16 = true;
               break;
             }
 
-            if (-11 < ~var9 && BlockConfig.collisionMaps[GameWorldSomething.currentPlane]
-              .method1492(var4, -1 + var9, var0, var13, 1, var7, var12, 95)) {
+            if (-11 < ~var9
+              && BlockConfig.collisionMaps[GameWorldSomething.currentPlane].method1492(var4,
+              -1 + var9, var0, var13, 1, var7, var12, 95)) {
               var16 = true;
               break;
             }
           }
 
-          if (var11 != 0 && 0 != var6 && BlockConfig.collisionMaps[GameWorldSomething.currentPlane]
-            .method1498(true, var0, var13, var12, 1, var11, var1, var4, var6)) {
+          if (var11 != 0 && 0 != var6
+            && BlockConfig.collisionMaps[GameWorldSomething.currentPlane].method1498(true, var0,
+            var13, var12, 1, var11, var1, var4, var6)) {
             var16 = true;
             break;
           }
@@ -955,150 +1097,6 @@ final class DirectImageProducer extends AbstractImageProducer
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "di.M(" + var0 + ')');
     }
-  }
-
-  public final synchronized void addConsumer(ImageConsumer var1) {
-    try {
-      this.anImageConsumer2978 = var1;
-      var1.setDimensions(this.anInt2012, this.anInt2011);
-      var1.setProperties(null);
-      var1.setColorModel(this.aColorModel2979);
-      var1.setHints(14);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "di.addConsumer(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  private final synchronized void method2188(int var1, int var2, int var3, byte var4, int var5) {
-    try {
-      if (null != this.anImageConsumer2978) {
-        this.anImageConsumer2978
-          .setPixels(var3, var5, var1, var2, this.aColorModel2979, this.anIntArray2007,
-            var5 * this.anInt2012 + var3, this.anInt2012);
-        this.anImageConsumer2978.imageComplete(2);
-        if (var4 > -29) {
-          method2189(null, false, -53);
-        }
-
-      }
-    } catch (RuntimeException var7) {
-      throw AbstractGameWorld.cascadeException(var7,
-        "di.N(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ')');
-    }
-  }
-
-  public final synchronized void removeConsumer(ImageConsumer var1) {
-    try {
-      if (this.anImageConsumer2978 == var1) {
-        this.anImageConsumer2978 = null;
-      }
-
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "di.removeConsumer(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  final void draw(Graphics var5, int var1, int var2, int var4, int var6, int var3) {
-    try {
-      this.method2188(var1, var4, var2, (byte) -124, var6);
-      if (var3 == 6260) {
-        Shape var7 = var5.getClip();
-        var5.clipRect(var2, var6, var1, var4);
-        var5.drawImage(this.anImage2009, 0, 0, this);
-        var5.setClip(var7);
-      }
-    } catch (RuntimeException var8) {
-      throw AbstractGameWorld.cascadeException(var8,
-        "di.E(" + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + (var5 != null ?
-          "{...}" :
-          "null") + ',' + var6 + ')');
-    }
-  }
-
-  public final void startProduction(ImageConsumer var1) {
-    try {
-      this.addConsumer(var1);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "di.startProduction(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  private final synchronized void method2190(int var1) {
-    try {
-      if (var1 == 19661184) {
-        if (this.anImageConsumer2978 != null) {
-          this.anImageConsumer2978
-            .setPixels(0, 0, this.anInt2012, this.anInt2011, this.aColorModel2979,
-              this.anIntArray2007, 0, this.anInt2012);
-          this.anImageConsumer2978.imageComplete(2);
-        }
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "di.L(" + var1 + ')');
-    }
-  }
-
-  public final synchronized boolean isConsumer(ImageConsumer var1) {
-    try {
-      return this.anImageConsumer2978 == var1;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "di.isConsumer(" + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  final void draw(int var1, int var2, Graphics var3, int var4) {
-    try {
-      if (var4 != 0) {
-        aBoolean2981 = true;
-      }
-
-      this.method2190(var4 ^ 19661184);
-      var3.drawImage(this.anImage2009, var1, var2, this);
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "di.C(" + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ',' + var4 + ')');
-    }
-  }
-
-  final void setDimensions(int var1, boolean var2, int var3, Component var4) {
-    try {
-      this.anInt2011 = var1;
-      this.anIntArray2007 = new int[var3 * var1 + 1];
-      this.anInt2012 = var3;
-      this.aColorModel2979 = new DirectColorModel(32, 16711680, '\uff00', 255);
-      this.anImage2009 = var4.createImage(this);
-      this.method2190(19661184);
-      var4.prepareImage(this.anImage2009, this);
-      this.method2190(19661184);
-      var4.prepareImage(this.anImage2009, this);
-      this.method2190(19661184);
-      var4.prepareImage(this.anImage2009, this);
-      this.method2182(0);
-      if (var2) {
-        this.addConsumer(null);
-      }
-
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "di.F(" + var1 + ',' + var2 + ',' + var3 + ',' + (var4 != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  public final boolean imageUpdate(Image var1, int var2, int var3, int var4, int var5, int var6) {
-    try {
-      return true;
-    } catch (RuntimeException var8) {
-      throw AbstractGameWorld.cascadeException(var8,
-        "di.imageUpdate(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ',' + var4
-          + ',' + var5 + ',' + var6 + ')');
-    }
-  }
-
-  public final void requestTopDownLeftRightResend(ImageConsumer var1) {
   }
 
 }

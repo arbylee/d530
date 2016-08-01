@@ -1,5 +1,7 @@
 final class SceneSomething {
 
+  private static GameString aClass94_492 =
+    SpawnedGameObject.createString("RuneScape is loading )2 please wait)3)3)3");
   static Cache aClass47_480 = new Cache(16);
   static int anInt486 = 5063219;
   static boolean aBoolean488 = true;
@@ -13,8 +15,6 @@ final class SceneSomething {
     {0, 0, 64, 0, 0, 64}, {0, 0, 128, 0, 128, 128, 64, 96, 32, 64},
     {0, 128, 0, 0, 32, 64, 64, 96, 128, 128}, {0, 128, 0, 0, 32, 32, 96, 32, 128, 0, 128, 128}
   };
-  private static GameString aClass94_492 =
-    SpawnedGameObject.createString("RuneScape is loading )2 please wait)3)3)3");
   static GameString aClass94_485 = aClass94_492;
   int anInt478;
   SceneNode sceneNode;
@@ -75,8 +75,8 @@ final class SceneSomething {
         int var28 = var4[var27 + var27];
         int[][] var30 = null != var0 && var21 != null && var21[var27] ? var0 : var17;
         int var29 = var4[var27 + var27 - -1];
-        var26[var27] = BufferData
-          .method1734(var25, (float) var13, var22, var23, var0, var30, var7, var18, var24,
+        var26[var27] =
+          BufferData.method1734(var25, (float) var13, var22, var23, var0, var30, var7, var18, var24,
             (byte) -116, var19, false, var3, var9, var5, var28, var12, var29);
       }
 

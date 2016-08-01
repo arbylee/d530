@@ -246,70 +246,6 @@ final class Widget {
     this.anInt318 = 0;
   }
 
-  static final GameString method856(boolean var0) {
-    try {
-      if (!var0) {
-        method869(127, -68);
-      }
-
-      GameString var1 = ObjectNode.aClass94_4052;
-      GameString var2 = GroundItemNode.EMPTY_STRING;
-      if (-1 != ~AbstractGameWorld.usageLocation) {
-        var1 = Player.aClass94_3971;
-      }
-
-      if (null != DummyClass7.settings) {
-        var2 = RenderAnimation
-          .concat(new GameString[] {Structure.aClass94_3637, DummyClass7.settings});
-      }
-
-      return RenderAnimation.concat(new GameString[] {
-        BufferedFile.aClass94_577, var1, AbstractObjectNode.aClass94_3601,
-        SomethingScene.toString(TriChromaticImageBuffer.languageId), AbstractFileRequester.aClass94_1932,
-        SomethingScene.toString(MonoChromaticImageBuffer.affiliateId), var2, GameObject.aClass94_2735
-      });
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "be.N(" + var0 + ')');
-    }
-  }
-
-  public static void method860(int var0) {
-    try {
-      aClass94_297 = null;
-      EVENT_OP_BASE = null;
-      if (var0 < 63) {
-        method860(42);
-      }
-
-      aClass94_251 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "be.F(" + var0 + ')');
-    }
-  }
-
-  static final int method861(int var0, int var1, int var2) {
-    try {
-      Inventory var3 =
-        (Inventory) SceneGraphTile.aClass130_2220.get((long) var0);
-      return null == var3 ?
-        -1 :
-        (0 <= var2 && var2 < var3.ids.length ?
-          (var1 < 39 ? -69 : var3.ids[var2]) :
-          -1);
-    } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "be.J(" + var0 + ',' + var1 + ',' + var2 + ')');
-    }
-  }
-
-  static final int method869(int var0, int var1) {
-    try {
-      return ~var1 != -16711936 ? (var0 < 97 ? -63 : DummyClass42.method1186(0, var1)) : -1;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "be.D(" + var0 + ',' + var1 + ')');
-    }
-  }
-
   final void method854(int var1, int var2, byte var3) {
     try {
       if (this.anIntArray249 == null || ~this.anIntArray249.length >= ~var1) {
@@ -334,8 +270,8 @@ final class Widget {
       }
 
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "be.P(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "be.P(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -681,8 +617,8 @@ final class Widget {
 
       this.aClass3_Sub1_257 = new WidgetAccess(var5, -1);
     } catch (RuntimeException var12) {
-      throw AbstractGameWorld
-        .cascadeException(var12, "be.M(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var12,
+        "be.M(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -746,8 +682,8 @@ final class Widget {
         }
       }
     } catch (RuntimeException var7) {
-      throw AbstractGameWorld
-        .cascadeException(var7, "be.K(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var7,
+        "be.K(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -769,8 +705,8 @@ final class Widget {
         return var4;
       }
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "be.H(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "be.H(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
     }
   }
 
@@ -787,8 +723,8 @@ final class Widget {
       this.anIntArray317[var2] = this.anIntArray317[var1];
       this.anIntArray317[var1] = var4;
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "be.L(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "be.L(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -814,7 +750,8 @@ final class Widget {
         } else {
           AbstractModel var10;
           if (1 == var8) {
-            var10 = (AbstractModel) SomethingVolume15.aClass93_2428.get((long) ((var8 << 16) - -var9));
+            var10 =
+              (AbstractModel) SomethingVolume15.aClass93_2428.get((long) ((var8 << 16) - -var9));
             if (var10 == null) {
               Model var18 = Model.getModel(DummyClass25.aClass153_1628, var9, 0);
               if (var18 == null) {
@@ -1185,8 +1122,8 @@ final class Widget {
       this.anIntArray211 = this.method863(var2, false);
       this.anIntArray185 = this.method863(var2, false);
     } catch (RuntimeException var10) {
-      throw AbstractGameWorld
-        .cascadeException(var10, "be.C(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var10,
+        "be.C(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -1200,9 +1137,8 @@ final class Widget {
         if (null != var3) {
           return var3;
         } else {
-          var3 = FileCacheRequester
-            .createFont(var2, this.anInt270, (byte) 127, SomethingSceneJ.aClass153_323,
-              TriChromaticImageCache.aClass153_1378);
+          var3 = FileCacheRequester.createFont(var2, this.anInt270, (byte) 127,
+            SomethingSceneJ.aClass153_323, TriChromaticImageCache.aClass153_1378);
           if (null == var3) {
             GameStub.aBoolean6 = true;
           } else {
@@ -1214,8 +1150,71 @@ final class Widget {
         }
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "be.A(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "be.A(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+    }
+  }
+
+  static final GameString method856(boolean var0) {
+    try {
+      if (!var0) {
+        method869(127, -68);
+      }
+
+      GameString var1 = ObjectNode.aClass94_4052;
+      GameString var2 = GroundItemNode.EMPTY_STRING;
+      if (-1 != ~AbstractGameWorld.usageLocation) {
+        var1 = Player.aClass94_3971;
+      }
+
+      if (null != DummyClass7.settings) {
+        var2 =
+          RenderAnimation.concat(new GameString[] {Structure.aClass94_3637, DummyClass7.settings});
+      }
+
+      return RenderAnimation.concat(new GameString[] {
+        BufferedFile.aClass94_577, var1, AbstractObjectNode.aClass94_3601,
+        SomethingScene.toString(TriChromaticImageBuffer.languageId),
+        AbstractFileRequester.aClass94_1932,
+        SomethingScene.toString(MonoChromaticImageBuffer.affiliateId), var2,
+        GameObject.aClass94_2735
+      });
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "be.N(" + var0 + ')');
+    }
+  }
+
+  public static void method860(int var0) {
+    try {
+      aClass94_297 = null;
+      EVENT_OP_BASE = null;
+      if (var0 < 63) {
+        method860(42);
+      }
+
+      aClass94_251 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "be.F(" + var0 + ')');
+    }
+  }
+
+  static final int method861(int var0, int var1, int var2) {
+    try {
+      Inventory var3 = (Inventory) SceneGraphTile.aClass130_2220.get((long) var0);
+      return null == var3 ?
+        -1 :
+        (0 <= var2 && var2 < var3.ids.length ? (var1 < 39 ? -69 : var3.ids[var2]) : -1);
+    } catch (RuntimeException var4) {
+      throw AbstractGameWorld.cascadeException(var4,
+        "be.J(" + var0 + ',' + var1 + ',' + var2 + ')');
+    }
+  }
+
+  static final int method869(int var0, int var1) {
+    try {
+      return ~var1 != -16711936 ? (var0 < 97 ? -63 : DummyClass42.method1186(0, var1)) : -1;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "be.D(" + var0 + ',' + var1 + ')');
     }
   }
 

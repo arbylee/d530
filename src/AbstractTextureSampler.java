@@ -25,110 +25,6 @@ abstract class AbstractTextureSampler extends Node {
     }
   }
 
-  static final void method153(int var0) {
-    try {
-      if (var0 >= 91) {
-        MonoChromaticImageBuffer.aClass61_2557 = new Deque();
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "j.QA(" + var0 + ')');
-    }
-  }
-
-  public static void method156(int var0) {
-    try {
-      if (var0 != 2) {
-        method153(18);
-      }
-
-      anIntArray2386 = null;
-      COMMAND_REPLACE_CANVAS = null;
-      COMMAND_SHIFT_CLICK = null;
-      aClass3_Sub28_Sub17_2379 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "j.PA(" + var0 + ')');
-    }
-  }
-
-  static final SoftwareFont method163(byte[] var0, int var1) {
-    try {
-      if (var0 == null) {
-        return null;
-      } else {
-        if (var1 != 25208) {
-          anInt2378 = 5;
-        }
-
-        SoftwareFont var2 = new SoftwareFont(var0, Something3dRoot.anIntArray2048, Buffer.anIntArray2591,
-          GroundItem.anIntArray2931, TextureSampler26.anIntArray3076,
-          DummyClass5.aByteArrayArray2987);
-        DummyClass37.method1035((byte) 126);
-        return var2;
-      }
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "j.WA(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
-    }
-  }
-
-  static final void drawLoadingBox(GameString text, boolean draw) {
-    try {
-      byte var3 = 4;
-      int var4 = var3 + 6;
-      int var5 = var3 + 6;
-      int var6 = SomethingTilek.p12Font.method680(text, 250);
-      int var7 = SomethingTilek.p12Font.method684(text, 250) * 13;
-      if (!GlRenderer.useOpenGlRenderer) {
-        DummyClass47
-          .method1323(var4 - var3, -var3 + var5, var3 + var6 - -var3, var3 + var3 + var7, 0);
-        DummyClass47
-          .method1311(var4 + -var3, var5 - var3, var3 + var3 + var6, var3 + var3 + var7, 16777215);
-      } else {
-        GlUtils.fillQuad(var4 - var3, -var3 + var5, var3 + var6 - -var3, var3 + var3 + var7, 0);
-        GlUtils
-          .drawQuad(-var3 + var4, -var3 + var5, var6 + var3 - -var3, var3 + var7 + var3, 16777215);
-      }
-
-      SomethingTilek.p12Font.draw(text, var4, var5, var6, var7, 16777215, -1, 1, 1, 0);
-      AbstractSomethingTexture
-        .method1340(var4 + -var3, var6 + (var3 - -var3), (byte) -40, -var3 + var5,
-          var3 + var7 + var3);
-      if (draw) {
-        if (GlRenderer.useOpenGlRenderer) {
-          GlRenderer.swapBuffers();
-        } else {
-          try {
-            Graphics var8 = InventoryConfig.canvas.getGraphics();
-            Something3d.viewImageProducer.draw(0, 0, var8, 0);
-          } catch (Exception var9) {
-            InventoryConfig.canvas.repaint();
-          }
-        }
-      } else {
-        LinearHashTable.method1282(var4, (byte) -97, var5, var7, var6);
-      }
-    } catch (RuntimeException var10) {
-      throw AbstractGameWorld
-        .cascadeException(var10, "j.TA(" + draw + ',' + (text != null ? "{...}" : "null") + ')');
-    }
-  }
-
-  static final void method165(int var0) {
-    try {
-      DummyClass53.aClass3_Sub28_Sub16_1339 = null;
-      TextureSampler27.aClass3_Sub28_Sub16_3099 = null;
-      VertexNormal.aClass3_Sub28_Sub16_824 = null;
-      if (var0 != -7878) {
-        drawLoadingBox(null, false);
-      }
-
-      DummyClass58.aClass3_Sub28_Sub16_1457 = null;
-      MonoChromaticImageBuffer.aClass3_Sub28_Sub16_2560 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "j.VA(" + var0 + ')');
-    }
-  }
-
   final int[] method152(int var1, int var2, int var3) {
     try {
       if (var3 != 32755) {
@@ -139,8 +35,8 @@ abstract class AbstractTextureSampler extends Node {
         this.samplers[var1].method154(var2, (byte) -118) :
         this.samplers[var1].method166(-1, var2)[0];
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "j.RA(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "j.RA(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -214,8 +110,8 @@ abstract class AbstractTextureSampler extends Node {
       }
 
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "j.SA(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "j.SA(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -250,8 +146,8 @@ abstract class AbstractTextureSampler extends Node {
         return var5;
       }
     } catch (RuntimeException var6) {
-      throw AbstractGameWorld
-        .cascadeException(var6, "j.UA(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var6,
+        "j.UA(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -264,6 +160,110 @@ abstract class AbstractTextureSampler extends Node {
       }
     } catch (RuntimeException var4) {
       throw AbstractGameWorld.cascadeException(var4, "j.T(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  static final void method153(int var0) {
+    try {
+      if (var0 >= 91) {
+        MonoChromaticImageBuffer.aClass61_2557 = new Deque();
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "j.QA(" + var0 + ')');
+    }
+  }
+
+  public static void method156(int var0) {
+    try {
+      if (var0 != 2) {
+        method153(18);
+      }
+
+      anIntArray2386 = null;
+      COMMAND_REPLACE_CANVAS = null;
+      COMMAND_SHIFT_CLICK = null;
+      aClass3_Sub28_Sub17_2379 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "j.PA(" + var0 + ')');
+    }
+  }
+
+  static final SoftwareFont method163(byte[] var0, int var1) {
+    try {
+      if (var0 == null) {
+        return null;
+      } else {
+        if (var1 != 25208) {
+          anInt2378 = 5;
+        }
+
+        SoftwareFont var2 =
+          new SoftwareFont(var0, Something3dRoot.anIntArray2048, Buffer.anIntArray2591,
+            GroundItem.anIntArray2931, TextureSampler26.anIntArray3076,
+            DummyClass5.aByteArrayArray2987);
+        DummyClass37.method1035((byte) 126);
+        return var2;
+      }
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "j.WA(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+    }
+  }
+
+  static final void drawLoadingBox(GameString text, boolean draw) {
+    try {
+      byte var3 = 4;
+      int var4 = var3 + 6;
+      int var5 = var3 + 6;
+      int var6 = SomethingTilek.p12Font.method680(text, 250);
+      int var7 = SomethingTilek.p12Font.method684(text, 250) * 13;
+      if (!GlRenderer.useOpenGlRenderer) {
+        DummyClass47.method1323(var4 - var3, -var3 + var5, var3 + var6 - -var3, var3 + var3 + var7,
+          0);
+        DummyClass47.method1311(var4 + -var3, var5 - var3, var3 + var3 + var6, var3 + var3 + var7,
+          16777215);
+      } else {
+        GlUtils.fillQuad(var4 - var3, -var3 + var5, var3 + var6 - -var3, var3 + var3 + var7, 0);
+        GlUtils.drawQuad(-var3 + var4, -var3 + var5, var6 + var3 - -var3, var3 + var7 + var3,
+          16777215);
+      }
+
+      SomethingTilek.p12Font.draw(text, var4, var5, var6, var7, 16777215, -1, 1, 1, 0);
+      AbstractSomethingTexture.method1340(var4 + -var3, var6 + (var3 - -var3), (byte) -40,
+        -var3 + var5, var3 + var7 + var3);
+      if (draw) {
+        if (GlRenderer.useOpenGlRenderer) {
+          GlRenderer.swapBuffers();
+        } else {
+          try {
+            Graphics var8 = InventoryConfig.canvas.getGraphics();
+            Something3d.viewImageProducer.draw(0, 0, var8, 0);
+          } catch (Exception var9) {
+            InventoryConfig.canvas.repaint();
+          }
+        }
+      } else {
+        LinearHashTable.method1282(var4, (byte) -97, var5, var7, var6);
+      }
+    } catch (RuntimeException var10) {
+      throw AbstractGameWorld.cascadeException(var10,
+        "j.TA(" + draw + ',' + (text != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  static final void method165(int var0) {
+    try {
+      DummyClass53.aClass3_Sub28_Sub16_1339 = null;
+      TextureSampler27.aClass3_Sub28_Sub16_3099 = null;
+      VertexNormal.aClass3_Sub28_Sub16_824 = null;
+      if (var0 != -7878) {
+        drawLoadingBox(null, false);
+      }
+
+      DummyClass58.aClass3_Sub28_Sub16_1457 = null;
+      MonoChromaticImageBuffer.aClass3_Sub28_Sub16_2560 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "j.VA(" + var0 + ')');
     }
   }
 

@@ -22,11 +22,6 @@ final class SoundEffect {
   private SoundEffect() {
   }
 
-  static final SoundEffect method1811(FileUnpacker var0, int var1, int var2) {
-    byte[] var3 = var0.getBytes(var1, var2);
-    return var3 == null ? null : new SoundEffect(new Buffer(var3));
-  }
-
   private final byte[] method1810() {
     int var1 = 0;
 
@@ -104,5 +99,10 @@ final class SoundEffect {
     } else {
       return 0;
     }
+  }
+
+  static final SoundEffect method1811(FileUnpacker var0, int var1, int var2) {
+    byte[] var3 = var0.getBytes(var1, var2);
+    return var3 == null ? null : new SoundEffect(new Buffer(var3));
   }
 }

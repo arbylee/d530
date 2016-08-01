@@ -15,10 +15,6 @@ final class MaterialShader4 implements MaterialShader {
     this.method1701();
   }
 
-  public static void method1700() {
-    aFloatArray2178 = null;
-  }
-
   private final void method1699() {
     byte[] var1 = new byte[] {(byte) 0, (byte) -1};
     GL var2 = GlRenderer.gl;
@@ -100,6 +96,28 @@ final class MaterialShader4 implements MaterialShader {
     GlRenderer.gl.glCallList(this.anInt2177 + 1);
   }
 
+  public final void enable() {
+    GL var1 = GlRenderer.gl;
+    GlRenderer.method1856(2);
+    GlRenderer.method1847(2);
+    GlRenderer.loadIdentityTextureMatrix();
+    var1.glCallList(this.anInt2177);
+    float var2 = 2662.4001F;
+    var2 += (float) (GroundItem.anInt2938 - 128) * 0.5F;
+    if (var2 >= 3328.0F) {
+      var2 = 3327.0F;
+    }
+
+    this.aFloatArray2179[0] = 0.0F;
+    this.aFloatArray2179[1] = 0.0F;
+    this.aFloatArray2179[2] = 1.0F / (var2 - 3328.0F);
+    this.aFloatArray2179[3] = var2 / (var2 - 3328.0F);
+    var1.glTexGenfv(8192, 9474, this.aFloatArray2179, 0);
+    var1.glPopMatrix();
+    var1.glActiveTexture('\u84c0');
+    var1.glTexEnvfv(8960, 8705, aFloatArray2178, 0);
+  }
+
   public final void set(int var1) {
     GL var2 = GlRenderer.gl;
     var2.glActiveTexture('\u84c1');
@@ -130,30 +148,12 @@ final class MaterialShader4 implements MaterialShader {
 
   }
 
-  public final void enable() {
-    GL var1 = GlRenderer.gl;
-    GlRenderer.method1856(2);
-    GlRenderer.method1847(2);
-    GlRenderer.loadIdentityTextureMatrix();
-    var1.glCallList(this.anInt2177);
-    float var2 = 2662.4001F;
-    var2 += (float) (GroundItem.anInt2938 - 128) * 0.5F;
-    if (var2 >= 3328.0F) {
-      var2 = 3327.0F;
-    }
-
-    this.aFloatArray2179[0] = 0.0F;
-    this.aFloatArray2179[1] = 0.0F;
-    this.aFloatArray2179[2] = 1.0F / (var2 - 3328.0F);
-    this.aFloatArray2179[3] = var2 / (var2 - 3328.0F);
-    var1.glTexGenfv(8192, 9474, this.aFloatArray2179, 0);
-    var1.glPopMatrix();
-    var1.glActiveTexture('\u84c0');
-    var1.glTexEnvfv(8960, 8705, aFloatArray2178, 0);
-  }
-
   public final int method24() {
     return 15;
+  }
+
+  public static void method1700() {
+    aFloatArray2178 = null;
   }
 
 }

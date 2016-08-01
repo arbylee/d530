@@ -12,6 +12,20 @@ final class TextureSampler3 extends AbstractTextureSampler {
     super(0, true);
   }
 
+  final int[] method154(int var1, byte var2) {
+    try {
+      int[] var3 = this.monoChromaticImageCache.method1709(-16409, var1);
+      if (this.monoChromaticImageCache.aBoolean1580) {
+        ArrayUtils.fill(var3, 0, SomethingLight0.anInt1559, DummyClass4.anIntArray2999[var1]);
+      }
+
+      int var4 = -123 % ((30 - var2) / 36);
+      return var3;
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5, "qg.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
   static final void method304(int var0) {
     try {
       if (var0 != 6799) {
@@ -123,12 +137,12 @@ final class TextureSampler3 extends AbstractTextureSampler {
         }
 
         var7 <<= var5;
-        BlockConfig
-          .method1428(var4, 72, var7 & var2 << var5 | DummyClass5.anIntArray2985[var4] & ~var7);
+        BlockConfig.method1428(var4, 72,
+          var7 & var2 << var5 | DummyClass5.anIntArray2985[var4] & ~var7);
       }
     } catch (RuntimeException var8) {
-      throw AbstractGameWorld
-        .cascadeException(var8, "qg.Q(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var8,
+        "qg.Q(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 
@@ -177,8 +191,8 @@ final class TextureSampler3 extends AbstractTextureSampler {
         return var3;
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "qg.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "qg.B(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -203,20 +217,6 @@ final class TextureSampler3 extends AbstractTextureSampler {
       }
     } catch (RuntimeException var4) {
       throw AbstractGameWorld.cascadeException(var4, "qg.O(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  final int[] method154(int var1, byte var2) {
-    try {
-      int[] var3 = this.monoChromaticImageCache.method1709(-16409, var1);
-      if (this.monoChromaticImageCache.aBoolean1580) {
-        ArrayUtils.fill(var3, 0, SomethingLight0.anInt1559, DummyClass4.anIntArray2999[var1]);
-      }
-
-      int var4 = -123 % ((30 - var2) / 36);
-      return var3;
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5, "qg.D(" + var1 + ',' + var2 + ')');
     }
   }
 

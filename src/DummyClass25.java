@@ -72,8 +72,8 @@ final class DummyClass25 {
         InventoryConfig.canvas.setLocation(DummyClass51.viewX, DisplayMode.viewY);
       } else {
         var2 = TextureSampler27.frame.getInsets();
-        InventoryConfig.canvas
-          .setLocation(var2.left + DummyClass51.viewX, DisplayMode.viewY + var2.top);
+        InventoryConfig.canvas.setLocation(var2.left + DummyClass51.viewX,
+          DisplayMode.viewY + var2.top);
       }
 
       if (~InventoryConfig.anInt3655 != 0) {
@@ -115,8 +115,8 @@ final class DummyClass25 {
 
 
     } catch (RuntimeException var7) {
-      throw AbstractGameWorld
-        .cascadeException(var7, "qh.A(" + (var0 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var7,
+        "qh.A(" + (var0 != null ? "{...}" : "null") + ')');
     }
   }
 

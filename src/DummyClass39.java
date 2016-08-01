@@ -26,8 +26,8 @@ final class DummyClass39 {
       }
 
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "gl.C(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "gl.C(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 

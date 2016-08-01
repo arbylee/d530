@@ -2,12 +2,11 @@ import javax.media.opengl.GL;
 
 final class DummyClass16 {
 
+  private static int sceneHeightBlocks;
+  private static int sceneWidthBlocks;
   static SoftwareIndexedColorSprite shadowsSprite;
   static BlockShadowMap[][] blockShadows;
   static SoftwareIndexedColorSprite[] floorShadows;
-  private static int sceneHeightBlocks;
-  private static int sceneWidthBlocks;
-
 
   private static final void method2034(SoftwareIndexedColorSprite var0,
                                        SoftwareIndexedColorSprite var1, int var2, int var3) {

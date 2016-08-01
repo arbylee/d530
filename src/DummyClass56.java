@@ -48,8 +48,8 @@ final class DummyClass56 {
         method1648(null, 7);
       }
 
-      AbstractObjectNodeWrapper
-        .method1724(var6, var2, var3.anInt2829, var5, var1, var3.anInt2819, (byte) -85, var4);
+      AbstractObjectNodeWrapper.method1724(var6, var2, var3.anInt2829, var5, var1, var3.anInt2819,
+        (byte) -85, var4);
     } catch (RuntimeException var8) {
       throw AbstractGameWorld.cascadeException(var8,
         "og.A(" + var0 + ',' + var1 + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ','
@@ -65,8 +65,8 @@ final class DummyClass56 {
       }
 
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "og.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "og.B(" + (var0 != null ? "{...}" : "null") + ',' + var1 + ')');
     }
   }
 
@@ -114,8 +114,8 @@ final class DummyClass56 {
 
       return var2;
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "og.D(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "og.D(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 

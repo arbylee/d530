@@ -1,13 +1,13 @@
 final class VertexNormal {
 
+  private static GameString aClass94_832 = SpawnedGameObject.createString(" has logged out)3");
+  private static GameString aClass94_827 = SpawnedGameObject.createString("purple:");
   static int anInt820 = 0;
   static AbstractDirectColorSprite aClass3_Sub28_Sub16_824;
   static long[] aLongArray826 = new long[200];
   static int anInt828 = 0;
   static GameString aClass94_829 = SpawnedGameObject.createString("null");
-  private static GameString aClass94_832 = SpawnedGameObject.createString(" has logged out)3");
   static GameString aClass94_822 = aClass94_832;
-  private static GameString aClass94_827 = SpawnedGameObject.createString("purple:");
   static GameString aClass94_825 = aClass94_827;
   static GameString aClass94_833 = aClass94_827;
   int y;
@@ -26,8 +26,8 @@ final class VertexNormal {
       this.y = var1.y;
       this.z = var1.z;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "hd.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "hd.<init>(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

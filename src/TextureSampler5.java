@@ -15,40 +15,6 @@ final class TextureSampler5 extends AbstractTextureSampler {
     super(1, false);
   }
 
-  public static void method288(byte var0) {
-    try {
-      if (var0 < 31) {
-        method289(false);
-      }
-
-      anIntArray3290 = null;
-      aClass94_3298 = null;
-      aClass94_3291 = null;
-      npcs = null;
-      aClass94_3295 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "nm.C(" + var0 + ')');
-    }
-  }
-
-  static final void method289(boolean var0) {
-    try {
-      if (var0) {
-        aClass94_3295 = null;
-      }
-
-      if (DummyClass13.anInt2023 > 0) {
-        DummyClass10.destroyGame((byte) 46);
-      } else {
-        DummyClass8.aClass89_4012 = SomethingVolume15.gameSocket;
-        SomethingVolume15.gameSocket = null;
-        DummyClass26.setState(40, 5);
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "nm.B(" + var0 + ')');
-    }
-  }
-
   final int[] method154(int var1, byte var2) {
     try {
       int var3 = 74 % ((30 - var2) / 36);
@@ -97,6 +63,28 @@ final class TextureSampler5 extends AbstractTextureSampler {
       return var4;
     } catch (RuntimeException var15) {
       throw AbstractGameWorld.cascadeException(var15, "nm.D(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  final void parseConfig(int var1, Buffer var2, boolean var3) {
+    try {
+      if (~var1 == -1) {
+        this.anInt3294 = var2.readUnsignedByte();
+      } else if (var1 != 1) {
+        if (2 == var1) {
+          this.monoChromatic = var2.readUnsignedByte() == 1;
+        }
+      } else {
+        this.anInt3297 = var2.readUnsignedByte();
+      }
+
+      if (!var3) {
+        this.anInt3294 = 60;
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "nm.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
     }
   }
 
@@ -184,25 +172,37 @@ final class TextureSampler5 extends AbstractTextureSampler {
     }
   }
 
-  final void parseConfig(int var1, Buffer var2, boolean var3) {
+  public static void method288(byte var0) {
     try {
-      if (~var1 == -1) {
-        this.anInt3294 = var2.readUnsignedByte();
-      } else if (var1 != 1) {
-        if (2 == var1) {
-          this.monoChromatic = var2.readUnsignedByte() == 1;
-        }
+      if (var0 < 31) {
+        method289(false);
+      }
+
+      anIntArray3290 = null;
+      aClass94_3298 = null;
+      aClass94_3291 = null;
+      npcs = null;
+      aClass94_3295 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "nm.C(" + var0 + ')');
+    }
+  }
+
+  static final void method289(boolean var0) {
+    try {
+      if (var0) {
+        aClass94_3295 = null;
+      }
+
+      if (DummyClass13.anInt2023 > 0) {
+        DummyClass10.destroyGame((byte) 46);
       } else {
-        this.anInt3297 = var2.readUnsignedByte();
+        DummyClass8.aClass89_4012 = SomethingVolume15.gameSocket;
+        SomethingVolume15.gameSocket = null;
+        DummyClass26.setState(40, 5);
       }
-
-      if (!var3) {
-        this.anInt3294 = 60;
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld.cascadeException(var5,
-        "nm.A(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ')');
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "nm.B(" + var0 + ')');
     }
   }
 

@@ -136,8 +136,8 @@ final class HintMarker {
         return;
       }
     } catch (RuntimeException var17) {
-      throw AbstractGameWorld
-        .cascadeException(var17, "nc.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var17,
+        "nc.A(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

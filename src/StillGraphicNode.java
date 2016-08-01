@@ -1,11 +1,11 @@
 final class StillGraphicNode extends SubNode {
 
+  private static GameString aClass94_3541 = SpawnedGameObject.createString("yellow:");
+  private static GameString aClass94_3543 = SpawnedGameObject.createString("Loading config )2 ");
   static int anInt3542;
   static GameString aClass94_3547 = SpawnedGameObject.createString("Speicher wird zugewiesen)3");
-  private static GameString aClass94_3541 = SpawnedGameObject.createString("yellow:");
   static GameString aClass94_3544 = aClass94_3541;
   static GameString aClass94_3548 = aClass94_3541;
-  private static GameString aClass94_3543 = SpawnedGameObject.createString("Loading config )2 ");
   static GameString aClass94_3546 = aClass94_3543;
   StillGraphic aClass140_Sub2_3545;
 
@@ -14,8 +14,8 @@ final class StillGraphicNode extends SubNode {
     try {
       this.aClass140_Sub2_3545 = var1;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "bk.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "bk.<init>(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -62,8 +62,8 @@ final class StillGraphicNode extends SubNode {
         var1.method787((byte) 91), var1.method787((byte) 120), var1.method787((byte) 113),
         var1.readUnsignedMedium((byte) 115), var1.readUnsignedByte());
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "bk.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "bk.C(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

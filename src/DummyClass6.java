@@ -41,12 +41,11 @@ class DummyClass6 {
       }
 
       var7 <<= low;
-      TextureSampler39
-        .updateVariable(variableId,
-          var1 << low & var7 | ~var7 & LightIntensity.variables[variableId]);
+      TextureSampler39.updateVariable(variableId,
+        var1 << low & var7 | ~var7 & LightIntensity.variables[variableId]);
     } catch (RuntimeException var8) {
-      throw AbstractGameWorld
-        .cascadeException(var8, "wd.K(" + var0 + ',' + var1 + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var8,
+        "wd.K(" + var0 + ',' + var1 + ',' + var2 + ')');
     }
   }
 

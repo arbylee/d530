@@ -321,11 +321,6 @@ final class MidiFile extends Node {
 
   }
 
-  static final MidiFile method517(FileUnpacker unpacker, int fileId, int childId) {
-    byte[] bytes = unpacker.getBytes(fileId, childId);
-    return bytes == null ? null : new MidiFile(new Buffer(bytes));
-  }
-
   final void method515() {
     this.aClass130_2564 = null;
   }
@@ -391,8 +386,7 @@ final class MidiFile extends Node {
             var11 = var7 >> 16 & 127;
             if (var11 > 0) {
               int var12 = var2[var9];
-              SomethingMidiFile var13 =
-                (SomethingMidiFile) this.aClass130_2564.get((long) var12);
+              SomethingMidiFile var13 = (SomethingMidiFile) this.aClass130_2564.get((long) var12);
               if (var13 == null) {
                 var13 = new SomethingMidiFile(new byte[128]);
                 this.aClass130_2564.put((long) var12, var13);
@@ -407,5 +401,10 @@ final class MidiFile extends Node {
         }
       }
     }
+  }
+
+  static final MidiFile method517(FileUnpacker unpacker, int fileId, int childId) {
+    byte[] bytes = unpacker.getBytes(fileId, childId);
+    return bytes == null ? null : new MidiFile(new Buffer(bytes));
   }
 }

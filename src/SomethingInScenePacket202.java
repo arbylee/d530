@@ -1,12 +1,12 @@
 final class SomethingInScenePacket202 extends Node {
 
+  private static GameString aClass94_2280 = SpawnedGameObject.createString("Starting 3d Library");
   static GameString aClass94_2269 = SpawnedGameObject.createString("lila:");
   static GameString aClass94_2274 =
     SpawnedGameObject.createString("Vous ne pouvez pas ajouter votre nom -9 votre liste noire)3");
   static int anInt2275 = 1;
   static GameString aClass94_2276 = SpawnedGameObject.createString("rot:");
   static int anInt2281 = 0;
-  private static GameString aClass94_2280 = SpawnedGameObject.createString("Starting 3d Library");
   static GameString aClass94_2267 = aClass94_2280;
   int anInt2266;
   int anInt2268;
@@ -96,9 +96,9 @@ final class SomethingInScenePacket202 extends Node {
             }
 
             if (null != var16) {
-              int var17 = AbstractTextureSampler.aClass3_Sub28_Sub17_2379
-                .method691(DummyClass25.aClass131_1624.aClass94Array1721[var9], null,
-                  DirectImageProducer.aClass94Array2977);
+              int var17 = AbstractTextureSampler.aClass3_Sub28_Sub17_2379.method691(
+                DummyClass25.aClass131_1624.aClass94Array1721[var9], null,
+                DirectImageProducer.aClass94Array2977);
               var13 -= var16.method998() * (var17 + -1) / 2;
               var13 += var16.method1006() / 2;
 
@@ -218,8 +218,7 @@ final class SomethingInScenePacket202 extends Node {
       for (VariableUpdate var4 = !var0 ?
         (VariableUpdate) ClientScript.variableUpdates.getNext(-123) :
         (VariableUpdate) ClientScript.variableUpdates.getFirst(var1 + 56);
-           var4 != null;
-           var4 = (VariableUpdate) ClientScript.variableUpdates.getNext(-64)) {
+           var4 != null; var4 = (VariableUpdate) ClientScript.variableUpdates.getNext(-64)) {
         if ((4611686018427387903L & var4.timestamp) < var2) {
           if (~(4611686018427387904L & var4.timestamp) != -1L) {
             int var5 = (int) var4.key;
@@ -395,15 +394,16 @@ final class SomethingInScenePacket202 extends Node {
             if (null != var4.anObject2796 && ~AbstractGameWorld.updateCycle <= ~var4.anInt2797
               && ~var4.anInt2778 < ~AbstractGameWorld.updateCycle) {
               var4.aBoolean3968 = false;
-              var4.anInt2831 = BufferData
-                .method1736(GameWorldSomething.currentPlane, 1, var4.anInt2819, var4.anInt2829);
-              TextureSampler28
-                .method292(GameWorldSomething.currentPlane, var4.anInt2819, var4.anInt2829,
-                  var4.anInt2831, var4, var4.rotationY, var16, var4.anInt2788, var4.anInt2777,
-                  var4.anInt2818, var4.anInt2817);
+              var4.anInt2831 =
+                BufferData.method1736(GameWorldSomething.currentPlane, 1, var4.anInt2819,
+                  var4.anInt2829);
+              TextureSampler28.method292(GameWorldSomething.currentPlane, var4.anInt2819,
+                var4.anInt2829, var4.anInt2831, var4, var4.rotationY, var16, var4.anInt2788,
+                var4.anInt2777, var4.anInt2818, var4.anInt2817);
             } else {
-              var4.anInt2831 = BufferData
-                .method1736(GameWorldSomething.currentPlane, 1, var4.anInt2819, var4.anInt2829);
+              var4.anInt2831 =
+                BufferData.method1736(GameWorldSomething.currentPlane, 1, var4.anInt2819,
+                  var4.anInt2829);
               DummyClass29.addNodeToSceneGraph(GameWorldSomething.currentPlane, var4.anInt2819,
                 var4.anInt2829, var4.anInt2831, 64 * (var7 - 1) + 60, var4, var4.rotationY, var16,
                 var4.aBoolean2810);

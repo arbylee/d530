@@ -28,147 +28,6 @@ final class FileCache {
     }
   }
 
-  static final void method1047(int var0, int var1, int var2, boolean var3, int var4, boolean var5,
-                               boolean var6) {
-    try {
-      if (!var6) {
-        if (var2 > var4) {
-          int var7 = (var2 + var4) / 2;
-          int var8 = var4;
-          GameWorld var9 = TextureSampler15.aClass44_Sub1Array3201[var7];
-          TextureSampler15.aClass44_Sub1Array3201[var7] =
-            TextureSampler15.aClass44_Sub1Array3201[var2];
-          TextureSampler15.aClass44_Sub1Array3201[var2] = var9;
-
-          for (int var10 = var4; var10 < var2; ++var10) {
-            if (~GameString
-              .method1535(var9, TextureSampler15.aClass44_Sub1Array3201[var10], 5730, var0, var1,
-                var3, var5) >= -1) {
-              GameWorld var11 = TextureSampler15.aClass44_Sub1Array3201[var10];
-              TextureSampler15.aClass44_Sub1Array3201[var10] =
-                TextureSampler15.aClass44_Sub1Array3201[var8];
-              TextureSampler15.aClass44_Sub1Array3201[var8++] = var11;
-            }
-          }
-
-          TextureSampler15.aClass44_Sub1Array3201[var2] =
-            TextureSampler15.aClass44_Sub1Array3201[var8];
-          TextureSampler15.aClass44_Sub1Array3201[var8] = var9;
-          method1047(var0, var1, -1 + var8, var3, var4, var5, false);
-          method1047(var0, var1, var2, var3, var8 - -1, var5, false);
-        }
-
-      }
-    } catch (RuntimeException var12) {
-      throw AbstractGameWorld.cascadeException(var12,
-        "ge.A(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6
-          + ')');
-    }
-  }
-
-  static final void method1048(int var0, int var1, int var2, int var3, int var4, int var5, int var6,
-                               int var7) {
-    try {
-      if (var5 > -15) {
-        anInt688 = -64;
-      }
-
-      if (-2 >= ~var1 && var4 >= 1 && 102 >= var1 && var4 <= 102) {
-        int var8;
-        if (!NPC.method1986(41) && 0 == (2 & BZipDecompressorState.tileFlags[0][var1][var4])) {
-          var8 = var2;
-          if ((8 & BZipDecompressorState.tileFlags[var2][var1][var4]) != 0) {
-            var8 = 0;
-          }
-
-          if (var8 != GameObject.plane) {
-            return;
-          }
-        }
-
-        var8 = var2;
-        if (-4 < ~var2 && -3 == ~(2 & BZipDecompressorState.tileFlags[1][var1][var4])) {
-          var8 = var2 + 1;
-        }
-
-        DummyClass29.method910(-96, var4, var1, var2, var7, var8, BlockConfig.collisionMaps[var2]);
-        if (0 <= var0) {
-          boolean var9 = Keyboard.aBoolean1905;
-          Keyboard.aBoolean1905 = true;
-          DummyClass31
-            .method1683(var8, false, var2, false, BlockConfig.collisionMaps[var2], var0, var6, var1,
-              (byte) 50, var4, var3);
-          Keyboard.aBoolean1905 = var9;
-        }
-      }
-
-    } catch (RuntimeException var10) {
-      throw AbstractGameWorld.cascadeException(var10,
-        "ge.H(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6
-          + ',' + var7 + ')');
-    }
-  }
-
-  public static void method1049(boolean var0) {
-    try {
-      anIntArray686 = null;
-      aClass93_684 = null;
-      if (!var0) {
-        aClass93_684 = null;
-      }
-
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "ge.G(" + var0 + ')');
-    }
-  }
-
-  static final GameString stringFromBase37(int var0, long var1) {
-    try {
-      if (-1L > ~var1 && -6582952005840035282L < ~var1) {
-        if (-1L == ~(var1 % 37L)) {
-          return null;
-        } else {
-          int var3 = 0;
-
-          for (long var4 = var1; var4 != 0L; ++var3) {
-            var4 /= 37L;
-          }
-
-          byte[] var6 = new byte[var3];
-          if (var0 != -29664) {
-            method1047(2, -55, -50, false, 52, false, false);
-          }
-
-          while (0L != var1) {
-            long var7 = var1;
-            var1 /= 37L;
-            --var3;
-            var6[var3] = DummyClass9.aByteArray4005[(int) (-(var1 * 37L) + var7)];
-          }
-
-          GameString var10 = new GameString();
-          var10.bytes = var6;
-          var10.length = var6.length;
-          return var10;
-        }
-      } else {
-        return null;
-      }
-    } catch (RuntimeException var9) {
-      throw AbstractGameWorld.cascadeException(var9, "ge.B(" + var0 + ',' + var1 + ')');
-    }
-  }
-
-  static final void method1053(byte var0, FileUnpacker var1) {
-    try {
-      TriChromaticImageCache.aClass153_1372 = var1;
-      int var2 = -52 / ((var0 - -55) / 36);
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "ge.F(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
-    }
-  }
-
   public final String toString() {
     try {
       return "Cache:" + this.anInt682;
@@ -413,6 +272,145 @@ final class FileCache {
       throw AbstractGameWorld.cascadeException(var18,
         "ge.E(" + var1 + ',' + var2 + ',' + var3 + ',' + (var4 != null ? "{...}" : "null") + ','
           + var5 + ')');
+    }
+  }
+
+  static final void method1047(int var0, int var1, int var2, boolean var3, int var4, boolean var5,
+                               boolean var6) {
+    try {
+      if (!var6) {
+        if (var2 > var4) {
+          int var7 = (var2 + var4) / 2;
+          int var8 = var4;
+          GameWorld var9 = TextureSampler15.aClass44_Sub1Array3201[var7];
+          TextureSampler15.aClass44_Sub1Array3201[var7] =
+            TextureSampler15.aClass44_Sub1Array3201[var2];
+          TextureSampler15.aClass44_Sub1Array3201[var2] = var9;
+
+          for (int var10 = var4; var10 < var2; ++var10) {
+            if (~GameString.method1535(var9, TextureSampler15.aClass44_Sub1Array3201[var10], 5730,
+              var0, var1, var3, var5) >= -1) {
+              GameWorld var11 = TextureSampler15.aClass44_Sub1Array3201[var10];
+              TextureSampler15.aClass44_Sub1Array3201[var10] =
+                TextureSampler15.aClass44_Sub1Array3201[var8];
+              TextureSampler15.aClass44_Sub1Array3201[var8++] = var11;
+            }
+          }
+
+          TextureSampler15.aClass44_Sub1Array3201[var2] =
+            TextureSampler15.aClass44_Sub1Array3201[var8];
+          TextureSampler15.aClass44_Sub1Array3201[var8] = var9;
+          method1047(var0, var1, -1 + var8, var3, var4, var5, false);
+          method1047(var0, var1, var2, var3, var8 - -1, var5, false);
+        }
+
+      }
+    } catch (RuntimeException var12) {
+      throw AbstractGameWorld.cascadeException(var12,
+        "ge.A(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6
+          + ')');
+    }
+  }
+
+  static final void method1048(int var0, int var1, int var2, int var3, int var4, int var5, int var6,
+                               int var7) {
+    try {
+      if (var5 > -15) {
+        anInt688 = -64;
+      }
+
+      if (-2 >= ~var1 && var4 >= 1 && 102 >= var1 && var4 <= 102) {
+        int var8;
+        if (!NPC.method1986(41) && 0 == (2 & BZipDecompressorState.tileFlags[0][var1][var4])) {
+          var8 = var2;
+          if ((8 & BZipDecompressorState.tileFlags[var2][var1][var4]) != 0) {
+            var8 = 0;
+          }
+
+          if (var8 != GameObject.plane) {
+            return;
+          }
+        }
+
+        var8 = var2;
+        if (-4 < ~var2 && -3 == ~(2 & BZipDecompressorState.tileFlags[1][var1][var4])) {
+          var8 = var2 + 1;
+        }
+
+        DummyClass29.method910(-96, var4, var1, var2, var7, var8, BlockConfig.collisionMaps[var2]);
+        if (0 <= var0) {
+          boolean var9 = Keyboard.aBoolean1905;
+          Keyboard.aBoolean1905 = true;
+          DummyClass31.method1683(var8, false, var2, false, BlockConfig.collisionMaps[var2], var0,
+            var6, var1, (byte) 50, var4, var3);
+          Keyboard.aBoolean1905 = var9;
+        }
+      }
+
+    } catch (RuntimeException var10) {
+      throw AbstractGameWorld.cascadeException(var10,
+        "ge.H(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ',' + var5 + ',' + var6
+          + ',' + var7 + ')');
+    }
+  }
+
+  public static void method1049(boolean var0) {
+    try {
+      anIntArray686 = null;
+      aClass93_684 = null;
+      if (!var0) {
+        aClass93_684 = null;
+      }
+
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "ge.G(" + var0 + ')');
+    }
+  }
+
+  static final GameString stringFromBase37(int var0, long var1) {
+    try {
+      if (-1L > ~var1 && -6582952005840035282L < ~var1) {
+        if (-1L == ~(var1 % 37L)) {
+          return null;
+        } else {
+          int var3 = 0;
+
+          for (long var4 = var1; var4 != 0L; ++var3) {
+            var4 /= 37L;
+          }
+
+          byte[] var6 = new byte[var3];
+          if (var0 != -29664) {
+            method1047(2, -55, -50, false, 52, false, false);
+          }
+
+          while (0L != var1) {
+            long var7 = var1;
+            var1 /= 37L;
+            --var3;
+            var6[var3] = DummyClass9.aByteArray4005[(int) (-(var1 * 37L) + var7)];
+          }
+
+          GameString var10 = new GameString();
+          var10.bytes = var6;
+          var10.length = var6.length;
+          return var10;
+        }
+      } else {
+        return null;
+      }
+    } catch (RuntimeException var9) {
+      throw AbstractGameWorld.cascadeException(var9, "ge.B(" + var0 + ',' + var1 + ')');
+    }
+  }
+
+  static final void method1053(byte var0, FileUnpacker var1) {
+    try {
+      TriChromaticImageCache.aClass153_1372 = var1;
+      int var2 = -52 / ((var0 - -55) / 36);
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3,
+        "ge.F(" + var0 + ',' + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 

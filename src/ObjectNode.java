@@ -16,8 +16,24 @@ final class ObjectNode extends AbstractObjectNode {
     try {
       this.anObject4044 = var1;
     } catch (RuntimeException var3) {
-      throw AbstractGameWorld
-        .cascadeException(var3, "he.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var3,
+        "he.<init>(" + (var1 != null ? "{...}" : "null") + ')');
+    }
+  }
+
+  final Object getObject(boolean var1) {
+    try {
+      return !var1 ? null : this.anObject4044;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "he.B(" + var1 + ')');
+    }
+  }
+
+  final boolean method568(int var1) {
+    try {
+      return var1 != -22358;
+    } catch (RuntimeException var3) {
+      throw AbstractGameWorld.cascadeException(var3, "he.A(" + var1 + ')');
     }
   }
 
@@ -48,22 +64,6 @@ final class ObjectNode extends AbstractObjectNode {
       aClass93_4051 = null;
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "he.D(" + var0 + ')');
-    }
-  }
-
-  final Object getObject(boolean var1) {
-    try {
-      return !var1 ? null : this.anObject4044;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "he.B(" + var1 + ')');
-    }
-  }
-
-  final boolean method568(int var1) {
-    try {
-      return var1 != -22358;
-    } catch (RuntimeException var3) {
-      throw AbstractGameWorld.cascadeException(var3, "he.A(" + var1 + ')');
     }
   }
 

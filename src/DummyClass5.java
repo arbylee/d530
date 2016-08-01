@@ -2,6 +2,7 @@ import java.io.IOException;
 
 class DummyClass5 extends DummyClass6 {
 
+  private static GameString aClass94_2988 = SpawnedGameObject.createString("glow3:");
   static ObjectCache aClass93_2984 = new ObjectCache(2);
   static int[] anIntArray2985 = new int[2500];
   static long[] drawMemory = new long[32];
@@ -10,8 +11,8 @@ class DummyClass5 extends DummyClass6 {
   static Deque aClass61_2990 = new Deque();
   static int anInt2993 = 0;
   static int anInt2994;
-  static GameString aClass94_2995 = SpawnedGameObject.createString("Veuillez commencer par supprimer ");
-  private static GameString aClass94_2988 = SpawnedGameObject.createString("glow3:");
+  static GameString aClass94_2995 =
+    SpawnedGameObject.createString("Veuillez commencer par supprimer ");
   static GameString aClass94_2991 = aClass94_2988;
   static GameString aClass94_2992 = aClass94_2988;
 
@@ -107,9 +108,9 @@ class DummyClass5 extends DummyClass6 {
                   || ~(-10 + TextureSampler29.anInt3395) < ~var3 || ~var3 < ~(
                   SomethingQuickChat2.anInt3537 + (TextureSampler29.anInt3395 - -10))) {
                   DummyClass36.aBoolean2615 = false;
-                  AbstractSomethingTexture
-                    .method1340(AbstractIndexedColorSprite.anInt1462, SomethingWorldMapy.anInt3552,
-                      (byte) -40, TextureSampler29.anInt3395, SomethingQuickChat2.anInt3537);
+                  AbstractSomethingTexture.method1340(AbstractIndexedColorSprite.anInt1462,
+                    SomethingWorldMapy.anInt3552, (byte) -40, TextureSampler29.anInt3395,
+                    SomethingQuickChat2.anInt3537);
                 }
               }
 
@@ -140,9 +141,9 @@ class DummyClass5 extends DummyClass6 {
                 }
 
                 DummyClass36.aBoolean2615 = false;
-                AbstractSomethingTexture
-                  .method1340(AbstractIndexedColorSprite.anInt1462, SomethingWorldMapy.anInt3552,
-                    (byte) -40, TextureSampler29.anInt3395, SomethingQuickChat2.anInt3537);
+                AbstractSomethingTexture.method1340(AbstractIndexedColorSprite.anInt1462,
+                  SomethingWorldMapy.anInt3552, (byte) -40, TextureSampler29.anInt3395,
+                  SomethingQuickChat2.anInt3537);
               }
             }
 

@@ -10,6 +10,8 @@ import java.lang.reflect.Method;
 
 final class DummyClass8 extends DummyClass7 {
 
+  private static GameString aClass94_4022 = SpawnedGameObject.createString(
+    "Your friend list is full)3 Max of 100 for free users)1 and 200 for members)3");
   static SocketStream aClass89_4012;
   static volatile boolean focused = true;
   static int anInt4014;
@@ -24,8 +26,6 @@ final class DummyClass8 extends DummyClass7 {
   static int[] anIntArray4025 = new int[32];
   static int anInt4026 = 0;
   static SoftwareIndexedColorSprite[] aClass109_Sub1Array4027;
-  private static GameString aClass94_4022 = SpawnedGameObject
-    .createString("Your friend list is full)3 Max of 100 for free users)1 and 200 for members)3");
   static GameString aClass94_4024 = aClass94_4022;
 
   static final void method2220(int var0) {
@@ -43,8 +43,7 @@ final class DummyClass8 extends DummyClass7 {
     try {
       int var8 = 0;
 
-      for (HintMarker[] var7 = GameException.aClass96Array2114;
-           ~var7.length < ~var8; ++var8) {
+      for (HintMarker[] var7 = GameException.aClass96Array2114; ~var7.length < ~var8; ++var8) {
         HintMarker var9 = var7[var8];
         if (null != var9 && var9.anInt1360 == 2) {
           AbstractObjectNodeWrapper.method1724(var0 >> 1, var5,
@@ -52,8 +51,8 @@ final class DummyClass8 extends DummyClass7 {
             var9.anInt1353 * 2, var2 >> 1,
             var9.anInt1346 + (var9.anInt1356 + -WorldMapLabel.anInt1716 << 7), (byte) -114, var4);
           if (-1 < DummyClass34.anInt590 && ~(AbstractGameWorld.updateCycle % 20) > -11) {
-            SomethingIndex150.aClass3_Sub28_Sub16Array2072[var9.anInt1351]
-              .method643(-12 + var1 + DummyClass34.anInt590, -28 + var6 - -WidgetAccess.anInt2208);
+            SomethingIndex150.aClass3_Sub28_Sub16Array2072[var9.anInt1351].method643(
+              -12 + var1 + DummyClass34.anInt590, -28 + var6 - -WidgetAccess.anInt2208);
           }
         }
       }
@@ -112,9 +111,9 @@ final class DummyClass8 extends DummyClass7 {
 
                 for (int var14 = 0; AudioStreamEncoder3.regionHashes.length > var14; ++var14) {
                   if (~AudioStreamEncoder3.regionHashes[var14] == ~var13 && var4[var14] != null) {
-                    TextureSampler13
-                      .method316(BlockConfig.collisionMaps, var5, var4[var14], var9, var10,
-                        8 * var6, var7 * 8, var0, (var11 & 7) * 8, 8 * (7 & var12), (byte) -54);
+                    TextureSampler13.method316(BlockConfig.collisionMaps, var5, var4[var14], var9,
+                      var10, 8 * var6, var7 * 8, var0, (var11 & 7) * 8, 8 * (7 & var12),
+                      (byte) -54);
                     break;
                   }
                 }
@@ -139,9 +138,8 @@ final class DummyClass8 extends DummyClass7 {
       int var6 = (int) var1 >> 20 & 3;
       int var7 = (int) (var1 >>> 32) & Integer.MAX_VALUE;
       if (var5 != 10 && -12 != ~var5 && var5 != 22) {
-        Parameter
-          .method582(TextureCache.localPlayer.waypointsY[0], var6, 0, true, 0, 2, var4, 0, 1 + var5,
-            2, var3, TextureCache.localPlayer.waypointsX[0]);
+        Parameter.method582(TextureCache.localPlayer.waypointsY[0], var6, 0, true, 0, 2, var4, 0,
+          1 + var5, 2, var3, TextureCache.localPlayer.waypointsX[0]);
       } else {
         GameObjectConfig var8 = DummyClass11.method2207(4, var7);
         int var9;
@@ -159,9 +157,8 @@ final class DummyClass8 extends DummyClass7 {
           var11 = (var11 << var6 & 15) - -(var11 >> -var6 + 4);
         }
 
-        Parameter
-          .method582(TextureCache.localPlayer.waypointsY[0], 0, var10, true, var11, 2, var4, var9,
-            0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
+        Parameter.method582(TextureCache.localPlayer.waypointsY[0], 0, var10, true, var11, 2, var4,
+          var9, 0, 2, var3, TextureCache.localPlayer.waypointsX[0]);
       }
 
       FileCacheRequest.anInt4062 = DummyClass36.anInt2614;
@@ -170,8 +167,8 @@ final class DummyClass8 extends DummyClass7 {
       SceneSomething2.anInt1053 = DummyClass5.anInt2993;
       return true;
     } catch (RuntimeException var12) {
-      throw AbstractGameWorld
-        .cascadeException(var12, "t.D(" + var0 + ',' + var1 + ',' + var3 + ',' + var4 + ')');
+      throw AbstractGameWorld.cascadeException(var12,
+        "t.D(" + var0 + ',' + var1 + ',' + var3 + ',' + var4 + ')');
     }
   }
 
@@ -199,7 +196,8 @@ final class DummyClass8 extends DummyClass7 {
       }
 
       while (true) {
-        ClassCheckRequest var3 = (ClassCheckRequest) MonoChromaticImageBuffer.aClass61_2557.getFirst();
+        ClassCheckRequest var3 =
+          (ClassCheckRequest) MonoChromaticImageBuffer.aClass61_2557.getFirst();
         if (var3 == null) {
           return;
         }

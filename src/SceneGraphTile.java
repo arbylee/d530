@@ -1,7 +1,7 @@
 final class SceneGraphTile extends Node {
 
+  private static GameString aClass94_2224 = SpawnedGameObject.createString("Please wait)3)3)3");
   static GameString aClass94_2215 = SpawnedGameObject.createString("Konfig geladen)3");
-
   static int anInt2217 = 2;
   static int anInt2218 = -1;
   static short[] aShortArray2219 =
@@ -10,7 +10,6 @@ final class SceneGraphTile extends Node {
   static GameString aClass94_2242 = SpawnedGameObject.createString("welle2:");
   static int anInt2243 = 3353893;
   static int anInt2246 = 0;
-  private static GameString aClass94_2224 = SpawnedGameObject.createString("Please wait)3)3)3");
   static GameString aClass94_2216 = aClass94_2224;
   SceneSomething[] sceneGraphNodes = new SceneSomething[5];
   boolean aBoolean2222;
@@ -41,8 +40,8 @@ final class SceneGraphTile extends Node {
       this.anInt2238 = this.anInt2244 = var1;
       this.anInt2239 = var2;
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "bj.<init>(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "bj.<init>(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 

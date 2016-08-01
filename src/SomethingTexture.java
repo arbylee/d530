@@ -202,6 +202,45 @@ final class SomethingTexture extends AbstractSomethingTexture {
     }
   }
 
+  final void method1335(int var1, int var2, int var3) {
+    try {
+      if (var3 == 4898) {
+      }
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "ci.D(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final void method1337(int var1, boolean var2, int var3) {
+    try {
+      int var4 = var3 * this.anInt2629 >> 12;
+      if (!var2) {
+        this.method1335(67, -82, -112);
+      }
+
+      int var5 = this.anInt2635 * var3 >> 12;
+      int var6 = var1 * this.anInt2630 >> 12;
+      int var7 = var1 * this.anInt2632 >> 12;
+      TextureSampler25.method330(this.anInt1104, -111, var7, var4, var6, var5);
+    } catch (RuntimeException var8) {
+      throw AbstractGameWorld.cascadeException(var8,
+        "ci.E(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
+  final void method1341(int var1, int var2, int var3) {
+    try {
+      if (var1 != 2) {
+        method1342(null, null, null, (byte) -68, null);
+      }
+
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "ci.A(" + var1 + ',' + var2 + ',' + var3 + ')');
+    }
+  }
+
   static final void method1342(int[] var0, int[] var1, Player var2, byte var3, int[] var4) {
     try {
       int var5 = 0;
@@ -239,8 +278,8 @@ final class SomethingTexture extends AbstractSomethingTexture {
                   } else {
                     var12 = var2.aClass145Array2809[var9] = null;
                   }
-                } else if (var10.anInt1857 >= GameClient
-                  .method45(var12.anInt1890, (byte) -20).anInt1857) {
+                } else if (var10.anInt1857 >= GameClient.method45(var12.anInt1890,
+                  (byte) -20).anInt1857) {
                   var12 = var2.aClass145Array2809[var9] = null;
                 }
               }
@@ -283,45 +322,6 @@ final class SomethingTexture extends AbstractSomethingTexture {
 
     } catch (RuntimeException var2) {
       throw AbstractGameWorld.cascadeException(var2, "ci.C(" + var0 + ')');
-    }
-  }
-
-  final void method1335(int var1, int var2, int var3) {
-    try {
-      if (var3 == 4898) {
-      }
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ci.D(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final void method1341(int var1, int var2, int var3) {
-    try {
-      if (var1 != 2) {
-        method1342(null, null, null, (byte) -68, null);
-      }
-
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ci.A(" + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
-  final void method1337(int var1, boolean var2, int var3) {
-    try {
-      int var4 = var3 * this.anInt2629 >> 12;
-      if (!var2) {
-        this.method1335(67, -82, -112);
-      }
-
-      int var5 = this.anInt2635 * var3 >> 12;
-      int var6 = var1 * this.anInt2630 >> 12;
-      int var7 = var1 * this.anInt2632 >> 12;
-      TextureSampler25.method330(this.anInt1104, -111, var7, var4, var6, var5);
-    } catch (RuntimeException var8) {
-      throw AbstractGameWorld
-        .cascadeException(var8, "ci.E(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 

@@ -24,35 +24,6 @@ final class FileUnpacker {
     }
   }
 
-  public static void method2119(int var0) {
-    try {
-      if (var0 != 100) {
-        method2143((byte) -45, -91, 7, -83, 24);
-      }
-
-      fileUnpacker13 = null;
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "ve.AA(" + var0 + ')');
-    }
-  }
-
-  static final void method2143(byte var0, int var1, int var2, int var3, int var4) {
-    try {
-      WidgetUpdate var5 = AudioStreamEncoder3.method466(4, 8, var2);
-      var5.g((byte) 33);
-      var5.anInt3596 = var1;
-      if (var0 >= -120) {
-        sunColor = -14;
-      }
-
-      var5.anInt3598 = var4;
-      var5.anInt3597 = var3;
-    } catch (RuntimeException var6) {
-      throw AbstractGameWorld.cascadeException(var6,
-        "ve.U(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
-    }
-  }
-
   final boolean method2113(byte var1) {
     try {
       if (!this.method2122()) {
@@ -115,8 +86,8 @@ final class FileUnpacker {
 
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ve.R(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "ve.R(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -134,8 +105,8 @@ final class FileUnpacker {
         }
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "ve.P(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "ve.P(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -183,8 +154,8 @@ final class FileUnpacker {
         return -1;
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "ve.EA(" + (var1 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "ve.EA(" + (var1 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -259,8 +230,8 @@ final class FileUnpacker {
         int var4 = 123 % ((var1 - -60) / 62);
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ve.V(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "ve.V(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -338,8 +309,8 @@ final class FileUnpacker {
         return false;
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "ve.O(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "ve.O(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -374,8 +345,8 @@ final class FileUnpacker {
         return false;
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ve.FA(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "ve.FA(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -461,10 +432,10 @@ final class FileUnpacker {
             var23 = ClientScriptEnum.method623((byte) -125, var21);
           } catch (RuntimeException var19) {
             throw AbstractGameWorld.cascadeException(var19,
-              "T3 - " + (var3 != null) + "," + var1 + "," + var21.length + "," + DummyClass35
-                .getChecksum(var21, var21.length, false) + "," + DummyClass35
-                .getChecksum(var21, var21.length - 2, false) + "," + this.table.anIntArray945[var1]
-                + "," + this.table.checksum);
+              "T3 - " + (var3 != null) + "," + var1 + "," + var21.length + ","
+                + DummyClass35.getChecksum(var21, var21.length, false) + ","
+                + DummyClass35.getChecksum(var21, var21.length - 2, false) + ","
+                + this.table.anIntArray945[var1] + "," + this.table.checksum);
           }
 
           if (this.aBoolean1945) {
@@ -476,7 +447,7 @@ final class FileUnpacker {
             var10 = var23.length;
             --var10;
             int var11 = 255 & var23[var10];
-            if(var11 > 1) {
+            if (var11 > 1) {
               System.out.println(var11);
               int a = 5;
             }
@@ -595,8 +566,8 @@ final class FileUnpacker {
         return false;
       }
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "ve.S(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "ve.S(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
     }
   }
 
@@ -684,8 +655,8 @@ final class FileUnpacker {
         return false;
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ve.K(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "ve.K(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -709,8 +680,8 @@ final class FileUnpacker {
         return var6;
       }
     } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "ve.CA(" + var1 + ',' + var2 + ',' + var3 + ')');
+      throw AbstractGameWorld.cascadeException(var5,
+        "ve.CA(" + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
@@ -771,6 +742,35 @@ final class FileUnpacker {
       }
     } catch (RuntimeException var4) {
       throw AbstractGameWorld.cascadeException(var4, "ve.A(" + fileId + ')');
+    }
+  }
+
+  public static void method2119(int var0) {
+    try {
+      if (var0 != 100) {
+        method2143((byte) -45, -91, 7, -83, 24);
+      }
+
+      fileUnpacker13 = null;
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "ve.AA(" + var0 + ')');
+    }
+  }
+
+  static final void method2143(byte var0, int var1, int var2, int var3, int var4) {
+    try {
+      WidgetUpdate var5 = AudioStreamEncoder3.method466(4, 8, var2);
+      var5.g((byte) 33);
+      var5.anInt3596 = var1;
+      if (var0 >= -120) {
+        sunColor = -14;
+      }
+
+      var5.anInt3598 = var4;
+      var5.anInt3597 = var3;
+    } catch (RuntimeException var6) {
+      throw AbstractGameWorld.cascadeException(var6,
+        "ve.U(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ',' + var4 + ')');
     }
   }
 

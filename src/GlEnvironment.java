@@ -2,12 +2,6 @@ import javax.media.opengl.GL;
 
 final class GlEnvironment {
 
-  static float[] diffuseLight0 = new float[4];
-  static int anInt1314;
-  static int anInt1315;
-  static int defaultFogColor = 13156520;
-  static float[] fogColorRgb = new float[4];
-  static int defaultSunColor = 16777215;
   private static int color = -1;
   private static float diffuseIntensity = -1.0F;
   private static float secondaryIntensity = -1.0F;
@@ -15,7 +9,12 @@ final class GlEnvironment {
   private static float[] diffuseLight1 = new float[4];
   private static int fogOffset = -1;
   private static int fogColor = -1;
-
+  static float[] diffuseLight0 = new float[4];
+  static int anInt1314;
+  static int anInt1315;
+  static int defaultFogColor = 13156520;
+  static float[] fogColorRgb = new float[4];
+  static int defaultSunColor = 16777215;
 
   static final void updateSunPosition() {
     GL var0 = GlRenderer.gl;

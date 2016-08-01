@@ -36,40 +36,6 @@ final class BufferedFile {
     }
   }
 
-  public static void method974(boolean var0) {
-    try {
-      aClass94_577 = null;
-      if (var0) {
-        anIntArray574 = null;
-        CHALLENGE_REQ = null;
-        COMMAND_FPS_OFF = null;
-      }
-    } catch (RuntimeException var2) {
-      throw AbstractGameWorld.cascadeException(var2, "en.G(" + var0 + ')');
-    }
-  }
-
-  static final void method979(int var0, int var1, int var2, byte var3) {
-    try {
-      GameString var4 = RenderAnimation.concat(new GameString[] {
-        PlayerAppearance.aClass94_853, SomethingScene.toString(var2), TextureSampler0.aClass94_3268,
-        SomethingScene.toString(var0 >> 6), TextureSampler0.aClass94_3268,
-        SomethingScene.toString(var1 >> 6), TextureSampler0.aClass94_3268,
-        SomethingScene.toString(var0 & 63), TextureSampler0.aClass94_3268,
-        SomethingScene.toString(63 & var1)
-      });
-      var4.method1549(false);
-      if (var3 != -4) {
-        aClass94_577 = null;
-      }
-
-      FileCacheRequester.handleCommand(var4);
-    } catch (RuntimeException var5) {
-      throw AbstractGameWorld
-        .cascadeException(var5, "en.I(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
-    }
-  }
-
   private final void method975(byte var1) throws IOException {
     try {
       int var2 = 56 % ((45 - var1) / 44);
@@ -151,8 +117,8 @@ final class BufferedFile {
 
         if (-1L != this.aLong571 && this.aLong569 >= this.aLong571
           && (long) this.anInt566 + this.aLong571 >= (long) var3 + this.aLong569) {
-          ArrayUtils
-            .copy(this.aByteArray572, (int) (-this.aLong571 + this.aLong569), var2, var1, var3);
+          ArrayUtils.copy(this.aByteArray572, (int) (-this.aLong571 + this.aLong569), var2, var1,
+            var3);
           this.aLong569 += (long) var3;
           return;
         }
@@ -167,8 +133,8 @@ final class BufferedFile {
             var9 = var3;
           }
 
-          ArrayUtils
-            .copy(this.aByteArray564, (int) (this.aLong569 - this.aLong576), var2, var1, var9);
+          ArrayUtils.copy(this.aByteArray564, (int) (this.aLong569 - this.aLong576), var2, var1,
+            var9);
           var1 += var9;
           var3 -= var9;
           this.aLong569 += (long) var9;
@@ -309,8 +275,8 @@ final class BufferedFile {
 
       this.method978(0, var2, var2.length, 0);
     } catch (RuntimeException var4) {
-      throw AbstractGameWorld
-        .cascadeException(var4, "en.B(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
+      throw AbstractGameWorld.cascadeException(var4,
+        "en.B(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ')');
     }
   }
 
@@ -330,8 +296,8 @@ final class BufferedFile {
           && (long) this.aByteArray572.length + this.aLong571 < (long) var4 + this.aLong569) {
           int var5 = (int) ((long) this.aByteArray572.length - this.aLong569 + this.aLong571);
           var4 -= var5;
-          ArrayUtils
-            .copy(var1, var2, this.aByteArray572, (int) (this.aLong569 + -this.aLong571), var5);
+          ArrayUtils.copy(var1, var2, this.aByteArray572, (int) (this.aLong569 + -this.aLong571),
+            var5);
           this.aLong569 += (long) var5;
           this.anInt566 = this.aByteArray572.length;
           this.method975((byte) 93);
@@ -383,8 +349,8 @@ final class BufferedFile {
             this.aLong571 = this.aLong569;
           }
 
-          ArrayUtils
-            .copy(var1, var2, this.aByteArray572, (int) (this.aLong569 + -this.aLong571), var4);
+          ArrayUtils.copy(var1, var2, this.aByteArray572, (int) (this.aLong569 + -this.aLong571),
+            var4);
           this.aLong569 += (long) var4;
           if (~((long) this.anInt566) > ~(-this.aLong571 + this.aLong569)) {
             this.anInt566 = (int) (-this.aLong571 + this.aLong569);
@@ -420,6 +386,40 @@ final class BufferedFile {
       }
     } catch (RuntimeException var5) {
       throw AbstractGameWorld.cascadeException(var5, "en.E(" + var1 + ',' + var2 + ')');
+    }
+  }
+
+  public static void method974(boolean var0) {
+    try {
+      aClass94_577 = null;
+      if (var0) {
+        anIntArray574 = null;
+        CHALLENGE_REQ = null;
+        COMMAND_FPS_OFF = null;
+      }
+    } catch (RuntimeException var2) {
+      throw AbstractGameWorld.cascadeException(var2, "en.G(" + var0 + ')');
+    }
+  }
+
+  static final void method979(int var0, int var1, int var2, byte var3) {
+    try {
+      GameString var4 = RenderAnimation.concat(new GameString[] {
+        PlayerAppearance.aClass94_853, SomethingScene.toString(var2), TextureSampler0.aClass94_3268,
+        SomethingScene.toString(var0 >> 6), TextureSampler0.aClass94_3268,
+        SomethingScene.toString(var1 >> 6), TextureSampler0.aClass94_3268,
+        SomethingScene.toString(var0 & 63), TextureSampler0.aClass94_3268,
+        SomethingScene.toString(63 & var1)
+      });
+      var4.method1549(false);
+      if (var3 != -4) {
+        aClass94_577 = null;
+      }
+
+      FileCacheRequester.handleCommand(var4);
+    } catch (RuntimeException var5) {
+      throw AbstractGameWorld.cascadeException(var5,
+        "en.I(" + var0 + ',' + var1 + ',' + var2 + ',' + var3 + ')');
     }
   }
 
