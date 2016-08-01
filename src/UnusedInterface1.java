@@ -1,0 +1,2 @@
+interface UnusedInterface1 {
+}
